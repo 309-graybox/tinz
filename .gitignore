@@ -1,0 +1,238 @@
+# Common junk
+/lib
+/junk
+# /bin
+/bin/editor_log*.txt
+/bin/log*.txt
+/layout
+.idea
+# Editor junk
+/assets
+/data/.thumbnails
+/data/configs/**
+/.thumbnails
+/source/build-*
+**/build-*
+**/x64
+**/X64
+**/x32
+**/X32
+**/build
+!**/build_tool*
+/junk/editor*
+*.swp
+.vimrc
+.nvimrc
+.ycm_extra_conf.py
+.envrc
+**/.vim
+**/.ccls-cache
+.gdb_history
+compile_commands.json
+perf.data
+perf.data.old
+tags
+.qmake.stash
+CMakeLists.txt.user
+CMakeUserPresets.json
+CMakeSettings.json
+.clangd
+**/gen/ApplicationConfig.h
+**/gen/VersionConfig.h
+**/gen/BuildConfig.h
+**/gen/GitConfig.cpp
+**/gen/app.rc
+GitConfig.h
+/source/editor2/cmake_builds
+/source/editor2/.vs
+/.sandworm_cache
+.upackages_meta
+
+# Visual studio junk
+.vs
+/source/.vs
+.vscode
+*.aps
+*.tlog
+*.log
+out
+source/out
+
+# Precompiled junk
+/source/ipch
+
+# Linux junk
+source/app/main/main
+source/engine/stdafx.h.pch
+
+# Scons junk
+/stop-scons
+
+# Common
+/data/temp
+/data/test
+/data/add-ons
+/data/guids.db
+/data/*.cfg
+/data/*.cfg.meta
+/data/.runtimes
+*.save
+*.save_
+quicksave.png
+
+# ignoring guids.db
+/source/samples/Api/Systems/NoData/guids.db
+/source/samples/Api/Systems/NoData/data/guids.db
+/source/samples/common/guids.db
+/source/samples/common/resources/guids.db
+/source/ig/guids.db
+/source/ig/data/guids.db
+
+# Clouds specific
+/data/clouds_dev
+/data/clouds_dev2
+
+# C++ samples
+source/samples/**/*.exe
+source/samples/**/*.ilk
+source/samples/**/*.pdb
+source/samples/**/*.lib
+source/samples/**/*.exp
+source/samples/**/*.obj
+source/samples/**/log*.html
+source/samples/**/unigine.cfg
+source/samples/Api/Render/StructuredBuffer/compressed_image.dds
+source/samples/Api/Systems/File/data/api_file.txt
+source/samples/Api/Systems/Plugins/plugin/plugin_*.dll
+source/samples/Api/Systems/Stream/data/api_stream.txt
+source/samples/Api/Systems/StreamBase/api_stream_base.txt
+
+# C# samples
+source/csharp/junk
+source/csharp/app/main/*.dll
+source/csharp/app/main/*.exe
+source/csharp/app/main/*.pdb
+source/csharp/app/main/unigine.cfg
+source/csharp/samples/**/*.dll
+source/csharp/samples/**/*.exe
+source/csharp/samples/**/*.pdb
+source/csharp/samples/**/*.vshost.exe.config
+source/csharp/samples/**/*.csproj.FileListAbsolute.txt
+source/csharp/samples/**/log*.html
+source/csharp/samples/**/unigine.cfg
+source/csharp/samples/**/obj
+
+
+# File System mounts
+/data/*.umount
+/data/*/*.umount
+
+# Samples
+/data/demos
+/data/samples
+/data/samples_2
+
+# Washington specific
+/data/airports
+/data/core_lib
+/data/environment
+/data/washington
+
+# Oil Refinery specific
+/data/oil_refinery
+
+# Tank specific
+/data/tank
+
+# Terrain Global specific
+/data/terrainglobal
+
+# Portangeles specific
+/data/portangeles
+
+# Superposition specific
+/data/superposition
+
+# QA Performance specific
+/data/performance_samples
+
+# Space specific
+/data/earth
+/data/maven
+/data/planets
+/data/iss
+/data/space
+/data/character
+/data/layers
+/data/tracks
+/data/ui
+
+# Valley specific
+/data/valley
+
+# XCode junk
+/source/engine/unigine.xcodeproj/*
+!/source/engine/unigine.xcodeproj/project.pbxproj
+!/source/engine/unigine.xcodeproj/xcshareddata
+/source/app/main/main.xcodeproj/*
+!/source/app/main/main.xcodeproj/project.pbxproj
+!/source/app/main/main.xcodeproj/xcshareddata
+
+
+# api
+source/engine/api/x64
+
+# VS Code junk
+*.nuget.g.props
+*.nuget.g.targets
+project.assets.json
+*.VC.db
+
+# .Net Core junk
+*.nuget.dgspec.json
+
+# Binaries
+*.cache
+*.gpu_cache
+*.vcxproj.user
+*.csproj.user
+*.pro.user
+*.suo
+*.opensdf
+*.VC.opendb
+*.pdb
+*.sdf
+*.o
+*.manifest
+*.dblite
+*.res
+*.os
+*.pyc
+*.dylib
+*.so
+*.obj
+!/extern/lib/linux/x64/*.so
+
+/data/showreel_render
+/.runtimes
+
+/ci_tests_results.xml
+
+# QtCreator junk
+*.autosave
+
+# IG
+/ig_data
+/data/ig*
+/data/map_cache
+
+# Xbox
+layout
+
+# PS5
+bin/sce_modules
+
+source/junk
+
+# test launchers in root
+main_*.py
