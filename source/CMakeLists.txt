@@ -36,6 +36,10 @@ if (WIN32)
 	set(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:wmainCRTStartup")
 endif()
 
+file(GLOB_RECURSE CHARACTER_SOURCES "${CMAKE_CURRENT_LIST_DIR}/character/*.h" "${CMAKE_CURRENT_LIST_DIR}/character/*.cpp")
+file(GLOB_RECURSE COMPONENTS_SOURCES "${CMAKE_CURRENT_LIST_DIR}/components/*.h" "${CMAKE_CURRENT_LIST_DIR}/components/*.cpp")
+file(GLOB_RECURSE UTILS_SOURCES "${CMAKE_CURRENT_LIST_DIR}/utils/*.h" "${CMAKE_CURRENT_LIST_DIR}/utils/*.cpp")
+
 add_executable(${target}
 		${CMAKE_CURRENT_LIST_DIR}/AppEditorLogic.cpp
 		${CMAKE_CURRENT_LIST_DIR}/AppEditorLogic.h
@@ -44,13 +48,15 @@ add_executable(${target}
 		${CMAKE_CURRENT_LIST_DIR}/AppWorldLogic.cpp
 		${CMAKE_CURRENT_LIST_DIR}/AppWorldLogic.h
 		${CMAKE_CURRENT_LIST_DIR}/main.cpp
-
-
+		${UTILS_SOURCES}
+		${COMPONENTS_SOURCES}
+		${CHARACTER_SOURCES}
 )
 
 target_include_directories(${target}
 	PRIVATE
 	${UNIGINE_INCLUDE_DIR}
+	${CMAKE_CURRENT_LIST_DIR}
 	)
 
 target_link_libraries(${target}
