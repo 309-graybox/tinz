@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.19.0.3">
+	<node type="NodeDummy" id="1335047610" name="template_buildings">
+		<transform>1 1.74845510514e-07 0 0.0 -1.74845510514e-07 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		<node type="ObjectMeshStatic" id="763021777" immovable="1" name="template_buildings">
+			<mesh_name>guid://9802276da9e561e8d1bf5c2721ad2b5a2d4a02f1</mesh_name>
+			<surface name="wall_0_mat" intersection="1" collision="1" material="b50d447466b5a543f70c09c68846566d9f15c4e8"/>
+			<surface name="floor_red_mat" intersection="1" collision="1" material="03975a558b6967b07049574fafa8dc62f5633059"/>
+			<surface name="floor_orange_mat" intersection="1" collision="1" material="fbc9263de6d73278a1305377d3c39a6a013e06c1"/>
+			<surface name="floor_green_mat" intersection="1" collision="1" material="21104c81e1573bec49c9065bb30f87fecc360f45"/>
+			<surface name="floor_gray_mat" intersection="1" collision="1" material="9ce875824cc0b6f9c970740499c26f93691e2fd6"/>
+			<transform>1 -1.74845560007e-07 0 0.0 1.74845560007e-07 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="103576680" name="cylinder">
+			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
+			<surface name="cylinder" intersection="1" material="b50d447466b5a543f70c09c68846566d9f15c4e8"/>
+			<body type="BodyDummy" id="2031570609" frozen="0">
+				<shape type="ShapeCapsule" id="1745490955">
+					<radius>1</radius>
+					<height>3</height>
+				</shape>
+			</body>
+			<transform>1.90337566815e-06 0.999997437 0 0.0 -0.999997317791 1.90337541993e-06 0 0.0 0 0 0.999999821186 0.0 -1.00507600884 -14.0052486093 3.5 1.0</transform>
+		</node>
+	</node>
+</nodes>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.19.0.3">
+	<node type="ObjectMeshStatic" id="1559255743" immovable="1" name="static_target">
+		<mesh_name>guid://15b2b92e7fb5d32666ebd48701f19aa741ac2f1a</mesh_name>
+		<surface name="cylinder" intersection="1" material="03975a558b6967b07049574fafa8dc62f5633059"/>
+		<body type="BodyDummy" id="1128934226" frozen="0">
+			<shape type="ShapeBox" id="2341283">
+				<size>1 1 0.100000001</size>
+			</shape>
+		</body>
+		<transform>1 0 0 0.0 0 1.37090501084e-06 0.999998390675 0.0 0 -0.999998390675 1.37090501084e-06 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

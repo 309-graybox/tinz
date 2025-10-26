@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.19.0.3">
+	<node type="NodeDummy" id="1660480084" name="mobility_targets">
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		<node type="NodeDummy" id="1238568306" name="path_1">
+			<properties>
+				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="9ce32d578703cce4afd3c7c09656b3625eae0e02">
+					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
+					<parameter name="targetSpeed">7</parameter>
+					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="points">
+						<value index="0">1671695913</value>
+						<value index="1">191431028</value>
+						<value index="2">1269579331</value>
+						<value index="3">1233637062</value>
+						<value index="4">2135125426</value>
+					</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -22.7351827622 -24.675941527 0.99999952316 1.0</transform>
+			<node type="NodeDummy" id="1671695913" name="point_0">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -11.0620557964 5.12059032917 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="191431028" name="point_1">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -11.0620557964 -3.88085389137 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1269579331" name="point_2">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 9.32666496337 -3.88085389137 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1233637062" name="point_3">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 9.32666496337 5.12059032917 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="2135125426" name="point_4">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -11.0620557964 5.12059032917 1 1.0</transform>
+			</node>
+		</node>
+		<node type="NodeDummy" id="324792495" name="path_2">
+			<properties>
+				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="e203a91dc468776a640034d0edfb020a3388d4f7">
+					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
+					<parameter name="targetSpeed">7</parameter>
+					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="points">
+						<value index="0">1528227394</value>
+						<value index="1">2026434745</value>
+						<value index="2">1889395396</value>
+						<value index="3">32608083</value>
+						<value index="4">167452478</value>
+					</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 8.2082566619 -19.5612471104 4 1.0</transform>
+			<node type="NodeDummy" id="1528227394" name="point">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="2026434745" name="point_1">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -7.41271048439 0 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1889395396" name="point_2">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -10.3445104403 0 -2 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="32608083" name="point_3">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -7.41271048439 0 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="167452478" name="point_4">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 1 1.0</transform>
+			</node>
+		</node>
+		<node type="NodeDummy" id="334056598" name="path_3">
+			<properties>
+				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="9dfb81fd782e3732a49896fea6562108f7aad4f0">
+					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
+					<parameter name="targetSpeed">4.5</parameter>
+					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="points">
+						<value index="0">779197181</value>
+						<value index="1">2125045816</value>
+						<value index="2">1504722309</value>
+					</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -22.7351827622 -24.675941527 0.99999952316 1.0</transform>
+			<node type="NodeDummy" id="779197181" name="point_0">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="2125045816" name="point_1">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 6 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1504722309" name="point_2">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 1 1.0</transform>
+			</node>
+		</node>
+		<node type="NodeDummy" id="1717200439" name="path_4">
+			<properties>
+				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="4c73dbcd98251b28b767cbc01a5e41cf5d368b27">
+					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
+					<parameter name="targetSpeed">7</parameter>
+					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="points">
+						<value index="0">1864306218</value>
+						<value index="1">583100289</value>
+						<value index="2">722967276</value>
+						<value index="3">1969740123</value>
+						<value index="4">81924384</value>
+					</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -22.7351827622 -36.6053079838 6.7464 1.0</transform>
+			<node type="NodeDummy" id="1864306218" name="point_0">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -7.06779238582 5.02876865864 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="583100289" name="point_1">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -7.06779238582 -0.965500235556 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="722967276" name="point_2">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 8.9364214331 -0.965500235556 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1969740123" name="point_3">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 8.9364214331 5.02876865864 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="81924384" name="point_4">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -7.06779238582 5.02876865864 1 1.0</transform>
+			</node>
+		</node>
+		<node type="NodeDummy" id="578944692" name="path_5">
+			<properties>
+				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="df5e7fd9fb4333b02bb59c4a933c313b8b1a7a9c">
+					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
+					<parameter name="targetSpeed">4.5</parameter>
+					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="points">
+						<value index="0">1166166609</value>
+						<value index="1">1871839100</value>
+						<value index="2">987533823</value>
+					</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -4.80451965335 -41.5597648621 1.00000047684 1.0</transform>
+			<node type="NodeDummy" id="1166166609" name="point_0">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 4 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1871839100" name="point_1">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -19.9692979579 0 4 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="987533823" name="point_2">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 4 1.0</transform>
+			</node>
+		</node>
+		<node type="NodeDummy" id="1479089153" name="path_6">
+			<properties>
+				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="88435aa572d0d65e3dcfdeb8cfcef3fe99e7abbf">
+					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
+					<parameter name="targetSpeed">7</parameter>
+					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="points">
+						<value index="0">1405535596</value>
+						<value index="1">2008809947</value>
+						<value index="2">1726752008</value>
+						<value index="3">1746619774</value>
+						<value index="4">2013271749</value>
+						<value index="5">381655392</value>
+						<value index="6">900070719</value>
+						<value index="7">1407904146</value>
+						<value index="8">1739520969</value>
+						<value index="9">1329910420</value>
+						<value index="10">1061723363</value>
+						<value index="11">869031142</value>
+						<value index="12">1565085453</value>
+						<value index="13">720766151</value>
+						<value index="14">1749252986</value>
+						<value index="15">1572140882</value>
+					</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -14.286206007 -30.5521674157 1 1.0</transform>
+			<node type="NodeDummy" id="1405535596" name="point_0">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -14.4982768356 -2.00707562763 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="2008809947" name="point_1">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0.00531851653107 -2.00707562763 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1726752008" name="point_2">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0.00531851653107 -6.50493 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1746619774" name="point_3">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -9.49540460702 -6.50492664177 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="2013271749" name="point_4">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -15.3993319178 -6.50492664177 3 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="381655392" name="point_5">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -15.3993319178 -4.02743 4.00500663234 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="900070719" name="point_6">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -15.3993319178 -1.77575348075 4.00500663234 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1407904146" name="point_7">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.631196372274 -1.77575348075 4.00500663234 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1739520969" name="point_8">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.631196372274 -4.02742536333 4.00500663234 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1329910420" name="point_9">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -13.2731011209 -4.02742536333 4.00500663234 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1061723363" name="point_10">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -15.3993319178 -4.02743 4.00500663234 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="869031142" name="point_11">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -15.3993319178 -6.50492664177 3 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1565085453" name="point_12">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -9.49540460702 -6.50492664177 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="720766151" name="point_13">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -9.49540460702 -3.62001306407 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1749252986" name="point_14">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -14.49828 -3.62001306407 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1572140882" name="point_15">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -14.4982768356 -2.00707562763 1 1.0</transform>
+			</node>
+		</node>
+		<node type="NodeDummy" id="2046350481" name="path_7">
+			<properties>
+				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="71c6d1f5d5fd5904118446d6ec88b3916edc7d88">
+					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
+					<parameter name="targetSpeed">4.5</parameter>
+					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="points">
+						<value index="0">1424786620</value>
+						<value index="1">1068538091</value>
+						<value index="2">1076637321</value>
+					</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 10.2245157013 -51.6079595645 0.99999952316 1.0</transform>
+			<node type="NodeDummy" id="1424786620" name="point_0">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1068538091" name="point_1">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 5 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1076637321" name="point_2">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 1 1.0</transform>
+			</node>
+		</node>
+		<node type="NodeDummy" id="679855705" name="path_8">
+			<properties>
+				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="6d5a26ed2d3f4632891bf460a8aa00d6f9ed8347">
+					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
+					<parameter name="targetSpeed">7</parameter>
+					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="points">
+						<value index="0">1995602916</value>
+						<value index="1">2103449075</value>
+						<value index="2">130671286</value>
+						<value index="3">902429341</value>
+						<value index="4">614000212</value>
+					</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -15.7959565884 -47.5648111344 0.99999952316 1.0</transform>
+			<node type="NodeDummy" id="1995602916" name="point_0">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -2.56563922763 1.76334321499 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="2103449075" name="point_1">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -2.56563922763 -1.99563008547 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="130671286" name="point_2">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 2.5346961409 -1.99563008547 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="902429341" name="point_3">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 2.5346961409 1.76334321499 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="614000212" name="point_4">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -2.56563922763 1.76334321499 1 1.0</transform>
+			</node>
+		</node>
+		<node type="NodeDummy" id="166614593" name="path_9">
+			<properties>
+				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="ab6d162f4f199debed80f3f82cb85b2b61bbe7fa">
+					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
+					<parameter name="targetSpeed">7</parameter>
+					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="points">
+						<value index="0">731366048</value>
+						<value index="1">2119925257</value>
+						<value index="2">1945737507</value>
+						<value index="3">126528550</value>
+						<value index="4">784782669</value>
+						<value index="5">705263176</value>
+						<value index="6">823305479</value>
+						<value index="7">1171332794</value>
+						<value index="8">36445603</value>
+					</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -33.7916455269 -51.5576914848 1.99999904633 1.0</transform>
+			<node type="NodeDummy" id="731366048" name="point_0">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.00146037340149 2.98299977183 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="2119925257" name="point_1">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.00146037340149 -3.55358865857 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1945737507" name="point_2">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 1.4863447547 -3.55358865857 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="126528550" name="point_3">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 4.43756574392 -3.55358865857 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="784782669" name="point_4">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 6.535128057 -3.55358865857 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="705263176" name="point_5">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 4.43756574392 -3.55358865857 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="823305479" name="point_6">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 1.4863447547 -3.55358865857 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1171332794" name="point_7">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.00146037340149 -3.55358865857 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="36445603" name="point_8">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.00146037340149 2.98299977183 1 1.0</transform>
+			</node>
+		</node>
+		<node type="NodeDummy" id="1165279315" name="path_10">
+			<properties>
+				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="4f7273e7986773fe14f0b892da1e034eb8d15711">
+					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
+					<parameter name="targetSpeed">4.5</parameter>
+					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="points">
+						<value index="0">270059926</value>
+						<value index="1">886037290</value>
+						<value index="2">1365665446</value>
+					</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -31.0002862757 -4.0007299599 0 1.0</transform>
+			<node type="NodeDummy" id="270059926" name="point_0">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.143472224474 -12.2310797069 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="886037290" name="point_1">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.143472224474 10.7818488385 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1365665446" name="point_2">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.143472224474 -12.2310797069 1 1.0</transform>
+			</node>
+		</node>
+		<node type="NodeDummy" id="877747198" name="path_11">
+			<properties>
+				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="d64260f91e070d2cbf7881ea53082c1d886a253c">
+					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
+					<parameter name="targetSpeed">4.5</parameter>
+					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="points">
+						<value index="0">1258672965</value>
+						<value index="1">2141531104</value>
+						<value index="2">834555341</value>
+					</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -15.0002813285 -4.0007299599 0 1.0</transform>
+			<node type="NodeDummy" id="1258672965" name="point_0">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.143472224474 -12.2310797069 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="2141531104" name="point_1">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.143472224474 10.7818488385 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="834555341" name="point_2">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.143472224474 -12.2310797069 1 1.0</transform>
+			</node>
+		</node>
+		<node type="NodeDummy" id="1345154495" name="path_12">
+			<properties>
+				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="8d843739d17a590e98e0c13c4160c5fbea390c73">
+					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
+					<parameter name="targetSpeed">4.5</parameter>
+					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="points">
+						<value index="0">538877970</value>
+						<value index="1">864436297</value>
+						<value index="2">790467784</value>
+					</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 10.2072538584 -39.5573768319 1 1.0</transform>
+			<node type="NodeDummy" id="538877970" name="point_0">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 14.0007172235 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="864436297" name="point_1">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 -8.002174466 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="790467784" name="point_2">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 14.0007172235 1 1.0</transform>
+			</node>
+		</node>
+		<node type="NodeDummy" id="519982356" name="path_13">
+			<properties>
+				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="9eb23cdb5cbdf54a7f378554b41a628013856736">
+					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
+					<parameter name="targetSpeed">4.5</parameter>
+					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="points">
+						<value index="0">688051555</value>
+						<value index="1">1229208422</value>
+						<value index="2">1908355463</value>
+					</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 12.2146448661 -39.5573768319 4 1.0</transform>
+			<node type="NodeDummy" id="688051555" name="point_0">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 15.9978525051 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1229208422" name="point_1">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 -14.0021781019 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1908355463" name="point_2">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 15.9978525051 1 1.0</transform>
+			</node>
+		</node>
+		<node type="NodeDummy" id="1904647053" name="path_14">
+			<properties>
+				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="6932a513a37ff1bbb863d8ceda4554a4759ab51d">
+					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
+					<parameter name="targetSpeed">7</parameter>
+					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="points">
+						<value index="0">456853454</value>
+						<value index="1">1256949063</value>
+						<value index="2">1392773000</value>
+						<value index="3">1722313941</value>
+						<value index="4">1719865468</value>
+						<value index="5">1170485675</value>
+						<value index="6">1289919246</value>
+					</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 8.1945432186 -39.5573768319 4 1.0</transform>
+			<node type="NodeDummy" id="456853454" name="point_0">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -7.98422396183 -14.0193952817 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1256949063" name="point_1">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 -14.0193952817 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1392773000" name="point_2">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 15.99785 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1722313941" name="point_3">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -7.98555436438 15.99785 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1719865468" name="point_4">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 15.99785 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1170485675" name="point_5">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 -14.0193952817 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1289919246" name="point_6">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -7.98422396183 -14.0193952817 1 1.0</transform>
+			</node>
+		</node>
+		<node type="NodeDummy" id="1843504760" name="path_15">
+			<properties>
+				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="66dcf51b1ac4aea0e85c6f36996829f23b4fb865">
+					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
+					<parameter name="targetSpeed">7</parameter>
+					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="points">
+						<value index="0">2062563191</value>
+						<value index="1">383486657</value>
+						<value index="2">1807148332</value>
+						<value index="3">364908933</value>
+						<value index="4">338154784</value>
+						<value index="5">1904182783</value>
+						<value index="6">1697864530</value>
+						<value index="7">1097810569</value>
+						<value index="8">182214481</value>
+					</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -8.79183961082 -30.5590101612 1 1.0</transform>
+			<node type="NodeDummy" id="2062563191" name="point_0">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="383486657" name="point_1">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 -5.00227441148 3 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1807148332" name="point_2">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 -6.00585945572 3 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="364908933" name="point_3">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -2.99856805801 -6.00585945572 3 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="338154784" name="point_4">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -2.99856805801 -2.0029859158 4 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1904182783" name="point_5">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -2.99856805801 -6.00585945572 3 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1697864530" name="point_6">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 -6.00585945572 3 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1097810569" name="point_7">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 -5.00227441148 3 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="182214481" name="point_8">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 1 1.0</transform>
+			</node>
+		</node>
+	</node>
+	<node type="NodeDummy" id="676964620" name="static_targets">
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		<node type="NodeReference" id="346522150" name="static_target">
+			<reference>guid://d08a1fa2cc5403751c5e199dfe3a96cab04bfb69</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 4.21812625913 -21.0131387618 6.99868471167 1.0</transform>
+		</node>
+		<node type="NodeReference" id="632179618" name="static_target">
+			<reference>guid://d08a1fa2cc5403751c5e199dfe3a96cab04bfb69</reference>
+			<transform>1 4.94898244022e-14 -4.94928466157e-14 0.0 -4.94898040734e-14 0.999999582767 2.44939192548e-27 0.0 4.9492826287e-14 0 0.999999582767 0.0 -14.338706106 -30.5587806702 4.48015928268 1.0</transform>
+		</node>
+		<node type="NodeReference" id="218308490" name="static_target">
+			<reference>guid://d08a1fa2cc5403751c5e199dfe3a96cab04bfb69</reference>
+			<transform>7.15255282557e-07 0.999999165535 6.21033038328e-08 0.0 -0.999999344349 7.15255396244e-07 2.84216958779e-14 0.0 0 -6.21033322545e-08 0.999999761581 0.0 -2.79168701175 -26.0412330628 5.03984642029 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1479783995" name="static_target">
+			<reference>guid://d08a1fa2cc5403751c5e199dfe3a96cab04bfb69</reference>
+			<transform>1.78813934326e-07 0.999999821186 0 0.0 -0.999999821186 1.78813934326e-07 0 0.0 0 0 1 0.0 -17.8915539013 -9.67249224595 5.73699617976 1.0</transform>
+		</node>
+		<node type="NodeReference" id="2027377984" name="static_target">
+			<reference>guid://d08a1fa2cc5403751c5e199dfe3a96cab04bfb69</reference>
+			<transform>1.78813905904e-07 -0.999999701977 0 0.0 0.999999582767 1.78813891694e-07 0 0.0 0 0 1 0.0 -27.9306885225 1.78979839613 5.73699617976 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1605782172" name="static_target">
+			<reference>guid://d08a1fa2cc5403751c5e199dfe3a96cab04bfb69</reference>
+			<transform>1.78813905904e-07 -0.999999701977 0 0.0 0.999999582767 1.78813891694e-07 0 0.0 0 0 1.00000011921 0.0 -10.2916812897 -48.5400505066 3.12832736969 1.0</transform>
+		</node>
+		<node type="NodeReference" id="273447861" name="static_target">
+			<reference>guid://d08a1fa2cc5403751c5e199dfe3a96cab04bfb69</reference>
+			<transform>1.78813792218e-07 0.999998986721 0 0.0 -0.999999463558 1.78813877483e-07 0 0.0 0 0 0.999999165535 0.0 -12.7916851044 -36.5461678505 4.9481716156 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1590083194" name="static_target">
+			<reference>guid://d08a1fa2cc5403751c5e199dfe3a96cab04bfb69</reference>
+			<transform>1 0 0 0.0 0 0.999999761581 0 0.0 0 0 0.999999761581 0.0 -21.9206672336 45.4060664806 4.27637526772 1.0</transform>
+		</node>
+	</node>
+</nodes>

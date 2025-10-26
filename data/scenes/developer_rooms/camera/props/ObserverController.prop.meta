@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.19.0.3">
+	<guid>516fb2a315b9f86508aa587b97a8aa1f133e57b3</guid>
+	<type>property</type>
+	<hash>1cd15f0a</hash>
+	<runtimes>
+		<runtime id="516fb2a315b9f86508aa587b97a8aa1f133e57b3" name="ObserverController" link="0" type="4"/>
+	</runtimes>
+</asset>

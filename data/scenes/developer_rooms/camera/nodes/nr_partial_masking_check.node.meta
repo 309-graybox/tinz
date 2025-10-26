@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.19.0.3">
+	<guid>137a9e0137f4b64db27e08bdc042fc36eadd9d5b</guid>
+	<type>node</type>
+	<hash>93477178</hash>
+	<runtimes>
+		<runtime id="137a9e0137f4b64db27e08bdc042fc36eadd9d5b" name="nr_partial_masking_check.node" link="0" type="3"/>
+	</runtimes>
+</asset>

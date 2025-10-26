@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.19.0.3" name="PathFromNodesGenerator" manual="1" parent_name="node_base">
+	<parameter name="target" type="file"/>
+	<parameter name="targetSpeed" type="float">0</parameter>
+	<parameter name="pathDirectory" type="string"/>
+	<parameter name="points" type="array" array_type="node"/>
+</property>

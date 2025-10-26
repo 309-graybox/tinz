@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <asset version="2.19.0.3">
-	<guid>e40b45ab1c769f0e7a329b15bfd83170f20c160f</guid>
+	<guid>4e16f088d4b75a47e8a5d2fab9544611114a483c</guid>
 	<type>fbx</type>
-	<hash>26f580f3</hash>
+	<hash>aeff1c62</hash>
 	<runtimes>
-		<runtime id="e40b45ab1c769f0e7a329b15bfd83170f20c160f" name="material_ball.fbx" link="0"/>
-		<runtime id="2bdf2610177e422f32ce09c2dcbabe396d465244" name="material_ball.node" link="1" type="3">
+		<runtime id="4e16f088d4b75a47e8a5d2fab9544611114a483c" name="ramp_0.fbx" link="0"/>
+		<runtime id="c3d8866b946f68ce65f759d5bd966130457b02cf" name="ramp_0.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">53eb0674</parameter>
+				<parameter type="string" name="id">6b6a5c3b</parameter>
 			</parameters>
 		</runtime>
-		<runtime id="d66c38d3cb2ce8161c55807d4a2d47b80c46e7b7" name="material_ball.mesh" link="2" type="1">
+		<runtime id="13c13655873193b046fb934f769de862de9ccc59" name="ramp_0.mesh" link="2" type="1">
 			<parameters>
-				<parameter type="string" name="id">3607a6c1</parameter>
+				<parameter type="string" name="id">cd468326</parameter>
 			</parameters>
 		</runtime>
 	</runtimes>
 	<parameters>
 		<parameter type="float" name="angular_deflection">0.699999988</parameter>
 		<parameter type="bool" name="asset_name_as_prefix">0</parameter>
-		<parameter type="string" name="base_material_mode">inherit_mesh_base</parameter>
+		<parameter type="string" name="base_material_mode">unique_material_graph</parameter>
 		<parameter type="float" name="bound_size">10000</parameter>
 		<parameter type="bool" name="create_transform_bones_for_joints">0</parameter>
 		<parameter type="float" name="fps">30</parameter>
 		<parameter type="string" name="front_axis">default</parameter>
-		<parameter type="bool" name="import_animations">1</parameter>
+		<parameter type="bool" name="import_animations">0</parameter>
 		<parameter type="bool" name="import_bones_without_skin">0</parameter>
 		<parameter type="bool" name="import_cameras">1</parameter>
 		<parameter type="bool" name="import_lights">1</parameter>
-		<parameter type="bool" name="import_materials">1</parameter>
+		<parameter type="bool" name="import_materials">0</parameter>
 		<parameter type="string" name="import_materials_mode">take_by_name_or_create</parameter>
 		<parameter type="bool" name="import_meshes">1</parameter>
 		<parameter type="bool" name="import_morph_targets">0</parameter>
@@ -36,11 +36,11 @@
 		<parameter type="bool" name="import_textures">1</parameter>
 		<parameter type="bool" name="invert_gchannel_for_normal_maps">0</parameter>
 		<parameter type="bool" name="joints_reorientation">1</parameter>
-		<parameter type="string" name="lightmaps">{&quot;guid://d66c38d3cb2ce8161c55807d4a2d47b80c46e7b7&quot;:{&quot;material_ball_mat_lod_0&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;material_ball_mat_lod_1&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;material_ball_mat_lod_2&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}}}</parameter>
+		<parameter type="string" name="lightmaps">{&quot;guid://13c13655873193b046fb934f769de862de9ccc59&quot;:{&quot;floor_0_mat&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;wall_0_mat&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}}}</parameter>
 		<parameter type="float" name="linear_deflection">0.200000003</parameter>
 		<parameter type="string" name="lods">_lod_0,-1e+09,3,0,0,100,0.01,0,60;_lod_1,3,9,0,0,20,0.01,1,60;_lod_2,9,1e+09,0,0,20,0.01,1,60</parameter>
-		<parameter type="string" name="lods_mode">by_postfix</parameter>
-		<parameter type="string" name="material_guids">material_ball_mat,2d2814767f25015d91f013182a937b973ae9640a</parameter>
+		<parameter type="string" name="lods_mode">off</parameter>
+		<parameter type="string" name="material_guids">floor_0_mat,c599018361993906cf853cadc944f628f8eb6367,wall_0_mat,b50d447466b5a543f70c09c68846566d9f15c4e8</parameter>
 		<parameter type="bool" name="merge_similar_materials">0</parameter>
 		<parameter type="bool" name="merge_static_meshes">0</parameter>
 		<parameter type="bool" name="merge_surfaces_by_materials">0</parameter>

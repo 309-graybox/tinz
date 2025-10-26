@@ -10,6 +10,7 @@
 /assets
 /data/.thumbnails
 /data/configs/**
+/data/procedure/**
 /.thumbnails
 /source/build-*
 **/build-*

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.19.0.3">
+	<node type="NodeDummy" id="821946851" name="partial_masking_check">
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		<node type="ObjectMeshStatic" id="1114793830" name="pillar">
+			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
+			<surface name="cylinder" intersection="1" material="9ce875824cc0b6f9c970740499c26f93691e2fd6"/>
+			<body type="BodyDummy" id="848392012" frozen="0">
+				<shape type="ShapeCylinder" id="2048411903">
+					<radius>1</radius>
+					<height>5</height>
+				</shape>
+			</body>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 4.93181359434 4.90929820705 -0.514369288489 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="656727501" name="wall">
+			<mesh_name>guid://22add82df58a419d7b851029492f746d5d140f67</mesh_name>
+			<surface name="box" intersection="1" material="b50d447466b5a543f70c09c68846566d9f15c4e8"/>
+			<body type="BodyDummy" id="527939109" frozen="0">
+				<shape type="ShapeBox" id="139127866">
+					<size>10 1 4</size>
+				</shape>
+			</body>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.0250827107465 5.00053336788 -1.01436928849 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1274076528" name="wall_1">
+			<mesh_name>guid://22add82df58a419d7b851029492f746d5d140f67</mesh_name>
+			<surface name="box" intersection="1" material="b50d447466b5a543f70c09c68846566d9f15c4e8"/>
+			<body type="BodyDummy" id="435286622" frozen="0">
+				<shape type="ShapeBox" id="124897415">
+					<size>10 1 4</size>
+				</shape>
+			</body>
+			<transform>1.78813863272e-07 -0.999999523163 0 0.0 0.999999344349 1.78813820639e-07 0 0.0 0 0 0.999999880791 0.0 5.02637063851 -0.0436393803134 -1.01436925869 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="802476559" name="pillar_1">
+			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
+			<surface name="cylinder" intersection="1" material="9ce875824cc0b6f9c970740499c26f93691e2fd6"/>
+			<body type="BodyDummy" id="1484969313" frozen="0">
+				<shape type="ShapeCylinder" id="1421730848">
+					<radius>1</radius>
+					<height>5</height>
+				</shape>
+			</body>
+			<transform>1.78813863272e-07 -0.999999523163 0 0.0 0.999999344349 1.78813820639e-07 0 0.0 0 0 0.999999880791 0.0 4.93513642386 -5.00053333808 -0.514369318292 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1581529437" name="wall_1">
+			<mesh_name>guid://22add82df58a419d7b851029492f746d5d140f67</mesh_name>
+			<surface name="box" intersection="1" material="b50d447466b5a543f70c09c68846566d9f15c4e8"/>
+			<body type="BodyDummy" id="513139259" frozen="0">
+				<shape type="ShapeBox" id="1702086600">
+					<size>10 1 4</size>
+				</shape>
+			</body>
+			<transform>8.94068591606e-07 0.999998509884 0 0.0 -0.999998390675 8.94068477919e-07 0 0.0 0 0 0.999999821186 0.0 -5.01380626119 0.0308537378088 -1.26436924379 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1322642200" name="pillar_1">
+			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
+			<surface name="cylinder" intersection="1" material="9ce875824cc0b6f9c970740499c26f93691e2fd6"/>
+			<body type="BodyDummy" id="784178058" frozen="0">
+				<shape type="ShapeCylinder" id="2120326277">
+					<radius>1</radius>
+					<height>5</height>
+				</shape>
+			</body>
+			<transform>8.94068591606e-07 0.999998509884 0 0.0 -0.999998390675 8.94068477919e-07 0 0.0 0 0 0.999999821186 0.0 -4.92256681538 4.98774257497 -0.764369333193 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1212480522" name="pillar_1">
+			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
+			<surface name="cylinder" intersection="1" material="9ce875824cc0b6f9c970740499c26f93691e2fd6"/>
+			<body type="BodyDummy" id="1341534487" frozen="0">
+				<shape type="ShapeCylinder" id="1596013118">
+					<radius>1</radius>
+					<height>5</height>
+				</shape>
+			</body>
+			<transform>1.19209084914e-06 0.999998152256 0 0.0 -0.999998033047 1.19209073546e-06 0 0.0 0 0 0.999999821186 0.0 -5.04846362414 -4.8084508572 -1.01436928849 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1335763916" name="pillar_1">
+			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
+			<surface name="cylinder" intersection="1" material="9ce875824cc0b6f9c970740499c26f93691e2fd6"/>
+			<body type="BodyDummy" id="357154456" frozen="0">
+				<shape type="ShapeCylinder" id="1085092251">
+					<radius>1</radius>
+					<height>5</height>
+				</shape>
+			</body>
+			<transform>1.37090432872e-06 0.999997854233 0 0.0 -0.999997735023 1.37090410135e-06 0 0.0 0 0 0.999999821186 0.0 0.336474236485 4.93968288545 -1.01436928849 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1412635358" name="pillar_1">
+			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
+			<surface name="cylinder" intersection="1" material="9ce875824cc0b6f9c970740499c26f93691e2fd6"/>
+			<body type="BodyDummy" id="1981414109" frozen="0">
+				<shape type="ShapeCylinder" id="634029100">
+					<radius>1</radius>
+					<height>5</height>
+				</shape>
+			</body>
+			<transform>2.38417760556e-06 0 0.999996185303 0.0 -0.999995946884 1.31129729652e-06 2.02655041903e-06 0.0 -9.53673293225e-07 -0.999998569489 3.57627470748e-07 0.0 -4.94543998756 0.0497859031153 0.311696174734 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="2137638053" name="pillar_2">
+			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
+			<surface name="cylinder" intersection="1" material="9ce875824cc0b6f9c970740499c26f93691e2fd6"/>
+			<body type="BodyDummy" id="1030755318" frozen="0">
+				<shape type="ShapeCylinder" id="647816641">
+					<radius>1</radius>
+					<height>5</height>
+				</shape>
+			</body>
+			<transform>2.74180297311e-06 0 0.999996066093 0.0 -0.999995827675 1.37090114549e-06 2.80140670839e-06 0.0 -1.40070699217e-06 -0.999998450279 -5.96045524048e-08 0.0 5.04846158789 0.0497859031154 0.311696174734 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1111438358" immovable="1" name="sphere">
+			<mesh_name>guid://7a348dcbdd71ce606f76c3e72a98b4ff62c59a75</mesh_name>
+			<surface name="sphere" intersection="1" material="fbc9263de6d73278a1305377d3c39a6a013e06c1"/>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -4.94543640566 3.34461581588 0.735630398586 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="347425733" immovable="1" name="sphere_1">
+			<mesh_name>guid://7a348dcbdd71ce606f76c3e72a98b4ff62c59a75</mesh_name>
+			<surface name="sphere" intersection="1" material="fbc9263de6d73278a1305377d3c39a6a013e06c1"/>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 5.04846359434 3.34461581588 0.735630398586 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1813072480" immovable="1" name="sphere_2">
+			<mesh_name>guid://7a348dcbdd71ce606f76c3e72a98b4ff62c59a75</mesh_name>
+			<surface name="sphere" intersection="1" material="fbc9263de6d73278a1305377d3c39a6a013e06c1"/>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0.336473594338 4.93967820705 1.26436924379 1.0</transform>
+		</node>
+	</node>
+</nodes>
