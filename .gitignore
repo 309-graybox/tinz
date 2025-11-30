@@ -1,7 +1,8 @@
 # Common junk
 /lib
 /junk
-# /bin
+/bin
+/utils
 /bin/editor_log*.txt
 /bin/log*.txt
 /layout
@@ -11,6 +12,8 @@
 /data/.thumbnails
 /data/configs/**
 /data/procedure/**
+/data/core.ung
+/data/editor2.ung
 /.thumbnails
 /source/build-*
 **/build-*
