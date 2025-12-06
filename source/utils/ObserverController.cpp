@@ -54,20 +54,20 @@ void ObserverController::init_focusing()
 	focus_radius = obj->getWorldBoundSphere().radius;
 
 	// Block, with an example for focusing specifically on instances of ObjectMeshCluster
-	if (ObjectMeshClusterPtr cluster = checked_ptr_cast<ObjectMeshCluster>(obj)) 
+	if (ObjectMeshClusterPtr cluster = checked_ptr_cast<ObjectMeshCluster>(obj))
 	{
 		int instance_index = intersection->getInstance();
 
-        MeshPtr mesh = cluster->getMeshCurrentRAM();
+		auto mesh = cluster->getMeshCurrentRAM();
 		Mat4 transform = Mat4(cluster->getMeshTransform(instance_index));
 
 		obj_position = cluster->getWorldTransform() * transform.getTranslate();
 
-		//When searching the radius, we take into account both the scale of the instance and the ObjectMeshCluster itself.
-		focus_radius = mesh->getBoundSphere().radius * cluster->getScale().max() * transform.getScale().max(); 
+		// When searching the radius, we take into account both the scale of the instance and the ObjectMeshCluster itself.
+		focus_radius = mesh->getBoundSphere().radius * cluster->getScale().max() * transform.getScale().max();
 	}
 
-	//We take the doubled radius so that the camera is at a distance from the focus point.
+	// We take the doubled radius so that the camera is at a distance from the focus point.
 	target_point = obj_position - Vec3(player_camera->getWorldDirection() * focus_radius * 2);
 }
 
@@ -88,8 +88,10 @@ void ObserverController::init_menu()
 	edit_lines[0]->setWidth(100);
 	gears_layout->addChild(edit_lines[0], Gui::ALIGN_LEFT);
 
-	edit_lines[0]->getEventFocusIn().connect(*this, [this]() { edit_text = true; });
-	edit_lines[0]->getEventFocusOut().connect(*this, [this]() {
+	edit_lines[0]->getEventFocusIn().connect(*this, [this]()
+	{ edit_text = true; });
+	edit_lines[0]->getEventFocusOut().connect(*this, [this]()
+	{
 		edit_text = false;
 		set_velocity(
 			velocity_gear,
@@ -99,7 +101,8 @@ void ObserverController::init_menu()
 	first_gear_checkbox = WidgetCheckBox::create("1");
 	first_gear_checkbox->setChecked(true);
 	gears_layout->addChild(first_gear_checkbox, Gui::ALIGN_LEFT);
-	first_gear_checkbox->getEventChanged().connect(*this, [this]() {
+	first_gear_checkbox->getEventChanged().connect(*this, [this]()
+	{
 		if (first_gear_checkbox->isChecked())
 			change_gear_text_field(VelocityGear::GEAR_FIRST);
 	});
@@ -107,7 +110,8 @@ void ObserverController::init_menu()
 	second_gear_checkbox = WidgetCheckBox::create("2");
 	first_gear_checkbox->addAttach(second_gear_checkbox);
 	gears_layout->addChild(second_gear_checkbox, Gui::ALIGN_LEFT);
-	second_gear_checkbox->getEventChanged().connect(*this, [this]() {
+	second_gear_checkbox->getEventChanged().connect(*this, [this]()
+	{
 		if (second_gear_checkbox->isChecked())
 			change_gear_text_field(VelocityGear::GEAR_SECOND);
 	});
@@ -115,7 +119,8 @@ void ObserverController::init_menu()
 	third_gear_checkbox = WidgetCheckBox::create("3");
 	first_gear_checkbox->addAttach(third_gear_checkbox);
 	gears_layout->addChild(third_gear_checkbox, Gui::ALIGN_LEFT);
-	third_gear_checkbox->getEventChanged().connect(*this, [this]() {
+	third_gear_checkbox->getEventChanged().connect(*this, [this]()
+	{
 		if (third_gear_checkbox->isChecked())
 			change_gear_text_field(VelocityGear::GEAR_THIRD);
 	});
@@ -134,13 +139,16 @@ void ObserverController::init_menu()
 	edit_lines[1]->setValidator(3);
 	edit_lines[1]->setWidth(100);
 	position_layout->addChild(edit_lines[1], Gui::ALIGN_LEFT);
-	edit_lines[1]->getEventFocusIn().connect(*this, [this]() { edit_text = true; });
-	edit_lines[1]->getEventKeyPressed().connect(*this, [this]() {
+	edit_lines[1]->getEventFocusIn().connect(*this, [this]()
+	{ edit_text = true; });
+	edit_lines[1]->getEventKeyPressed().connect(*this, [this]()
+	{
 		Scalar value = String::isEmpty(edit_lines[1]->getText()) ? DEFAULT_POSITION_VALUE : String::atof(edit_lines[1]->getText());
 		Vec3 position = player_camera->getWorldPosition();
 		player_camera->setWorldPosition(Vec3(value, position.y, position.z));
 	});
-	edit_lines[1]->getEventFocusOut().connect(*this, [this]() {
+	edit_lines[1]->getEventFocusOut().connect(*this, [this]()
+	{
 		edit_text = false;
 		if (String::isEmpty(edit_lines[1]->getText()))
 			edit_lines[1]->setText(String::ftoa(DEFAULT_POSITION_VALUE));
@@ -153,13 +161,16 @@ void ObserverController::init_menu()
 	edit_lines[2]->setValidator(3);
 	edit_lines[2]->setWidth(100);
 	position_layout->addChild(edit_lines[2], Gui::ALIGN_LEFT);
-	edit_lines[2]->getEventFocusIn().connect(*this, [this]() { edit_text = true; });
-	edit_lines[2]->getEventKeyPressed().connect(*this, [this]() {
+	edit_lines[2]->getEventFocusIn().connect(*this, [this]()
+	{ edit_text = true; });
+	edit_lines[2]->getEventKeyPressed().connect(*this, [this]()
+	{
 		Scalar value = String::isEmpty(edit_lines[2]->getText()) ? DEFAULT_POSITION_VALUE : String::atof(edit_lines[2]->getText());
 		Vec3 position = player_camera->getWorldPosition();
 		player_camera->setWorldPosition(Vec3(position.x, value, position.z));
 	});
-	edit_lines[2]->getEventFocusOut().connect(*this, [this]() {
+	edit_lines[2]->getEventFocusOut().connect(*this, [this]()
+	{
 		edit_text = false;
 		if (String::isEmpty(edit_lines[2]->getText()))
 			edit_lines[2]->setText(String::ftoa(DEFAULT_POSITION_VALUE));
@@ -172,13 +183,16 @@ void ObserverController::init_menu()
 	edit_lines[3]->setValidator(3);
 	edit_lines[3]->setWidth(100);
 	position_layout->addChild(edit_lines[3], Gui::ALIGN_LEFT);
-	edit_lines[3]->getEventFocusIn().connect(*this, [this]() { edit_text = true; });
-	edit_lines[3]->getEventKeyPressed().connect(*this, [this]() {
+	edit_lines[3]->getEventFocusIn().connect(*this, [this]()
+	{ edit_text = true; });
+	edit_lines[3]->getEventKeyPressed().connect(*this, [this]()
+	{
 		Scalar value = String::isEmpty(edit_lines[3]->getText()) ? DEFAULT_POSITION_VALUE : String::atof(edit_lines[3]->getText());
 		Vec3 position = player_camera->getWorldPosition();
 		player_camera->setWorldPosition(Vec3(position.x, position.y, value));
 	});
-	edit_lines[3]->getEventFocusOut().connect(*this, [this]() {
+	edit_lines[3]->getEventFocusOut().connect(*this, [this]()
+	{
 		edit_text = false;
 		if (String::isEmpty(edit_lines[3]->getText()))
 			edit_lines[3]->setText(String::ftoa(DEFAULT_POSITION_VALUE));
@@ -189,7 +203,7 @@ void ObserverController::update()
 {
 	if (Console::isActive())
 		return;
-	if (edit_text)	
+	if (edit_text)
 	{
 		update_edit_field_submission();
 		return;
@@ -271,7 +285,7 @@ void ObserverController::update_panning()
 
 	float current_acceleration = Input::isKeyPressed(_acceleration_key) ? get_velocity() : get_velocity_acceleration();
 
-	player_camera->translate(Vec3(float( - mouse_delta.x), float(mouse_delta.y), 0.0f) * current_acceleration * ControlsApp::getMouseSensitivity() * panning_rail_scale);
+	player_camera->translate(Vec3(float(-mouse_delta.x), float(mouse_delta.y), 0.0f) * current_acceleration * ControlsApp::getMouseSensitivity() * panning_rail_scale);
 }
 
 void ObserverController::update_focusing()
@@ -324,44 +338,65 @@ void ObserverController::end_focusing()
 }
 
 // This method sets up the state transitions and associated actions for each movement state of the player.
-// Each state (e.g., IDLE, SPECTATOR, FOCUSING, etc.) is mapped to a set of conditions for state transitions, 
+// Each state (e.g., IDLE, SPECTATOR, FOCUSING, etc.) is mapped to a set of conditions for state transitions,
 // as well as initialization, update, and end functions for when the state is entered or exited.
 void ObserverController::create_state_map()
 {
 	state_map[PlayerMovementState::IDLE] = {
-		{{[this]() { return try_focusing(); }, PlayerMovementState::FOCUSING},
-			{[this]() { return try_enter_spectator_mode(); }, PlayerMovementState::SPECTATOR},
-			{[this]() { return try_enter_rail_mode(); }, PlayerMovementState::RAIL},
-			{[this]() { return try_enter_panning_mode(); }, PlayerMovementState::PANNING}},
+		{{[this]()
+	{ return try_focusing(); }, PlayerMovementState::FOCUSING},
+			{[this]()
+	{ return try_enter_spectator_mode(); }, PlayerMovementState::SPECTATOR},
+			{[this]()
+	{ return try_enter_rail_mode(); }, PlayerMovementState::RAIL},
+			{[this]()
+	{ return try_enter_panning_mode(); }, PlayerMovementState::PANNING}},
 		nullptr,
 		nullptr,
 		nullptr};
 
 	state_map[PlayerMovementState::SPECTATOR] = {
-		{{[this]() { return !try_enter_spectator_mode(); }, PlayerMovementState::IDLE}},
-		[this]() { init_spectator(); },
-		[this]() { end_spectator(); },
-		[this]() { update_spectator(); }};
+		{{[this]()
+	{ return !try_enter_spectator_mode(); }, PlayerMovementState::IDLE}},
+		[this]()
+	{ init_spectator(); },
+		[this]()
+	{ end_spectator(); },
+		[this]()
+	{ update_spectator(); }};
 
 	state_map[PlayerMovementState::RAIL] = {
-		{{[this]() { return try_exit_rail_mode(); }, PlayerMovementState::IDLE}},
+		{{[this]()
+	{ return try_exit_rail_mode(); }, PlayerMovementState::IDLE}},
 		nullptr,
 		nullptr,
-		[this] { update_rail(); }};
+		[this]
+	{ update_rail(); }};
 	state_map[PlayerMovementState::FOCUSING] = {
-		{{[this]() { return try_end_focusing; }, PlayerMovementState::IDLE},
-			{[this]() { return try_enter_spectator_mode(); }, PlayerMovementState::SPECTATOR},
-			{[this]() { return try_enter_rail_mode(); }, PlayerMovementState::RAIL},
-			{[this]() { return try_enter_panning_mode(); }, PlayerMovementState::PANNING}},
-		[this]() { init_focusing(); },
-		[this]() { end_focusing(); },
-		[this]() { update_focusing(); }};
+		{{[this]()
+	{ return try_end_focusing; }, PlayerMovementState::IDLE},
+			{[this]()
+	{ return try_enter_spectator_mode(); }, PlayerMovementState::SPECTATOR},
+			{[this]()
+	{ return try_enter_rail_mode(); }, PlayerMovementState::RAIL},
+			{[this]()
+	{ return try_enter_panning_mode(); }, PlayerMovementState::PANNING}},
+		[this]()
+	{ init_focusing(); },
+		[this]()
+	{ end_focusing(); },
+		[this]()
+	{ update_focusing(); }};
 
 	state_map[PlayerMovementState::PANNING] = {
-		{{[this]() { return try_exit_panning_mode(); }, PlayerMovementState::IDLE}},
-		[this]() { init_panning(); },
-		[this]() { end_panning(); },
-		[this]() { update_panning(); }};
+		{{[this]()
+	{ return try_exit_panning_mode(); }, PlayerMovementState::IDLE}},
+		[this]()
+	{ init_panning(); },
+		[this]()
+	{ end_panning(); },
+		[this]()
+	{ update_panning(); }};
 }
 
 void ObserverController::switch_state(PlayerMovementState target_state)

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.19.0.3">
+<asset version="2.20.0.0">
 	<guid>49f2add7e766b39fafef4a40dbfae05752fca482</guid>
 	<type>node</type>
-	<hash>8b74ae9a</hash>
+	<hash>484f9138</hash>
 	<runtimes>
 		<runtime id="49f2add7e766b39fafef4a40dbfae05752fca482" name="target.node" link="0" type="3"/>
 	</runtimes>

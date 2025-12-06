@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.20.0.0">
+	<node type="NodeDummy" id="3099437" name="global_shortcuts_handler">
+		<properties>
+			<property parent="123a4396bd824163ab2292edb122736473126cfd" guid="fe9efdc945ce7e3472e177392c38bede0ee2ffcf"/>
+		</properties>
+		<transform>1.0000000596 0 0 0.0 0 1.0000000596 0 0.0 0 0 1 0.0 -6.83873639569 4.91478501735 0 1.0</transform>
+	</node>
+</nodes>

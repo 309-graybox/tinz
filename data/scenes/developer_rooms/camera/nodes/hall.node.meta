@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.19.0.3">
+<asset version="2.20.0.0">
 	<guid>ed6ff00672c1c7d85be1b6454da036f16a25f13b</guid>
 	<type>node</type>
-	<hash>85f56063</hash>
+	<hash>73647bd7</hash>
 	<runtimes>
 		<runtime id="ed6ff00672c1c7d85be1b6454da036f16a25f13b" name="hall.node" link="0" type="3"/>
 	</runtimes>

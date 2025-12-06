@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<world version="2.19.0.3">
+<world version="2.20.0.0">
 	<render_settings_path>guid://92a0ee7917704584f2b913132a497d56e78094bd</render_settings_path>
 	<data>
 		<unigine_editor>
@@ -9,7 +9,6 @@
 		</unigine_editor>
 	</data>
 	<sound>
-		<enabled>1</enabled>
 		<sound_manager_load_samples>0</sound_manager_load_samples>
 		<sound_manager_sample_static_memory>64</sound_manager_sample_static_memory>
 		<sound_manager_sample_stream_memory>16</sound_manager_sample_stream_memory>
@@ -355,6 +354,7 @@
 		<render_indirect_specular_denoise_mask_enabled>1</render_indirect_specular_denoise_mask_enabled>
 		<render_indirect_specular_denoise_threshold>1</render_indirect_specular_denoise_threshold>
 		<render_indirect_specular_denoise_threshold_ao>0.100000001</render_indirect_specular_denoise_threshold_ao>
+		<render_indirect_specular_normalization>0</render_indirect_specular_normalization>
 		<render_indirect_specular_temporal_filtering_color_clamping_intensity>1</render_indirect_specular_temporal_filtering_color_clamping_intensity>
 		<render_indirect_specular_temporal_filtering_color_clamping_intensity_ao>1</render_indirect_specular_temporal_filtering_color_clamping_intensity_ao>
 		<render_indirect_specular_temporal_filtering_color_clamping_velocity_threshold>100</render_indirect_specular_temporal_filtering_color_clamping_velocity_threshold>
@@ -398,7 +398,7 @@
 		<render_landscape_terrain_vt_detail_level_by_angle>0.899999976</render_landscape_terrain_vt_detail_level_by_angle>
 		<render_landscape_terrain_vt_filtering>1</render_landscape_terrain_vt_filtering>
 		<render_landscape_terrain_vt_hash_number_mistakes>2</render_landscape_terrain_vt_hash_number_mistakes>
-		<render_landscape_terrain_vt_hash_size>1000000</render_landscape_terrain_vt_hash_size>
+		<render_landscape_terrain_vt_hash_size>131072</render_landscape_terrain_vt_hash_size>
 		<render_landscape_terrain_vt_memory_size>0.400000006</render_landscape_terrain_vt_memory_size>
 		<render_landscape_terrain_vt_sampler_feedback_buffer_resolution>80 60</render_landscape_terrain_vt_sampler_feedback_buffer_resolution>
 		<render_landscape_terrain_vt_sampler_feedback_screen_resolution>1</render_landscape_terrain_vt_sampler_feedback_screen_resolution>
@@ -470,6 +470,7 @@
 		<render_pre_post_materials_enabled>1</render_pre_post_materials_enabled>
 		<render_reflection_distance>1e+09</render_reflection_distance>
 		<render_reflection_dynamic>1</render_reflection_dynamic>
+		<render_reflection_dynamic_alpha_fade>0</render_reflection_dynamic_alpha_fade>
 		<render_reflection_dynamic_roughness_offset>0</render_reflection_dynamic_roughness_offset>
 		<render_reflection_lods>1</render_reflection_lods>
 		<render_refraction>1</render_refraction>
@@ -499,6 +500,11 @@
 		<render_shadows_world_cascades_culling_clusters>1</render_shadows_world_cascades_culling_clusters>
 		<render_shadows_world_lerp_cascades>1</render_shadows_world_lerp_cascades>
 		<render_sharpen>1</render_sharpen>
+		<render_sharpen_blur_color_threshold>0.200000003</render_sharpen_blur_color_threshold>
+		<render_sharpen_blur_dark_color_threshold_bias>0.0500000007</render_sharpen_blur_dark_color_threshold_bias>
+		<render_sharpen_blur_radius>1</render_sharpen_blur_radius>
+		<render_sharpen_blur_sigma>1</render_sharpen_blur_sigma>
+		<render_sharpen_diagonal_samples>1</render_sharpen_diagonal_samples>
 		<render_sharpen_intensity>0.5</render_sharpen_intensity>
 		<render_show_texture_resolution_blend>0.5</render_show_texture_resolution_blend>
 		<render_show_texture_resolution_streaming_accounting_mode>0</render_show_texture_resolution_streaming_accounting_mode>
@@ -571,7 +577,6 @@
 		<render_ssr_visibility_roughness_min>0.5</render_ssr_visibility_roughness_min>
 		<render_ssrtgi_fast_tracing>1</render_ssrtgi_fast_tracing>
 		<render_ssrtgi_increased_accuracy>1</render_ssrtgi_increased_accuracy>
-		<render_ssrtgi_noise_step>1</render_ssrtgi_noise_step>
 		<render_ssrtgi_num_rays>2</render_ssrtgi_num_rays>
 		<render_ssrtgi_num_steps>3</render_ssrtgi_num_steps>
 		<render_ssrtgi_preset>medium</render_ssrtgi_preset>
@@ -614,6 +619,9 @@
 		<render_stereo_planar_reflections_per_eye>0</render_stereo_planar_reflections_per_eye>
 		<render_streaming_animations_life_time>-1</render_streaming_animations_life_time>
 		<render_streaming_budget_loading>1</render_streaming_budget_loading>
+		<render_streaming_cache_ram>-1</render_streaming_cache_ram>
+		<render_streaming_cache_vram>-1</render_streaming_cache_vram>
+		<render_streaming_committed_memory_overcommit>1</render_streaming_committed_memory_overcommit>
 		<render_streaming_free_space_ram>1024</render_streaming_free_space_ram>
 		<render_streaming_free_space_vram>512</render_streaming_free_space_vram>
 		<render_streaming_meshes_mode_ram>1</render_streaming_meshes_mode_ram>
@@ -728,9 +736,6 @@
 		<frozen_linear_velocity>0.0199999996</frozen_linear_velocity>
 		<frozen_angular_velocity>0.0199999996</frozen_angular_velocity>
 	</physics>
-	<game>
-		<enabled>0</enabled>
-	</game>
 	<editor>
 		<node type="NodeLayer" id="1927067598" name="geometry_layer">
 			<layer>guid://934db22ea9a461aaacfb8a5ee931d10c9ab2f1b8</layer>
@@ -747,6 +752,10 @@
 		<node type="NodeLayer" id="1850185643" name="player_layer">
 			<layer>guid://414010aa6ac6cf193bc290851500f656096989d1</layer>
 			<transform>1.00000011921 0 0 0.0 0 0.999999880791 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		</node>
+		<node type="NodeLayer" id="1668500170" name="global_logic">
+			<layer>guid://a217074d9ffbbfb7ba2bac7bfa25e325be333085</layer>
+			<transform>0.999999880791 0 0 0.0 0 0.999999880791 0 0.0 0 0 0.999999940395 0.0 0 0 0 1.0</transform>
 		</node>
 	</editor>
 	<console>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.19.0.3">
+<asset version="2.20.0.0">
 	<guid>3eaf348f5c3c98a2f8253f99e39b2424233a2133</guid>
 	<type>render_settings</type>
-	<hash>6ea2e459</hash>
+	<hash>492134d4</hash>
 	<runtimes>
 		<runtime id="3eaf348f5c3c98a2f8253f99e39b2424233a2133" name="template_medium.render" link="0"/>
 	</runtimes>

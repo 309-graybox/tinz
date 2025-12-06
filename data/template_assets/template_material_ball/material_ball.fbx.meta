@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.19.0.3">
+<asset version="2.20.0.0">
 	<guid>e40b45ab1c769f0e7a329b15bfd83170f20c160f</guid>
 	<type>fbx</type>
-	<hash>26f580f3</hash>
+	<hash>77b8236</hash>
 	<runtimes>
 		<runtime id="e40b45ab1c769f0e7a329b15bfd83170f20c160f" name="material_ball.fbx" link="0"/>
 		<runtime id="2bdf2610177e422f32ce09c2dcbabe396d465244" name="material_ball.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">53eb0674</parameter>
+				<parameter type="string" name="id">4626fa1c</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="d66c38d3cb2ce8161c55807d4a2d47b80c46e7b7" name="material_ball.mesh" link="2" type="1">
 			<parameters>
-				<parameter type="string" name="id">3607a6c1</parameter>
+				<parameter type="string" name="id">894ec28e</parameter>
 			</parameters>
 		</runtime>
 	</runtimes>
@@ -60,6 +60,7 @@
 		<parameter type="string" name="up_axis">default</parameter>
 		<parameter type="bool" name="use_instances">1</parameter>
 		<parameter type="int" name="uv_ch">1</parameter>
+		<parameter type="string" name="uv_unwrap_version">xatlas_v1</parameter>
 		<parameter type="bool" name="vertex_cache">1</parameter>
 		<parameter type="string" name="workflow">metalness</parameter>
 	</parameters>

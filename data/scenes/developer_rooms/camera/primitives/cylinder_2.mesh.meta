@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.19.0.3">
+<asset version="2.20.0.0">
 	<guid>15b2b92e7fb5d32666ebd48701f19aa741ac2f1a</guid>
 	<type>mesh</type>
-	<hash>e6c33fd</hash>
+	<hash>937b5ba7</hash>
 	<runtimes>
-		<runtime id="15b2b92e7fb5d32666ebd48701f19aa741ac2f1a" name="cylinder.mesh" link="0" type="1"/>
+		<runtime id="15b2b92e7fb5d32666ebd48701f19aa741ac2f1a" name="cylinder_2.mesh" link="0" type="1"/>
 	</runtimes>
 	<parameters>
 		<parameter type="string" name="lightmaps"/>

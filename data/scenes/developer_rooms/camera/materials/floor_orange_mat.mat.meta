@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.19.0.3">
+<asset version="2.20.0.0">
 	<guid>fbc9263de6d73278a1305377d3c39a6a013e06c1</guid>
 	<type>material</type>
-	<hash>8445dfb2</hash>
+	<hash>10c1e333</hash>
 	<runtimes>
 		<runtime id="fbc9263de6d73278a1305377d3c39a6a013e06c1" name="floor_orange_mat" link="0" type="5"/>
 	</runtimes>

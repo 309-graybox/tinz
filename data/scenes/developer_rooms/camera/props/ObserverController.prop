@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<property version="2.19.0.3" name="ObserverController" manual="1" parent_name="node_base">
+<property version="2.20.0.0" name="ObserverController" manual="1" parent_name="node_base">
 	<parameter name="focus_key" type="string" title="Focusing Key" tooltip="Key to focus the camera on the object, zooming in for a closer view." group="Input">F</parameter>
 	<parameter name="toggle_camera_menu" type="string" title="Toggle Camera Menu" tooltip="Key to toggle the visibility of the camera menu." group="Input">F3</parameter>
 	<parameter name="alt_camera_mode" type="string" title="Camera Control Modifier" tooltip="Modifier key for switching between different camera control modes." group="Input">ANY_ALT</parameter>

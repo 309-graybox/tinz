@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.19.0.3">
+<asset version="2.20.0.0">
 	<guid>0000000d000000ae000000da0000000e00000eca</guid>
 	<type>world</type>
-	<hash>a7a5c0db</hash>
+	<hash>6f64e13d</hash>
 	<runtimes>
 		<runtime id="0000000d000000ae000000da0000000e00000eca" name="tinz.world" link="0"/>
 	</runtimes>

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.19.0.3">
+<asset version="2.20.0.0">
 	<guid>4e16f088d4b75a47e8a5d2fab9544611114a483c</guid>
 	<type>fbx</type>
-	<hash>aeff1c62</hash>
+	<hash>2cb42429</hash>
 	<runtimes>
 		<runtime id="4e16f088d4b75a47e8a5d2fab9544611114a483c" name="ramp_0.fbx" link="0"/>
 		<runtime id="c3d8866b946f68ce65f759d5bd966130457b02cf" name="ramp_0.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">6b6a5c3b</parameter>
+				<parameter type="string" name="id">e4ca4a8b</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="13c13655873193b046fb934f769de862de9ccc59" name="ramp_0.mesh" link="2" type="1">
 			<parameters>
-				<parameter type="string" name="id">cd468326</parameter>
+				<parameter type="string" name="id">d94cd0a9</parameter>
 			</parameters>
 		</runtime>
 	</runtimes>
@@ -52,7 +52,7 @@
 		<parameter type="int" name="num_lods">3</parameter>
 		<parameter type="string" name="prefix_materials"/>
 		<parameter type="string" name="resolution">256</parameter>
-		<parameter type="float" name="scale">1</parameter>
+		<parameter type="float" name="scale">100</parameter>
 		<parameter type="bool" name="skip_empty_nodes">0</parameter>
 		<parameter type="int" name="smooth_animation_size">0</parameter>
 		<parameter type="bool" name="unwrap_uv_ch_0">0</parameter>
@@ -60,6 +60,7 @@
 		<parameter type="string" name="up_axis">default</parameter>
 		<parameter type="bool" name="use_instances">1</parameter>
 		<parameter type="int" name="uv_ch">1</parameter>
+		<parameter type="string" name="uv_unwrap_version">xatlas_v1</parameter>
 		<parameter type="bool" name="vertex_cache">1</parameter>
 		<parameter type="string" name="workflow">metalness</parameter>
 	</parameters>

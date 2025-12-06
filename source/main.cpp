@@ -1,3 +1,4 @@
+#include <UnigineInit.h>
 #include <UnigineEngine.h>
 
 #include "AppEditorLogic.h"
