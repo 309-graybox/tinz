@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.20.0.0">
+	<guid>f1b1912ea00b6919aec49f9719b027e32eaf8cbc</guid>
+	<type>property</type>
+	<hash>21dcf623</hash>
+	<runtimes>
+		<runtime id="f1b1912ea00b6919aec49f9719b027e32eaf8cbc" name="ThirdPersonCamera" link="0" type="4"/>
+	</runtimes>
+</asset>

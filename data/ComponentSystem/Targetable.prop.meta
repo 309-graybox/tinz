@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.20.0.0">
+	<guid>be543ef8fd139ac76a2b9b615a43260014c7b491</guid>
+	<type>property</type>
+	<hash>89e0f18a</hash>
+	<runtimes>
+		<runtime id="be543ef8fd139ac76a2b9b615a43260014c7b491" name="Targetable" link="0" type="4"/>
+	</runtimes>
+</asset>

@@ -1,18 +1,25 @@
 #include "AppWorldLogic.h"
-#include "UnigineString.h"
+#include <UnigineConsole.h>
+#include <UnigineVisualizer.h>
+
+using namespace Unigine;
 
 // World logic, it takes effect only when the world is loaded.
 // These methods are called right after corresponding world script's (UnigineScript) methods.
 
 AppWorldLogic::AppWorldLogic()
-{}
+{
+}
 
 AppWorldLogic::~AppWorldLogic()
-{}
+{
+}
 
 int AppWorldLogic::init()
 {
 	// Write here code to be called on world initialization: initialize resources for your world scene during the world start.
+	Console::setOnscreen(true);
+	Visualizer::setEnabled(true);
 	return 1;
 }
 
@@ -47,6 +54,8 @@ int AppWorldLogic::updatePhysics()
 int AppWorldLogic::shutdown()
 {
 	// Write here code to be called on world shutdown: delete resources that were created during world script execution to avoid memory leaks.
+	Visualizer::setEnabled(false);
+	Console::setOnscreen(false);
 	return 1;
 }
 

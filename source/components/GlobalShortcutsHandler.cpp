@@ -1,5 +1,6 @@
 #include <UnigineComponentSystem.h>
 #include <UnigineInput.h>
+#include <UnigineConsole.h>
 
 using namespace Unigine;
 
@@ -12,6 +13,9 @@ public:
 private:
 	void update()
 	{
+		if (Console::isActive())
+			return;
+
 		if (!Input::isModifierEnabled(Input::MODIFIER_LEFT_CTRL))
 			return;
 
