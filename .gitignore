@@ -1,7 +1,7 @@
 # Common junk
 /lib
 /junk
-/bin
+/bin/*
 /utils
 /include
 /launch_*.bat
@@ -9,6 +9,7 @@
 /bin/log*.txt
 /layout
 .idea
+!/bin/plugins/Ryutp/*
 # Editor junk
 /assets
 /data/.thumbnails
