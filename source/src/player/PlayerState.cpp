@@ -2,14 +2,9 @@
 #include <UnigineLog.h>
 
 using namespace Unigine;
+using namespace Unigine::Math;
 
 PlayerState::~PlayerState() = default;
-
-void PlayerState::onInit(PlayerContext &ctx)
-{
-	Log::message("Init state %s\n", getStateName());
-	onInitImpl(ctx);
-}
 
 void PlayerState::onEnter(PlayerContext &ctx)
 {
@@ -19,7 +14,6 @@ void PlayerState::onEnter(PlayerContext &ctx)
 
 void PlayerState::onUpdate(PlayerContext &ctx)
 {
-	// Log::message("Update state %s\n", getStateName());
 	onUpdateImpl(ctx);
 }
 
@@ -27,6 +21,23 @@ void PlayerState::onExit(PlayerContext &ctx)
 {
 	Log::message("Exit state %s\n", getStateName());
 	onExitImpl(ctx);
+}
+
+PlayerState *PlayerState::transition()
+{
+	PlayerState *newState = nullptr;
+	float maxScore = -1e6;
+	for (auto &child : _children)
+	{
+		float childScore = child->getScore();
+		if (childScore >= 0.0f && childScore > maxScore)
+		{
+			newState = child;
+			maxScore = childScore;
+		}
+	}
+
+	return newState ? newState->transition() : this;
 }
 
 PlayerState *PlayerState::getParent() noexcept
@@ -78,4 +89,22 @@ void PlayerState::removeChild(PlayerState *child)
 const Unigine::Vector<PlayerState *> &PlayerState::getChildren() const noexcept
 {
 	return _children;
+}
+
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+PlayerState *PlayerStateRoot::transition()
+{
+	PlayerState *newState = nullptr;
+	float maxScore = -1e6;
+	for (auto &child : _children)
+	{
+		float childScore = child->getScore();
+		if (childScore > maxScore)
+		{
+			newState = child;
+			maxScore = childScore;
+		}
+	}
+
+	return newState ? newState->transition() : this;
 }

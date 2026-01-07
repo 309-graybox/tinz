@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.20.0.0">
+	<guid>f27aaa2642648c9e04b70720482cc5518b455021</guid>
+	<type>animation</type>
+	<hash>5e7ebe75</hash>
+	<runtimes>
+		<runtime id="f27aaa2642648c9e04b70720482cc5518b455021" name="Crouching Idle.anim" link="0" type="2">
+			<custom_parameters>
+				<parameter type="string" name="anim_mesh"/>
+			</custom_parameters>
+		</runtime>
+	</runtimes>
+</asset>

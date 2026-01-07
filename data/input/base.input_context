@@ -100,5 +100,15 @@
 				</Trigger>
 			</Triggers>
 		</Mapping>
+		<Mapping>
+			<Action>crouch</Action>
+			<Key>LeftCtrl</Key>
+			<Modifiers/>
+			<Triggers>
+				<Trigger type="Pressed">
+					<parameter name="treshold">0.5</parameter>
+				</Trigger>
+			</Triggers>
+		</Mapping>
 	</Mappings>
 </EIContext>

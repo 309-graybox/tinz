@@ -169,7 +169,6 @@ source/csharp/samples/**/obj
 /data/planets
 /data/iss
 /data/space
-/data/character
 /data/layers
 /data/tracks
 /data/ui

@@ -35,12 +35,11 @@ public:
 	void update()
 	{
 		for (int i = 0; i < _meshSkinned->getNumLayers(); ++i)
-			_meshSkinned->setLayerFrame(0, Unigine::Game::getTime() * 30.0f);
+			_meshSkinned->setLayerFrame(i, Unigine::Game::getTime() * 30.0f);
 
 		_weight = Unigine::Math::clamp(_weight + Unigine::Game::getIFps(), 0.0f, 1.0f);
 
 		_meshSkinned->lerpLayer(_proceduralLayer, _layer0, _layer, _weight);
-		// Unigine::Log::error("------ Lerp %i %i %i %f\n", _proceduralLayer, _layer0, _layer, _weight);
 	}
 
 private:
@@ -58,14 +57,16 @@ public:
 	virtual ~PlayerState();
 
 	virtual const char *getStateName() const = 0;
+	virtual float getScore() const = 0;
 
 	int getAnimationLayer() const noexcept { return _animationLayer; }
 	void setAnimationLayer(int layer) noexcept { _animationLayer = layer; }
 
-	void onInit(PlayerContext &ctx);
 	void onEnter(PlayerContext &ctx);
 	void onUpdate(PlayerContext &ctx);
 	void onExit(PlayerContext &ctx);
+
+	virtual PlayerState *transition();
 
 	PlayerState *getParent() noexcept;
 	const PlayerState *getParent() const noexcept;
@@ -77,14 +78,28 @@ public:
 	const Unigine::Vector<PlayerState *> &getChildren() const noexcept;
 
 protected:
-	virtual void onInitImpl(PlayerContext &ctx) {}
-	virtual void onEnterImpl(PlayerContext &ctx) {}
+	virtual void onEnterImpl(PlayerContext &ctx)
+	{
+		auto l = getAnimationLayer();
+		if (l != -1)
+			ctx.setLayer(l);
+	}
 	virtual void onUpdateImpl(PlayerContext &ctx) {}
 	virtual void onExitImpl(PlayerContext &ctx) {}
 
-private:
-	PlayerState *_parent;
+protected:
+	PlayerState *_parent = nullptr;
 	Unigine::Vector<PlayerState *> _children;
 
 	int _animationLayer = -1;
+};
+
+
+class PlayerStateRoot: public PlayerState
+{
+public:
+	const char *getStateName() const override { return "Root"; }
+	float getScore() const override { return -1e6f; }
+
+	PlayerState *transition() override;
 };

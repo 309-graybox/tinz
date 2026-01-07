@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.20.0.0">
+	<guid>1982d3d6f73a186e446c89446a4937cdf36e26c9</guid>
+	<type>animation</type>
+	<hash>500c044</hash>
+	<runtimes>
+		<runtime id="1982d3d6f73a186e446c89446a4937cdf36e26c9" name="Breathing Idle.anim" link="0" type="2">
+			<custom_parameters>
+				<parameter type="string" name="anim_mesh"/>
+				<parameter type="float" name="cur_time">260.820007</parameter>
+			</custom_parameters>
+		</runtime>
+	</runtimes>
+</asset>

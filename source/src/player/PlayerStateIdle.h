@@ -1,14 +1,12 @@
 #pragma once
 #include "PlayerState.h"
+#include <plugins/Ryutp/EnhancedInput/EnhancedInput.h>
 
 class PlayerStateIdle: public PlayerState
 {
 public:
-	const char *getStateName() const override { return "Idle"; }
+	PlayerStateIdle(PlayerContext &ctx);
 
-protected:
-	void onInitImpl(PlayerContext &ctx) override;
-	void onEnterImpl(PlayerContext &ctx) override;
-	void onUpdateImpl(PlayerContext &ctx) override;
-	void onExitImpl(PlayerContext &ctx) override;
+	const char *getStateName() const override { return "Idle"; }
+	float getScore() const override;
 };

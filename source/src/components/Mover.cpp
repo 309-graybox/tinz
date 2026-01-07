@@ -6,6 +6,10 @@
 #include "abilities/AbilityJump.h"
 #include "abilities/AbilityDash.h"
 #include <player/PlayerStateIdle.h>
+#include <player/PlayerStateWalk.h>
+#include <player/PlayerStateRun.h>
+#include <player/PlayerStateCrouchIdle.h>
+#include <player/PlayerStateCrouchWalk.h>
 #include <plugins/Ryutp/EnhancedInput/EnhancedInput.h>
 
 using namespace Unigine;
@@ -39,45 +43,37 @@ private:
 	{
 		_movement = 0;
 		auto ms = checked_ptr_cast<ObjectMeshSkinned>(node);
+		auto base = ms->addLayer();
+		ms->setLayerAnimationFilePath(base, "character/animations/Breathing Idle.anim");
+		ms->setLayer(base, true, 1.0f);
+
 		_ctx.setMeshSkinned(ms);
-		_rootState = new PlayerStateIdle;
-		_rootState->onInit(_ctx);
 
-		_rootState->onEnter(_ctx);
+		_rootState = new PlayerStateRoot;
+		_currentState = _rootState;
 
-		auto ei = EISystem::get();
+		// Stand
+		{
+			auto stateIdle = new PlayerStateIdle(_ctx);
+			_rootState->addChild(stateIdle);
 
-		auto actionReg = ei->getActionRegistry();
-		_actionMove = ei->getActionRegistry()->create("move");
-		_actionSprint = ei->getActionRegistry()->create("sprint");
-		_actionJump = ei->getActionRegistry()->create("jump");
-		_actionDash = ei->getActionRegistry()->create("dash");
-		_contextBase = ei->getContextRegistry()->create("base");
+			auto stateWalk = new PlayerStateWalk(_ctx, "move");
+			stateIdle->addChild(stateWalk);
 
-		ei->addContext(_contextBase);
+			auto stateRun = new PlayerStateRun(_ctx, "sprint");
+			stateWalk->addChild(stateRun);
+		}
 
-		ei->bind(_actionMove, eTriggerState::Triggered, [&](EIActionValueInstance inst) {
-			auto v = inst.getValue().value;
-			_input.forward = v.y > 0;
-			_input.backward = v.y < 0;
-			_input.left = v.x < 0;
-			_input.right = v.x > 0;
-		});
+		// Crouch
+		{
+			auto stateCrouchIdle = new PlayerStateCrouchIdle(_ctx, "crouch");
+			_rootState->addChild(stateCrouchIdle);
 
-		ei->bind(_actionSprint, eTriggerState::Triggered, [&](EIActionValueInstance inst) {
-			auto v = inst.getValue().value;
-			_input.sprint = !Math::compare(v.x, 0.0f);
-		});
+			auto stateCrouchWalk = new PlayerStateCrouchWalk(_ctx, "move");
+			stateCrouchIdle->addChild(stateCrouchWalk);
+		}
 
-		ei->bind(_actionJump, eTriggerState::Triggered, [&](EIActionValueInstance inst) {
-			auto v = inst.getValue().value;
-			_input.up = !Math::compare(v.x, 0.0f);
-		});
-
-		ei->bind(_actionDash, eTriggerState::Triggered, [&](EIActionValueInstance inst) {
-			auto v = inst.getValue().value;
-			_input.dash = !Math::compare(v.x, 0.0f);
-		});
+		initEI();
 	}
 
 	void update()
@@ -86,7 +82,15 @@ private:
 			return;
 
 		_ctx.update();
-		_rootState->onUpdate(_ctx);
+
+		_currentState->onUpdate(_ctx);
+		auto newState = _rootState->transition();
+		if (newState != _currentState)
+		{
+			_currentState->onExit(_ctx);
+			_currentState = newState;
+			_currentState->onEnter(_ctx);
+		}
 	}
 
 	void updatePhysics()
@@ -129,6 +133,44 @@ private:
 	}
 
 private:
+	void initEI()
+	{
+		auto ei = EISystem::get();
+
+		auto actionReg = ei->getActionRegistry();
+		_actionMove = actionReg->create("move");
+		_actionSprint = actionReg->create("sprint");
+		_actionJump = actionReg->create("jump");
+		_actionDash = actionReg->create("dash");
+		_contextBase = ei->getContextRegistry()->create("base");
+
+		ei->addContext(_contextBase);
+
+		ei->bind(_actionMove, eTriggerState::Triggered, [&](EIActionValueInstance inst) {
+			auto v = inst.getValue().value;
+			_input.forward = v.y > 0;
+			_input.backward = v.y < 0;
+			_input.left = v.x < 0;
+			_input.right = v.x > 0;
+		});
+
+		ei->bind(_actionSprint, eTriggerState::Triggered, [&](EIActionValueInstance inst) {
+			auto v = inst.getValue().value;
+			_input.sprint = !Math::compare(v.x, 0.0f);
+		});
+
+		ei->bind(_actionJump, eTriggerState::Triggered, [&](EIActionValueInstance inst) {
+			auto v = inst.getValue().value;
+			_input.up = !Math::compare(v.x, 0.0f);
+		});
+
+		ei->bind(_actionDash, eTriggerState::Triggered, [&](EIActionValueInstance inst) {
+			auto v = inst.getValue().value;
+			_input.dash = !Math::compare(v.x, 0.0f);
+		});
+	}
+
+private:
 	union
 	{
 		InputData _input;
@@ -137,6 +179,7 @@ private:
 
 	PlayerContext _ctx;
 	PlayerState *_rootState = nullptr;
+	PlayerState *_currentState = nullptr;
 
 	EIAction *_actionMove = nullptr;
 	EIAction *_actionSprint = nullptr;
