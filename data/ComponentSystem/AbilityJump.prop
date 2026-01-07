@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.20.0.0" name="AbilityJump" manual="1" parent_name="node_base">
+	<parameter name="description" type="string"/>
+	<parameter name="iconFile" type="file"/>
+	<parameter name="cooldown" type="float">0</parameter>
+	<parameter name="currentCooldown" type="float">0</parameter>
+	<parameter name="inAirJumpsCount" type="int">0</parameter>
+	<parameter name="jumpHeight" type="float">4</parameter>
+	<parameter name="groundMask" type="mask">-1</parameter>
+	<parameter name="groundAngleTolerance" type="float">30</parameter>
+</property>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EIContext description="Just move">
+	<Mappings>
+		<Mapping>
+			<Action>move</Action>
+			<Key>W</Key>
+			<Modifiers>
+				<Modifier type="Swizzle Axis">
+					<parameter name="type">2</parameter>
+				</Modifier>
+			</Modifiers>
+			<Triggers>
+				<Trigger type="Down">
+					<parameter name="treshold">0.5</parameter>
+				</Trigger>
+			</Triggers>
+		</Mapping>
+		<Mapping>
+			<Action>move</Action>
+			<Key>S</Key>
+			<Modifiers>
+				<Modifier type="Swizzle Axis">
+					<parameter name="type">2</parameter>
+				</Modifier>
+				<Modifier type="Negate">
+					<parameter name="x">1</parameter>
+					<parameter name="y">1</parameter>
+					<parameter name="z">1</parameter>
+				</Modifier>
+			</Modifiers>
+			<Triggers>
+				<Trigger type="Down">
+					<parameter name="treshold">0.5</parameter>
+				</Trigger>
+			</Triggers>
+		</Mapping>
+		<Mapping>
+			<Action>move</Action>
+			<Key>D</Key>
+			<Modifiers/>
+			<Triggers>
+				<Trigger type="Down">
+					<parameter name="treshold">0.5</parameter>
+				</Trigger>
+			</Triggers>
+		</Mapping>
+		<Mapping>
+			<Action>move</Action>
+			<Key>A</Key>
+			<Modifiers>
+				<Modifier type="Negate">
+					<parameter name="x">1</parameter>
+					<parameter name="y">1</parameter>
+					<parameter name="z">1</parameter>
+				</Modifier>
+			</Modifiers>
+			<Triggers>
+				<Trigger type="Down">
+					<parameter name="treshold">0.5</parameter>
+				</Trigger>
+			</Triggers>
+		</Mapping>
+		<Mapping>
+			<Action>sprint</Action>
+			<Key>LeftShift</Key>
+			<Modifiers/>
+			<Triggers>
+				<Trigger type="Down">
+					<parameter name="treshold">0.5</parameter>
+				</Trigger>
+			</Triggers>
+		</Mapping>
+		<Mapping>
+			<Action>jump</Action>
+			<Key>Space</Key>
+			<Modifiers/>
+			<Triggers>
+				<Trigger type="Pressed">
+					<parameter name="treshold">0.5</parameter>
+				</Trigger>
+			</Triggers>
+		</Mapping>
+		<Mapping>
+			<Action>dash</Action>
+			<Key>G</Key>
+			<Modifiers/>
+			<Triggers>
+				<Trigger type="Pressed">
+					<parameter name="treshold">0.5</parameter>
+				</Trigger>
+			</Triggers>
+		</Mapping>
+		<Mapping>
+			<Action>targetLock</Action>
+			<Key>MouseMiddle</Key>
+			<Modifiers/>
+			<Triggers>
+				<Trigger type="Pressed">
+					<parameter name="treshold">0.5</parameter>
+				</Trigger>
+			</Triggers>
+		</Mapping>
+	</Mappings>
+</EIContext>

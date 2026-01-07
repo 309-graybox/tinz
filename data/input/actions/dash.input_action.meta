@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.20.0.0">
+	<guid>8956103b50ce8b5e2797f9a0f2b69d629aae7e5d</guid>
+	<type>file</type>
+	<hash>da86915f</hash>
+	<runtimes>
+		<runtime id="8956103b50ce8b5e2797f9a0f2b69d629aae7e5d" name="dash.input_action" link="0"/>
+	</runtimes>
+</asset>

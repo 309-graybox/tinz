@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <property version="2.20.0.0" name="Mover" manual="1" parent_name="node_base">
-	<parameter name="speed" type="float">3</parameter>
-	<parameter name="sprint_speed" type="float">6</parameter>
-	<parameter name="jump" type="float">7.5</parameter>
-	<parameter name="ground_angle_tolerance" type="float">0.3</parameter>
-	<parameter name="ground_mask" type="mask">-1</parameter>
+	<parameter name="speed" type="float">8</parameter>
+	<parameter name="sprint_speed" type="float">16</parameter>
+	<parameter name="rotation_speed" type="float">1</parameter>
 </property>

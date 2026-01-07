@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bit_mask_names>
+	<general>
+		<name index="31">Player intersection</name>
+	</general>
+	<intersection>
+		<name index="31">Player intersection</name>
+	</intersection>
+</bit_mask_names>

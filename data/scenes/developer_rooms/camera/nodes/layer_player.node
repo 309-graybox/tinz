@@ -35,18 +35,24 @@
 		<controlled>1</controlled>
 		<properties>
 			<property parent="f1b1912ea00b6919aec49f9719b027e32eaf8cbc" guid="2ef4a50afc440f73c56b5fca9db6010b3a099247">
-				<parameter name="target">1197909353</parameter>
+				<parameter name="intersection_mask">0x7fffffff</parameter>
+				<parameter name="offset">0 0 2</parameter>
+				<parameter name="target">1120127556</parameter>
 			</property>
 		</properties>
 		<transform>0.999999761581 0 0 0.0 0 1 0 0.0 0 0 0.999999940395 0.0 -8.77421037377 -14.9420362567 2.65047817637 1.0</transform>
 	</node>
-	<node type="ObjectMeshStatic" id="1197909353" name="material_ball">
+	<node type="ObjectMeshStatic" id="1197909353" enabled="0" name="material_ball">
 		<mesh_name>guid://d66c38d3cb2ce8161c55807d4a2d47b80c46e7b7</mesh_name>
 		<surface name="material_ball_mat_lod_0" intersection="1" intersection_mask="0x80000000" max_visible_distance="3" material="2d2814767f25015d91f013182a937b973ae9640a"/>
 		<surface name="material_ball_mat_lod_1" intersection="1" intersection_mask="0x80000000" min_visible_distance="3" max_visible_distance="9" material="2d2814767f25015d91f013182a937b973ae9640a"/>
 		<surface name="material_ball_mat_lod_2" intersection="1" intersection_mask="0x80000000" min_visible_distance="9" material="2d2814767f25015d91f013182a937b973ae9640a"/>
 		<body type="BodyRigid" id="1920342862" frozen="0">
 			<high_priority_contacts>1</high_priority_contacts>
+			<linear_damping>1</linear_damping>
+			<angular_damping>1</angular_damping>
+			<max_linear_velocity>1000</max_linear_velocity>
+			<max_angular_velocity>1000</max_angular_velocity>
 			<shape type="ShapeCylinder" id="352938650" name="ShapeCylinder" transform="1 0 0 0 0 1 0 0 0 0 1 0 -3.65152955e-05 -0.0132299066 0.499668181 1">
 				<radius>0.409649998</radius>
 				<height>0.90259999</height>
@@ -54,10 +60,49 @@
 			</shape>
 		</body>
 		<properties>
-			<property parent="ad859dc1662fd39a914c52201126c666d96769e2" guid="287bea68b63726c83c827728ac187096a4226c1d">
-				<parameter name="ground_mask">0x7fffffff</parameter>
+			<property parent="ad859dc1662fd39a914c52201126c666d96769e2" guid="287bea68b63726c83c827728ac187096a4226c1d"/>
+			<property parent="c666bd1ed6f128dc30c73ea3ff8460cd94e81a67" guid="907c95a201b2ab5bf017b4545452017709c6e6ac">
+				<parameter name="inAirJumpsCount">1</parameter>
+				<parameter name="jumpHeight">1</parameter>
+				<parameter name="groundMask">0x7fffffff</parameter>
+			</property>
+			<property parent="3569fd08bdd313721f50cb6bbbd1897e5e42bf66" guid="578902b2460e70743603df4b72a1ae973ee05db9">
+				<parameter name="timeScale">1.5</parameter>
 			</property>
 		</properties>
 		<transform>0.999999761581 1.67037340734e-22 -3.82136965978e-15 0.0 1.6703737664e-22 1 8.74227623626e-08 0.0 3.82136920423e-15 -8.74227727842e-08 0.999999940395 0.0 -7.77278839388 -16.2017125668 1.00013501443 1.0</transform>
+	</node>
+	<node type="ObjectMeshSkinned" id="1120127556" name="Ch36">
+		<mesh_name>guid://6d3b0249ba8c0d190b09b9632d4c4b3b0b31b772</mesh_name>
+		<fps_visible_camera>-1</fps_visible_camera>
+		<fps_visible_shadow>30</fps_visible_shadow>
+		<fps_invisible>0</fps_invisible>
+		<anim_name>guid://5fc1d6a39cc61231c0227f4d9af05eb6e7ff3b74</anim_name>
+		<loop>1</loop>
+		<speed>30</speed>
+		<surface name="Ch36_Body" intersection="1" material="2d269de0223b03c09c46acbe377e108bd6d2be2b"/>
+		<body type="BodyRigid" id="1125882260" frozen="0">
+			<angular_scale>0 0 1</angular_scale>
+			<linear_damping>2</linear_damping>
+			<angular_damping>5</angular_damping>
+			<shape type="ShapeCapsule" id="1561151261" name="ShapeCapsule" transform="1 -0 -9.40395481e-38 0 -3.92927789e-38 1 0 0 9.40395481e-38 0 1 0 2.9116869e-05 0.0264136791 0.868260682 1">
+				<radius>0.195680007</radius>
+				<height>1.39239001</height>
+			</shape>
+		</body>
+		<properties>
+			<property enabled="0" parent="950ec4c5b5198520ca3cdef4137240b26f0f302c" guid="a7135fe9243a71fd910ef00351f26cc8b6a29392">
+				<parameter name="idle">guid://1982d3d6f73a186e446c89446a4937cdf36e26c9</parameter>
+				<parameter name="walk">guid://c3da733e6d16f69fa57d4c6ca6d28823809d5f91</parameter>
+				<parameter name="walk_reverse">guid://a276a4d2ac41085e1b42d4e0b1e3fd40c9e14b55</parameter>
+				<parameter name="run">guid://fe05deead651ad7e807e2f38f036a63d575daa0d</parameter>
+			</property>
+			<property parent="ad859dc1662fd39a914c52201126c666d96769e2" guid="f6a20bf8d2ce1cefabf67318ff0397b4513e142b"/>
+			<property parent="c666bd1ed6f128dc30c73ea3ff8460cd94e81a67" guid="96b8f3b360737706157e5d131fe2e4dd0a43848a"/>
+			<property parent="3569fd08bdd313721f50cb6bbbd1897e5e42bf66" guid="2df692c2df78de88725608f27c4e328e375c7a1e">
+				<parameter name="cooldown">3</parameter>
+			</property>
+		</properties>
+		<transform>0.999999821185 -2.54880958082e-29 6.20842100631e-22 0.0 1.67037443537e-22 1.0000000596 -9.00007539211e-15 0.0 -6.20841997414e-22 9.000076465e-15 0.999999940395 0.0 4.60384314014 -3.03395688938 0 1.0</transform>
 	</node>
 </nodes>

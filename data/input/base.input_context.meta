@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.20.0.0">
+	<guid>2d6cac5a3b6158579e5f213a206160146fc88736</guid>
+	<type>file</type>
+	<hash>c9e0a16b</hash>
+	<runtimes>
+		<runtime id="2d6cac5a3b6158579e5f213a206160146fc88736" name="base.input_context" link="0"/>
+	</runtimes>
+</asset>

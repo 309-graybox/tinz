@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.20.0.0" name="AnimationState" manual="1" parent_name="node_base">
+	<parameter name="idle" type="file"/>
+	<parameter name="walk" type="file"/>
+	<parameter name="walk_reverse" type="file"/>
+	<parameter name="run" type="file"/>
+</property>

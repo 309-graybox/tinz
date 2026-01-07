@@ -6,7 +6,7 @@ include(${CMAKE_CURRENT_LIST_DIR}/cmake/UnigineCMakeVariables.cmake)
 
 project(tinz LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 set(CMAKE_CXX_EXTENSIONS FALSE)
 
@@ -36,27 +36,14 @@ if (WIN32)
 	set(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:wmainCRTStartup")
 endif()
 
-file(GLOB_RECURSE CHARACTER_SOURCES "${CMAKE_CURRENT_LIST_DIR}/character/*.h" "${CMAKE_CURRENT_LIST_DIR}/character/*.cpp")
-file(GLOB_RECURSE COMPONENTS_SOURCES "${CMAKE_CURRENT_LIST_DIR}/components/*.h" "${CMAKE_CURRENT_LIST_DIR}/components/*.cpp")
-file(GLOB_RECURSE UTILS_SOURCES "${CMAKE_CURRENT_LIST_DIR}/utils/*.h" "${CMAKE_CURRENT_LIST_DIR}/utils/*.cpp")
+file(GLOB_RECURSE SOURCES "${CMAKE_CURRENT_LIST_DIR}/src/*.h" "${CMAKE_CURRENT_LIST_DIR}/src/*.cpp")
 
-add_executable(${target}
-		${CMAKE_CURRENT_LIST_DIR}/AppEditorLogic.cpp
-		${CMAKE_CURRENT_LIST_DIR}/AppEditorLogic.h
-		${CMAKE_CURRENT_LIST_DIR}/AppSystemLogic.cpp
-		${CMAKE_CURRENT_LIST_DIR}/AppSystemLogic.h
-		${CMAKE_CURRENT_LIST_DIR}/AppWorldLogic.cpp
-		${CMAKE_CURRENT_LIST_DIR}/AppWorldLogic.h
-		${CMAKE_CURRENT_LIST_DIR}/main.cpp
-		${UTILS_SOURCES}
-		${COMPONENTS_SOURCES}
-		${CHARACTER_SOURCES}
-)
+add_executable(${target} ${SOURCES})
 
 target_include_directories(${target}
 	PRIVATE
 	${UNIGINE_INCLUDE_DIR}
-	${CMAKE_CURRENT_LIST_DIR}
+	$<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/src>
 	)
 
 target_link_libraries(${target}

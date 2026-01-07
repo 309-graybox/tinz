@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.20.0.0">
+	<guid>3569fd08bdd313721f50cb6bbbd1897e5e42bf66</guid>
+	<type>property</type>
+	<hash>14bb93af</hash>
+	<runtimes>
+		<runtime id="3569fd08bdd313721f50cb6bbbd1897e5e42bf66" name="AbilityDash" link="0" type="4"/>
+	</runtimes>
+</asset>

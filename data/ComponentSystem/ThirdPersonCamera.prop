@@ -3,12 +3,14 @@
 	<parameter name="sensitivity" type="float">0.2</parameter>
 	<parameter name="min_pitch" type="float">0</parameter>
 	<parameter name="max_pitch" type="float">180</parameter>
-	<parameter name="min_distance" type="double">3</parameter>
-	<parameter name="max_distance" type="double">7</parameter>
+	<parameter name="intersection_mask" type="mask">-1</parameter>
+	<parameter name="min_distance" type="double">5</parameter>
+	<parameter name="max_distance" type="double">5</parameter>
 	<parameter name="offset" type="dvec3">0.000000 0.000000 1.000000</parameter>
 	<parameter name="target" type="node">0</parameter>
 	<parameter name="transition_time" type="float">0.25</parameter>
-	<parameter name="lock_shfit" type="double">0</parameter>
+	<parameter name="lock_shfit" type="double">0.5</parameter>
 	<parameter name="lock_image_file" type="file"/>
 	<parameter name="lock_distance" type="double">25</parameter>
+	<parameter name="unlock_distance" type="double">30</parameter>
 </property>

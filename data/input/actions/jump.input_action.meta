@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.20.0.0">
+	<guid>bbf76e4ad81fc477c9b381ddc94fcd3a70a1c774</guid>
+	<type>file</type>
+	<hash>ea44d93</hash>
+	<runtimes>
+		<runtime id="bbf76e4ad81fc477c9b381ddc94fcd3a70a1c774" name="jump.input_action" link="0"/>
+	</runtimes>
+</asset>
