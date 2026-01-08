@@ -3,7 +3,8 @@
 /junk
 /bin/*
 /utils
-/include
+/include/*
+!/include/Plugins/Ryutp/EnhancedInput
 /launch_*.bat
 /bin/editor_log*.txt
 /bin/log*.txt
