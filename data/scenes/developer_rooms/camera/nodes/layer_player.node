@@ -34,10 +34,8 @@
 		<is_listener>1</is_listener>
 		<controlled>1</controlled>
 		<properties>
-			<property parent="f1b1912ea00b6919aec49f9719b027e32eaf8cbc" guid="2ef4a50afc440f73c56b5fca9db6010b3a099247">
-				<parameter name="intersection_mask">0x7fffffff</parameter>
-				<parameter name="offset">0 0 2</parameter>
-				<parameter name="target">1120127556</parameter>
+			<property parent="a36fbad2cec4ef22ec8e19dd034a644b6dc8abd5" guid="3ee451826755790c5656a259091ca0b527e7e863">
+				<parameter name="target_node">1961810175</parameter>
 			</property>
 		</properties>
 		<transform>0.999999761581 0 0 0.0 0 1 0 0.0 0 0 0.999999940395 0.0 -8.77421037377 -14.9420362567 2.65047817637 1.0</transform>
@@ -104,5 +102,8 @@
 			</property>
 		</properties>
 		<transform>0.999999821185 -2.54880958082e-29 6.20842100631e-22 0.0 1.67037443537e-22 1.0000000596 -9.00007539211e-15 0.0 -6.20841997414e-22 9.000076465e-15 0.999999940395 0.0 4.60384314014 -3.03395688938 0 1.0</transform>
+		<node type="NodeDummy" id="1961810175" name="NodeDummy">
+			<transform>0.999999940396 2.54880983575e-29 -6.20842100631e-22 0.0 -1.6703746345e-22 0.9999999404 9.00007539215e-15 0.0 6.2084210843e-22 -9.0000759286e-15 1 0.0 0 -1.64313007645e-14 1.84268836601 1.0</transform>
+		</node>
 	</node>
 </nodes>

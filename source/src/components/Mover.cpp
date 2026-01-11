@@ -5,11 +5,11 @@
 #include <input/InputUtils.h>
 #include "abilities/AbilityJump.h"
 #include "abilities/AbilityDash.h"
-#include <player/PlayerStateIdle.h>
-#include <player/PlayerStateWalk.h>
-#include <player/PlayerStateRun.h>
-#include <player/PlayerStateCrouchIdle.h>
-#include <player/PlayerStateCrouchWalk.h>
+#include "player/state/PlayerStateIdle.h"
+#include "player/state/PlayerStateWalk.h"
+#include "player/state/PlayerStateRun.h"
+#include "player/state/PlayerStateCrouchIdle.h"
+#include "player/state/PlayerStateCrouchWalk.h"
 #include <plugins/Ryutp/EnhancedInput/EnhancedInput.h>
 
 using namespace Unigine;

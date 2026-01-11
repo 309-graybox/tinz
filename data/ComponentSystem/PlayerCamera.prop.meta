@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.20.0.0">
+	<guid>a36fbad2cec4ef22ec8e19dd034a644b6dc8abd5</guid>
+	<type>property</type>
+	<hash>704c4521</hash>
+	<runtimes>
+		<runtime id="a36fbad2cec4ef22ec8e19dd034a644b6dc8abd5" name="PlayerCamera" link="0" type="4"/>
+	</runtimes>
+</asset>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.20.0.0" name="PlayerCamera" manual="1" parent_name="node_base">
+	<struct name="Cfg">
+		<parameter name="sensitivity" type="vec2">0.200000 0.200000</parameter>
+		<parameter name="inverse_x" type="toggle">0</parameter>
+		<parameter name="inverse_y" type="toggle">0</parameter>
+		<parameter name="distance_range" type="dvec2">2.000000 5.000000</parameter>
+		<parameter name="pitch_range" type="vec2">-89.900002 89.900002</parameter>
+	</struct>
+	<struct name="Lag">
+		<parameter name="enabled" type="toggle">1</parameter>
+		<parameter name="speed" type="float">1</parameter>
+		<parameter name="damping" type="float">1</parameter>
+		<parameter name="max_distance" type="float">300</parameter>
+		<parameter name="rotation_enabled" type="toggle">1</parameter>
+		<parameter name="rotation_speed" type="float">20</parameter>
+		<parameter name="separate_axis" type="toggle">0</parameter>
+		<parameter name="max_distance_axis" type="dvec3">300.000000 300.000000 300.000000</parameter>
+	</struct>
+	<parameter name="debug" type="toggle">1</parameter>
+	<parameter name="target_node" type="node">0</parameter>
+	<parameter name="cfg" type="Cfg"/>
+	<parameter name="lag" type="Lag"/>
+</property>
