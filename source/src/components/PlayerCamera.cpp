@@ -45,12 +45,10 @@ void PlayerCamera::update()
 
 	Vec3 rawTarget = getTargetPosition();
 
-	// 1) ЛАГАЕМ ПИВОТ (а не камеру)
 	Vec3 target = rawTarget;
 	if (position_lag_enabled)
 		target = position_lag->update(rawTarget, dt);
 
-	// 2) ЛАГАЕМ УГОЛ
 	vec2 angle = _angle;
 	if (rotation_lag_enabled)
 		angle = rotation_lag->update(angle, dt);
@@ -63,22 +61,35 @@ void PlayerCamera::update()
 	dir.y = sin(yaw) * cos(pitch);
 	dir.z = sin(pitch);
 
-	float dist = cfg->distance_range.get().y;
+	float desiredDist = cfg->distance_range.get().y;
 
-	Vec3 desiredCam = target + dir * dist;
+	Vec3 desiredCam = target + dir * desiredDist;
 
-	// 3) КОЛЛИЗИЯ РЕЖЕТ КАМЕРУ (не target)
-	Vec3 cam = desiredCam;
+	Vec3 collisionCam = desiredCam;
+	float collisionDist = desiredDist;
+
 	if (collision_enabled)
-		cam = collision->update(desiredCam, target, dt);
+	{
+		collisionCam = collision->update(desiredCam, target, dt);
+		collisionDist = distance(collisionCam, target);
 
-	float d = length(cam - target);
-	const float minDist = 0.75f;
-	if (d < minDist)
-		cam = target + normalize(desiredCam - target) * minDist;
+		const float minDist = 0.75f;
+		if (collisionDist < minDist)
+			collisionDist = minDist;
 
-	setPosition(cam);
+		collisionCam = target + dir * collisionDist;
+	}
 
+	float finalDist = collisionDist;
+
+	if (spring_arm_enabled)
+	{
+		finalDist = spring_arm->update(desiredDist, collisionDist, dt);
+	}
+
+	Vec3 camPos = target + dir * finalDist;
+
+	setPosition(camPos);
 	_player->worldLookAt(target);
 
 	if (debug)

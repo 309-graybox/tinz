@@ -2,9 +2,9 @@
 #include "CameraCollision.h"
 #include "CameraPositionLag.h"
 #include "CameraRotationLag.h"
+#include "CameraSpringArm.h"
 #include "utils/DebugHelpers.h"
 #include <UnigineComponentSystem.h>
-
 
 class PlayerCamera: public Unigine::ComponentBase
 {
@@ -29,6 +29,9 @@ public:
 
 	PROP_PARAM(Toggle, collision_enabled, true)
 	PROP_STRUCT(CameraCollision, collision)
+
+	PROP_PARAM(Toggle, spring_arm_enabled, true)
+	PROP_STRUCT(CameraSpringArm, spring_arm)
 
 	PROP_PARAM(Toggle, position_lag_enabled, true)
 	PROP_STRUCT(CameraPositionLag, position_lag)

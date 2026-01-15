@@ -12,6 +12,13 @@
 		<parameter name="offset" type="double">0.01</parameter>
 		<parameter name="mask" type="mask">-1</parameter>
 	</struct>
+	<struct name="CameraSpringArm">
+		<parameter name="return_speed" type="float">5</parameter>
+		<parameter name="return_delay" type="float">0.2</parameter>
+		<parameter name="max_correction_distance" type="float">3</parameter>
+		<parameter name="use_adaptive_speed" type="toggle">1</parameter>
+		<parameter name="damping" type="double">0.8</parameter>
+	</struct>
 	<struct name="CameraPositionLag">
 		<parameter name="separate_axis" type="toggle">0</parameter>
 		<parameter name="speed" type="double" separate_axis="0">1</parameter>
@@ -31,6 +38,8 @@
 	<parameter name="cfg" type="Cfg"/>
 	<parameter name="collision_enabled" type="toggle">1</parameter>
 	<parameter name="collision" type="CameraCollision"/>
+	<parameter name="spring_arm_enabled" type="toggle">1</parameter>
+	<parameter name="spring_arm" type="CameraSpringArm"/>
 	<parameter name="position_lag_enabled" type="toggle">1</parameter>
 	<parameter name="position_lag" type="CameraPositionLag"/>
 	<parameter name="rotation_lag_enabled" type="toggle">1</parameter>
