@@ -56,10 +56,10 @@ void PlayerCamera::update()
 	float yaw = angle.x * Consts::DEG2RAD;
 	float pitch = angle.y * Consts::DEG2RAD;
 
-	Vec3 dir;
-	dir.x = cos(yaw) * cos(pitch);
-	dir.y = sin(yaw) * cos(pitch);
-	dir.z = sin(pitch);
+	auto dir = Vec3(cos(yaw) * cos(pitch), sin(yaw) * cos(pitch), sin(pitch));
+
+	if (vertical_bias_enabled)
+		target = vertical_bias->update(angle.y, cfg->pitch_range, vec3(dir.x, dir.y, 0).normalize(), target, dt);
 
 	float desiredDist = cfg->distance_range.get().y;
 

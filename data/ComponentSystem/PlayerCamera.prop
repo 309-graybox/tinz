@@ -33,6 +33,15 @@
 		<parameter name="speed" type="float" separate_axis="0">20</parameter>
 		<parameter name="speed_axis" type="vec2" separate_axis="1">20.000000 20.000000</parameter>
 	</struct>
+	<struct name="CameraVerticalBias">
+		<parameter name="enable_min_angle_bias" type="toggle">1</parameter>
+		<parameter name="min_angle_bias_offset" type="float">45</parameter>
+		<parameter name="enable_max_angle_bias" type="toggle">1</parameter>
+		<parameter name="min_shift_units" type="float">2</parameter>
+		<parameter name="max_shift_units" type="float">2</parameter>
+		<parameter name="bias_power" type="float">2</parameter>
+		<parameter name="bias_smooth" type="float">20</parameter>
+	</struct>
 	<parameter name="debug" type="toggle">1</parameter>
 	<parameter name="target_node" type="node">0</parameter>
 	<parameter name="cfg" type="Cfg"/>
@@ -44,4 +53,6 @@
 	<parameter name="position_lag" type="CameraPositionLag"/>
 	<parameter name="rotation_lag_enabled" type="toggle">1</parameter>
 	<parameter name="rotation_lag" type="CameraRotationLag"/>
+	<parameter name="vertical_bias_enabled" type="toggle">1</parameter>
+	<parameter name="vertical_bias" type="CameraVerticalBias"/>
 </property>

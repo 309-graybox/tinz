@@ -2,6 +2,7 @@
 #include "CameraCollision.h"
 #include "CameraPositionLag.h"
 #include "CameraRotationLag.h"
+#include "CameraVerticalBias.h"
 #include "CameraSpringArm.h"
 #include "utils/DebugHelpers.h"
 #include <UnigineComponentSystem.h>
@@ -38,6 +39,9 @@ public:
 
 	PROP_PARAM(Toggle, rotation_lag_enabled, true)
 	PROP_STRUCT(CameraRotationLag, rotation_lag)
+
+	PROP_PARAM(Toggle, vertical_bias_enabled, true)
+	PROP_STRUCT(CameraVerticalBias, vertical_bias)
 
 	void setPosition(const Unigine::Math::Vec3 &p) { _player->setWorldPosition(p); }
 	Unigine::Math::Vec3 getPosition() const { return _player->getWorldPosition(); }
