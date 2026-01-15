@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <bit_mask_names>
 	<general>
+		<name index="0">General Mask 1</name>
 		<name index="31">Player intersection</name>
 	</general>
 	<intersection>
-		<name index="31">Player intersection</name>
+		<name index="0">Intersection Mask 0</name>
+		<name index="31">Player</name>
 	</intersection>
 </bit_mask_names>

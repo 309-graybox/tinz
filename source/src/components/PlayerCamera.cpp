@@ -9,64 +9,11 @@ REGISTER_COMPONENT(PlayerCamera)
 using namespace Unigine;
 using namespace Unigine::Math;
 
-static Vec3 solveLag(const Vec3 &current, Vec3 &velocity, const Vec3 &target, float speed, float damping, float dt)
-{
-	const float omega = speed * 2.0f * Consts::PI;
-	const float x = omega * dt;
-	const float exp = Math::exp(-damping * x);
-
-	Vec3 delta = current - target;
-	Vec3 temp = (velocity + delta * omega) * dt;
-
-	velocity = (velocity - temp * omega) * exp;
-	return target + (delta + temp) * exp;
-}
-
-static float smoothDamp(float current, float target, float &velocity, float smoothTime, float deltaTime)
-{
-	smoothTime = max(0.0001f, smoothTime);
-	float omega = 2.0f / smoothTime;
-
-	float x = omega * deltaTime;
-	float exp = 1.0f / (1.0f + x + 0.48f * x * x + 0.235f * x * x * x);
-
-	float change = current - target;
-	float temp = (velocity + omega * change) * deltaTime;
-	velocity = (velocity - omega * temp) * exp;
-
-	return target + (change + temp) * exp;
-}
-
 void PlayerCamera::addRotation(const Unigine::Math::vec2 &angle)
 {
 	vec2 inverseMult(cfg->inverse_x ? 1 : -1, cfg->inverse_y ? -1 : 1);
 	_angle += angle * cfg->sensitivity * inverseMult;
 	_angle.y = clamp(_angle.y, cfg->pitch_range.get().x, cfg->pitch_range.get().y);
-
-	auto yaw = _angle.x * Consts::DEG2RAD;
-	auto pitch = _angle.y * Consts::DEG2RAD;
-	_offset.x = cos(yaw) * cos(pitch);
-	_offset.y = sin(yaw) * cos(pitch);
-	_offset.z = sin(pitch);
-}
-
-Vec3 PlayerCamera::clampLag(const Vec3 &lagPos, const Vec3 &target)
-{
-	Vec3 delta = lagPos - target;
-
-	if (lag->separate_axis)
-	{
-		delta.x = clamp(delta.x, -lag->max_distance_axis.get().x, lag->max_distance_axis.get().x);
-		delta.y = clamp(delta.y, -lag->max_distance_axis.get().y, lag->max_distance_axis.get().y);
-		delta.z = clamp(delta.z, -lag->max_distance_axis.get().z, lag->max_distance_axis.get().z);
-	} else
-	{
-		float len = length(delta);
-		if (len > lag->max_distance)
-			delta *= lag->max_distance / len;
-	}
-
-	return target + delta;
 }
 
 void PlayerCamera::init()
@@ -82,84 +29,60 @@ void PlayerCamera::init()
 
 	addRotation({0.0f, 0.0f});
 
-	_lag_target_pos = getTargetPosition();
-	_lag_target_vel = Vec3_zero;
+	if (position_lag_enabled)
+		position_lag->init(getTargetPosition());
 
-	_lag_angle = _angle;
-	_lag_angle_vel = vec2_zero;
+	if (rotation_lag_enabled)
+		rotation_lag->init(_angle);
 }
 
 void PlayerCamera::update()
 {
-	const float dt = Game::getIFps();
+	float dt = Game::getIFps();
 
-	// ---------- INPUT ----------
-	auto mouse = vec2(Input::getMouseDeltaPosition());
+	vec2 mouse = vec2(Input::getMouseDeltaPosition());
 	addRotation(mouse);
 
-	// ---------- FOLLOW LAG (target) ----------
-	Vec3 rawTargetPos = getTargetPosition();
+	Vec3 rawTarget = getTargetPosition();
 
-	if (lag->enabled)
-	{
-		_lag_target_pos = solveLag(
-			_lag_target_pos,
-			_lag_target_vel,
-			rawTargetPos,
-			lag->speed,
-			lag->damping,
-			dt);
-	} else
-	{
-		_lag_target_pos = rawTargetPos;
-		_lag_target_vel = Vec3_zero;
-	}
+	// 1) ЛАГАЕМ ПИВОТ (а не камеру)
+	Vec3 target = rawTarget;
+	if (position_lag_enabled)
+		target = position_lag->update(rawTarget, dt);
 
-	// ---------- ROTATION LAG (angles) ----------
-	if (lag->enabled)
-	{
-		_lag_angle.x = smoothDamp(
-			_lag_angle.x,
-			_angle.x,
-			_lag_angle_vel.x,
-			1.0f / max(lag->rotation_speed, 0.001f),
-			dt);
+	// 2) ЛАГАЕМ УГОЛ
+	vec2 angle = _angle;
+	if (rotation_lag_enabled)
+		angle = rotation_lag->update(angle, dt);
 
-		_lag_angle.y = smoothDamp(
-			_lag_angle.y,
-			_angle.y,
-			_lag_angle_vel.y,
-			1.0f / (max(lag->rotation_speed, 0.001f) * 2.5f),
-			dt);
-	} else
-	{
-		_lag_angle = _angle;
-		_lag_angle_vel = vec2_zero;
-	}
+	float yaw = angle.x * Consts::DEG2RAD;
+	float pitch = angle.y * Consts::DEG2RAD;
 
-	// ---------- ORBIT OFFSET ----------
-	float yaw = _lag_angle.x * Consts::DEG2RAD;
-	float pitch = _lag_angle.y * Consts::DEG2RAD;
+	Vec3 dir;
+	dir.x = cos(yaw) * cos(pitch);
+	dir.y = sin(yaw) * cos(pitch);
+	dir.z = sin(pitch);
 
-	Vec3 offset;
-	offset.x = cos(yaw) * cos(pitch);
-	offset.y = sin(yaw) * cos(pitch);
-	offset.z = sin(pitch);
+	float dist = cfg->distance_range.get().y;
 
-	// ---------- FINAL POSITION ----------
-	float distance = cfg->distance_range.get().y;
-	Vec3 finalPos = _lag_target_pos + offset * distance;
+	Vec3 desiredCam = target + dir * dist;
 
-	setPosition(finalPos);
+	// 3) КОЛЛИЗИЯ РЕЖЕТ КАМЕРУ (не target)
+	Vec3 cam = desiredCam;
+	if (collision_enabled)
+		cam = collision->update(desiredCam, target, dt);
 
-	// ---------- ROTATION ----------
-	_player->worldLookAt(_lag_target_pos);
+	float d = length(cam - target);
+	const float minDist = 0.75f;
+	if (d < minDist)
+		cam = target + normalize(desiredCam - target) * minDist;
 
-	// ---------- DEBUG ----------
+	setPosition(cam);
+
+	_player->worldLookAt(target);
+
 	if (debug)
-	{
-		Visualizer::renderPoint3D(_lag_target_pos, 0.05f, vec4_red);
-	}
+		Visualizer::renderPoint3D(target, 0.05f, vec4_red);
 }
 
 void PlayerCamera::shutdown()

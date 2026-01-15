@@ -36,6 +36,9 @@
 		<properties>
 			<property parent="a36fbad2cec4ef22ec8e19dd034a644b6dc8abd5" guid="3ee451826755790c5656a259091ca0b527e7e863">
 				<parameter name="target_node">1961810175</parameter>
+				<parameter name="collision">
+					<parameter name="mask">0x7fffffff</parameter>
+				</parameter>
 			</property>
 		</properties>
 		<transform>0.999999761581 0 0 0.0 0 1 0 0.0 0 0 0.999999940395 0.0 -8.77421037377 -14.9420362567 2.65047817637 1.0</transform>
@@ -78,7 +81,7 @@
 		<anim_name>guid://5fc1d6a39cc61231c0227f4d9af05eb6e7ff3b74</anim_name>
 		<loop>1</loop>
 		<speed>30</speed>
-		<surface name="Ch36_Body" intersection="1" material="2d269de0223b03c09c46acbe377e108bd6d2be2b"/>
+		<surface name="Ch36_Body" intersection="1" intersection_mask="0x80000000" material="2d269de0223b03c09c46acbe377e108bd6d2be2b"/>
 		<body type="BodyRigid" id="1125882260" frozen="0">
 			<angular_scale>0 0 1</angular_scale>
 			<linear_damping>2</linear_damping>

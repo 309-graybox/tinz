@@ -1,6 +1,10 @@
 #pragma once
+#include "CameraCollision.h"
+#include "CameraPositionLag.h"
+#include "CameraRotationLag.h"
 #include "utils/DebugHelpers.h"
 #include <UnigineComponentSystem.h>
+
 
 class PlayerCamera: public Unigine::ComponentBase
 {
@@ -23,21 +27,14 @@ public:
 	};
 	PROP_STRUCT(Cfg, cfg)
 
-	struct Lag: public Unigine::ComponentStruct
-	{
-		PROP_PARAM(Toggle, enabled, true)
+	PROP_PARAM(Toggle, collision_enabled, true)
+	PROP_STRUCT(CameraCollision, collision)
 
-		PROP_PARAM(Float, speed, 1.0f)
-		PROP_PARAM(Float, damping, 1.0f)
-		PROP_PARAM(Float, max_distance, 300.0f)
+	PROP_PARAM(Toggle, position_lag_enabled, true)
+	PROP_STRUCT(CameraPositionLag, position_lag)
 
-		PROP_PARAM(Toggle, rotation_enabled, true)
-		PROP_PARAM(Float, rotation_speed, 20.0f)
-
-		PROP_PARAM(Toggle, separate_axis, false)
-		PROP_PARAM(DVec3, max_distance_axis, Unigine::Math::dvec3(300.0f))
-	};
-	PROP_STRUCT(Lag, lag)
+	PROP_PARAM(Toggle, rotation_lag_enabled, true)
+	PROP_STRUCT(CameraRotationLag, rotation_lag)
 
 	void setPosition(const Unigine::Math::Vec3 &p) { _player->setWorldPosition(p); }
 	Unigine::Math::Vec3 getPosition() const { return _player->getWorldPosition(); }
@@ -67,13 +64,4 @@ private:
 	Unigine::PlayerDummyPtr _player;
 	Unigine::NodePtr _target;
 	Unigine::Math::vec2 _angle; // x - yaw, y - pitch
-	Unigine::Math::Vec3 _offset;
-
-	// FOLLOW lag (позиция цели)
-	Unigine::Math::Vec3 _lag_target_pos;
-	Unigine::Math::Vec3 _lag_target_vel;
-
-	// ROTATION lag (углы)
-	Unigine::Math::vec2 _lag_angle;
-	Unigine::Math::vec2 _lag_angle_vel;
 };

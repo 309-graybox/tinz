@@ -7,18 +7,32 @@
 		<parameter name="distance_range" type="dvec2">2.000000 5.000000</parameter>
 		<parameter name="pitch_range" type="vec2">-89.900002 89.900002</parameter>
 	</struct>
-	<struct name="Lag">
-		<parameter name="enabled" type="toggle">1</parameter>
-		<parameter name="speed" type="float">1</parameter>
-		<parameter name="damping" type="float">1</parameter>
-		<parameter name="max_distance" type="float">300</parameter>
-		<parameter name="rotation_enabled" type="toggle">1</parameter>
-		<parameter name="rotation_speed" type="float">20</parameter>
+	<struct name="CameraCollision">
+		<parameter name="radius" type="double">0.3</parameter>
+		<parameter name="offset" type="double">0.01</parameter>
+		<parameter name="mask" type="mask">-1</parameter>
+	</struct>
+	<struct name="CameraPositionLag">
 		<parameter name="separate_axis" type="toggle">0</parameter>
-		<parameter name="max_distance_axis" type="dvec3">300.000000 300.000000 300.000000</parameter>
+		<parameter name="speed" type="double" separate_axis="0">1</parameter>
+		<parameter name="damping" type="double" separate_axis="0">1</parameter>
+		<parameter name="max_distance" type="double" separate_axis="0">300</parameter>
+		<parameter name="speed_axis" type="dvec3" separate_axis="1">1.000000 1.000000 1.000000</parameter>
+		<parameter name="damping_axis" type="dvec3" separate_axis="1">1.000000 1.000000 1.000000</parameter>
+		<parameter name="max_distance_axis" type="dvec3" separate_axis="1">300.000000 300.000000 300.000000</parameter>
+	</struct>
+	<struct name="CameraRotationLag">
+		<parameter name="separate_axis" type="toggle">0</parameter>
+		<parameter name="speed" type="float" separate_axis="0">20</parameter>
+		<parameter name="speed_axis" type="vec2" separate_axis="1">20.000000 20.000000</parameter>
 	</struct>
 	<parameter name="debug" type="toggle">1</parameter>
 	<parameter name="target_node" type="node">0</parameter>
 	<parameter name="cfg" type="Cfg"/>
-	<parameter name="lag" type="Lag"/>
+	<parameter name="collision_enabled" type="toggle">1</parameter>
+	<parameter name="collision" type="CameraCollision"/>
+	<parameter name="position_lag_enabled" type="toggle">1</parameter>
+	<parameter name="position_lag" type="CameraPositionLag"/>
+	<parameter name="rotation_lag_enabled" type="toggle">1</parameter>
+	<parameter name="rotation_lag" type="CameraRotationLag"/>
 </property>
