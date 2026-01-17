@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EIAction description="Just look" value_type="Boolean" accumulation_behavior="Highest">
+	<Modifiers/>
+	<Triggers/>
+</EIAction>

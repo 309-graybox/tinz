@@ -140,6 +140,10 @@ public:
 	EIActionValue getValue() const { return _v; }
 	eTriggerState getState() const { return _state; }
 
+	float x() const noexcept { return _v.value.x; }
+	float y() const noexcept { return _v.value.y; }
+	float z() const noexcept { return _v.value.z; }
+
 private:
 	const EIAction *_action = nullptr;
 	EIActionValue _v;
@@ -180,6 +184,7 @@ class EIContext
 public:
 	Unigine::String name = "";
 	Unigine::String description = "";
+	bool autoRegistration = false;
 
 	virtual EIKeyActionMapping *map(const EIAction *action, EIKey key) = 0;
 	virtual void unmap(const EIAction *action, EIKey key) = 0;
