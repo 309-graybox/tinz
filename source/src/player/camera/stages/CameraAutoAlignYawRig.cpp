@@ -14,22 +14,25 @@ static inline float normalize_deg(float a)
 	return a;
 }
 
-void CameraAutoAlignYawRig::runtimeReset(CameraState &state, const CameraContext &ctx)
+void CameraAutoAlignYawRig::runtimeReset(CameraState &, const CameraContext &)
 {
 	_noInputTime = 0.0f;
-	_lastTargetPos = Vec3_zero;
+	_hasLastPos = false;
+	_alignActive = false;
+	_velLP = Vec3_zero;
 }
 
-void CameraAutoAlignYawRig::apply(CameraState &state, const CameraInput &input,
-	const CameraContext &ctx)
+void CameraAutoAlignYawRig::apply(CameraState &state, const CameraInput &input, const CameraContext &ctx)
 {
-	float dt = state.dt;
-	if (dt <= 0.0f)
-		dt = 1.0f / 60.0f;
+	if (!ctx.target)
+		return;
 
-	const bool has_input = abs(input.angle.x) > input_deadzone.get() ||
-						   abs(input.angle.y) > input_deadzone.get() ||
-						   abs(input.scroll) > 1e-6f;
+	float dt = state.dt;
+
+	const bool has_input =
+		abs(input.angle.x) > input_deadzone.get() ||
+		abs(input.angle.y) > input_deadzone.get() ||
+		abs(input.scroll) > 1e-6f;
 
 	if (has_input)
 	{
@@ -38,51 +41,46 @@ void CameraAutoAlignYawRig::apply(CameraState &state, const CameraInput &input,
 	}
 
 	_noInputTime += dt;
-
 	if (_noInputTime < delay.get())
 		return;
 
-	NodePtr target = ctx.target;
-	if (!target)
-		return;
-
-	if (require_target_velocity.get())
+	Vec3 p = ctx.target->getWorldPosition();
+	if (!_hasLastPos)
 	{
-		Vec3 p = target->getWorldPosition();
-		Vec3 v = (p - _lastTargetPos) / dt;
-		_lastTargetPos = p;
-
-		if (length(v) < min_target_speed.get())
-			return;
+		_lastPos = p;
+		_hasLastPos = true;
+		return;
 	}
 
-	vec3 f = target->getWorldDirection(AXIS_Y);
-	f.z = 0.0f;
-	Log::error("--- %.5f %.5f %.5f\n", f.x, f.y, f.z);
-	if (length2(f) < 1e-6f)
+	Vec3 v = (p - _lastPos) / dt;
+	_lastPos = p;
+	v.z = 0.0f;
+	float targetSpeed = length(v);
+
+	if (targetSpeed < 0.1f)
 		return;
-	f = normalize(f);
 
-	Log::error("%.5f\n", _noInputTime);
+	Vec3 dir = v / targetSpeed;
 
-	float target_yaw = atan2f(f.x, f.y) * 180.0f / Consts::PI;
-	target_yaw += yaw_offset_deg.get();
+	float k = vel_dir_smooth.get();
+	float a = 1.0f - expf(-k * dt);
 
-	state.rig.angle.x = approach_yaw(state.rig.angle.x, target_yaw, dt);
-}
+	_velDirSmoothed = normalize(_velDirSmoothed + (dir - _velDirSmoothed) * a);
 
-float CameraAutoAlignYawRig::approach_yaw(float current, float target, float dt) const
-{
-	current = normalize_deg(current);
-	target = normalize_deg(target);
+	float target_yaw = -atan2f(_velDirSmoothed.x, _velDirSmoothed.y) * Consts::RAD2DEG + yaw_offset_deg.get();
 
-	float delta = normalize_deg(target - current);
+	if (!_latched)
+	{
+		_latchedTargetYaw = target_yaw;
+		_latched = true;
+	} else
+	{
+		float dy = normalize_deg(target_yaw - _latchedTargetYaw);
+		_latchedTargetYaw += dy * (1.0f - expf(-target_yaw_smooth.get() * dt));
+	}
 
-	float a = 1.0f - expf(-speed.get() * dt);
-	float step = delta * a;
-
-	float max_step = max_deg_per_sec.get() * dt;
-	step = clamp(step, -max_step, max_step);
-
-	return normalize_deg(current + step);
+	float delta = normalize_deg(_latchedTargetYaw - state.rig.angle.x);
+	float aYaw = 1.0f - expf(-speed.get() * dt);
+	float step = clamp(delta * aYaw, -max_deg_per_sec.get() * dt, max_deg_per_sec.get() * dt);
+	state.rig.angle.x += step;
 }
