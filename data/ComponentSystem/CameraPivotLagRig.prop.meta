@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.20.0.0">
+	<guid>b61d5c7a5f3c588f76b0605d48eea0d2343198c9</guid>
+	<type>property</type>
+	<hash>0bc0fcf3</hash>
+	<runtimes>
+		<runtime id="b61d5c7a5f3c588f76b0605d48eea0d2343198c9" name="CameraPivotLagRig" link="0" type="4"/>
+	</runtimes>
+</asset>

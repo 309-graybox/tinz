@@ -113,7 +113,13 @@
 		<Mapping>
 			<Action>look</Action>
 			<Key>MouseX</Key>
-			<Modifiers/>
+			<Modifiers>
+				<Modifier type="Negate">
+					<parameter name="x">1</parameter>
+					<parameter name="y">1</parameter>
+					<parameter name="z">1</parameter>
+				</Modifier>
+			</Modifiers>
 			<Triggers>
 				<Trigger type="Down">
 					<parameter name="treshold">0.5</parameter>

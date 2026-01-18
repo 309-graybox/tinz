@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.20.0.0">
+	<guid>e8101904cf50511562f0b28593fc6cd406d1cf22</guid>
+	<type>property</type>
+	<hash>e4b1add6</hash>
+	<runtimes>
+		<runtime id="e8101904cf50511562f0b28593fc6cd406d1cf22" name="CameraRotationLagRig" link="0" type="4"/>
+	</runtimes>
+</asset>

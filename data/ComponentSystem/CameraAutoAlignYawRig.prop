@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.20.0.0" name="CameraAutoAlignYawRig" manual="1" parent_name="node_base">
+	<parameter name="stage" type="switch" items="Intent,Rig,Constraints,Presentation,Finalize,">1</parameter>
+	<parameter name="priority" type="int">0</parameter>
+	<parameter name="used_in_pipeline" type="toggle">1</parameter>
+	<parameter name="input_deadzone" type="float">0.05</parameter>
+	<parameter name="delay" type="float">2</parameter>
+	<parameter name="speed" type="float">6</parameter>
+	<parameter name="max_deg_per_sec" type="float">180</parameter>
+	<parameter name="require_target_velocity" type="toggle">0</parameter>
+	<parameter name="min_target_speed" type="float">0.2</parameter>
+	<parameter name="yaw_offset_deg" type="float">0</parameter>
+</property>

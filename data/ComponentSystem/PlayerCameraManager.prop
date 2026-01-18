@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.20.0.0" name="PlayerCameraManager" manual="1" parent_name="node_base">
+	<parameter name="action_file" type="file" filter=".input_action"/>
+	<parameter name="search_stages_in_children" type="toggle">0</parameter>
+	<parameter name="rebuild_on_enable" type="toggle">1</parameter>
+	<parameter name="target_node" type="node">0</parameter>
+	<parameter name="camera_node" type="node">0</parameter>
+	<parameter name="collision_mask" type="mask">-1</parameter>
+	<parameter name="debug" type="toggle">1</parameter>
+</property>

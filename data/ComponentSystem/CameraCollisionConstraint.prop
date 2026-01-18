@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.20.0.0" name="CameraCollisionConstraint" manual="1" parent_name="node_base">
+	<parameter name="stage" type="switch" items="Intent,Rig,Constraints,Presentation,Finalize,">1</parameter>
+	<parameter name="priority" type="int">0</parameter>
+	<parameter name="used_in_pipeline" type="toggle">1</parameter>
+	<parameter name="radius" type="float">0.25</parameter>
+	<parameter name="extra_offset" type="float">0.05</parameter>
+	<parameter name="use_diagonals" type="toggle">1</parameter>
+	<parameter name="enable_spring" type="toggle">1</parameter>
+	<parameter name="return_delay" type="float">0.3</parameter>
+	<parameter name="return_speed" type="float">1</parameter>
+	<parameter name="adaptive_speed" type="toggle">1</parameter>
+	<parameter name="max_correction_dist" type="double">1</parameter>
+	<parameter name="damping" type="double">0.2</parameter>
+</property>

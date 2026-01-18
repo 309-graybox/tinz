@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.20.0.0">
+	<guid>a197f5f8bbb9d292adf674e7c144519c3c3b4f24</guid>
+	<type>property</type>
+	<hash>a3e4f9c2</hash>
+	<runtimes>
+		<runtime id="a197f5f8bbb9d292adf674e7c144519c3c3b4f24" name="CameraVerticalBiasRig" link="0" type="4"/>
+	</runtimes>
+</asset>

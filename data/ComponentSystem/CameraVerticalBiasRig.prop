@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.20.0.0" name="CameraVerticalBiasRig" manual="1" parent_name="node_base">
+	<parameter name="stage" type="switch" items="Intent,Rig,Constraints,Presentation,Finalize,">1</parameter>
+	<parameter name="priority" type="int">0</parameter>
+	<parameter name="used_in_pipeline" type="toggle">1</parameter>
+	<parameter name="enable_min_angle_bias" type="toggle">1</parameter>
+	<parameter name="enable_max_angle_bias" type="toggle">1</parameter>
+	<parameter name="zone_deg" type="float">12</parameter>
+	<parameter name="min_shift_units" type="float">5</parameter>
+	<parameter name="max_shift_units" type="float">5</parameter>
+	<parameter name="bias_power" type="float">1.5</parameter>
+	<parameter name="smooth" type="float">3</parameter>
+</property>

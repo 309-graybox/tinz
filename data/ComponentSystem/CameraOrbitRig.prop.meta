@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.20.0.0">
+	<guid>b6bb611a20f3ccf5ac2fe9ff31f1bc073db9dbbe</guid>
+	<type>property</type>
+	<hash>a4c64f6</hash>
+	<runtimes>
+		<runtime id="b6bb611a20f3ccf5ac2fe9ff31f1bc073db9dbbe" name="CameraOrbitRig" link="0" type="4"/>
+	</runtimes>
+</asset>

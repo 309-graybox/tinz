@@ -2,7 +2,7 @@
 #include <UnigineObjects.h>
 #include <UnigineGame.h>
 
-struct PlayerInput
+struct PlayerCameraInputComponent
 {
 	bool forward;
 	bool backward;
@@ -15,8 +15,8 @@ struct PlayerInput
 class PlayerContext
 {
 public:
-	const PlayerInput &getInput() const noexcept { return _input; }
-	void setInput(PlayerInput input) noexcept { _input = std::move(input); }
+	const PlayerCameraInputComponent &getInput() const noexcept { return _input; }
+	void setInput(PlayerCameraInputComponent input) noexcept { _input = std::move(input); }
 
 	const Unigine::ObjectMeshSkinnedPtr &getMeshSkinned() const noexcept { return _meshSkinned; }
 	void setMeshSkinned(Unigine::ObjectMeshSkinnedPtr meshSkinned) noexcept { _meshSkinned = std::move(meshSkinned); }
@@ -43,7 +43,7 @@ public:
 	}
 
 private:
-	PlayerInput _input;
+	PlayerCameraInputComponent _input;
 	Unigine::ObjectMeshSkinnedPtr _meshSkinned;
 	float _weight = 0.0f;
 	int _proceduralLayer = 0;
