@@ -2,7 +2,6 @@
 #include <UnigineInput.h>
 #include <UnigineConsole.h>
 #include <UnigineGame.h>
-#include <input/InputUtils.h>
 #include "abilities/AbilityJump.h"
 #include "abilities/AbilityDash.h"
 #include "player/state/PlayerStateIdle.h"

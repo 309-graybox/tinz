@@ -1,10 +1,22 @@
 #pragma once
 #include <UnigineNode.h>
 
-struct CameraContext
+class PlayerCameraManager;
+
+class CameraContext
 {
+public:
 	Unigine::NodePtr target;
-	Unigine::NodePtr camera_node;
+	Unigine::Math::Vec3 targetVelocity;
+	Unigine::Math::Vec3 targetSpeedDir;
+	Unigine::Math::Scalar targetSpeed;
+	Unigine::Math::Vec3 targetHorizontalVelocity;
+	Unigine::Math::Vec3 targetHorizontalSpeedDir;
+	Unigine::Math::Scalar targetHorizontalSpeed;
+	Unigine::Math::Vec3 targetVerticalVelocity;
+	Unigine::Math::Vec3 targetVerticalSpeedDir;
+	Unigine::Math::Scalar targetVerticalSpeed;
+	Unigine::NodePtr cameraNode;
 
 	int collision_mask = 0xffffffff;
 };

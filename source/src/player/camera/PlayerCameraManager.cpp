@@ -36,7 +36,7 @@ void PlayerCameraManager::rebuildPipeline()
 	std::sort(mods.begin(), mods.end(), CameraStageComparator());
 
 	_ctx.target = target_node.get();
-	_ctx.camera_node = camera_node.get();
+	_ctx.cameraNode = camera_node.get();
 	_ctx.collision_mask = collision_mask.get();
 
 	Vector<String> names;
@@ -84,19 +84,42 @@ void PlayerCameraManager::update()
 	_state.dt = Game::getIFps();
 
 	_ctx.target = target_node.get();
-	_ctx.camera_node = camera_node.get();
+	_ctx.cameraNode = camera_node.get();
 	_ctx.collision_mask = collision_mask.get();
+	if (_ctx.target)
+	{
+		_ctx.targetVelocity = (_ctx.target->getWorldPosition() - _ctx.target->getOldWorldPosition()) / _state.dt;
+		_ctx.targetSpeed = _ctx.targetVelocity.length();
+		_ctx.targetSpeedDir = _ctx.targetSpeed != 0 ? _ctx.targetVelocity / _ctx.targetSpeed : Vec3_zero;
+		_ctx.targetHorizontalVelocity = Vec3(_ctx.targetVelocity.x, _ctx.targetVelocity.y, 0);
+		_ctx.targetHorizontalSpeed = _ctx.targetHorizontalVelocity.length();
+		_ctx.targetHorizontalSpeedDir = _ctx.targetHorizontalSpeed != 0 ? _ctx.targetHorizontalVelocity / _ctx.targetHorizontalSpeed : Vec3_zero;
+		_ctx.targetVerticalVelocity = Vec3(0, 0, _ctx.targetVelocity.z);
+		_ctx.targetVerticalSpeed = _ctx.targetVerticalVelocity.length();
+		_ctx.targetVerticalSpeedDir = _ctx.targetVerticalSpeed != 0 ? _ctx.targetHorizontalVelocity / _ctx.targetVerticalSpeed : Vec3_zero;
+	} else
+	{
+		_ctx.targetVelocity = Vec3_zero;
+		_ctx.targetSpeedDir = Vec3_zero;
+		_ctx.targetSpeed = 0;
+		_ctx.targetHorizontalVelocity = Vec3_zero;
+		_ctx.targetHorizontalSpeedDir = Vec3_zero;
+		_ctx.targetHorizontalSpeed = 0;
+		_ctx.targetVerticalVelocity = Vec3_zero;
+		_ctx.targetVerticalSpeedDir = Vec3_zero;
+		_ctx.targetVerticalSpeed = 0;
+	}
 
 	for (auto &m : mods)
 		m->apply(_state, _input, _ctx);
 
-	if (!_ctx.camera_node)
+	if (!_ctx.cameraNode)
 		return;
 
-	_ctx.camera_node->setWorldPosition(_state.pos);
-	_ctx.camera_node->setWorldRotation(_state.rot);
+	_ctx.cameraNode->setWorldPosition(_state.pos);
+	_ctx.cameraNode->setWorldRotation(_state.rot);
 
-	if (auto cam = Unigine::checked_ptr_cast<Unigine::Player>(_ctx.camera_node))
+	if (auto cam = Unigine::checked_ptr_cast<Unigine::Player>(_ctx.cameraNode))
 	{
 		cam->setFov(_state.fov);
 	}

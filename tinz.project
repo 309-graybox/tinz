@@ -13,7 +13,7 @@
         ],
         "build_tool": false,
         "component_system": false,
-        "default_world": "tinz",
+        "default_world": "dr_camera",
         "demo": "",
         "editor_plugin": false,
         "engine_binaries": "development",

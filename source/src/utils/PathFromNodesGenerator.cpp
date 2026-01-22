@@ -1,4 +1,5 @@
 #include "PathFromNodesGenerator.h"
+#include "utils/Utils.h"
 
 REGISTER_COMPONENT(PathFromNodesGenerator)
 
@@ -7,47 +8,42 @@ using namespace Unigine::Math;
 
 void PathFromNodesGenerator::init()
 {
-	if (points.size() == 0)
-		return;
+	FLOGERR(!compare(targetSpeed, 0.0f), "invalid zero speed\n");
+	FLOGERR(points.size() != 0, "invalid path len 0\n");
 
-	path = Path::create();
+	auto targetNode = World::loadNode(target);
+	FLOGERR(targetNode, "can not load target node %s\n", target.get());
 
+	auto path = Path::create();
 
-	Unigine::Vector<float> time_stamps(points.size());
-	time_stamps[0] = 0.f;
-	float time_sum = 0.f;
+	float time_sum = 0.0f;
 
-	for (int i = 0; i < points.size() - 1; i++)
-	{
-		float dist = Math::length(points.get(i + 1)->getWorldPosition() - points.get(i)->getWorldPosition());
-		float deltaTime = dist / targetSpeed;
-
-		time_sum += deltaTime;
-		time_stamps[i + 1] = time_sum;
-	}
-
+	auto prevPoint = points.get(0)->getWorldPosition();
 	for (int i = 0; i < points.size(); i++)
 	{
+		auto curPoint = points.get(i)->getWorldPosition();
+		float dist = distance(curPoint, prevPoint);
+		prevPoint = curPoint;
+
+		time_sum += dist / targetSpeed;
+
 		path->addFrame();
 		path->setFramePosition(i, points.get(i)->getWorldPosition());
-
-		path->setFrameTime(i, time_stamps[i]);
+		path->setFrameTime(i, time_sum);
 	}
 
-	String node_name = node->getName();
+	String savePath = pathDirectory + node->getName() + ".path";
 
-	String path_path = pathDirectory + node_name + ".path";
+	FLOGERR(path->save(savePath), "can not save path \"%s\" for %i node\n", savePath.get(), node->getID());
 
-	path->save(path_path);
-
-	world_path = WorldTransformPath::create(path_path, 0);
-	world_path->addChild(World::loadNode(target));
-	world_path->setSpeed(1.f);
-	world_path->setLoop(1);
-	world_path->play();
+	_worldPath = WorldTransformPath::create(savePath, 0);
+	_worldPath->addChild(targetNode);
+	_worldPath->setSpeed(1.f);
+	_worldPath->setLoop(1);
+	_worldPath->play();
 }
 
 void PathFromNodesGenerator::shutdown()
 {
-	world_path.deleteLater();
+	_worldPath.deleteLater();
 }

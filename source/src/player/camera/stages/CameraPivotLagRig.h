@@ -10,11 +10,9 @@ public:
 
 	PROP_PARAM(Double, speed, 1.0, "", "", "", "separate_axis=0")
 	PROP_PARAM(Double, damping, 1.0, "", "", "", "separate_axis=0")
-	PROP_PARAM(Double, max_distance, 300.0, "", "", "", "separate_axis=0")
 
 	PROP_PARAM(DVec3, speed_axis, Unigine::Math::dvec3(1.0), "", "", "", "separate_axis=1")
 	PROP_PARAM(DVec3, damping_axis, Unigine::Math::dvec3(1.0), "", "", "", "separate_axis=1")
-	PROP_PARAM(DVec3, max_distance_axis, Unigine::Math::dvec3(300.0), "", "", "", "separate_axis=1")
 
 	void runtimeReset(CameraState &state, const CameraContext &ctx) override;
 	void apply(CameraState &state, const CameraInput &input, const CameraContext &ctx) override;

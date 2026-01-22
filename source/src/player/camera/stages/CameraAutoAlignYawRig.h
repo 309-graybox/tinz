@@ -22,13 +22,7 @@ public:
 
 private:
 	float _noInputTime = 0.0f;
-	Unigine::Math::Vec3 _lastPos;
-	bool _hasLastPos = false;
-
-	bool _alignActive = false;
-	Unigine::Math::Vec3 _velLP;
-
 	float _latchedTargetYaw = 0.0f;
 	bool _latched = false;
-	Unigine::Math::Vec3 _velDirSmoothed = Unigine::Math::Vec3(0, 1, 0);
+	Unigine::Math::Vec3 _velDirSmoothed = Unigine::Math::Vec3_forward;
 };

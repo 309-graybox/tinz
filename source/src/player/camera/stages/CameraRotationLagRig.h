@@ -15,9 +15,6 @@ public:
 	void runtimeReset(CameraState &state, const CameraContext &ctx) override;
 	void apply(CameraState &state, const CameraInput &input, const CameraContext &ctx) override;
 
-	void init(const Unigine::Math::vec2 &rawAngle);
-	Unigine::Math::vec2 update(const Unigine::Math::vec2 &rawAngle, float ifps);
-
 private:
 	Unigine::Math::vec2 _angle;
 	Unigine::Math::vec2 _velocity;

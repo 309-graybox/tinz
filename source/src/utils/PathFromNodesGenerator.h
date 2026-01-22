@@ -1,27 +1,24 @@
-#ifndef PATHFROMNODESGENERATOR_H
-#define PATHFROMNODESGENERATOR_H
+#pragma once
 
 #include <UnigineComponentSystem.h>
 #include <UnigineWorlds.h>
 
-class PathFromNodesGenerator : public Unigine::ComponentBase
+class PathFromNodesGenerator: public Unigine::ComponentBase
 {
-    COMPONENT_DEFINE(PathFromNodesGenerator,ComponentBase)
-    COMPONENT_INIT(init)
-    COMPONENT_SHUTDOWN(shutdown)
+public:
+	COMPONENT_DEFINE(PathFromNodesGenerator, ComponentBase)
+	COMPONENT_INIT(init)
+	COMPONENT_SHUTDOWN(shutdown)
 
-    PROP_PARAM(File, target)
-    PROP_PARAM(Float, targetSpeed)
-    PROP_PARAM(String, pathDirectory)
-    PROP_ARRAY(Node, points)
+	PROP_PARAM(File, target)
+	PROP_PARAM(Float, targetSpeed)
+	PROP_PARAM(String, pathDirectory)
+	PROP_ARRAY(Node, points)
 
 private:
+	void init();
+	void shutdown();
 
-    void init();
-    void shutdown();
-
-    Unigine::PathPtr path = nullptr;
-    Unigine::WorldTransformPathPtr world_path = nullptr;
+private:
+	Unigine::WorldTransformPathPtr _worldPath = nullptr;
 };
-
-#endif // PATHFROMENODESGENERATOR_H
