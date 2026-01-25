@@ -3,6 +3,8 @@
 	<parameter name="stage" type="switch" items="Intent,Rig,Constraints,Presentation,Finalize,">1</parameter>
 	<parameter name="priority" type="int">0</parameter>
 	<parameter name="used_in_pipeline" type="toggle">1</parameter>
+	<parameter name="debug" type="toggle">0</parameter>
+	<parameter name="velocity_treshold" type="float">2</parameter>
 	<parameter name="enable_min_angle_bias" type="toggle">1</parameter>
 	<parameter name="enable_max_angle_bias" type="toggle">1</parameter>
 	<parameter name="zone_deg" type="float">12</parameter>

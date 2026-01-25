@@ -13,7 +13,8 @@ public:
 	COMPONENT_UPDATE(update)
 	COMPONENT_SHUTDOWN(shutdown)
 
-	PROP_PARAM(File, action_file, "", "", "", "", "filter=.input_action")
+	PROP_PARAM(File, action_look_file, "", "", "", "", "filter=.input_action")
+	PROP_PARAM(File, action_target_lock_file, "", "", "", "", "filter=.input_action")
 
 	PROP_PARAM(Toggle, search_stages_in_children, false)
 	PROP_PARAM(Toggle, rebuild_on_enable, true)
@@ -38,6 +39,8 @@ private:
 
 	Unigine::Vector<CameraStageModifier *> mods;
 
-	EIAction *_action = nullptr;
-	EIBinding *_binding = nullptr;
+	EIAction *_actionLook = nullptr;
+	EIBinding *_bindingLook = nullptr;
+	EIAction *_actionTargetLock = nullptr;
+	EIBinding *_bindingTargetLock = nullptr;
 };

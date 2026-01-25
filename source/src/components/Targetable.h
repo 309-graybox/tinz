@@ -8,5 +8,5 @@ public:
 
 	PROP_ARRAY(Node, targets)
 
-	Unigine::NodePtr getTarget();
+	Unigine::NodePtr getTarget(const Unigine::Math::Vec3& from);
 };

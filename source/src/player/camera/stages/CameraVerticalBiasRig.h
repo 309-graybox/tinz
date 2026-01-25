@@ -6,6 +6,8 @@ class CameraVerticalBiasRig final: public CameraStageModifier
 public:
 	COMPONENT_DEFINE(CameraVerticalBiasRig, CameraStageModifier);
 
+	PROP_PARAM(Float, velocity_treshold, 2.0f)
+
 	PROP_PARAM(Toggle, enable_min_angle_bias, 1);
 	PROP_PARAM(Toggle, enable_max_angle_bias, 1);
 
@@ -23,4 +25,5 @@ public:
 
 private:
 	float _bias = 0.0f;
+	float _velWeight = 1.0f;
 };

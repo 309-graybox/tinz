@@ -58,23 +58,38 @@ void PlayerCameraManager::init()
 	// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	auto ei = EISystem::get();
 
-	auto action = ei->getActionRegistry()->create(ei->getActionRegistry()->getIndexByPath(action_file));
-	if (!action)
+	auto actionReg = ei->getActionRegistry();
+
+	_actionLook = actionReg->create(actionReg->getIndexByPath(action_look_file));
+	if (!_actionLook)
 	{
-		Log::error("PlayerCameraManager::init: action \"%s\" not found\n", action_file.get());
+		Log::error("PlayerCameraManager::init: action \"%s\" not found\n", action_look_file.get());
 		removeComponent<PlayerCameraManager>(node);
 		return;
 	}
 
-	_binding = ei->bind(action, eTriggerState::Triggered | eTriggerState::None, [this](EIActionValueInstance v) {
+	_bindingLook = ei->bind(_actionLook, eTriggerState::Triggered | eTriggerState::None, [this](EIActionValueInstance v) {
+		_input.angle = {0, 0};
+		_input.scroll = 0;
 		if (!Console::isActive() && Input::isMouseGrab())
 		{
 			_input.angle = {v.x(), v.y()};
 			_input.scroll = v.z();
-		} else
+		}
+	});
+
+	_actionTargetLock = actionReg->create(actionReg->getIndexByPath(action_target_lock_file));
+	if (!_actionLook)
+	{
+		Log::error("PlayerCameraManager::init: action \"%s\" not found\n", action_look_file.get());
+		removeComponent<PlayerCameraManager>(node);
+		return;
+	}
+	_bindingTargetLock = ei->bind(_actionTargetLock, eTriggerState::Triggered | eTriggerState::None, [this](EIActionValueInstance v) {
+		_input.targetLock = false;
+		if (!Console::isActive() && Input::isMouseGrab())
 		{
-			_input.angle = {0, 0};
-			_input.scroll = 0;
+			_input.targetLock = !compare(v.getValue().getMagnitude2(), 0.0f);
 		}
 	});
 }
@@ -127,5 +142,6 @@ void PlayerCameraManager::update()
 
 void PlayerCameraManager::shutdown()
 {
-	EISystem::get()->unbind(_action, _binding);
+	EISystem::get()->unbind(_actionTargetLock, _bindingTargetLock);
+	EISystem::get()->unbind(_actionLook, _bindingLook);
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.20.0.0" name="CameraLockOnTarget" manual="1" parent_name="node_base">
+	<parameter name="stage" type="switch" items="Intent,Rig,Constraints,Presentation,Finalize,">1</parameter>
+	<parameter name="priority" type="int">0</parameter>
+	<parameter name="used_in_pipeline" type="toggle">1</parameter>
+	<parameter name="debug" type="toggle">0</parameter>
+	<parameter name="reset_mouse_input" type="toggle">0</parameter>
+	<parameter name="lock_radius" type="float">100</parameter>
+	<parameter name="pitch_limit_deg" type="vec2">-20.000000 30.000000</parameter>
+	<parameter name="camera_offset" type="vec2">0.200000 -0.300000</parameter>
+	<parameter name="transition_speed" type="float">6</parameter>
+	<parameter name="retarget_delay" type="float">0.3</parameter>
+	<parameter name="recovery_delay" type="float">4</parameter>
+	<parameter name="lost_los_timer" type="float">3</parameter>
+	<parameter name="max_deg_per_sec" type="float">720</parameter>
+	<parameter name="intersection_mask" type="mask">-1</parameter>
+</property>

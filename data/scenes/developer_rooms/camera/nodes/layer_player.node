@@ -35,7 +35,8 @@
 		<controlled>1</controlled>
 		<properties>
 			<property parent="0d400de7e9b351ef87d228ebe92afdded16e506c" guid="0156ffc0b18bbecfb361b7f3248b8b71571cda4e">
-				<parameter name="action_file">guid://2e5b555222aebf467d3a9a6f16087e1c2a50bd16</parameter>
+				<parameter name="action_look_file">guid://2e5b555222aebf467d3a9a6f16087e1c2a50bd16</parameter>
+				<parameter name="action_target_lock_file">guid://2605673950df7ff25848f990a7cef99c45d1250a</parameter>
 				<parameter name="search_stages_in_children">1</parameter>
 				<parameter name="target_node">1120127556</parameter>
 				<parameter name="camera_node">1892598520</parameter>
@@ -55,19 +56,26 @@
 			</node>
 			<node type="NodeDummy" id="1268456863" name="rig">
 				<properties>
-					<property parent="b6bb611a20f3ccf5ac2fe9ff31f1bc073db9dbbe" guid="0cbf9f5e6890a017d9708719333f3050f50d9dbc"/>
 					<property parent="b61d5c7a5f3c588f76b0605d48eea0d2343198c9" guid="10c1afb45d29ff73eedc26d5d862f93c8254ddeb">
-						<parameter name="priority">-5</parameter>
+						<parameter name="priority">-1000000</parameter>
 					</property>
 					<property parent="e8101904cf50511562f0b28593fc6cd406d1cf22" guid="f1459a1abf0bb8e92f6bd2b38d95f58f099da359">
-						<parameter name="priority">-4</parameter>
+						<parameter name="priority">-100000</parameter>
 					</property>
 					<property parent="a197f5f8bbb9d292adf674e7c144519c3c3b4f24" guid="3753b94898203a23dde124f93605f3ee33735e6f">
-						<parameter name="priority">-3</parameter>
+						<parameter name="priority">-10000</parameter>
+					</property>
+					<property parent="725def5a82138de00a22a9e3d1878c8141ff2032" guid="5be51118951987535a39aa74e6979e68a97ea7a8">
+						<parameter name="priority">-1000</parameter>
+						<parameter name="debug">1</parameter>
 					</property>
 					<property parent="9394cfe3b438df9214c16dd6ee132ccdd974168d" guid="653f7b08a622fce09c714e1b70ebe312fd7a2b56">
-						<parameter name="priority">-2</parameter>
+						<parameter name="priority">-100</parameter>
 					</property>
+					<property parent="b587ac7619c52565fc92e30cd342ebb025601d55" guid="357324d994183a2a6373148de37dd52b80eed42d">
+						<parameter name="priority">-10</parameter>
+					</property>
+					<property parent="b6bb611a20f3ccf5ac2fe9ff31f1bc073db9dbbe" guid="0cbf9f5e6890a017d9708719333f3050f50d9dbc"/>
 				</properties>
 				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 			</node>
