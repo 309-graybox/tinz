@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.20.0.0">
+	<guid>255099215fc276f7d4d34d92bc196405724a8bfc</guid>
+	<type>property</type>
+	<hash>606e0bbc</hash>
+	<runtimes>
+		<runtime id="255099215fc276f7d4d34d92bc196405724a8bfc" name="CameraTarget" link="0" type="4"/>
+	</runtimes>
+</asset>

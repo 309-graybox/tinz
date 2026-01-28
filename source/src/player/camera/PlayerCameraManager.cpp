@@ -1,7 +1,9 @@
 #include "PlayerCameraManager.h"
-#include <plugins/Ryutp/EnhancedInput/EnhancedInput.h>
+#include "components/CameraTarget.h"
+#include "utils/Utils.h"
 #include <UnigineConsole.h>
 #include <UnigineGame.h>
+#include <plugins/Ryutp/EnhancedInput/EnhancedInput.h>
 
 REGISTER_COMPONENT(PlayerCameraManager)
 
@@ -52,6 +54,13 @@ void PlayerCameraManager::rebuildPipeline()
 void PlayerCameraManager::init()
 {
 	Input::setMouseHandle(Input::MOUSE_HANDLE_GRAB);
+
+	FLOGERR(target_node, "target_node should be Player\n");
+
+	CameraTarget *target = getComponent<CameraTarget>(target_node, true);
+	if (!target)
+		target = addComponent<CameraTarget>(target_node);
+	target->setManager(this);
 
 	rebuildPipeline();
 

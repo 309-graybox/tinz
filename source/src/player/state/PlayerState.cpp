@@ -8,7 +8,7 @@ PlayerState::~PlayerState() = default;
 
 void PlayerState::onEnter(PlayerContext &ctx)
 {
-	Log::message("Enter state %s\n", getStateName());
+	// Log::message("Enter state %s\n", getStateName());
 	onEnterImpl(ctx);
 }
 
@@ -19,7 +19,7 @@ void PlayerState::onUpdate(PlayerContext &ctx)
 
 void PlayerState::onExit(PlayerContext &ctx)
 {
-	Log::message("Exit state %s\n", getStateName());
+	// Log::message("Exit state %s\n", getStateName());
 	onExitImpl(ctx);
 }
 

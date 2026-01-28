@@ -757,6 +757,40 @@
 			<layer>guid://a217074d9ffbbfb7ba2bac7bfa25e325be333085</layer>
 			<transform>0.999999880791 0 0 0.0 0 0.999999880791 0 0.0 0 0 0.999999940395 0.0 0 0 0 1.0</transform>
 		</node>
+		<node type="WorldTrigger" id="1472598426" name="WorldTrigger">
+			<touch>1</touch>
+			<size>17.1075401 7.03091574 2.52918816</size>
+			<transform>0.999999761581 0 0 0.0 0 0.999999761581 0 0.0 0 0 0.999999880791 0.0 -21.7792479462 -34.5568318195 2.23183576607 1.0</transform>
+			<node type="NodeDummy" id="1418409009" name="NodeDummy_1">
+				<properties>
+					<property parent="ea56f23cdfd95542d00e2ad5d1aec466a537ebf3" guid="bfe0e6facb0a022af5b77126099e98f57bfda3d6">
+						<parameter name="bound_trigger">1472598426</parameter>
+						<parameter name="target_node">1050854399</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -8.4704215456 3.11341668156 1.51922376215 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1050854399" name="NodeDummy_2">
+				<transform>1.00000011921 0 0 0.0 0 1.00000011921 0 0.0 0 0 1.0000000596 0.0 8.48756772641 -3.30125698413 0.654295836971 1.0</transform>
+			</node>
+		</node>
+		<node type="WorldTrigger" id="1022144353" name="WorldTrigger_1">
+			<touch>1</touch>
+			<size>17.2150421 7.03842068 2.55089974</size>
+			<transform>0.999999880791 0 0 0.0 0 0.999999880791 0 0.0 0 0 0.999999940395 0.0 -21.8158825687 -34.5644137974 5.24722840676 1.0</transform>
+			<node type="NodeDummy" id="1120764236" name="NodeDummy">
+				<properties>
+					<property parent="ea56f23cdfd95542d00e2ad5d1aec466a537ebf3" guid="4fd664e5ccaade7d212dbd86a8d2583b135d53fb">
+						<parameter name="bound_trigger">1022144353</parameter>
+						<parameter name="target_node">583978043</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 8.52419752678 3.48358912223 1.20307235846 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="583978043" name="NodeDummy_3">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -6.03340804468 -3.49437110406 -0.458249857418 1.0</transform>
+			</node>
+		</node>
 	</editor>
 	<console>
 		<bake_lighting_bounces>4</bake_lighting_bounces>

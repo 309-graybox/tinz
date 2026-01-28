@@ -76,6 +76,9 @@
 						<parameter name="priority">-10</parameter>
 					</property>
 					<property parent="b6bb611a20f3ccf5ac2fe9ff31f1bc073db9dbbe" guid="0cbf9f5e6890a017d9708719333f3050f50d9dbc"/>
+					<property parent="94706d019d6fa8c71999d7a79a517525855d7821" guid="d2be80ab6c9fc5145e6803cfce6daec31cd60cab">
+						<parameter name="priority">10</parameter>
+					</property>
 				</properties>
 				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 			</node>
@@ -83,6 +86,7 @@
 				<properties>
 					<property parent="8dced03fbd04c797bbbd3971c3a2af8056f26a40" guid="aaf2e52ea247f5fcda7e05a9dc41716cdceab10c">
 						<parameter name="stage">2</parameter>
+						<parameter name="used_in_pipeline">1</parameter>
 					</property>
 				</properties>
 				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
@@ -113,7 +117,7 @@
 		</properties>
 		<transform>0.999999761581 1.67037340734e-22 -3.82136965978e-15 0.0 1.6703737664e-22 1 8.74227623626e-08 0.0 3.82136920423e-15 -8.74227727842e-08 0.999999940395 0.0 -7.77278839388 -16.2017125668 1.00013501443 1.0</transform>
 	</node>
-	<node type="ObjectMeshSkinned" id="1120127556" name="Ch36">
+	<node type="ObjectMeshSkinned" id="1120127556" trigger_interaction_enabled="1" name="Ch36">
 		<mesh_name>guid://6d3b0249ba8c0d190b09b9632d4c4b3b0b31b772</mesh_name>
 		<fps_visible_camera>-1</fps_visible_camera>
 		<fps_visible_shadow>30</fps_visible_shadow>
@@ -132,14 +136,10 @@
 			</shape>
 		</body>
 		<properties>
-			<property enabled="0" parent="950ec4c5b5198520ca3cdef4137240b26f0f302c" guid="a7135fe9243a71fd910ef00351f26cc8b6a29392"/>
 			<property parent="ad859dc1662fd39a914c52201126c666d96769e2" guid="f6a20bf8d2ce1cefabf67318ff0397b4513e142b"/>
 			<property parent="c666bd1ed6f128dc30c73ea3ff8460cd94e81a67" guid="96b8f3b360737706157e5d131fe2e4dd0a43848a"/>
 			<property parent="3569fd08bdd313721f50cb6bbbd1897e5e42bf66" guid="2df692c2df78de88725608f27c4e328e375c7a1e"/>
 		</properties>
 		<transform>0.999999821185 -2.54880958082e-29 6.20842100631e-22 0.0 1.67037443537e-22 1.0000000596 -9.00007539211e-15 0.0 -6.20841997414e-22 9.000076465e-15 0.999999940395 0.0 4.60384314014 -3.03395688938 0 1.0</transform>
-		<node type="NodeDummy" id="1961810175" name="NodeDummy">
-			<transform>0.999999940396 2.54880983575e-29 -6.20842100631e-22 0.0 -1.6703746345e-22 0.9999999404 9.00007539215e-15 0.0 6.2084210843e-22 -9.0000759286e-15 1 0.0 0 -1.64313007645e-14 1.84268836601 1.0</transform>
-		</node>
 	</node>
 </nodes>

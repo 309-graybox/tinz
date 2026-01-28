@@ -18,5 +18,6 @@ public:
 	Unigine::Math::Scalar targetVerticalSpeed;
 	Unigine::NodePtr cameraNode;
 
-	int collision_mask = 0xffffffff;
+	// TODO WTF???
+	mutable int collision_mask = 0xffffffff;
 };
