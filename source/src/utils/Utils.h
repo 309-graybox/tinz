@@ -1,10 +1,10 @@
 #pragma once
 #include "UnigineFmt.h"
 
-#define FLOGERR(COND, ...)                                  \
+#define FLOGERR(COND, MSG, ...)                                  \
 	if (!(COND))                                            \
 	{                                                       \
-		Unigine::Log::error(__FUNCTION__ ": " __VA_ARGS__); \
+		Unigine::Log::error(String::format("%s: %s", __FUNCTION__, MSG), __VA_ARGS__); \
 		removeComponent<__this_class>(node);                \
 		return;                                             \
 	}

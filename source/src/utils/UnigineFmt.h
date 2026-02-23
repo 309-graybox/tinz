@@ -63,8 +63,8 @@ private:
 	}
 
 private:
-	const char *_e;
 	const char *_p;
+	const char *_e;
 };
 
 class FormatContext
