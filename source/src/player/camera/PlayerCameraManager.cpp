@@ -82,7 +82,7 @@ void PlayerCameraManager::init()
 		_input.scroll = 0;
 		if (!Console::isActive() && Input::isMouseGrab())
 		{
-			_input.angle = {v.x(), v.y()};
+            _input.angle = {v.x(), -v.y()};
 			_input.scroll = v.z();
 		}
 	});
