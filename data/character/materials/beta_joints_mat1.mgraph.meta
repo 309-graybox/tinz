@@ -2,7 +2,7 @@
 <asset version="2.20.0.0">
 	<guid>31fb5d31b3998ba0df42768bc4a0fb6c39aeebfa</guid>
 	<type>material_graph</type>
-	<hash>a2f91b86</hash>
+	<hash>f76ef6c2</hash>
 	<runtimes>
 		<runtime id="31fb5d31b3998ba0df42768bc4a0fb6c39aeebfa" name="beta_joints_mat1.mgraph" link="0"/>
 		<runtime id="1fdb5bcb50673c6e10f2b0b59dcfa03a4d47c93c" name="beta_joints_mat1" link="1" type="5"/>

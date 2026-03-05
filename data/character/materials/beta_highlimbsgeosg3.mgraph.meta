@@ -2,7 +2,7 @@
 <asset version="2.20.0.0">
 	<guid>bae9ee65996af4eaad079edf886e4db4761165fe</guid>
 	<type>material_graph</type>
-	<hash>fef562cc</hash>
+	<hash>4ce36452</hash>
 	<runtimes>
 		<runtime id="bae9ee65996af4eaad079edf886e4db4761165fe" name="beta_highlimbsgeosg3.mgraph" link="0"/>
 		<runtime id="4929a81f6acd9e8a70912929301525149b03c5e0" name="beta_highlimbsgeosg3" link="1" type="5"/>

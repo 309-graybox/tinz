@@ -2,12 +2,12 @@
 <asset version="2.20.0.0">
 	<guid>bb400a633a218eca9e0f990d95a9ac63aad57e34</guid>
 	<type>fbx</type>
-	<hash>181abb19</hash>
+	<hash>d8a9a43f</hash>
 	<runtimes>
 		<runtime id="bb400a633a218eca9e0f990d95a9ac63aad57e34" name="character.fbx" link="0"/>
 		<runtime id="93641ce4bcc04df36bc531228f3c6c8779e76a9f" name="character.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">9affe4c7</parameter>
+				<parameter type="string" name="id">c195608a</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="6d3b0249ba8c0d190b09b9632d4c4b3b0b31b772" name="ch36.mesh" link="2" type="1">

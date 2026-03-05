@@ -2,7 +2,7 @@
 <asset version="2.20.0.0">
 	<guid>0645b64ca57b3e351f12ea1fef08ce0ff945650b</guid>
 	<type>material_graph</type>
-	<hash>8244ac01</hash>
+	<hash>c7b23912</hash>
 	<runtimes>
 		<runtime id="0645b64ca57b3e351f12ea1fef08ce0ff945650b" name="cylinder_2_mesh_base.mgraph" link="0"/>
 		<runtime id="22cc245e881468f57b7976692459afedddd7d175" name="cylinder_2_mesh_base" link="1" type="5"/>

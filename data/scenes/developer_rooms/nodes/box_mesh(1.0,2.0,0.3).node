@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.20.0.0">
+	<node type="NodeDummy" id="245154847" name="NodeDummy">
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		<node type="ObjectMeshStatic" id="1335316216" name="box_mesh(1.0,2.0,0.3)(0)">
+			<mesh_name>guid://2f361413236a7d36c8c234847e1948ae5b95446f</mesh_name>
+			<surface name="box_mesh(1.0,2.0,0.3)" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+			<body type="BodyDummy" id="1810036619" frozen="0">
+				<shape type="ShapeBox" id="1378477934">
+					<size>1 2 0.300000012</size>
+				</shape>
+			</body>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1187825143" name="box_mesh(1.0,2.0,0.3)(1)">
+			<mesh_name>guid://2f361413236a7d36c8c234847e1948ae5b95446f</mesh_name>
+			<surface name="box_mesh(1.0,2.0,0.3)" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+			<body type="BodyDummy" id="1378477934" frozen="0">
+				<shape type="ShapeBox" id="881035253">
+					<size>1 2 0.300000012</size>
+				</shape>
+			</body>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 1 0 0.300000011921 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1087662826" name="box_mesh(1.0,2.0,0.3)(2)">
+			<mesh_name>guid://2f361413236a7d36c8c234847e1948ae5b95446f</mesh_name>
+			<surface name="box_mesh(1.0,2.0,0.3)" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+			<body type="BodyDummy" id="881035253" frozen="0">
+				<shape type="ShapeBox" id="372603088">
+					<size>1 2 0.300000012</size>
+				</shape>
+			</body>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 2 0 0.600000023842 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="447454529" name="box_mesh(1.0,2.0,0.3)(3)">
+			<mesh_name>guid://2f361413236a7d36c8c234847e1948ae5b95446f</mesh_name>
+			<surface name="box_mesh(1.0,2.0,0.3)" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+			<body type="BodyDummy" id="372603088" frozen="0">
+				<shape type="ShapeBox" id="2006513135">
+					<size>1 2 0.300000012</size>
+				</shape>
+			</body>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 3 0 0.900000035763 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1395053996" name="box_mesh(1.0,2.0,0.3)(4)">
+			<mesh_name>guid://2f361413236a7d36c8c234847e1948ae5b95446f</mesh_name>
+			<surface name="box_mesh(1.0,2.0,0.3)" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+			<body type="BodyDummy" id="2006513135" frozen="0">
+				<shape type="ShapeBox" id="1166518914">
+					<size>1 2 0.300000012</size>
+				</shape>
+			</body>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 4 0 1.20000004768 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1280726299" name="box_mesh(1.0,2.0,0.3)(5)">
+			<mesh_name>guid://2f361413236a7d36c8c234847e1948ae5b95446f</mesh_name>
+			<surface name="box_mesh(1.0,2.0,0.3)" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+			<body type="BodyDummy" id="1166518914" frozen="0">
+				<shape type="ShapeBox" id="2029283321">
+					<size>1 2 0.300000012</size>
+				</shape>
+			</body>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 5 0 1.5 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1381828542" name="box_mesh(1.0,2.0,0.3)(6)">
+			<mesh_name>guid://2f361413236a7d36c8c234847e1948ae5b95446f</mesh_name>
+			<surface name="box_mesh(1.0,2.0,0.3)" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+			<body type="BodyDummy" id="2029283321" frozen="0">
+				<shape type="ShapeBox" id="1771467012">
+					<size>1 2 0.300000012</size>
+				</shape>
+			</body>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 6 0 1.80000007153 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1036782597" name="box_mesh(1.0,2.0,0.3)(7)">
+			<mesh_name>guid://2f361413236a7d36c8c234847e1948ae5b95446f</mesh_name>
+			<surface name="box_mesh(1.0,2.0,0.3)" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+			<body type="BodyDummy" id="1771467012" frozen="0">
+				<shape type="ShapeBox" id="327043219">
+					<size>1 2 0.300000012</size>
+				</shape>
+			</body>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 7 0 2.10000014305 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1494388128" name="box_mesh(1.0,2.0,0.3)(8)">
+			<mesh_name>guid://2f361413236a7d36c8c234847e1948ae5b95446f</mesh_name>
+			<surface name="box_mesh(1.0,2.0,0.3)" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+			<body type="BodyDummy" id="327043219" frozen="0">
+				<shape type="ShapeBox" id="555627734">
+					<size>1 2 0.300000012</size>
+				</shape>
+			</body>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 8 0 2.40000009537 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="2070799487" name="box_mesh(1.0,2.0,0.3)(9)">
+			<mesh_name>guid://2f361413236a7d36c8c234847e1948ae5b95446f</mesh_name>
+			<surface name="box_mesh(1.0,2.0,0.3)" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+			<body type="BodyDummy" id="555627734" frozen="0">
+				<shape type="ShapeBox" id="485156413">
+					<size>1 2 0.300000012</size>
+				</shape>
+			</body>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 9 0 2.70000004768 1.0</transform>
+		</node>
+	</node>
+</nodes>

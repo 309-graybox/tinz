@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.20.0.0">
+	<guid>6c3a68954326ad72c48529500faaed3687c67a0c</guid>
+	<type>world</type>
+	<hash>0bf08dbb</hash>
+	<runtimes>
+		<runtime id="6c3a68954326ad72c48529500faaed3687c67a0c" name="dr_locomotion.world" link="0"/>
+	</runtimes>
+	<parameters>
+		<parameter type="string" name="physics_settings_path"/>
+		<parameter type="string" name="render_settings_path"/>
+		<parameter type="string" name="script_name"/>
+		<parameter type="string" name="sound_settings_path"/>
+		<parameter type="string" name="viewports_settings"/>
+	</parameters>
+</asset>

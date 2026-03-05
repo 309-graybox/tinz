@@ -2,7 +2,7 @@
 <asset version="2.20.0.0">
 	<guid>fd20e87ef57a07de9fc4cfac80df97f1c665d7d1</guid>
 	<type>material_graph</type>
-	<hash>bfbd91ad</hash>
+	<hash>0f69b64</hash>
 	<runtimes>
 		<runtime id="fd20e87ef57a07de9fc4cfac80df97f1c665d7d1" name="ch36_body.mgraph" link="0"/>
 		<runtime id="2d269de0223b03c09c46acbe377e108bd6d2be2b" name="ch36_body" link="1" type="5"/>
