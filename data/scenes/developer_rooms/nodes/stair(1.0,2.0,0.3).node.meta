@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.20.0.0">
+	<guid>c420e1af2ff8ebb2743105883994a5e41db7c9b2</guid>
+	<type>node</type>
+	<hash>8ca9b92a</hash>
+	<runtimes>
+		<runtime id="c420e1af2ff8ebb2743105883994a5e41db7c9b2" name="stair(1.0,2.0,0.3).node" link="0" type="3"/>
+	</runtimes>
+</asset>
