@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<property version="2.20.0.0" name="Mover" manual="1" parent_name="node_base">
-	<parameter name="speed" type="float">8</parameter>
-	<parameter name="sprint_speed" type="float">16</parameter>
-	<parameter name="rotation_speed" type="float">1</parameter>
-</property>

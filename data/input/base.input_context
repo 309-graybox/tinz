@@ -140,5 +140,11 @@
 				</Trigger>
 			</Triggers>
 		</Mapping>
+		<Mapping>
+			<Action>walk</Action>
+			<Key>LeftAlt</Key>
+			<Modifiers/>
+			<Triggers/>
+		</Mapping>
 	</Mappings>
 </EIContext>

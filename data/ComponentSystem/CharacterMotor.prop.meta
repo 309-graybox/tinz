@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.20.0.0">
+	<guid>5b253618c0f3cb18baa5f9fd78912f188d2c8dad</guid>
+	<type>property</type>
+	<hash>1f9bb7da</hash>
+	<runtimes>
+		<runtime id="5b253618c0f3cb18baa5f9fd78912f188d2c8dad" name="CharacterMotor" link="0" type="4"/>
+	</runtimes>
+</asset>

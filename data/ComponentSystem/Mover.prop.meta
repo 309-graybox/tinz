@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
-	<guid>ad859dc1662fd39a914c52201126c666d96769e2</guid>
-	<type>property</type>
-	<hash>5a53642f</hash>
-	<runtimes>
-		<runtime id="ad859dc1662fd39a914c52201126c666d96769e2" name="Mover" link="0" type="4"/>
-	</runtimes>
-</asset>
