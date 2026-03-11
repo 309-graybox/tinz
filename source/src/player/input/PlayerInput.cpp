@@ -65,7 +65,7 @@ void PlayerInput::update(const Unigine::Math::vec3 &up)
 	vec3 move_dir = forward_dir * forward + right_dir * side;
 
 	float d = dot(vec3_up, up);
-	if (Math::abs(d) < 1e-6f)
+	if (Math::abs(d) < Consts::EPS)
 		_move_direction = move_dir;
 	else
 		_move_direction = move_dir - vec3_up * (dot(move_dir, up) / d); // TODO(vah): try to remove division
@@ -80,6 +80,7 @@ void PlayerInput::shutdown()
 	if (!ei)
 		return;
 
+	if (_binding_walk) ei->unbind(_action_walk, _binding_walk);
 	if (_binding_move) ei->unbind(_action_move, _binding_move);
 	if (_binding_sprint) ei->unbind(_action_sprint, _binding_sprint);
 	if (_binding_crouch) ei->unbind(_action_crouch, _binding_crouch);
@@ -89,15 +90,11 @@ void PlayerInput::shutdown()
 
 bool PlayerInput::consumeJump()
 {
-	bool r = _jump_requested;
-	_jump_requested = false;
-	return r;
+	return std::exchange(_jump_requested, false);
 }
 
 bool PlayerInput::consumeDash()
 {
-	bool r = _dash_requested;
-	_dash_requested = false;
-	return r;
+	return std::exchange(_dash_requested, false);
 }
 

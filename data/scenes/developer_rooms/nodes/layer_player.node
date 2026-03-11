@@ -9,13 +9,18 @@
 		<is_listener>1</is_listener>
 		<controlled>1</controlled>
 		<properties>
-			<property parent="0d400de7e9b351ef87d228ebe92afdded16e506c" guid="0156ffc0b18bbecfb361b7f3248b8b71571cda4e">
+			<property parent="0d400de7e9b351ef87d228ebe92afdded16e506c" guid="1c73cd3250cf0b99217122d9af583b3e83ea9682">
 				<parameter name="action_look_file">guid://2e5b555222aebf467d3a9a6f16087e1c2a50bd16</parameter>
 				<parameter name="action_target_lock_file">guid://2605673950df7ff25848f990a7cef99c45d1250a</parameter>
 				<parameter name="search_stages_in_children">1</parameter>
 				<parameter name="target_node">1120127556</parameter>
 				<parameter name="camera_node">1892598520</parameter>
 				<parameter name="collision_mask">0x7fffffff</parameter>
+			</property>
+			<property parent="5b253618c0f3cb18baa5f9fd78912f188d2c8dad" guid="324041a2fe2f758105b07a892082b807f19608f2">
+				<parameter name="slopeLimit">44</parameter>
+				<parameter name="target">1120127556</parameter>
+				<parameter name="body">1120127556</parameter>
 			</property>
 		</properties>
 		<transform>0.999999761581 0 0 0.0 0 1 0 0.0 0 0 0.999999940395 0.0 -8.77421037377 -14.9420362567 2.65047817637 1.0</transform>
@@ -77,19 +82,15 @@
 		<loop>1</loop>
 		<speed>30</speed>
 		<surface name="Ch36_Body" intersection="1" intersection_mask="0x80000000" material="2d269de0223b03c09c46acbe377e108bd6d2be2b"/>
-		<body type="BodyRigid" id="1125882260" frozen="0">
-			<angular_scale>0 0 1</angular_scale>
-			<linear_damping>2</linear_damping>
-			<angular_damping>5</angular_damping>
-			<shape type="ShapeCapsule" id="1561151261" name="ShapeCapsule" transform="1 -0 -9.40395481e-38 0 -3.92927789e-38 1 0 0 9.40395481e-38 0 1 0 2.9116869e-05 0.0264136791 0.868260682 1">
-				<radius>0.195680007</radius>
-				<height>1.39239001</height>
+		<body type="BodyDummy" id="1115597382" frozen="0">
+			<shape type="ShapeCapsule" id="1612893607" name="ShapeCapsule" transform="1 0 0 0 0 1 0 0 0 0 1 0 2.89976597e-05 0.0264137238 0.831617653 1">
+				<radius>0.209570006</radius>
+				<height>1.25</height>
 			</shape>
 		</body>
 		<properties>
-			<property parent="ad859dc1662fd39a914c52201126c666d96769e2" guid="f6a20bf8d2ce1cefabf67318ff0397b4513e142b"/>
-			<property parent="c666bd1ed6f128dc30c73ea3ff8460cd94e81a67" guid="96b8f3b360737706157e5d131fe2e4dd0a43848a"/>
-			<property parent="3569fd08bdd313721f50cb6bbbd1897e5e42bf66" guid="2df692c2df78de88725608f27c4e328e375c7a1e"/>
+			<property enabled="0" parent="c666bd1ed6f128dc30c73ea3ff8460cd94e81a67" guid="96b8f3b360737706157e5d131fe2e4dd0a43848a"/>
+			<property enabled="0" parent="3569fd08bdd313721f50cb6bbbd1897e5e42bf66" guid="2df692c2df78de88725608f27c4e328e375c7a1e"/>
 		</properties>
 		<transform>0.999999821185 -2.54880958082e-29 6.20842100631e-22 0.0 1.67037443537e-22 1.0000000596 -9.00007539211e-15 0.0 -6.20841997414e-22 9.000076465e-15 0.999999940395 0.0 4.60384314014 -3.03395688938 0 1.0</transform>
 	</node>
