@@ -56,6 +56,15 @@ void CameraAutoAlignPitchRig::apply(CameraState &state, const CameraInput &input
 	float targetPitch = atan2(_velDirSmoothed.z, h) * Consts::RAD2DEG + pitch_offset_deg.get();
 	targetPitch = clamp(targetPitch, min_pitch_deg.get(), max_pitch_deg.get());
 
+	const float aMin = align_min_deg.get();
+	const float aMax = align_max_deg.get();
+	if (state.rig.angle.y < aMin)
+		targetPitch = aMin;
+	else if (state.rig.angle.y > aMax)
+		targetPitch = aMax;
+	else
+		return;
+
 	if (!_latched)
 	{
 		_latchedTargetPitch = targetPitch;

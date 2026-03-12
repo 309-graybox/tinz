@@ -17,11 +17,9 @@ public:
 	PROP_PARAM(Float, vel_dir_smooth, 12.0f)
 	PROP_PARAM(Float, target_pitch_smooth, 10.0f)
 
-	// Если нужно ограничить pitch, чтобы не улетал в зенит/надир
 	PROP_PARAM(Float, min_pitch_deg, -89.0f)
 	PROP_PARAM(Float, max_pitch_deg, 89.0f)
 
-	// Диапазон, к которому автовыравнивание тянет pitch (внутри min/max_pitch_deg)
 	PROP_PARAM(Float, align_min_deg, -10.0f)
 	PROP_PARAM(Float, align_max_deg, 10.0f)
 
