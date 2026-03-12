@@ -33,6 +33,10 @@ private:
 	void shutdown();
 
 private:
+	void update_camera_state();
+	void update_camera_context();
+
+private:
 	CameraState _state;
 	CameraInput _input;
 	CameraContext _ctx;

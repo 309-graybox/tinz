@@ -84,7 +84,7 @@ void PlayerCameraManager::init()
 		_input.scroll = 0;
 		if (!Console::isActive() && Input::isMouseGrab())
 		{
-            _input.angle = {v.x(), -v.y()};
+			_input.angle = {v.x(), -v.y()};
 			_input.scroll = v.z();
 		}
 	});
@@ -103,18 +103,50 @@ void PlayerCameraManager::init()
 			_input.targetLock = !compare(v.getValue().getMagnitude2(), 0.0f);
 		}
 	});
+
+	if (_ctx.target)
+		_ctx.targetOldPosition = _ctx.target->getWorldPosition();
 }
 
 void PlayerCameraManager::update()
 {
-	_state.dt = Game::getIFps();
+	update_camera_state();
+	update_camera_context();
 
+	for (auto &m : mods)
+		m->apply(_state, _input, _ctx);
+
+	if (!_ctx.cameraNode)
+		return;
+
+	_ctx.cameraNode->setWorldPosition(_state.pos);
+	_ctx.cameraNode->setWorldRotation(_state.rot);
+
+	if (auto cam = Unigine::checked_ptr_cast<Unigine::Player>(_ctx.cameraNode))
+	{
+		cam->setFov(_state.fov);
+	}
+}
+
+void PlayerCameraManager::shutdown()
+{
+	EISystem::get()->unbind(_actionTargetLock, _bindingTargetLock);
+	EISystem::get()->unbind(_actionLook, _bindingLook);
+}
+
+void PlayerCameraManager::update_camera_state()
+{
+	_state.dt = Game::getIFps();
+}
+
+void PlayerCameraManager::update_camera_context()
+{
 	_ctx.target = target_node.get();
 	_ctx.cameraNode = camera_node.get();
 	_ctx.collision_mask = collision_mask.get();
 	if (_ctx.target)
 	{
-		_ctx.targetVelocity = (_ctx.target->getWorldPosition() - _ctx.target->getOldWorldPosition()) / _state.dt;
+		_ctx.targetVelocity = (_ctx.target->getWorldPosition() - _ctx.targetOldPosition) / _state.dt;
 		_ctx.targetSpeed = _ctx.targetVelocity.length();
 		_ctx.targetSpeedDir = _ctx.targetSpeed != 0 ? _ctx.targetVelocity / _ctx.targetSpeed : Vec3_zero;
 		_ctx.targetHorizontalVelocity = Vec3(_ctx.targetVelocity.x, _ctx.targetVelocity.y, 0);
@@ -136,23 +168,5 @@ void PlayerCameraManager::update()
 		_ctx.targetVerticalSpeed = 0;
 	}
 
-	for (auto &m : mods)
-		m->apply(_state, _input, _ctx);
-
-	if (!_ctx.cameraNode)
-		return;
-
-	_ctx.cameraNode->setWorldPosition(_state.pos);
-	_ctx.cameraNode->setWorldRotation(_state.rot);
-
-	if (auto cam = Unigine::checked_ptr_cast<Unigine::Player>(_ctx.cameraNode))
-	{
-		cam->setFov(_state.fov);
-	}
-}
-
-void PlayerCameraManager::shutdown()
-{
-	EISystem::get()->unbind(_actionTargetLock, _bindingTargetLock);
-	EISystem::get()->unbind(_actionLook, _bindingLook);
+	_ctx.targetOldPosition = _ctx.target->getWorldPosition();
 }

@@ -7,6 +7,7 @@ class CameraContext
 {
 public:
 	Unigine::NodePtr target;
+	Unigine::Math::Vec3 targetOldPosition;
 	Unigine::Math::Vec3 targetVelocity;
 	Unigine::Math::Vec3 targetSpeedDir;
 	Unigine::Math::Scalar targetSpeed;
