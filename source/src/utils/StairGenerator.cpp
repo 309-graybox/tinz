@@ -27,7 +27,7 @@ void StairGenerator::init()
     NodePtr stair_node = NodeDummy::create();
     stair_node->setName(node_name);
 
-    for (int var = 0; var < 10; ++var) {
+    for (int var = 0; var < stepCount.get(); ++var) {
         ObjectMeshStaticPtr new_mesh = ObjectMeshStatic::create(mesh_path);
         BodyDummyPtr dummy = BodyDummy::create(new_mesh);
         ShapeBoxPtr shape = ShapeBox::create(dummy,mesh_dimensions);

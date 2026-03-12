@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <asset version="2.20.0.0">
-	<guid>87737257d717f9ce7b0227b23b2f6f02a5256689</guid>
+	<guid>75cc1ef673d9481886040d69fa4fcc2cf256e9ac</guid>
 	<type>mesh</type>
-	<hash>63f02cb</hash>
+	<hash>df58ace6</hash>
 	<runtimes>
-		<runtime id="87737257d717f9ce7b0227b23b2f6f02a5256689" name="box_mesh(1.0,2.0,0.4).mesh" link="0" type="1"/>
+		<runtime id="75cc1ef673d9481886040d69fa4fcc2cf256e9ac" name="box_mesh(1.0,14.0,0.5).mesh" link="0" type="1"/>
 	</runtimes>
 	<parameters>
 		<parameter type="string" name="lightmaps"/>

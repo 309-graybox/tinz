@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<nodes version="2.19.0.3">
+<nodes version="2.20.0.0">
 	<node type="ObjectMeshClutter" id="103169704" name="dither_transparency_check">
 		<mesh_name>guid://7a348dcbdd71ce606f76c3e72a98b4ff62c59a75</mesh_name>
 		<intersection>1</intersection>
@@ -23,7 +23,7 @@
 		<rotation_spread>0 0.5 180.100006</rotation_spread>
 		<terrain_mask>-1</terrain_mask>
 		<mask_min_value>5</mask_min_value>
-		<surface name="sphere" intersection="1" material="9ce875824cc0b6f9c970740499c26f93691e2fd6"/>
+		<surface name="sphere" intersection_mask="0x0" material="9ce875824cc0b6f9c970740499c26f93691e2fd6"/>
 		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 -1.59671386282 1.0</transform>
 	</node>
 </nodes>

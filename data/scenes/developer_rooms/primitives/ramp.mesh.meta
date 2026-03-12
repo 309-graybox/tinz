@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <asset version="2.20.0.0">
-	<guid>66d6f4a7f8690be2a8bd6dc235c1a772bde6b359</guid>
+	<guid>94083bb259df87e3a877405365a95fb99833db71</guid>
 	<type>mesh</type>
-	<hash>bf7356c8</hash>
+	<hash>8c2ad72e</hash>
 	<runtimes>
-		<runtime id="66d6f4a7f8690be2a8bd6dc235c1a772bde6b359" name="ramp.mesh" link="0" type="1"/>
+		<runtime id="94083bb259df87e3a877405365a95fb99833db71" name="ramp.mesh" link="0" type="1"/>
 	</runtimes>
 	<parameters>
 		<parameter type="string" name="lightmaps"/>

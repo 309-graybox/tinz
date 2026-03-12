@@ -848,144 +848,152 @@
 		</node>
 		<node type="NodeLayer" id="1672417408" name="player_layer">
 			<layer>guid://414010aa6ac6cf193bc290851500f656096989d1</layer>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0.276274849385 1.0</transform>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0.96632777497 1.0</transform>
 		</node>
-		<node type="NodeReference" id="594018824" name="stair(1.0,2.0,0.3)">
-			<reference>guid://c420e1af2ff8ebb2743105883994a5e41db7c9b2</reference>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 4.52419570469 6.31401223181 0 1.0</transform>
+		<node type="NodeReference" id="594018824" name="stair(1.0,20.0,0.3)">
+			<reference>guid://742a3872cbd5aba7a6f7441307f6baf0fd147131</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 37.6363535775 -4.09966601358 0 1.0</transform>
 			<node type="ObjectText" id="1541969280" immovable="1" name="0.3">
 				<font_name>core/gui/font.ttf</font_name>
 				<text>0.3 hight</text>
 				<font_size>100</font_size>
+				<text_color>1 0 0 1</text_color>
 				<text_wrap_width>0</text_wrap_width>
 				<surface name="text" material="196c349704185e581025cee22b1fe0d75cb85e73"/>
-				<transform>5.96046199064e-08 -0.999999523163 0 0.0 0.999999403954 5.9604612801e-08 0 0.0 0 0 0.999999821186 0.0 -0.812806884071 0.473581548651 0.01 1.0</transform>
+				<transform>5.96046199064e-08 -0.999999523163 0 0.0 0.999999403954 5.9604612801e-08 0 0.0 0 0 0.999999821186 0.0 -0.812806884071 0.473581548651 0.02 1.0</transform>
 			</node>
 		</node>
-		<node type="NodeReference" id="1843601125" name="stair(1.0,2.0,0.4)">
-			<reference>guid://cf06be814e1b685bd15baad4423cadbdd271ebc3</reference>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 4.52419570469 3.78511513422 0 1.0</transform>
+		<node type="NodeReference" id="1843601125" name="stair(1.0,14.0,0.4)">
+			<reference>guid://cfe81a64436e76b5d302a15f6520301c20ce722a</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 37.6363535775 13.3466986612 0 1.0</transform>
 			<node type="ObjectText" id="743410399" immovable="1" name="0.4">
 				<font_name>core/gui/font.ttf</font_name>
 				<text>0.4 hight</text>
 				<font_size>100</font_size>
+				<text_color>1 0 0 1</text_color>
 				<text_wrap_width>0</text_wrap_width>
 				<surface name="text" material="196c349704185e581025cee22b1fe0d75cb85e73"/>
-				<transform>5.96046163537e-08 -0.999999463558 0 0.0 0.999999344349 5.96046092483e-08 0 0.0 0 0 0.999999821186 0.0 -0.812806884071 0.665028439135 0.01 1.0</transform>
+				<transform>5.96046163537e-08 -0.999999463558 0 0.0 0.999999344349 5.96046092483e-08 0 0.0 0 0 0.999999821186 0.0 -0.812806884071 0.665028439135 0.02 1.0</transform>
 			</node>
 		</node>
-		<node type="NodeReference" id="1922686806" name="stair(1.0,2.0,0.5)">
-			<reference>guid://052f61c5bf4e11ba26943748af3c40f0e6259127</reference>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 4.52419570469 8.79043930216 0 1.0</transform>
+		<node type="NodeReference" id="1922686806" name="stair(1.0,14.0,0.5)">
+			<reference>guid://b57c35242d1a45ae789f791ff07159f1d51c5eea</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 37.6348934558 27.4816111352 -1.7763568394e-15 1.0</transform>
 			<node type="ObjectText" id="1033165490" immovable="1" name="0.5">
 				<font_name>core/gui/font.ttf</font_name>
 				<text>0.5 hight</text>
 				<font_size>100</font_size>
+				<text_color>1 0 0 1</text_color>
 				<text_wrap_width>0</text_wrap_width>
 				<surface name="text" material="196c349704185e581025cee22b1fe0d75cb85e73"/>
-				<transform>5.96046163537e-08 -0.999999463558 0 0.0 0.999999344349 5.96046092483e-08 0 0.0 0 0 0.999999821186 0.0 -0.812806884071 0.679835988605 0.01 1.0</transform>
+				<transform>5.96046163537e-08 -0.999999463558 0 0.0 0.999999344349 5.96046092483e-08 0 0.0 0 0 0.999999821186 0.0 -0.812806884071 0.679835988605 0.02 1.0</transform>
 			</node>
 		</node>
 		<node type="NodeDummy" id="1848717196" name="ramp-20">
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0.00825795873382 11.2295491127 0.005 1.0</transform>
+			<transform>3.57627783387e-07 0.999999761581 0 0.0 -0.999999880791 3.57627811809e-07 0 0.0 0 0 0.999999821186 0.0 -5.36561722309 0.553608589585 0.005 1.0</transform>
 			<node type="ObjectMeshStatic" id="350708580" immovable="1" name="ramp(20)">
-				<mesh_name>guid://66d6f4a7f8690be2a8bd6dc235c1a772bde6b359</mesh_name>
-				<surface name="box" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+				<mesh_name>guid://94083bb259df87e3a877405365a95fb99833db71</mesh_name>
+				<surface name="box" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
 				<body type="BodyDummy" id="1173364200" frozen="0">
-					<shape type="ShapeBox" id="1630726183" name="ShapeBox">
-						<size>2 10 0.300000012</size>
+					<shape type="ShapeBox" id="673432264" name="ShapeBox">
+						<size>14 10 0.300000012</size>
 					</shape>
 				</body>
-				<transform>1 0 0 0.0 0 0.939692974091 0.342020243406 0.0 0 -0.342020243406 0.939692974091 0.0 -0.00825795873382 0.40197083354 -0.005 1.0</transform>
+				<transform>1 -5.96046305645e-08 -5.960463767e-08 0.0 7.63960059658e-08 0.939692735672 0.342019826174 0.0 3.56240832389e-08 -0.342019826174 0.939692735672 0.0 -0.0082594932783 4.69286789788 1.5 1.0</transform>
 			</node>
 			<node type="ObjectText" id="1132666967" immovable="1" name="20">
 				<font_name>core/gui/font.ttf</font_name>
 				<text>20 degree</text>
 				<font_size>100</font_size>
+				<text_color>0.666666687 0 0 1</text_color>
 				<text_wrap_width>0</text_wrap_width>
 				<surface name="text" material="196c349704185e581025cee22b1fe0d75cb85e73"/>
 				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.778200354731 -0.228359729052 0.005 1.0</transform>
 			</node>
 		</node>
 		<node type="NodeDummy" id="590682981" name="ramp-30">
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -2.52515322129 11.2295491127 0.005 1.0</transform>
+			<transform>3.57627783387e-07 0.999999761581 0 0.0 -0.999999880791 3.57627811809e-07 0 0.0 0 0 0.999999821186 0.0 -5.21268020327 14.9632165552 0.005 1.0</transform>
 			<node type="ObjectMeshStatic" id="1974649925" immovable="1" name="ramp(30)">
-				<mesh_name>guid://66d6f4a7f8690be2a8bd6dc235c1a772bde6b359</mesh_name>
-				<surface name="box" intersection="1" material="febe38addeb5938d9165c3fe70ed4de605fe5458"/>
+				<mesh_name>guid://94083bb259df87e3a877405365a95fb99833db71</mesh_name>
+				<surface name="box" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
 				<body type="BodyDummy" id="1033804700" frozen="0">
-					<shape type="ShapeBox" id="1102643787" name="ShapeBox">
-						<size>2 10 0.300000012</size>
+					<shape type="ShapeBox" id="860861389" name="ShapeBox">
+						<size>14 10 0.300000012</size>
 					</shape>
 				</body>
-				<transform>1 0 0 0.0 0 0.866025388241 0.5 0.0 0 -0.5 0.866025388241 0.0 -0.00825795873382 0.40197083354 -0.005 1.0</transform>
+				<transform>1 -4.17232513428e-07 -1.04308121252e-07 0.0 4.13488010054e-07 0.866025447845 0.499999940395 0.0 -1.18282748929e-07 -0.499999940395 0.866025447845 0.0 -0.00825895302944 3.1822227126 1.5 1.0</transform>
 			</node>
 			<node type="ObjectText" id="1973990966" immovable="1" name="30">
 				<font_name>core/gui/font.ttf</font_name>
 				<text>30 degree</text>
 				<font_size>100</font_size>
+				<text_color>0.666666687 0 0 1</text_color>
 				<text_wrap_width>0</text_wrap_width>
 				<surface name="text" material="196c349704185e581025cee22b1fe0d75cb85e73"/>
 				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.778200354731 -0.228359729052 0.005 1.0</transform>
 			</node>
 		</node>
 		<node type="NodeDummy" id="311174523" name="ramp-43">
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -5.09776326266 11.2295491127 0.005 1.0</transform>
+			<transform>3.57627783387e-07 0.999999761581 0 0.0 -0.999999880791 3.57627811809e-07 0 0.0 0 0 0.999999821186 0.0 -5.11923638326 29.2787211061 0.005 1.0</transform>
 			<node type="ObjectMeshStatic" id="1972366297" immovable="1" name="ramp(43)">
-				<mesh_name>guid://66d6f4a7f8690be2a8bd6dc235c1a772bde6b359</mesh_name>
-				<surface name="box" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+				<mesh_name>guid://94083bb259df87e3a877405365a95fb99833db71</mesh_name>
+				<surface name="box" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
 				<body type="BodyDummy" id="115437297" frozen="0">
-					<shape type="ShapeBox" id="1033804700" name="ShapeBox">
-						<size>2 10 0.300000012</size>
+					<shape type="ShapeBox" id="1096410278" name="ShapeBox">
+						<size>14 10 0.300000012</size>
 					</shape>
 				</body>
-				<transform>1 0 0 0.0 0 0.73135393858 0.681998550892 0.0 0 -0.681998550892 0.73135393858 0.0 -0.00825795873382 0.40197083354 -0.005 1.0</transform>
+				<transform>1 -3.57627783387e-07 -2.08616242503e-07 0.0 4.03828408935e-07 0.731354117393 0.681997895241 0.0 -9.13290563176e-08 -0.681997895241 0.731354117393 0.0 -0.00825860640972 2.21300380691 1.5 1.0</transform>
 			</node>
 			<node type="ObjectText" id="1258019544" immovable="1" name="43">
 				<font_name>core/gui/font.ttf</font_name>
 				<text>43 degree</text>
 				<font_size>100</font_size>
+				<text_color>0.666666687 0 0 1</text_color>
 				<text_wrap_width>0</text_wrap_width>
 				<surface name="text" material="196c349704185e581025cee22b1fe0d75cb85e73"/>
 				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.778200354731 -0.228359729052 0.005 1.0</transform>
 			</node>
 		</node>
 		<node type="NodeDummy" id="763288734" name="ramp-45">
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -8.01265322967 11.2295491127 0.005 1.0</transform>
+			<transform>0.999999761581 0 0 0.0 0 0.999999880791 0 0.0 0 0 0.999999821186 0.0 5.25268797135 36.5789082079 0.005 1.0</transform>
 			<node type="ObjectMeshStatic" id="1116284386" immovable="1" name="ramp(45)">
-				<mesh_name>guid://66d6f4a7f8690be2a8bd6dc235c1a772bde6b359</mesh_name>
-				<surface name="box" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+				<mesh_name>guid://94083bb259df87e3a877405365a95fb99833db71</mesh_name>
+				<surface name="box" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
 				<body type="BodyDummy" id="542328666" frozen="0">
-					<shape type="ShapeBox" id="115437297" name="ShapeBox">
-						<size>2 10 0.300000012</size>
+					<shape type="ShapeBox" id="467407779" name="ShapeBox">
+						<size>14 10 0.300000012</size>
 					</shape>
 				</body>
-				<transform>1 0 0 0.0 0 0.707106769085 0.707106888294 0.0 0 -0.707106888294 0.707106769085 0.0 -0.00825795873382 0.40197083354 -0.005 1.0</transform>
+				<transform>1 -2.70943800729e-08 2.70944173764e-08 0.0 -8.881784197e-15 0.707107067108 0.707106530666 0.0 -3.83172675811e-08 -0.707106530666 0.707107067108 0.0 -0.00825795873379 1.97257656327 1.5 1.0</transform>
 			</node>
 			<node type="ObjectText" id="970962973" immovable="1" name="45">
 				<font_name>core/gui/font.ttf</font_name>
 				<text>45 degree</text>
 				<font_size>100</font_size>
+				<text_color>0.666666687 0 0 1</text_color>
 				<text_wrap_width>0</text_wrap_width>
 				<surface name="text" material="196c349704185e581025cee22b1fe0d75cb85e73"/>
 				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.778200354731 -0.228359729052 0.005 1.0</transform>
 			</node>
 		</node>
 		<node type="NodeDummy" id="1552402081" name="ramp-60">
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -10.8281673933 11.2295491127 0.005 1.0</transform>
+			<transform>0.999999761581 0 0 0.0 0 0.999999880791 0 0.0 0 0 0.999999821186 0.0 25.006308109 36.5309377193 0.005 1.0</transform>
 			<node type="ObjectMeshStatic" id="848090995" immovable="1" name="ramp(60)">
-				<mesh_name>guid://66d6f4a7f8690be2a8bd6dc235c1a772bde6b359</mesh_name>
-				<surface name="box" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+				<mesh_name>guid://94083bb259df87e3a877405365a95fb99833db71</mesh_name>
+				<surface name="box" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
 				<body type="BodyDummy" id="1630726183" frozen="0">
-					<shape type="ShapeBox" id="542328666" name="ShapeBox">
-						<size>2 10 0.300000012</size>
+					<shape type="ShapeBox" id="630273108" name="ShapeBox">
+						<size>14 10 0.300000012</size>
 					</shape>
 				</body>
-				<transform>1 0 0 0.0 0 0.500000178814 0.866025686264 0.0 0 -0.866025686264 0.500000178814 0.0 -0.00825795873382 0.40197083354 -0.005 1.0</transform>
+				<transform>1 7.37415994934e-09 -4.25747437305e-09 0.0 1.11022302463e-15 0.5 0.866025388241 0.0 8.51494696974e-09 -0.866025388241 0.5 0.0 -0.0082579587338 1.46587642107 1.5 1.0</transform>
 			</node>
 			<node type="ObjectText" id="293159370" immovable="1" name="60">
 				<font_name>core/gui/font.ttf</font_name>
 				<text>60 degree</text>
 				<font_size>100</font_size>
+				<text_color>0.666666687 0 0 1</text_color>
 				<text_wrap_width>0</text_wrap_width>
 				<surface name="text" material="196c349704185e581025cee22b1fe0d75cb85e73"/>
 				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.778200354731 -0.228359729052 0.005 1.0</transform>
@@ -998,23 +1006,23 @@
 			<intersection_mask>-1</intersection_mask>
 			<visible_distance>80</visible_distance>
 			<fade_distance>80</fade_distance>
-			<size_x>10</size_x>
-			<size_y>5</size_y>
-			<step>50</step>
-			<density>5</density>
+			<size_x>35</size_x>
+			<size_y>40</size_y>
+			<step>40</step>
+			<density>0.0827800035</density>
 			<threshold>0</threshold>
 			<angle>0</angle>
 			<min_scale_mean>0.100000001</min_scale_mean>
-			<min_scale_spread>0</min_scale_spread>
-			<max_scale_mean>0.600000024</max_scale_mean>
-			<max_scale_spread>0.300000012</max_scale_spread>
+			<min_scale_spread>33.5</min_scale_spread>
+			<max_scale_mean>2</max_scale_mean>
+			<max_scale_spread>1</max_scale_spread>
 			<offset_mean>0</offset_mean>
 			<offset_spread>0</offset_spread>
 			<rotation_mean>0 0 0</rotation_mean>
 			<rotation_spread>0 0 180</rotation_spread>
 			<terrain_mask>-1</terrain_mask>
 			<surface name="sphere" intersection="1" collision="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
-			<transform>1.78813934326e-07 0.999999940395 0 0.0 -0.999999821186 1.78813905904e-07 0 0.0 0 0 0.999999940395 0.0 -13.5408838541 -2.51935723275 0 1.0</transform>
+			<transform>0.999999880791 0 0 0.0 0 0.999999761581 0 0.0 0 0 0.999999821186 0.0 -1.78306943364 -3.93802335207 0 1.0</transform>
 		</node>
 		<node type="ObjectLandscapeTerrain" id="235243175" name="ObjectLandscapeTerrain">
 			<intersection_precision>0.5</intersection_precision>
