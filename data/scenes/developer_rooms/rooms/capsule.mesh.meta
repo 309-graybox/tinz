@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.20.0.0">
+	<guid>30a2c3df4360c3a29b876de716cc573fdc7af63e</guid>
+	<type>mesh</type>
+	<hash>fc6cfe2c</hash>
+	<runtimes>
+		<runtime id="30a2c3df4360c3a29b876de716cc573fdc7af63e" name="capsule.mesh" link="0" type="1"/>
+	</runtimes>
+	<parameters>
+		<parameter type="string" name="lightmaps"/>
+		<parameter type="int" name="resolution">3</parameter>
+		<parameter type="float" name="scale">1</parameter>
+		<parameter type="bool" name="unchanged">1</parameter>
+		<parameter type="bool" name="unwrap_uv_ch_0">0</parameter>
+		<parameter type="bool" name="unwrap_uv_ch_1">1</parameter>
+		<parameter type="int" name="uv_ch">1</parameter>
+		<parameter type="bool" name="vertex_cache">1</parameter>
+	</parameters>
+</asset>

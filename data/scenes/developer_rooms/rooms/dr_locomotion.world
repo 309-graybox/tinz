@@ -844,7 +844,7 @@
 			<is_main>1</is_main>
 			<is_listener>1</is_listener>
 			<controlled>1</controlled>
-			<transform>1 -3.5762787e-07 0 0.0 0 0 1 0.0 -3.5762787e-07 -1 0 0.0 0 0 1.5 1.0</transform>
+			<transform>1 -1.78813905904e-07 0 0.0 -0 0 1 0.0 -1.78813905904e-07 -1 -0 0.0 0 0 2.46632772684 1.0</transform>
 		</node>
 		<node type="NodeLayer" id="1672417408" name="player_layer">
 			<layer>guid://414010aa6ac6cf193bc290851500f656096989d1</layer>
