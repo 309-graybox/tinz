@@ -23,7 +23,7 @@ void CameraAutoAlignPitchRig::apply(CameraState &state, const CameraInput &input
 	const bool hasInput =
 		abs(input.angle.x) > input_deadzone.get() ||
 		abs(input.angle.y) > input_deadzone.get() ||
-		abs(input.scroll)  > 1e-6f;
+		abs(input.scroll) > 1e-6f;
 
 	if (hasInput)
 	{
@@ -39,8 +39,13 @@ void CameraAutoAlignPitchRig::apply(CameraState &state, const CameraInput &input
 	const Vec3 v = ctx.targetVelocity;
 
 	const float v_len = length(v);
-	if (v_len < 0.1f)
+	if (v_len < min_target_velocity)
+	{
+		if (reset_timer_on_stop)
+			_noInputTime = 0.0f;
+
 		return;
+	}
 
 	_velDirSmoothed = normalize(lerp(_velDirSmoothed, v, (1.0f - exp(-vel_dir_smooth.get() * dt))));
 
@@ -55,11 +60,10 @@ void CameraAutoAlignPitchRig::apply(CameraState &state, const CameraInput &input
 	{
 		_latchedTargetPitch = targetPitch;
 		_latched = true;
-	}
-	else
+	} else
 	{
 		_latchedTargetPitch += lerpZero(normalizeAngle(targetPitch - _latchedTargetPitch),
-										exp(-target_pitch_smooth.get() * dt));
+			exp(-target_pitch_smooth.get() * dt));
 	}
 
 	float delta = lerpZero(normalizeAngle(_latchedTargetPitch - state.rig.angle.y), exp(-speed.get() * dt));

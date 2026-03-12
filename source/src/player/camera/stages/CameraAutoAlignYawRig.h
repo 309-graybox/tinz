@@ -17,6 +17,9 @@ public:
 	PROP_PARAM(Float, vel_dir_smooth, 12.0f)
 	PROP_PARAM(Float, target_yaw_smooth, 10.0f)
 
+	PROP_PARAM(Toggle, reset_timer_on_stop, true)
+	PROP_PARAM(Float, min_target_velocity, 2.0f)
+
 	void runtimeReset(CameraState &, const CameraContext &) override;
 	void apply(CameraState &state, const CameraInput &input, const CameraContext &ctx) override;
 

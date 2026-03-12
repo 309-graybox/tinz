@@ -32,8 +32,12 @@ void CameraAutoAlignYawRig::apply(CameraState &state, const CameraInput &input, 
 	if (_noInputTime < delay.get())
 		return;
 
-	if (ctx.targetHorizontalSpeed < 0.1f)
+	if (ctx.targetHorizontalSpeed < min_target_velocity)
+	{
+		if (reset_timer_on_stop)
+			_noInputTime = 0.0f;
 		return;
+	}
 
 	_velDirSmoothed = normalize(lerp(_velDirSmoothed, ctx.targetHorizontalVelocity, (1.0f - exp(-vel_dir_smooth * dt))));
 
