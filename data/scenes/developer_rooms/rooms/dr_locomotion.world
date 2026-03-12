@@ -893,7 +893,7 @@
 			<transform>3.57627783387e-07 0.999999761581 0 0.0 -0.999999880791 3.57627811809e-07 0 0.0 0 0 0.999999821186 0.0 -5.36561722309 0.553608589585 0.005 1.0</transform>
 			<node type="ObjectMeshStatic" id="350708580" immovable="1" name="ramp(20)">
 				<mesh_name>guid://94083bb259df87e3a877405365a95fb99833db71</mesh_name>
-				<surface name="box" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+				<surface name="box" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
 				<body type="BodyDummy" id="1173364200" frozen="0">
 					<shape type="ShapeBox" id="673432264" name="ShapeBox">
 						<size>14 10 0.300000012</size>
@@ -915,7 +915,7 @@
 			<transform>3.57627783387e-07 0.999999761581 0 0.0 -0.999999880791 3.57627811809e-07 0 0.0 0 0 0.999999821186 0.0 -5.21268020327 14.9632165552 0.005 1.0</transform>
 			<node type="ObjectMeshStatic" id="1974649925" immovable="1" name="ramp(30)">
 				<mesh_name>guid://94083bb259df87e3a877405365a95fb99833db71</mesh_name>
-				<surface name="box" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+				<surface name="box" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
 				<body type="BodyDummy" id="1033804700" frozen="0">
 					<shape type="ShapeBox" id="860861389" name="ShapeBox">
 						<size>14 10 0.300000012</size>
@@ -937,7 +937,7 @@
 			<transform>3.57627783387e-07 0.999999761581 0 0.0 -0.999999880791 3.57627811809e-07 0 0.0 0 0 0.999999821186 0.0 -5.11923638326 29.2787211061 0.005 1.0</transform>
 			<node type="ObjectMeshStatic" id="1972366297" immovable="1" name="ramp(43)">
 				<mesh_name>guid://94083bb259df87e3a877405365a95fb99833db71</mesh_name>
-				<surface name="box" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+				<surface name="box" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
 				<body type="BodyDummy" id="115437297" frozen="0">
 					<shape type="ShapeBox" id="1096410278" name="ShapeBox">
 						<size>14 10 0.300000012</size>
@@ -959,7 +959,7 @@
 			<transform>0.999999761581 0 0 0.0 0 0.999999880791 0 0.0 0 0 0.999999821186 0.0 5.25268797135 36.5789082079 0.005 1.0</transform>
 			<node type="ObjectMeshStatic" id="1116284386" immovable="1" name="ramp(45)">
 				<mesh_name>guid://94083bb259df87e3a877405365a95fb99833db71</mesh_name>
-				<surface name="box" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+				<surface name="box" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
 				<body type="BodyDummy" id="542328666" frozen="0">
 					<shape type="ShapeBox" id="467407779" name="ShapeBox">
 						<size>14 10 0.300000012</size>
@@ -981,7 +981,7 @@
 			<transform>0.999999761581 0 0 0.0 0 0.999999880791 0 0.0 0 0 0.999999821186 0.0 25.006308109 36.5309377193 0.005 1.0</transform>
 			<node type="ObjectMeshStatic" id="848090995" immovable="1" name="ramp(60)">
 				<mesh_name>guid://94083bb259df87e3a877405365a95fb99833db71</mesh_name>
-				<surface name="box" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+				<surface name="box" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
 				<body type="BodyDummy" id="1630726183" frozen="0">
 					<shape type="ShapeBox" id="630273108" name="ShapeBox">
 						<size>14 10 0.300000012</size>
