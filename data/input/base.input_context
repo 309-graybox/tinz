@@ -135,10 +135,10 @@
 				</Binding>
 			</Mapping>
 		</Action>
-		<Action guid="8956103b50ce8b5e2797f9a0f2b69d629aae7e5d">
+		<Action guid="2605673950df7ff25848f990a7cef99c45d1250a">
 			<Mapping consume_input="0">
 				<Binding>
-					<Key>G</Key>
+					<Key>MouseMiddle</Key>
 					<Triggers>
 						<Trigger type="Pressed">
 							<parameter name="treshold">0.5</parameter>
@@ -147,13 +147,11 @@
 					<Modifiers/>
 				</Binding>
 			</Mapping>
-		</Action>
-		<Action guid="2605673950df7ff25848f990a7cef99c45d1250a">
 			<Mapping consume_input="0">
 				<Binding>
-					<Key>MouseMiddle</Key>
+					<Key>GamepadThumbRight</Key>
 					<Triggers>
-						<Trigger type="Pressed">
+						<Trigger type="Down">
 							<parameter name="treshold">0.5</parameter>
 						</Trigger>
 					</Triggers>
