@@ -1,150 +1,247 @@
 <?xml version="1.0" encoding="utf-8"?>
 <EIContext description="Just move" auto_registration="1">
-	<Mappings>
-		<Mapping>
-			<Action>move</Action>
-			<Key>W</Key>
-			<Modifiers>
-				<Modifier type="Swizzle Axis">
-					<parameter name="type">2</parameter>
-				</Modifier>
-			</Modifiers>
-			<Triggers>
-				<Trigger type="Down">
-					<parameter name="treshold">0.5</parameter>
-				</Trigger>
-			</Triggers>
-		</Mapping>
-		<Mapping>
-			<Action>move</Action>
-			<Key>S</Key>
-			<Modifiers>
-				<Modifier type="Swizzle Axis">
-					<parameter name="type">2</parameter>
-				</Modifier>
-				<Modifier type="Negate">
-					<parameter name="x">1</parameter>
-					<parameter name="y">1</parameter>
-					<parameter name="z">1</parameter>
-				</Modifier>
-			</Modifiers>
-			<Triggers>
-				<Trigger type="Down">
-					<parameter name="treshold">0.5</parameter>
-				</Trigger>
-			</Triggers>
-		</Mapping>
-		<Mapping>
-			<Action>move</Action>
-			<Key>D</Key>
-			<Modifiers/>
-			<Triggers>
-				<Trigger type="Down">
-					<parameter name="treshold">0.5</parameter>
-				</Trigger>
-			</Triggers>
-		</Mapping>
-		<Mapping>
-			<Action>move</Action>
-			<Key>A</Key>
-			<Modifiers>
-				<Modifier type="Negate">
-					<parameter name="x">1</parameter>
-					<parameter name="y">1</parameter>
-					<parameter name="z">1</parameter>
-				</Modifier>
-			</Modifiers>
-			<Triggers>
-				<Trigger type="Down">
-					<parameter name="treshold">0.5</parameter>
-				</Trigger>
-			</Triggers>
-		</Mapping>
-		<Mapping>
-			<Action>sprint</Action>
-			<Key>LeftShift</Key>
-			<Modifiers/>
-			<Triggers>
-				<Trigger type="Down">
-					<parameter name="treshold">0.5</parameter>
-				</Trigger>
-			</Triggers>
-		</Mapping>
-		<Mapping>
-			<Action>jump</Action>
-			<Key>Space</Key>
-			<Modifiers/>
-			<Triggers>
-				<Trigger type="Pressed">
-					<parameter name="treshold">0.5</parameter>
-				</Trigger>
-			</Triggers>
-		</Mapping>
-		<Mapping>
-			<Action>dash</Action>
-			<Key>G</Key>
-			<Modifiers/>
-			<Triggers>
-				<Trigger type="Pressed">
-					<parameter name="treshold">0.5</parameter>
-				</Trigger>
-			</Triggers>
-		</Mapping>
-		<Mapping>
-			<Action>targetLock</Action>
-			<Key>MouseMiddle</Key>
-			<Modifiers/>
-			<Triggers>
-				<Trigger type="Pressed">
-					<parameter name="treshold">0.5</parameter>
-				</Trigger>
-			</Triggers>
-		</Mapping>
-		<Mapping>
-			<Action>crouch</Action>
-			<Key>LeftCtrl</Key>
-			<Modifiers/>
-			<Triggers>
-				<Trigger type="Pressed">
-					<parameter name="treshold">0.5</parameter>
-				</Trigger>
-			</Triggers>
-		</Mapping>
-		<Mapping>
-			<Action>look</Action>
-			<Key>MouseX</Key>
-			<Modifiers>
-				<Modifier type="Negate">
-					<parameter name="x">1</parameter>
-					<parameter name="y">1</parameter>
-					<parameter name="z">1</parameter>
-				</Modifier>
-			</Modifiers>
-			<Triggers>
-				<Trigger type="Down">
-					<parameter name="treshold">0.5</parameter>
-				</Trigger>
-			</Triggers>
-		</Mapping>
-		<Mapping>
-			<Action>look</Action>
-			<Key>MouseY</Key>
-			<Modifiers>
-				<Modifier type="Swizzle Axis">
-					<parameter name="type">2</parameter>
-				</Modifier>
-			</Modifiers>
-			<Triggers>
-				<Trigger type="Down">
-					<parameter name="treshold">0.5</parameter>
-				</Trigger>
-			</Triggers>
-		</Mapping>
-		<Mapping>
-			<Action>walk</Action>
-			<Key>LeftAlt</Key>
-			<Modifiers/>
-			<Triggers/>
-		</Mapping>
-	</Mappings>
+	<Actions>
+		<Action guid="f6a2220b3ab70641a5c21f3f62d25bea409f3868">
+			<Mapping consume_input="0">
+				<Binding>
+					<Key>W</Key>
+					<Triggers>
+						<Trigger type="Down">
+							<parameter name="treshold">0.5</parameter>
+						</Trigger>
+					</Triggers>
+					<Modifiers>
+						<Modifier type="Swizzle Axis">
+							<parameter name="type">2</parameter>
+						</Modifier>
+					</Modifiers>
+				</Binding>
+			</Mapping>
+			<Mapping consume_input="0">
+				<Binding>
+					<Key>S</Key>
+					<Triggers>
+						<Trigger type="Down">
+							<parameter name="treshold">0.5</parameter>
+						</Trigger>
+					</Triggers>
+					<Modifiers>
+						<Modifier type="Swizzle Axis">
+							<parameter name="type">2</parameter>
+						</Modifier>
+						<Modifier type="Negate">
+							<parameter name="x">1</parameter>
+							<parameter name="y">1</parameter>
+							<parameter name="z">1</parameter>
+						</Modifier>
+					</Modifiers>
+				</Binding>
+			</Mapping>
+			<Mapping consume_input="0">
+				<Binding>
+					<Key>D</Key>
+					<Triggers>
+						<Trigger type="Down">
+							<parameter name="treshold">0.5</parameter>
+						</Trigger>
+					</Triggers>
+					<Modifiers/>
+				</Binding>
+			</Mapping>
+			<Mapping consume_input="0">
+				<Binding>
+					<Key>A</Key>
+					<Triggers>
+						<Trigger type="Down">
+							<parameter name="treshold">0.5</parameter>
+						</Trigger>
+					</Triggers>
+					<Modifiers>
+						<Modifier type="Negate">
+							<parameter name="x">1</parameter>
+							<parameter name="y">1</parameter>
+							<parameter name="z">1</parameter>
+						</Modifier>
+					</Modifiers>
+				</Binding>
+			</Mapping>
+			<Mapping consume_input="0">
+				<Binding>
+					<Key>GamepadLeftX</Key>
+					<Triggers>
+						<Trigger type="Down">
+							<parameter name="treshold">0.5</parameter>
+						</Trigger>
+					</Triggers>
+					<Modifiers>
+						<Modifier type="Scale">
+							<parameter name="x">0.300000012</parameter>
+							<parameter name="y">0.300000012</parameter>
+							<parameter name="z">0.300000012</parameter>
+						</Modifier>
+					</Modifiers>
+				</Binding>
+			</Mapping>
+			<Mapping consume_input="0">
+				<Binding>
+					<Key>GamepadLeftY</Key>
+					<Triggers>
+						<Trigger type="Down">
+							<parameter name="treshold">0.5</parameter>
+						</Trigger>
+					</Triggers>
+					<Modifiers>
+						<Modifier type="Swizzle Axis">
+							<parameter name="type">2</parameter>
+						</Modifier>
+					</Modifiers>
+				</Binding>
+			</Mapping>
+		</Action>
+		<Action guid="7e5e96c492031354aa9b6cc728467b6329d432ea">
+			<Mapping consume_input="0">
+				<Binding>
+					<Key>LeftShift</Key>
+					<Triggers>
+						<Trigger type="Down">
+							<parameter name="treshold">0.5</parameter>
+						</Trigger>
+					</Triggers>
+					<Modifiers/>
+				</Binding>
+			</Mapping>
+		</Action>
+		<Action guid="bbf76e4ad81fc477c9b381ddc94fcd3a70a1c774">
+			<Mapping consume_input="0">
+				<Binding>
+					<Key>Space</Key>
+					<Triggers>
+						<Trigger type="Pressed">
+							<parameter name="treshold">0.5</parameter>
+						</Trigger>
+					</Triggers>
+					<Modifiers/>
+				</Binding>
+			</Mapping>
+		</Action>
+		<Action guid="8956103b50ce8b5e2797f9a0f2b69d629aae7e5d">
+			<Mapping consume_input="0">
+				<Binding>
+					<Key>G</Key>
+					<Triggers>
+						<Trigger type="Pressed">
+							<parameter name="treshold">0.5</parameter>
+						</Trigger>
+					</Triggers>
+					<Modifiers/>
+				</Binding>
+			</Mapping>
+		</Action>
+		<Action guid="2605673950df7ff25848f990a7cef99c45d1250a">
+			<Mapping consume_input="0">
+				<Binding>
+					<Key>MouseMiddle</Key>
+					<Triggers>
+						<Trigger type="Pressed">
+							<parameter name="treshold">0.5</parameter>
+						</Trigger>
+					</Triggers>
+					<Modifiers/>
+				</Binding>
+			</Mapping>
+		</Action>
+		<Action guid="17991fae950b86a77fa991cdb05cab48d17b83d8">
+			<Mapping consume_input="0">
+				<Binding>
+					<Key>LeftCtrl</Key>
+					<Triggers>
+						<Trigger type="Pressed">
+							<parameter name="treshold">0.5</parameter>
+						</Trigger>
+					</Triggers>
+					<Modifiers/>
+				</Binding>
+			</Mapping>
+		</Action>
+		<Action guid="2e5b555222aebf467d3a9a6f16087e1c2a50bd16">
+			<Mapping consume_input="0">
+				<Binding>
+					<Key>MouseX</Key>
+					<Triggers>
+						<Trigger type="Down">
+							<parameter name="treshold">0.5</parameter>
+						</Trigger>
+					</Triggers>
+					<Modifiers>
+						<Modifier type="Negate">
+							<parameter name="x">1</parameter>
+							<parameter name="y">1</parameter>
+							<parameter name="z">1</parameter>
+						</Modifier>
+					</Modifiers>
+				</Binding>
+			</Mapping>
+			<Mapping consume_input="0">
+				<Binding>
+					<Key>MouseY</Key>
+					<Triggers>
+						<Trigger type="Down">
+							<parameter name="treshold">0.5</parameter>
+						</Trigger>
+					</Triggers>
+					<Modifiers>
+						<Modifier type="Swizzle Axis">
+							<parameter name="type">2</parameter>
+						</Modifier>
+					</Modifiers>
+				</Binding>
+			</Mapping>
+			<Mapping consume_input="0">
+				<Binding>
+					<Key>GamepadRightX</Key>
+					<Triggers>
+						<Trigger type="Down">
+							<parameter name="treshold">0.5</parameter>
+						</Trigger>
+					</Triggers>
+					<Modifiers>
+						<Modifier type="Scale">
+							<parameter name="x">-12</parameter>
+							<parameter name="y">-12</parameter>
+							<parameter name="z">-12</parameter>
+						</Modifier>
+					</Modifiers>
+				</Binding>
+			</Mapping>
+			<Mapping consume_input="0">
+				<Binding>
+					<Key>GamepadRightY</Key>
+					<Triggers>
+						<Trigger type="Down">
+							<parameter name="treshold">0.5</parameter>
+						</Trigger>
+					</Triggers>
+					<Modifiers>
+						<Modifier type="Swizzle Axis">
+							<parameter name="type">2</parameter>
+						</Modifier>
+						<Modifier type="Scale">
+							<parameter name="x">12</parameter>
+							<parameter name="y">12</parameter>
+							<parameter name="z">12</parameter>
+						</Modifier>
+					</Modifiers>
+				</Binding>
+			</Mapping>
+		</Action>
+		<Action guid="49b009daf119a078c85c695c54720aba8ab44da1">
+			<Mapping consume_input="0">
+				<Binding>
+					<Key>LeftAlt</Key>
+					<Triggers/>
+					<Modifiers/>
+				</Binding>
+			</Mapping>
+		</Action>
+	</Actions>
 </EIContext>

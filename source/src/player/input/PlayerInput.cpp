@@ -35,6 +35,11 @@ void PlayerInput::init(const Unigine::NodePtr &node)
 
 	_binding_move = player->bind(_action_move, eTriggerState::Triggered | eTriggerState::None, [this](EIActionValueInstance inst) {
 		_raw_мove = inst.getValue().value.xy;
+		if (abs(_raw_мove.x) < 0.001)
+			_raw_мove.x = 0;
+		if (abs(_raw_мove.y) < 0.001)
+			_raw_мove.y = 0;
+		Log::error("Move {%+.8f, %+.8f}\n", _raw_мove.x, _raw_мove.y);
 	});
 
 	_binding_sprint = player->bind(_action_sprint, eTriggerState::Triggered | eTriggerState::None, [this](EIActionValueInstance inst) {
