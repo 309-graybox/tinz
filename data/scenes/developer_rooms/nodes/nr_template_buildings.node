@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<nodes version="2.19.0.3">
+<nodes version="2.21.0.0">
 	<node type="NodeDummy" id="1335047610" name="template_buildings">
 		<transform>1 1.74845510514e-07 0 0.0 -1.74845510514e-07 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 		<node type="ObjectMeshStatic" id="763021777" immovable="1" name="template_buildings">

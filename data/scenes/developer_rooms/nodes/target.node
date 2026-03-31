@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<nodes version="2.20.0.0">
+<nodes version="2.21.0.0">
 	<node type="ObjectMeshStatic" id="502717519" immovable="1" name="target">
 		<mesh_name>guid://59557d7820b4aa168e8a1a214466b5e9a179756e</mesh_name>
 		<surface name="sphere" intersection="1" material="f241a153236befe84ad7d80eb1b0862749654b5d"/>

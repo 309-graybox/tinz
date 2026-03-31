@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>b1e7095fc042547424c1c9510d31eaa8433f4d87</guid>
 	<type>world</type>
-	<hash>709586b7</hash>
+	<hash>d4202384bd9a34523c6404e19cfd6720afc80b334bc1027d96f65e39e7204c76</hash>
 	<runtimes>
 		<runtime id="b1e7095fc042547424c1c9510d31eaa8433f4d87" name="dr_camera.world" link="0"/>
 	</runtimes>

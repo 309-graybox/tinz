@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>f241a153236befe84ad7d80eb1b0862749654b5d</guid>
 	<type>material</type>
-	<hash>372a4a47</hash>
+	<hash>b425aa1e7031dee93d50daf858931070cde2f8772a48d044e77f9b6b0e8be624</hash>
 	<runtimes>
 		<runtime id="f241a153236befe84ad7d80eb1b0862749654b5d" name="target_mat" link="0" type="5"/>
 	</runtimes>

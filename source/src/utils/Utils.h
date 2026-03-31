@@ -1,12 +1,12 @@
 #pragma once
-#include "UnigineFmt.h"
+#include <UnigineComponentSystem.h>
 
-#define FLOGERR(COND, MSG, ...)                                  \
-	if (!(COND))                                            \
-	{                                                       \
-		Unigine::Log::error(String::format("%s: %s", __FUNCTION__, MSG), __VA_ARGS__); \
-		removeComponent<__this_class>(node);                \
-		return;                                             \
+#define FLOGERR(COND, MSG, ...)                                                          \
+	if (!(COND))                                                                         \
+	{                                                                                    \
+		Unigine::Log::error(String::format("%s: %s", __FUNCTION__, MSG), ##__VA_ARGS__); \
+		removeComponent<__this_class>(node);                                             \
+		return;                                                                          \
 	}
 
 template <class T, class C>

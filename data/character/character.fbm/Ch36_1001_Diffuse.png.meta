@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>3e66e97faed484278c83b0f2db06ad000a59540e</guid>
 	<type>texture</type>
-	<hash>36e333af</hash>
+	<hash>d26fdfea8cc21ec60863aa960bbc8bd4a978d4e131314f6771c3ba9271d3b1fe</hash>
 	<runtimes>
 		<runtime id="3e66e97faed484278c83b0f2db06ad000a59540e" name="Ch36_1001_Diffuse.png" link="0" type="6"/>
 		<runtime id="c920c4c9a5d227b8dc51737460b7318fdb8dae70" name="Ch36_1001_Diffuse.texture" link="1" type="6"/>

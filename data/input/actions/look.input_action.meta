@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>2e5b555222aebf467d3a9a6f16087e1c2a50bd16</guid>
 	<type>file</type>
-	<hash>a934596a</hash>
+	<hash>523d3d309f78f10f8da0514f9da6d9bd0fb9862d75f92f5135cefce1da18a9a2</hash>
 	<runtimes>
 		<runtime id="2e5b555222aebf467d3a9a6f16087e1c2a50bd16" name="look.input_action" link="0"/>
 	</runtimes>

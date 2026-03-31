@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>6dd05d235e534e70b3a755c69d4258e35b089122</guid>
 	<type>texture</type>
-	<hash>4fd46ba6</hash>
+	<hash>e646c3fca7104220353263b1595c1d073f0fdc86a983fa3ba6616f89c7657b21</hash>
 	<runtimes>
 		<runtime id="6dd05d235e534e70b3a755c69d4258e35b089122" name="Ch36_1001_Specular.png" link="0" type="6"/>
 		<runtime id="6fdcd90d7e3d2c827891bc689c515377419030a4" name="Ch36_1001_Specular.texture" link="1" type="6"/>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>a19a173be06c3f4f8f25ac448d3f4610372ed8ce</guid>
 	<type>mesh</type>
-	<hash>04e0cd46</hash>
+	<hash>6bbeb1f83e9ad864bfcd4dcbf411036fcfd2194278bd78e97781b4c659dfb5d3</hash>
 	<runtimes>
 		<runtime id="a19a173be06c3f4f8f25ac448d3f4610372ed8ce" name="sphere.mesh" link="0" type="1"/>
 	</runtimes>

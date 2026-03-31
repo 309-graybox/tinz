@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>bdc7f1460aa0ad2adac8d534a8f106249525e079</guid>
 	<type>texture</type>
-	<hash>e662e4bc</hash>
+	<hash>828c00241fb62a90613c83f2ccf20ad7d5b7c14e8d46953baa4c6f7a6bc905ff</hash>
 	<runtimes>
 		<runtime id="bdc7f1460aa0ad2adac8d534a8f106249525e079" name="Ch36_1001_Normal.png" link="0" type="6"/>
 		<runtime id="15d4c3e8ba4f39caa9a49d8641f937625374d513" name="Ch36_1001_Normal.texture" link="1" type="6"/>

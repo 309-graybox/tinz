@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<property version="2.20.0.0" name="StairGenerator" manual="1" parent_name="node_base">
+<property version="2.21.0.0" name="StairGenerator" manual="1" parent_name="node_base">
 	<parameter name="stepHight" type="float" group="Stair Parameters">0.3</parameter>
 	<parameter name="stepWidth" type="float" group="Stair Parameters">2</parameter>
 	<parameter name="stepLength" type="float" group="Stair Parameters">1</parameter>

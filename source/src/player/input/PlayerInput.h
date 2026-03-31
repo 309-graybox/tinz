@@ -5,7 +5,7 @@
 class PlayerInput
 {
 public:
-	void init();
+	void init(const Unigine::NodePtr &node);
 	void update(const Unigine::Math::vec3 &up = Unigine::Math::vec3_up);
 	void shutdown();
 
@@ -19,6 +19,8 @@ public:
 	bool consumeDash();
 
 private:
+	Unigine::NodePtr _node;
+
 	Unigine::Math::vec3 _move_direction;
 	float _move_amount = 0.0f;
 
@@ -29,14 +31,6 @@ private:
 	bool _jump_requested = false;
 	bool _dash_requested = false;
 
-	EIAction *_action_walk = nullptr;
-	EIAction *_action_move = nullptr;
-	EIAction *_action_sprint = nullptr;
-	EIAction *_action_crouch = nullptr;
-	EIAction *_action_jump = nullptr;
-	EIAction *_action_dash = nullptr;
-	EIContext *_context_base = nullptr;
-
 	EIBinding *_binding_walk = nullptr;
 	EIBinding *_binding_move = nullptr;
 	EIBinding *_binding_sprint = nullptr;
@@ -44,4 +38,3 @@ private:
 	EIBinding *_binding_jump = nullptr;
 	EIBinding *_binding_dash = nullptr;
 };
-

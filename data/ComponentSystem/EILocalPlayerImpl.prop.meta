@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>3da1a575ca8f743aeb3530aff99d443ff85b1fe5</guid>
+	<type>property</type>
+	<hash>8f2fede13eff8f2a242511f1df25a5bd6ef306f6f8215c94a93a88e6b9f9758f</hash>
+	<runtimes>
+		<runtime id="3da1a575ca8f743aeb3530aff99d443ff85b1fe5" name="EILocalPlayerImpl" link="0" type="4"/>
+	</runtimes>
+</asset>

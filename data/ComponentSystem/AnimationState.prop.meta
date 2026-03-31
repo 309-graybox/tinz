@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>950ec4c5b5198520ca3cdef4137240b26f0f302c</guid>
 	<type>property</type>
-	<hash>acd078e4</hash>
+	<hash>542a8c5fb2b5d561241363e5014e80638ad8d654531a96baca6d1799bac5f1d9</hash>
 	<runtimes>
 		<runtime id="950ec4c5b5198520ca3cdef4137240b26f0f302c" name="AnimationState" link="0" type="4"/>
 	</runtimes>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>dbd1dba1eeee5928e0c477c21dd97bb7f32402bc</guid>
 	<type>lmap</type>
-	<hash>65945814</hash>
+	<hash>52f58de1fe84fee64a99a08ce3b6cfe89c9a804b8e6ae306373d6b216219d3c3</hash>
 	<runtimes>
 		<runtime id="dbd1dba1eeee5928e0c477c21dd97bb7f32402bc" name="LandscapeLayerMap.lmap" link="0"/>
 	</runtimes>
@@ -10,7 +10,7 @@
 		<parameter type="float" name="albedo_attenuation_distance_x">0</parameter>
 		<parameter type="float" name="albedo_attenuation_distance_y">0</parameter>
 		<parameter type="int" name="albedo_blending">0</parameter>
-		<parameter type="int" name="albedo_data">0</parameter>
+		<parameter type="int" name="albedo_data">2</parameter>
 		<parameter type="bool" name="albedo_lossy_compression">0</parameter>
 		<parameter type="int" name="albedo_opacity_channel">0</parameter>
 		<parameter type="string" name="albedo_opacity_path"/>
@@ -25,7 +25,7 @@
 		<parameter type="float" name="heightmap_attenuation_distance_x">0</parameter>
 		<parameter type="float" name="heightmap_attenuation_distance_y">0</parameter>
 		<parameter type="int" name="heightmap_blending">0</parameter>
-		<parameter type="int" name="heightmap_data">0</parameter>
+		<parameter type="int" name="heightmap_data">2</parameter>
 		<parameter type="bool" name="heightmap_lossy_compression">0</parameter>
 		<parameter type="int" name="heightmap_opacity_channel">0</parameter>
 		<parameter type="bool" name="heightmap_opacity_lossy_compression">0</parameter>
@@ -112,26 +112,26 @@
 		<parameter type="int" name="mask_channel_7">0</parameter>
 		<parameter type="int" name="mask_channel_8">0</parameter>
 		<parameter type="int" name="mask_channel_9">0</parameter>
-		<parameter type="int" name="mask_data_0">0</parameter>
-		<parameter type="int" name="mask_data_1">0</parameter>
-		<parameter type="int" name="mask_data_10">0</parameter>
-		<parameter type="int" name="mask_data_11">0</parameter>
-		<parameter type="int" name="mask_data_12">0</parameter>
-		<parameter type="int" name="mask_data_13">0</parameter>
-		<parameter type="int" name="mask_data_14">0</parameter>
-		<parameter type="int" name="mask_data_15">0</parameter>
-		<parameter type="int" name="mask_data_16">0</parameter>
-		<parameter type="int" name="mask_data_17">0</parameter>
-		<parameter type="int" name="mask_data_18">0</parameter>
-		<parameter type="int" name="mask_data_19">0</parameter>
-		<parameter type="int" name="mask_data_2">0</parameter>
-		<parameter type="int" name="mask_data_3">0</parameter>
-		<parameter type="int" name="mask_data_4">0</parameter>
-		<parameter type="int" name="mask_data_5">0</parameter>
-		<parameter type="int" name="mask_data_6">0</parameter>
-		<parameter type="int" name="mask_data_7">0</parameter>
-		<parameter type="int" name="mask_data_8">0</parameter>
-		<parameter type="int" name="mask_data_9">0</parameter>
+		<parameter type="int" name="mask_data_0">2</parameter>
+		<parameter type="int" name="mask_data_1">2</parameter>
+		<parameter type="int" name="mask_data_10">2</parameter>
+		<parameter type="int" name="mask_data_11">2</parameter>
+		<parameter type="int" name="mask_data_12">2</parameter>
+		<parameter type="int" name="mask_data_13">2</parameter>
+		<parameter type="int" name="mask_data_14">2</parameter>
+		<parameter type="int" name="mask_data_15">2</parameter>
+		<parameter type="int" name="mask_data_16">2</parameter>
+		<parameter type="int" name="mask_data_17">2</parameter>
+		<parameter type="int" name="mask_data_18">2</parameter>
+		<parameter type="int" name="mask_data_19">2</parameter>
+		<parameter type="int" name="mask_data_2">2</parameter>
+		<parameter type="int" name="mask_data_3">2</parameter>
+		<parameter type="int" name="mask_data_4">2</parameter>
+		<parameter type="int" name="mask_data_5">2</parameter>
+		<parameter type="int" name="mask_data_6">2</parameter>
+		<parameter type="int" name="mask_data_7">2</parameter>
+		<parameter type="int" name="mask_data_8">2</parameter>
+		<parameter type="int" name="mask_data_9">2</parameter>
 		<parameter type="string" name="mask_name_0">Mask 0</parameter>
 		<parameter type="string" name="mask_name_1">Mask 1</parameter>
 		<parameter type="string" name="mask_name_10">Mask 10</parameter>

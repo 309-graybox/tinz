@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>afc32c5948b510de488ef75d3c1e0f4252b069c4</guid>
 	<type>texture</type>
-	<hash>f8daf4c2</hash>
+	<hash>2548acd22f4b05022ffa8058fa4a2fa06393f91f983678b6450d7b30df86d8c6</hash>
 	<runtimes>
 		<runtime id="afc32c5948b510de488ef75d3c1e0f4252b069c4" name="white.texture" link="0" type="6"/>
 	</runtimes>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<property version="2.20.0.0" name="CameraCinematicZone" manual="1" parent_name="node_base">
+<property version="2.21.0.0" name="CameraCinematicZone" manual="1" parent_name="node_base">
 	<parameter name="stage" type="switch" items="Intent,Rig,Constraints,Presentation,Finalize,">1</parameter>
 	<parameter name="priority" type="int">0</parameter>
 	<parameter name="used_in_pipeline" type="toggle">1</parameter>

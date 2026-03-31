@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>8dced03fbd04c797bbbd3971c3a2af8056f26a40</guid>
 	<type>property</type>
-	<hash>cdc4289a</hash>
+	<hash>f833c0a5309e3a1dd2910cf23e11b0aa13a93d7a4d8f399c8753aab97f129b7b</hash>
 	<runtimes>
 		<runtime id="8dced03fbd04c797bbbd3971c3a2af8056f26a40" name="CameraCollisionConstraint" link="0" type="4"/>
 	</runtimes>

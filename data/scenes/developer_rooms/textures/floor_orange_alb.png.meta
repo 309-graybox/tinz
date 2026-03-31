@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>525774ebae68854ec178cc55254831b0bf15994f</guid>
 	<type>texture</type>
-	<hash>5682a9e3</hash>
+	<hash>8327e013909c4ee3bf8cbfc519e407dad72143d66c174311d5f3f862bfe99560</hash>
 	<runtimes>
 		<runtime id="525774ebae68854ec178cc55254831b0bf15994f" name="floor_orange_alb.png" link="0" type="6"/>
 		<runtime id="84543662d1f2c25999e347e4a0e271f3c2108eb6" name="floor_orange_alb.texture" link="1" type="6"/>

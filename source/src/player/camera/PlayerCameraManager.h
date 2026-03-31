@@ -43,8 +43,6 @@ private:
 
 	Unigine::Vector<CameraStageModifier *> mods;
 
-	EIAction *_actionLook = nullptr;
 	EIBinding *_bindingLook = nullptr;
-	EIAction *_actionTargetLock = nullptr;
 	EIBinding *_bindingTargetLock = nullptr;
 };

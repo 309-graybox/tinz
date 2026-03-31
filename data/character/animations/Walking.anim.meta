@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>c3da733e6d16f69fa57d4c6ca6d28823809d5f91</guid>
 	<type>animation</type>
-	<hash>df81f4af</hash>
+	<hash>bf9d93fd9ae5636b7a57a666323d5eb3d2d3982305efe23e9970c27f31ec9839</hash>
 	<runtimes>
-		<runtime id="c3da733e6d16f69fa57d4c6ca6d28823809d5f91" name="Walking.anim" link="0" type="2">
-			<custom_parameters>
-				<parameter type="string" name="anim_mesh"/>
-				<parameter type="float" name="cur_time">23.6063919</parameter>
-			</custom_parameters>
-		</runtime>
+		<runtime id="c3da733e6d16f69fa57d4c6ca6d28823809d5f91" name="Walking.anim" link="0" type="2"/>
 	</runtimes>
 </asset>

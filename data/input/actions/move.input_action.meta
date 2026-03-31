@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>f6a2220b3ab70641a5c21f3f62d25bea409f3868</guid>
 	<type>file</type>
-	<hash>ef6d54f4</hash>
+	<hash>a8f44459df2134e3ce028a7d7769aea5987ff3fec0895383bb6c8ddf683a72e4</hash>
 	<runtimes>
 		<runtime id="f6a2220b3ab70641a5c21f3f62d25bea409f3868" name="move.input_action" link="0"/>
 	</runtimes>

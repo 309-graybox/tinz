@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>be543ef8fd139ac76a2b9b615a43260014c7b491</guid>
 	<type>property</type>
-	<hash>89e0f18a</hash>
+	<hash>66d0469b4e3a1cf7ba14486fba9e4ea306eecd8fedb8ff8589b142e327ea3071</hash>
 	<runtimes>
 		<runtime id="be543ef8fd139ac76a2b9b615a43260014c7b491" name="Targetable" link="0" type="4"/>
 	</runtimes>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>1cc1c6c9511b219471a49fe336aa83e6d51b4a0d</guid>
 	<type>texture</type>
-	<hash>e100e815</hash>
+	<hash>503e5eb96c3f602d82f449db9b8345db5d8f8d0c265665b1e9c62ee44a2dd5fe</hash>
 	<runtimes>
 		<runtime id="1cc1c6c9511b219471a49fe336aa83e6d51b4a0d" name="floor_0_n.png" link="0" type="6"/>
 		<runtime id="2997e40822c8b7c7ec48927a7464ff91588cb3bc" name="floor_0_n.texture" link="1" type="6"/>

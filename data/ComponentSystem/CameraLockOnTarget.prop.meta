@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>725def5a82138de00a22a9e3d1878c8141ff2032</guid>
 	<type>property</type>
-	<hash>809969d2</hash>
+	<hash>92a6cc8b93012160e07446c955e06afeef6fb3c45fe745da5cf60ddc90a3c85f</hash>
 	<runtimes>
 		<runtime id="725def5a82138de00a22a9e3d1878c8141ff2032" name="CameraLockOnTarget" link="0" type="4"/>
 	</runtimes>

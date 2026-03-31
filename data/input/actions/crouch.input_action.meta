@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>17991fae950b86a77fa991cdb05cab48d17b83d8</guid>
 	<type>file</type>
-	<hash>662fefdb</hash>
+	<hash>78cb1bc7458e1f5c83a3d6759f7bab5f9e330a9c12a7b1edba1be2f1f33a8b50</hash>
 	<runtimes>
 		<runtime id="17991fae950b86a77fa991cdb05cab48d17b83d8" name="crouch.input_action" link="0"/>
 	</runtimes>

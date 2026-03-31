@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>d08a1fa2cc5403751c5e199dfe3a96cab04bfb69</guid>
 	<type>node</type>
-	<hash>fbcb1653</hash>
+	<hash>412c8b02a6244b444a7bb3e1c54d5e501baff52ffb039f1f94fda70236a9af39</hash>
 	<runtimes>
 		<runtime id="d08a1fa2cc5403751c5e199dfe3a96cab04bfb69" name="static_target.node" link="0" type="3"/>
 	</runtimes>

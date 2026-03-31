@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>934db22ea9a461aaacfb8a5ee931d10c9ab2f1b8</guid>
 	<type>node</type>
-	<hash>8e0f3596</hash>
+	<hash>9b22153b19d460de50a90ddea22ce7579da5327cecd2329e1e5052d9b858f953</hash>
 	<runtimes>
 		<runtime id="934db22ea9a461aaacfb8a5ee931d10c9ab2f1b8" name="layer_geometry.node" link="0" type="3"/>
 	</runtimes>

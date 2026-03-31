@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<nodes version="2.20.0.0">
+<nodes version="2.21.0.0">
 	<node type="ObjectMeshStatic" id="1559255743" immovable="1" name="static_target">
 		<mesh_name>guid://15b2b92e7fb5d32666ebd48701f19aa741ac2f1a</mesh_name>
 		<surface name="cylinder" intersection="1" material="03975a558b6967b07049574fafa8dc62f5633059"/>

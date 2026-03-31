@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>bb400a633a218eca9e0f990d95a9ac63aad57e34</guid>
 	<type>fbx</type>
-	<hash>d8a9a43f</hash>
+	<hash>586eca2debfc3f3a394c91967bc51d3440785bd5a2460390d00f7cf9adcdfe75</hash>
 	<runtimes>
 		<runtime id="bb400a633a218eca9e0f990d95a9ac63aad57e34" name="character.fbx" link="0"/>
 		<runtime id="93641ce4bcc04df36bc531228f3c6c8779e76a9f" name="character.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">c195608a</parameter>
+				<parameter type="string" name="id">5de62b3a</parameter>
 			</parameters>
 		</runtime>
-		<runtime id="6d3b0249ba8c0d190b09b9632d4c4b3b0b31b772" name="ch36.mesh" link="2" type="1">
+		<runtime id="c070d9034d91cbb6ae27521ae2faf1588b16bd2b" name="character.skeleton" link="2" type="8">
+			<parameters>
+				<parameter type="string" name="id">5de62b3a</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="6d3b0249ba8c0d190b09b9632d4c4b3b0b31b772" name="ch36.mesh_skinned" link="2" type="9">
 			<parameters>
 				<parameter type="string" name="id">5de62b3a</parameter>
 			</parameters>
@@ -31,17 +36,13 @@
 				<parameter type="float" name="cur_time">0.185121536</parameter>
 			</custom_parameters>
 		</runtime>
-		<runtime id="ce701cd8556e013746d418f6ac408adf84693043" name="ch36_scene.anim" link="2" type="2">
-			<parameters>
-				<parameter type="string" name="id">5de62b3a</parameter>
-			</parameters>
-		</runtime>
 	</runtimes>
 	<parameters>
 		<parameter type="float" name="angular_deflection">0.699999988</parameter>
 		<parameter type="bool" name="asset_name_as_prefix">0</parameter>
 		<parameter type="string" name="base_material_mode">unique_material_graph</parameter>
 		<parameter type="float" name="bound_size">10000</parameter>
+		<parameter type="bool" name="create_root_motion_joint">0</parameter>
 		<parameter type="bool" name="create_transform_bones_for_joints">0</parameter>
 		<parameter type="float" name="fps">30</parameter>
 		<parameter type="string" name="front_axis">default</parameter>
@@ -53,11 +54,13 @@
 		<parameter type="string" name="import_materials_mode">take_by_name_or_create</parameter>
 		<parameter type="bool" name="import_meshes">1</parameter>
 		<parameter type="bool" name="import_morph_targets">0</parameter>
+		<parameter type="string" name="import_skeleton_mode">create</parameter>
+		<parameter type="bool" name="import_skeletons">1</parameter>
 		<parameter type="bool" name="import_tangent_space">0</parameter>
 		<parameter type="bool" name="import_textures">1</parameter>
 		<parameter type="bool" name="invert_gchannel_for_normal_maps">0</parameter>
 		<parameter type="bool" name="joints_reorientation">0</parameter>
-		<parameter type="string" name="lightmaps">{&quot;guid://6d3b0249ba8c0d190b09b9632d4c4b3b0b31b772&quot;:{&quot;Ch36_Body&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}}}</parameter>
+		<parameter type="string" name="lightmaps">{}</parameter>
 		<parameter type="float" name="linear_deflection">0.200000003</parameter>
 		<parameter type="string" name="lods">_lod_0,-1e+09,3,0,0,100,0,0,60;_lod_1,3,9,0,0,60,0,1,60;_lod_2,9,1e+09,0,0,30,0,1,60</parameter>
 		<parameter type="string" name="lods_mode">off</parameter>
@@ -69,13 +72,18 @@
 		<parameter type="string" name="morph_targets_normals_mode">import</parameter>
 		<parameter type="bool" name="need_repivot">0</parameter>
 		<parameter type="bool" name="need_split">0</parameter>
-		<parameter type="bool" name="need_triagulate">1</parameter>
+		<parameter type="bool" name="need_triangulate">1</parameter>
 		<parameter type="int" name="num_lods">3</parameter>
 		<parameter type="string" name="prefix_materials"/>
 		<parameter type="string" name="resolution">256</parameter>
+		<parameter type="int" name="root_motion_forward_axis">0</parameter>
+		<parameter type="int" name="root_motion_position_component">0</parameter>
+		<parameter type="int" name="root_motion_rotation_component">0</parameter>
 		<parameter type="float" name="scale">1</parameter>
+		<parameter type="string" name="shared_skeleton_path"/>
 		<parameter type="bool" name="skip_empty_nodes">0</parameter>
 		<parameter type="int" name="smooth_animation_size">0</parameter>
+		<parameter type="string" name="target_root_motion_joint"/>
 		<parameter type="bool" name="unwrap_uv_ch_0">0</parameter>
 		<parameter type="bool" name="unwrap_uv_ch_1">0</parameter>
 		<parameter type="string" name="up_axis">default</parameter>

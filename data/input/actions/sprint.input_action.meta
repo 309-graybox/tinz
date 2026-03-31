@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>7e5e96c492031354aa9b6cc728467b6329d432ea</guid>
 	<type>file</type>
-	<hash>d9d07141</hash>
+	<hash>c89acd594ecdfc2b7f44fa30576c4b7e83713438f85cd9e9e53bccad9b51ea85</hash>
 	<runtimes>
 		<runtime id="7e5e96c492031354aa9b6cc728467b6329d432ea" name="sprint.input_action" link="0"/>
 	</runtimes>

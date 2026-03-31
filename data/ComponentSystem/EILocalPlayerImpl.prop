@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="EILocalPlayerImpl" manual="1" parent_name="node_base">
+	<parameter name="useKeyboardMouse" type="toggle">1</parameter>
+	<parameter name="useGamepad" type="toggle">0</parameter>
+</property>

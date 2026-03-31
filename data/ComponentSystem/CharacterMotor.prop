@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<property version="2.20.0.0" name="CharacterMotor" manual="1" parent_name="node_base">
+<property version="2.21.0.0" name="CharacterMotor" manual="1" parent_name="node_base">
 	<parameter name="walkSpeed" type="float" tooltip="Скорость персонажа в режиме ходьбы, без влияния модификаторов">2</parameter>
 	<parameter name="runSpeed" type="float" tooltip="Cкорость персонажа в режиме бега, без влияния модификаторов">5</parameter>
 	<parameter name="acceleration" type="float" tooltip="Набор скорости при беге и ходьбе">15</parameter>

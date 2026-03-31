@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>b3960bf3b3e746192dd54d4a5a5c92bec1704a1b</guid>
+	<type>file</type>
+	<hash>8716a0657eee93fc47896b188b93899c4357b957acf1d075bb8a70ec80edc02f</hash>
+	<runtimes>
+		<runtime id="b3960bf3b3e746192dd54d4a5a5c92bec1704a1b" name="Breathing Idle.skeleton" link="0"/>
+	</runtimes>
+</asset>

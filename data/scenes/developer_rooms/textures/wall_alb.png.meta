@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>882b6085dc14d820d2baacff35be56523b800189</guid>
 	<type>texture</type>
-	<hash>40898cd5</hash>
+	<hash>bd840471b263de9e30188f1974001655e280b4378e6d7c766da4fe506f810284</hash>
 	<runtimes>
 		<runtime id="882b6085dc14d820d2baacff35be56523b800189" name="wall_alb.png" link="0" type="6"/>
 		<runtime id="68ec9d54345668a38a6e35a66a9dd0cdeba93bc8" name="wall_alb.texture" link="1" type="6"/>

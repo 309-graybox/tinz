@@ -68,10 +68,16 @@ void PlayerCameraManager::init()
 
 	// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	auto ei = EISystem::get();
+	if (!ei)
+		return;
+
+	auto player = getComponent<EILocalPlayer>(node);
+	if (!player)
+		return;
 
 	auto actionReg = ei->getActionRegistry();
 
-	_actionLook = actionReg->create(actionReg->getIndexByPath(action_look_file));
+	auto _actionLook = actionReg->create(actionReg->getIndexByPath(action_look_file));
 	if (!_actionLook)
 	{
 		Log::error("PlayerCameraManager::init: action \"%s\" not found\n", action_look_file.get());
@@ -79,7 +85,7 @@ void PlayerCameraManager::init()
 		return;
 	}
 
-	_bindingLook = ei->bind(_actionLook, eTriggerState::Triggered | eTriggerState::None, [this](EIActionValueInstance v) {
+	_bindingLook = player->bind(_actionLook, eTriggerState::Triggered | eTriggerState::None, [this](EIActionValueInstance v) {
 		_input.angle = {0, 0};
 		_input.scroll = 0;
 		if (!Console::isActive() && Input::isMouseGrab())
@@ -89,14 +95,14 @@ void PlayerCameraManager::init()
 		}
 	});
 
-	_actionTargetLock = actionReg->create(actionReg->getIndexByPath(action_target_lock_file));
+	auto _actionTargetLock = actionReg->create(actionReg->getIndexByPath(action_target_lock_file));
 	if (!_actionLook)
 	{
 		Log::error("PlayerCameraManager::init: action \"%s\" not found\n", action_look_file.get());
 		removeComponent<PlayerCameraManager>(node);
 		return;
 	}
-	_bindingTargetLock = ei->bind(_actionTargetLock, eTriggerState::Triggered | eTriggerState::None, [this](EIActionValueInstance v) {
+	_bindingTargetLock = player->bind(_actionTargetLock, eTriggerState::Triggered | eTriggerState::None, [this](EIActionValueInstance v) {
 		_input.targetLock = false;
 		if (!Console::isActive() && Input::isMouseGrab())
 		{
@@ -130,8 +136,16 @@ void PlayerCameraManager::update()
 
 void PlayerCameraManager::shutdown()
 {
-	EISystem::get()->unbind(_actionTargetLock, _bindingTargetLock);
-	EISystem::get()->unbind(_actionLook, _bindingLook);
+	auto ei = EISystem::get();
+	if (!ei)
+		return;
+
+	auto player = getComponent<EILocalPlayer>(node);
+	if (!player)
+		return;
+
+	player->unbind(_bindingTargetLock);
+	player->unbind(_bindingLook);
 }
 
 void PlayerCameraManager::update_camera_state()

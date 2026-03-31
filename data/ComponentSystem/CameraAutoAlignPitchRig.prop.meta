@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>b587ac7619c52565fc92e30cd342ebb025601d55</guid>
 	<type>property</type>
-	<hash>a7470b2</hash>
+	<hash>dbaf5204fd1ef1c234d3c796a05e05dd5d05d738c8b695121837e342944661c2</hash>
 	<runtimes>
 		<runtime id="b587ac7619c52565fc92e30cd342ebb025601d55" name="CameraAutoAlignPitchRig" link="0" type="4"/>
 	</runtimes>

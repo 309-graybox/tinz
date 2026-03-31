@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>86c3a4b2c6d6620e0f64e9c0ebd1262bf2cadfb5</guid>
 	<type>fbx</type>
-	<hash>5437538</hash>
+	<hash>5455ec62df81e0662dc34beaa5d0b951a91d0c6572ee219594dc66cd2e940cf2</hash>
 	<runtimes>
 		<runtime id="86c3a4b2c6d6620e0f64e9c0ebd1262bf2cadfb5" name="X Bot.fbx" link="0"/>
 		<runtime id="24d3ee3dca51bb75942b7a77d202b9af9cef2b36" name="X Bot.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">52e92514</parameter>
+				<parameter type="string" name="id">b73b7931</parameter>
 			</parameters>
 		</runtime>
-		<runtime id="3010193aadd1b2525959a508e41feb28b811a91d" name="beta_surface.mesh" link="2" type="1">
+		<runtime id="0810c6711a7e5eb0102d285084acb80b02fc7899" name="X Bot.skeleton" link="2" type="8">
 			<parameters>
 				<parameter type="string" name="id">b73b7931</parameter>
 			</parameters>
 		</runtime>
-		<runtime id="92b07bb7f9e3167d4d81be818dad71b7228b17d8" name="beta_joints.mesh" link="2" type="1">
+		<runtime id="3010193aadd1b2525959a508e41feb28b811a91d" name="beta_surface.mesh_skinned" link="2" type="9">
+			<parameters>
+				<parameter type="string" name="id">b73b7931</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="92b07bb7f9e3167d4d81be818dad71b7228b17d8" name="beta_joints.mesh_skinned" link="2" type="9">
 			<parameters>
 				<parameter type="string" name="id">b73b7931</parameter>
 			</parameters>
@@ -30,11 +35,6 @@
 				<parameter type="string" name="id">b73b7931</parameter>
 			</parameters>
 		</runtime>
-		<runtime id="456fb28e0319fa8904207f3cfd92bb0ad04847a1" name="beta_surface_scene.anim" link="2" type="2">
-			<parameters>
-				<parameter type="string" name="id">b73b7931</parameter>
-			</parameters>
-		</runtime>
 		<runtime id="ae28a2dbdc9fee89aa445e450d234ced9b5dbc8c" name="beta_joints_Take 001.anim" link="2" type="2">
 			<parameters>
 				<parameter type="string" name="id">b73b7931</parameter>
@@ -45,17 +45,13 @@
 				<parameter type="string" name="id">b73b7931</parameter>
 			</parameters>
 		</runtime>
-		<runtime id="5119a58582109bfe4a2d4affdc0d534f5a93f19e" name="beta_joints_scene_1.anim" link="2" type="2">
-			<parameters>
-				<parameter type="string" name="id">b73b7931</parameter>
-			</parameters>
-		</runtime>
 	</runtimes>
 	<parameters>
 		<parameter type="float" name="angular_deflection">0.699999988</parameter>
 		<parameter type="bool" name="asset_name_as_prefix">0</parameter>
 		<parameter type="string" name="base_material_mode">unique_material_graph</parameter>
 		<parameter type="float" name="bound_size">10000</parameter>
+		<parameter type="bool" name="create_root_motion_joint">0</parameter>
 		<parameter type="bool" name="create_transform_bones_for_joints">0</parameter>
 		<parameter type="float" name="fps">30</parameter>
 		<parameter type="string" name="front_axis">default</parameter>
@@ -67,11 +63,13 @@
 		<parameter type="string" name="import_materials_mode">take_by_name_or_create</parameter>
 		<parameter type="bool" name="import_meshes">1</parameter>
 		<parameter type="bool" name="import_morph_targets">0</parameter>
+		<parameter type="string" name="import_skeleton_mode">create</parameter>
+		<parameter type="bool" name="import_skeletons">1</parameter>
 		<parameter type="bool" name="import_tangent_space">0</parameter>
 		<parameter type="bool" name="import_textures">1</parameter>
 		<parameter type="bool" name="invert_gchannel_for_normal_maps">0</parameter>
 		<parameter type="bool" name="joints_reorientation">0</parameter>
-		<parameter type="string" name="lightmaps">{&quot;guid://92b07bb7f9e3167d4d81be818dad71b7228b17d8&quot;:{&quot;Beta_Joints_MAT1&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://3010193aadd1b2525959a508e41feb28b811a91d&quot;:{&quot;Beta_HighLimbsGeoSG3&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}}}</parameter>
+		<parameter type="string" name="lightmaps">{}</parameter>
 		<parameter type="float" name="linear_deflection">0.200000003</parameter>
 		<parameter type="string" name="lods">_lod_0,-1e+09,3,0,0,100,0,0,60;_lod_1,3,9,0,0,60,0,1,60;_lod_2,9,1e+09,0,0,30,0,1,60</parameter>
 		<parameter type="string" name="lods_mode">off</parameter>
@@ -83,13 +81,18 @@
 		<parameter type="string" name="morph_targets_normals_mode">import</parameter>
 		<parameter type="bool" name="need_repivot">0</parameter>
 		<parameter type="bool" name="need_split">0</parameter>
-		<parameter type="bool" name="need_triagulate">1</parameter>
+		<parameter type="bool" name="need_triangulate">1</parameter>
 		<parameter type="int" name="num_lods">3</parameter>
 		<parameter type="string" name="prefix_materials"/>
 		<parameter type="string" name="resolution">256</parameter>
+		<parameter type="int" name="root_motion_forward_axis">0</parameter>
+		<parameter type="int" name="root_motion_position_component">0</parameter>
+		<parameter type="int" name="root_motion_rotation_component">0</parameter>
 		<parameter type="float" name="scale">1</parameter>
+		<parameter type="string" name="shared_skeleton_path"/>
 		<parameter type="bool" name="skip_empty_nodes">0</parameter>
 		<parameter type="int" name="smooth_animation_size">0</parameter>
+		<parameter type="string" name="target_root_motion_joint"/>
 		<parameter type="bool" name="unwrap_uv_ch_0">0</parameter>
 		<parameter type="bool" name="unwrap_uv_ch_1">0</parameter>
 		<parameter type="string" name="up_axis">default</parameter>

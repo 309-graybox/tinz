@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>1926bb4f567d58c21a8adc3691eb36c1964eeaf7</guid>
+	<type>file</type>
+	<hash>c0c843bcc96807376c92552237468a5d269129ad156d9eef344672e02be04641</hash>
+	<runtimes>
+		<runtime id="1926bb4f567d58c21a8adc3691eb36c1964eeaf7" name="Walking Backwards.skeleton" link="0"/>
+	</runtimes>
+</asset>

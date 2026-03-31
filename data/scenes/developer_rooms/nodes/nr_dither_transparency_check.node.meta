@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>02fb662db4e3fe29487d9d3e8076268db1c78cf6</guid>
 	<type>node</type>
-	<hash>e387c092</hash>
+	<hash>d5009b2c51f53453c858ead8a1bc81c4a2de1a440484302f35e969239f7c7726</hash>
 	<runtimes>
 		<runtime id="02fb662db4e3fe29487d9d3e8076268db1c78cf6" name="nr_dither_transparency_check.node" link="0" type="3"/>
 	</runtimes>

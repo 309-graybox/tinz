@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<property version="2.20.0.0" name="PlayerCameraManager" manual="1" parent_name="node_base">
+<property version="2.21.0.0" name="PlayerCameraManager" manual="1" parent_name="node_base">
 	<parameter name="action_look_file" type="file" filter=".input_action"/>
 	<parameter name="action_target_lock_file" type="file" filter=".input_action"/>
 	<parameter name="search_stages_in_children" type="toggle">0</parameter>

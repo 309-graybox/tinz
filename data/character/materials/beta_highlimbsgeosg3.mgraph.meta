@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>bae9ee65996af4eaad079edf886e4db4761165fe</guid>
 	<type>material_graph</type>
-	<hash>4ce36452</hash>
+	<hash>829ad5bc6f692b17086f9b1fc926ec139e7a3e2a6b6f4fe24cf06d0377b8a51d</hash>
 	<runtimes>
 		<runtime id="bae9ee65996af4eaad079edf886e4db4761165fe" name="beta_highlimbsgeosg3.mgraph" link="0"/>
 		<runtime id="4929a81f6acd9e8a70912929301525149b03c5e0" name="beta_highlimbsgeosg3" link="1" type="5"/>

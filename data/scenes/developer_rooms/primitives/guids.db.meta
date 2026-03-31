@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>e6e02653b6ce1dd0049abe30d53b4b6da9c90428</guid>
+	<type>file</type>
+	<hash>7a12c2dd7324af752df3a4a1dc2f211cb11b2ad71077dbea0a44d576073faa2d</hash>
+	<runtimes>
+		<runtime id="e6e02653b6ce1dd0049abe30d53b4b6da9c90428" name="guids.db" link="0"/>
+	</runtimes>
+</asset>

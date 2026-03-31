@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>df56dff0b10d2f42040752c1a29a1b45496800bb</guid>
 	<type>animation</type>
-	<hash>43e11125</hash>
+	<hash>dc946c187ffa80b05faf06e429742532ac2d193c96a73b3900a8dbeb523ed85c</hash>
 	<runtimes>
-		<runtime id="df56dff0b10d2f42040752c1a29a1b45496800bb" name="Crouched Walking.anim" link="0" type="2">
-			<custom_parameters>
-				<parameter type="string" name="anim_mesh"/>
-			</custom_parameters>
-		</runtime>
+		<runtime id="df56dff0b10d2f42040752c1a29a1b45496800bb" name="Crouched Walking.anim" link="0" type="2"/>
 	</runtimes>
 </asset>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>deacc307748b01d10fc29fda1bfc4be2c0db3576</guid>
 	<type>texture</type>
-	<hash>dbf953f</hash>
+	<hash>77a14befcba40ba56c064bc2db3f3e61f37b089c29b3b013db2b7f47b198f5ce</hash>
 	<runtimes>
 		<runtime id="deacc307748b01d10fc29fda1bfc4be2c0db3576" name="Ch36_1001_Glossiness.png" link="0" type="6"/>
 		<runtime id="e7aca991a79b0b4133a3ac9c71e3b068ab0cdc18" name="Ch36_1001_Glossiness.texture" link="1" type="6"/>

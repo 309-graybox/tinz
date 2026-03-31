@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>c666bd1ed6f128dc30c73ea3ff8460cd94e81a67</guid>
 	<type>property</type>
-	<hash>2a8a3ca2</hash>
+	<hash>6ecb110e6aa55898f72e1ef10b9965f512e39599b6eb138cbb315d93e2ae5975</hash>
 	<runtimes>
 		<runtime id="c666bd1ed6f128dc30c73ea3ff8460cd94e81a67" name="AbilityJump" link="0" type="4"/>
 	</runtimes>

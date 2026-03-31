@@ -44,7 +44,7 @@
 			}
 		}
 	},
-	"version": "2.20.0.0",
+	"version": "2.21.0.0",
 	"nodes": {
 		"Material": {
 			"label": "Material",
@@ -323,7 +323,7 @@
 				"prop": {
 					"label": "",
 					"widget": "Float",
-					"x": 0.050000000745058247
+					"x": 0.050000000745058268
 				}
 			},
 			"inputs": {

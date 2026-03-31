@@ -58,17 +58,3 @@ int AppWorldLogic::shutdown()
 	Console::setOnscreen(false);
 	return 1;
 }
-
-int AppWorldLogic::save(const Unigine::StreamPtr &stream)
-{
-	// Write here code to be called when the world is saving its state (i.e. state_save is called): save custom user data to a file.
-	UNIGINE_UNUSED(stream);
-	return 1;
-}
-
-int AppWorldLogic::restore(const Unigine::StreamPtr &stream)
-{
-	// Write here code to be called when the world is restoring its state (i.e. state_restore is called): restore custom user data to a file here.
-	UNIGINE_UNUSED(stream);
-	return 1;
-}

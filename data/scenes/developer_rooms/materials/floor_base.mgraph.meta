@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>f554202259d421198cd597a44cb6feb3eab03476</guid>
 	<type>material_graph</type>
-	<hash>8870f873</hash>
+	<hash>97bc9430ceffe1cd2b24e8d59243d21e7baff076e7616b286cf1960fda459450</hash>
 	<runtimes>
 		<runtime id="f554202259d421198cd597a44cb6feb3eab03476" name="floor_base.mgraph" link="0"/>
 		<runtime id="da25ebcc733b34bbd3b622def6412ca511a4f5c0" name="floor_base" link="1" type="5"/>

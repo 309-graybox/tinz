@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>94083bb259df87e3a877405365a95fb99833db71</guid>
 	<type>mesh</type>
-	<hash>8c2ad72e</hash>
+	<hash>e72ce7381ef5608f8bd30b0c3709a1dabfb63cbcf7875b6f79eadbbe5751db16</hash>
 	<runtimes>
 		<runtime id="94083bb259df87e3a877405365a95fb99833db71" name="ramp.mesh" link="0" type="1"/>
 	</runtimes>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>c7fb3177257942197ffaf1f26b2e8b00b4f667b2</guid>
 	<type>property</type>
-	<hash>598f9f6d</hash>
+	<hash>9fc82cf2f590b11c5967dc2bd1f8d2d9fd3f8df2b28728762b5d90c2e66e5275</hash>
 	<runtimes>
 		<runtime id="c7fb3177257942197ffaf1f26b2e8b00b4f667b2" name="Entity" link="0" type="4"/>
 	</runtimes>

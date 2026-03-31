@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>a1f226d810e65205029fc77b85582593bbea3fa7</guid>
 	<type>node</type>
-	<hash>11d3f3e9</hash>
+	<hash>2a1d515c685673d00d894fa4c6cd3cc5b3671633ede70ab5ec3622084ca1abba</hash>
 	<runtimes>
 		<runtime id="a1f226d810e65205029fc77b85582593bbea3fa7" name="layer_liight.node" link="0" type="3"/>
 	</runtimes>

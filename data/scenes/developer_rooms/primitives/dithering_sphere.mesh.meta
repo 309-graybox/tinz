@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>7a348dcbdd71ce606f76c3e72a98b4ff62c59a75</guid>
 	<type>mesh</type>
-	<hash>01ba8418</hash>
+	<hash>1fbecaf35353bc03d4965ccb5eb1a631999c5c24c7e5e194e4b1bcc633833a36</hash>
 	<runtimes>
 		<runtime id="7a348dcbdd71ce606f76c3e72a98b4ff62c59a75" name="dithering_sphere.mesh" link="0" type="1"/>
 	</runtimes>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>2605673950df7ff25848f990a7cef99c45d1250a</guid>
 	<type>file</type>
-	<hash>f6bce6a2</hash>
+	<hash>e559a073586dc62760196f74a63f5b64f7c784b72ef1446a5c010ede28ebfc84</hash>
 	<runtimes>
 		<runtime id="2605673950df7ff25848f990a7cef99c45d1250a" name="targetLock.input_action" link="0"/>
 	</runtimes>

@@ -14,7 +14,6 @@ void CameraOrbitIntent::runtimeReset(CameraState &state, const CameraContext &ct
 
 void CameraOrbitIntent::apply(CameraState &state, const CameraInput &input, const CameraContext &ctx)
 {
-	auto before = state.rig.angle;
 	auto base = ctx.target ? dvec3(ctx.target->getWorldPosition()) : dvec3_zero;
 	state.rig.pivot = base + pivot_offset.get();
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<nodes version="2.20.0.0">
+<nodes version="2.21.0.0">
 	<node type="PlayerDummy" id="1892598520" name="PlayerDummy">
 		<znear>0.300000012</znear>
 		<zfar>100000</zfar>
@@ -21,6 +21,9 @@
 				<parameter name="slopeLimit">44</parameter>
 				<parameter name="target">510937540</parameter>
 				<parameter name="body">510937540</parameter>
+			</property>
+			<property parent="3da1a575ca8f743aeb3530aff99d443ff85b1fe5" guid="1161700f6d4adef8c91d289c5b3c4c34549ce794">
+				<parameter name="useGamepad">1</parameter>
 			</property>
 		</properties>
 		<transform>0.999999761581 0 0 0.0 0 1 0 0.0 0 0 0.999999940395 0.0 -8.77421037377 -14.9420362567 2.65047817637 1.0</transform>

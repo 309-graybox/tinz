@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>49b009daf119a078c85c695c54720aba8ab44da1</guid>
 	<type>file</type>
-	<hash>2f3c3e19</hash>
+	<hash>9a402a77900e054894abf721ee6a82445d5f360b9fbb53bd177cc8ce29d93a8d</hash>
 	<runtimes>
 		<runtime id="49b009daf119a078c85c695c54720aba8ab44da1" name="walk.input_action" link="0"/>
 	</runtimes>

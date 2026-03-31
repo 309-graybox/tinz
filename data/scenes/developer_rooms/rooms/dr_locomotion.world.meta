@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>6c3a68954326ad72c48529500faaed3687c67a0c</guid>
 	<type>world</type>
-	<hash>0bf08dbb</hash>
+	<hash>51e003cc22747ca1c81b2a1be149f485bfa14627bf10576c8ac340e75fc76aa0</hash>
 	<runtimes>
 		<runtime id="6c3a68954326ad72c48529500faaed3687c67a0c" name="dr_locomotion.world" link="0"/>
 	</runtimes>

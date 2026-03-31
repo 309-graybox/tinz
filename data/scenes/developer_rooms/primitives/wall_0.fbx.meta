@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>6fda30c49d158553cec0ca96559700fdd833ce38</guid>
 	<type>fbx</type>
-	<hash>3f3fa5f5</hash>
+	<hash>7e05f8221dc9116cf0f5e59a583a57032a9dc4aff885490fdcdc6a23aa3b185c</hash>
 	<runtimes>
 		<runtime id="6fda30c49d158553cec0ca96559700fdd833ce38" name="wall_0.fbx" link="0"/>
 		<runtime id="feb2bc37c3df6c2ac3fa2d814fdda8ec1b0a8f5b" name="wall_0.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">2909eefd</parameter>
+				<parameter type="string" name="id">8e9d8d38</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="0d6abf6a2478e7c1e4c29e2cd7a2839bca42643e" name="wall_0.mesh" link="2" type="1">
@@ -21,6 +21,7 @@
 		<parameter type="bool" name="asset_name_as_prefix">0</parameter>
 		<parameter type="string" name="base_material_mode">unique_material_graph</parameter>
 		<parameter type="float" name="bound_size">10000</parameter>
+		<parameter type="bool" name="create_root_motion_joint">0</parameter>
 		<parameter type="bool" name="create_transform_bones_for_joints">0</parameter>
 		<parameter type="float" name="fps">30</parameter>
 		<parameter type="string" name="front_axis">default</parameter>
@@ -32,6 +33,8 @@
 		<parameter type="string" name="import_materials_mode">take_by_name_or_create</parameter>
 		<parameter type="bool" name="import_meshes">1</parameter>
 		<parameter type="bool" name="import_morph_targets">0</parameter>
+		<parameter type="string" name="import_skeleton_mode">create</parameter>
+		<parameter type="bool" name="import_skeletons">1</parameter>
 		<parameter type="bool" name="import_tangent_space">0</parameter>
 		<parameter type="bool" name="import_textures">1</parameter>
 		<parameter type="bool" name="invert_gchannel_for_normal_maps">0</parameter>
@@ -48,13 +51,18 @@
 		<parameter type="string" name="morph_targets_normals_mode">import</parameter>
 		<parameter type="bool" name="need_repivot">0</parameter>
 		<parameter type="bool" name="need_split">0</parameter>
-		<parameter type="bool" name="need_triagulate">1</parameter>
+		<parameter type="bool" name="need_triangulate">1</parameter>
 		<parameter type="int" name="num_lods">3</parameter>
 		<parameter type="string" name="prefix_materials"/>
 		<parameter type="string" name="resolution">256</parameter>
+		<parameter type="int" name="root_motion_forward_axis">0</parameter>
+		<parameter type="int" name="root_motion_position_component">0</parameter>
+		<parameter type="int" name="root_motion_rotation_component">0</parameter>
 		<parameter type="float" name="scale">100</parameter>
+		<parameter type="string" name="shared_skeleton_path"/>
 		<parameter type="bool" name="skip_empty_nodes">0</parameter>
 		<parameter type="int" name="smooth_animation_size">0</parameter>
+		<parameter type="string" name="target_root_motion_joint"/>
 		<parameter type="bool" name="unwrap_uv_ch_0">0</parameter>
 		<parameter type="bool" name="unwrap_uv_ch_1">0</parameter>
 		<parameter type="string" name="up_axis">default</parameter>

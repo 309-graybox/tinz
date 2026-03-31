@@ -4,9 +4,8 @@
 #include <UnigineLogic.h>
 #include <UnigineStreams.h>
 
-class AppWorldLogic : public Unigine::WorldLogic
+class AppWorldLogic: public Unigine::WorldLogic
 {
-
 public:
 	AppWorldLogic();
 	~AppWorldLogic() override;
@@ -18,9 +17,6 @@ public:
 	int updatePhysics() override;
 
 	int shutdown() override;
-
-	int save(const Unigine::StreamPtr &stream) override;
-	int restore(const Unigine::StreamPtr &stream) override;
 };
 
 #endif // __APP_WORLD_LOGIC_H__

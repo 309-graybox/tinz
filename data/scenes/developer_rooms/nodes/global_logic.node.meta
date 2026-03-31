@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>a217074d9ffbbfb7ba2bac7bfa25e325be333085</guid>
 	<type>node</type>
-	<hash>53b36655</hash>
+	<hash>fd2436217a4e82bf3f7a7a6743fa40c3a7e3ab87add87f1beddfa1a9126ce74d</hash>
 	<runtimes>
 		<runtime id="a217074d9ffbbfb7ba2bac7bfa25e325be333085" name="global_logic.node" link="0" type="3"/>
 	</runtimes>

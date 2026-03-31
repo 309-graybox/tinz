@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.20.0.0">
+<asset version="2.21.0.0">
 	<guid>ea56f23cdfd95542d00e2ad5d1aec466a537ebf3</guid>
 	<type>property</type>
-	<hash>a4724f4a</hash>
+	<hash>bad8da36955ce8dd0c6b9429e3d5eaf11f4edfbf03d2620a04495f4a7abccb2b</hash>
 	<runtimes>
 		<runtime id="ea56f23cdfd95542d00e2ad5d1aec466a537ebf3" name="CinematicZone" link="0" type="4"/>
 	</runtimes>

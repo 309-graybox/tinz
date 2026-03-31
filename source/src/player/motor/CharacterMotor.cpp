@@ -31,7 +31,7 @@ void CharacterMotor::init()
 
 	FLOGERR(_shape, "can't get ShapeCapsule from \"body\"\n");
 
-	_input.init();
+	_input.init(node);
 
 	_player_ifps = 1.0f / playerFps;
 	_shape_height = _shape->getHeight();
@@ -59,7 +59,7 @@ void CharacterMotor::update()
 	if (_input.consumeJump() && _is_grounded)
 	{
 		_vertical_move = jumpPower / ifps;
-	// crouch just for now
+		// crouch just for now
 	} else if (_input.isCrouching() && !_is_grounded)
 	{
 		_vertical_move = -jumpPower / ifps;
@@ -154,7 +154,7 @@ vec3 CharacterMotor::get_ground_normal() const
 		if (object)
 		{
 #ifdef DEBUG_MOVEMENT
-		Visualizer::renderPoint3D(hit_normal->getPoint(), 0.01f, vec4_blue, false, 0.0f, false);
+			Visualizer::renderPoint3D(hit_normal->getPoint(), 0.01f, vec4_blue, false, 0.0f, false);
 #endif
 			normal += hit_normal->getNormal();
 		}
