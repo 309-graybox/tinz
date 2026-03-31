@@ -2,6 +2,7 @@
 #include "EIKey.h"
 #include "Defines.h"
 #include <UnigineComponentSystem.h>
+#include <UnigineGUID.h>
 #include <memory>
 
 #define _REGISTER_SOME(Prefix, Name, Alias)                                                      \
@@ -31,12 +32,12 @@ ENUM(EIActionAccumulationBehavior, Highest, Accumulative);
 
 enum class eTriggerState
 {
-	None = 1 << 0,
-	Triggered = 1 << 1,
-	Started = 1 << 2,
-	Ongoing = 1 << 3,
-	Canceled = 1 << 4,
-	Completed = 1 << 5
+	None = 1,
+	Triggered = 2,
+	Started = 4,
+	Ongoing = 8,
+	Canceled = 16,
+	Completed = 32
 };
 ENUM_FLAG_IMPL(eTriggerState);
 
@@ -95,9 +96,11 @@ public:
 
 	virtual T *create(int i) = 0;
 	virtual T *create(const char *name) = 0;
+	virtual T *create(const Unigine::UGUID &guid) = 0;
 	virtual void destroy(T *v) = 0;
 
 	virtual bool save(int i) = 0;
+	virtual bool save(T *v) = 0;
 
 	virtual bool saveDummy(const char *path) = 0;
 };
@@ -105,8 +108,9 @@ public:
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 struct EIAction final
 {
+	Unigine::UGUID guid;
 	Unigine::String name = "";
-	Unigine::String desctiption = "";
+	Unigine::String description = "";
 	EIActionValueType valueType = EIActionValueType::Boolean;
 	EIActionAccumulationBehavior accumulationBehavior = EIActionAccumulationBehavior::Highest;
 	Unigine::Vector<SPtr<EIModifier>> modifiers;
@@ -147,7 +151,7 @@ public:
 private:
 	const EIAction *_action = nullptr;
 	EIActionValue _v;
-	eTriggerState _state;
+	eTriggerState _state = eTriggerState::None;
 };
 
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -171,37 +175,69 @@ public:
 };
 
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-struct EIKeyActionMapping final
+struct EIKeyBinding final
+{
+	EIKey key;
+	Unigine::Vector<SPtr<EITrigger>> triggers;
+	Unigine::Vector<SPtr<EIModifier>> modifiers;
+};
+
+struct EIMapping final
+{
+	EIKeyBinding binding;                    // primary key (provides value)
+	Unigine::Vector<EIKeyBinding> andKeys;   // additional AND keys (usually empty)
+	bool consumeInput = false;
+};
+
+struct EIActionMappings final
 {
 	const EIAction *action = nullptr;
-	EIKey key;
-	Unigine::Vector<SPtr<EIModifier>> modifiers;
-	Unigine::Vector<SPtr<EITrigger>> triggers;
+	Unigine::Vector<EIMapping> mappings;     // OR alternatives
 };
 
 class EIContext
 {
 public:
+	virtual ~EIContext() = default;
+
+	Unigine::UGUID guid;
 	Unigine::String name = "";
 	Unigine::String description = "";
 	bool autoRegistration = false;
 
-	virtual EIKeyActionMapping *map(const EIAction *action, EIKey key) = 0;
-	virtual void unmap(const EIAction *action, EIKey key) = 0;
+	virtual EIMapping *map(const EIAction *action, EIKey key) = 0;
 	virtual void unmap(const EIAction *action) = 0;
 	virtual void unmap() = 0;
 
-	virtual Unigine::Vector<EIKeyActionMapping *> &getMappings() noexcept = 0;
-	virtual const Unigine::Vector<EIKeyActionMapping *> &getMappings() const noexcept = 0;
+	virtual Unigine::Vector<EIActionMappings> &getActionMappings() noexcept = 0;
+	virtual const Unigine::Vector<EIActionMappings> &getActionMappings() const noexcept = 0;
 };
 
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 struct EIBinding
 {
+	const EIAction *action;
 	eTriggerState state;
 	std::function<void(EIActionValueInstance)> callback;
 };
 
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+class EILocalPlayer: public Unigine::ComponentBase
+{
+public:
+	COMPONENT_DEFINE(EILocalPlayer, ComponentBase);
+
+	PROP_PARAM(Toggle, useKeyboardMouse, true);
+	PROP_PARAM(Toggle, useGamepad, false);
+
+	virtual void addContext(EIContext *context, int priority = 0) = 0;
+	virtual void removeContext(EIContext *context) = 0;
+
+	virtual EIBinding *bind(const EIAction *action, eTriggerState state, std::function<void(EIActionValueInstance)> callback) = 0;
+	virtual void unbind(EIBinding *binding) = 0;
+};
+
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 class EISystem
 {
 public:
@@ -234,15 +270,9 @@ public:
 		return instance;
 	}
 
-	virtual void addContext(EIContext *context) = 0;
-	virtual void removeContext(EIContext *context) = 0;
-
 	virtual EICreatorRegistry<EIModifier> *getModifierRegistry() = 0;
 	virtual EICreatorRegistry<EITrigger> *getTriggerRegistry() = 0;
 
 	virtual EIFileSystemRegistry<EIAction> *getActionRegistry() = 0;
 	virtual EIFileSystemRegistry<EIContext> *getContextRegistry() = 0;
-
-	virtual EIBinding *bind(const EIAction *action, eTriggerState state, std::function<void(EIActionValueInstance)> callback) = 0;
-	virtual void unbind(const EIAction *action, EIBinding *binding) = 0;
 };
