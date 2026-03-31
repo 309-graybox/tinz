@@ -93,6 +93,13 @@ void PlayerCameraManager::init()
 			_input.angle = {v.x(), -v.y()};
 			_input.scroll = v.z();
 		}
+
+		if (abs(_input.angle.x) < 0.001)
+			_input.angle.x = 0;
+		if (abs(_input.angle.y) < 0.001)
+			_input.angle.y = 0;
+		if (abs(_input.scroll) < 0.001)
+			_input.scroll = 0;
 	});
 
 	auto _actionTargetLock = actionReg->create(actionReg->getIndexByPath(action_target_lock_file));

@@ -123,6 +123,17 @@
 					<Modifiers/>
 				</Binding>
 			</Mapping>
+			<Mapping consume_input="0">
+				<Binding>
+					<Key>GamepadA</Key>
+					<Triggers>
+						<Trigger type="Down">
+							<parameter name="treshold">0.5</parameter>
+						</Trigger>
+					</Triggers>
+					<Modifiers/>
+				</Binding>
+			</Mapping>
 		</Action>
 		<Action guid="8956103b50ce8b5e2797f9a0f2b69d629aae7e5d">
 			<Mapping consume_input="0">
