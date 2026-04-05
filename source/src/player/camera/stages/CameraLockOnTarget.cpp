@@ -1,5 +1,7 @@
 #include "CameraLockOnTarget.h"
 #include "components/Targetable.h"
+#include <UniginePlayers.h>
+#include <UnigineWindowManager.h>
 #include <UnigineVisualizer.h>
 
 REGISTER_COMPONENT(CameraLockOnTarget)
@@ -20,6 +22,9 @@ void CameraLockOnTarget::runtimeReset(CameraState &, const CameraContext &)
 	cachedPivot = Vec3(0.0);
 	cachedArm = 3.0;
 	cacheValid = false;
+
+	targetAnchor = Vec3(0.0);
+	anchorValid = false;
 }
 
 void CameraLockOnTarget::apply(CameraState &state, const CameraInput &input, const CameraContext &ctx)
@@ -36,7 +41,10 @@ void CameraLockOnTarget::apply(CameraState &state, const CameraInput &input, con
 
 	// --- toggle ---
 	if (input.targetLock)
+	{
 		lockedTarget = lockedTarget ? nullptr : findClosestTargetable(ownerPos, lock_radius.get());
+		anchorValid = false;
+	}
 
 	processRetarget(state, ctx);
 	validateTarget(state, ctx);
@@ -86,6 +94,7 @@ void CameraLockOnTarget::processRetarget(const CameraState &state, const CameraC
 	{
 		lockedTarget = next;
 		retargetCooldown = retarget_delay.get();
+		anchorValid = false;
 	}
 
 	pendingRetargetDir = 0;
@@ -125,9 +134,40 @@ void CameraLockOnTarget::updateLock(const CameraState &state, const CameraContex
 	Vec3 ownerPos = ctx.targetPosition;
 	Vec3 enemyPos = lockedTarget->getWorldPosition();
 
-	cachedPivot = (ownerPos + enemyPos) * 0.5;
+	// deadzone: anchor stays put while target is within radius
+	if (!anchorValid)
+	{
+		targetAnchor = enemyPos;
+		anchorValid = true;
+	}
 
-	float halfDist = length(enemyPos - ownerPos) * 0.5f;
+	bool anchorFrozen;
+	if (screen_deadzone.get())
+	{
+		// screen-space mode: freeze anchor while target is within screen margins
+		anchorFrozen = isOnScreen(enemyPos, ctx);
+	} else
+	{
+		// world-space mode: freeze anchor while target is within radius
+		float anchorDist = (float)length(enemyPos - targetAnchor);
+		anchorFrozen = anchorDist <= target_deadzone.get();
+	}
+
+	if (!anchorFrozen)
+	{
+		Vec3 anchorDelta = enemyPos - targetAnchor;
+		float anchorDist = (float)length(anchorDelta);
+		if (anchorDist > 1e-4f)
+		{
+			Vec3 dir = anchorDelta / anchorDist;
+			float step = anchorDist * expAlpha(target_follow_speed.get(), state.dt);
+			targetAnchor = targetAnchor + dir * step;
+		}
+	}
+
+	cachedPivot = (ownerPos + targetAnchor) * 0.5;
+
+	float halfDist = (float)length(targetAnchor - ownerPos) * 0.5f;
 	float halfFovRad = state.fov * 0.5f * Consts::DEG2RAD;
 	float requiredArm = halfDist / max(tan(halfFovRad), 1e-4f);
 	cachedArm = clamp(requiredArm + extra_arm_offset.get(), arm_clamp.get().x, arm_clamp.get().y);
@@ -213,6 +253,31 @@ NodePtr CameraLockOnTarget::findRetarget(const Vec3 &from, float radius, int dir
 		}
 	}
 	return best;
+}
+
+bool CameraLockOnTarget::isOnScreen(const Vec3 &worldPos, const CameraContext &ctx) const
+{
+	if (!ctx.cameraNode)
+		return false;
+
+	PlayerPtr player = checked_ptr_cast<Player>(ctx.cameraNode);
+	if (!player)
+		return false;
+
+	int px, py;
+	int visible = player->getMainWindowPosition(px, py, worldPos);
+	if (!visible)
+		return false;
+
+	ivec2 winSize = WindowManager::getMainWindow()->getClientSize();
+	if (winSize.x <= 0 || winSize.y <= 0)
+		return false;
+
+	vec2 m = screen_margin.get();
+	float nx = (float)px / (float)winSize.x;
+	float ny = (float)py / (float)winSize.y;
+
+	return nx >= m.x && nx <= (1.0f - m.x) && ny >= m.y && ny <= (1.0f - m.y);
 }
 
 bool CameraLockOnTarget::hasLoS(const Vec3 &from, const Vec3 &to, const NodePtr &ignore) const

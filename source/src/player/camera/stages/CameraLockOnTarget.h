@@ -20,6 +20,14 @@ public:
 	PROP_PARAM(Vec2, arm_clamp, {3.0f, 200.0f})
 	PROP_PARAM(Vec2, pitch_limit_deg, {-20.0f, 30.0f})
 
+	// target deadzone — ignore small target movements
+	PROP_PARAM(Float, target_deadzone, 5.0f)
+	PROP_PARAM(Float, target_follow_speed, 4.0f)
+
+	// [experimental] screen-space deadzone: don't move camera while target is on screen
+	PROP_PARAM(Toggle, screen_deadzone, true)
+	PROP_PARAM(Vec2, screen_margin, {0.1f, 0.1f})
+
 public:
 	void runtimeReset(CameraState &, const CameraContext &) override;
 	void apply(CameraState &state, const CameraInput &input, const CameraContext &ctx) override;
@@ -41,6 +49,7 @@ private:
 	Unigine::NodePtr findClosestTargetable(const Unigine::Math::Vec3 &from, float radius) const;
 	Unigine::NodePtr findRetarget(const Unigine::Math::Vec3 &from, float radius, int dir, const Unigine::Math::vec2 &camAngle) const;
 	bool hasLoS(const Unigine::Math::Vec3 &from, const Unigine::Math::Vec3 &to, const Unigine::NodePtr &ignore) const;
+	bool isOnScreen(const Unigine::Math::Vec3 &worldPos, const CameraContext &ctx) const;
 
 	static float expAlpha(float k, float dt) { return 1.0f - Unigine::Math::exp(-k * dt); }
 
@@ -57,4 +66,7 @@ private:
 	Unigine::Math::Vec3 cachedPivot;
 	double cachedArm = 3.0;
 	bool cacheValid = false;
+
+	Unigine::Math::Vec3 targetAnchor;
+	bool anchorValid = false;
 };
