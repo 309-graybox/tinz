@@ -7,7 +7,7 @@
 				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="9ce32d578703cce4afd3c7c09656b3625eae0e02">
 					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
 					<parameter name="targetSpeed">7</parameter>
-					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="pathDirectory">procedure/dr_camera/</parameter>
 					<parameter name="points">
 						<value index="0">1671695913</value>
 						<value index="1">191431028</value>
@@ -39,7 +39,7 @@
 				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="e203a91dc468776a640034d0edfb020a3388d4f7">
 					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
 					<parameter name="targetSpeed">7</parameter>
-					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="pathDirectory">procedure/dr_camera/</parameter>
 					<parameter name="points">
 						<value index="0">1528227394</value>
 						<value index="1">2026434745</value>
@@ -71,7 +71,7 @@
 				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="9dfb81fd782e3732a49896fea6562108f7aad4f0">
 					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
 					<parameter name="targetSpeed">4.5</parameter>
-					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="pathDirectory">procedure/dr_camera/</parameter>
 					<parameter name="points">
 						<value index="0">779197181</value>
 						<value index="1">2125045816</value>
@@ -95,7 +95,7 @@
 				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="4c73dbcd98251b28b767cbc01a5e41cf5d368b27">
 					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
 					<parameter name="targetSpeed">7</parameter>
-					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="pathDirectory">procedure/dr_camera/</parameter>
 					<parameter name="points">
 						<value index="0">1864306218</value>
 						<value index="1">583100289</value>
@@ -127,7 +127,7 @@
 				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="df5e7fd9fb4333b02bb59c4a933c313b8b1a7a9c">
 					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
 					<parameter name="targetSpeed">4.5</parameter>
-					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="pathDirectory">procedure/dr_camera/</parameter>
 					<parameter name="points">
 						<value index="0">1166166609</value>
 						<value index="1">1871839100</value>
@@ -151,7 +151,7 @@
 				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="88435aa572d0d65e3dcfdeb8cfcef3fe99e7abbf">
 					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
 					<parameter name="targetSpeed">7</parameter>
-					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="pathDirectory">procedure/dr_camera/</parameter>
 					<parameter name="points">
 						<value index="0">1405535596</value>
 						<value index="1">2008809947</value>
@@ -227,7 +227,7 @@
 				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="71c6d1f5d5fd5904118446d6ec88b3916edc7d88">
 					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
 					<parameter name="targetSpeed">4.5</parameter>
-					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="pathDirectory">procedure/dr_camera/</parameter>
 					<parameter name="points">
 						<value index="0">1424786620</value>
 						<value index="1">1068538091</value>
@@ -251,7 +251,7 @@
 				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="6d5a26ed2d3f4632891bf460a8aa00d6f9ed8347">
 					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
 					<parameter name="targetSpeed">7</parameter>
-					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="pathDirectory">procedure/dr_camera/</parameter>
 					<parameter name="points">
 						<value index="0">1995602916</value>
 						<value index="1">2103449075</value>
@@ -283,7 +283,7 @@
 				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="ab6d162f4f199debed80f3f82cb85b2b61bbe7fa">
 					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
 					<parameter name="targetSpeed">7</parameter>
-					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="pathDirectory">procedure/dr_camera/</parameter>
 					<parameter name="points">
 						<value index="0">731366048</value>
 						<value index="1">2119925257</value>
@@ -331,7 +331,7 @@
 				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="4f7273e7986773fe14f0b892da1e034eb8d15711">
 					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
 					<parameter name="targetSpeed">4.5</parameter>
-					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="pathDirectory">procedure/dr_camera/</parameter>
 					<parameter name="points">
 						<value index="0">270059926</value>
 						<value index="1">886037290</value>
@@ -355,7 +355,7 @@
 				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="d64260f91e070d2cbf7881ea53082c1d886a253c">
 					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
 					<parameter name="targetSpeed">4.5</parameter>
-					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="pathDirectory">procedure/dr_camera/</parameter>
 					<parameter name="points">
 						<value index="0">1258672965</value>
 						<value index="1">2141531104</value>
@@ -379,7 +379,7 @@
 				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="8d843739d17a590e98e0c13c4160c5fbea390c73">
 					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
 					<parameter name="targetSpeed">4.5</parameter>
-					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="pathDirectory">procedure/dr_camera/</parameter>
 					<parameter name="points">
 						<value index="0">538877970</value>
 						<value index="1">864436297</value>
@@ -403,7 +403,7 @@
 				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="9eb23cdb5cbdf54a7f378554b41a628013856736">
 					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
 					<parameter name="targetSpeed">4.5</parameter>
-					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="pathDirectory">procedure/dr_camera/</parameter>
 					<parameter name="points">
 						<value index="0">688051555</value>
 						<value index="1">1229208422</value>
@@ -427,7 +427,7 @@
 				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="6932a513a37ff1bbb863d8ceda4554a4759ab51d">
 					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
 					<parameter name="targetSpeed">7</parameter>
-					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="pathDirectory">procedure/dr_camera/</parameter>
 					<parameter name="points">
 						<value index="0">456853454</value>
 						<value index="1">1256949063</value>
@@ -467,7 +467,7 @@
 				<property parent="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" guid="66dcf51b1ac4aea0e85c6f36996829f23b4fb865">
 					<parameter name="target">guid://49f2add7e766b39fafef4a40dbfae05752fca482</parameter>
 					<parameter name="targetSpeed">7</parameter>
-					<parameter name="pathDirectory">\procedure\dr_camera\</parameter>
+					<parameter name="pathDirectory">procedure/dr_camera/</parameter>
 					<parameter name="points">
 						<value index="0">2062563191</value>
 						<value index="1">383486657</value>
@@ -544,6 +544,10 @@
 		<node type="NodeReference" id="1590083194" name="static_target">
 			<reference>guid://d08a1fa2cc5403751c5e199dfe3a96cab04bfb69</reference>
 			<transform>1 0 0 0.0 0 0.999999761581 0 0.0 0 0 0.999999761581 0.0 -21.9206672336 45.4060664806 4.27637526772 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1515458232" name="static_target">
+			<reference>guid://d08a1fa2cc5403751c5e199dfe3a96cab04bfb69</reference>
+			<transform>-0.823037624359 0.567986786366 0 0.0 -0.567986726761 -0.823037564754 0 0.0 0 0 0.999999940395 0.0 38.4260482788 -22.6851865231 1.66948140272 1.0</transform>
 		</node>
 	</node>
 </nodes>
