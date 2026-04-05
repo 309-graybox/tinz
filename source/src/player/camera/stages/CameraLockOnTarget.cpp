@@ -10,41 +10,144 @@ using namespace Unigine::Math;
 void CameraLockOnTarget::runtimeReset(CameraState &, const CameraContext &)
 {
 	lockedTarget = nullptr;
-	locked = false;
 
-	pendingToggle = false;
 	pendingRetargetDir = 0;
-
 	retargetCooldown = 0.0f;
+
 	lostLoSTime = 0.0f;
-	noInputTime = 0.0f;
+	blendWeight = 0.0f;
 
-	latched = false;
-	yawLatched = 0.0f;
-	pitchLatched = 0.0f;
-
-	prevRigAngle = vec2_zero;
-	prevAngleValid = false;
+	cachedPivot = Vec3(0.0);
+	cachedArm = 3.0;
+	cacheValid = false;
 }
 
-void CameraLockOnTarget::screenOffsetToAngleOffset(
-	float vfovDeg,
-	float aspect,
-	const Vec2 &screenOffset,
-	float &yawOffsetDeg,
-	float &pitchOffsetDeg)
+void CameraLockOnTarget::apply(CameraState &state, const CameraInput &input, const CameraContext &ctx)
 {
-	const float vfov = vfovDeg * Consts::DEG2RAD;
-	const float hfov = 2.0f * atan(tan(vfov * 0.5f) * aspect);
+	if (!ctx.target)
+		return;
 
-	yawOffsetDeg = atan(screenOffset.x * tan(hfov * 0.5f)) * Consts::RAD2DEG;
-	pitchOffsetDeg = atan(screenOffset.y * tan(vfov * 0.5f)) * Consts::RAD2DEG;
+	drawDebug();
+
+	Vec3 ownerPos = ctx.targetPosition;
+
+	// --- timers ---
+	retargetCooldown = max(0.0f, retargetCooldown - state.dt);
+
+	// --- toggle ---
+	if (input.targetLock)
+		lockedTarget = lockedTarget ? nullptr : findClosestTargetable(ownerPos, lock_radius.get());
+
+	processRetarget(state, ctx);
+	validateTarget(state, ctx);
+
+	if (!lockedTarget)
+		lostLoSTime = 0.0f;
+
+	updateBlendWeight(state.dt);
+	updateLock(state, ctx);
+
+	if (!cacheValid)
+		return;
+
+	applyToRig(state);
+}
+
+void CameraLockOnTarget::drawDebug()
+{
+	if (debug && lockedTarget)
+		Visualizer::renderPoint3D(lockedTarget->getWorldPosition(), 0.1f, vec4_red, true, 0.0f, false);
+}
+
+void CameraLockOnTarget::updateBlendWeight(float dt)
+{
+	float targetW = lockedTarget ? 1.0f : 0.0f;
+	float alpha = expAlpha(transition_speed.get(), dt);
+	blendWeight += (targetW - blendWeight) * alpha;
+
+	if (blendWeight < 1e-3f && targetW < 1e-3f)
+	{
+		blendWeight = 0.0f;
+		cacheValid = false;
+		return;
+	}
+
+	if (blendWeight > 1.0f - 1e-3f && targetW > 1.0f - 1e-3f)
+		blendWeight = 1.0f;
+}
+
+void CameraLockOnTarget::processRetarget(const CameraState &state, const CameraContext &ctx)
+{
+	if (!lockedTarget || pendingRetargetDir == 0 || retargetCooldown > 0.0f)
+		return;
+
+	NodePtr next = findRetarget(ctx.targetPosition, lock_radius.get(), pendingRetargetDir, state.rig.angle);
+	if (next)
+	{
+		lockedTarget = next;
+		retargetCooldown = retarget_delay.get();
+	}
+
+	pendingRetargetDir = 0;
+}
+
+void CameraLockOnTarget::validateTarget(const CameraState &state, const CameraContext &ctx)
+{
+	if (!lockedTarget)
+		return;
+
+	float maxR = lock_radius.get();
+	Vec3 enemyPos = lockedTarget->getWorldPosition();
+
+	// range
+	if (length2(enemyPos - ctx.targetPosition) > maxR * maxR)
+	{
+		lockedTarget = nullptr;
+		return;
+	}
+
+	// LOS
+	Vec3 camPos = ctx.cameraNode ? ctx.cameraNode->getWorldPosition() : state.pos;
+	bool los = hasLoS(camPos, enemyPos, lockedTarget);
+	lostLoSTime = los ? 0.0f : lostLoSTime + state.dt;
+
+	if (lostLoSTime > lost_los_timer.get())
+	{
+		lockedTarget = nullptr;
+	}
+}
+
+void CameraLockOnTarget::updateLock(const CameraState &state, const CameraContext &ctx)
+{
+	if (!lockedTarget)
+		return;
+
+	Vec3 ownerPos = ctx.targetPosition;
+	Vec3 enemyPos = lockedTarget->getWorldPosition();
+
+	cachedPivot = (ownerPos + enemyPos) * 0.5;
+
+	float halfDist = length(enemyPos - ownerPos) * 0.5f;
+	float halfFovRad = state.fov * 0.5f * Consts::DEG2RAD;
+	float requiredArm = halfDist / max(tan(halfFovRad), 1e-4f);
+	cachedArm = clamp(requiredArm + extra_arm_offset.get(), arm_clamp.get().x, arm_clamp.get().y);
+
+	cacheValid = true;
+}
+
+void CameraLockOnTarget::applyToRig(CameraState &state)
+{
+	state.rig.pivot = lerp(state.rig.pivot, cachedPivot, blendWeight);
+	state.rig.arm_len = lerp(state.rig.arm_len, cachedArm, (double)blendWeight);
+
+	float clampedPitch = clamp(state.rig.angle.y, pitch_limit_deg.get().x, pitch_limit_deg.get().y);
+	state.rig.angle.y = lerp(state.rig.angle.y, clampedPitch, blendWeight);
 }
 
 NodePtr CameraLockOnTarget::findClosestTargetable(const Vec3 &from, float radius) const
 {
 	float bestDist2 = radius * radius;
-	NodePtr best = nullptr;
+	NodePtr best;
 
 	Vector<ObjectPtr> objects;
 	WorldBoundSphere bs(from, radius);
@@ -60,7 +163,8 @@ NodePtr CameraLockOnTarget::findClosestTargetable(const Vec3 &from, float radius
 		if (!node || !node->isEnabled())
 			continue;
 
-		auto d2 = length2(node->getWorldPosition() - from);
+		auto p = node->getWorldPosition();
+		auto d2 = length2(p - from);
 		if (d2 < bestDist2)
 		{
 			bestDist2 = d2;
@@ -70,182 +174,58 @@ NodePtr CameraLockOnTarget::findClosestTargetable(const Vec3 &from, float radius
 	return best;
 }
 
-bool CameraLockOnTarget::hasLineOfSight(const Vec3 &from, const Vec3 &to, const NodePtr &target) const
+NodePtr CameraLockOnTarget::findRetarget(const Vec3 &from, float radius, int dir, const vec2 &camAngle) const
 {
-	Vec3 dir = to - from;
-	float dist = length(dir);
-	if (dist < 1e-3f)
-		return true;
+	float yawRad = camAngle.x * Consts::DEG2RAD;
+	Vec3 camRight = Vec3(cos(yawRad), -sin(yawRad), 0.0);
 
-	dir /= dist;
+	float bestScore = Consts::INF;
+	NodePtr best;
 
-	auto o = static_ptr_cast<Node>(World::getIntersection(from, to, intersection_mask));
-	if (o)
+	Vector<ObjectPtr> objects;
+	WorldBoundSphere bs(from, radius);
+	World::getIntersection(bs, objects);
+
+	for (auto &o : objects)
 	{
-		while (o)
-		{
-			if (o == target)
-				return true;
+		Targetable *t = getComponentInChildren<Targetable>(o);
+		if (!t)
+			continue;
 
-			o = o->getParent();
+		NodePtr node = t->getTarget(from);
+		if (!node || !node->isEnabled())
+			continue;
+		if (node == lockedTarget)
+			continue;
+
+		Vec3 toNode = node->getWorldPosition() - from;
+		float lateral = dot(toNode, camRight) * dir;
+		if (lateral <= 0.0f)
+			continue;
+
+		float dist = length(toNode);
+		float score = dist / (lateral + 1.0f);
+
+		if (score < bestScore)
+		{
+			bestScore = score;
+			best = node;
 		}
 	}
-
-	return false;
+	return best;
 }
 
-void CameraLockOnTarget::apply(CameraState &state, const CameraInput &input, const CameraContext &ctx)
+bool CameraLockOnTarget::hasLoS(const Vec3 &from, const Vec3 &to, const NodePtr &ignore) const
 {
-	if (debug && lockedTarget)
+	if (length(to - from) < 1e-3f)
+		return true;
+
+	auto hit = static_ptr_cast<Node>(World::getIntersection(from, to, intersection_mask));
+	while (hit)
 	{
-		Visualizer::renderPoint3D(lockedTarget->getWorldPosition(), 0.1f, vec4_red, true, 0.0f, false);
+		if (hit == ignore)
+			return true;
+		hit = hit->getParent();
 	}
-
-	if (!ctx.target)
-		return;
-
-	// capture last stable angle when not locked
-	if (!locked)
-	{
-		prevRigAngle = state.rig.angle;
-		prevAngleValid = true;
-	}
-
-	if (input.targetLock)
-	{
-		pendingToggle = true;
-	}
-
-	// --- timers ---
-	retargetCooldown = max(0.0f, retargetCooldown - state.dt);
-
-	const bool hasInput =
-		abs(input.angle.x) > 1e-4f ||
-		abs(input.angle.y) > 1e-4f ||
-		abs(input.scroll) > 1e-6f;
-
-	noInputTime = hasInput ? 0.0f : noInputTime + state.dt;
-
-	// --- toggle ---
-	if (pendingToggle)
-	{
-		pendingToggle = false;
-
-		if (locked)
-		{
-			locked = false;
-			lockedTarget = nullptr;
-			latched = false;
-			return;
-		}
-
-		const Vec3 ownerPos = ctx.target->getWorldPosition();
-		lockedTarget = findClosestTargetable(ownerPos, lock_radius.get());
-		locked = (lockedTarget != nullptr);
-		latched = false;
-		return;
-	}
-
-	// --- recovery ---
-	if (!locked)
-	{
-		if (noInputTime > recovery_delay.get())
-			latched = false;
-		return;
-	}
-
-	if (!lockedTarget)
-	{
-		locked = false;
-		return;
-	}
-
-	// if requested, cancel mouse/orbit influence by restoring previous stable angle
-	if (reset_mouse_input.get() && prevAngleValid)
-	{
-		state.rig.angle = prevRigAngle;
-	}
-
-	// --- distance check ---
-	const Vec3 ownerPos = ctx.target->getWorldPosition();
-	const Vec3 enemyPos = lockedTarget->getWorldPosition();
-	const float maxR = lock_radius.get();
-
-	if (length2(enemyPos - ownerPos) > maxR * maxR)
-	{
-		locked = false;
-		lockedTarget = nullptr;
-		latched = false;
-		return;
-	}
-
-	// --- LOS ---
-	Vec3 camPos = ctx.cameraNode
-					  ? ctx.cameraNode->getWorldPosition()
-					  : state.pos;
-
-	const bool los = hasLineOfSight(camPos, enemyPos, lockedTarget);
-	lostLoSTime = los ? 0.0f : lostLoSTime + state.dt;
-
-	if (lostLoSTime > lost_los_timer.get())
-	{
-		locked = false;
-		lockedTarget = nullptr;
-		latched = false;
-		return;
-	}
-
-	// --- yaw / pitch to target ---
-	Vec3 to = enemyPos - camPos;
-	const float h = sqrt(to.x * to.x + to.y * to.y);
-	if (h < 1e-4f)
-		return;
-
-	Vec3 dirH = normalize(Vec3(to.x, to.y, 0.0f));
-	float targetYaw = -atan2(dirH.x, dirH.y) * Consts::RAD2DEG;
-	float targetPitch = atan2(to.z, h) * Consts::RAD2DEG;
-
-	// --- composition offset ---
-	float yawOffset = 0.0f;
-	float pitchOffset = 0.0f;
-	screenOffsetToAngleOffset(state.fov, 16.0f / 9.0f, Vec2(camera_offset), yawOffset, pitchOffset);
-
-	targetYaw += yawOffset;
-	targetPitch += pitchOffset;
-
-	// --- pitch clamp ---
-	auto pr = pitch_limit_deg.get();
-	targetPitch = clamp(targetPitch, min(pr.x, pr.y), max(pr.x, pr.y));
-
-	// --- smooth ---
-	const float a = expAlpha(transition_speed.get(), state.dt);
-
-	if (!latched)
-	{
-		yawLatched = targetYaw;
-		pitchLatched = targetPitch;
-		latched = true;
-	} else
-	{
-		yawLatched += normalizeAngle(targetYaw - yawLatched) * a;
-		pitchLatched += normalizeAngle(targetPitch - pitchLatched) * a;
-	}
-
-	// --- apply ---
-	const float maxStep = max_deg_per_sec.get() * state.dt;
-
-	float yaw = state.rig.angle.x;
-	float pitch = state.rig.angle.y;
-
-	yaw += clamp(normalizeAngle(yawLatched - yaw), -maxStep, maxStep);
-	pitch += clamp(normalizeAngle(pitchLatched - pitch), -maxStep, maxStep);
-
-	pitch = clamp(pitch, min(pr.x, pr.y), max(pr.x, pr.y));
-
-	state.rig.angle.x = yaw;
-	state.rig.angle.y = pitch;
-
-	// update stable angle to the final result (so next frame restore is consistent)
-	prevRigAngle = state.rig.angle;
-	prevAngleValid = true;
+	return false;
 }

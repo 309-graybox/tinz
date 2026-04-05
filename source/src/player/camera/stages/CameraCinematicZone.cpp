@@ -48,7 +48,7 @@ void CameraCinematicZone::apply(CameraState &state, const CameraInput &input, co
 	auto zone_node = zone->getNode();
 
 	Vec3 cam_pos = zone_node->getWorldPosition();
-	Vec3 target_pos = ctx.target->getWorldPosition();
+	Vec3 target_pos = ctx.targetPosition;
 	if (zone->target_node)
 		target_pos = zone->target_node->getWorldPosition();
 

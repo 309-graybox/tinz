@@ -139,6 +139,8 @@ void PlayerCameraManager::update()
 	{
 		cam->setFov(_state.fov);
 	}
+
+	_ctx.targetOldPosition = _ctx.target->getWorldPosition();
 }
 
 void PlayerCameraManager::shutdown()
@@ -167,7 +169,8 @@ void PlayerCameraManager::update_camera_context()
 	_ctx.collision_mask = collision_mask.get();
 	if (_ctx.target)
 	{
-		_ctx.targetVelocity = (_ctx.target->getWorldPosition() - _ctx.targetOldPosition) / _state.dt;
+		_ctx.targetPosition = _ctx.target->getWorldPosition();
+		_ctx.targetVelocity = (_ctx.targetPosition - _ctx.targetOldPosition) / _state.dt;
 		_ctx.targetSpeed = _ctx.targetVelocity.length();
 		_ctx.targetSpeedDir = _ctx.targetSpeed != 0 ? _ctx.targetVelocity / _ctx.targetSpeed : Vec3_zero;
 		_ctx.targetHorizontalVelocity = Vec3(_ctx.targetVelocity.x, _ctx.targetVelocity.y, 0);
@@ -178,6 +181,7 @@ void PlayerCameraManager::update_camera_context()
 		_ctx.targetVerticalSpeedDir = _ctx.targetVerticalSpeed != 0 ? _ctx.targetHorizontalVelocity / _ctx.targetVerticalSpeed : Vec3_zero;
 	} else
 	{
+		_ctx.targetPosition = Vec3_zero;
 		_ctx.targetVelocity = Vec3_zero;
 		_ctx.targetSpeedDir = Vec3_zero;
 		_ctx.targetSpeed = 0;
@@ -188,6 +192,4 @@ void PlayerCameraManager::update_camera_context()
 		_ctx.targetVerticalSpeedDir = Vec3_zero;
 		_ctx.targetVerticalSpeed = 0;
 	}
-
-	_ctx.targetOldPosition = _ctx.target->getWorldPosition();
 }
