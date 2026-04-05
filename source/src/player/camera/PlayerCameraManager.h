@@ -45,4 +45,5 @@ private:
 
 	EIBinding *_bindingLook = nullptr;
 	EIBinding *_bindingTargetLock = nullptr;
+	bool _targetLockHeld = false;
 };

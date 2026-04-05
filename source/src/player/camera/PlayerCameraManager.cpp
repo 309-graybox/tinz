@@ -110,11 +110,10 @@ void PlayerCameraManager::init()
 		return;
 	}
 	_bindingTargetLock = player->bind(_actionTargetLock, eTriggerState::Triggered | eTriggerState::None, [this](EIActionValueInstance v) {
-		_input.targetLock = false;
-		if (!Console::isActive() && Input::isMouseGrab())
-		{
-			_input.targetLock = !compare(v.getValue().getMagnitude2(), 0.0f);
-		}
+		bool pressed = !Console::isActive() && Input::isMouseGrab() && !compare(v.getValue().getMagnitude2(), 0.0f);
+		if (pressed && !_targetLockHeld)
+			_input.targetLock = true;
+		_targetLockHeld = pressed;
 	});
 
 	if (_ctx.target)
@@ -128,6 +127,8 @@ void PlayerCameraManager::update()
 
 	for (auto &m : mods)
 		m->apply(_state, _input, _ctx);
+
+	_input.targetLock = false;
 
 	if (!_ctx.cameraNode)
 		return;
