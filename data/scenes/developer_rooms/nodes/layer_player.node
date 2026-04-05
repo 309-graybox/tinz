@@ -16,6 +16,7 @@
 				<parameter name="target_node">510937540</parameter>
 				<parameter name="camera_node">1892598520</parameter>
 				<parameter name="collision_mask">0x7fffffff</parameter>
+				<parameter name="debug">1</parameter>
 			</property>
 			<property parent="5b253618c0f3cb18baa5f9fd78912f188d2c8dad" guid="324041a2fe2f758105b07a892082b807f19608f2">
 				<parameter name="slopeLimit">44</parameter>
@@ -78,7 +79,7 @@
 	</node>
 	<node type="ObjectMeshStatic" id="510937540" immovable="1" name="Capsule">
 		<mesh_name>guid://30a2c3df4360c3a29b876de716cc573fdc7af63e</mesh_name>
-		<surface name="capsule" intersection="1" material="fa22583eadc45f89ebe8ae56d96c24e8fdd54989"/>
+		<surface name="capsule" intersection="1" intersection_mask="0x80000000" material="fa22583eadc45f89ebe8ae56d96c24e8fdd54989"/>
 		<body type="BodyDummy" id="1533853500" frozen="0">
 			<shape type="ShapeCapsule" id="1644335467" name="ShapeCapsule">
 				<radius>0.492403865</radius>
