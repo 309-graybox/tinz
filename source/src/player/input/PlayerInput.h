@@ -6,7 +6,7 @@ class PlayerInput
 {
 public:
 	void init(const Unigine::NodePtr &node);
-	void update(const Unigine::Math::vec3 &up = Unigine::Math::vec3_up);
+	void update(const Unigine::Math::vec3 &ground_normal, const Unigine::Math::vec3 &up);
 	void shutdown();
 
 	Unigine::Math::vec3 getMoveDirection() const noexcept { return _move_direction; }
@@ -24,7 +24,7 @@ private:
 	Unigine::Math::vec3 _move_direction;
 	float _move_amount = 0.0f;
 
-	Unigine::Math::vec2 _raw_мove;
+	Unigine::Math::vec2 _raw_move;
 	bool _walk = false;
 	bool _sprint = false;
 	bool _crouch = false;

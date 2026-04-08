@@ -34,11 +34,11 @@ void PlayerInput::init(const Unigine::NodePtr &node)
 	});
 
 	_binding_move = player->bind(_action_move, eTriggerState::Triggered | eTriggerState::None, [this](EIActionValueInstance inst) {
-		_raw_мove = inst.getValue().value.xy;
-		if (abs(_raw_мove.x) < 0.001)
-			_raw_мove.x = 0;
-		if (abs(_raw_мove.y) < 0.001)
-			_raw_мove.y = 0;
+		_raw_move = inst.getValue().value.xy;
+		if (abs(_raw_move.x) < 0.001)
+			_raw_move.x = 0;
+		if (abs(_raw_move.y) < 0.001)
+			_raw_move.y = 0;
 	});
 
 	_binding_sprint = player->bind(_action_sprint, eTriggerState::Triggered | eTriggerState::None, [this](EIActionValueInstance inst) {
@@ -60,10 +60,10 @@ void PlayerInput::init(const Unigine::NodePtr &node)
 	});
 }
 
-void PlayerInput::update(const Unigine::Math::vec3 &up)
+void PlayerInput::update(const vec3 &ground_normal, const vec3 &up)
 {
-	int forward = (_raw_мove.y > 0) - (_raw_мove.y < 0);
-	int side = (_raw_мove.x > 0) - (_raw_мove.x < 0);
+	int forward = (_raw_move.y > 0) - (_raw_move.y < 0);
+	int side = (_raw_move.x > 0) - (_raw_move.x < 0);
 
 	if (forward == 0 && side == 0)
 	{
@@ -73,15 +73,15 @@ void PlayerInput::update(const Unigine::Math::vec3 &up)
 	}
 
 	vec3 view_dir = Game::getPlayer()->getViewDirection();
-	vec3 forward_dir = normalize(view_dir - vec3_up * dot(view_dir, vec3_up));
-	vec3 right_dir = normalize(cross(forward_dir, vec3_up));
+	vec3 forward_dir = normalize(view_dir - up * dot(view_dir, up));
+	vec3 right_dir = normalize(cross(forward_dir, up));
 	vec3 move_dir = forward_dir * forward + right_dir * side;
 
-	float d = dot(vec3_up, up);
-	if (Math::abs(d) < Consts::EPS)
+	float up_normal_cos = dot(up, ground_normal);
+	if (Math::abs(up_normal_cos) < Consts::EPS)
 		_move_direction = move_dir;
 	else
-		_move_direction = move_dir - vec3_up * (dot(move_dir, up) / d); // TODO(vah): try to remove division
+		_move_direction = move_dir - up * (dot(move_dir, ground_normal) / up_normal_cos); // TODO(vah): try to remove division
 
 	_move_direction.normalize();
 	_move_amount = 1.0f;
