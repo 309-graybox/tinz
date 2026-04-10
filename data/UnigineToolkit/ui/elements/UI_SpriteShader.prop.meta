@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>3c1dc914783c25f0b32ec430e49d13dfcbf3e4b1</guid>
+	<type>property</type>
+	<hash>c5447a99e1da6e8a4653ccfc12b51e85dcb9de77fbc46c154262faa2637f1e6c</hash>
+	<runtimes>
+		<runtime id="3c1dc914783c25f0b32ec430e49d13dfcbf3e4b1" name="UI_SpriteShader" link="0" type="4"/>
+	</runtimes>
+</asset>

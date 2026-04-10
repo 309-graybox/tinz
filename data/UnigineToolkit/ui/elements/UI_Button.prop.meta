@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>d007a1033e4bf5d44e6ec54f2ae558534547be19</guid>
+	<type>property</type>
+	<hash>bcf312b891b1e3cce178feab00db11a91d023fe849f41ed5476e9e6d9b0c95b9</hash>
+	<runtimes>
+		<runtime id="d007a1033e4bf5d44e6ec54f2ae558534547be19" name="UI_Button" link="0" type="4"/>
+	</runtimes>
+</asset>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>36315462706f85f3155f8cb86f20d8e744ec28e0</guid>
+	<type>property</type>
+	<hash>31f8b6a316562cb0e6196b6dbc7e0644994d0c12f1226c92375353a6bb6fc011</hash>
+	<runtimes>
+		<runtime id="36315462706f85f3155f8cb86f20d8e744ec28e0" name="UIC_SoundPlayer" link="0" type="4"/>
+	</runtimes>
+</asset>

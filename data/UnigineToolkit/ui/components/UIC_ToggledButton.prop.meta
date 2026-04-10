@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>27c7ca3286b25fa3d900e1d28703cbe11b3c98cc</guid>
+	<type>property</type>
+	<hash>b5ef62eec927577e6c6c207f6ee191fb13edb40af641186816f7f39355375fce</hash>
+	<runtimes>
+		<runtime id="27c7ca3286b25fa3d900e1d28703cbe11b3c98cc" name="UIC_ToggledButton" link="0" type="4"/>
+	</runtimes>
+</asset>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>baf2d0c5de4975492264ee3f522bfe292f6b44c1</guid>
+	<type>file</type>
+	<hash>446104605b8dc1c1bdf67c3412d9c62bfd6850002e48a4e4be8cc8ff9a06ff6b</hash>
+	<runtimes>
+		<runtime id="baf2d0c5de4975492264ee3f522bfe292f6b44c1" name="ui_nine_sliced.shader" link="0"/>
+	</runtimes>
+</asset>

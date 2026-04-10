@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>324808ff0f7741a7a1002779db556fc8d76b2698</guid>
+	<type>material</type>
+	<hash>ac7cb94891ada77a060b5271316a68aa4c257638404936f07a9c3e2bf619f305</hash>
+	<runtimes>
+		<runtime id="324808ff0f7741a7a1002779db556fc8d76b2698" name="ui_clipmask_nine_sliced" link="0" type="5"/>
+	</runtimes>
+</asset>

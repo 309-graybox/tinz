@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>b97c1a94b9cf73262f84e1bef461dbbcdb92c45f</guid>
+	<type>font</type>
+	<hash>d11a236f2362ddc30a6683d4068a263ba70bbd0c6817d4489176b69f0c9efff3</hash>
+	<runtimes>
+		<runtime id="b97c1a94b9cf73262f84e1bef461dbbcdb92c45f" name="Roboto-Light.ttf" link="0"/>
+	</runtimes>
+</asset>

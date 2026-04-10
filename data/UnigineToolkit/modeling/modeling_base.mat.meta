@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>7d7deec98f180ad0fb38376c4dcc5ba0eadd468c</guid>
+	<type>material</type>
+	<hash>92c00d9f9b5a95a3624209822e2f78a087d098e574e6c5419d36b6d6442b11a3</hash>
+	<runtimes>
+		<runtime id="7d7deec98f180ad0fb38376c4dcc5ba0eadd468c" name="modeling_base" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>

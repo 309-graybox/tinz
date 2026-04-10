@@ -20,9 +20,6 @@
 	<render>
 		<data/>
 		<shader_defines/>
-		<render_stereo_distance>4</render_stereo_distance>
-		<render_stereo_radius>0.0320000015</render_stereo_radius>
-		<render_stereo_offset>0</render_stereo_offset>
 		<dirt_texture_name/>
 		<metering_mask_texture_path/>
 		<auto_exposure_ramp>
@@ -63,6 +60,7 @@
 		</color_correction>
 		<color_correction_lut/>
 		<vignette_mask_texture_path>core/textures/vignette_default.texture</vignette_mask_texture_path>
+		<clouds_environment_texture_path/>
 		<sky_rotation>0 0 0 1</sky_rotation>
 		<albedo_cavity_texture_name>core/textures/common/white.texture</albedo_cavity_texture_name>
 		<shading_cavity_texture_name>core/textures/common/white.texture</shading_cavity_texture_name>
@@ -224,6 +222,9 @@
 		<render_clouds_dynamic_coverage_area>10000</render_clouds_dynamic_coverage_area>
 		<render_clouds_dynamic_coverage_resolution>256</render_clouds_dynamic_coverage_resolution>
 		<render_clouds_enabled>1</render_clouds_enabled>
+		<render_clouds_environment_color>1 1 1 1</render_clouds_environment_color>
+		<render_clouds_environment_sky>1</render_clouds_environment_sky>
+		<render_clouds_environment_sky_color>1 1 1 1</render_clouds_environment_sky_color>
 		<render_clouds_far_clipping>0</render_clouds_far_clipping>
 		<render_clouds_ground_shadows>1</render_clouds_ground_shadows>
 		<render_clouds_interleaved_rendering>0</render_clouds_interleaved_rendering>
@@ -244,6 +245,7 @@
 		<render_clouds_rounded_planet_radius>200000</render_clouds_rounded_planet_radius>
 		<render_clouds_samples_count>3</render_clouds_samples_count>
 		<render_clouds_sampling_quality>2</render_clouds_sampling_quality>
+		<render_clouds_shaders_compile_mode>0</render_clouds_shaders_compile_mode>
 		<render_clouds_soft_intersection>100</render_clouds_soft_intersection>
 		<render_clouds_step_accuracy>0.75</render_clouds_step_accuracy>
 		<render_clouds_transparent_order>0</render_clouds_transparent_order>
@@ -277,6 +279,7 @@
 		<render_denoise_wrong_velocity_fix_by_depth_enabled>1</render_denoise_wrong_velocity_fix_by_depth_enabled>
 		<render_denoise_wrong_velocity_fix_by_depth_threshold>0.0299999993</render_denoise_wrong_velocity_fix_by_depth_threshold>
 		<render_depth_pre_pass>0</render_depth_pre_pass>
+		<render_depth_pre_pass_materials>1</render_depth_pre_pass_materials>
 		<render_direct_lighting_interleaved>0</render_direct_lighting_interleaved>
 		<render_direct_lighting_interleaved_catmull_resampling>0</render_direct_lighting_interleaved_catmull_resampling>
 		<render_direct_lighting_interleaved_color_clamping>1</render_direct_lighting_interleaved_color_clamping>
@@ -300,11 +303,14 @@
 		<render_dof_resolution>1</render_dof_resolution>
 		<render_environment>1</render_environment>
 		<render_environment_cubemap_blend>0</render_environment_cubemap_blend>
+		<render_environment_dither_scale>0</render_environment_dither_scale>
 		<render_environment_ggx_mipmaps_quality>1</render_environment_ggx_mipmaps_quality>
 		<render_environment_haze>2</render_environment_haze>
 		<render_environment_haze_colorization_intensity>0.949999988</render_environment_haze_colorization_intensity>
 		<render_environment_haze_colorization_threshold>0.5</render_environment_haze_colorization_threshold>
+		<render_environment_haze_dither_scale>0</render_environment_haze_dither_scale>
 		<render_environment_haze_gradient>2</render_environment_haze_gradient>
+		<render_environment_haze_resolution>2</render_environment_haze_resolution>
 		<render_environment_haze_screen_space_global_illumination>1</render_environment_haze_screen_space_global_illumination>
 		<render_environment_haze_screen_space_global_illumination_distance_max>100000</render_environment_haze_screen_space_global_illumination_distance_max>
 		<render_environment_haze_screen_space_global_illumination_distance_min>98000</render_environment_haze_screen_space_global_illumination_distance_min>
@@ -416,6 +422,8 @@
 		<render_lens_threshold>1</render_lens_threshold>
 		<render_light_distance>1e+09</render_light_distance>
 		<render_lightmap_color>1 1 1 1</render_lightmap_color>
+		<render_lights_clustered_distance>500</render_lights_clustered_distance>
+		<render_lights_dither_scale>1</render_lights_dither_scale>
 		<render_lights_enabled>1</render_lights_enabled>
 		<render_lights_forward_per_object_env>4</render_lights_forward_per_object_env>
 		<render_lights_forward_per_object_omni>4</render_lights_forward_per_object_omni>
@@ -458,6 +466,7 @@
 		<render_noise>0</render_noise>
 		<render_noise_intensity>0.0299999993</render_noise_intensity>
 		<render_object_distance>1e+09</render_object_distance>
+		<render_occluder_distance>1e+09</render_occluder_distance>
 		<render_occluders>1</render_occluders>
 		<render_occluders_resolution>128 64</render_occluders_resolution>
 		<render_occluders_shadows>0</render_occluders_shadows>
@@ -483,6 +492,7 @@
 		<render_screen_space_shadow_shafts_quality>2</render_screen_space_shadow_shafts_quality>
 		<render_screen_space_shadow_shafts_resolution>1</render_screen_space_shadow_shafts_resolution>
 		<render_shaders_compile_mode>0</render_shaders_compile_mode>
+		<render_shading_quality>2</render_shading_quality>
 		<render_shadow_distance>100</render_shadow_distance>
 		<render_shadow_distance_scale>1</render_shadow_distance_scale>
 		<render_shadows>1</render_shadows>
@@ -504,10 +514,26 @@
 		<render_sharpen_blur_sigma>1</render_sharpen_blur_sigma>
 		<render_sharpen_diagonal_samples>1</render_sharpen_diagonal_samples>
 		<render_sharpen_intensity>0.5</render_sharpen_intensity>
+		<render_sharpen_resolution>2</render_sharpen_resolution>
+		<render_show_quad_overdraw_blend>1</render_show_quad_overdraw_blend>
+		<render_show_quad_overdraw_display_mode>0</render_show_quad_overdraw_display_mode>
+		<render_show_quad_overdraw_enabled>0</render_show_quad_overdraw_enabled>
+		<render_show_quad_overdraw_landscape_terrain>0</render_show_quad_overdraw_landscape_terrain>
+		<render_show_quad_overdraw_passes>0</render_show_quad_overdraw_passes>
+		<render_show_quad_overdraw_threshold>40</render_show_quad_overdraw_threshold>
+		<render_show_quad_overdraw_water_global>0</render_show_quad_overdraw_water_global>
+		<render_show_quad_overdraw_wireframe>0</render_show_quad_overdraw_wireframe>
 		<render_show_texture_resolution_blend>0.5</render_show_texture_resolution_blend>
 		<render_show_texture_resolution_streaming_accounting_mode>0</render_show_texture_resolution_streaming_accounting_mode>
 		<render_show_texture_resolution_uv_mode>0</render_show_texture_resolution_uv_mode>
+		<render_show_vertex_density_blend>1</render_show_vertex_density_blend>
+		<render_show_vertex_density_depth_test>1</render_show_vertex_density_depth_test>
+		<render_show_vertex_density_enabled>0</render_show_vertex_density_enabled>
+		<render_show_vertex_density_mode>0</render_show_vertex_density_mode>
+		<render_show_vertex_density_search_area>8</render_show_vertex_density_search_area>
+		<render_show_vertex_density_threshold>100</render_show_vertex_density_threshold>
 		<render_show_visualizer_distance>500</render_show_visualizer_distance>
+		<render_show_visualizer_on_invisible_surfaces>0</render_show_visualizer_on_invisible_surfaces>
 		<render_show_voxel_probe_visualizer_grid_size>15</render_show_voxel_probe_visualizer_grid_size>
 		<render_show_voxel_probe_visualizer_sphere_scale>0.25</render_show_voxel_probe_visualizer_sphere_scale>
 		<render_shutter_speed>250</render_shutter_speed>
@@ -608,18 +634,25 @@
 		<render_sssss_taa_pixel_offset>1</render_sssss_taa_pixel_offset>
 		<render_sssss_taa_preserve_details>1</render_sssss_taa_preserve_details>
 		<render_sssss_taa_samples>1</render_sssss_taa_samples>
+		<render_stereo_distance>4</render_stereo_distance>
 		<render_stereo_focus_supersampling>1</render_stereo_focus_supersampling>
 		<render_stereo_hidden_area>0</render_stereo_hidden_area>
 		<render_stereo_hidden_area_exposure_transform>0.600000024 0.600000024 0 0</render_stereo_hidden_area_exposure_transform>
 		<render_stereo_hidden_area_transform>1 1 0 0</render_stereo_hidden_area_transform>
+		<render_stereo_offset>0</render_stereo_offset>
 		<render_stereo_planar_reflections_per_eye>0</render_stereo_planar_reflections_per_eye>
+		<render_stereo_radius>0.0320000015</render_stereo_radius>
 		<render_streaming_animations_life_time>-1</render_streaming_animations_life_time>
 		<render_streaming_budget_loading>1</render_streaming_budget_loading>
 		<render_streaming_cache_ram>-1</render_streaming_cache_ram>
 		<render_streaming_cache_vram>-1</render_streaming_cache_vram>
 		<render_streaming_committed_memory_overcommit>1</render_streaming_committed_memory_overcommit>
 		<render_streaming_free_space_ram>1024</render_streaming_free_space_ram>
+		<render_streaming_free_space_ram_committed>512</render_streaming_free_space_ram_committed>
 		<render_streaming_free_space_vram>512</render_streaming_free_space_vram>
+		<render_streaming_igpu_vram_balance>40</render_streaming_igpu_vram_balance>
+		<render_streaming_igpu_vram_mode>0</render_streaming_igpu_vram_mode>
+		<render_streaming_igpu_vram_size>4096</render_streaming_igpu_vram_size>
 		<render_streaming_meshes_mode_ram>1</render_streaming_meshes_mode_ram>
 		<render_streaming_meshes_mode_vram>0</render_streaming_meshes_mode_vram>
 		<render_streaming_meshes_prefetch_collision>0</render_streaming_meshes_prefetch_collision>
@@ -672,10 +705,15 @@
 		<render_transparent_multiple_env_probes>1</render_transparent_multiple_env_probes>
 		<render_upscale_dlss_mode>3</render_upscale_dlss_mode>
 		<render_upscale_dlss_preset>0</render_upscale_dlss_preset>
+		<render_upscale_dlss_resolution_scale_enabled>0</render_upscale_dlss_resolution_scale_enabled>
+		<render_upscale_dlss_resolution_scale_value>0.5</render_upscale_dlss_resolution_scale_value>
+		<render_upscale_fix_flicker>0</render_upscale_fix_flicker>
+		<render_upscale_fsr_custom_resolution_scale>0.5</render_upscale_fsr_custom_resolution_scale>
 		<render_upscale_fsr_enable_sharpness>0</render_upscale_fsr_enable_sharpness>
 		<render_upscale_fsr_mode>3</render_upscale_fsr_mode>
 		<render_upscale_fsr_pre_exposure>1</render_upscale_fsr_pre_exposure>
 		<render_upscale_fsr_sharpness>0.5</render_upscale_fsr_sharpness>
+		<render_upscale_fsr_show_debug_view>0</render_upscale_fsr_show_debug_view>
 		<render_upscale_mode>0</render_upscale_mode>
 		<render_upscale_order>0</render_upscale_order>
 		<render_viewport_mode>0</render_viewport_mode>
@@ -717,44 +755,6 @@
 		<composite_deferred_material_guid>guid://</composite_deferred_material_guid>
 		<debug_materials/>
 		<scriptable_materials/>
-		<clouds_environment_texture_path/>
-		<render_clouds_environment_color>1 1 1 1</render_clouds_environment_color>
-		<render_clouds_environment_sky>1</render_clouds_environment_sky>
-		<render_clouds_environment_sky_color>1 1 1 1</render_clouds_environment_sky_color>
-		<render_clouds_shaders_compile_mode>0</render_clouds_shaders_compile_mode>
-		<render_depth_pre_pass_materials>1</render_depth_pre_pass_materials>
-		<render_environment_dither_scale>0</render_environment_dither_scale>
-		<render_environment_haze_dither_scale>0</render_environment_haze_dither_scale>
-		<render_environment_haze_resolution>2</render_environment_haze_resolution>
-		<render_lights_clustered_distance>500</render_lights_clustered_distance>
-		<render_lights_dither_scale>1</render_lights_dither_scale>
-		<render_occluder_distance>1e+09</render_occluder_distance>
-		<render_shading_quality>2</render_shading_quality>
-		<render_sharpen_resolution>2</render_sharpen_resolution>
-		<render_show_quad_overdraw_blend>1</render_show_quad_overdraw_blend>
-		<render_show_quad_overdraw_display_mode>0</render_show_quad_overdraw_display_mode>
-		<render_show_quad_overdraw_enabled>0</render_show_quad_overdraw_enabled>
-		<render_show_quad_overdraw_landscape_terrain>0</render_show_quad_overdraw_landscape_terrain>
-		<render_show_quad_overdraw_passes>0</render_show_quad_overdraw_passes>
-		<render_show_quad_overdraw_threshold>40</render_show_quad_overdraw_threshold>
-		<render_show_quad_overdraw_water_global>0</render_show_quad_overdraw_water_global>
-		<render_show_quad_overdraw_wireframe>0</render_show_quad_overdraw_wireframe>
-		<render_show_vertex_density_blend>1</render_show_vertex_density_blend>
-		<render_show_vertex_density_depth_test>1</render_show_vertex_density_depth_test>
-		<render_show_vertex_density_enabled>0</render_show_vertex_density_enabled>
-		<render_show_vertex_density_mode>0</render_show_vertex_density_mode>
-		<render_show_vertex_density_search_area>8</render_show_vertex_density_search_area>
-		<render_show_vertex_density_threshold>100</render_show_vertex_density_threshold>
-		<render_show_visualizer_on_invisible_surfaces>0</render_show_visualizer_on_invisible_surfaces>
-		<render_streaming_free_space_ram_committed>512</render_streaming_free_space_ram_committed>
-		<render_streaming_igpu_vram_balance>40</render_streaming_igpu_vram_balance>
-		<render_streaming_igpu_vram_mode>0</render_streaming_igpu_vram_mode>
-		<render_streaming_igpu_vram_size>4096</render_streaming_igpu_vram_size>
-		<render_upscale_dlss_resolution_scale_enabled>0</render_upscale_dlss_resolution_scale_enabled>
-		<render_upscale_dlss_resolution_scale_value>0.5</render_upscale_dlss_resolution_scale_value>
-		<render_upscale_fix_flicker>0</render_upscale_fix_flicker>
-		<render_upscale_fsr_custom_resolution_scale>0.5</render_upscale_fsr_custom_resolution_scale>
-		<render_upscale_fsr_show_debug_view>0</render_upscale_fsr_show_debug_view>
 	</render>
 	<physics>
 		<frozen_linear_velocity>0.0199999996</frozen_linear_velocity>
@@ -775,7 +775,7 @@
 		</node>
 		<node type="NodeLayer" id="1850185643" name="player_layer">
 			<layer>guid://414010aa6ac6cf193bc290851500f656096989d1</layer>
-			<transform>1.00000011921 0 0 0.0 0 0.999999880791 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			<transform>1.00000011921 0 0 0.0 0 0.999999880791 0 0.0 0 0 1 0.0 0 0 1.16887711321 1.0</transform>
 		</node>
 		<node type="NodeLayer" id="1668500170" name="global_logic">
 			<layer>guid://a217074d9ffbbfb7ba2bac7bfa25e325be333085</layer>
@@ -813,6 +813,238 @@
 			</node>
 			<node type="NodeDummy" id="583978043" name="NodeDummy_3">
 				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -6.03340804468 -3.49437110406 -0.458249857418 1.0</transform>
+			</node>
+		</node>
+		<node type="NodeDummy" id="1670013548" name="NodeDummy_4">
+			<properties>
+				<property parent="cac56ab8ba55649db33551f4e81ac97513663455" guid="abdb4ab6fa94c4f1bb1a682fa72cdb36ad1bf0eb"/>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		</node>
+		<node type="NodeDummy" id="590803037" name="main_menu">
+			<properties>
+				<property parent="eabcffd8d5120b660823e2c294a8dc252da5ea29" guid="cedd70ffecade17e66ccfc6b46f20e5c1cf5dc6a">
+					<parameter name="main_menu">698217871</parameter>
+					<parameter name="settings_menu">1662203416</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		</node>
+		<node type="NodeDummy" id="698217871" name="canvas">
+			<properties>
+				<property parent="481e47ba54f50bc51c49f0400a2fcb32a7854368" guid="721884c02fed0a3a34e80e305c349dd70b0c0e5a"/>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			<node type="NodeDummy" id="1746565514" name="ButtonStart">
+				<properties>
+					<property parent="d007a1033e4bf5d44e6ec54f2ae558534547be19" guid="af028c73a84f1da2ec54b4c3596df6623e706145">
+						<parameter name="pos">0 -60 512 60</parameter>
+						<parameter name="pivot">0.5 0.5</parameter>
+						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
+						<parameter name="text">Start</parameter>
+						<parameter name="font_color">0 0 0 1</parameter>
+						<parameter name="font_offset">0 0</parameter>
+						<parameter name="bg_uv">0 0 1 1</parameter>
+						<parameter name="bg_color">1 1 1 1</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1890458465" name="ButtonSettings">
+				<properties>
+					<property parent="d007a1033e4bf5d44e6ec54f2ae558534547be19" guid="0df0f7b860a241bc3ddc9b28818053e274af4612">
+						<parameter name="pos">0 0 512 60</parameter>
+						<parameter name="pivot">0.5 0.5</parameter>
+						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
+						<parameter name="text">Settings</parameter>
+						<parameter name="font_color">0 0 0 1</parameter>
+						<parameter name="font_offset">0 0</parameter>
+						<parameter name="bg_uv">0 0 1 1</parameter>
+						<parameter name="bg_color">1 1 1 1</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="11009356" name="Table">
+				<properties>
+					<property parent="6fb6e20332106eebd34a3ae7a23b685e049f60d1" guid="4101f66144abf8e1ea5c5431bf6d3818ddaf7363">
+						<parameter name="pos">-703 -75 512 180</parameter>
+						<parameter name="pivot">0.5 0.5</parameter>
+						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
+						<parameter name="max_columns">1</parameter>
+						<parameter name="spacing">0</parameter>
+						<parameter name="use_screen_spacing">1</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1884231739" name="ButtonQuit">
+				<properties>
+					<property parent="d007a1033e4bf5d44e6ec54f2ae558534547be19" guid="83eb9ceca31b057c906ef75cc7fd888daafc4166">
+						<parameter name="pos">0 60 512 60</parameter>
+						<parameter name="pivot">0.5 0.5</parameter>
+						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
+						<parameter name="text">Quit</parameter>
+						<parameter name="font_color">0 0 0 1</parameter>
+						<parameter name="font_offset">0 0</parameter>
+						<parameter name="bg_uv">0 0 1 1</parameter>
+						<parameter name="bg_color">1 1 1 1</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+		</node>
+		<node type="NodeDummy" id="1662203416" name="canvas">
+			<properties>
+				<property parent="481e47ba54f50bc51c49f0400a2fcb32a7854368" guid="62f083804abefcc124e27d24a5e2fe2d97bc649b"/>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			<node type="NodeDummy" id="877544087" name="Table">
+				<properties>
+					<property parent="6fb6e20332106eebd34a3ae7a23b685e049f60d1" guid="55405ca383b89308366b26cfb80753f9d438d13e">
+						<parameter name="pos">1 3 768 250</parameter>
+						<parameter name="pivot">0 0.5</parameter>
+						<parameter name="anchor">0 0.5 0 0.5</parameter>
+						<parameter name="max_columns">2</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="330268426" name="Label">
+				<properties>
+					<property parent="1a914610540f70f5c7f1612a28d8511750320139" guid="baf90cb20b7eda72308ba6f685bfd4de15be4785">
+						<parameter name="pos">-256 50 256 50</parameter>
+						<parameter name="pivot">0.5 0.5</parameter>
+						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
+						<parameter name="text">Volume</parameter>
+						<parameter name="font_color">1 1 1 1</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="284189409" name="SliderVolume">
+				<properties>
+					<property parent="db7098052827b16790dd0086559222e73aa8d85b" guid="fcf5e48da498a8b99e151299ac2cd24e23949320">
+						<parameter name="pos">128 35 512 20</parameter>
+						<parameter name="pivot">0.5 0.5</parameter>
+						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
+						<parameter name="bg_color">1 1 1 1</parameter>
+						<parameter name="fg_color">1 1 1 1</parameter>
+						<parameter name="handle_color">1 1 1 1</parameter>
+						<parameter name="value">1</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="134389452" name="Label">
+				<properties>
+					<property parent="1a914610540f70f5c7f1612a28d8511750320139" guid="9c47e65cc32c82d60088e2c06129d466582f0b87">
+						<parameter name="pos">-256 100 256 50</parameter>
+						<parameter name="pivot">0.5 0.5</parameter>
+						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
+						<parameter name="text">Music</parameter>
+						<parameter name="font_color">1 1 1 1</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="314330590" name="SliderMusicVolume">
+				<properties>
+					<property parent="db7098052827b16790dd0086559222e73aa8d85b" guid="0e34b2eee181c9efebcc8df29b20801d0d0b4951">
+						<parameter name="pos">128 85 512 20</parameter>
+						<parameter name="pivot">0.5 0.5</parameter>
+						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
+						<parameter name="bg_color">1 1 1 1</parameter>
+						<parameter name="fg_color">1 1 1 1</parameter>
+						<parameter name="handle_color">1 1 1 1</parameter>
+						<parameter name="value">1</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1370708901" name="Label">
+				<properties>
+					<property parent="1a914610540f70f5c7f1612a28d8511750320139" guid="970a3897228b221a8ff89083cf9da6667aa71a22">
+						<parameter name="pos">-256 -100 256 50</parameter>
+						<parameter name="pivot">0.5 0.5</parameter>
+						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
+						<parameter name="text">Brightness</parameter>
+						<parameter name="font_color">1 1 1 1</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1277909184" name="SliderBrightness">
+				<properties>
+					<property parent="db7098052827b16790dd0086559222e73aa8d85b" guid="9608ed560c99d66c5a295cda05397b6498a6d319">
+						<parameter name="pos">122 -115 500 20</parameter>
+						<parameter name="pivot">0.5 0.5</parameter>
+						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
+						<parameter name="bg_color">1 1 1 1</parameter>
+						<parameter name="fg_color">1 1 1 1</parameter>
+						<parameter name="handle_color">1 1 1 1</parameter>
+						<parameter name="min_value">-1</parameter>
+						<parameter name="max_value">1</parameter>
+						<parameter name="value">0</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1732189865" name="Label">
+				<properties>
+					<property parent="1a914610540f70f5c7f1612a28d8511750320139" guid="e460f16968cb7359a75578b5b68a50cd6da635cc">
+						<parameter name="pos">-256 -50 256 50</parameter>
+						<parameter name="pivot">0.5 0.5</parameter>
+						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
+						<parameter name="text">Contrast</parameter>
+						<parameter name="font_color">1 1 1 1</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="526112756" name="SliderContrast">
+				<properties>
+					<property parent="db7098052827b16790dd0086559222e73aa8d85b" guid="c5a88c20262395eee25207c4467c9224483af6bb">
+						<parameter name="pos">128 -65 512 20</parameter>
+						<parameter name="pivot">0.5 0.5</parameter>
+						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
+						<parameter name="bg_color">1 1 1 1</parameter>
+						<parameter name="fg_color">1 1 1 1</parameter>
+						<parameter name="handle_color">1 1 1 1</parameter>
+						<parameter name="min_value">-1</parameter>
+						<parameter name="max_value">1</parameter>
+						<parameter name="value">0</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="155529197" name="Label">
+				<properties>
+					<property parent="1a914610540f70f5c7f1612a28d8511750320139" guid="b24e50cb5b55be10e92482778edcebef2085f846">
+						<parameter name="pos">-256 0 256 50</parameter>
+						<parameter name="pivot">0.5 0.5</parameter>
+						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
+						<parameter name="text">Gamma</parameter>
+						<parameter name="font_color">1 1 1 1</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1949290600" name="SliderGamma">
+				<properties>
+					<property parent="db7098052827b16790dd0086559222e73aa8d85b" guid="52ce813a4b2c3d1a736769fe9509e42382fe72ed">
+						<parameter name="pos">128 -15 512 20</parameter>
+						<parameter name="pivot">0.5 0.5</parameter>
+						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
+						<parameter name="bg_color">1 1 1 1</parameter>
+						<parameter name="fg_color">1 1 1 1</parameter>
+						<parameter name="handle_color">1 1 1 1</parameter>
+						<parameter name="min_value">-1</parameter>
+						<parameter name="max_value">1</parameter>
+						<parameter name="value">0</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 			</node>
 		</node>
 	</editor>

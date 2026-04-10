@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="UI_Label" manual="1" parent_name="node_base">
+	<parameter name="pos" type="vec4" title="Position" group="Element">0.000000 0.000000 0.000000 0.000000</parameter>
+	<parameter name="pivot" type="vec2" title="Pivot" group="Element">0.000000 0.000000</parameter>
+	<parameter name="anchor" type="vec4" title="Anchor" group="Element">0.000000 0.000000 0.000000 0.000000</parameter>
+	<parameter name="order_offset" type="int" title="Order" group="Element">0</parameter>
+	<parameter name="interactable" type="toggle" title="Interactable" group="Element">1</parameter>
+	<parameter name="text" type="string" title="Text" group="Label">Label</parameter>
+	<parameter name="font_height" type="float" title="Font Height" group="Label">20</parameter>
+	<parameter name="font_color" type="color" title="Font Color" group="Label">1.000000 1.000000 1.000000 1.000000</parameter>
+	<parameter name="h_align" type="switch" title="Horizontal Align" group="Label" items="LEFT,CENTER,RIGHT">0</parameter>
+	<parameter name="v_align" type="switch" title="Vertical Align" group="Label" items="TOP,MIDDLE,BOTTOM">0</parameter>
+	<parameter name="h_spacing" type="float" title="Horizontal Spacing" tooltip="Spacing between text characters" group="Label">0</parameter>
+	<parameter name="v_spacing" type="float" title="Vertical Spacing" tooltip="Spacing between text lines" group="Label">0</parameter>
+	<parameter name="word_wrap" type="toggle" title="Word Wrap" group="Label">0</parameter>
+	<parameter name="font_rich" type="toggle" title="Font Rich" group="Label">0</parameter>
+	<parameter name="font_outline" type="toggle" title="Outline" group="Label">0</parameter>
+	<parameter name="auto_resize" type="switch" title="Auto Resize" group="Label" items="Off,Font Height,Element Size">0</parameter>
+	<parameter name="min_width" type="float" title="Min Width" tooltip="Minimum Width" group="Label" auto_resize="2">50</parameter>
+	<parameter name="max_width" type="float" title="Max Width" tooltip="Maximum Width" group="Label" auto_resize="2">300</parameter>
+	<parameter name="font_file" type="file" title="Font" group="Label"/>
+</property>

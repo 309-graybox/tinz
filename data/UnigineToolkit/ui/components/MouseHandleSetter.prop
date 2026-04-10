@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="MouseHandleSetter" manual="1" parent_name="node_base">
+	<parameter name="mode" type="switch" title="Mode" tooltip="GRAB: use this if you control the camera with the mouse (PlayerActor, PlayerSpectator),
+      and the 2D UI is used primarily for information.
+SOFT: use this in a mixed mode, when the camera can be rotated and you can interact with
+      the 2D UI at the same time.
+USER: use this when you only control the 2D UI." items="GRAB,SOFT,USER">2</parameter>
+	<parameter name="grab_at_start" type="toggle" title="Grab At Start" mode="0">1</parameter>
+</property>

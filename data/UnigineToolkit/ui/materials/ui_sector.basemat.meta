@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>17fa9065f91aea64f81eaa34e916703134616554</guid>
+	<type>material</type>
+	<hash>15dd3509e7fecb4e05da5a6d3629c1ef7fb19189a2621dee3cd9b1582c557c5a</hash>
+	<runtimes>
+		<runtime id="17fa9065f91aea64f81eaa34e916703134616554" name="ui_sector" link="0" type="5"/>
+	</runtimes>
+</asset>

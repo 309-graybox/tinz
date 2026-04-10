@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="UI_ProgressBar" manual="1" parent_name="node_base">
+	<parameter name="pos" type="vec4" title="Position" group="Element">0.000000 0.000000 0.000000 0.000000</parameter>
+	<parameter name="pivot" type="vec2" title="Pivot" group="Element">0.000000 0.000000</parameter>
+	<parameter name="anchor" type="vec4" title="Anchor" group="Element">0.000000 0.000000 0.000000 0.000000</parameter>
+	<parameter name="order_offset" type="int" title="Order" group="Element">0</parameter>
+	<parameter name="interactable" type="toggle" title="Interactable" group="Element">1</parameter>
+	<parameter name="bg_material" type="material" title="Background Material" group="ProgressBar">98b8c63b3971f339a0e402507a3e73cc8385f0cb</parameter>
+	<parameter name="bg_texture" type="file" title="Background Texture" group="ProgressBar" filter=".png|.jpg|.jpeg|.tif|.tiff|.tga|.texture">guid://5e64fc4612883289507a87a90418832b63733ac7</parameter>
+	<parameter name="bg_color" type="color" title="Background Color" group="ProgressBar">0.500000 0.500000 0.500000 1.000000</parameter>
+	<parameter name="fg_material" type="material" title="Foreground Material" group="ProgressBar">98b8c63b3971f339a0e402507a3e73cc8385f0cb</parameter>
+	<parameter name="fg_texture" type="file" title="Foreground Texture" group="ProgressBar" filter=".png|.jpg|.jpeg|.tif|.tiff|.tga|.texture">guid://6b0f59ccdec2f0431d382cd77a1f14bef17e9cc5</parameter>
+	<parameter name="fg_color" type="color" title="Foreground Color" group="ProgressBar">1.000000 1.000000 1.000000 1.000000</parameter>
+	<parameter name="value" type="float" title="Value" group="ProgressBar">0.5</parameter>
+</property>

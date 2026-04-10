@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>691ac5cfd2d188de76726723b8c8ca4bb4eb41ff</guid>
+	<type>material</type>
+	<hash>9da033c42b607f551f0ce945fd23bac13afd2984ed53e04cd7a0cd88cb7a7dee</hash>
+	<runtimes>
+		<runtime id="691ac5cfd2d188de76726723b8c8ca4bb4eb41ff" name="ui_msdf" link="0" type="5"/>
+	</runtimes>
+</asset>

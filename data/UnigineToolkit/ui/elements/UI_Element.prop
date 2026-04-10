@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="UI_Element" manual="1" parent_name="node_base">
+	<parameter name="pos" type="vec4" title="Position" group="Element">0.000000 0.000000 0.000000 0.000000</parameter>
+	<parameter name="pivot" type="vec2" title="Pivot" group="Element">0.000000 0.000000</parameter>
+	<parameter name="anchor" type="vec4" title="Anchor" group="Element">0.000000 0.000000 0.000000 0.000000</parameter>
+	<parameter name="order_offset" type="int" title="Order" group="Element">0</parameter>
+	<parameter name="interactable" type="toggle" title="Interactable" group="Element">1</parameter>
+</property>

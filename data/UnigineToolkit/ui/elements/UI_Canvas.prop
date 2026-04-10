@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="UI_Canvas" manual="1" parent_name="node_base">
+	<parameter name="pos" type="vec4" title="Position" group="Element">0.000000 0.000000 0.000000 0.000000</parameter>
+	<parameter name="pivot" type="vec2" title="Pivot" group="Element">0.000000 0.000000</parameter>
+	<parameter name="anchor" type="vec4" title="Anchor" group="Element">0.000000 0.000000 0.000000 0.000000</parameter>
+	<parameter name="order_offset" type="int" title="Order" group="Element">0</parameter>
+	<parameter name="interactable" type="toggle" title="Interactable" group="Element">1</parameter>
+	<parameter name="pos" type="vec4" title="Position" group="Element">0.000000 0.000000 0.000000 0.000000</parameter>
+	<parameter name="pivot" type="vec2" title="Pivot" group="Element">0.500000 0.500000</parameter>
+	<parameter name="anchor" type="vec4" title="Anchor" group="Element">0.000000 0.000000 1.000000 1.000000</parameter>
+	<parameter name="canvas_mode" type="switch" title="Canvas Mode" group="Canvas" items="Constant Pixel Size,Reference Resolution">1</parameter>
+	<parameter name="use_dpi_scale" type="toggle" title="Use System DPI Scale" group="Canvas" canvas_mode="0">1</parameter>
+	<parameter name="pixel_scale" type="float" title="Pixel Scale" group="Canvas" canvas_mode="0">1</parameter>
+	<parameter name="reference_width" type="float" title="Reference Width" group="Canvas" canvas_mode="1">1920</parameter>
+	<parameter name="reference_height" type="float" title="Reference Height" group="Canvas" canvas_mode="1">1080</parameter>
+	<parameter name="update_mode" type="switch" title="Update Mode" group="Canvas" items="Auto (PostUpdate),Manual">0</parameter>
+	<parameter name="render_mode" type="switch" title="Render Mode" group="Canvas" items="Screen,Texture">0</parameter>
+	<parameter name="material" type="material" title="Material" group="Canvas" render_mode="1"/>
+	<parameter name="texture_name" type="string" title="Texture Name" group="Canvas" render_mode="1">albedo</parameter>
+	<parameter name="texture_width" type="int" title="Texture Width" group="Canvas" render_mode="1">512</parameter>
+	<parameter name="texture_height" type="int" title="Texture Height" group="Canvas" render_mode="1">512</parameter>
+</property>

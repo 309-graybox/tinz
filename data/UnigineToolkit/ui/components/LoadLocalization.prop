@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="LoadLocalization" manual="1" parent_name="node_base">
+	<parameter name="localization_file" type="file" title="Localization File" filter=".csv"/>
+	<parameter name="set_language" type="string">en</parameter>
+</property>

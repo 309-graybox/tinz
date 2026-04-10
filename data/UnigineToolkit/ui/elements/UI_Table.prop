@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="UI_Table" manual="1" parent_name="node_base">
+	<parameter name="pos" type="vec4" title="Position" group="Element">0.000000 0.000000 0.000000 0.000000</parameter>
+	<parameter name="pivot" type="vec2" title="Pivot" group="Element">0.000000 0.000000</parameter>
+	<parameter name="anchor" type="vec4" title="Anchor" group="Element">0.000000 0.000000 0.000000 0.000000</parameter>
+	<parameter name="order_offset" type="int" title="Order" group="Element">0</parameter>
+	<parameter name="interactable" type="toggle" title="Interactable" group="Element">1</parameter>
+	<parameter name="max_columns" type="int" title="Max Columns" group="Table">1</parameter>
+	<parameter name="min_cell_size" type="vec2" title="Min Cell Size" group="Table">0.000000 0.000000</parameter>
+	<parameter name="max_cell_size" type="vec2" title="Max Cell Size" group="Table">1000000000.000000 1000000000.000000</parameter>
+	<parameter name="spacing" type="float" title="Spacing" group="Table">0</parameter>
+	<parameter name="use_screen_spacing" type="toggle" title="Use Screen Spacing" group="Table">1</parameter>
+</property>

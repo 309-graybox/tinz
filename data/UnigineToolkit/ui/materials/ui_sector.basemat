@@ -1,0 +1,123 @@
+BaseMaterial <preview_hidden=true var_prefix=var texture_prefix=tex>
+{
+	Texture color = "white.texture" <anisotropy=true, hidden=true>
+	Float outline_size = 1			// in pixels
+    Color outline_color = [1 1 1 1]
+    Float angle_from = 180			// in degrees
+    Float angle_to = 360			// in degrees
+    Float sector_height = 0.5		// normalized value [0, 1]
+
+	// this variable automatically fills by UI elements
+	Int2 sprite_size <hidden=true>
+
+	Shader shader = 
+	#{
+
+#define VERTEX_ATTRIBUTE_POST
+#include <core/materials/shaders/render/common.h>
+
+STRUCT(FRAGMENT_IN)
+	INIT_POSITION
+	INIT_DATA(float2, 0, DATA_UV0)
+	INIT_DATA(float4, 1, DATA_VERTEX_COLOR)
+END
+
+#ifdef VERTEX
+
+	MAIN_BEGIN(FRAGMENT_IN, VERTEX_IN)
+		
+		float4 row_0 = s_transform[0];
+		float4 row_1 = s_transform[1];
+		float4 row_2 = s_transform[2];
+		
+		float4 vertex = float4(
+			dot(ATTRIBUTE_POSITION, row_0),
+			dot(ATTRIBUTE_POSITION, row_1),
+			dot(ATTRIBUTE_POSITION, row_2),
+			1.0f
+		);
+
+		OUT_POSITION = mul4(s_projection, vertex);
+		DATA_UV0 = ATTRIBUTE_UV.xy;
+		DATA_VERTEX_COLOR = ATTRIBUTE_COLOR;
+	
+	MAIN_END
+		
+#elif FRAGMENT
+
+	INIT_TEXTURE(0, TEX_COLOR)
+
+	STRUCT_FRAG_BEGIN
+		INIT_COLOR(float4)
+	STRUCT_FRAG_END
+
+	float normalizeAngle(float deg)
+	{
+		return fmod(fmod(deg, 360.0) + 360.0, 360.0);
+	}
+
+	bool isAngleBetween(float angle, float from, float to)
+	{
+		if (from < to)
+			return angle >= from && angle <= to;
+		else
+			return angle >= from || angle <= to;
+	}
+
+	MAIN_FRAG_BEGIN(FRAGMENT_IN)
+
+    float2 uv = DATA_UV0;
+    float2 center = float2(0.5, 0.5);
+    float2 pos = uv * var_sprite_size;
+
+    float2 pixel_centered = (uv - center) * var_sprite_size;
+
+    float dist = length(pixel_centered);
+    float max_radius = min(var_sprite_size.x, var_sprite_size.y) * 0.5;
+    float min_radius = max_radius * (1.0 - var_sector_height);
+
+    // out of circle case
+    bool in_radius = dist >= min_radius && dist <= max_radius;
+    if (!in_radius)
+        discard;
+
+    // out of angles case
+    float angle = degrees(atan2(pixel_centered.y, pixel_centered.x));
+    angle = normalizeAngle(angle);
+    float a_from = normalizeAngle(var_angle_from);
+    float a_to = normalizeAngle(var_angle_to);
+    if (!isAngleBetween(angle, a_from, a_to))
+        discard;
+
+    // outline
+    bool is_outline = false;
+    if (var_outline_size > 0)
+    {
+        if (dist >= max_radius - var_outline_size || dist <= min_radius + var_outline_size)
+        {
+            is_outline = true;
+        }
+		
+		float angle_delta_from = abs(normalizeAngle(angle - a_from));
+        float angle_delta_to = abs(normalizeAngle(a_to - angle));
+        float angle_thickness_deg = var_outline_size / (max_radius * 3.14159) * 180.0;
+        if (angle_delta_from <= angle_thickness_deg || angle_delta_to <= angle_thickness_deg)
+        {
+            is_outline = true;
+        }
+    }
+
+	float4 color = TEXTURE_BIAS_ZERO(tex_color, DATA_UV0) * DATA_VERTEX_COLOR;
+	OUT_COLOR = is_outline ? var_outline_color : color;
+
+	MAIN_FRAG_END 
+#endif
+
+	#}
+
+	Pass post
+	{
+		Fragment = shader
+		Vertex = shader
+	}
+}

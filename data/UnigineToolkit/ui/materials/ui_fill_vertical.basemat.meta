@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>6000b605ee0b3425a971c27c6150e2277a98c8b9</guid>
+	<type>material</type>
+	<hash>fd98c80eadf15e870d9a8664b0ee430c265af6802e40890439164732c5dce005</hash>
+	<runtimes>
+		<runtime id="6000b605ee0b3425a971c27c6150e2277a98c8b9" name="ui_fill_vertical" link="0" type="5"/>
+	</runtimes>
+</asset>

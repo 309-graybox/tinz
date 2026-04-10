@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>c42610b62d5be8c3d452f9a8c98438a424c12e72</guid>
+	<type>property</type>
+	<hash>4fe424588b5f711f1160a514bf480c2e4f46a0a38882cbcaac7727df89b98791</hash>
+	<runtimes>
+		<runtime id="c42610b62d5be8c3d452f9a8c98438a424c12e72" name="UIC_ButtonChangeWorld" link="0" type="4"/>
+	</runtimes>
+</asset>

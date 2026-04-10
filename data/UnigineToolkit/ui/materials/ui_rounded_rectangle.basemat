@@ -1,0 +1,147 @@
+BaseMaterial <preview_hidden=true var_prefix=var texture_prefix=tex>
+{
+	Texture color = "white.texture" <anisotropy=true, hidden=true>
+    Float4 corner_radius = [0 16 16 16]	// (top-left, top-right, bottom-right, bottom-left) in pixels
+    Float outline_size = 1				// in pixels
+    Color outline_color = [1 1 1 1]
+
+	// this variable automatically fills by UI elements
+	Int2 sprite_size <hidden=true>
+
+	Shader shader = 
+	#{
+
+#define VERTEX_ATTRIBUTE_POST
+#include <core/materials/shaders/render/common.h>
+
+STRUCT(FRAGMENT_IN)
+	INIT_POSITION
+	INIT_DATA(float2, 0, DATA_UV0)
+	INIT_DATA(float4, 1, DATA_VERTEX_COLOR)
+END
+
+#ifdef VERTEX
+
+	MAIN_BEGIN(FRAGMENT_IN, VERTEX_IN)
+		
+		float4 row_0 = s_transform[0];
+		float4 row_1 = s_transform[1];
+		float4 row_2 = s_transform[2];
+		
+		float4 vertex = float4(
+			dot(ATTRIBUTE_POSITION, row_0),
+			dot(ATTRIBUTE_POSITION, row_1),
+			dot(ATTRIBUTE_POSITION, row_2),
+			1.0f
+		);
+
+		OUT_POSITION = mul4(s_projection, vertex);
+		DATA_UV0 = ATTRIBUTE_UV.xy;
+		DATA_VERTEX_COLOR = ATTRIBUTE_COLOR;
+	
+	MAIN_END
+		
+#elif FRAGMENT
+
+	INIT_TEXTURE(0, TEX_COLOR)
+
+	STRUCT_FRAG_BEGIN
+		INIT_COLOR(float4)
+	STRUCT_FRAG_END
+
+	MAIN_FRAG_BEGIN(FRAGMENT_IN)
+
+	float2 uv = DATA_UV0;
+    float2 pixel_pos = uv * var_sprite_size;
+
+    // center of edges
+    float2 tl = float2(var_corner_radius.x, var_corner_radius.x);
+    float2 tr = float2(var_sprite_size.x - var_corner_radius.y, var_corner_radius.y);
+    float2 br = float2(var_sprite_size.x - var_corner_radius.z, var_sprite_size.y - var_corner_radius.z);
+    float2 bl = float2(var_corner_radius.w, var_sprite_size.y - var_corner_radius.w);
+
+    float alpha = 1.0f;
+
+    // discards
+    if (var_corner_radius.x > 0 && pixel_pos.x < tl.x && pixel_pos.y < tl.y)
+    {
+        if (distance(pixel_pos, tl) > var_corner_radius.x)
+            discard;
+    }
+    else if (var_corner_radius.y > 0 && pixel_pos.x > tr.x && pixel_pos.y < tr.y)
+    {
+        if (distance(pixel_pos, tr) > var_corner_radius.y)
+            discard;
+    }
+    else if (var_corner_radius.z > 0 && pixel_pos.x > br.x && pixel_pos.y > br.y)
+    {
+        if (distance(pixel_pos, br) > var_corner_radius.z)
+            discard;
+    }
+    else if (var_corner_radius.w > 0 && pixel_pos.x < bl.x && pixel_pos.y > bl.y)
+    {
+        if (distance(pixel_pos, bl) > var_corner_radius.w)
+            discard;
+    }
+
+    // outline
+    float2 inner_tl = tl + float2(var_outline_size, var_outline_size);
+    float2 inner_tr = tr - float2(var_outline_size, -var_outline_size);
+    float2 inner_br = br - var_outline_size;
+    float2 inner_bl = bl + float2(var_outline_size, -var_outline_size);
+
+    bool is_outline = false;
+
+    if (var_outline_size > 0)
+    {
+        if (pixel_pos.x < var_outline_size ||
+            pixel_pos.x > var_sprite_size.x - var_outline_size ||
+            pixel_pos.y < var_outline_size ||
+            pixel_pos.y > var_sprite_size.y - var_outline_size)
+        {
+            is_outline = true;
+        }
+        else
+        {
+            // rounding corners
+            if (var_corner_radius.x > 0 && pixel_pos.x < tl.x && pixel_pos.y < tl.y)
+            {
+                float d = distance(pixel_pos, tl);
+                if (d > var_corner_radius.x - var_outline_size && d <= var_corner_radius.x)
+                    is_outline = true;
+            }
+            if (var_corner_radius.y > 0 && pixel_pos.x > tr.x && pixel_pos.y < tr.y)
+            {
+                float d = distance(pixel_pos, tr);
+                if (d > var_corner_radius.y - var_outline_size && d <= var_corner_radius.y)
+                    is_outline = true;
+            }
+            if (var_corner_radius.z > 0 && pixel_pos.x > br.x && pixel_pos.y > br.y)
+            {
+                float d = distance(pixel_pos, br);
+                if (d > var_corner_radius.z - var_outline_size && d <= var_corner_radius.z)
+                    is_outline = true;
+            }
+            if (var_corner_radius.w > 0 && pixel_pos.x < bl.x && pixel_pos.y > bl.y)
+            {
+                float d = distance(pixel_pos, bl);
+                if (d > var_corner_radius.w - var_outline_size && d <= var_corner_radius.w)
+                    is_outline = true;
+            }
+        }
+    }
+
+	float4 color = TEXTURE_BIAS_ZERO(tex_color, DATA_UV0) * DATA_VERTEX_COLOR;
+	OUT_COLOR = is_outline ? var_outline_color : color;
+
+	MAIN_FRAG_END 
+#endif
+
+	#}
+
+	Pass post
+	{
+		Fragment = shader
+		Vertex = shader
+	}
+}

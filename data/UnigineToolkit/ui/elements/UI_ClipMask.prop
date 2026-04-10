@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="UI_ClipMask" manual="1" parent_name="node_base">
+	<parameter name="pos" type="vec4" title="Position" group="Element">0.000000 0.000000 0.000000 0.000000</parameter>
+	<parameter name="pivot" type="vec2" title="Pivot" group="Element">0.000000 0.000000</parameter>
+	<parameter name="anchor" type="vec4" title="Anchor" group="Element">0.000000 0.000000 0.000000 0.000000</parameter>
+	<parameter name="order_offset" type="int" title="Order" group="Element">0</parameter>
+	<parameter name="interactable" type="toggle" title="Interactable" group="Element">1</parameter>
+	<parameter name="mask_material" type="material" title="Mask Material" group="ClipMask">2feb8ac3d8b5de377e8efbc0f60294abf4ba8527</parameter>
+	<parameter name="mask_texture_file" type="file" title="Mask Texture" group="ClipMask" filter=".png|.jpg|.jpeg|.tif|.tiff|.tga|.texture"/>
+	<parameter name="mask_uv" type="vec4" title="Mask UV" group="ClipMask">0.000000 0.000000 1.000000 1.000000</parameter>
+	<parameter name="mask_color" type="color" title="Mask Color" group="ClipMask">1.000000 1.000000 1.000000 1.000000</parameter>
+</property>

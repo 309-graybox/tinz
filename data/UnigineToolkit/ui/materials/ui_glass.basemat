@@ -1,0 +1,151 @@
+BaseMaterial <preview_hidden=1 var_prefix=var texture_prefix=tex>
+{
+	Texture color = "white.texture" <anisotropy=true, hidden=true>
+	Texture src_color <source=procedural internal=true>
+	Texture2DArray noise="core/textures/common/noise.texture" <internal=true>
+	
+	Group "Blur 2D"
+	{
+		Float radius = 3.0
+		Slider jitter = 0.0
+	}
+	
+	// this variables automatically fills by UI elements
+	Int2 sprite_pos <hidden=true>
+	Int2 sprite_size <hidden=true>
+	Int2 screen_size <hidden=true>
+	
+	////////////////////////////////////////////////////
+	// blur
+	////////////////////////////////////////////////////
+	
+	Shader render_blur_2d_frag=
+	#{
+		#include <core/materials/shaders/render/common.h>
+		
+		STRUCT_FRAG_BEGIN
+			INIT_COLOR(float4)
+		STRUCT_FRAG_END
+		
+		MAIN_FRAG_BEGIN(FRAGMENT_IN)
+			#ifdef HORIZONTAL
+				float2 uv_offset = float2(s_viewport.z, 0.0f);
+			#else
+				float2 uv_offset = float2(0.0f, s_viewport.w);
+			#endif
+			
+			float4 noise = TEXTURE_ARRAY_FETCH(tex_noise, fmod(IN_POSITION.xy, 256), uint(s_frame) % 8 * uint(s_taa));
+			uv_offset *= lerp(1.0f, noise.x * 2.0f, var_jitter);
+			
+			OUT_COLOR.a = 1.0f;
+			OUT_COLOR.rgb =	TEXTURE_BIAS_ZERO(tex_src_color, IN_UV).xyz * 0.142300f +
+							
+							TEXTURE_BIAS_ZERO(tex_src_color, IN_UV + uv_offset * 1 * var_radius).xyz * 0.134610f +
+							TEXTURE_BIAS_ZERO(tex_src_color, IN_UV + uv_offset * 2 * var_radius).xyz * 0.113945f +
+							TEXTURE_BIAS_ZERO(tex_src_color, IN_UV + uv_offset * 3 * var_radius).xyz * 0.086310f +
+							TEXTURE_BIAS_ZERO(tex_src_color, IN_UV + uv_offset * 4 * var_radius).xyz * 0.058501f +
+							TEXTURE_BIAS_ZERO(tex_src_color, IN_UV + uv_offset * 5 * var_radius).xyz * 0.035483f +
+							
+							TEXTURE_BIAS_ZERO(tex_src_color, IN_UV - uv_offset * 1 * var_radius).xyz * 0.134610f +
+							TEXTURE_BIAS_ZERO(tex_src_color, IN_UV - uv_offset * 2 * var_radius).xyz * 0.113945f +
+							TEXTURE_BIAS_ZERO(tex_src_color, IN_UV - uv_offset * 3 * var_radius).xyz * 0.086310f +
+							TEXTURE_BIAS_ZERO(tex_src_color, IN_UV - uv_offset * 4 * var_radius).xyz * 0.058501f +
+							TEXTURE_BIAS_ZERO(tex_src_color, IN_UV - uv_offset * 5 * var_radius).xyz * 0.035483f;
+		MAIN_FRAG_END
+	#}
+	
+	Pass render_blur_2d_horizontal <defines="HORIZONTAL">
+	{
+		Fragment=render_blur_2d_frag
+	}
+	
+	Pass render_blur_2d_vertical
+	{
+		Fragment=render_blur_2d_frag
+	}
+	
+	Expression RENDER_CALLBACK_END_POST_MATERIALS = 
+	#{
+		Texture source = engine.render.getTemporaryTexture(engine.render_state.getScreenColorTexture());
+		Texture dest = engine.render.getTemporaryTexture(engine.render_state.getScreenColorTexture());
+		
+		source.copy(engine.render_state.getScreenColorTexture());
+		
+		setTexture("src_color", source);
+		renderPassToTexture("render_blur_2d_horizontal", dest);
+		
+		setTexture("src_color", dest);
+		renderPassToTexture("render_blur_2d_vertical", source);
+		
+		setTexture("src_color", source);
+		
+		engine.render.releaseTemporaryTexture(source);
+		engine.render.releaseTemporaryTexture(dest);
+	#}
+	
+	////////////////////////////////////////////////////
+	// shader
+	////////////////////////////////////////////////////
+	
+	Shader shader = 
+	#{
+
+#define VERTEX_ATTRIBUTE_POST
+#include <core/materials/shaders/render/common.h>
+
+STRUCT(FRAGMENT_IN)
+	INIT_POSITION
+	INIT_DATA(float2, 0, DATA_UV0)
+	INIT_DATA(float4, 1, DATA_VERTEX_COLOR)
+END
+
+#ifdef VERTEX
+
+	MAIN_BEGIN(FRAGMENT_IN, VERTEX_IN)
+		
+		float4 row_0 = s_transform[0];
+		float4 row_1 = s_transform[1];
+		float4 row_2 = s_transform[2];
+		
+		float4 vertex = float4(
+			dot(ATTRIBUTE_POSITION, row_0),
+			dot(ATTRIBUTE_POSITION, row_1),
+			dot(ATTRIBUTE_POSITION, row_2),
+			1.0f
+		);
+
+		OUT_POSITION = mul4(s_projection, vertex);
+		DATA_UV0 = ATTRIBUTE_UV.xy;
+		DATA_VERTEX_COLOR = ATTRIBUTE_COLOR;
+	
+	MAIN_END
+		
+#elif FRAGMENT
+
+	INIT_TEXTURE(0, TEX_COLOR)
+	INIT_TEXTURE(1, TEX_SRC_COLOR)
+
+	STRUCT_FRAG_BEGIN
+		INIT_COLOR(float4)
+	STRUCT_FRAG_END
+
+	MAIN_FRAG_BEGIN(FRAGMENT_IN)
+
+	float4 color = TEXTURE_BIAS_ZERO(tex_color, DATA_UV0);
+	float2 widget_pos = float2(var_sprite_pos) / float2(var_screen_size);
+	float2 widget_size = float2(var_sprite_size) / float2(var_screen_size);
+	float2 blur_uv = DATA_UV0 * widget_size + widget_pos;
+	float4 blur_color = TEXTURE_BIAS_ZERO(tex_src_color, blur_uv);
+	OUT_COLOR = color * blur_color * DATA_VERTEX_COLOR;
+
+	MAIN_FRAG_END 
+#endif
+
+	#}
+
+	Pass post
+	{
+		Fragment = shader
+		Vertex = shader
+	}	
+}

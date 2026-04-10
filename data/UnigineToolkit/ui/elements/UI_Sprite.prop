@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="UI_Sprite" manual="1" parent_name="node_base">
+	<parameter name="pos" type="vec4" title="Position" group="Element">0.000000 0.000000 0.000000 0.000000</parameter>
+	<parameter name="pivot" type="vec2" title="Pivot" group="Element">0.000000 0.000000</parameter>
+	<parameter name="anchor" type="vec4" title="Anchor" group="Element">0.000000 0.000000 0.000000 0.000000</parameter>
+	<parameter name="order_offset" type="int" title="Order" group="Element">0</parameter>
+	<parameter name="interactable" type="toggle" title="Interactable" group="Element">1</parameter>
+	<parameter name="texture_file" type="file" title="Texture" group="Sprite" filter=".png|.jpg|.jpeg|.tif|.tiff|.tga|.texture"/>
+	<parameter name="uv" type="vec4" title="UV" group="Sprite">0.000000 0.000000 1.000000 1.000000</parameter>
+	<parameter name="color" type="color" title="Color" group="Sprite">1.000000 1.000000 1.000000 1.000000</parameter>
+	<parameter name="angle" type="float" title="Rotation" tooltip="Rotation angle in degrees" group="Sprite" min="0" max="360">0</parameter>
+	<parameter name="fixed_ratio" type="toggle" title="Fixed Ratio" group="Sprite">0</parameter>
+</property>

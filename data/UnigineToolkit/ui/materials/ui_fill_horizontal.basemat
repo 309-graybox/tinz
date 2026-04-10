@@ -1,0 +1,71 @@
+BaseMaterial <preview_hidden=true var_prefix=var texture_prefix=tex>
+{
+	Texture color = "white.texture" <anisotropy=true, hidden=true>
+	State origin = 0 <items = [Left Right]>
+	Slider amount = 0.5
+
+	Shader shader = 
+	#{
+
+#define VERTEX_ATTRIBUTE_POST
+#include <core/materials/shaders/render/common.h>
+
+STRUCT(FRAGMENT_IN)
+	INIT_POSITION
+	INIT_DATA(float2, 0, DATA_UV0)
+	INIT_DATA(float4, 1, DATA_VERTEX_COLOR)
+END
+
+#ifdef VERTEX
+
+	MAIN_BEGIN(FRAGMENT_IN, VERTEX_IN)
+		
+		float4 row_0 = s_transform[0];
+		float4 row_1 = s_transform[1];
+		float4 row_2 = s_transform[2];
+		
+		float4 vertex = float4(
+			dot(ATTRIBUTE_POSITION, row_0),
+			dot(ATTRIBUTE_POSITION, row_1),
+			dot(ATTRIBUTE_POSITION, row_2),
+			1.0f
+		);
+
+		OUT_POSITION = mul4(s_projection, vertex);
+		DATA_UV0 = ATTRIBUTE_UV.xy;
+		DATA_VERTEX_COLOR = ATTRIBUTE_COLOR;
+	
+	MAIN_END
+		
+#elif FRAGMENT
+
+	INIT_TEXTURE(0, TEX_COLOR)
+
+	STRUCT_FRAG_BEGIN
+		INIT_COLOR(float4)
+	STRUCT_FRAG_END
+
+	MAIN_FRAG_BEGIN(FRAGMENT_IN)
+
+#ifdef STATE_ORIGIN_LEFT
+	if (DATA_UV0.x > var_amount)
+		discard;
+#elif STATE_ORIGIN_RIGHT
+	if (DATA_UV0.x < (1 - var_amount))
+		discard;
+#endif
+
+	float4 color = TEXTURE(tex_color, DATA_UV0);
+	OUT_COLOR = color * DATA_VERTEX_COLOR;
+
+	MAIN_FRAG_END 
+#endif
+
+	#}
+
+	Pass post
+	{
+		Fragment = shader
+		Vertex = shader
+	}
+}

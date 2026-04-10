@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="UI_Window" manual="1" parent_name="node_base">
+	<parameter name="pos" type="vec4" title="Position" group="Element">0.000000 0.000000 0.000000 0.000000</parameter>
+	<parameter name="pivot" type="vec2" title="Pivot" group="Element">0.000000 0.000000</parameter>
+	<parameter name="anchor" type="vec4" title="Anchor" group="Element">0.000000 0.000000 0.000000 0.000000</parameter>
+	<parameter name="order_offset" type="int" title="Order" group="Element">0</parameter>
+	<parameter name="interactable" type="toggle" title="Interactable" group="Element">1</parameter>
+	<parameter name="content_node" type="node" title="Content" group="Window">0</parameter>
+	<parameter name="moveable" type="toggle" title="Moveable" group="Window">1</parameter>
+	<parameter name="sizeable" type="toggle" title="Sizeable" group="Window">1</parameter>
+	<parameter name="bg_material" type="material" title="Material" group="Window">98b8c63b3971f339a0e402507a3e73cc8385f0cb</parameter>
+	<parameter name="bg_texture_param" type="file" title="Texture" group="Window" filter=".png|.jpg|.jpeg|.tif|.tiff|.tga|.texture">guid://fadb8726b376b461147459675b94e23720c4553a</parameter>
+	<parameter name="bg_texture_sizeable_param" type="file" title="Texture Sizeable" group="Window" filter=".png|.jpg|.jpeg|.tif|.tiff|.tga|.texture">guid://d5171cc87bf363f8c68cd6f161d46c2f523d447c</parameter>
+	<parameter name="bg_uv" type="vec4" title="UV" group="Window">0.000000 0.000000 1.000000 1.000000</parameter>
+	<parameter name="bg_color" type="color" title="Color" group="Window">1.000000 1.000000 1.000000 1.000000</parameter>
+</property>

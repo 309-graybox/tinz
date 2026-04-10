@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="UIC_ButtonShowElement" manual="1" parent_name="node_base">
+	<parameter name="show_param" type="toggle" title="Show">0</parameter>
+	<parameter name="element_node" type="node" title="Element">0</parameter>
+	<parameter name="duration" type="float">0.2</parameter>
+	<parameter name="move_direction" type="switch" items="None,Left,Right,Up,Down">0</parameter>
+	<parameter name="move_animation" type="switch" items="Lerp,Quad,Cubic,Quart,Quint,Expo,Sine,Circ,Back,Elastic,Bounce">0</parameter>
+</property>

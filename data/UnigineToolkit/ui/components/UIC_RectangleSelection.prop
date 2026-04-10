@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="UIC_RectangleSelection" manual="1" parent_name="node_base">
+	<parameter name="offset" type="float">16</parameter>
+	<parameter name="rate" type="float">15</parameter>
+</property>

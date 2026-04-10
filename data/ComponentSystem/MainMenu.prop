@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="MainMenu" manual="1" parent_name="node_base">
+	<parameter name="main_menu" type="node">0</parameter>
+	<parameter name="settings_menu" type="node">0</parameter>
+	<parameter name="sound_music_volume_channel" type="mask">1</parameter>
+</property>

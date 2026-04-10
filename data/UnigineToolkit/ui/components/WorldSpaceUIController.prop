@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="WorldSpaceUIController" manual="1" parent_name="node_base">
+	<parameter name="canvas_node" type="node" title="Canvas" tooltip="Canvas that renders UI to this object">0</parameter>
+	<parameter name="cursor_element_node" type="node" title="Cursor Element">0</parameter>
+	<parameter name="max_distance" type="float" title="Max Distance" tooltip="Maximum distance to interaction with world-space UI">2</parameter>
+</property>

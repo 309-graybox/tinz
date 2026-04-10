@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>244db76649dff88ec757b138b2cd910990f967cb</guid>
+	<type>property</type>
+	<hash>64c832f2be4432aa7a4da0b53f860f5129afc14cb9479dda20014118e4124175</hash>
+	<runtimes>
+		<runtime id="244db76649dff88ec757b138b2cd910990f967cb" name="WorldSpaceUIController" link="0" type="4"/>
+	</runtimes>
+</asset>

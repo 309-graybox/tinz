@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>72ac05c4a53adf6fc9ea25eec84292a5107e2b88</guid>
+	<type>property</type>
+	<hash>c74ed91ad3773fc6eafbc9904f31877ad3ca1963f92ea7787cb576f63f5428b4</hash>
+	<runtimes>
+		<runtime id="72ac05c4a53adf6fc9ea25eec84292a5107e2b88" name="LoadLocalization" link="0" type="4"/>
+	</runtimes>
+</asset>

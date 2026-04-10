@@ -1,0 +1,66 @@
+BaseMaterial <preview_hidden=true var_prefix=var texture_prefix=tex>
+{
+	Texture color = "white.texture" <anisotropy=true, hidden=true>
+	Float fade_radius_from = 0.95
+	Float fade_radius_to = 1
+
+	Shader shader = 
+	#{
+
+#define VERTEX_ATTRIBUTE_POST
+#include <core/materials/shaders/render/common.h>
+
+STRUCT(FRAGMENT_IN)
+	INIT_POSITION
+	INIT_DATA(float2, 0, DATA_UV0)
+	INIT_DATA(float4, 1, DATA_VERTEX_COLOR)
+END
+
+#ifdef VERTEX
+
+	MAIN_BEGIN(FRAGMENT_IN, VERTEX_IN)
+		
+		float4 row_0 = s_transform[0];
+		float4 row_1 = s_transform[1];
+		float4 row_2 = s_transform[2];
+		
+		float4 vertex = float4(
+			dot(ATTRIBUTE_POSITION, row_0),
+			dot(ATTRIBUTE_POSITION, row_1),
+			dot(ATTRIBUTE_POSITION, row_2),
+			1.0f
+		);
+
+		OUT_POSITION = mul4(s_projection, vertex);
+		DATA_UV0 = ATTRIBUTE_UV.xy;
+		DATA_VERTEX_COLOR = ATTRIBUTE_COLOR;
+	
+	MAIN_END
+		
+#elif FRAGMENT
+
+	INIT_TEXTURE(0, TEX_COLOR)
+
+	STRUCT_FRAG_BEGIN
+		INIT_COLOR(float4)
+	STRUCT_FRAG_END
+
+	MAIN_FRAG_BEGIN(FRAGMENT_IN)
+
+	float4 color = TEXTURE_BIAS_ZERO(tex_color, DATA_UV0);
+	float dist = length(DATA_UV0 - 0.5f) * 2.0f;
+	dist = (dist - var_fade_radius_from) / (var_fade_radius_to - var_fade_radius_from);
+	color.a = 1.0f - saturate(dist);
+	OUT_COLOR = color * DATA_VERTEX_COLOR;
+
+	MAIN_FRAG_END 
+#endif
+
+	#}
+
+	Pass post
+	{
+		Fragment = shader
+		Vertex = shader
+	}
+}

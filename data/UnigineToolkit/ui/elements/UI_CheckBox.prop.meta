@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>0bb5a3742ff35d04db9aa009badf61a39df609ad</guid>
+	<type>property</type>
+	<hash>e8e25710a6bc5421b9861ed874598240a6d54fd9014cbd54b10353f9aee7a42f</hash>
+	<runtimes>
+		<runtime id="0bb5a3742ff35d04db9aa009badf61a39df609ad" name="UI_CheckBox" link="0" type="4"/>
+	</runtimes>
+</asset>

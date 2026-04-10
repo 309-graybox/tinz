@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>7ab2f78af679ef0e4e58e5f9c3db355ee399b72d</guid>
+	<type>property</type>
+	<hash>cffbd454346ce0bd825a8b0d38a7688aaf4ae26d4cf34a4fd41daef56f76c408</hash>
+	<runtimes>
+		<runtime id="7ab2f78af679ef0e4e58e5f9c3db355ee399b72d" name="UI_ScrollBox" link="0" type="4"/>
+	</runtimes>
+</asset>

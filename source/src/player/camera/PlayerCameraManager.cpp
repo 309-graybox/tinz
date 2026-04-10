@@ -58,8 +58,7 @@ void PlayerCameraManager::init()
 	FLOGERR(target_node, "target_node should be Player\n");
 
 	// Something is broken
-	// CameraTarget *target = getComponent<CameraTarget>(target_node, true);
-	CameraTarget *target = nullptr;
+	CameraTarget *target = getComponent<CameraTarget>(target_node, true);
 	if (!target)
 		target = addComponent<CameraTarget>(target_node);
 	target->setManager(this);

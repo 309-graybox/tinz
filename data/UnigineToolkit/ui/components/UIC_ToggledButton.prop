@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="UIC_ToggledButton" manual="1" parent_name="node_base">
+	<parameter name="change_color" type="toggle" title="Change Color">1</parameter>
+	<parameter name="toggled_normal_color" type="color" title="Toggled Normal Color" change_color="1">1.000000 1.000000 1.000000 1.000000</parameter>
+	<parameter name="toggled_hover_color" type="color" title="Toggled Hover Color" change_color="1">1.000000 0.960000 0.880000 1.000000</parameter>
+	<parameter name="toggled_press_color" type="color" title="Toggled Press Color" change_color="1">0.500000 0.500000 0.500000 1.000000</parameter>
+	<parameter name="toggled_focus_color" type="color" title="Toggled Focus Color" change_color="1">1.000000 0.960000 0.880000 1.000000</parameter>
+	<parameter name="change_texture" type="toggle" title="Change Texture">0</parameter>
+	<parameter name="toggled_normal_texture" type="file" title="Toggled Normal Texture" change_texture="1"/>
+	<parameter name="toggled_hover_texture" type="file" title="Toggled Hover Texture" change_texture="1"/>
+	<parameter name="toggled_press_texture" type="file" title="Toggled Press Texture" change_texture="1"/>
+	<parameter name="toggled_focus_texture" type="file" title="Toggled Focus Texture" change_texture="1"/>
+</property>

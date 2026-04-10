@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>09a0c79cc091d6fc37f9133a934a553045dbca58</guid>
+	<type>property</type>
+	<hash>8d4e7b085097a01af2e2b9103f2b2f3784692f045e32b7d3f48b82aeb0f76c78</hash>
+	<runtimes>
+		<runtime id="09a0c79cc091d6fc37f9133a934a553045dbca58" name="SettingsMenu" link="0" type="4"/>
+	</runtimes>
+</asset>

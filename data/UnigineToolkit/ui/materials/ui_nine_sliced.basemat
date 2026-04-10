@@ -1,0 +1,63 @@
+BaseMaterial <preview_hidden=true var_prefix=var texture_prefix=tex>
+{
+	Texture color = "white.texture" <anisotropy=true, hidden=true>
+	Int2 texture_size <hidden=true> // this variable automatically fills by UI
+	Int4 padding = [16 16 16 16]
+
+	Pass post
+	{
+		Vertex = "UnigineToolkit/ui/materials/ui_nine_sliced.shader"
+		Fragment = "UnigineToolkit/ui/materials/ui_nine_sliced.shader"
+	}
+
+	Float4 stops <hidden=true>
+	Float4 offsets <hidden=true>
+	Float4 scale <hidden=true>
+
+	Expression update =
+	#{
+		int in_width;
+		int in_height;
+
+		ivec4 mat_padding = getParameter("padding");
+		ivec2 mat_texture_size = getParameter("texture_size");
+
+		// scaling image if widget smaller than source image
+		if (in_width < mat_padding.x + mat_padding.z + 1)
+		{
+			float scale = float(mat_padding.x + mat_padding.z + 1) / in_width;
+			in_width = int(float(in_width) * scale);
+			in_height = int(float(in_height) * scale);
+		}
+		if (in_height < mat_padding.y + mat_padding.z + 1)
+		{
+			float scale = float(mat_padding.y + mat_padding.z + 1) / in_height;
+			in_width = int(float(in_width) * scale);
+			in_height = int(float(in_height) * scale);
+		}
+
+		vec4 var_stops = vec4(
+			mat_padding.x / float(in_width),
+			mat_padding.y / float(in_height),
+			1 - mat_padding.z / float(in_width),
+			1 - mat_padding.w / float(in_height)
+		);
+		setParameter("stops", var_stops);
+
+		vec4 var_offsets = vec4(
+			mat_padding.x / float(mat_texture_size.x),
+			mat_padding.y / float(mat_texture_size.y),
+			1 - mat_padding.z / float(mat_texture_size.x),
+			1 - mat_padding.w / float(mat_texture_size.y)
+		);
+		setParameter("offsets", var_offsets);
+
+		vec4 var_scale = vec4(
+			in_width / float(mat_texture_size.x),
+			in_height / float(mat_texture_size.y),
+			(var_offsets.z - var_offsets.x) / (var_stops.z - var_stops.x),
+			(var_offsets.w - var_offsets.y) / (var_stops.w - var_stops.y)
+		);
+		setParameter("scale", var_scale);
+	#}
+}

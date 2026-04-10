@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>20096493d0a0c66a01b427e1920e1e5c59375fe7</guid>
+	<type>property</type>
+	<hash>8270ce37f4324754ed13050c4add50bfe3adde0c8a875ed10ceff673109eeb93</hash>
+	<runtimes>
+		<runtime id="20096493d0a0c66a01b427e1920e1e5c59375fe7" name="UI_Sprite" link="0" type="4"/>
+	</runtimes>
+</asset>

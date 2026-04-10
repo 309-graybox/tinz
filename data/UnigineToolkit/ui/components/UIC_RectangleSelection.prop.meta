@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>470009dab943fae8963e4641a751e14d3dd648d1</guid>
+	<type>property</type>
+	<hash>1745baeec106b21e41cda2489795d6207c98262a1e3f56f666558b5572c10cc4</hash>
+	<runtimes>
+		<runtime id="470009dab943fae8963e4641a751e14d3dd648d1" name="UIC_RectangleSelection" link="0" type="4"/>
+	</runtimes>
+</asset>

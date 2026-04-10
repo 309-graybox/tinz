@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>a1c958eb22e6250a821e9ed46eea897fe9f080ff</guid>
+	<type>property</type>
+	<hash>577efab9a4075f86e5dc6276de0e53d015c7dc934802da1a22422d3e6522074a</hash>
+	<runtimes>
+		<runtime id="a1c958eb22e6250a821e9ed46eea897fe9f080ff" name="MouseHandleSetter" link="0" type="4"/>
+	</runtimes>
+</asset>

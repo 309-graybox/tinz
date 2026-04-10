@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>7804b7323e97fa38ad5d1396983661f4714d2c99</guid>
+	<type>property</type>
+	<hash>a4d6be6b9212d3e79b7d7f0e3eb2cb2e53d2a10488a25a2e3f2794eb598bbaae</hash>
+	<runtimes>
+		<runtime id="7804b7323e97fa38ad5d1396983661f4714d2c99" name="UI_EditLine" link="0" type="4"/>
+	</runtimes>
+</asset>

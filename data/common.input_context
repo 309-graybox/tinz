@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EIContext description="" auto_registration="1">
+	<Actions>
+		<Action guid="ab68952a933dd4e440e670ee6fb205167650dd1d">
+			<Mapping consume_input="1">
+				<Binding>
+					<Key>Esc</Key>
+					<Triggers>
+						<Trigger type="Pressed">
+							<parameter name="treshold">0.5</parameter>
+						</Trigger>
+					</Triggers>
+					<Modifiers/>
+				</Binding>
+			</Mapping>
+		</Action>
+	</Actions>
+</EIContext>

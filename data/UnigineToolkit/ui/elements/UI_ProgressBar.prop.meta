@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>85344fbcdcf39fd135859390ba585250d06662fa</guid>
+	<type>property</type>
+	<hash>a978ce386f32d1038b98d808f2f041855af574ecbbd102810af744de4684b11d</hash>
+	<runtimes>
+		<runtime id="85344fbcdcf39fd135859390ba585250d06662fa" name="UI_ProgressBar" link="0" type="4"/>
+	</runtimes>
+</asset>

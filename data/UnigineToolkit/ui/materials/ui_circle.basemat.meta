@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>cde0102c9ca6a61b53887b7c7585236ef45165a3</guid>
+	<type>material</type>
+	<hash>49ada3c905d2b06643fb1a5efcbc5da55b49423b89508709d440fdedb6376a86</hash>
+	<runtimes>
+		<runtime id="cde0102c9ca6a61b53887b7c7585236ef45165a3" name="ui_circle" link="0" type="5"/>
+	</runtimes>
+</asset>

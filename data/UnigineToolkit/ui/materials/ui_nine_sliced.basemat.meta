@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>98b8c63b3971f339a0e402507a3e73cc8385f0cb</guid>
+	<type>material</type>
+	<hash>cd098747cae8b212cda2f27977fb023509cc4af8fc8d1180ea5c0fb2adcc7a95</hash>
+	<runtimes>
+		<runtime id="98b8c63b3971f339a0e402507a3e73cc8385f0cb" name="ui_nine_sliced" link="0" type="5"/>
+	</runtimes>
+</asset>

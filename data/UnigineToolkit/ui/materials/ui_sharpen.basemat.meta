@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>2d0492a94e1297cfc24e877a827a62c0a5d1a067</guid>
+	<type>material</type>
+	<hash>d40edb84477559e51cd6a083148fa99997566700382127301ac52f4c2f8d897b</hash>
+	<runtimes>
+		<runtime id="2d0492a94e1297cfc24e877a827a62c0a5d1a067" name="ui_sharpen" link="0" type="5"/>
+	</runtimes>
+</asset>

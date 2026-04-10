@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>bc0664ffe896ec2f9141ce99fedd2dbb42f2e378</guid>
+	<type>texture</type>
+	<hash>36d3ae89fa3caa6e91c8fd9756a98280dd8ba1cb77aa7fe8c3271c1c2faa76d4</hash>
+	<runtimes>
+		<runtime id="bc0664ffe896ec2f9141ce99fedd2dbb42f2e378" name="icons_create.png" link="0" type="6"/>
+		<runtime id="55ba22bec64e22009efc2f9cdcea65e5dbf73019" name="icons_create.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">DXT5</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">custom</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">1</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>

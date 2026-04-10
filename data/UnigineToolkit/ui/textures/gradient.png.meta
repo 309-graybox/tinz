@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>b8d47775c573ee8796cbabe6c1ee795eb174a422</guid>
+	<type>texture</type>
+	<hash>4304ab48f8f833fddbc91db7fcbdecdd43631cf12001521480d3350e1322a750</hash>
+	<runtimes>
+		<runtime id="b8d47775c573ee8796cbabe6c1ee795eb174a422" name="gradient.png" link="0" type="6"/>
+		<runtime id="d859dabd4563c8cf1f1c8be06fd2e8bdc012d519" name="gradient.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">DXT5</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">custom</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">1</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>

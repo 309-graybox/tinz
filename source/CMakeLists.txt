@@ -38,20 +38,18 @@ if (WIN32)
 endif()
 
 file(GLOB_RECURSE SOURCES "${CMAKE_CURRENT_LIST_DIR}/src/*.h" "${CMAKE_CURRENT_LIST_DIR}/src/*.cpp")
+file(GLOB_RECURSE TOOLKIT_SOURCES "${CMAKE_CURRENT_LIST_DIR}/UnigineToolkit/*.h" "${CMAKE_CURRENT_LIST_DIR}/UnigineToolkit/*.cpp")
 
-add_executable(${target} ${SOURCES})
+add_executable(${target} ${SOURCES} ${TOOLKIT_SOURCES})
 
 target_include_directories(${target}
 	PRIVATE
 	${UNIGINE_INCLUDE_DIR}
 	$<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/src>
+	$<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}>
 	)
 
-target_link_libraries(${target}
-	PRIVATE
-	Unigine::Engine
-	
-	)
+target_link_libraries(${target} PRIVATE Unigine::Engine)
 
 target_compile_definitions(${target}
 	PRIVATE

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="UIC_ButtonChangeWorld" manual="1" parent_name="node_base">
+	<parameter name="world_file" type="file" title="World" filter=".world"/>
+</property>

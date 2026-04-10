@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="UIC_SoundPlayer" manual="1" parent_name="node_base">
+	<parameter name="sound_hover_file" type="file" title="Sound Hover" filter=".wav|.oga|.mp3"/>
+	<parameter name="sound_press_file" type="file" title="Sound Press" filter=".wav|.oga|.mp3"/>
+	<parameter name="sound_focus_file" type="file" title="Sound Focus" filter=".wav|.oga|.mp3"/>
+	<parameter name="volume" type="float">1</parameter>
+</property>

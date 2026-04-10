@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>4028110f1cb2f51b0745e1e290d1b3e791eb97e5</guid>
+	<type>property</type>
+	<hash>744e88753fe60a8f171946fe5e02b2b37e0fdcf4e0f5f2fa2271771c6fee9f32</hash>
+	<runtimes>
+		<runtime id="4028110f1cb2f51b0745e1e290d1b3e791eb97e5" name="UI_ClipMask" link="0" type="4"/>
+	</runtimes>
+</asset>

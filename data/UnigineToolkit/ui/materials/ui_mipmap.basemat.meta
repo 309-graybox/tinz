@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>9aecc017697d94631155aa95ddfa8a9198230e67</guid>
+	<type>material</type>
+	<hash>33f97f40dbfc11d78aec349a613a3190229fd9f64654743b73dc4f50b99df9a0</hash>
+	<runtimes>
+		<runtime id="9aecc017697d94631155aa95ddfa8a9198230e67" name="ui_mipmap" link="0" type="5"/>
+	</runtimes>
+</asset>

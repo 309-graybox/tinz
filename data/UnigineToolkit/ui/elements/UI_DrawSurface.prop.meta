@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>f64e18dcd4e2b8efcf54d82b910a775eac8daff5</guid>
+	<type>property</type>
+	<hash>add530d8db8e494ae6460f9f76e8a7ef3ce8902b2742a12d11c033f402200048</hash>
+	<runtimes>
+		<runtime id="f64e18dcd4e2b8efcf54d82b910a775eac8daff5" name="UI_DrawSurface" link="0" type="4"/>
+	</runtimes>
+</asset>

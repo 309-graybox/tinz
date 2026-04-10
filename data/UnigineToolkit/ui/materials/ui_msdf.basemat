@@ -1,0 +1,78 @@
+BaseMaterial <preview_hidden=true var_prefix=var texture_prefix=tex>
+{
+	// place MSDF image here
+	// SVG -> MSDF converter: https://datasapiens.dev/gui/msdf/
+	Texture color = "white.texture" <anisotropy=true, hidden=true>
+
+	// this variables automatically fills by UI elements
+	Int2 texture_size <hidden=true>
+	Int2 sprite_size <hidden=true>
+
+	Shader shader = 
+	#{
+
+#define VERTEX_ATTRIBUTE_POST
+#include <core/materials/shaders/render/common.h>
+
+STRUCT(FRAGMENT_IN)
+	INIT_POSITION
+	INIT_DATA(float2, 0, DATA_UV0)
+	INIT_DATA(float4, 1, DATA_VERTEX_COLOR)
+END
+
+#ifdef VERTEX
+
+	MAIN_BEGIN(FRAGMENT_IN, VERTEX_IN)
+		
+		float4 row_0 = s_transform[0];
+		float4 row_1 = s_transform[1];
+		float4 row_2 = s_transform[2];
+		
+		float4 vertex = float4(
+			dot(ATTRIBUTE_POSITION, row_0),
+			dot(ATTRIBUTE_POSITION, row_1),
+			dot(ATTRIBUTE_POSITION, row_2),
+			1.0f
+		);
+
+		OUT_POSITION = mul4(s_projection, vertex);
+		DATA_UV0 = ATTRIBUTE_UV.xy;
+		DATA_VERTEX_COLOR = ATTRIBUTE_COLOR;
+	
+	MAIN_END
+		
+#elif FRAGMENT
+
+	INIT_TEXTURE(0, TEX_COLOR)
+
+	STRUCT_FRAG_BEGIN
+		INIT_COLOR(float4)
+	STRUCT_FRAG_END
+
+	float median(float r, float g, float b) {
+		return max(min(r, g), min(max(r, g), b));
+	}
+
+	MAIN_FRAG_BEGIN(FRAGMENT_IN)
+
+	// code based on: https://github.com/Chlumsky/msdfgen
+	float3 msd = TEXTURE(tex_color, DATA_UV0).rgb;
+    float sd = median(msd.r, msd.g, msd.b);
+	float screenPxRange = 4.0f * float(var_sprite_size.y) / float(var_texture_size.y);
+	screenPxRange = max(1.0f, screenPxRange);
+    float screenPxDistance = screenPxRange * (sd - 0.5f);
+    float opacity = clamp(screenPxDistance + 0.5f, 0.0f, 1.0f);
+    float4 color = lerp(float4(1,1,1,0), float4(1,1,1,1), opacity);
+	OUT_COLOR = color * DATA_VERTEX_COLOR;
+
+	MAIN_FRAG_END 
+#endif
+
+	#}
+
+	Pass post
+	{
+		Fragment = shader
+		Vertex = shader
+	}
+}

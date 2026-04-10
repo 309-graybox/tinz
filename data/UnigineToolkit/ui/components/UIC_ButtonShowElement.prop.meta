@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>60fe7851f71cfd9f09f4581e53b5d0e22dffd365</guid>
+	<type>property</type>
+	<hash>d198b5f9fd21f8445b731f3ae3b40f9a42ed6f7d35e454f25ab7bd31955f931c</hash>
+	<runtimes>
+		<runtime id="60fe7851f71cfd9f09f4581e53b5d0e22dffd365" name="UIC_ButtonShowElement" link="0" type="4"/>
+	</runtimes>
+</asset>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="UI_Button" manual="1" parent_name="node_base">
+	<parameter name="pos" type="vec4" title="Position" group="Element">0.000000 0.000000 0.000000 0.000000</parameter>
+	<parameter name="pivot" type="vec2" title="Pivot" group="Element">0.000000 0.000000</parameter>
+	<parameter name="anchor" type="vec4" title="Anchor" group="Element">0.000000 0.000000 0.000000 0.000000</parameter>
+	<parameter name="order_offset" type="int" title="Order" group="Element">0</parameter>
+	<parameter name="interactable" type="toggle" title="Interactable" group="Element">1</parameter>
+	<parameter name="active" type="toggle" title="Active" group="Focus">1</parameter>
+	<parameter name="focusable" type="toggle" title="Focusable" group="Focus">1</parameter>
+	<parameter name="navigation_mode" type="switch" title="Navigation" group="Focus" items="Auto,Manual">0</parameter>
+	<parameter name="navigation_up" type="node" title="Element Up" group="Focus" navigation_mode="1">0</parameter>
+	<parameter name="navigation_down" type="node" title="Element Down" group="Focus" navigation_mode="1">0</parameter>
+	<parameter name="navigation_left" type="node" title="Element Left" group="Focus" navigation_mode="1">0</parameter>
+	<parameter name="navigation_right" type="node" title="Element Right" group="Focus" navigation_mode="1">0</parameter>
+	<parameter name="animate_color" type="toggle" title="Animate Color" group="Focus">1</parameter>
+	<parameter name="animate_texture" type="toggle" title="Animate Texture" group="Focus">0</parameter>
+	<parameter name="animate_size" type="toggle" title="Animate Size" group="Focus">0</parameter>
+	<parameter name="animation_duration" type="float" title="Animation Duration" group="Focus">0.25</parameter>
+	<parameter name="hover_color" type="color" title="Hover Color" group="Focus" animate_color="1">1.000000 0.960000 0.880000 1.000000</parameter>
+	<parameter name="press_color" type="color" title="Press Color" group="Focus" animate_color="1">0.500000 0.500000 0.500000 1.000000</parameter>
+	<parameter name="focus_color" type="color" title="Focus Color" group="Focus" animate_color="1">1.000000 0.960000 0.880000 1.000000</parameter>
+	<parameter name="inactive_color" type="color" title="Inactive Color" group="Focus" animate_color="1">0.800000 0.800000 0.800000 0.800000</parameter>
+	<parameter name="hover_texture" type="file" title="Hover Texture" group="Focus" animate_texture="1"/>
+	<parameter name="press_texture" type="file" title="Press Texture" group="Focus" animate_texture="1"/>
+	<parameter name="focus_texture" type="file" title="Focus Texture" group="Focus" animate_texture="1"/>
+	<parameter name="inactive_texture" type="file" title="Inactive Texture" group="Focus" animate_texture="1"/>
+	<parameter name="scale_animation" type="switch" title="Scale Animation" group="Focus" animate_size="1" items="Lerp,Quad,Cubic,Quart,Quint,Expo,Sine,Circ,Back,Elastic,Bounce">8</parameter>
+	<parameter name="hover_scale" type="float" title="Hover Scale" group="Focus" animate_size="1">1.1</parameter>
+	<parameter name="press_scale" type="float" title="Press Scale" group="Focus" animate_size="1">0.95</parameter>
+	<parameter name="focus_scale" type="float" title="Focus Scale" group="Focus" animate_size="1">1.1</parameter>
+	<parameter name="inactive_scale" type="float" title="Inactive Scale" group="Focus" animate_size="1">1</parameter>
+	<parameter name="text" type="string" title="Text" group="Button">Button</parameter>
+	<parameter name="font_percent" type="float" title="Font Percent" group="Button">0.8</parameter>
+	<parameter name="font_color" type="color" title="Font Color" group="Button">0.000000 0.000000 0.000000 1.000000</parameter>
+	<parameter name="font_align" type="switch" title="Font Align" group="Button" items="LEFT,CENTER,RIGHT">1</parameter>
+	<parameter name="font_offset" type="vec2" title="Font Offset" group="Button">0.000000 0.000000</parameter>
+	<parameter name="font_outline" type="toggle" title="Font Outline" group="Button">0</parameter>
+	<parameter name="font_file" type="file" title="Font" group="Button"/>
+	<parameter name="bg_material" type="material" title="Material" group="Button">98b8c63b3971f339a0e402507a3e73cc8385f0cb</parameter>
+	<parameter name="bg_texture_file" type="file" title="Texture" group="Button" filter=".png|.jpg|.jpeg|.tif|.tiff|.tga|.texture">guid://13772698679aa3eafd4599f31a223c261dd84201</parameter>
+	<parameter name="bg_uv" type="vec4" title="UV" group="Button">0.000000 0.000000 1.000000 1.000000</parameter>
+	<parameter name="bg_color" type="color" title="Button Color" group="Button">1.000000 1.000000 1.000000 1.000000</parameter>
+</property>

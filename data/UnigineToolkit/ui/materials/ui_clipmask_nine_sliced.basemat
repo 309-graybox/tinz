@@ -1,0 +1,141 @@
+BaseMaterial <preview_hidden=true var_prefix=var texture_prefix=tex>
+{
+	Texture color = "white.texture" <anisotropy=true>
+	Texture mask = "white.texture" <anisotropy=true>
+	Float4 mask_uv = [0 0 1 1]
+	Int4 padding = [16 16 16 16]
+	
+	Int2 texture_size <hidden=true> // this variable automatically fills by UI
+	Float4 stops <hidden=true>
+	Float4 offsets <hidden=true>
+	Float4 scale <hidden=true>
+
+	Shader clipmask_shader = 
+	#{
+
+#define VERTEX_ATTRIBUTE_POST
+#include <core/materials/shaders/render/common.h>
+
+STRUCT(FRAGMENT_IN)
+	INIT_POSITION
+	INIT_DATA(float2, 0, DATA_UV0)
+	INIT_DATA(float4, 1, DATA_VERTEX_COLOR)
+END
+
+#ifdef VERTEX
+
+	MAIN_BEGIN(FRAGMENT_IN, VERTEX_IN)
+		
+		float4 row_0 = s_transform[0];
+		float4 row_1 = s_transform[1];
+		float4 row_2 = s_transform[2];
+		
+		float4 vertex = float4(
+			dot(ATTRIBUTE_POSITION, row_0),
+			dot(ATTRIBUTE_POSITION, row_1),
+			dot(ATTRIBUTE_POSITION, row_2),
+			1.0f
+		);
+
+		OUT_POSITION = mul4(s_projection, vertex);
+		DATA_UV0 = ATTRIBUTE_UV.xy;
+		DATA_VERTEX_COLOR = ATTRIBUTE_COLOR;
+	
+	MAIN_END
+		
+#elif FRAGMENT
+
+	INIT_TEXTURE(0, TEX_COLOR)
+	INIT_TEXTURE(1, TEX_MASK)
+
+	STRUCT_FRAG_BEGIN
+		INIT_COLOR(float4)
+	STRUCT_FRAG_END
+
+	MAIN_FRAG_BEGIN(FRAGMENT_IN)
+
+	// render
+	float4 color = TEXTURE_BIAS_ZERO(tex_color, DATA_UV0);
+	
+	// mask
+	float2 uv = DATA_UV0;
+
+	float s0, s1, s2;
+	s0 =            step(uv.x, var_stops.x);
+	s1 = (1 - s0) * step(uv.x, var_stops.z);
+	s2 = (1 - s0) * (1 - s1);
+	uv.x = s0 *   uv.x                * var_scale.x
+		   + s1 * ((uv.x - var_stops.x) * var_scale.z + var_offsets.x)
+		   + s2 * ((uv.x - var_stops.z) * var_scale.x + var_offsets.z);
+
+	s0 =            step(uv.y, var_stops.y);
+	s1 = (1 - s0) * step(uv.y, var_stops.w);
+	s2 = (1 - s0) * (1 - s1);
+	uv.y = s0 *   uv.y                * var_scale.y
+		   + s1 * ((uv.y - var_stops.y) * var_scale.w + var_offsets.y)
+		   + s2 * ((uv.y - var_stops.w) * var_scale.y + var_offsets.w);	
+	
+	float2 uv_mask = (uv + var_mask_uv.xy) * var_mask_uv.zw;
+
+	// final
+	color.a *= TEXTURE_BIAS_ZERO(tex_mask, uv_mask).r;
+	OUT_COLOR = color * DATA_VERTEX_COLOR;
+
+	MAIN_FRAG_END 
+#endif
+
+	#}
+
+	Pass post
+	{
+		Fragment = clipmask_shader
+		Vertex = clipmask_shader
+	}
+	
+	Expression update =
+	#{
+		int in_width;
+		int in_height;
+
+		ivec4 mat_padding = getParameter("padding");
+		ivec2 mat_texture_size = getParameter("texture_size");
+
+		// scaling image if widget smaller than source image
+		if (in_width < mat_padding.x + mat_padding.z + 1)
+		{
+			float scale = float(mat_padding.x + mat_padding.z + 1) / in_width;
+			in_width = int(float(in_width) * scale);
+			in_height = int(float(in_height) * scale);
+		}
+		if (in_height < mat_padding.y + mat_padding.z + 1)
+		{
+			float scale = float(mat_padding.y + mat_padding.z + 1) / in_height;
+			in_width = int(float(in_width) * scale);
+			in_height = int(float(in_height) * scale);
+		}
+
+		vec4 var_stops = vec4(
+			mat_padding.x / float(in_width),
+			mat_padding.y / float(in_height),
+			1 - mat_padding.z / float(in_width),
+			1 - mat_padding.w / float(in_height)
+		);
+		setParameter("stops", var_stops);
+
+		vec4 var_offsets = vec4(
+			mat_padding.x / float(mat_texture_size.x),
+			mat_padding.y / float(mat_texture_size.y),
+			1 - mat_padding.z / float(mat_texture_size.x),
+			1 - mat_padding.w / float(mat_texture_size.y)
+		);
+		setParameter("offsets", var_offsets);
+
+		vec4 var_scale = vec4(
+			in_width / float(mat_texture_size.x),
+			in_height / float(mat_texture_size.y),
+			(var_offsets.z - var_offsets.x) / (var_stops.z - var_stops.x),
+			(var_offsets.w - var_offsets.y) / (var_stops.w - var_stops.y)
+		);
+		setParameter("scale", var_scale);
+	#}	
+}
