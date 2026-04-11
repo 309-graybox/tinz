@@ -68,23 +68,25 @@ void PlayerInput::update(const vec3 &ground_normal, const vec3 &up)
 	if (forward == 0 && side == 0)
 	{
 		_move_direction = vec3_zero;
-		_move_amount = 0.0f;
+		_desired_direction = vec3_zero;
+		_is_input_moving = false;
 		return;
 	}
 
 	vec3 view_dir = Game::getPlayer()->getViewDirection();
 	vec3 forward_dir = normalize(view_dir - up * dot(view_dir, up));
 	vec3 right_dir = normalize(cross(forward_dir, up));
-	vec3 move_dir = forward_dir * forward + right_dir * side;
+	// vec3 move_dir = forward_dir * forward + right_dir * side;
+	_desired_direction = forward_dir * forward + right_dir * side;
 
 	float up_normal_cos = dot(up, ground_normal);
 	if (Math::abs(up_normal_cos) < Consts::EPS)
-		_move_direction = move_dir;
-	else
-		_move_direction = move_dir - up * (dot(move_dir, ground_normal) / up_normal_cos); // TODO(vah): try to remove division
+		_move_direction = _desired_direction;
+	else // TODO(vah): try to remove division
+		_move_direction = _desired_direction - up * (dot(_desired_direction, ground_normal) / up_normal_cos);
 
 	_move_direction.normalize();
-	_move_amount = 1.0f;
+	_is_input_moving = true;
 }
 
 void PlayerInput::shutdown()

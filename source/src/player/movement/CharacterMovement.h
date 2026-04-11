@@ -46,7 +46,7 @@ private:
 	Unigine::Math::vec3 get_ground_normal() const;
 	void update_velocity(float delta);
 	void resolve_collisions(float delta);
-	void rotate(const Unigine::Math::vec3 &direction, float delta);
+	void rotate(const Unigine::Math::vec3 &direction, float turn_speed, float speed, float delta);
 
 	PlayerInput _input;
 

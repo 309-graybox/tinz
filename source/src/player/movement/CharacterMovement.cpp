@@ -3,6 +3,8 @@
 #include "utils/Utils.h"
 
 #include <UnigineGame.h>
+#include <UnigineMathLib.h>
+#include <UnigineMathLibCommon.h>
 #include <UnigineMathLibVec3.h>
 #include <UniginePhysics.h>
 #include <UnigineVisualizer.h>
@@ -12,6 +14,9 @@ using namespace Unigine;
 using namespace Math;
 
 #define DEBUG_MOVEMENT
+// Keeping both methods for now in case of future modifications.
+// We can remove one later.
+#define FIRST_ROTATE
 
 REGISTER_COMPONENT(CharacterMovement);
 
@@ -37,6 +42,9 @@ void CharacterMovement::init()
 	_player_ifps = 1.0f / playerFps;
 	_shape_height = _shape->getHeight();
 	_slope_cos = Math::cos(slopeLimit * Consts::DEG2RAD);
+	_sharp_turn_cos = Math::cos(sharpTurnAngleThreshold);
+	turnSpeed = turnSpeed * Consts::DEG2RAD;
+	sprintTurnSpeed = sprintTurnSpeed * Consts::DEG2RAD;
 
 	_world_transform = obj->getWorldTransform();
 
@@ -66,22 +74,37 @@ void CharacterMovement::update()
 		_vertical_move = -jumpPower / ifps;
 	}
 
-	float speed = _input.isSprinting() ? sprintSpeed 
+	float speed = _input.isSprinting() ? sprintSpeed
 									   : _input.isWalking() ? walkSpeed
 															: runSpeed;
+	float turn_speed = _input.isSprinting() ? sprintTurnSpeed
+											: turnSpeed;
 
-	vec3 move_direction = _input.getMoveDirection();
+	vec3 move_direction = vec3(_world_transform.getAxisY());
+	
+	vec3 desired_move_direction = _input.getDesiredDirection();
+	// vec3 move_direction_up = vec3(_world_transform.getAxisZ());
+	// desired_move_direction -= move_direction_up * dot(desired_move_direction, move_direction_up);
+	// desired_move_direction.normalize();
+
+	// +1 -> 0 -> -1
+	float cos_move_direction = dot(desired_move_direction, move_direction);
+
+	if (cos_move_direction > _sharp_turn_cos)
+	{
+		
+	}
+
 
 	float slope_cos = dot(move_direction, _up);
 	float move_coeff = 1.0f - slope_cos;
 
 	_world_transform = target->getWorldTransform();
-	Vec3 target_velocity = Vec3(move_direction * speed);
-	_horizontal_velocity = lerp(_horizontal_velocity, target_velocity, ifps);
+	_horizontal_velocity = Vec3(move_direction * speed * toFloat(_input.isInputMoving()));
 
 #ifdef DEBUG_MOVEMENT
 	auto p0 = _world_transform.getTranslate();
-	Visualizer::renderVector(p0, p0 + Vec3(target_velocity), vec4_white);
+	// Visualizer::renderVector(p0, p0 + Vec3(target_velocity), vec4_white);
 	Visualizer::renderVector(p0, p0 + Vec3(_horizontal_velocity), vec4_green);
 	Visualizer::renderVector(p0, p0 + Vec3(move_direction), vec4_green);
 	Visualizer::renderVector(p0, p0 + Vec3(_up), vec4_white);
@@ -105,14 +128,14 @@ void CharacterMovement::update()
 			_vertical_speed -= _gravity_amount * adaptive_time_step;
 
 		Vec3 verticale_velocity = Vec3(_up * _vertical_speed);
-		
+
 		mul(_world_transform, translate((_horizontal_velocity * move_coeff + verticale_velocity) * adaptive_time_step), _world_transform);
 
 		Vec3 saved_velocity = _horizontal_velocity;
 		resolve_collisions(adaptive_time_step);
 		_horizontal_velocity = saved_velocity;
 
-		rotate(move_direction, adaptive_time_step);
+		rotate(desired_move_direction, turn_speed, speed, adaptive_time_step);
 	}
 
 	target->setWorldTransform(_world_transform);
@@ -232,16 +255,43 @@ void CharacterMovement::resolve_collisions(float delta)
 	}
 }
 
-void CharacterMovement::rotate(const vec3 &direction, float delta)
+void CharacterMovement::rotate(const vec3 &direction, float turn_speed, float speed, float delta)
 {
-	float len2 = direction.x * direction.x + direction.y * direction.y;
+// keeping both methods for now in case of future modifications
+// #undef FIRST_ROTATE
+#ifdef FIRST_ROTATE
+	float len2 = direction.length2();
 	if (compare(len2, 0.0f))
 		return;
 
-	float yaw = atan2(-direction.x, direction.y) * Consts::RAD2DEG;
-	quat target_rot = quat(0, 0, yaw);
+	vec3 right = normalize(cross(direction, _up));
+	vec3 up = normalize(cross(right, direction));
+
+	quat target_rot = quat(right, direction, up);
 	quat current_rot = _world_transform.getRotate();
 
-	float t = clamp(turnSpeed * delta, 0.0f, 1.0f);
+#ifdef DEBUG_MOVEMENT
+	auto p0 = _world_transform.getTranslate() + Vec3_up * 2.0f;
+	Visualizer::renderVector(p0, p0 + Vec3(direction), vec4_green);
+	Visualizer::renderVector(p0, p0 + Vec3(right), vec4_red);
+	Visualizer::renderVector(p0, p0 + Vec3(up), vec4_blue);
+#endif
+
+	float t = clamp(turn_speed * delta, 0.0f, 1.0f);
 	_world_transform = Mat4(slerp(current_rot, target_rot, t), _world_transform.getTranslate());
+#else
+	// if character's up and _up are parallel, then it should be ok to skip normalize().
+	// we assume they are parallel
+	vec3 forward = _world_transform.getRotate() * vec3_forward;
+	// forward = normalize(forward - _up * dot(forward, _up));
+
+	float angle = Math::atan2(
+		dot(cross(forward, direction), _up),
+		dot(forward, direction)) * Consts::RAD2DEG;
+
+	quat delta_rot = quat(_up, angle * turn_speed * delta);
+	quat current_rot = _world_transform.getRotate();
+
+	_world_transform = Mat4(delta_rot * current_rot, _world_transform.getTranslate());
+#endif
 }

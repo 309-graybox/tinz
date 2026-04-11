@@ -10,7 +10,8 @@ public:
 	void shutdown();
 
 	Unigine::Math::vec3 getMoveDirection() const noexcept { return _move_direction; }
-	float getMoveAmount() const noexcept { return _move_amount; }
+	Unigine::Math::vec3 getDesiredDirection() const noexcept { return _desired_direction; }
+	bool isInputMoving() const noexcept { return _is_input_moving; }
 	bool isWalking() const noexcept { return _walk; }
 	bool isSprinting() const noexcept { return _sprint; }
 	bool isCrouching() const noexcept { return _crouch; }
@@ -22,7 +23,7 @@ private:
 	Unigine::NodePtr _node;
 
 	Unigine::Math::vec3 _move_direction;
-	float _move_amount = 0.0f;
+	Unigine::Math::vec3 _desired_direction;
 
 	Unigine::Math::vec2 _raw_move;
 	bool _walk = false;
@@ -30,6 +31,7 @@ private:
 	bool _crouch = false;
 	bool _jump_requested = false;
 	bool _dash_requested = false;
+	bool _is_input_moving = false;
 
 	EIBinding *_binding_walk = nullptr;
 	EIBinding *_binding_move = nullptr;
