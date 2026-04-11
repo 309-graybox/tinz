@@ -44,6 +44,7 @@ public:
 
 private:
 	Unigine::Math::vec3 get_ground_normal() const;
+	Unigine::Math::vec3 calculate_move_direction(const Unigine::Math::vec3 &ground_normal, Unigine::Math::vec3 &ret_desired_direction);
 	void update_velocity(float delta);
 	void resolve_collisions(float delta);
 	void rotate(const Unigine::Math::vec3 &direction, float turn_speed, float speed, float delta);

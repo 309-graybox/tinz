@@ -43,6 +43,7 @@ void CharacterMovement::init()
 	_shape_height = _shape->getHeight();
 	_slope_cos = Math::cos(slopeLimit * Consts::DEG2RAD);
 	_sharp_turn_cos = Math::cos(sharpTurnAngleThreshold);
+	_sharp_turn_cos = Math::cos(sharpTurnAngleThreshold * Consts::DEG2RAD);
 	turnSpeed = turnSpeed * Consts::DEG2RAD;
 	sprintTurnSpeed = sprintTurnSpeed * Consts::DEG2RAD;
 
@@ -61,7 +62,7 @@ void CharacterMovement::update()
 	auto ground_normal = get_ground_normal();
 	if (ground_normal == vec3_zero)
 		ground_normal = vec3_up;
-	_input.update(ground_normal, _up);
+	_input.update();
 
 	// jump just for now
 	_vertical_move = 0.0f;
@@ -86,9 +87,15 @@ void CharacterMovement::update()
 	// vec3 move_direction_up = vec3(_world_transform.getAxisZ());
 	// desired_move_direction -= move_direction_up * dot(desired_move_direction, move_direction_up);
 	// desired_move_direction.normalize();
+	vec3 desired_move_direction;
+	vec3 move_direction = calculate_move_direction(ground_normal, desired_move_direction);
+
+	vec3 character_forward = vec3(_world_transform.getAxisY());
 
 	// +1 -> 0 -> -1
 	float cos_move_direction = dot(desired_move_direction, move_direction);
+	// cos: +1 -> 0 -> -1
+	float cos_move_direction = dot(desired_move_direction, character_forward);
 
 	if (cos_move_direction > _sharp_turn_cos)
 	{
@@ -185,6 +192,32 @@ Unigine::Math::vec3 CharacterMovement::get_ground_normal() const
 	}
 
 	return normal;
+}
+
+vec3 CharacterMovement::calculate_move_direction(const vec3 &ground_normal, vec3 &ret_desired_direction)
+{
+	vec2 move_input = _input.getMoveInput();
+
+	vec3 view_dir = Game::getPlayer()->getViewDirection();
+	vec3 forward_dir = normalize(view_dir - _up * dot(view_dir, _up));
+	vec3 right_dir = normalize(cross(forward_dir, _up));
+	// vec3 move_dir = forward_dir * move_input.y + right_dir * move_input.x;
+	vec3 move_dir = vec3(_world_transform.getAxisY());
+	ret_desired_direction = forward_dir * move_input.y + right_dir * move_input.x;
+	
+#ifdef DEBUG_MOVEMENT
+	Vec3 p0 = _world_transform.getTranslate();
+	Visualizer::renderMessage3D(p0 + Vec3_up * 1.75, vec3_zero, String::format("forward: %f, right: %f", move_input.y, move_input.x), vec4_green);
+	Visualizer::renderMessage3D(p0 + Vec3_up * 2.25, vec3_zero, String::format("x: %f, y: %f", ret_desired_direction.y, ret_desired_direction.x), vec4_green);
+#endif
+
+	float up_normal_cos = dot(_up, ground_normal);
+	if (Math::abs(up_normal_cos) >= Consts::EPS)
+		move_dir -= _up * (dot(move_dir, ground_normal) / up_normal_cos);
+
+	ret_desired_direction.normalize();
+	move_dir.normalize();
+	return move_dir;
 }
 
 void CharacterMovement::update_velocity(float delta)

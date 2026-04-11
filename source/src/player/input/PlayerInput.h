@@ -6,11 +6,10 @@ class PlayerInput
 {
 public:
 	void init(const Unigine::NodePtr &node);
-	void update(const Unigine::Math::vec3 &ground_normal, const Unigine::Math::vec3 &up);
+	void update();
 	void shutdown();
 
-	Unigine::Math::vec3 getMoveDirection() const noexcept { return _move_direction; }
-	Unigine::Math::vec3 getDesiredDirection() const noexcept { return _desired_direction; }
+	Unigine::Math::vec2 getMoveInput() const noexcept { return _raw_move; }
 	bool isInputMoving() const noexcept { return _is_input_moving; }
 	bool isWalking() const noexcept { return _walk; }
 	bool isSprinting() const noexcept { return _sprint; }
@@ -22,9 +21,7 @@ public:
 private:
 	Unigine::NodePtr _node;
 
-	Unigine::Math::vec3 _move_direction;
-	Unigine::Math::vec3 _desired_direction;
-
+	Unigine::Math::vec2 _move_input;
 	Unigine::Math::vec2 _raw_move;
 	bool _walk = false;
 	bool _sprint = false;
