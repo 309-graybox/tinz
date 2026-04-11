@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>c1ecde01068d0406f5dacfe348dfc1e5466c55ec</guid>
+	<type>property</type>
+	<hash>9967f491af587be3e6f35c9ca336c7cf6bda8c2cde699a4352ce863bf716e6f2</hash>
+	<runtimes>
+		<runtime id="c1ecde01068d0406f5dacfe348dfc1e5466c55ec" name="CharacterMovement" link="0" type="4"/>
+	</runtimes>
+</asset>

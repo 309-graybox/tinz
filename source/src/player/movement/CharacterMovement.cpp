@@ -15,8 +15,7 @@ using namespace Math;
 
 #define DEBUG_MOVEMENT
 // Keeping both methods for now in case of future modifications.
-// We can remove one later.
-#define FIRST_ROTATE
+// #define FIRST_ROTATE
 
 REGISTER_COMPONENT(CharacterMovement);
 
@@ -42,10 +41,10 @@ void CharacterMovement::init()
 	_player_ifps = 1.0f / playerFps;
 	_shape_height = _shape->getHeight();
 	_slope_cos = Math::cos(slopeLimit * Consts::DEG2RAD);
-	_sharp_turn_cos = Math::cos(sharpTurnAngleThreshold);
 	_sharp_turn_cos = Math::cos(sharpTurnAngleThreshold * Consts::DEG2RAD);
-	turnSpeed = turnSpeed * Consts::DEG2RAD;
-	sprintTurnSpeed = sprintTurnSpeed * Consts::DEG2RAD;
+	_turning_exit_cos = Math::cos(turningExitThreshold * Consts::DEG2RAD);
+	// turnSpeed = turnSpeed * Consts::DEG2RAD;
+	// sprintTurnSpeed = sprintTurnSpeed * Consts::DEG2RAD;
 
 	_world_transform = obj->getWorldTransform();
 
@@ -55,14 +54,15 @@ void CharacterMovement::init()
 	Visualizer::setEnabled(true);
 #endif
 }
+
 void CharacterMovement::update()
 {
 	float ifps = Game::getIFps() * Physics::getScale();
+	_input.update();
 
 	auto ground_normal = get_ground_normal();
 	if (ground_normal == vec3_zero)
-		ground_normal = vec3_up;
-	_input.update();
+		ground_normal = _up;
 
 	// jump just for now
 	_vertical_move = 0.0f;
@@ -81,33 +81,35 @@ void CharacterMovement::update()
 	float turn_speed = _input.isSprinting() ? sprintTurnSpeed
 											: turnSpeed;
 
-	vec3 move_direction = vec3(_world_transform.getAxisY());
-	
-	vec3 desired_move_direction = _input.getDesiredDirection();
-	// vec3 move_direction_up = vec3(_world_transform.getAxisZ());
-	// desired_move_direction -= move_direction_up * dot(desired_move_direction, move_direction_up);
-	// desired_move_direction.normalize();
 	vec3 desired_move_direction;
 	vec3 move_direction = calculate_move_direction(ground_normal, desired_move_direction);
 
 	vec3 character_forward = vec3(_world_transform.getAxisY());
 
-	// +1 -> 0 -> -1
-	float cos_move_direction = dot(desired_move_direction, move_direction);
 	// cos: +1 -> 0 -> -1
-	float cos_move_direction = dot(desired_move_direction, character_forward);
+	float cos_move_direction = dot(_is_turning ? _turning_direction : desired_move_direction, character_forward);
 
-	if (cos_move_direction > _sharp_turn_cos)
+	if (cos_move_direction < _sharp_turn_cos && !_is_turning)
 	{
-		
+		_is_turning = true;
+		_turning_speed = _input.isSprinting() ? sprintSharpTurnSpeed : sharpTurnSpeed;
+		_turning_direction = desired_move_direction;
 	}
 
+	_is_turning = _is_turning && (_turning_exit_cos > cos_move_direction);
+	if (_is_turning)
+	{
+		turn_speed = _turning_speed;
+		desired_move_direction = _turning_direction;
+		_horizontal_velocity = Vec3_zero;
+	} else {
+		_horizontal_velocity = Vec3(move_direction * speed * toFloat(_input.isInputMoving()));
+	}
 
 	float slope_cos = dot(move_direction, _up);
 	float move_coeff = 1.0f - slope_cos;
 
 	_world_transform = target->getWorldTransform();
-	_horizontal_velocity = Vec3(move_direction * speed * toFloat(_input.isInputMoving()));
 
 #ifdef DEBUG_MOVEMENT
 	auto p0 = _world_transform.getTranslate();
@@ -116,6 +118,7 @@ void CharacterMovement::update()
 	Visualizer::renderVector(p0, p0 + Vec3(move_direction), vec4_green);
 	Visualizer::renderVector(p0, p0 + Vec3(_up), vec4_white);
 	Visualizer::renderVector(p0, p0 + Vec3(_gravity_direction), vec4_blue);
+	Visualizer::renderVector(p0, p0 + Vec3(desired_move_direction), vec4_white);
 	
 	Visualizer::renderMessage3D(p0 + Vec3_up * 1.5, vec3_zero, "_is_grounded", _is_grounded ? vec4_green : vec4_red);
 	Visualizer::renderMessage3D(p0 + Vec3_up * 2, vec3_zero, String::format("_vertical_speed: %f", _vertical_speed), _vertical_speed != 0.0f ? vec4_green : vec4_red);
@@ -127,8 +130,6 @@ void CharacterMovement::update()
 	{
 		float adaptive_time_step = min(update_time, _player_ifps);
 		update_time -= adaptive_time_step;
-
-		// update_velocity(adaptive_time_step);
 
 		_vertical_speed += _vertical_move * adaptive_time_step;
 		if (!_is_grounded)
@@ -201,7 +202,7 @@ vec3 CharacterMovement::calculate_move_direction(const vec3 &ground_normal, vec3
 	vec3 view_dir = Game::getPlayer()->getViewDirection();
 	vec3 forward_dir = normalize(view_dir - _up * dot(view_dir, _up));
 	vec3 right_dir = normalize(cross(forward_dir, _up));
-	// vec3 move_dir = forward_dir * move_input.y + right_dir * move_input.x;
+
 	vec3 move_dir = vec3(_world_transform.getAxisY());
 	ret_desired_direction = forward_dir * move_input.y + right_dir * move_input.x;
 	
@@ -218,13 +219,6 @@ vec3 CharacterMovement::calculate_move_direction(const vec3 &ground_normal, vec3
 	ret_desired_direction.normalize();
 	move_dir.normalize();
 	return move_dir;
-}
-
-void CharacterMovement::update_velocity(float delta)
-{
-	// _velocity += _vertical_move * delta;
-	// if (!_is_grounded)
-		// _velocity += gravity * delta;
 }
 
 void CharacterMovement::resolve_collisions(float delta)
@@ -272,14 +266,8 @@ void CharacterMovement::resolve_collisions(float delta)
 			if (is_walkable)
 			{
 				_is_grounded = true;
-				if (_vertical_speed < 0.0f)
-					_vertical_speed = 0.0f;
-			}
-
-			// Ceiling detection
-			if (dot(normal, vec3_down) > _slope_cos)
-			{
-				if (_vertical_speed > 0.0f)
+				// change to < 0
+				if (_vertical_speed != 0.0f)
 					_vertical_speed = 0.0f;
 			}
 		}
@@ -310,6 +298,7 @@ void CharacterMovement::rotate(const vec3 &direction, float turn_speed, float sp
 	Visualizer::renderVector(p0, p0 + Vec3(up), vec4_blue);
 #endif
 
+	// the step decreases toward the end, causing the rotation to slow down.
 	float t = clamp(turn_speed * delta, 0.0f, 1.0f);
 	_world_transform = Mat4(slerp(current_rot, target_rot, t), _world_transform.getTranslate());
 #else
@@ -322,7 +311,10 @@ void CharacterMovement::rotate(const vec3 &direction, float turn_speed, float sp
 		dot(cross(forward, direction), _up),
 		dot(forward, direction)) * Consts::RAD2DEG;
 
-	quat delta_rot = quat(_up, angle * turn_speed * delta);
+	float max_step = turn_speed * delta;
+
+	float step = clamp(angle, -max_step, max_step);
+	quat delta_rot = quat(_up, step);
 	quat current_rot = _world_transform.getRotate();
 
 	_world_transform = Mat4(delta_rot * current_rot, _world_transform.getTranslate());

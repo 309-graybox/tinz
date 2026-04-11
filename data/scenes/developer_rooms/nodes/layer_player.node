@@ -18,13 +18,22 @@
 				<parameter name="collision_mask">0x7fffffff</parameter>
 				<parameter name="debug">1</parameter>
 			</property>
-			<property parent="5b253618c0f3cb18baa5f9fd78912f188d2c8dad" guid="324041a2fe2f758105b07a892082b807f19608f2">
+			<property enabled="0" parent="5b253618c0f3cb18baa5f9fd78912f188d2c8dad" guid="324041a2fe2f758105b07a892082b807f19608f2">
+				<parameter name="sharpTurnAngleThreshold">150</parameter>
 				<parameter name="slopeLimit">44</parameter>
 				<parameter name="target">510937540</parameter>
 				<parameter name="body">510937540</parameter>
 			</property>
 			<property parent="3da1a575ca8f743aeb3530aff99d443ff85b1fe5" guid="1161700f6d4adef8c91d289c5b3c4c34549ce794">
 				<parameter name="useGamepad">1</parameter>
+			</property>
+			<property parent="c1ecde01068d0406f5dacfe348dfc1e5466c55ec" guid="719da7015d9fc96a4f30e37f727f8796370ba23e">
+				<parameter name="turningExitThreshold">5</parameter>
+				<parameter name="sprintTurnSpeed">300</parameter>
+				<parameter name="sharpTurnAngleThreshold">150</parameter>
+				<parameter name="slopeLimit">44</parameter>
+				<parameter name="body">510937540</parameter>
+				<parameter name="target">510937540</parameter>
 			</property>
 		</properties>
 		<transform>0.999999761581 0 0 0.0 0 1 0 0.0 0 0 0.999999940395 0.0 -8.77421037377 -14.9420362567 2.65047817637 1.0</transform>
@@ -87,5 +96,10 @@
 			</shape>
 		</body>
 		<transform>0.999999940395 0 0 0.0 0 0.999999940395 0 0.0 0 0 0.999999940395 0.0 0 0 0 1.0</transform>
+		<node type="ObjectMeshStatic" id="1691979073" immovable="1" name="capsule">
+			<mesh_name>guid://30a2c3df4360c3a29b876de716cc573fdc7af63e</mesh_name>
+			<surface name="capsule" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+			<transform>0.200000053644 0 0 0.0 0 0.199999949336 0 0.0 0 0 0.400000309944 0.0 0 0.257959098627 0.828486378964 1.0</transform>
+		</node>
 	</node>
 </nodes>

@@ -15,11 +15,14 @@ public:
 	PROP_PARAM(Float, walkSpeed, 2.0f, "", "Скорость персонажа в режиме ходьбы, без влияния модификаторов");
 	PROP_PARAM(Float, runSpeed, 5.0f, "", "Cкорость персонажа в режиме бега, без влияния модификаторов");
 	PROP_PARAM(Float, turnSpeed, 600.0f, "", "Скорость поворота персонажа в сторону целевого направления во время ходьбы и бега");
+	PROP_PARAM(Float, sharpTurnSpeed, 1000.0f, "", "Скорость поворота персонажа в сторону целевого направления во время ходьбы и бега");
 	PROP_PARAM(Float, jumpPower, 6.0f, "", "");
+	PROP_PARAM(Float, turningExitThreshold, 10.0f, "", "Минимальный угол до которого персонаж должен повернуться, чтобы начать идти во время резкого разворота");
 
 	PROP_GROUP("Sprint");
 	PROP_PARAM(Float, sprintSpeed, 8.0f, "", "Максимальная скорость персонажа в режиме спринта");
 	PROP_PARAM(Float, sprintTurnSpeed, 400.0f, "", "Скорость изменения направления движения во время спринта");
+	PROP_PARAM(Float, sprintSharpTurnSpeed, 800.0f, "", "Скорость изменения направления движения во время спринта");
 	PROP_PARAM(Float, sharpTurnAngleThreshold, 120.0f, "", "Минимальный угол изменения направления, при превышении которого активируется резкий разворот в спринте");
 
 	PROP_GROUP("");
@@ -45,7 +48,6 @@ public:
 private:
 	Unigine::Math::vec3 get_ground_normal() const;
 	Unigine::Math::vec3 calculate_move_direction(const Unigine::Math::vec3 &ground_normal, Unigine::Math::vec3 &ret_desired_direction);
-	void update_velocity(float delta);
 	void resolve_collisions(float delta);
 	void rotate(const Unigine::Math::vec3 &direction, float turn_speed, float speed, float delta);
 
@@ -62,15 +64,19 @@ private:
 	Unigine::Math::Mat4 _world_transform = Unigine::Math::Mat4_identity;
 	Unigine::Math::Vec3 _horizontal_velocity = Unigine::Math::Vec3_zero;
 	Unigine::Math::vec3 _gravity_direction;
+	Unigine::Math::vec3 _turning_direction;
 	Unigine::Math::vec3 _up;
 	float _gravity_amount = 0.0f;
+	float _turning_speed = 0.0f;
 
 
 	Unigine::Math::Vec3 _velocity;
 	float _vertical_speed = 0.0f;
 	float _vertical_move = 0.0f;
 	float _sharp_turn_cos = 0.0f;
-
+	float _turning_exit_cos = 0.0f;
+	
+	bool _is_turning = false;
 	bool _is_grounded = false;
 };
 
