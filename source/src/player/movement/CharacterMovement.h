@@ -1,8 +1,12 @@
 #pragma once
-#include "player/input/PlayerInput.h"
+#include "MovementContext.h"
 
 #include <UnigineComponentSystem.h>
 #include <UniginePhysics.h>
+#include <UniginePtr.h>
+#include <memory>
+
+class MovementState;
 
 class CharacterMovement : public Unigine::ComponentBase
 {
@@ -43,15 +47,20 @@ private:
 	void shutdown();
 
 public:
+	// TODO(vah): obmazat' with inkapsulation?
 	void setGravity(const Unigine::Math::Vec3 &gravity);
+	// float getSharpTurnCos() const noexcept { return _turning_exit_cos; };
 
 private:
-	Unigine::Math::vec3 get_ground_normal() const;
-	Unigine::Math::vec3 calculate_move_direction(const Unigine::Math::vec3 &ground_normal, Unigine::Math::vec3 &ret_desired_direction);
-	void resolve_collisions(float delta);
-	void rotate(const Unigine::Math::vec3 &direction, float turn_speed, float speed, float delta);
+	MovementContext _ctx;
 
-	PlayerInput _input;
+	std::unique_ptr<MovementState> _state;
+
+	Unigine::Math::vec3 get_ground_normal() const;
+	Unigine::Math::vec3 compute_desired_input_direction() const;
+	Unigine::Math::vec3 project_forward_on_ground(const Unigine::Math::vec3 &ground_normal);
+	void resolve_collisions(float ifps);
+	void rotate(const Unigine::Math::vec3 &direction, float turn_speed, float speed, float ifps);
 
 	float _slope_cos = 0.0f;
 	float _player_ifps = 1.0f / 60.0f;
@@ -64,19 +73,17 @@ private:
 	Unigine::Math::Mat4 _world_transform = Unigine::Math::Mat4_identity;
 	Unigine::Math::Vec3 _horizontal_velocity = Unigine::Math::Vec3_zero;
 	Unigine::Math::vec3 _gravity_direction;
-	Unigine::Math::vec3 _turning_direction;
 	Unigine::Math::vec3 _up;
 	float _gravity_amount = 0.0f;
-	float _turning_speed = 0.0f;
 
-
-	Unigine::Math::Vec3 _velocity;
 	float _vertical_speed = 0.0f;
-	float _vertical_move = 0.0f;
 	float _sharp_turn_cos = 0.0f;
 	float _turning_exit_cos = 0.0f;
-	
-	bool _is_turning = false;
+
 	bool _is_grounded = false;
+
+	friend class MoveState;
+	friend class TurnState;
+	friend class IdleState;
 };
 
