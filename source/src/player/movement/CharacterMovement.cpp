@@ -184,7 +184,7 @@ vec3 CharacterMovement::compute_desired_input_direction() const
 	vec3 forward_dir = normalize(view_dir - _up * dot(view_dir, _up));
 	vec3 right_dir = normalize(cross(forward_dir, _up));
 
-	return normalize(forward_dir * move_input.y + right_dir * move_input.x);
+	return normalizeValid(forward_dir * move_input.y + right_dir * move_input.x);
 }
 
 vec3 CharacterMovement::project_forward_on_ground(const vec3 &ground_normal)

@@ -1,13 +1,24 @@
 #include "MoveState.h"
+#include "IdleState.h"
 #include "TurnState.h"
 #include "CharacterMovement.h"
 
 using namespace Unigine;
 using namespace Math;
 
+MoveState::MoveState(bool snape_rotate)
+	: _snap_rotation(snape_rotate)
+{
+}
+
 MovementState *MoveState::update(MovementContext &ctx, float ifps)
 {
 	auto &o = *ctx.owner;
+
+	if (!ctx.input.isInputMoving())
+	{
+		return new IdleState();
+	}
 
 	// jump just for now
 	ctx.vertical_impulse = 0.0f;
@@ -31,10 +42,17 @@ MovementState *MoveState::update(MovementContext &ctx, float ifps)
 	// cos: +1 -> 0 -> -1
 	float cos_move_direction = dot(ctx.desired_input_direction, ctx.character_forward);
 
-	if (cos_move_direction < o._sharp_turn_cos)
+	if (_snap_rotation)
 	{
-		float turn_speed = ctx.input.isSprinting() ? o.sprintSharpTurnSpeed : o.sharpTurnSpeed;
-		return new TurnState(ctx.desired_input_direction, turn_speed);
+		_snap_rotation = false;
+		ctx.turn_speed = 1e6f;
+		ctx.rotate_target = ctx.desired_input_direction;
+		return nullptr;
+	}
+
+	if (ctx.input.isSprinting() && cos_move_direction < o._sharp_turn_cos)
+	{
+		return new TurnState(ctx.desired_input_direction, o.sprintSharpTurnSpeed);
 	}
 
 	ctx.rotate_target = ctx.desired_input_direction;

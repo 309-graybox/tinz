@@ -24,5 +24,5 @@ MovementState *TurnState::update(MovementContext &ctx, float ifps)
 	ctx.rotate_target = _lock_direction;
 	ctx.move_direction = ctx.character_forward;
 
-	return o._turning_exit_cos > cos_move_direction ? nullptr : new MoveState();
+	return o._turning_exit_cos > cos_move_direction ? nullptr : new MoveState(true);
 }
