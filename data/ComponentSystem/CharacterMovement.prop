@@ -3,12 +3,10 @@
 	<parameter name="walkSpeed" type="float" tooltip="Скорость персонажа в режиме ходьбы, без влияния модификаторов">2</parameter>
 	<parameter name="runSpeed" type="float" tooltip="Cкорость персонажа в режиме бега, без влияния модификаторов">5</parameter>
 	<parameter name="turnSpeed" type="float" tooltip="Скорость поворота персонажа в сторону целевого направления во время ходьбы и бега">600</parameter>
-	<parameter name="sharpTurnSpeed" type="float" tooltip="Скорость поворота персонажа в сторону целевого направления во время ходьбы и бега">1000</parameter>
 	<parameter name="jumpPower" type="float">6</parameter>
 	<parameter name="turningExitThreshold" type="float" tooltip="Минимальный угол до которого персонаж должен повернуться, чтобы начать идти во время резкого разворота">10</parameter>
 	<parameter name="sprintSpeed" type="float" tooltip="Максимальная скорость персонажа в режиме спринта" group="Sprint">8</parameter>
 	<parameter name="sprintTurnSpeed" type="float" tooltip="Скорость изменения направления движения во время спринта" group="Sprint">400</parameter>
-	<parameter name="sprintSharpTurnSpeed" type="float" tooltip="Скорость изменения направления движения во время спринта" group="Sprint">800</parameter>
 	<parameter name="sharpTurnAngleThreshold" type="float" tooltip="Минимальный угол изменения направления, при превышении которого активируется резкий разворот в спринте" group="Sprint">120</parameter>
 	<parameter name="stepHeight" type="float" tooltip="Максимальная выс та препятст вия, на которое персонаж может автоматически подняться">0.3</parameter>
 	<parameter name="slopeLimit" type="float" title="Slope Limit(degr ees)" tooltip="Максимальный угол наклона поверхности, по которой персонаж может двигаться">43</parameter>

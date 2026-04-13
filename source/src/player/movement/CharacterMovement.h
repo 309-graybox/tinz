@@ -1,10 +1,13 @@
 #pragma once
 #include "MovementContext.h"
+#include "MovementState.h"
+#include "IdleState.h"
+#include "MoveState.h"
+#include "TurnState.h"
 
 #include <UnigineComponentSystem.h>
 #include <UniginePhysics.h>
 #include <UniginePtr.h>
-#include <memory>
 
 class MovementState;
 
@@ -19,14 +22,12 @@ public:
 	PROP_PARAM(Float, walkSpeed, 2.0f, "", "Скорость персонажа в режиме ходьбы, без влияния модификаторов");
 	PROP_PARAM(Float, runSpeed, 5.0f, "", "Cкорость персонажа в режиме бега, без влияния модификаторов");
 	PROP_PARAM(Float, turnSpeed, 600.0f, "", "Скорость поворота персонажа в сторону целевого направления во время ходьбы и бега");
-	PROP_PARAM(Float, sharpTurnSpeed, 1000.0f, "", "Скорость поворота персонажа в сторону целевого направления во время ходьбы и бега");
 	PROP_PARAM(Float, jumpPower, 6.0f, "", "");
 	PROP_PARAM(Float, turningExitThreshold, 10.0f, "", "Минимальный угол до которого персонаж должен повернуться, чтобы начать идти во время резкого разворота");
 
 	PROP_GROUP("Sprint");
 	PROP_PARAM(Float, sprintSpeed, 8.0f, "", "Максимальная скорость персонажа в режиме спринта");
 	PROP_PARAM(Float, sprintTurnSpeed, 400.0f, "", "Скорость изменения направления движения во время спринта");
-	PROP_PARAM(Float, sprintSharpTurnSpeed, 800.0f, "", "Скорость изменения направления движения во время спринта");
 	PROP_PARAM(Float, sharpTurnAngleThreshold, 120.0f, "", "Минимальный угол изменения направления, при превышении которого активируется резкий разворот в спринте");
 
 	PROP_GROUP("");
@@ -53,21 +54,23 @@ public:
 
 private:
 	MovementContext _ctx;
-
-	std::unique_ptr<MovementState> _state;
+	IdleState _idle_state;
+	MoveState _move_state;
+	TurnState _turn_state;
+	MovementState *_states[MovementStateIndex::COUNT];
+	MovementStateIndex _current_state = MovementStateIndex::IDLE;
 
 	Unigine::Math::vec3 get_ground_normal() const;
 	Unigine::Math::vec3 compute_desired_input_direction() const;
 	Unigine::Math::vec3 project_forward_on_ground(const Unigine::Math::vec3 &ground_normal);
 	void resolve_collisions(float ifps);
-	void rotate(const Unigine::Math::vec3 &direction, float turn_speed, float speed, float ifps);
+	void rotate(const Unigine::Math::vec3 &direction, float turn_speed, float ifps);
 
 	float _slope_cos = 0.0f;
 	float _player_ifps = 1.0f / 60.0f;
 
 	Unigine::BodyDummyPtr _body;
 	Unigine::ShapeCapsulePtr _shape;
-	float _shape_height;
 	Unigine::Vector<Unigine::ShapeContactPtr> _contacts;
 
 	Unigine::Math::Mat4 _world_transform = Unigine::Math::Mat4_identity;

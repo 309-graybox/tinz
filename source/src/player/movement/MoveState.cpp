@@ -6,18 +6,19 @@
 using namespace Unigine;
 using namespace Math;
 
-MoveState::MoveState(bool snape_rotate)
-	: _snap_rotation(snape_rotate)
+void MoveState::init(bool snap_rotation)
 {
+	_snap_rotation = snap_rotation;
 }
 
-MovementState *MoveState::update(MovementContext &ctx, float ifps)
+MovementStateIndex MoveState::update(MovementContext &ctx, float ifps)
 {
 	auto &o = *ctx.owner;
 
 	if (!ctx.input.isInputMoving())
 	{
-		return new IdleState();
+		o._idle_state.init();
+		return MovementStateIndex::IDLE;
 	}
 
 	// jump just for now
@@ -47,14 +48,15 @@ MovementState *MoveState::update(MovementContext &ctx, float ifps)
 		_snap_rotation = false;
 		ctx.turn_speed = 1e6f;
 		ctx.rotate_target = ctx.desired_input_direction;
-		return nullptr;
+		return MovementStateIndex::NONE;
 	}
 
 	if (ctx.input.isSprinting() && cos_move_direction < o._sharp_turn_cos)
 	{
-		return new TurnState(ctx.desired_input_direction, o.sprintSharpTurnSpeed);
+		o._turn_state.init(ctx.desired_input_direction, o.sprintTurnSpeed);
+		return MovementStateIndex::TURN;
 	}
 
 	ctx.rotate_target = ctx.desired_input_direction;
-	return nullptr;
+	return MovementStateIndex::NONE;
 }

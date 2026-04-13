@@ -1,16 +1,23 @@
 #include "IdleState.h"
 #include "MoveState.h"
+#include "CharacterMovement.h"
 #include "MovementContext.h"
+#include "MovementState.h"
 
-MovementState *IdleState::update(MovementContext &ctx, float ifps)
+void IdleState::init()
+{
+}
+
+MovementStateIndex IdleState::update(MovementContext &ctx, float ifps)
 {
 	if (ctx.input.isInputMoving())
 	{
-		return new MoveState();
+		ctx.owner->_move_state.init(false);
+		return MovementStateIndex::MOVE;
 	}
 
 	ctx.speed = 0.0f;
 	ctx.rotate_target = ctx.character_forward;
 
-	return nullptr;
+	return MovementStateIndex::NONE;
 }

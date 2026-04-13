@@ -1,7 +1,7 @@
 #include "CharacterMovement.h"
 
+#include "MovementState.h"
 #include "utils/Utils.h"
-#include "MoveState.h"
 
 #include <UnigineGame.h>
 #include <UnigineMathLib.h>
@@ -38,7 +38,6 @@ void CharacterMovement::init()
 	_ctx.input.init(node);
 
 	_player_ifps = 1.0f / playerFps;
-	_shape_height = _shape->getHeight();
 	_slope_cos = Math::cos(slopeLimit * Consts::DEG2RAD);
 	_sharp_turn_cos = Math::cos(sharpTurnAngleThreshold * Consts::DEG2RAD);
 	_turning_exit_cos = Math::cos(turningExitThreshold * Consts::DEG2RAD);
@@ -52,7 +51,9 @@ void CharacterMovement::init()
 #endif
 
 	_ctx.owner = this;
-	_state = std::make_unique<MoveState>();
+	_states[MovementStateIndex::IDLE] = &_idle_state;
+	_states[MovementStateIndex::MOVE] = &_move_state;
+	_states[MovementStateIndex::TURN] = &_turn_state;
 }
 
 void CharacterMovement::update()
@@ -68,20 +69,21 @@ void CharacterMovement::update()
 	_ctx.desired_input_direction = compute_desired_input_direction();
 	_ctx.is_grounded = _is_grounded;
 
-#ifdef DEBUG_MOVEMENT
-	Log::message("state: %s\n", _state->name());
-#endif
+// #ifdef DEBUG_MOVEMENT
+	// Log::message("state: %s\n", _states[_current_state]->name());
+// #endif
 	// set default context output values
 	_ctx.speed = 0.0f;
 	_ctx.turn_speed = 0.0f;
 	_ctx.vertical_impulse = 0.0f;
 	_ctx.move_direction = _ctx.character_forward;
 	_ctx.rotate_target = _ctx.character_forward;
-	if (auto *next = _state->update(_ctx, ifps))
+	MovementStateIndex next_state = _states[_current_state]->update(_ctx, ifps);
+	if (next_state != MovementStateIndex::NONE)
 	{
-		_state->onExit(_ctx);
-		_state.reset(next);
-		_state->onEnter(_ctx);
+		_states[_current_state]->onExit(_ctx);
+		_current_state = next_state;
+		_states[_current_state]->onEnter(_ctx);
 	}
 
 	_horizontal_velocity = Vec3(_ctx.move_direction * _ctx.speed * toFloat(_ctx.input.isInputMoving()));
@@ -122,7 +124,7 @@ void CharacterMovement::update()
 		resolve_collisions(adaptive_time_step);
 		_horizontal_velocity = saved_velocity;
 
-		rotate(_ctx.rotate_target, _ctx.turn_speed, _ctx.speed, adaptive_time_step);
+		rotate(_ctx.rotate_target, _ctx.turn_speed, adaptive_time_step);
 	}
 
 	target->setWorldTransform(_world_transform);
@@ -255,7 +257,7 @@ void CharacterMovement::resolve_collisions(float ifps)
 	}
 }
 
-void CharacterMovement::rotate(const vec3 &direction, float turn_speed, float speed, float ifps)
+void CharacterMovement::rotate(const vec3 &direction, float turn_speed, float ifps)
 {
 	// if character's up and _up are parallel, then it should be ok to skip normalize().
 	// we assume they are parallel

@@ -5,8 +5,8 @@
 class TurnState : public MovementState
 {
 public:
-	TurnState(const Unigine::Math::vec3 &desired_direction, float turn_speed);
-	MovementState *update(MovementContext &ctx, float ifps) override;
+	void init(const Unigine::Math::vec3 &desired_direction, float turn_speed);
+	MovementStateIndex update(MovementContext &ctx, float ifps) override;
 
 	const char *name() const override { return "Turn"; }
 

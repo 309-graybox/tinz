@@ -4,7 +4,8 @@
 class IdleState : public MovementState
 {
 public:
-	MovementState *update(MovementContext &ctx, float ifps) override;
+	void init();
+	MovementStateIndex update(MovementContext &ctx, float ifps) override;
 
 	const char *name() const override { return "Idle"; }
 };

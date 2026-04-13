@@ -6,13 +6,13 @@
 using namespace Unigine;
 using namespace Math;
 
-TurnState::TurnState(const vec3 &desired_direction, float turn_speed)
-	: _lock_direction(desired_direction),
-	_lock_turn_speed(turn_speed)
+void TurnState::init(const vec3 &desired_direction, float turn_speed)
 {
+	_lock_direction = desired_direction;
+	_lock_turn_speed = turn_speed;
 }
 
-MovementState *TurnState::update(MovementContext &ctx, float ifps)
+MovementStateIndex TurnState::update(MovementContext &ctx, float ifps)
 {
 	auto &o = *ctx.owner;
 	// cos: +1 -> 0 -> -1
@@ -24,5 +24,9 @@ MovementState *TurnState::update(MovementContext &ctx, float ifps)
 	ctx.rotate_target = _lock_direction;
 	ctx.move_direction = ctx.character_forward;
 
-	return o._turning_exit_cos > cos_move_direction ? nullptr : new MoveState(true);
+	if (o._turning_exit_cos > cos_move_direction)
+		return MovementStateIndex::NONE;
+
+	o._move_state.init(true);
+	return MovementStateIndex::MOVE;
 }
