@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>dba1d039d370422a4e05e9d8c4b355d37f575b0e</guid>
+	<type>material</type>
+	<hash>805ab6891d439e071dd53cedbd800c67cdb65348fe9dbdfa2f3eafa40e198458</hash>
+	<runtimes>
+		<runtime id="dba1d039d370422a4e05e9d8c4b355d37f575b0e" name="npr_water_mesh_base" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>

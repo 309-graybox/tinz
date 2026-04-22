@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>d86e8afcf10de871c0c2cfccaaa04559a0088aa2</guid>
+	<type>texture</type>
+	<hash>cff99366655faa19d890cf1ce94bd455c56b62933780a6b8c284cf77f42fa07a</hash>
+	<runtimes>
+		<runtime id="d86e8afcf10de871c0c2cfccaaa04559a0088aa2" name="grass_inst.png" link="0" type="6"/>
+		<runtime id="0078442b04e990b68e74f39b71ee39c64dec8999" name="grass_inst.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">Auto (DXT1 or DXT5)</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">albedo (rgba)</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">1</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>

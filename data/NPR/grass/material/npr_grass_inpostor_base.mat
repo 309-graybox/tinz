@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material version="2.21.0.0" guid="62c893340cea4c51104106046d5dc62596777a1a" base_material="5cb6652f14f2c99d5ee1aab0786a3dc2789f93fc">
+	<texture name="albedo">guid://0078442b04e990b68e74f39b71ee39c64dec8999</texture>
+	<parameter name="albedo_color" expression="0">0.909803927 1 0.87843138 1</parameter>
+	<parameter name="metalness" expression="0">0.254290015</parameter>
+	<parameter name="roughness" expression="0">0</parameter>
+	<parameter name="specular" expression="0">0</parameter>
+	<parameter name="microfiber" expression="0">0</parameter>
+	<parameter name="translucent" expression="0">0.855669975</parameter>
+	<parameter name="alpha_scale" expression="0">0.824699998</parameter>
+	<parameter name="shadow_offset" expression="0">-5</parameter>
+	<parameter name="orientation_normals" expression="0">0.969060004</parameter>
+</material>

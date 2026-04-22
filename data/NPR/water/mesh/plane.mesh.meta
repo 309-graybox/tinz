@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>a5015333c1837fe2f48c9fb0ff55daa9a01b11a1</guid>
+	<type>mesh</type>
+	<hash>a81cf7d805d2948429cc5d105f2950e38dfd586ca6bb86803f72baedc10fdd70</hash>
+	<runtimes>
+		<runtime id="a5015333c1837fe2f48c9fb0ff55daa9a01b11a1" name="plane.mesh" link="0" type="1"/>
+	</runtimes>
+	<parameters>
+		<parameter type="string" name="lightmaps"/>
+		<parameter type="int" name="resolution">3</parameter>
+		<parameter type="float" name="scale">1</parameter>
+		<parameter type="bool" name="unchanged">1</parameter>
+		<parameter type="bool" name="unwrap_uv_ch_0">0</parameter>
+		<parameter type="bool" name="unwrap_uv_ch_1">1</parameter>
+		<parameter type="int" name="uv_ch">1</parameter>
+		<parameter type="bool" name="vertex_cache">1</parameter>
+	</parameters>
+</asset>

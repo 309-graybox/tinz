@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material version="2.21.0.0" guid="dba1d039d370422a4e05e9d8c4b355d37f575b0e" base_material="14b090efbf69a454b2033bac1ee2cfcc700e8b99">
+	<state name="additional_normals">0</state>
+	<parameter name="detail0_intensity" expression="0">0.289240003</parameter>
+	<parameter name="detail1_intensity" expression="0">0.148760006</parameter>
+	<parameter name="detail4_intensity" expression="0">0.322299987</parameter>
+	<parameter name="foam_contact_intensity" expression="0">0.625</parameter>
+	<parameter name="subsurface_color" expression="0">0.333333343 1 1 1</parameter>
+	<parameter name="subsurface_ambient_intensity" expression="0">2</parameter>
+	<parameter name="subsurface_wave_intensity" expression="0">0.305779994</parameter>
+	<parameter name="subsurface_wave_foam_intensity" expression="0">10</parameter>
+	<parameter name="reflection_roughness" expression="0">0.801649988</parameter>
+	<parameter name="reflection_occlusion" expression="0">0.0867699981</parameter>
+	<parameter name="reflection_occlusion_slope" expression="0">0.599170029</parameter>
+	<parameter name="waves_radius" expression="0">148.429993</parameter>
+</material>

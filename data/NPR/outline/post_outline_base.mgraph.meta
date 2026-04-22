@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>1f053f3515144aedb27f0848c8c08f43f56dc35c</guid>
+	<type>material_graph</type>
+	<hash>bf8be537bf64adbcc2d24df0af26357ac7bfdd32e57880e38559fd052c59aa39</hash>
+	<runtimes>
+		<runtime id="1f053f3515144aedb27f0848c8c08f43f56dc35c" name="post_outline_base.mgraph" link="0"/>
+		<runtime id="cfd2c56f833b2e9067230ebaa1480881bf1b30ee" name="post_outline_base" link="1" type="5"/>
+	</runtimes>
+</asset>

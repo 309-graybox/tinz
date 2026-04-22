@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material version="2.21.0.0" guid="185efac7ae315173e61bde328a4b9405a6b8f4e6" base_material="cfd2c56f833b2e9067230ebaa1480881bf1b30ee">
+	<parameter name="outline_tint" expression="0">0.290196091 0.101960786 0.101960786 0.960784316</parameter>
+	<parameter name="outline_depth" expression="0">0</parameter>
+	<parameter name="smooth_value" expression="0">3.20000005</parameter>
+</material>

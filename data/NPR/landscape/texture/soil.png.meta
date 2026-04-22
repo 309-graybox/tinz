@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>154bf17bde7e7b0df0f00292c1d1494a429255f8</guid>
+	<type>texture</type>
+	<hash>7f487e4d1f57a098eee7ec212e71f74575724fbc1bc6668efa4552b7befe9ff0</hash>
+	<runtimes>
+		<runtime id="154bf17bde7e7b0df0f00292c1d1494a429255f8" name="soil.png" link="0" type="6"/>
+		<runtime id="97be552503c7cd91ae70de141a12e335e71009ea" name="soil.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">DXT5</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">custom</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">1</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>

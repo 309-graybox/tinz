@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>68946dbf1915e410171a694e48ade575cedc3c19</guid>
+	<type>material_graph</type>
+	<hash>bc9e46a86ded204ba9525311f29f92deb5cba2add3e86bf1948017d9ef7d8e6a</hash>
+	<runtimes>
+		<runtime id="68946dbf1915e410171a694e48ade575cedc3c19" name="NPR_base.mgraph" link="0"/>
+		<runtime id="baa6d30981423686857ffb30770cdbc660c4d1b3" name="NPR_base" link="1" type="5"/>
+	</runtimes>
+</asset>

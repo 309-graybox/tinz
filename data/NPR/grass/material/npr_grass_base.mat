@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material version="2.21.0.0" guid="b17ce1802887264ae4cf3750f93b83b617616186" base_material="773af4a63c30b60aba488f9dc007340969de1e35">
+	<options two_sided="0" cast_shadow="0" cast_world_shadow="0"/>
+	<texture name="diffuse">guid://0078442b04e990b68e74f39b71ee39c64dec8999</texture>
+	<parameter name="diffuse_color" expression="0">0.909803927 1 0.87843138 1</parameter>
+	<parameter name="specular_color" expression="0">0.470588237 0.407843143 0.250980407 1</parameter>
+	<parameter name="translucent_scale" expression="0">0.769749999</parameter>
+	<parameter name="alpha_scale" expression="0">0.584100008</parameter>
+	<parameter name="slope_scale" expression="0">0.106519997</parameter>
+</material>
