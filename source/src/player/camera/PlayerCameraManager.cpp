@@ -102,7 +102,7 @@ void PlayerCameraManager::init()
 	});
 
 	auto _actionTargetLock = actionReg->create(actionReg->getIndexByPath(action_target_lock_file));
-	if (!_actionLook)
+	if (!_actionTargetLock)
 	{
 		Log::error("PlayerCameraManager::init: action \"%s\" not found\n", action_look_file.get());
 		removeComponent<PlayerCameraManager>(node);
@@ -178,7 +178,7 @@ void PlayerCameraManager::update_camera_context()
 		_ctx.targetHorizontalSpeedDir = _ctx.targetHorizontalSpeed != 0 ? _ctx.targetHorizontalVelocity / _ctx.targetHorizontalSpeed : Vec3_zero;
 		_ctx.targetVerticalVelocity = Vec3(0, 0, _ctx.targetVelocity.z);
 		_ctx.targetVerticalSpeed = _ctx.targetVerticalVelocity.length();
-		_ctx.targetVerticalSpeedDir = _ctx.targetVerticalSpeed != 0 ? _ctx.targetHorizontalVelocity / _ctx.targetVerticalSpeed : Vec3_zero;
+		_ctx.targetVerticalSpeedDir = _ctx.targetVerticalSpeed != 0 ? _ctx.targetVerticalVelocity / _ctx.targetVerticalSpeed : Vec3_zero;
 	} else
 	{
 		_ctx.targetPosition = Vec3_zero;
