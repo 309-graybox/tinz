@@ -86,8 +86,11 @@ void CharacterMovement::update()
 		_states[_current_state]->onEnter(_ctx);
 	}
 
-	if (_ctx.vertical_impulse > 0.0f)
+	if (_states[_current_state]->canJump() && _ctx.input.consumeJump() && _ctx.is_grounded)
+	{
+		_ctx.vertical_impulse = jumpPower / ifps;
 		_adaptive_jump_pending = true;
+	}
 
 	if (_adaptive_jump_pending && _ctx.input.consumeJumpRelease() && _vertical_speed > adaptiveJumpThreshold * jumpPower)
 	{

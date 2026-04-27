@@ -18,5 +18,6 @@ public:
 	virtual void onEnter(MovementContext&) {};
 	virtual void onExit(MovementContext&) {};
 	virtual MovementStateIndex update(MovementContext &, float ifps) = 0;
+	virtual bool canJump() const { return true; }
 	virtual const char *name() const = 0;
 };

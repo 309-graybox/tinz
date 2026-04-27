@@ -21,16 +21,9 @@ MovementStateIndex MoveState::update(MovementContext &ctx, float ifps)
 		return MovementStateIndex::IDLE;
 	}
 
-	// jump just for now
-	ctx.vertical_impulse = 0.0f;
-	if (ctx.input.consumeJump() && ctx.is_grounded)
-	{
-		ctx.vertical_impulse = o.jumpPower / ifps;
-		// crouch just for now
-	} else if (ctx.input.isCrouching() && !ctx.is_grounded)
-	{
+	// crouch just for now
+	if (ctx.input.isCrouching() && !ctx.is_grounded)
 		ctx.vertical_impulse = -o.jumpPower / ifps;
-	}
 
 	ctx.speed = ctx.input.isSprinting() ? o.sprintSpeed
 										: ctx.input.isWalking() ? o.walkSpeed
