@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="1122082178" immovable="1" trigger_interaction_enabled="1" name="pickup_7">
+		<mesh_name>guid://de30d32f038232eb6687c8f478a58e15beb72e3f</mesh_name>
+		<surface name="box" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+		<properties>
+			<property parent="a51122c1008c9b214f1e982f089eb0a2dd22fa29" guid="f104bbe37f628b723126ca05cf73b32c390dc107">
+				<parameter name="typeId">0</parameter>
+				<parameter name="stackable">1</parameter>
+			</property>
+		</properties>
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

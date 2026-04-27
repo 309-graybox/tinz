@@ -252,5 +252,18 @@
 				</Binding>
 			</Mapping>
 		</Action>
+		<Action guid="5dc5bf9d869ebc7b2288a10f75b797661d2061a1">
+			<Mapping consume_input="0">
+				<Binding>
+					<Key>E</Key>
+					<Triggers>
+						<Trigger type="Pressed">
+							<parameter name="treshold">0.5</parameter>
+						</Trigger>
+					</Triggers>
+					<Modifiers/>
+				</Binding>
+			</Mapping>
+		</Action>
 	</Actions>
 </EIContext>

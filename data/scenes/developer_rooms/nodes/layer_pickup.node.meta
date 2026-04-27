@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>d7345f9f7a4e82c5e5b434a1dd365cd6cea5f683</guid>
+	<type>node</type>
+	<hash>dc111ce3d5c7086339c7844a9e73c29a98df3b019e631f639e59fc775181c2eb</hash>
+	<runtimes>
+		<runtime id="d7345f9f7a4e82c5e5b434a1dd365cd6cea5f683" name="layer_pickup.node" link="0" type="3"/>
+	</runtimes>
+</asset>

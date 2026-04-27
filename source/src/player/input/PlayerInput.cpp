@@ -25,6 +25,7 @@ void PlayerInput::init(const Unigine::NodePtr &node)
 	auto _action_jump = action_reg->create("jump");
 	auto _action_dash = action_reg->create("dash");
 	auto _action_crouch = action_reg->create("crouch");
+	auto _action_interact = action_reg->create("interact");
 	auto _context_base = ei->getContextRegistry()->create("base");
 
 	player->addContext(_context_base);
@@ -58,6 +59,11 @@ void PlayerInput::init(const Unigine::NodePtr &node)
 		if (!compare(inst.getValue().value.x, 0.0f))
 			_dash_requested = true;
 	});
+
+	_binding_interact = player->bind(_action_interact, eTriggerState::Triggered, [this](EIActionValueInstance inst) {
+		if (!compare(inst.getValue().value.x, 0.0f))
+			_interact_requested = true;
+	});
 }
 
 void PlayerInput::update()
@@ -84,6 +90,7 @@ void PlayerInput::shutdown()
 	player->unbind(_binding_crouch);
 	player->unbind(_binding_jump);
 	player->unbind(_binding_dash);
+	player->unbind(_binding_interact);
 }
 
 bool PlayerInput::consumeJump()
@@ -94,4 +101,9 @@ bool PlayerInput::consumeJump()
 bool PlayerInput::consumeDash()
 {
 	return std::exchange(_dash_requested, false);
+}
+
+bool PlayerInput::consumeInteract()
+{
+	return std::exchange(_interact_requested, false);
 }

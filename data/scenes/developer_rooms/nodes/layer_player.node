@@ -18,12 +18,6 @@
 				<parameter name="collision_mask">0x7fffffff</parameter>
 				<parameter name="debug">1</parameter>
 			</property>
-			<property enabled="0" parent="5b253618c0f3cb18baa5f9fd78912f188d2c8dad" guid="324041a2fe2f758105b07a892082b807f19608f2">
-				<parameter name="sharpTurnAngleThreshold">150</parameter>
-				<parameter name="slopeLimit">44</parameter>
-				<parameter name="target">510937540</parameter>
-				<parameter name="body">510937540</parameter>
-			</property>
 			<property parent="3da1a575ca8f743aeb3530aff99d443ff85b1fe5" guid="1161700f6d4adef8c91d289c5b3c4c34549ce794">
 				<parameter name="useGamepad">1</parameter>
 			</property>
@@ -95,6 +89,13 @@
 				<height>1.01519227</height>
 			</shape>
 		</body>
+		<properties>
+			<property parent="46997dd32566d8cc413cccc23e01f8023d5d3899" guid="7f4bb76fc0e2c5a6418edc5eee37dfcb87987ede">
+				<parameter name="playerNode">1892598520</parameter>
+				<parameter name="cameraNode">1892598520</parameter>
+				<parameter name="magnetLineOfSightMask">0x40000000</parameter>
+			</property>
+		</properties>
 		<transform>0.999999940395 0 0 0.0 0 0.999999940395 0 0.0 0 0 0.999999940395 0.0 0 0 0 1.0</transform>
 		<node type="ObjectMeshStatic" id="1691979073" immovable="1" name="capsule">
 			<mesh_name>guid://30a2c3df4360c3a29b876de716cc573fdc7af63e</mesh_name>

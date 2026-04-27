@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>a51122c1008c9b214f1e982f089eb0a2dd22fa29</guid>
+	<type>property</type>
+	<hash>a05e45d7a3cbffd078d4644808be54b424bf122ab9a584a78f0f2b50ccc22ad1</hash>
+	<runtimes>
+		<runtime id="a51122c1008c9b214f1e982f089eb0a2dd22fa29" name="Pickup" link="0" type="4"/>
+	</runtimes>
+</asset>

@@ -17,6 +17,7 @@ public:
 
 	bool consumeJump();
 	bool consumeDash();
+	bool consumeInteract();
 
 private:
 	Unigine::NodePtr _node;
@@ -28,6 +29,7 @@ private:
 	bool _crouch = false;
 	bool _jump_requested = false;
 	bool _dash_requested = false;
+	bool _interact_requested = false;
 	bool _is_input_moving = false;
 
 	EIBinding *_binding_walk = nullptr;
@@ -36,4 +38,5 @@ private:
 	EIBinding *_binding_crouch = nullptr;
 	EIBinding *_binding_jump = nullptr;
 	EIBinding *_binding_dash = nullptr;
+	EIBinding *_binding_interact = nullptr;
 };

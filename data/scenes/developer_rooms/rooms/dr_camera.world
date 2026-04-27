@@ -816,9 +816,6 @@
 			</node>
 		</node>
 		<node type="NodeDummy" id="1670013548" name="NodeDummy_4">
-			<properties>
-				<property parent="cac56ab8ba55649db33551f4e81ac97513663455" guid="abdb4ab6fa94c4f1bb1a682fa72cdb36ad1bf0eb"/>
-			</properties>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 		</node>
 		<node type="NodeDummy" id="590803037" name="main_menu">
@@ -868,7 +865,7 @@
 			<node type="NodeDummy" id="11009356" name="Table">
 				<properties>
 					<property parent="6fb6e20332106eebd34a3ae7a23b685e049f60d1" guid="4101f66144abf8e1ea5c5431bf6d3818ddaf7363">
-						<parameter name="pos">-703 -75 512 180</parameter>
+						<parameter name="pos">-959 -165 0 0</parameter>
 						<parameter name="pivot">0.5 0.5</parameter>
 						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
 						<parameter name="max_columns">1</parameter>
@@ -902,7 +899,7 @@
 			<node type="NodeDummy" id="877544087" name="Table">
 				<properties>
 					<property parent="6fb6e20332106eebd34a3ae7a23b685e049f60d1" guid="55405ca383b89308366b26cfb80753f9d438d13e">
-						<parameter name="pos">1 3 768 250</parameter>
+						<parameter name="pos">1 -122 0 0</parameter>
 						<parameter name="pivot">0 0.5</parameter>
 						<parameter name="anchor">0 0.5 0 0.5</parameter>
 						<parameter name="max_columns">2</parameter>
@@ -1046,6 +1043,10 @@
 				</properties>
 				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 			</node>
+		</node>
+		<node type="NodeLayer" id="1837161089" name="pickups">
+			<layer>guid://d7345f9f7a4e82c5e5b434a1dd365cd6cea5f683</layer>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 10.9148292542 27.3388557434 0.530339855431 1.0</transform>
 		</node>
 	</editor>
 	<console>

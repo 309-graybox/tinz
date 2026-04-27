@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>5dc5bf9d869ebc7b2288a10f75b797661d2061a1</guid>
+	<type>file</type>
+	<hash>66da7b0755a08d343e4ddd8d7c9400ec78e96e28b61837b79c4d2a7e1757def6</hash>
+	<runtimes>
+		<runtime id="5dc5bf9d869ebc7b2288a10f75b797661d2061a1" name="interact.input_action" link="0"/>
+	</runtimes>
+</asset>

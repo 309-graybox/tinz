@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="NodeDummy" id="2095607310" name="magnet">
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 1.12551722494 3.60624571892 1.7763568394e-15 1.0</transform>
+		<node type="NodeReference" id="1797231791" name="pickup">
+			<reference>guid://3d39c3df5729cba99e6e690e88a403d6354cfd8e</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -1.12551722494 -3.60624571892 -1.7763568394e-15 1.0</transform>
+		</node>
+		<node type="NodeReference" id="2040689132" name="pickup_1">
+			<reference>guid://3d39c3df5729cba99e6e690e88a403d6354cfd8e</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 5.52199300116 -4.3207335733 -1.7763568394e-15 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1176010053" name="pickup_2">
+			<reference>guid://3d39c3df5729cba99e6e690e88a403d6354cfd8e</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 13.5847480407 9.68112093613 -1.7763568394e-15 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1990169106" name="pickup_3">
+			<reference>guid://3d39c3df5729cba99e6e690e88a403d6354cfd8e</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -6.6082879371 10.1843444053 -1.7763568394e-15 1.0</transform>
+		</node>
+		<node type="NodeReference" id="226733923" name="pickup_4">
+			<reference>guid://3d39c3df5729cba99e6e690e88a403d6354cfd8e</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -13.5847480407 3.07353184525 1.7763568394e-15 1.0</transform>
+		</node>
+		<node type="NodeReference" id="75950472" name="pickup_5">
+			<reference>guid://3d39c3df5729cba99e6e690e88a403d6354cfd8e</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -10.7902997119 -10.1843444053 -1.7763568394e-15 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1228550929" name="pickup_6">
+			<reference>guid://3d39c3df5729cba99e6e690e88a403d6354cfd8e</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -2.39240901353 2.13512701197 -1.7763568394e-15 1.0</transform>
+		</node>
+	</node>
+	<node type="NodeDummy" id="1523028139" name="instant">
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 14.9034954201 -12.3605395005 0 1.0</transform>
+		<node type="NodeReference" id="846213694" name="pickup_7">
+			<reference>guid://ea5a7f3098824d136d912d36feb6769476b98aba</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 5.33645275265 -7.35065537666 0 1.0</transform>
+		</node>
+		<node type="NodeReference" id="12689748" name="pickup_8">
+			<reference>guid://ea5a7f3098824d136d912d36feb6769476b98aba</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 4.62971734435 2.79333775705 0 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1069622477" name="pickup_7">
+			<reference>guid://ea5a7f3098824d136d912d36feb6769476b98aba</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -3.08332484754 -7.18693045159 -1.7763568394e-15 1.0</transform>
+		</node>
+		<node type="NodeReference" id="438068282" name="pickup_9">
+			<reference>guid://ea5a7f3098824d136d912d36feb6769476b98aba</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -4.71333836575 3.18133608868 1.7763568394e-15 1.0</transform>
+		</node>
+	</node>
+	<node type="NodeDummy" id="1561637601" name="interact">
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 11.575589877 -32.6114129016 0 1.0</transform>
+		<node type="NodeReference" id="767209164" name="pickup">
+			<reference>guid://c57f7f7141a6b98bba0172834a595a55f62419b5</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 5.33645275265 -7.35065537666 0 1.0</transform>
+		</node>
+		<node type="NodeReference" id="520019422" name="pickup">
+			<reference>guid://c57f7f7141a6b98bba0172834a595a55f62419b5</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 4.62971734435 2.79333775705 0 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1339844800" name="pickup">
+			<reference>guid://c57f7f7141a6b98bba0172834a595a55f62419b5</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -3.08332484754 -7.18693045159 -1.7763568394e-15 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1601589234" name="pickup">
+			<reference>guid://c57f7f7141a6b98bba0172834a595a55f62419b5</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -4.71333836575 3.18133608868 1.7763568394e-15 1.0</transform>
+		</node>
+	</node>
+</nodes>

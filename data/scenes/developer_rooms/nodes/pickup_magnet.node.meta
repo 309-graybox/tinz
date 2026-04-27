@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>3d39c3df5729cba99e6e690e88a403d6354cfd8e</guid>
+	<type>node</type>
+	<hash>40cb050a430963ddb40af11a57f59bfe6c30dd8a8ed46e247fa0305722debcd5</hash>
+	<runtimes>
+		<runtime id="3d39c3df5729cba99e6e690e88a403d6354cfd8e" name="pickup_magnet.node" link="0" type="3"/>
+	</runtimes>
+</asset>

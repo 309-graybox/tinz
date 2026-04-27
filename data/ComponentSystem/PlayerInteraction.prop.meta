@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>46997dd32566d8cc413cccc23e01f8023d5d3899</guid>
+	<type>property</type>
+	<hash>307bf1839ddc196ca54fe014d26e39ba22ce623ffa0ac9b77bd15362b4711a23</hash>
+	<runtimes>
+		<runtime id="46997dd32566d8cc413cccc23e01f8023d5d3899" name="PlayerInteraction" link="0" type="4"/>
+	</runtimes>
+</asset>

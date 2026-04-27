@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>c57f7f7141a6b98bba0172834a595a55f62419b5</guid>
+	<type>node</type>
+	<hash>ed95da8dc9420a5ca0aa9159e1eb110d2f3fb14f60f750382ea9e0b98f3dfd51</hash>
+	<runtimes>
+		<runtime id="c57f7f7141a6b98bba0172834a595a55f62419b5" name="pickup_interact.node" link="0" type="3"/>
+	</runtimes>
+</asset>

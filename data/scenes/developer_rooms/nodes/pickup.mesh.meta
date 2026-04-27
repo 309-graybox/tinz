@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>de30d32f038232eb6687c8f478a58e15beb72e3f</guid>
+	<type>mesh</type>
+	<hash>d82207f4e1e3914102be732925e8329c51242d00d89d80e04dbc35429268faec</hash>
+	<runtimes>
+		<runtime id="de30d32f038232eb6687c8f478a58e15beb72e3f" name="pickup.mesh" link="0" type="1"/>
+	</runtimes>
+	<parameters>
+		<parameter type="string" name="lightmaps"/>
+		<parameter type="int" name="resolution">3</parameter>
+		<parameter type="float" name="scale">1</parameter>
+		<parameter type="bool" name="unchanged">1</parameter>
+		<parameter type="bool" name="unwrap_uv_ch_0">0</parameter>
+		<parameter type="bool" name="unwrap_uv_ch_1">1</parameter>
+		<parameter type="int" name="uv_ch">1</parameter>
+		<parameter type="bool" name="vertex_cache">1</parameter>
+	</parameters>
+</asset>
