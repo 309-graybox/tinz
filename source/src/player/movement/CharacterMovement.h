@@ -4,6 +4,7 @@
 #include "IdleState.h"
 #include "MoveState.h"
 #include "TurnState.h"
+#include "utils/TimedFlag.h"
 
 #include <UnigineComponentSystem.h>
 #include <UniginePhysics.h>
@@ -11,7 +12,7 @@
 
 class MovementState;
 
-class CharacterMovement : public Unigine::ComponentBase
+class CharacterMovement: public Unigine::ComponentBase
 {
 public:
 	COMPONENT_DEFINE(CharacterMovement, Unigine::ComponentBase);
@@ -23,6 +24,8 @@ public:
 	PROP_PARAM(Float, runSpeed, 5.0f, "", "Cкорость персонажа в режиме бега, без влияния модификаторов");
 	PROP_PARAM(Float, turnSpeed, 600.0f, "", "Скорость поворота персонажа в сторону целевого направления во время ходьбы и бега");
 	PROP_PARAM(Float, jumpPower, 6.0f, "", "");
+	PROP_PARAM(Float, jumpBufferTime, 0.15f, "", "Окно (в секундах), в течение которого нажатый прыжок остаётся валидным для срабатывания при первой возможности");
+	PROP_PARAM(Float, coyoteTime, 0.2f, "", "Окно (в секундах) после схода с земли, в течение которого прыжок ещё считается возможным");
 	PROP_PARAM(Float, adaptiveJumpDamping, 0.6f, "", "Доля, на которую уменьшается текущая вертикальная скорость при отпускании прыжка для адаптивного прыжка");
 	PROP_PARAM(Float, adaptiveJumpThreshold, 0.05f, "", "Пороговое значение вертикальной скорости (в долях jumpPower), ниже которого адаптивный прыжок перестаёт применяться");
 	PROP_PARAM(Float, turningExitThreshold, 10.0f, "", "Минимальный угол до которого персонаж должен повернуться, чтобы начать идти во время резкого разворота");
@@ -43,7 +46,7 @@ public:
 	PROP_PARAM(Mask, groundCheckIntersectionMask, ~0, "", "Маска для проверки нормали поверхности");
 	PROP_PARAM(Int, collisionIterations, 4, "Collision Iterations", "Number of iterations to resolve collision");
 	PROP_PARAM(Int, playerFps, 60, "Player Fps", "Minimum update rate for the player (in number of frames per second).\n If this value exceeds the current framerate, the player will be updated several times per frame");
-	
+
 private:
 	void init();
 	void update();
@@ -87,9 +90,9 @@ private:
 
 	bool _is_grounded = false;
 	bool _adaptive_jump_pending = false;
+	TimedFlag _grounded_flag;
 
 	friend class MoveState;
 	friend class TurnState;
 	friend class IdleState;
 };
-

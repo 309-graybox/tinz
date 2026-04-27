@@ -1,6 +1,7 @@
 #pragma once
 #include <UnigineMathLib.h>
 #include <plugins/Ryutp/EnhancedInput/EnhancedInput.h>
+#include "utils/TimedFlag.h"
 
 class PlayerInput
 {
@@ -15,7 +16,7 @@ public:
 	bool isSprinting() const noexcept { return _sprint; }
 	bool isCrouching() const noexcept { return _crouch; }
 
-	bool consumeJump();
+	bool consumeJump(float buffer_window = 0.0f);
 	bool consumeJumpRelease();
 	bool consumeDash();
 	bool consumeInteract();
@@ -30,7 +31,7 @@ private:
 	bool _walk = false;
 	bool _sprint = false;
 	bool _crouch = false;
-	bool _jump_requested = false;
+	TimedFlag _jump_press;
 	bool _jump_released = false;
 	bool _jump_held = false;
 	bool _dash_requested = false;

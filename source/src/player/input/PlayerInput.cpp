@@ -53,7 +53,7 @@ void PlayerInput::init(const Unigine::NodePtr &node)
 	_binding_jump = player->bind(_action_jump, eTriggerState::Triggered | eTriggerState::None, [this](EIActionValueInstance inst) {
 		bool is_pressed = !compare(inst.getValue().value.x, 0.0f);
 		if (is_pressed && !_jump_held)
-			_jump_requested = true;
+			_jump_press.stamp();
 		else if (!is_pressed && _jump_held)
 			_jump_released = true;
 		_jump_held = is_pressed;
@@ -97,9 +97,9 @@ void PlayerInput::shutdown()
 	player->unbind(_binding_interact);
 }
 
-bool PlayerInput::consumeJump()
+bool PlayerInput::consumeJump(float buffer_window)
 {
-	return std::exchange(_jump_requested, false);
+	return _jump_press.consumeIfFresh(buffer_window);
 }
 
 bool PlayerInput::consumeJumpRelease()
