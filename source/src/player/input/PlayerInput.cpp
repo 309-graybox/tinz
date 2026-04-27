@@ -50,9 +50,13 @@ void PlayerInput::init(const Unigine::NodePtr &node)
 		_crouch = !compare(inst.getValue().value.x, 0.0f);
 	});
 
-	_binding_jump = player->bind(_action_jump, eTriggerState::Triggered, [this](EIActionValueInstance inst) {
-		if (!compare(inst.getValue().value.x, 0.0f))
+	_binding_jump = player->bind(_action_jump, eTriggerState::Triggered | eTriggerState::None, [this](EIActionValueInstance inst) {
+		bool is_pressed = !compare(inst.getValue().value.x, 0.0f);
+		if (is_pressed && !_jump_held)
 			_jump_requested = true;
+		else if (!is_pressed && _jump_held)
+			_jump_released = true;
+		_jump_held = is_pressed;
 	});
 
 	_binding_dash = player->bind(_action_dash, eTriggerState::Triggered, [this](EIActionValueInstance inst) {
@@ -96,6 +100,11 @@ void PlayerInput::shutdown()
 bool PlayerInput::consumeJump()
 {
 	return std::exchange(_jump_requested, false);
+}
+
+bool PlayerInput::consumeJumpRelease()
+{
+	return std::exchange(_jump_released, false);
 }
 
 bool PlayerInput::consumeDash()

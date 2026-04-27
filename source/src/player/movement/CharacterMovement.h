@@ -23,6 +23,8 @@ public:
 	PROP_PARAM(Float, runSpeed, 5.0f, "", "Cкорость персонажа в режиме бега, без влияния модификаторов");
 	PROP_PARAM(Float, turnSpeed, 600.0f, "", "Скорость поворота персонажа в сторону целевого направления во время ходьбы и бега");
 	PROP_PARAM(Float, jumpPower, 6.0f, "", "");
+	PROP_PARAM(Float, adaptiveJumpDamping, 0.6f, "", "Доля, на которую уменьшается текущая вертикальная скорость при отпускании прыжка для адаптивного прыжка");
+	PROP_PARAM(Float, adaptiveJumpThreshold, 0.05f, "", "Пороговое значение вертикальной скорости (в долях jumpPower), ниже которого адаптивный прыжок перестаёт применяться");
 	PROP_PARAM(Float, turningExitThreshold, 10.0f, "", "Минимальный угол до которого персонаж должен повернуться, чтобы начать идти во время резкого разворота");
 
 	PROP_GROUP("Sprint");
@@ -84,6 +86,7 @@ private:
 	float _turning_exit_cos = 0.0f;
 
 	bool _is_grounded = false;
+	bool _adaptive_jump_pending = false;
 
 	friend class MoveState;
 	friend class TurnState;

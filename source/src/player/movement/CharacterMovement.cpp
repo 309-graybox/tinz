@@ -86,6 +86,15 @@ void CharacterMovement::update()
 		_states[_current_state]->onEnter(_ctx);
 	}
 
+	if (_ctx.vertical_impulse > 0.0f)
+		_adaptive_jump_pending = true;
+
+	if (_adaptive_jump_pending && _ctx.input.consumeJumpRelease() && _vertical_speed > adaptiveJumpThreshold * jumpPower)
+	{
+		_vertical_speed *= 1.0f - adaptiveJumpDamping;
+		_adaptive_jump_pending = false;
+	}
+
 	_horizontal_velocity = Vec3(_ctx.move_direction * _ctx.speed * toFloat(_ctx.input.isInputMoving()));
 
 	float slope_cos = dot(_ctx.move_direction, _up);

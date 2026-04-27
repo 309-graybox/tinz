@@ -16,8 +16,11 @@ public:
 	bool isCrouching() const noexcept { return _crouch; }
 
 	bool consumeJump();
+	bool consumeJumpRelease();
 	bool consumeDash();
 	bool consumeInteract();
+
+	bool isJumpHeld() const noexcept { return _jump_held; }
 
 private:
 	Unigine::NodePtr _node;
@@ -28,6 +31,8 @@ private:
 	bool _sprint = false;
 	bool _crouch = false;
 	bool _jump_requested = false;
+	bool _jump_released = false;
+	bool _jump_held = false;
 	bool _dash_requested = false;
 	bool _interact_requested = false;
 	bool _is_input_moving = false;
