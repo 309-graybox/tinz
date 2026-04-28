@@ -24,8 +24,13 @@ public:
 	PROP_PARAM(Float, magnetSpeed, 6.0f)
 	PROP_PARAM(Float, magnetTimeout, 3.0f)
 
+	// Rotation (deg/sec around node-local Z). 0 = no spin.
+	PROP_PARAM(Float, rotationSpeed, 60.0f)
+	PROP_PARAM(Float, magnetRotationMul, 3.0f) // speed multiplier while magneting
+
 	// Interact
 	PROP_PARAM(Float, interactHoldTime, 0.0f) // 0 = tap, >0 = hold seconds
+	PROP_PARAM(String, interactPromptText)    // shown in PickupPromptUI; empty = default
 
 	// Stacking (logic in a follow-up task)
 	PROP_PARAM(String, typeId)
@@ -71,6 +76,7 @@ private:
 	void update();
 
 	void tickLifetime(float dt);
+	void tickRotation(float dt);
 	void tickMagnet(float dt);
 	void tickInteract(float dt);
 

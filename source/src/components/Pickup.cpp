@@ -27,6 +27,7 @@ void Pickup::update()
 	const float dt = Game::getIFps();
 
 	tickLifetime(dt);
+	tickRotation(dt);
 
 	switch (_state)
 	{
@@ -34,6 +35,19 @@ void Pickup::update()
 		case State::Interact: tickInteract(dt); break;
 		default: break;
 	}
+}
+
+void Pickup::tickRotation(float dt)
+{
+	if (rotationSpeed <= 0.0f || !node)
+		return;
+
+	float speed = rotationSpeed;
+	if (_state == State::Magnet)
+		speed *= magnetRotationMul;
+
+	const quat step(vec3(0.0f, 0.0f, 1.0f), speed * dt);
+	node->setRotation(node->getRotation() * step);
 }
 
 void Pickup::tickLifetime(float dt)

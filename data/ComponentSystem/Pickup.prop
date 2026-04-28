@@ -5,7 +5,10 @@
 	<parameter name="lifetime" type="float">0</parameter>
 	<parameter name="magnetSpeed" type="float">6</parameter>
 	<parameter name="magnetTimeout" type="float">3</parameter>
+	<parameter name="rotationSpeed" type="float">60</parameter>
+	<parameter name="magnetRotationMul" type="float">3</parameter>
 	<parameter name="interactHoldTime" type="float">0</parameter>
+	<parameter name="interactPromptText" type="string"/>
 	<parameter name="typeId" type="string"/>
 	<parameter name="count" type="int">1</parameter>
 	<parameter name="stackable" type="toggle">0</parameter>

@@ -5,7 +5,7 @@
 	<parameter name="turnSpeed" type="float" tooltip="Скорость поворота персонажа в сторону целевого направления во время ходьбы и бега">600</parameter>
 	<parameter name="jumpPower" type="float">6</parameter>
 	<parameter name="jumpBufferTime" type="float" tooltip="Окно (в секундах), в течение которого нажатый прыжок остаётся валидным для срабатывания при первой возможности">0.15</parameter>
-	<parameter name="coyoteTime" type="float" tooltip="Окно (в секундах) после схода с земли, в течение которого прыжок ещё считается возможным">0.3</parameter>
+	<parameter name="coyoteTime" type="float" tooltip="Окно (в секундах) после схода с земли, в течение которого прыжок ещё считается возможным">0.2</parameter>
 	<parameter name="adaptiveJumpDamping" type="float" tooltip="Доля, на которую уменьшается текущая вертикальная скорость при отпускании прыжка для адаптивного прыжка">0.6</parameter>
 	<parameter name="adaptiveJumpThreshold" type="float" tooltip="Пороговое значение вертикальной скорости (в долях jumpPower), ниже которого адаптивный прыжок перестаёт применяться">0.05</parameter>
 	<parameter name="turningExitThreshold" type="float" tooltip="Минимальный угол до которого персонаж должен повернуться, чтобы начать идти во время резкого разворота">10</parameter>
