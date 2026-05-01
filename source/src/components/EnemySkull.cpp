@@ -53,6 +53,8 @@ void EnemySkull::initSkull()
 	_body->setHighPriorityContacts(true);
 
 	_body->getEventContactEnter().connect(_contactEnterConn, this, &EnemySkull::onContactEnter);
+
+	_spawnPos = node->getWorldPosition();
 }
 
 void EnemySkull::updateSkull()
@@ -89,10 +91,22 @@ void EnemySkull::updateSkull()
 
 	if (!_alerted)
 	{
+		// Just lost the player completely → teleport home and reset state so
+		// the skull is ready to ambush from its spawn point again.
+		if (_wasAlerted)
+		{
+			Mat4 t = node->getWorldTransform();
+			t.setTranslate(_spawnPos);
+			_body->setTransform(t);
+			_body->setLinearVelocity(vec3_zero);
+		}
+
 		_ramming = false; // re-evaluate flank approach when we reacquire.
+		_wasAlerted = false;
 		applySteering(vec3_zero, ifps);
 		return;
 	}
+	_wasAlerted = true;
 
 	const vec3 desired = computeDesiredVelocity(target, myPos, targetPos);
 	applySteering(desired, ifps);

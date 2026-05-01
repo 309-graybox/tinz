@@ -78,7 +78,9 @@ private:
 	Unigine::EventConnection _contactEnterConn;
 
 	bool _alerted = false;
+	bool _wasAlerted = false; // Used to detect the alerted→idle transition for the spawn teleport.
 	bool _ramming = false; // Flank: sticky once we commit to the ram dash.
 	float _attackTimer = 0.0f;
 	float _memoryTimer = 0.0f; // Counts down after LOS is lost; while > 0 we still know where the player is.
+	Unigine::Math::Vec3 _spawnPos = Unigine::Math::Vec3_zero;
 };
