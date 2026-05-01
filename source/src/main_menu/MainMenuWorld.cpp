@@ -105,6 +105,7 @@ void MainMenuWorld::tick_pending_click()
 		_pending_timer = 0.0f;
 		_state = State::Idle;
 		btn->onClick();
+		btn->release();
 	}
 }
 

@@ -890,13 +890,21 @@
 					<parameter name="eventId">main_menu_fart</parameter>
 					<parameter name="sample">guid://7ad926dfbd7133596a953640f24d982399e4b123</parameter>
 				</property>
+				<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="ccd8b4ec6cc75d32d337a5e2bdac2839fe5a5ad5">
+					<parameter name="eventId">main_menu_door_open</parameter>
+					<parameter name="sample">guid://8767a1c4532cd66dd0e4edfac0c6e535e5b2c98d</parameter>
+				</property>
+				<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="5804c809beff42ced89c6acb58e3be3f06036e30">
+					<parameter name="eventId">main_menu_door_close</parameter>
+					<parameter name="sample">guid://fc365c412c32216c84f334c363a4b597d1965d88</parameter>
+				</property>
 			</properties>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -1.37765800953 -12.3081874847 4.76837158203e-07 1.0</transform>
 		</node>
 		<node type="NodeDummy" id="142199938" name="exit">
 			<properties>
 				<property parent="ea5954b2d1994bd73ad98e8dfeea4c23cbd7edd7" guid="f24013e496bd6d747ac497d795e34a41b0335add">
-					<parameter name="hoverSound">main_menu_fart</parameter>
+					<parameter name="hoverEnterSound">main_menu_fart</parameter>
 					<parameter name="hoverAnims">
 						<value index="0">
 							<parameter name="target">282669564</parameter>
@@ -947,6 +955,8 @@
 		<node type="NodeDummy" id="492666377" name="start">
 			<properties>
 				<property parent="7e65541055354b793300ac5f0b09b92d592ac5a6" guid="ae74c5a86e51c377252e9a099d28e3a62bf6f3f6">
+					<parameter name="hoverEnterSound">main_menu_door_open</parameter>
+					<parameter name="hoverExitSound">main_menu_door_close</parameter>
 					<parameter name="hoverAnims">
 						<value index="0">
 							<parameter name="target">809052832</parameter>

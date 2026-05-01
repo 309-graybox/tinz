@@ -34,11 +34,7 @@ void MenuButton::onInit()
 void MenuButton::setHovered(bool on)
 {
 	MenuInteractive::setHovered(on);
-	for (int i = 0; i < hoverToggleNodes.size(); ++i)
-	{
-		if (NodePtr n = hoverToggleNodes.get(i))
-			n->setEnabled(on);
-	}
+	update_active_state();
 }
 
 void MenuButton::onUpdate()
@@ -47,7 +43,7 @@ void MenuButton::onUpdate()
 		return;
 
 	const float dt = Game::getIFps();
-	const bool open = isHovered() && !_pressed;
+	const bool open = isHovered() || _pressed;
 
 	for (int i = 0; i < hoverAnims.size() && i < _anim_states.size(); ++i)
 	{
@@ -58,7 +54,6 @@ void MenuButton::onUpdate()
 		if (!target)
 			continue;
 
-		// Interpolate single 0..1 progress for both rotation and offset.
 		const float aim = open ? 1.0f : 0.0f;
 		const float rate = open ? (float)cfg->speed : (float)cfg->damping;
 		st.t = lerp(st.t, aim, saturate(rate * dt));
@@ -92,8 +87,27 @@ void MenuButton::press()
 	if (_pressed)
 		return;
 	_pressed = true;
+	update_active_state();
 
 	const char *sfx = clickSound.get();
 	if (sfx && *sfx)
 		audio::SoundManager::play2D(sfx);
+}
+
+void MenuButton::release()
+{
+	if (!_pressed)
+		return;
+	_pressed = false;
+	update_active_state();
+}
+
+void MenuButton::update_active_state()
+{
+	const bool active = isHovered() || _pressed;
+	for (int i = 0; i < hoverToggleNodes.size(); ++i)
+	{
+		if (NodePtr n = hoverToggleNodes.get(i))
+			n->setEnabled(active);
+	}
 }

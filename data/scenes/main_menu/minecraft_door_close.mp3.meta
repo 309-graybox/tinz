@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>fc365c412c32216c84f334c363a4b597d1965d88</guid>
+	<type>sound</type>
+	<hash>3364a3963439c8581f24fa157029b8800572435a59c9ab716e94eb0dc16563c1</hash>
+	<runtimes>
+		<runtime id="fc365c412c32216c84f334c363a4b597d1965d88" name="minecraft_door_close.mp3" link="0" type="7"/>
+	</runtimes>
+</asset>

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <property version="2.21.0.0" name="MenuInteractive" manual="1" parent_name="node_base">
-	<parameter name="hoverSound" type="string" title="Hover Sound" group="Hover"/>
+	<parameter name="hoverEnterSound" type="string" title="Hover Enter Sound" group="Hover"/>
+	<parameter name="hoverExitSound" type="string" title="Hover Exit Sound" group="Hover"/>
 </property>

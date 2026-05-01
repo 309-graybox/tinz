@@ -41,6 +41,7 @@ public:
 	bool shouldFadeOnClick() const noexcept { return (int)fadeOnClick != 0; }
 
 	void press();
+	void release();
 
 	virtual void onClick() {}
 
@@ -57,6 +58,8 @@ private:
 		Unigine::Math::quat rest_rot;
 		float t = 0.0f;
 	};
+
+	void update_active_state();
 
 	Unigine::Vector<AnimState> _anim_states;
 	bool _pressed = false;

@@ -17,7 +17,8 @@ public:
 	COMPONENT_UPDATE(update);
 
 	PROP_GROUP("Hover")
-	PROP_PARAM(String, hoverSound, "", "Hover Sound")
+	PROP_PARAM(String, hoverEnterSound, "", "Hover Enter Sound")
+	PROP_PARAM(String, hoverExitSound, "", "Hover Exit Sound")
 
 	bool isHovered() const noexcept { return _hovered; }
 	const Unigine::NodePtr &getNode() const noexcept { return node; }

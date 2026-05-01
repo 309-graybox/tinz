@@ -27,12 +27,10 @@ void MenuInteractive::setHovered(bool on)
 		return;
 	_hovered = on;
 	setOutlineEnabled(on);
-	if (on)
-	{
-		const char *sfx = hoverSound.get();
-		if (sfx && *sfx)
-			audio::SoundManager::play2D(sfx);
-	}
+
+	const char *sfx = on ? hoverEnterSound.get() : hoverExitSound.get();
+	if (sfx && *sfx)
+		audio::SoundManager::play2D(sfx);
 }
 
 void MenuInteractive::setOutlineEnabled(bool on)

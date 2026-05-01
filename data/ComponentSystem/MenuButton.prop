@@ -9,7 +9,8 @@
 		<parameter name="speed" type="float" title="Speed" tooltip="Approach rate toward open pose" group="Hover">8</parameter>
 		<parameter name="damping" type="float" title="Damping" tooltip="Return rate to rest pose" group="Hover">8</parameter>
 	</struct>
-	<parameter name="hoverSound" type="string" title="Hover Sound" group="Hover"/>
+	<parameter name="hoverEnterSound" type="string" title="Hover Enter Sound" group="Hover"/>
+	<parameter name="hoverExitSound" type="string" title="Hover Exit Sound" group="Hover"/>
 	<parameter name="hoverAnims" type="array" group="Hover" array_type="HoverPivotAnim"/>
 	<parameter name="hoverToggleNodes" type="array" group="Hover" array_type="node"/>
 	<parameter name="clickDelay" type="float" title="Click Delay" tooltip="Seconds between press and action" group="Click">0.4</parameter>
