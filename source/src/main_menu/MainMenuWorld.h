@@ -21,11 +21,16 @@ public:
 	PROP_PARAM(Mask, intersectionMask, ~0);
 
 private:
-	struct Interactive
+	struct SurfaceMat
 	{
-		Unigine::ObjectPtr obj;
 		Unigine::MaterialPtr mat;
 		int aux_state_idx = -1;
+	};
+
+	struct Interactive
+	{
+		Unigine::NodePtr root;
+		Unigine::Vector<SurfaceMat> surfaces;
 	};
 
 	void init();
@@ -35,12 +40,15 @@ private:
 	void on_exit();
 
 	Unigine::ObjectPtr get_mouse_intersection();
+
 	void cache_interactive(const Unigine::NodePtr &node);
-	void set_highlighted(const Unigine::ObjectPtr &obj, bool on);
+	void collect_surfaces(const Unigine::NodePtr &node, Unigine::Vector<SurfaceMat> &out);
+	Interactive *find_interactive_for(const Unigine::ObjectPtr &obj);
+	void set_highlighted(Interactive *it, bool on);
 
 	Unigine::PlayerPtr _player;
 	Unigine::MaterialPtr _outline_material;
 	Unigine::Vector<Interactive> _interactives;
-	Unigine::ObjectPtr _hovered;
+	Interactive *_hovered = nullptr;
 };
 

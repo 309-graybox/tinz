@@ -772,6 +772,61 @@
 			<indices num_indices="600">107 106 117 118 119 107 107 119 108 118 107 117 18 19 7 7 19 8 19 18 29 30 19 29 9 8 19 30 31 19 20 9 19 19 31 20 43 41 29 29 41 30 31 30 41 110 111 99 99 111 100 99 105 116 110 99 116 112 101 111 101 100 111 104 116 105 115 116 104 112 113 101 101 113 102 115 104 114 3 2 13 14 3 13 24 13 23 24 25 13 13 25 14 24 35 25 23 35 24 23 22 37 34 23 37 34 35 23 35 33 25 45 35 46 45 44 35 35 44 33 35 34 46 0 11 1 6 11 0 11 12 1 11 17 28 17 11 6 22 11 28 22 23 11 11 23 12 12 13 1 1 13 2 6 5 16 17 6 16 13 12 23 77 66 79 79 91 77 79 78 89 90 91 79 90 79 89 79 68 78 91 90 101 102 91 101 81 78 68 81 89 78 101 89 100 89 101 90 89 88 99 100 89 99 88 89 81 4 10 21 15 4 21 16 4 15 4 16 5 9 21 10 21 20 31 32 21 31 20 21 9 26 21 32 21 26 15 16 15 26 54 64 53 64 54 65 75 64 76 64 65 76 76 85 75 87 85 76 85 87 95 96 85 95 96 97 85 85 97 86 107 95 106 95 107 96 97 96 107 108 97 107 108 109 97 97 109 98 98 83 97 83 86 97 82 84 92 93 82 92 83 92 84 92 98 109 103 92 109 103 104 92 92 104 93 98 92 83 120 109 119 114 109 120 109 114 103 109 108 119 104 103 114 45 56 44 56 55 44 46 56 45 67 56 68 67 66 56 56 46 57 56 66 55 56 57 68 46 47 58 57 46 58 66 67 79 68 79 67 42 31 41 42 39 31 31 39 32 39 42 52 41 52 42 41 43 54 53 41 54 52 41 53 51 39 52 51 50 39 39 50 40 63 52 64 63 62 52 52 53 64 52 62 51 69 81 68 70 81 69 81 80 94 88 81 94 80 81 70 70 71 82 80 70 82 82 94 80 94 93 104 105 94 104 105 99 94 94 99 88 93 94 82 16 28 17 27 16 26 27 28 16 28 37 22 28 27 38 36 28 38 37 28 36 26 38 27 40 38 26 26 32 39 40 26 39 37 46 34 37 36 48 47 37 48 47 46 37 38 48 36 38 40 50 49 38 50 49 48 38 61 50 62 50 51 62 62 72 61 62 63 74 73 62 74 72 62 73 84 72 83 82 72 84 72 73 83 72 82 71 64 74 63 74 75 85 86 74 85 74 64 75 86 83 74 74 83 73 48 58 47 59 48 60 59 58 48 48 49 60 69 68 58 58 68 57 58 59 70 69 58 70 60 70 59 60 61 72 71 60 72 61 60 50 70 60 71 50 60 49</indices>
 			<surface name="grid_for_world_creation" intersection="1" collision="1" physics_friction="1" physics_restitution="1" material="001dc611e2ca7385e50593ebc1c181e2e370240c"/>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			<node type="NodeDummy" id="142199938" name="exit">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -7.34672405821 -11.0898457758 1.30000001192 1.0</transform>
+				<node type="ObjectMeshStatic" id="1238123131" immovable="1" name="cylinder">
+					<mesh_name>guid://bc1383d170dd0ec87ec39eb6c449a31ecc8aeb97</mesh_name>
+					<surface name="surface" physics_intersection="1" intersection="1" collision="1" material="f57501d721a5854f8ac1026ee8c524719369339c"/>
+					<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -18.5468855284 21.6847077957 -1.30000001192 1.0</transform>
+				</node>
+				<node type="ObjectMeshStatic" id="194832750" immovable="1" name="polygon">
+					<mesh_name>guid://70f1835757381e8b9b477dee7d6842bd18b7d31c</mesh_name>
+					<surface name="surface" physics_intersection="1" intersection="1" collision="1" material="f57501d721a5854f8ac1026ee8c524719369339c"/>
+					<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -21.742928528 15.4577377988 -1.30000001192 1.0</transform>
+					<node type="ObjectText" id="226796807" immovable="1" name="ObjectText_1">
+						<font_name>core/gui/font.ttf</font_name>
+						<text>CASINO
+</text>
+						<font_size>171</font_size>
+						<text_wrap_width>0</text_wrap_width>
+						<surface name="text" material="196c349704185e581025cee22b1fe0d75cb85e73"/>
+						<transform>0.499999940395 0.866025447845 -8.94069671631e-08 0.0 -3.27825432578e-07 2.68220816224e-07 0.999999642372 0.0 0.866025030613 -0.499999761581 4.02331153282e-07 0.0 3.01181409224 1.87655305447 2.8523973536 1.0</transform>
+					</node>
+				</node>
+				<node type="ObjectMeshStatic" id="608934179" immovable="1" name="plane">
+					<mesh_name>guid://091ffc56dc5aa2a9b4e5658c6c1b056d742c622c</mesh_name>
+					<surface name="surface" physics_intersection="1" intersection="1" collision="1" material="f57501d721a5854f8ac1026ee8c524719369339c"/>
+					<transform>0.686348676682 0.727272629738 0 0.0 -0.727272629738 0.686348676682 0 0.0 0 0 1 0.0 6.38369569233 -6.4513165523 -1.29000001192 1.0</transform>
+				</node>
+				<node type="ObjectMeshStatic" id="1671110330" immovable="1" name="plane_1">
+					<mesh_name>guid://091ffc56dc5aa2a9b4e5658c6c1b056d742c622c</mesh_name>
+					<surface name="surface" physics_intersection="1" intersection="1" collision="1" shadow_mask="0x0" viewport_mask="0x0" material="f57501d721a5854f8ac1026ee8c524719369339c"/>
+					<transform>0.581993639469 0.579363226891 -0.570632576942 0.0 -0.708090424538 0.706101953983 -0.0052829827182 0.0 0.399864166975 0.407134264708 0.821188628674 0.0 5.21561771107 -6.9091130283 -0.397879422229 1.0</transform>
+				</node>
+			</node>
+			<node type="NodeDummy" id="492666377" name="start">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 2.32229809463 -0.650636851787 1.95000004768 1.0</transform>
+				<node type="ObjectMeshStatic" id="687927683" immovable="1" name="wall">
+					<mesh_name>guid://8dcbadcf350adc70f073b60cb4d3b24b63937ca5</mesh_name>
+					<surface name="surface" physics_intersection="1" intersection="1" collision="1" material="f57501d721a5854f8ac1026ee8c524719369339c"/>
+					<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -12.1222982407 1.45063686371 -1.95000004768 1.0</transform>
+					<node type="ObjectText" id="1229385684" immovable="1" name="ObjectText">
+						<font_name>core/gui/font.ttf</font_name>
+						<text>ARKHAM
+ASYLUM</text>
+						<font_size>100</font_size>
+						<text_color>0.243137255 0.235294119 0.168627456 1</text_color>
+						<text_wrap_width>0</text_wrap_width>
+						<surface name="text" material="196c349704185e581025cee22b1fe0d75cb85e73"/>
+						<transform>0.99944871664 0.0234706010669 -0.0234784241766 0.0 0.0234716311097 0.00056558882352 0.999725103378 0.0 0.0234774332494 -0.999725222588 1.43837633004e-05 0.0 8.41203259342 -4.34568516706 3.10327666548 1.0</transform>
+					</node>
+				</node>
+				<node type="ObjectMeshStatic" id="2020752433" immovable="1" name="2">
+					<mesh_name>guid://095d9a95f2e3f0baabdbe834602d8abadf8ff4f2</mesh_name>
+					<surface name="surface" intersection="1" viewport_mask="0x0" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+					<transform>2 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -4.9983355761 -2.03351832076 -2.6999626939 1.0</transform>
+				</node>
+			</node>
 		</node>
 		<node type="LightWorld" id="824505625" name="sun">
 			<scattering>1</scattering>
@@ -868,28 +923,18 @@
 			<is_main>1</is_main>
 			<is_listener>1</is_listener>
 			<controlled>0</controlled>
-			<transform>1 -3.5762787e-07 0 0.0 0 0 1 0.0 -3.5762787e-07 -1 0 0.0 0 0 1.5 1.0</transform>
+			<transform>0.808406054974 0.588625311852 -4.52995300293e-06 0.0 -0.0102614462376 0.0141004621983 0.999848127365 0.0 0.58853584528 -0.808283209801 0.0174390226603 0.0 2.32684189754 -15.0145994819 1.59596838638 1.0</transform>
 		</node>
 		<node type="NodeDummy" id="229341078" name="logic">
 			<properties>
 				<property parent="ef4df286e211716f323bc95c2cc084c2107c31d0" guid="6e8a8eadca341698fe4be5c2ebf79b69a1663713">
-					<parameter name="start">1843816746</parameter>
-					<parameter name="exit">1836042749</parameter>
+					<parameter name="start">492666377</parameter>
+					<parameter name="exit">142199938</parameter>
 					<parameter name="startWorld">guid://6c3a68954326ad72c48529500faaed3687c67a0c</parameter>
 					<parameter name="outlineMat">guid://6cb50fbd6ad5e6d5d19490120d01dacf060225a3</parameter>
 				</property>
 			</properties>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-		</node>
-		<node type="ObjectMeshStatic" id="1836042749" immovable="1" name="exit">
-			<mesh_name>guid://a3a42269bd8b37c4893b70b8f701e46a896c5156</mesh_name>
-			<surface name="box" intersection="1" material="f57501d721a5854f8ac1026ee8c524719369339c"/>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -1.45081078775 3.74690945782 0.966028556045 1.0</transform>
-		</node>
-		<node type="ObjectMeshStatic" id="1843816746" immovable="1" name="start">
-			<mesh_name>guid://a3a42269bd8b37c4893b70b8f701e46a896c5156</mesh_name>
-			<surface name="box" intersection="1" material="f57501d721a5854f8ac1026ee8c524719369339c"/>
-			<transform>1.43840610981 0 0 0.0 0 1.43840610981 0 0.0 0 0 1.43840610981 0.0 1.77145667354 3.43040764458 0.966028556045 1.0</transform>
 		</node>
 	</editor>
 	<console>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>bc1383d170dd0ec87ec39eb6c449a31ecc8aeb97</guid>
+	<type>mesh</type>
+	<hash>5f762209cb0e79291a6906987574356d34049c021e788cad058a22fb8a0963f2</hash>
+	<runtimes>
+		<runtime id="bc1383d170dd0ec87ec39eb6c449a31ecc8aeb97" name="1.mesh" link="0" type="1"/>
+	</runtimes>
+	<parameters>
+		<parameter type="string" name="lightmaps"/>
+		<parameter type="int" name="resolution">3</parameter>
+		<parameter type="float" name="scale">1</parameter>
+		<parameter type="bool" name="unchanged">1</parameter>
+		<parameter type="bool" name="unwrap_uv_ch_0">0</parameter>
+		<parameter type="bool" name="unwrap_uv_ch_1">1</parameter>
+		<parameter type="int" name="uv_ch">1</parameter>
+		<parameter type="bool" name="vertex_cache">1</parameter>
+	</parameters>
+</asset>

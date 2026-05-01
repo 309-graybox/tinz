@@ -1,5 +1,6 @@
 #include "MainMenuWorld.h"
 #include "utils/Utils.h"
+#include <UnigineEngine.h>
 #include <UnigineGame.h>
 #include <UnigineInput.h>
 #include <UnigineMaterials.h>
@@ -29,6 +30,7 @@ void MainMenuWorld::init()
 	Input::setMouseGrab(false);
 	Input::setMouseCursorHide(false);
 
+	_interactives.reserve(2);
 	cache_interactive(start);
 	cache_interactive(exit);
 }
@@ -36,19 +38,20 @@ void MainMenuWorld::init()
 void MainMenuWorld::update()
 {
 	ObjectPtr hit = get_mouse_intersection();
+	Interactive *hit_root = find_interactive_for(hit);
 
-	if (hit != _hovered)
+	if (hit_root != _hovered)
 	{
 		set_highlighted(_hovered, false);
-		set_highlighted(hit, true);
-		_hovered = hit;
+		set_highlighted(hit_root, true);
+		_hovered = hit_root;
 	}
 
 	if (_hovered && Input::isMouseButtonDown(Input::MOUSE_BUTTON_LEFT))
 	{
-		if (start && _hovered->getID() == start->getID())
+		if (start && _hovered->root->getID() == start->getID())
 			on_start();
-		else if (exit && _hovered->getID() == exit->getID())
+		else if (exit && _hovered->root->getID() == exit->getID())
 			on_exit();
 	}
 }
@@ -75,31 +78,59 @@ ObjectPtr MainMenuWorld::get_mouse_intersection()
 
 void MainMenuWorld::cache_interactive(const NodePtr &node)
 {
-	auto obj = checked_ptr_cast<Object>(node);
-	FLOGERR(obj, "interactive node '%s' is not an Object\n", node->getName());
-	FLOGERR(obj->getNumSurfaces() > 0, "interactive object '%s' has no surfaces\n", node->getName());
-
 	Interactive entry;
-	entry.obj = obj;
-	entry.mat = obj->getMaterialInherit(0);
-	entry.aux_state_idx = entry.mat->findState("auxiliary");
-	FLOGERR(entry.aux_state_idx >= 0, "material on '%s' has no 'auxiliary' state\n", node->getName());
+	entry.root = node;
+	collect_surfaces(node, entry.surfaces);
+	FLOGERR(entry.surfaces.size() > 0,
+		"interactive '%s' has no Object descendants with 'auxiliary' state\n", node->getName());
 
-	entry.mat->setState(entry.aux_state_idx, 0);
+	for (auto &sm : entry.surfaces)
+		sm.mat->setState(sm.aux_state_idx, 0);
+
 	_interactives.append(entry);
 }
 
-void MainMenuWorld::set_highlighted(const ObjectPtr &obj, bool on)
+void MainMenuWorld::collect_surfaces(const NodePtr &node, Vector<SurfaceMat> &out)
 {
-	if (!obj)
-		return;
-
-	for (const auto &it : _interactives)
+	if (auto obj = checked_ptr_cast<Object>(node))
 	{
-		if (it.obj == obj)
+		for (int s = 0; s < obj->getNumSurfaces(); ++s)
 		{
-			it.mat->setState(it.aux_state_idx, on ? 1 : 0);
-			return;
+			auto mat = obj->getMaterialInherit(s);
+			if (!mat)
+				continue;
+			int idx = mat->findState("auxiliary");
+			if (idx < 0)
+				continue;
+			out.append({mat, idx});
 		}
 	}
+	for (int i = 0; i < node->getNumChildren(); ++i)
+		collect_surfaces(node->getChild(i), out);
+}
+
+MainMenuWorld::Interactive *MainMenuWorld::find_interactive_for(const ObjectPtr &obj)
+{
+	if (!obj)
+		return nullptr;
+	NodePtr cur = obj;
+	while (cur)
+	{
+		for (auto &it : _interactives)
+		{
+			if (it.root && it.root->getID() == cur->getID())
+				return &it;
+		}
+		cur = cur->getParent();
+	}
+	return nullptr;
+}
+
+void MainMenuWorld::set_highlighted(Interactive *it, bool on)
+{
+	if (!it)
+		return;
+	const int v = on ? 1 : 0;
+	for (auto &sm : it->surfaces)
+		sm.mat->setState(sm.aux_state_idx, v);
 }
