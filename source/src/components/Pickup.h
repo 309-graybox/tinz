@@ -37,6 +37,10 @@ public:
 	PROP_PARAM(Int, count, 1)
 	PROP_PARAM(Toggle, stackable)
 
+	// Audio. Either a registered SoundManager event id or a direct asset path.
+	// Empty = silent.
+	PROP_PARAM(String, soundPickedUp)
+
 	Mode getMode() const noexcept { return static_cast<Mode>(static_cast<int>(mode)); }
 	bool isReady() const noexcept { return _state == State::Idle; }
 	bool isMagneting() const noexcept { return _state == State::Magnet; }

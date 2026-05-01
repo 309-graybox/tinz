@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>c65fbf333ec176532e07c2d348ccdfd39f998804</guid>
+	<type>property</type>
+	<hash>cf77b37265afddf056624088a9aefaa40747dedd90313f4ad365126c9845d5f6</hash>
+	<runtimes>
+		<runtime id="c65fbf333ec176532e07c2d348ccdfd39f998804" name="SoundRegistrator" link="0" type="4"/>
+	</runtimes>
+</asset>

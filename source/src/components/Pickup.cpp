@@ -1,5 +1,7 @@
 #include "Pickup.h"
 
+#include "../audio/SoundManager.h"
+
 #include <UnigineGame.h>
 #include <UnigineLog.h>
 
@@ -174,6 +176,9 @@ void Pickup::pickUp(const NodePtr &player)
 	const int amount = (int)count;
 	onPickedUp(player, amount);
 	_event_picked_up.run(player, amount);
+
+	if (node)
+		audio::SoundManager::play3DAt(soundPickedUp.get(), node->getWorldPosition());
 
 	if (node)
 	{

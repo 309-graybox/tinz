@@ -1,4 +1,5 @@
 #include "AppWorldLogic.h"
+#include "audio/SoundManager.h"
 #include <UnigineConsole.h>
 #include <UnigineVisualizer.h>
 
@@ -20,6 +21,7 @@ int AppWorldLogic::init()
 	// Write here code to be called on world initialization: initialize resources for your world scene during the world start.
 	Console::setOnscreen(true);
 	Visualizer::setEnabled(true);
+	audio::SoundManager::init();
 	return 1;
 }
 
@@ -30,6 +32,7 @@ int AppWorldLogic::init()
 int AppWorldLogic::update()
 {
 	// Write here code to be called before updating each render frame: specify all graphics-related functions you want to be called every frame while your application executes.
+	audio::SoundManager::update();
 	return 1;
 }
 
@@ -54,6 +57,7 @@ int AppWorldLogic::updatePhysics()
 int AppWorldLogic::shutdown()
 {
 	// Write here code to be called on world shutdown: delete resources that were created during world script execution to avoid memory leaks.
+	audio::SoundManager::shutdown();
 	Visualizer::setEnabled(false);
 	Console::setOnscreen(false);
 	return 1;

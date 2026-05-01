@@ -10,6 +10,7 @@
 				<parameter name="magnetSpeed">10</parameter>
 				<parameter name="typeId">0</parameter>
 				<parameter name="stackable">1</parameter>
+				<parameter name="soundPickedUp">pickup</parameter>
 			</property>
 		</properties>
 		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>

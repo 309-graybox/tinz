@@ -12,4 +12,5 @@
 	<parameter name="typeId" type="string"/>
 	<parameter name="count" type="int">1</parameter>
 	<parameter name="stackable" type="toggle">0</parameter>
+	<parameter name="soundPickedUp" type="string"/>
 </property>
