@@ -827,71 +827,78 @@
 			</properties>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 		</node>
-		<node type="NodeDummy" id="698217871" name="canvas">
+		<node type="NodeDummy" id="698217871" name="canvas_main_menu">
 			<properties>
 				<property parent="481e47ba54f50bc51c49f0400a2fcb32a7854368" guid="721884c02fed0a3a34e80e305c349dd70b0c0e5a"/>
 			</properties>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-			<node type="NodeDummy" id="1746565514" name="ButtonStart">
+			<node type="NodeDummy" id="1110092738" name="Table">
 				<properties>
-					<property parent="d007a1033e4bf5d44e6ec54f2ae558534547be19" guid="af028c73a84f1da2ec54b4c3596df6623e706145">
-						<parameter name="pos">0 -60 512 60</parameter>
+					<property parent="6fb6e20332106eebd34a3ae7a23b685e049f60d1" guid="c32ab3c066224f6af1219990c32aee60f0afb9d7">
+						<parameter name="pos">0 0.5 512 243</parameter>
 						<parameter name="pivot">0.5 0.5</parameter>
 						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
-						<parameter name="text">Start</parameter>
-						<parameter name="font_color">0 0 0 1</parameter>
-						<parameter name="font_offset">0 0</parameter>
-						<parameter name="bg_uv">0 0 1 1</parameter>
-						<parameter name="bg_color">1 1 1 1</parameter>
+						<parameter name="min_cell_size">512 60</parameter>
+						<parameter name="max_cell_size">512 60</parameter>
+						<parameter name="spacing">1</parameter>
 					</property>
 				</properties>
 				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-			</node>
-			<node type="NodeDummy" id="1890458465" name="ButtonSettings">
-				<properties>
-					<property parent="d007a1033e4bf5d44e6ec54f2ae558534547be19" guid="0df0f7b860a241bc3ddc9b28818053e274af4612">
-						<parameter name="pos">0 0 512 60</parameter>
-						<parameter name="pivot">0.5 0.5</parameter>
-						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
-						<parameter name="text">Settings</parameter>
-						<parameter name="font_color">0 0 0 1</parameter>
-						<parameter name="font_offset">0 0</parameter>
-						<parameter name="bg_uv">0 0 1 1</parameter>
-						<parameter name="bg_color">1 1 1 1</parameter>
-					</property>
-				</properties>
-				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-			</node>
-			<node type="NodeDummy" id="11009356" name="Table">
-				<properties>
-					<property parent="6fb6e20332106eebd34a3ae7a23b685e049f60d1" guid="4101f66144abf8e1ea5c5431bf6d3818ddaf7363">
-						<parameter name="pos">-959 -165 0 0</parameter>
-						<parameter name="pivot">0.5 0.5</parameter>
-						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
-						<parameter name="max_columns">1</parameter>
-						<parameter name="spacing">0</parameter>
-						<parameter name="use_screen_spacing">1</parameter>
-					</property>
-				</properties>
-				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-			</node>
-			<node type="NodeDummy" id="1884231739" name="ButtonQuit">
-				<properties>
-					<property parent="d007a1033e4bf5d44e6ec54f2ae558534547be19" guid="83eb9ceca31b057c906ef75cc7fd888daafc4166">
-						<parameter name="pos">0 60 512 60</parameter>
-						<parameter name="pivot">0.5 0.5</parameter>
-						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
-						<parameter name="text">Quit</parameter>
-						<parameter name="font_color">0 0 0 1</parameter>
-						<parameter name="font_offset">0 0</parameter>
-						<parameter name="bg_uv">0 0 1 1</parameter>
-						<parameter name="bg_color">1 1 1 1</parameter>
-					</property>
-				</properties>
-				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+				<node type="NodeDummy" id="1593505849" name="ButtonStart">
+					<properties>
+						<property parent="d007a1033e4bf5d44e6ec54f2ae558534547be19" guid="264def9fb4ab0a9e13d5620fd81ca5ed9f660d4a">
+							<parameter name="pos">0 0 512 60</parameter>
+							<parameter name="text">Start</parameter>
+							<parameter name="font_color">0 0 0 1</parameter>
+							<parameter name="font_offset">0 0</parameter>
+							<parameter name="bg_uv">0 0 1 1</parameter>
+							<parameter name="bg_color">1 1 1 1</parameter>
+						</property>
+					</properties>
+					<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+				</node>
+				<node type="NodeDummy" id="1280465336" name="ButtonRestart">
+					<properties>
+						<property parent="d007a1033e4bf5d44e6ec54f2ae558534547be19" guid="9d3e629c9da803a329e0cf6c782a29426d30d603">
+							<parameter name="pos">0 61 512 60</parameter>
+							<parameter name="text">Restart</parameter>
+							<parameter name="font_color">0 0 0 1</parameter>
+							<parameter name="font_offset">0 0</parameter>
+							<parameter name="bg_uv">0 0 1 1</parameter>
+							<parameter name="bg_color">1 1 1 1</parameter>
+						</property>
+					</properties>
+					<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+				</node>
+				<node type="NodeDummy" id="1781236650" name="ButtonSettings">
+					<properties>
+						<property parent="d007a1033e4bf5d44e6ec54f2ae558534547be19" guid="9190b9c2a8dc1077e4007812322a71e43cb35cb1">
+							<parameter name="pos">0 122 512 60</parameter>
+							<parameter name="text">Settings</parameter>
+							<parameter name="font_color">0 0 0 1</parameter>
+							<parameter name="font_offset">0 0</parameter>
+							<parameter name="bg_uv">0 0 1 1</parameter>
+							<parameter name="bg_color">1 1 1 1</parameter>
+						</property>
+					</properties>
+					<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+				</node>
+				<node type="NodeDummy" id="1387552513" name="ButtonQuit">
+					<properties>
+						<property parent="d007a1033e4bf5d44e6ec54f2ae558534547be19" guid="d4423a5304bd5bae816d4fc33d9f6bd09549d3ee">
+							<parameter name="pos">0 183 512 60</parameter>
+							<parameter name="text">Quit</parameter>
+							<parameter name="font_color">0 0 0 1</parameter>
+							<parameter name="font_offset">0 0</parameter>
+							<parameter name="bg_uv">0 0 1 1</parameter>
+							<parameter name="bg_color">1 1 1 1</parameter>
+						</property>
+					</properties>
+					<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+				</node>
 			</node>
 		</node>
-		<node type="NodeDummy" id="1662203416" name="canvas">
+		<node type="NodeDummy" id="1662203416" name="canvas_settings">
 			<properties>
 				<property parent="481e47ba54f50bc51c49f0400a2fcb32a7854368" guid="62f083804abefcc124e27d24a5e2fe2d97bc649b"/>
 			</properties>
