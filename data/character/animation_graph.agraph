@@ -1,8 +1,8 @@
 {
 	"version": "2.21.0.0",
 	"file_guid": "eab12692ed290879e3b4fce93a3ca649d5738e08",
-	"camera_offset_x": 359,
-	"camera_offset_y": 961.5,
+	"camera_offset_x": 375.661865234375,
+	"camera_offset_y": 739.89483642578125,
 	"nodes": {
 		"Output Pose": {
 			"guid": "00000000000000000000000000000000b00002b2",
@@ -19,8 +19,8 @@
 		},
 		"State Machine": {
 			"guid": "a30ee3882e0244f8bf910dcd058401c7e31d98fb",
-			"x": 271,
-			"y": 218,
+			"x": 270,
+			"y": 217,
 			"collapsed": true,
 			"props": {
 				"prop": {
@@ -38,8 +38,8 @@
 			"sm_name": "base",
 			"state_graph": {
 				"file_guid": "7e10a158a2c14433d20e0037d64646168066ba1e",
-				"camera_offset_x": 488.66189575195312,
-				"camera_offset_y": 850.65911865234375,
+				"camera_offset_x": 375.661865234375,
+				"camera_offset_y": 739.89483642578125,
 				"nodes": {
 					"State": {
 						"guid": "49fbdbfa68db5f78689685c7dbc59022dcbc5ae5",
@@ -51,8 +51,8 @@
 					},
 					"State": {
 						"guid": "f70dbe4a6942a2bb2b503a4134f6180f5e93cf00",
-						"x": 405,
-						"y": 3,
+						"x": 221,
+						"y": 46,
 						"collapsed": false,
 						"props": {
 							"prop": {
@@ -80,40 +80,15 @@
 										}
 									}
 								},
-								"Animation Player": {
-									"guid": "3222214eacedf19c39072deba069579aaaea71e9",
-									"x": -96,
-									"y": -64,
+								"State Machine": {
+									"guid": "667b99268621de5341d0542f60eb09032a364ae9",
+									"x": -83,
+									"y": -36,
 									"collapsed": false,
 									"props": {
 										"prop": {
 											"widget": "String",
-											"value": ""
-										},
-										"prop": {
-											"widget": "Combobox",
-											"x": 0
-										},
-										"prop": {
-											"widget": "Combobox",
-											"x": 0
-										}
-									},
-									"inputs": {
-										"input": {
-											"label": "Anim",
-											"type": "Animation",
-											"id": 0
-										},
-										"input": {
-											"label": "Loop",
-											"type": "Bool",
-											"id": 1
-										},
-										"input": {
-											"label": "Speed",
-											"type": "Float",
-											"id": 2
+											"value": "idle_state_machine"
 										}
 									},
 									"outputs": {
@@ -122,7 +97,1583 @@
 											"type": "AnimPose",
 											"id": 0
 										}
-									}
+									},
+									"sm_name": "idle_state_machine",
+									"state_graph": {
+										"file_guid": "d6249e92d9f86e39b7394efdf2f4caf453ca9734",
+										"camera_offset_x": 553,
+										"camera_offset_y": 403.5,
+										"nodes": {
+											"State": {
+												"guid": "afeaeec8c8f99d8f697bcef9de6116f3fa0b5903",
+												"x": 0,
+												"y": 0,
+												"collapsed": false,
+												"state_name": "Entry",
+												"is_entry": 1
+											},
+											"State": {
+												"guid": "50c56a14954821e3ca90ba77bd1691ae25c4aa86",
+												"x": 262,
+												"y": 4,
+												"collapsed": false,
+												"props": {
+													"prop": {
+														"widget": "String",
+														"value": "idle"
+													}
+												},
+												"state_name": "idle",
+												"is_entry": 0,
+												"state_graph": {
+													"file_guid": "3a9c593aa4f33e19c75f12d31bee896e2a73002d",
+													"camera_offset_x": 700,
+													"camera_offset_y": 528,
+													"nodes": {
+														"Output Pose": {
+															"guid": "c6437d665a3647e3fbe8fe81dc8cc8903abce3a8",
+															"x": 192,
+															"y": -32,
+															"collapsed": false,
+															"inputs": {
+																"input": {
+																	"label": "Pose",
+																	"type": "AnimPose",
+																	"id": 0
+																}
+															}
+														},
+														"Animation Player": {
+															"guid": "42b344fcaec984ab90d8263d3e50cf54b62372e7",
+															"x": -96,
+															"y": -64,
+															"collapsed": false,
+															"props": {
+																"prop": {
+																	"widget": "String",
+																	"value": ""
+																},
+																"prop": {
+																	"widget": "Combobox",
+																	"x": 0
+																},
+																"prop": {
+																	"widget": "Combobox",
+																	"x": 0
+																}
+															},
+															"inputs": {
+																"input": {
+																	"label": "Anim",
+																	"type": "Animation",
+																	"id": 0
+																},
+																"input": {
+																	"label": "Loop",
+																	"type": "Bool",
+																	"id": 1
+																},
+																"input": {
+																	"label": "Speed",
+																	"type": "Float",
+																	"id": 2
+																}
+															},
+															"outputs": {
+																"output": {
+																	"label": "Pose",
+																	"type": "AnimPose",
+																	"id": 0
+																}
+															}
+														}
+													},
+													"inputs": {
+														"input": {
+															"node_guid": "c6437d665a3647e3fbe8fe81dc8cc8903abce3a8",
+															"anchor_id": 0,
+															"show_label": true,
+															"show_inline_widget": false
+														},
+														"input": {
+															"node_guid": "42b344fcaec984ab90d8263d3e50cf54b62372e7",
+															"anchor_id": 0,
+															"show_label": false,
+															"show_inline_widget": true,
+															"anim_guid": "3be52b161cd61662e891c571a429a4b5a0e056d8",
+															"string_value": "Neutral Idle"
+														},
+														"input": {
+															"node_guid": "42b344fcaec984ab90d8263d3e50cf54b62372e7",
+															"anchor_id": 1,
+															"show_label": true,
+															"show_inline_widget": true,
+															"bool_value": 1
+														},
+														"input": {
+															"node_guid": "42b344fcaec984ab90d8263d3e50cf54b62372e7",
+															"anchor_id": 2,
+															"show_label": true,
+															"show_inline_widget": true,
+															"float_value": 1
+														}
+													},
+													"anchors": {
+														"anchor": {
+															"input_index": 0,
+															"input_id": 0,
+															"input_label": "Pose",
+															"input_node": "c6437d665a3647e3fbe8fe81dc8cc8903abce3a8",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "Pose",
+															"output_node": "42b344fcaec984ab90d8263d3e50cf54b62372e7"
+														}
+													}
+												}
+											},
+											"State": {
+												"guid": "183bdb9cdd4a48f1d8ede95d74ba5e2201884b07",
+												"x": 515,
+												"y": -225,
+												"collapsed": false,
+												"props": {
+													"prop": {
+														"widget": "String",
+														"value": "idle_1"
+													}
+												},
+												"state_name": "idle_1",
+												"is_entry": 0,
+												"state_graph": {
+													"file_guid": "116edb506a528ae3a55d882185a6ea1f6ceece6b",
+													"camera_offset_x": 700,
+													"camera_offset_y": 528,
+													"nodes": {
+														"Output Pose": {
+															"guid": "7695ce1caba6bbbf6c40c65f9299c6a0134110ce",
+															"x": 192,
+															"y": -32,
+															"collapsed": false,
+															"inputs": {
+																"input": {
+																	"label": "Pose",
+																	"type": "AnimPose",
+																	"id": 0
+																}
+															}
+														},
+														"Animation Player": {
+															"guid": "ca7e89028c9e02906748a03b8cc0e148c78ce1d5",
+															"x": -96,
+															"y": -64,
+															"collapsed": false,
+															"props": {
+																"prop": {
+																	"widget": "String",
+																	"value": ""
+																},
+																"prop": {
+																	"widget": "Combobox",
+																	"x": 0
+																},
+																"prop": {
+																	"widget": "Combobox",
+																	"x": 0
+																}
+															},
+															"inputs": {
+																"input": {
+																	"label": "Anim",
+																	"type": "Animation",
+																	"id": 0
+																},
+																"input": {
+																	"label": "Loop",
+																	"type": "Bool",
+																	"id": 1
+																},
+																"input": {
+																	"label": "Speed",
+																	"type": "Float",
+																	"id": 2
+																}
+															},
+															"outputs": {
+																"output": {
+																	"label": "Pose",
+																	"type": "AnimPose",
+																	"id": 0
+																}
+															}
+														}
+													},
+													"inputs": {
+														"input": {
+															"node_guid": "7695ce1caba6bbbf6c40c65f9299c6a0134110ce",
+															"anchor_id": 0,
+															"show_label": true,
+															"show_inline_widget": false
+														},
+														"input": {
+															"node_guid": "ca7e89028c9e02906748a03b8cc0e148c78ce1d5",
+															"anchor_id": 0,
+															"show_label": false,
+															"show_inline_widget": true,
+															"anim_guid": "ce4c87e01e615b3d7a3b75136c6f0a05f6b636b2",
+															"string_value": "Sad Idle"
+														},
+														"input": {
+															"node_guid": "ca7e89028c9e02906748a03b8cc0e148c78ce1d5",
+															"anchor_id": 1,
+															"show_label": true,
+															"show_inline_widget": true,
+															"bool_value": 1
+														},
+														"input": {
+															"node_guid": "ca7e89028c9e02906748a03b8cc0e148c78ce1d5",
+															"anchor_id": 2,
+															"show_label": true,
+															"show_inline_widget": true,
+															"float_value": 1
+														}
+													},
+													"anchors": {
+														"anchor": {
+															"input_index": 0,
+															"input_id": 0,
+															"input_label": "Pose",
+															"input_node": "7695ce1caba6bbbf6c40c65f9299c6a0134110ce",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "Pose",
+															"output_node": "ca7e89028c9e02906748a03b8cc0e148c78ce1d5"
+														}
+													}
+												}
+											},
+											"Condition": {
+												"guid": "dcf58ddc672567b52037c71f40cb291901fcde8e",
+												"x": 430,
+												"y": 118,
+												"collapsed": false,
+												"props": {
+													"prop": {
+														"widget": "String",
+														"value": "Condition_1"
+													}
+												},
+												"condition_name": "Condition_1",
+												"condition_graph": {
+													"file_guid": "aae4a04e51df80158a2aedc9454b4a431c0a45d0",
+													"camera_offset_x": 1346,
+													"camera_offset_y": 631,
+													"nodes": {
+														"Transition Result": {
+															"guid": "9ee70ca46935f4b2e2846105cfda9b7392155eef",
+															"x": 0,
+															"y": 0,
+															"collapsed": false,
+															"props": {
+																"prop": {
+																	"widget": "Bool",
+																	"x": 0
+																}
+															},
+															"inputs": {
+																"input": {
+																	"label": "Can Transition",
+																	"type": "Bool",
+																	"id": 0
+																},
+																"input": {
+																	"label": "Enter Time",
+																	"type": "Float",
+																	"id": 1
+																}
+															}
+														},
+														"Greater": {
+															"guid": "7af5656a39fbb1e8251de275dca0d27b11e7a0cc",
+															"x": -691,
+															"y": -266,
+															"collapsed": false,
+															"inputs": {
+																"input": {
+																	"label": "A",
+																	"type": "Float",
+																	"id": 0
+																},
+																"input": {
+																	"label": "B",
+																	"type": "Float",
+																	"id": 1
+																}
+															},
+															"outputs": {
+																"output": {
+																	"label": "",
+																	"type": "Bool",
+																	"id": 0
+																}
+															}
+														},
+														"Float": {
+															"guid": "53d25cac7686b74e1f4b0aaf22011c7ed7a29fde",
+															"x": -919,
+															"y": -240,
+															"collapsed": true,
+															"outputs": {
+																"output": {
+																	"label": "",
+																	"type": "Float",
+																	"id": 0
+																}
+															},
+															"param_guid": "37c98e3eec8d0c2e4d7c4527a416bf166c61caa1"
+														},
+														"And": {
+															"guid": "67e501beed931cb708f9d97951484d5afdaf7ac0",
+															"x": -381,
+															"y": -60,
+															"collapsed": false,
+															"inputs": {
+																"input": {
+																	"label": "A",
+																	"type": "Bool",
+																	"id": 0
+																},
+																"input": {
+																	"label": "B",
+																	"type": "Bool",
+																	"id": 1
+																}
+															},
+															"outputs": {
+																"output": {
+																	"label": "",
+																	"type": "Bool",
+																	"id": 0
+																}
+															}
+														},
+														"State Time": {
+															"guid": "8d7869200ea6da5e27a89153143665b5ea4531f2",
+															"x": -705,
+															"y": 45,
+															"collapsed": false,
+															"outputs": {
+																"output": {
+																	"label": "Time",
+																	"type": "Float",
+																	"id": 0
+																}
+															}
+														},
+														"Greater": {
+															"guid": "7f3cbb52925398a6b3b238bd4d04bea477e119f4",
+															"x": -533,
+															"y": 17,
+															"collapsed": false,
+															"inputs": {
+																"input": {
+																	"label": "A",
+																	"type": "Float",
+																	"id": 0
+																},
+																"input": {
+																	"label": "B",
+																	"type": "Float",
+																	"id": 1
+																}
+															},
+															"outputs": {
+																"output": {
+																	"label": "",
+																	"type": "Bool",
+																	"id": 0
+																}
+															}
+														},
+														"Bool": {
+															"guid": "526554d418dceb239cd43a379a21b66de99dfb46",
+															"x": -304,
+															"y": 30,
+															"collapsed": true,
+															"outputs": {
+																"output": {
+																	"label": "",
+																	"type": "Bool",
+																	"id": 0
+																}
+															},
+															"param_guid": "e3418d54b721028be9fb3b753e464c33acc46edf"
+														},
+														"And": {
+															"guid": "33b3e6266b38c9fd14ed044163c0bd0a88383268",
+															"x": -186,
+															"y": -17,
+															"collapsed": false,
+															"inputs": {
+																"input": {
+																	"label": "A",
+																	"type": "Bool",
+																	"id": 0
+																},
+																"input": {
+																	"label": "B",
+																	"type": "Bool",
+																	"id": 1
+																}
+															},
+															"outputs": {
+																"output": {
+																	"label": "",
+																	"type": "Bool",
+																	"id": 0
+																}
+															}
+														},
+														"And": {
+															"guid": "db3893c84374aae5099ba95b6c307793c546cfda",
+															"x": -535,
+															"y": -173,
+															"collapsed": false,
+															"inputs": {
+																"input": {
+																	"label": "A",
+																	"type": "Bool",
+																	"id": 0
+																},
+																"input": {
+																	"label": "B",
+																	"type": "Bool",
+																	"id": 1
+																}
+															},
+															"outputs": {
+																"output": {
+																	"label": "",
+																	"type": "Bool",
+																	"id": 0
+																}
+															}
+														},
+														"Less": {
+															"guid": "76bf734e4cde20dbf511b3777d418b9cc4225d71",
+															"x": -683,
+															"y": -150,
+															"collapsed": false,
+															"inputs": {
+																"input": {
+																	"label": "A",
+																	"type": "Float",
+																	"id": 0
+																},
+																"input": {
+																	"label": "B",
+																	"type": "Float",
+																	"id": 1
+																}
+															},
+															"outputs": {
+																"output": {
+																	"label": "",
+																	"type": "Bool",
+																	"id": 0
+																}
+															}
+														},
+														"Float": {
+															"guid": "a0d785e26c52174eb17dd69b067e30f9e82a3735",
+															"x": -913,
+															"y": -125,
+															"collapsed": true,
+															"outputs": {
+																"output": {
+																	"label": "",
+																	"type": "Float",
+																	"id": 0
+																}
+															},
+															"param_guid": "37c98e3eec8d0c2e4d7c4527a416bf166c61caa1"
+														}
+													},
+													"inputs": {
+														"input": {
+															"node_guid": "9ee70ca46935f4b2e2846105cfda9b7392155eef",
+															"anchor_id": 0,
+															"show_label": true,
+															"show_inline_widget": true,
+															"bool_value": 1
+														},
+														"input": {
+															"node_guid": "9ee70ca46935f4b2e2846105cfda9b7392155eef",
+															"anchor_id": 1,
+															"show_label": true,
+															"show_inline_widget": false,
+															"float_value": 0
+														},
+														"input": {
+															"node_guid": "7af5656a39fbb1e8251de275dca0d27b11e7a0cc",
+															"anchor_id": 0,
+															"show_label": true,
+															"show_inline_widget": false,
+															"float_value": 0
+														},
+														"input": {
+															"node_guid": "7af5656a39fbb1e8251de275dca0d27b11e7a0cc",
+															"anchor_id": 1,
+															"show_label": true,
+															"show_inline_widget": false,
+															"float_value": 0.5
+														},
+														"input": {
+															"node_guid": "67e501beed931cb708f9d97951484d5afdaf7ac0",
+															"anchor_id": 0,
+															"show_label": true,
+															"show_inline_widget": false,
+															"bool_value": 0
+														},
+														"input": {
+															"node_guid": "67e501beed931cb708f9d97951484d5afdaf7ac0",
+															"anchor_id": 1,
+															"show_label": true,
+															"show_inline_widget": false,
+															"bool_value": 0
+														},
+														"input": {
+															"node_guid": "7f3cbb52925398a6b3b238bd4d04bea477e119f4",
+															"anchor_id": 0,
+															"show_label": true,
+															"show_inline_widget": false,
+															"float_value": 0
+														},
+														"input": {
+															"node_guid": "7f3cbb52925398a6b3b238bd4d04bea477e119f4",
+															"anchor_id": 1,
+															"show_label": true,
+															"show_inline_widget": false,
+															"float_value": 10
+														},
+														"input": {
+															"node_guid": "33b3e6266b38c9fd14ed044163c0bd0a88383268",
+															"anchor_id": 0,
+															"show_label": true,
+															"show_inline_widget": false,
+															"bool_value": 0
+														},
+														"input": {
+															"node_guid": "33b3e6266b38c9fd14ed044163c0bd0a88383268",
+															"anchor_id": 1,
+															"show_label": true,
+															"show_inline_widget": false,
+															"bool_value": 0
+														},
+														"input": {
+															"node_guid": "db3893c84374aae5099ba95b6c307793c546cfda",
+															"anchor_id": 0,
+															"show_label": true,
+															"show_inline_widget": false,
+															"bool_value": 0
+														},
+														"input": {
+															"node_guid": "db3893c84374aae5099ba95b6c307793c546cfda",
+															"anchor_id": 1,
+															"show_label": true,
+															"show_inline_widget": false,
+															"bool_value": 0
+														},
+														"input": {
+															"node_guid": "76bf734e4cde20dbf511b3777d418b9cc4225d71",
+															"anchor_id": 0,
+															"show_label": true,
+															"show_inline_widget": false,
+															"float_value": 0
+														},
+														"input": {
+															"node_guid": "76bf734e4cde20dbf511b3777d418b9cc4225d71",
+															"anchor_id": 1,
+															"show_label": true,
+															"show_inline_widget": false,
+															"float_value": 1
+														}
+													},
+													"anchors": {
+														"anchor": {
+															"input_index": 0,
+															"input_id": 0,
+															"input_label": "Can Transition",
+															"input_node": "9ee70ca46935f4b2e2846105cfda9b7392155eef",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "",
+															"output_node": "33b3e6266b38c9fd14ed044163c0bd0a88383268"
+														},
+														"anchor": {
+															"input_index": 0,
+															"input_id": 0,
+															"input_label": "A",
+															"input_node": "7af5656a39fbb1e8251de275dca0d27b11e7a0cc",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "",
+															"output_node": "53d25cac7686b74e1f4b0aaf22011c7ed7a29fde"
+														},
+														"anchor": {
+															"input_index": 0,
+															"input_id": 0,
+															"input_label": "A",
+															"input_node": "67e501beed931cb708f9d97951484d5afdaf7ac0",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "",
+															"output_node": "db3893c84374aae5099ba95b6c307793c546cfda"
+														},
+														"anchor": {
+															"input_index": 1,
+															"input_id": 1,
+															"input_label": "B",
+															"input_node": "67e501beed931cb708f9d97951484d5afdaf7ac0",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "",
+															"output_node": "7f3cbb52925398a6b3b238bd4d04bea477e119f4"
+														},
+														"anchor": {
+															"input_index": 0,
+															"input_id": 0,
+															"input_label": "A",
+															"input_node": "7f3cbb52925398a6b3b238bd4d04bea477e119f4",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "Time",
+															"output_node": "8d7869200ea6da5e27a89153143665b5ea4531f2"
+														},
+														"anchor": {
+															"input_index": 0,
+															"input_id": 0,
+															"input_label": "A",
+															"input_node": "33b3e6266b38c9fd14ed044163c0bd0a88383268",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "",
+															"output_node": "67e501beed931cb708f9d97951484d5afdaf7ac0"
+														},
+														"anchor": {
+															"input_index": 1,
+															"input_id": 1,
+															"input_label": "B",
+															"input_node": "33b3e6266b38c9fd14ed044163c0bd0a88383268",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "",
+															"output_node": "526554d418dceb239cd43a379a21b66de99dfb46"
+														},
+														"anchor": {
+															"input_index": 0,
+															"input_id": 0,
+															"input_label": "A",
+															"input_node": "db3893c84374aae5099ba95b6c307793c546cfda",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "",
+															"output_node": "7af5656a39fbb1e8251de275dca0d27b11e7a0cc"
+														},
+														"anchor": {
+															"input_index": 1,
+															"input_id": 1,
+															"input_label": "B",
+															"input_node": "db3893c84374aae5099ba95b6c307793c546cfda",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "",
+															"output_node": "76bf734e4cde20dbf511b3777d418b9cc4225d71"
+														},
+														"anchor": {
+															"input_index": 0,
+															"input_id": 0,
+															"input_label": "A",
+															"input_node": "76bf734e4cde20dbf511b3777d418b9cc4225d71",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "",
+															"output_node": "a0d785e26c52174eb17dd69b067e30f9e82a3735"
+														}
+													}
+												}
+											},
+											"State": {
+												"guid": "d5f1f72c3f01adb66cb5bb2f7d69d74643f16e5e",
+												"x": 549,
+												"y": 216,
+												"collapsed": false,
+												"props": {
+													"prop": {
+														"widget": "String",
+														"value": "idle_2"
+													}
+												},
+												"state_name": "idle_2",
+												"is_entry": 0,
+												"state_graph": {
+													"file_guid": "6c9fa71888e5210ff9bf9f6bd9beb60fdbb2e1aa",
+													"camera_offset_x": 700,
+													"camera_offset_y": 528,
+													"nodes": {
+														"Output Pose": {
+															"guid": "7b73a41e6dcb0abea454c88703d7cfd7b4082501",
+															"x": 192,
+															"y": -32,
+															"collapsed": false,
+															"inputs": {
+																"input": {
+																	"label": "Pose",
+																	"type": "AnimPose",
+																	"id": 0
+																}
+															}
+														},
+														"Animation Player": {
+															"guid": "b45cba0a5b1bbb88769c44950fcdde663cb03a6c",
+															"x": -96,
+															"y": -64,
+															"collapsed": false,
+															"props": {
+																"prop": {
+																	"widget": "String",
+																	"value": ""
+																},
+																"prop": {
+																	"widget": "Combobox",
+																	"x": 0
+																},
+																"prop": {
+																	"widget": "Combobox",
+																	"x": 0
+																}
+															},
+															"inputs": {
+																"input": {
+																	"label": "Anim",
+																	"type": "Animation",
+																	"id": 0
+																},
+																"input": {
+																	"label": "Loop",
+																	"type": "Bool",
+																	"id": 1
+																},
+																"input": {
+																	"label": "Speed",
+																	"type": "Float",
+																	"id": 2
+																}
+															},
+															"outputs": {
+																"output": {
+																	"label": "Pose",
+																	"type": "AnimPose",
+																	"id": 0
+																}
+															}
+														}
+													},
+													"inputs": {
+														"input": {
+															"node_guid": "7b73a41e6dcb0abea454c88703d7cfd7b4082501",
+															"anchor_id": 0,
+															"show_label": true,
+															"show_inline_widget": false
+														},
+														"input": {
+															"node_guid": "b45cba0a5b1bbb88769c44950fcdde663cb03a6c",
+															"anchor_id": 0,
+															"show_label": false,
+															"show_inline_widget": true,
+															"anim_guid": "ba66d61ca20afbe7dd05ae5f208d7112c57858ce",
+															"string_value": "Happy Idle"
+														},
+														"input": {
+															"node_guid": "b45cba0a5b1bbb88769c44950fcdde663cb03a6c",
+															"anchor_id": 1,
+															"show_label": true,
+															"show_inline_widget": true,
+															"bool_value": 1
+														},
+														"input": {
+															"node_guid": "b45cba0a5b1bbb88769c44950fcdde663cb03a6c",
+															"anchor_id": 2,
+															"show_label": true,
+															"show_inline_widget": true,
+															"float_value": 1
+														}
+													},
+													"anchors": {
+														"anchor": {
+															"input_index": 0,
+															"input_id": 0,
+															"input_label": "Pose",
+															"input_node": "7b73a41e6dcb0abea454c88703d7cfd7b4082501",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "Pose",
+															"output_node": "b45cba0a5b1bbb88769c44950fcdde663cb03a6c"
+														}
+													}
+												}
+											},
+											"Condition": {
+												"guid": "f31c3066a6130f81b6560c6fc8478fcb6f4fed29",
+												"x": 663,
+												"y": 16,
+												"collapsed": false,
+												"props": {
+													"prop": {
+														"widget": "String",
+														"value": "Condition_2"
+													}
+												},
+												"condition_name": "Condition_2",
+												"condition_graph": {
+													"file_guid": "ad0ea4448a3180013dea5be78dd9a2f3697a8a36",
+													"camera_offset_x": 1299,
+													"camera_offset_y": 541,
+													"nodes": {
+														"Transition Result": {
+															"guid": "2ea449eac4f41c23720c1d43a73b92e2e9ff7c1d",
+															"x": 0,
+															"y": 0,
+															"collapsed": false,
+															"props": {
+																"prop": {
+																	"widget": "Bool",
+																	"x": 0
+																}
+															},
+															"inputs": {
+																"input": {
+																	"label": "Can Transition",
+																	"type": "Bool",
+																	"id": 0
+																},
+																"input": {
+																	"label": "Enter Time",
+																	"type": "Float",
+																	"id": 1
+																}
+															}
+														},
+														"Not": {
+															"guid": "d557171e774e1d2b6f15395969f56fd9e7f3ab20",
+															"x": -234,
+															"y": 54,
+															"collapsed": true,
+															"inputs": {
+																"input": {
+																	"label": "X",
+																	"type": "Bool",
+																	"id": 0
+																}
+															},
+															"outputs": {
+																"output": {
+																	"label": "",
+																	"type": "Bool",
+																	"id": 0
+																}
+															}
+														},
+														"Or": {
+															"guid": "1228ffe047b65e24a0ee0d13aac756931a5c6eb2",
+															"x": -169,
+															"y": 3,
+															"collapsed": false,
+															"inputs": {
+																"input": {
+																	"label": "A",
+																	"type": "Bool",
+																	"id": 0
+																},
+																"input": {
+																	"label": "B",
+																	"type": "Bool",
+																	"id": 1
+																}
+															},
+															"outputs": {
+																"output": {
+																	"label": "",
+																	"type": "Bool",
+																	"id": 0
+																}
+															}
+														},
+														"Bool": {
+															"guid": "99cb42a60c080eeeecec9bafe321250b369d7e69",
+															"x": -352,
+															"y": 54,
+															"collapsed": true,
+															"outputs": {
+																"output": {
+																	"label": "",
+																	"type": "Bool",
+																	"id": 0
+																}
+															},
+															"param_guid": "e3418d54b721028be9fb3b753e464c33acc46edf"
+														},
+														"Greater": {
+															"guid": "eb32a4344a41468c458d13d552c8080b999d7e3f",
+															"x": -582,
+															"y": -184,
+															"collapsed": false,
+															"inputs": {
+																"input": {
+																	"label": "A",
+																	"type": "Float",
+																	"id": 0
+																},
+																"input": {
+																	"label": "B",
+																	"type": "Float",
+																	"id": 1
+																}
+															},
+															"outputs": {
+																"output": {
+																	"label": "",
+																	"type": "Bool",
+																	"id": 0
+																}
+															}
+														},
+														"Float": {
+															"guid": "d7d0605e35db731c31721d99724f5f14788dde60",
+															"x": -809,
+															"y": -158,
+															"collapsed": true,
+															"outputs": {
+																"output": {
+																	"label": "",
+																	"type": "Float",
+																	"id": 0
+																}
+															},
+															"param_guid": "37c98e3eec8d0c2e4d7c4527a416bf166c61caa1"
+														},
+														"And": {
+															"guid": "974009665342ed5718475a814b83a543e527cfa8",
+															"x": -328,
+															"y": -97,
+															"collapsed": false,
+															"inputs": {
+																"input": {
+																	"label": "A",
+																	"type": "Bool",
+																	"id": 0
+																},
+																"input": {
+																	"label": "B",
+																	"type": "Bool",
+																	"id": 1
+																}
+															},
+															"outputs": {
+																"output": {
+																	"label": "",
+																	"type": "Bool",
+																	"id": 0
+																}
+															}
+														},
+														"Greater": {
+															"guid": "9aed70fc04075e4812b0c23db7e691eb03996ee7",
+															"x": -570,
+															"y": -78,
+															"collapsed": false,
+															"inputs": {
+																"input": {
+																	"label": "A",
+																	"type": "Float",
+																	"id": 0
+																},
+																"input": {
+																	"label": "B",
+																	"type": "Float",
+																	"id": 1
+																}
+															},
+															"outputs": {
+																"output": {
+																	"label": "",
+																	"type": "Bool",
+																	"id": 0
+																}
+															}
+														},
+														"State Time": {
+															"guid": "1a56e908b0d0635b90dd699bc881290761f89f1a",
+															"x": -714,
+															"y": -52,
+															"collapsed": true,
+															"outputs": {
+																"output": {
+																	"label": "Time",
+																	"type": "Float",
+																	"id": 0
+																}
+															}
+														}
+													},
+													"inputs": {
+														"input": {
+															"node_guid": "2ea449eac4f41c23720c1d43a73b92e2e9ff7c1d",
+															"anchor_id": 0,
+															"show_label": true,
+															"show_inline_widget": true,
+															"bool_value": 1
+														},
+														"input": {
+															"node_guid": "2ea449eac4f41c23720c1d43a73b92e2e9ff7c1d",
+															"anchor_id": 1,
+															"show_label": true,
+															"show_inline_widget": false,
+															"float_value": 0
+														},
+														"input": {
+															"node_guid": "d557171e774e1d2b6f15395969f56fd9e7f3ab20",
+															"anchor_id": 0,
+															"show_label": true,
+															"show_inline_widget": false,
+															"bool_value": 0
+														},
+														"input": {
+															"node_guid": "1228ffe047b65e24a0ee0d13aac756931a5c6eb2",
+															"anchor_id": 0,
+															"show_label": true,
+															"show_inline_widget": false,
+															"bool_value": 0
+														},
+														"input": {
+															"node_guid": "1228ffe047b65e24a0ee0d13aac756931a5c6eb2",
+															"anchor_id": 1,
+															"show_label": true,
+															"show_inline_widget": false,
+															"bool_value": 0
+														},
+														"input": {
+															"node_guid": "eb32a4344a41468c458d13d552c8080b999d7e3f",
+															"anchor_id": 0,
+															"show_label": true,
+															"show_inline_widget": false,
+															"float_value": 0
+														},
+														"input": {
+															"node_guid": "eb32a4344a41468c458d13d552c8080b999d7e3f",
+															"anchor_id": 1,
+															"show_label": true,
+															"show_inline_widget": false,
+															"float_value": 0.5
+														},
+														"input": {
+															"node_guid": "974009665342ed5718475a814b83a543e527cfa8",
+															"anchor_id": 0,
+															"show_label": true,
+															"show_inline_widget": false,
+															"bool_value": 0
+														},
+														"input": {
+															"node_guid": "974009665342ed5718475a814b83a543e527cfa8",
+															"anchor_id": 1,
+															"show_label": true,
+															"show_inline_widget": false,
+															"bool_value": 0
+														},
+														"input": {
+															"node_guid": "9aed70fc04075e4812b0c23db7e691eb03996ee7",
+															"anchor_id": 0,
+															"show_label": true,
+															"show_inline_widget": false,
+															"float_value": 0
+														},
+														"input": {
+															"node_guid": "9aed70fc04075e4812b0c23db7e691eb03996ee7",
+															"anchor_id": 1,
+															"show_label": true,
+															"show_inline_widget": false,
+															"float_value": 10
+														}
+													},
+													"anchors": {
+														"anchor": {
+															"input_index": 0,
+															"input_id": 0,
+															"input_label": "Can Transition",
+															"input_node": "2ea449eac4f41c23720c1d43a73b92e2e9ff7c1d",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "",
+															"output_node": "1228ffe047b65e24a0ee0d13aac756931a5c6eb2"
+														},
+														"anchor": {
+															"input_index": 0,
+															"input_id": 0,
+															"input_label": "X",
+															"input_node": "d557171e774e1d2b6f15395969f56fd9e7f3ab20",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "",
+															"output_node": "99cb42a60c080eeeecec9bafe321250b369d7e69"
+														},
+														"anchor": {
+															"input_index": 0,
+															"input_id": 0,
+															"input_label": "A",
+															"input_node": "1228ffe047b65e24a0ee0d13aac756931a5c6eb2",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "",
+															"output_node": "974009665342ed5718475a814b83a543e527cfa8"
+														},
+														"anchor": {
+															"input_index": 1,
+															"input_id": 1,
+															"input_label": "B",
+															"input_node": "1228ffe047b65e24a0ee0d13aac756931a5c6eb2",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "",
+															"output_node": "d557171e774e1d2b6f15395969f56fd9e7f3ab20"
+														},
+														"anchor": {
+															"input_index": 0,
+															"input_id": 0,
+															"input_label": "A",
+															"input_node": "eb32a4344a41468c458d13d552c8080b999d7e3f",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "",
+															"output_node": "d7d0605e35db731c31721d99724f5f14788dde60"
+														},
+														"anchor": {
+															"input_index": 0,
+															"input_id": 0,
+															"input_label": "A",
+															"input_node": "974009665342ed5718475a814b83a543e527cfa8",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "",
+															"output_node": "eb32a4344a41468c458d13d552c8080b999d7e3f"
+														},
+														"anchor": {
+															"input_index": 1,
+															"input_id": 1,
+															"input_label": "B",
+															"input_node": "974009665342ed5718475a814b83a543e527cfa8",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "",
+															"output_node": "9aed70fc04075e4812b0c23db7e691eb03996ee7"
+														},
+														"anchor": {
+															"input_index": 0,
+															"input_id": 0,
+															"input_label": "A",
+															"input_node": "9aed70fc04075e4812b0c23db7e691eb03996ee7",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "Time",
+															"output_node": "1a56e908b0d0635b90dd699bc881290761f89f1a"
+														}
+													}
+												}
+											},
+											"Condition": {
+												"guid": "3988fc64dc1b661c001f7bc519f5993bef9af7af",
+												"x": 413,
+												"y": -102,
+												"collapsed": false,
+												"props": {
+													"prop": {
+														"widget": "String",
+														"value": "Condition_3"
+													}
+												},
+												"condition_name": "Condition_3",
+												"condition_graph": {
+													"file_guid": "8a92ea047b0d5fd1561121e596aa4e4b2e11cacf",
+													"camera_offset_x": 700,
+													"camera_offset_y": 528,
+													"nodes": {
+														"Transition Result": {
+															"guid": "4e841190e2f905b999a6a8031e24dea2785bb9e2",
+															"x": 357,
+															"y": 47,
+															"collapsed": false,
+															"props": {
+																"prop": {
+																	"widget": "Bool",
+																	"x": 0
+																}
+															},
+															"inputs": {
+																"input": {
+																	"label": "Can Transition",
+																	"type": "Bool",
+																	"id": 0
+																},
+																"input": {
+																	"label": "Enter Time",
+																	"type": "Float",
+																	"id": 1
+																}
+															}
+														},
+														"And": {
+															"guid": "6777b448a3c6f8a7b30a62793eee668c04ae5883",
+															"x": 170,
+															"y": 79,
+															"collapsed": false,
+															"inputs": {
+																"input": {
+																	"label": "A",
+																	"type": "Bool",
+																	"id": 0
+																},
+																"input": {
+																	"label": "B",
+																	"type": "Bool",
+																	"id": 1
+																}
+															},
+															"outputs": {
+																"output": {
+																	"label": "",
+																	"type": "Bool",
+																	"id": 0
+																}
+															}
+														},
+														"Float": {
+															"guid": "1041022a65e57492f57c4c35aaf1549b7ddb638c",
+															"x": -400,
+															"y": 9,
+															"collapsed": true,
+															"outputs": {
+																"output": {
+																	"label": "",
+																	"type": "Float",
+																	"id": 0
+																}
+															},
+															"param_guid": "37c98e3eec8d0c2e4d7c4527a416bf166c61caa1"
+														},
+														"And": {
+															"guid": "dee839a05752cadacd59b8b1f8cd9b18c2e8c97b",
+															"x": -25,
+															"y": 36,
+															"collapsed": false,
+															"inputs": {
+																"input": {
+																	"label": "A",
+																	"type": "Bool",
+																	"id": 0
+																},
+																"input": {
+																	"label": "B",
+																	"type": "Bool",
+																	"id": 1
+																}
+															},
+															"outputs": {
+																"output": {
+																	"label": "",
+																	"type": "Bool",
+																	"id": 0
+																}
+															}
+														},
+														"State Time": {
+															"guid": "9dd1c76c57505fe464f00a6f4b2567d28f8b309e",
+															"x": -349,
+															"y": 141,
+															"collapsed": false,
+															"outputs": {
+																"output": {
+																	"label": "Time",
+																	"type": "Float",
+																	"id": 0
+																}
+															}
+														},
+														"Greater": {
+															"guid": "d1616fd2b6c91fbfe912234be4c1e142bb4d5f65",
+															"x": -177,
+															"y": 113,
+															"collapsed": false,
+															"inputs": {
+																"input": {
+																	"label": "A",
+																	"type": "Float",
+																	"id": 0
+																},
+																"input": {
+																	"label": "B",
+																	"type": "Float",
+																	"id": 1
+																}
+															},
+															"outputs": {
+																"output": {
+																	"label": "",
+																	"type": "Bool",
+																	"id": 0
+																}
+															}
+														},
+														"Bool": {
+															"guid": "8f15b01220da36d2e8d09a7da027a3e01b0d34b4",
+															"x": 52,
+															"y": 130,
+															"collapsed": true,
+															"outputs": {
+																"output": {
+																	"label": "",
+																	"type": "Bool",
+																	"id": 0
+																}
+															},
+															"param_guid": "e3418d54b721028be9fb3b753e464c33acc46edf"
+														},
+														"Less": {
+															"guid": "9bcf163a1bbac02915a88005b397123b0371b81c",
+															"x": -173,
+															"y": -17,
+															"collapsed": false,
+															"inputs": {
+																"input": {
+																	"label": "A",
+																	"type": "Float",
+																	"id": 0
+																},
+																"input": {
+																	"label": "B",
+																	"type": "Float",
+																	"id": 1
+																}
+															},
+															"outputs": {
+																"output": {
+																	"label": "",
+																	"type": "Bool",
+																	"id": 0
+																}
+															}
+														}
+													},
+													"inputs": {
+														"input": {
+															"node_guid": "4e841190e2f905b999a6a8031e24dea2785bb9e2",
+															"anchor_id": 0,
+															"show_label": true,
+															"show_inline_widget": true,
+															"bool_value": 1
+														},
+														"input": {
+															"node_guid": "4e841190e2f905b999a6a8031e24dea2785bb9e2",
+															"anchor_id": 1,
+															"show_label": true,
+															"show_inline_widget": false,
+															"float_value": 0
+														},
+														"input": {
+															"node_guid": "6777b448a3c6f8a7b30a62793eee668c04ae5883",
+															"anchor_id": 0,
+															"show_label": true,
+															"show_inline_widget": false,
+															"bool_value": 0
+														},
+														"input": {
+															"node_guid": "6777b448a3c6f8a7b30a62793eee668c04ae5883",
+															"anchor_id": 1,
+															"show_label": true,
+															"show_inline_widget": false,
+															"bool_value": 0
+														},
+														"input": {
+															"node_guid": "dee839a05752cadacd59b8b1f8cd9b18c2e8c97b",
+															"anchor_id": 0,
+															"show_label": true,
+															"show_inline_widget": false,
+															"bool_value": 0
+														},
+														"input": {
+															"node_guid": "dee839a05752cadacd59b8b1f8cd9b18c2e8c97b",
+															"anchor_id": 1,
+															"show_label": true,
+															"show_inline_widget": false,
+															"bool_value": 0
+														},
+														"input": {
+															"node_guid": "d1616fd2b6c91fbfe912234be4c1e142bb4d5f65",
+															"anchor_id": 0,
+															"show_label": true,
+															"show_inline_widget": false,
+															"float_value": 0
+														},
+														"input": {
+															"node_guid": "d1616fd2b6c91fbfe912234be4c1e142bb4d5f65",
+															"anchor_id": 1,
+															"show_label": true,
+															"show_inline_widget": false,
+															"float_value": 10
+														},
+														"input": {
+															"node_guid": "9bcf163a1bbac02915a88005b397123b0371b81c",
+															"anchor_id": 0,
+															"show_label": true,
+															"show_inline_widget": false,
+															"float_value": 0
+														},
+														"input": {
+															"node_guid": "9bcf163a1bbac02915a88005b397123b0371b81c",
+															"anchor_id": 1,
+															"show_label": true,
+															"show_inline_widget": false,
+															"float_value": 0.5
+														}
+													},
+													"anchors": {
+														"anchor": {
+															"input_index": 0,
+															"input_id": 0,
+															"input_label": "Can Transition",
+															"input_node": "4e841190e2f905b999a6a8031e24dea2785bb9e2",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "",
+															"output_node": "6777b448a3c6f8a7b30a62793eee668c04ae5883"
+														},
+														"anchor": {
+															"input_index": 0,
+															"input_id": 0,
+															"input_label": "A",
+															"input_node": "6777b448a3c6f8a7b30a62793eee668c04ae5883",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "",
+															"output_node": "dee839a05752cadacd59b8b1f8cd9b18c2e8c97b"
+														},
+														"anchor": {
+															"input_index": 1,
+															"input_id": 1,
+															"input_label": "B",
+															"input_node": "6777b448a3c6f8a7b30a62793eee668c04ae5883",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "",
+															"output_node": "8f15b01220da36d2e8d09a7da027a3e01b0d34b4"
+														},
+														"anchor": {
+															"input_index": 0,
+															"input_id": 0,
+															"input_label": "A",
+															"input_node": "dee839a05752cadacd59b8b1f8cd9b18c2e8c97b",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "",
+															"output_node": "9bcf163a1bbac02915a88005b397123b0371b81c"
+														},
+														"anchor": {
+															"input_index": 1,
+															"input_id": 1,
+															"input_label": "B",
+															"input_node": "dee839a05752cadacd59b8b1f8cd9b18c2e8c97b",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "",
+															"output_node": "d1616fd2b6c91fbfe912234be4c1e142bb4d5f65"
+														},
+														"anchor": {
+															"input_index": 0,
+															"input_id": 0,
+															"input_label": "A",
+															"input_node": "d1616fd2b6c91fbfe912234be4c1e142bb4d5f65",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "Time",
+															"output_node": "9dd1c76c57505fe464f00a6f4b2567d28f8b309e"
+														},
+														"anchor": {
+															"input_index": 0,
+															"input_id": 0,
+															"input_label": "A",
+															"input_node": "9bcf163a1bbac02915a88005b397123b0371b81c",
+															"output_index": 0,
+															"output_id": 0,
+															"output_label": "",
+															"output_node": "1041022a65e57492f57c4c35aaf1549b7ddb638c"
+														}
+													}
+												}
+											}
+										},
+										"inputs": {
+										},
+										"anchors": {
+										}
+									},
+									"transitions": [
+										{
+											"guid": "05df7d08720b371996cfad9bdebd7eaed492d31a",
+											"from": "afeaeec8c8f99d8f697bcef9de6116f3fa0b5903",
+											"to": "50c56a14954821e3ca90ba77bd1691ae25c4aa86",
+											"name": "Transition"
+										},
+										{
+											"guid": "2a9ae5ccf753ff104fe54f4f11865f2aad8129fe",
+											"from": "3988fc64dc1b661c001f7bc519f5993bef9af7af",
+											"to": "183bdb9cdd4a48f1d8ede95d74ba5e2201884b07",
+											"name": "Transition"
+										},
+										{
+											"guid": "6209ab329e1864579c5e1a2b702df3b59c874945",
+											"from": "183bdb9cdd4a48f1d8ede95d74ba5e2201884b07",
+											"to": "f31c3066a6130f81b6560c6fc8478fcb6f4fed29",
+											"name": "Transition"
+										},
+										{
+											"guid": "21f46fde9836f3177b226f191bbe869b3e3c29e0",
+											"from": "dcf58ddc672567b52037c71f40cb291901fcde8e",
+											"to": "d5f1f72c3f01adb66cb5bb2f7d69d74643f16e5e",
+											"name": "Transition"
+										},
+										{
+											"guid": "c71f77b42e31e63437144d551aa746e9750c53bf",
+											"from": "d5f1f72c3f01adb66cb5bb2f7d69d74643f16e5e",
+											"to": "f31c3066a6130f81b6560c6fc8478fcb6f4fed29",
+											"name": "Transition"
+										},
+										{
+											"guid": "f6cf4440f9dd5687b015dff3586858ec45144e12",
+											"from": "50c56a14954821e3ca90ba77bd1691ae25c4aa86",
+											"to": "dcf58ddc672567b52037c71f40cb291901fcde8e",
+											"name": "Transition"
+										},
+										{
+											"guid": "41c8740697b2dd43e5f2408f0fff52fb75541649",
+											"from": "50c56a14954821e3ca90ba77bd1691ae25c4aa86",
+											"to": "3988fc64dc1b661c001f7bc519f5993bef9af7af",
+											"name": "Transition"
+										},
+										{
+											"guid": "983ecb72894f6f2648b0e85d9ca006ffdfb62b14",
+											"from": "f31c3066a6130f81b6560c6fc8478fcb6f4fed29",
+											"to": "50c56a14954821e3ca90ba77bd1691ae25c4aa86",
+											"name": "Transition"
+										}
+									]
 								}
 							},
 							"inputs": {
@@ -131,28 +1682,6 @@
 									"anchor_id": 0,
 									"show_label": true,
 									"show_inline_widget": false
-								},
-								"input": {
-									"node_guid": "3222214eacedf19c39072deba069579aaaea71e9",
-									"anchor_id": 0,
-									"show_label": false,
-									"show_inline_widget": true,
-									"anim_guid": "0034e24dbce7e46e1e364cb0843ae382bf244e74",
-									"string_value": "Standing Idle"
-								},
-								"input": {
-									"node_guid": "3222214eacedf19c39072deba069579aaaea71e9",
-									"anchor_id": 1,
-									"show_label": true,
-									"show_inline_widget": true,
-									"bool_value": 1
-								},
-								"input": {
-									"node_guid": "3222214eacedf19c39072deba069579aaaea71e9",
-									"anchor_id": 2,
-									"show_label": true,
-									"show_inline_widget": true,
-									"float_value": 1
 								}
 							},
 							"anchors": {
@@ -164,15 +1693,15 @@
 									"output_index": 0,
 									"output_id": 0,
 									"output_label": "Pose",
-									"output_node": "3222214eacedf19c39072deba069579aaaea71e9"
+									"output_node": "667b99268621de5341d0542f60eb09032a364ae9"
 								}
 							}
 						}
 					},
 					"State": {
 						"guid": "cad7e3309746ae4ed7900715af7f5adf36fd1803",
-						"x": 416,
-						"y": -168,
+						"x": 296,
+						"y": -223,
 						"collapsed": false,
 						"props": {
 							"prop": {
@@ -411,8 +1940,8 @@
 					},
 					"Condition": {
 						"guid": "cb8913e244ec025b1555104f9e60d53e0eae172d",
-						"x": 415,
-						"y": -75,
+						"x": 264,
+						"y": -85,
 						"collapsed": false,
 						"props": {
 							"prop": {
@@ -454,7 +1983,7 @@
 								"Bool": {
 									"guid": "da3b5028213e4bae083d58ed10711ee43d5f5b1b",
 									"x": -139,
-									"y": 25,
+									"y": 26,
 									"collapsed": true,
 									"outputs": {
 										"output": {
@@ -498,8 +2027,8 @@
 					},
 					"Condition": {
 						"guid": "2db0490630acccc87a672e4d3faa1fcb4c7a385c",
-						"x": 457,
-						"y": -268,
+						"x": 394,
+						"y": -283,
 						"collapsed": false,
 						"props": {
 							"prop": {
@@ -585,8 +2114,8 @@
 					},
 					"Condition": {
 						"guid": "0fb5270c3434bc1b46cf06e18c0f3aacc1163e6f",
-						"x": 418,
-						"y": -267,
+						"x": 361,
+						"y": -307,
 						"collapsed": false,
 						"props": {
 							"prop": {
@@ -709,8 +2238,8 @@
 					},
 					"Condition": {
 						"guid": "3ca19550c3164e46b6d264cfdc2a25c558a58b56",
-						"x": 455,
-						"y": -73,
+						"x": 302,
+						"y": -75,
 						"collapsed": false,
 						"props": {
 							"prop": {
@@ -953,8 +2482,8 @@
 					},
 					"Condition": {
 						"guid": "6d48b1c86ff644ecec6dcd0dbd48a70f27b5fe3b",
-						"x": 656,
-						"y": -170,
+						"x": 537,
+						"y": -157,
 						"collapsed": false,
 						"props": {
 							"prop": {
@@ -1077,8 +2606,8 @@
 					},
 					"Condition": {
 						"guid": "a62269a693708ba8ee7d9ca36e2f5280e280c0e1",
-						"x": 701,
-						"y": -213,
+						"x": 641,
+						"y": -241,
 						"collapsed": false,
 						"props": {
 							"prop": {
@@ -1236,8 +2765,8 @@
 					},
 					"Condition": {
 						"guid": "89d95fe807e435566bd2db87ea0b3a36e3ef222e",
-						"x": 695,
-						"y": -128,
+						"x": 603,
+						"y": -106,
 						"collapsed": false,
 						"props": {
 							"prop": {
@@ -1278,7 +2807,7 @@
 								},
 								"Bool": {
 									"guid": "58c1207c6eb55de0f2c5384994315c1c884e5e65",
-									"x": -360,
+									"x": -359,
 									"y": -10,
 									"collapsed": true,
 									"outputs": {
@@ -1317,7 +2846,7 @@
 								},
 								"Not": {
 									"guid": "30153ffc9d642ed22323241309d0f645c2a966d8",
-									"x": -219,
+									"x": -218,
 									"y": -10,
 									"collapsed": true,
 									"inputs": {
@@ -1376,7 +2905,7 @@
 								},
 								"Bool": {
 									"guid": "a2deb7482196254bfc341d450df70283b80242a1",
-									"x": -368,
+									"x": -367,
 									"y": 13,
 									"collapsed": true,
 									"outputs": {
@@ -1390,7 +2919,7 @@
 								},
 								"Not": {
 									"guid": "ac3ee170b44592f6226278f744e9b129fcd17b8c",
-									"x": -219,
+									"x": -218,
 									"y": 13,
 									"collapsed": true,
 									"inputs": {
@@ -1874,9 +3403,17 @@
 			"bool_value": 1
 		},
 		"param": {
-			"name": "is_jumped",
+			"name": "rand_float",
+			"type": "Float",
+			"guid": "37c98e3eec8d0c2e4d7c4527a416bf166c61caa1",
+			"min": 0,
+			"max": 1,
+			"float_value": 0
+		},
+		"param": {
+			"name": "is_idle",
 			"type": "Bool",
-			"guid": "c5aae0727599e94e4b263149393bd32998fc44e8",
+			"guid": "e3418d54b721028be9fb3b753e464c33acc46edf",
 			"bool_value": 0
 		}
 	},
@@ -1896,11 +3433,17 @@
 		"override": {
 			"guid": "db8e34de876b6b1f920f2d459fd4b7ea164bc474",
 			"type": "Bool",
-			"active": true,
+			"active": false,
 			"bool_value": 1
 		},
 		"override": {
-			"guid": "c5aae0727599e94e4b263149393bd32998fc44e8",
+			"guid": "37c98e3eec8d0c2e4d7c4527a416bf166c61caa1",
+			"type": "Float",
+			"active": false,
+			"float_value": 0
+		},
+		"override": {
+			"guid": "e3418d54b721028be9fb3b753e464c33acc46edf",
 			"type": "Bool",
 			"active": false,
 			"bool_value": 0

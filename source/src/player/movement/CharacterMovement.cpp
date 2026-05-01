@@ -151,9 +151,17 @@ void CharacterMovement::update()
 
 
 	//%%%%%%%%%%%%%%%%%%% Anim %%%%%%%%%%%%%%%
-	_anim->setParamBool("is_moving", !compare(_ctx.speed, 0.0f));
-	_anim->setParamBool("is_sprinting", abs(_ctx.speed) > runSpeed);
-	_anim->setParamBool("is_grounded", _is_grounded);
+	{
+		bool is_moving = !compare(_ctx.speed, 0.0f);
+		bool is_spinting = abs(_ctx.speed) > runSpeed;
+		bool is_grounded = _is_grounded;
+		bool is_idle = !is_moving && !is_spinting && is_grounded;
+		_anim->setParamBool("is_moving", is_moving);
+		_anim->setParamBool("is_sprinting", is_spinting);
+		_anim->setParamBool("is_grounded", is_grounded);
+		_anim->setParamBool("is_idle", is_idle);
+		_anim->setParamFloat("rand_float", Game::getRandomFloat(0.0f, 1.0f));
+	}
 }
 
 void CharacterMovement::shutdown()
