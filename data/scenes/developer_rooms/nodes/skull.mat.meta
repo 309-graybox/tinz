@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>71ee15229dbcff95ceb92b7209be99863660e891</guid>
+	<type>material</type>
+	<hash>81a2138e23e957dc3b05174fef013142d6ea198a7d5e354d8af8474f8d65b9f6</hash>
+	<runtimes>
+		<runtime id="71ee15229dbcff95ceb92b7209be99863660e891" name="skull" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>

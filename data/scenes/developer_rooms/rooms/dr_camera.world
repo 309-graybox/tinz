@@ -1064,6 +1064,18 @@
 			</properties>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 		</node>
+		<node type="NodeReference" id="576451383" name="skull_red">
+			<reference>guid://ec88fa0a4e63ff7bf9b12a5a245b9303a5f05a59</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 52.3936279287 55.3296913825 1.16529622429 1.0</transform>
+		</node>
+		<node type="NodeReference" id="193582386" name="skull_blue">
+			<reference>guid://52731e319b1c0fd87bd3f421f41fda44bf9cf7b4</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 72.3863937492 39.1198116599 1.05575085576 1.0</transform>
+		</node>
+		<node type="NodeReference" id="920093792" name="skull_green">
+			<reference>guid://9436cb2bf12fc6e8d4420a9b2e82f74941b03de6</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 73.7253112793 54.0696411133 0.760848488602 1.0</transform>
+		</node>
 	</editor>
 	<console>
 		<bake_lighting_bounces>4</bake_lighting_bounces>

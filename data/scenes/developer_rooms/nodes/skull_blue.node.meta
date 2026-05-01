@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>52731e319b1c0fd87bd3f421f41fda44bf9cf7b4</guid>
+	<type>node</type>
+	<hash>cb5ef3685bf452c08600da6ba5dc24e03cc4470ae12d7f9b31b495aa6d4134b5</hash>
+	<runtimes>
+		<runtime id="52731e319b1c0fd87bd3f421f41fda44bf9cf7b4" name="skull_blue.node" link="0" type="3"/>
+	</runtimes>
+</asset>

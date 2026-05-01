@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="EnemySkull" manual="1" parent_name="node_base">
+	<parameter name="has_hp" type="toggle">0</parameter>
+	<parameter name="max_hp" type="float">0</parameter>
+	<parameter name="behavior" type="switch" title="Skull behavior" items="Direct,Orbit,Flank">0</parameter>
+	<parameter name="sightRange" type="float" tooltip="Maximum free line-of-sight length at which the skull notices the player" group="Sight">20</parameter>
+	<parameter name="sightMask" type="mask" tooltip="Intersection mask for the line-of-sight raycast" group="Sight">-1</parameter>
+	<parameter name="speed" type="float" tooltip="Target chase speed" group="Movement">8</parameter>
+	<parameter name="accel" type="float" tooltip="Maximum velocity change per second — smooths jerks and reactions to collisions" group="Movement">60</parameter>
+	<parameter name="linearDamping" type="float" tooltip="Linear damping applied to BodyRigid on init. 0 is fine since velocity is overwritten every frame" group="Movement">0</parameter>
+	<parameter name="orbitDistance" type="float" tooltip="Below this distance the blue skull abandons the orbit and rams the player directly" group="Orbit">1.5</parameter>
+	<parameter name="orbitApproachSpeed" type="float" tooltip="Constant inward pull applied while orbiting (m/s) — controls how fast the spiral tightens" group="Orbit">2</parameter>
+	<parameter name="flankDistance" type="float" tooltip="Radius the green skull holds while orbiting around the player toward their back" group="Flank">3</parameter>
+	<parameter name="flankCommitAngle" type="float" tooltip="Once the skull is within this angle (degrees) of the player's back, it commits to a straight ram" group="Flank">30</parameter>
+	<parameter name="flankRadialCorrection" type="float" tooltip="How aggressively (m/s) the skull corrects toward `flankDistance` while orbiting" group="Flank">2</parameter>
+	<parameter name="attackDamage" type="float" group="Attack">10</parameter>
+	<parameter name="attackCooldown" type="float" tooltip="Minimum time between hits (only meaningful when dieOnHit is off)" group="Attack">1</parameter>
+	<parameter name="dieOnHit" type="toggle" tooltip="Skull is destroyed immediately after dealing damage (kamikaze)" group="Attack">1</parameter>
+	<parameter name="debugDraw" type="toggle" tooltip="Draw a line from the skull to its current target. Color encodes behavior" group="Debug">0</parameter>
+</property>

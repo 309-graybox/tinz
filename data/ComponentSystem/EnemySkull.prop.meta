@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>5a10ea14e9407a11b7103368f5e492ac0a5b59bd</guid>
+	<type>property</type>
+	<hash>5e5a75d28431ea160481cd0a3767b4ebda72b7b6b363d702577fe7287eca25fd</hash>
+	<runtimes>
+		<runtime id="5a10ea14e9407a11b7103368f5e492ac0a5b59bd" name="EnemySkull" link="0" type="4"/>
+	</runtimes>
+</asset>

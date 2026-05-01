@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="124021883" immovable="1" name="Sphere">
+		<mesh_name>guid://4a4767364aff4b69efd87286f00fcf13e9777995</mesh_name>
+		<surface name="sphere" intersection="1" material="61d7371609eb306dec26ba6617732b08c9dddff5"/>
+		<properties>
+			<property parent="5a10ea14e9407a11b7103368f5e492ac0a5b59bd" guid="305a1bded1e1d118f611312e8bfda6b39e4e141d">
+				<parameter name="has_hp">1</parameter>
+				<parameter name="max_hp">100</parameter>
+			</property>
+		</properties>
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>
