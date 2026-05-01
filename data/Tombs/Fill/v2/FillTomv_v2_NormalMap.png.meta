@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>96cc18961c58368ad7155c8ea848683a8bc8cebc</guid>
+	<type>texture</type>
+	<hash>9539772e7e0217d759d1cef00439f776a704cd252527de0e7a609ccb14225cf6</hash>
+	<runtimes>
+		<runtime id="96cc18961c58368ad7155c8ea848683a8bc8cebc" name="FillTomv_v2_NormalMap.png" link="0" type="6"/>
+		<runtime id="65b94045f875824990c83dad16c9791f885c5aeb" name="FillTomv_v2_NormalMap.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">ATI2</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">0</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">normal map (rg)</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">0</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>

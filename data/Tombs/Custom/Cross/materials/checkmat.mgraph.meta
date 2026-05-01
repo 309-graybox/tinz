@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>3eec0aea6771cc94cfeeb662daa2f477e96f88f0</guid>
+	<type>material_graph</type>
+	<hash>e7aed2e8e9653d8abe79b33cb381a09dc6f0e32f437a2d0538acb6427ac5cd6c</hash>
+	<runtimes>
+		<runtime id="3eec0aea6771cc94cfeeb662daa2f477e96f88f0" name="checkmat.mgraph" link="0"/>
+		<runtime id="4fa67e2c179a397d04f61664bea5da59fba7cfa2" name="checkmat" link="1" type="5"/>
+	</runtimes>
+</asset>

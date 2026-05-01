@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>5cc74ffe165750371509eaf6c80ca595235805e4</guid>
+	<type>texture</type>
+	<hash>a1484072bfc36d92c9b12eb64257b2667f9a72e6ebd36681d5bc303b73783908</hash>
+	<runtimes>
+		<runtime id="5cc74ffe165750371509eaf6c80ca595235805e4" name="FillTomb_v2_BaseTex.png" link="0" type="6"/>
+		<runtime id="5ee3e08d32eee1c81df592f558935fa8ad8417f3" name="FillTomb_v2_BaseTex.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">DXT5</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">custom</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">1</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>

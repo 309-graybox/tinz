@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>2dd522e43a9c6f7c6a09301c5f56c2328b75659a</guid>
+	<type>material_graph</type>
+	<hash>d15a2ce3dc3f78036d34c88424c8ddbcf6c638618f89f56f8793b6ff9400aa48</hash>
+	<runtimes>
+		<runtime id="2dd522e43a9c6f7c6a09301c5f56c2328b75659a" name="testmatidk.mgraph" link="0"/>
+		<runtime id="a5a742b60c803489e43792aea736da4a980393dc" name="testmatidk" link="1" type="5"/>
+	</runtimes>
+</asset>
