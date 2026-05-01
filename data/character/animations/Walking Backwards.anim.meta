@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
-	<guid>a276a4d2ac41085e1b42d4e0b1e3fd40c9e14b55</guid>
-	<type>animation</type>
-	<hash>fdb39d85a9aa22ef95b113fa62829593d3f482e911209a0585cd816d31e9829e</hash>
-	<runtimes>
-		<runtime id="a276a4d2ac41085e1b42d4e0b1e3fd40c9e14b55" name="Walking Backwards.anim" link="0" type="2"/>
-	</runtimes>
-</asset>

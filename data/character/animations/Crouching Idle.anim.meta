@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
-	<guid>f27aaa2642648c9e04b70720482cc5518b455021</guid>
-	<type>animation</type>
-	<hash>4f7aa48d7af3509cdd5cb1ead96eac7087931d0032ca5ea7dad8e3e868fe7558</hash>
-	<runtimes>
-		<runtime id="f27aaa2642648c9e04b70720482cc5518b455021" name="Crouching Idle.anim" link="0" type="2"/>
-	</runtimes>
-</asset>

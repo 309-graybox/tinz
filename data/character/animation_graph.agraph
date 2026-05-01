@@ -1,0 +1,1922 @@
+{
+	"version": "2.21.0.0",
+	"file_guid": "eab12692ed290879e3b4fce93a3ca649d5738e08",
+	"camera_offset_x": 359,
+	"camera_offset_y": 961.5,
+	"nodes": {
+		"Output Pose": {
+			"guid": "00000000000000000000000000000000b00002b2",
+			"x": 448,
+			"y": 192,
+			"collapsed": false,
+			"inputs": {
+				"input": {
+					"label": "Pose",
+					"type": "AnimPose",
+					"id": 0
+				}
+			}
+		},
+		"State Machine": {
+			"guid": "a30ee3882e0244f8bf910dcd058401c7e31d98fb",
+			"x": 271,
+			"y": 218,
+			"collapsed": true,
+			"props": {
+				"prop": {
+					"widget": "String",
+					"value": "base"
+				}
+			},
+			"outputs": {
+				"output": {
+					"label": "Pose",
+					"type": "AnimPose",
+					"id": 0
+				}
+			},
+			"sm_name": "base",
+			"state_graph": {
+				"file_guid": "7e10a158a2c14433d20e0037d64646168066ba1e",
+				"camera_offset_x": 488.66189575195312,
+				"camera_offset_y": 850.65911865234375,
+				"nodes": {
+					"State": {
+						"guid": "49fbdbfa68db5f78689685c7dbc59022dcbc5ae5",
+						"x": 0,
+						"y": 0,
+						"collapsed": false,
+						"state_name": "Entry",
+						"is_entry": 1
+					},
+					"State": {
+						"guid": "f70dbe4a6942a2bb2b503a4134f6180f5e93cf00",
+						"x": 405,
+						"y": 3,
+						"collapsed": false,
+						"props": {
+							"prop": {
+								"widget": "String",
+								"value": "idle"
+							}
+						},
+						"state_name": "idle",
+						"is_entry": 0,
+						"state_graph": {
+							"file_guid": "953d05bcd418d4f0ef4aaa5154693098256a765f",
+							"camera_offset_x": 700,
+							"camera_offset_y": 528,
+							"nodes": {
+								"Output Pose": {
+									"guid": "3f2aa08cbfc27a599f65cf5bde08cff61d47d032",
+									"x": 192,
+									"y": -32,
+									"collapsed": false,
+									"inputs": {
+										"input": {
+											"label": "Pose",
+											"type": "AnimPose",
+											"id": 0
+										}
+									}
+								},
+								"Animation Player": {
+									"guid": "3222214eacedf19c39072deba069579aaaea71e9",
+									"x": -96,
+									"y": -64,
+									"collapsed": false,
+									"props": {
+										"prop": {
+											"widget": "String",
+											"value": ""
+										},
+										"prop": {
+											"widget": "Combobox",
+											"x": 0
+										},
+										"prop": {
+											"widget": "Combobox",
+											"x": 0
+										}
+									},
+									"inputs": {
+										"input": {
+											"label": "Anim",
+											"type": "Animation",
+											"id": 0
+										},
+										"input": {
+											"label": "Loop",
+											"type": "Bool",
+											"id": 1
+										},
+										"input": {
+											"label": "Speed",
+											"type": "Float",
+											"id": 2
+										}
+									},
+									"outputs": {
+										"output": {
+											"label": "Pose",
+											"type": "AnimPose",
+											"id": 0
+										}
+									}
+								}
+							},
+							"inputs": {
+								"input": {
+									"node_guid": "3f2aa08cbfc27a599f65cf5bde08cff61d47d032",
+									"anchor_id": 0,
+									"show_label": true,
+									"show_inline_widget": false
+								},
+								"input": {
+									"node_guid": "3222214eacedf19c39072deba069579aaaea71e9",
+									"anchor_id": 0,
+									"show_label": false,
+									"show_inline_widget": true,
+									"anim_guid": "0034e24dbce7e46e1e364cb0843ae382bf244e74",
+									"string_value": "Standing Idle"
+								},
+								"input": {
+									"node_guid": "3222214eacedf19c39072deba069579aaaea71e9",
+									"anchor_id": 1,
+									"show_label": true,
+									"show_inline_widget": true,
+									"bool_value": 1
+								},
+								"input": {
+									"node_guid": "3222214eacedf19c39072deba069579aaaea71e9",
+									"anchor_id": 2,
+									"show_label": true,
+									"show_inline_widget": true,
+									"float_value": 1
+								}
+							},
+							"anchors": {
+								"anchor": {
+									"input_index": 0,
+									"input_id": 0,
+									"input_label": "Pose",
+									"input_node": "3f2aa08cbfc27a599f65cf5bde08cff61d47d032",
+									"output_index": 0,
+									"output_id": 0,
+									"output_label": "Pose",
+									"output_node": "3222214eacedf19c39072deba069579aaaea71e9"
+								}
+							}
+						}
+					},
+					"State": {
+						"guid": "cad7e3309746ae4ed7900715af7f5adf36fd1803",
+						"x": 416,
+						"y": -168,
+						"collapsed": false,
+						"props": {
+							"prop": {
+								"widget": "String",
+								"value": "run"
+							}
+						},
+						"state_name": "run",
+						"is_entry": 0,
+						"state_graph": {
+							"file_guid": "e32087549466ab572ee32e83336f896e26b26fba",
+							"camera_offset_x": 700,
+							"camera_offset_y": 528,
+							"nodes": {
+								"Output Pose": {
+									"guid": "dfa8b356aa92720fbb25f71389eee77e352cbbd1",
+									"x": 192,
+									"y": -32,
+									"collapsed": false,
+									"inputs": {
+										"input": {
+											"label": "Pose",
+											"type": "AnimPose",
+											"id": 0
+										}
+									}
+								},
+								"Animation Player": {
+									"guid": "24b55ca6fe5bc867e214b96d37c888a919f2c2fc",
+									"x": -96,
+									"y": -64,
+									"collapsed": false,
+									"props": {
+										"prop": {
+											"widget": "String",
+											"value": ""
+										},
+										"prop": {
+											"widget": "Combobox",
+											"x": 0
+										},
+										"prop": {
+											"widget": "Combobox",
+											"x": 0
+										}
+									},
+									"inputs": {
+										"input": {
+											"label": "Anim",
+											"type": "Animation",
+											"id": 0
+										},
+										"input": {
+											"label": "Loop",
+											"type": "Bool",
+											"id": 1
+										},
+										"input": {
+											"label": "Speed",
+											"type": "Float",
+											"id": 2
+										}
+									},
+									"outputs": {
+										"output": {
+											"label": "Pose",
+											"type": "AnimPose",
+											"id": 0
+										}
+									}
+								}
+							},
+							"inputs": {
+								"input": {
+									"node_guid": "dfa8b356aa92720fbb25f71389eee77e352cbbd1",
+									"anchor_id": 0,
+									"show_label": true,
+									"show_inline_widget": false
+								},
+								"input": {
+									"node_guid": "24b55ca6fe5bc867e214b96d37c888a919f2c2fc",
+									"anchor_id": 0,
+									"show_label": false,
+									"show_inline_widget": true,
+									"anim_guid": "6b03935baef6970f19e1ad6647d050f169bb818a",
+									"string_value": "Running"
+								},
+								"input": {
+									"node_guid": "24b55ca6fe5bc867e214b96d37c888a919f2c2fc",
+									"anchor_id": 1,
+									"show_label": true,
+									"show_inline_widget": true,
+									"bool_value": 1
+								},
+								"input": {
+									"node_guid": "24b55ca6fe5bc867e214b96d37c888a919f2c2fc",
+									"anchor_id": 2,
+									"show_label": true,
+									"show_inline_widget": true,
+									"float_value": 1
+								}
+							},
+							"anchors": {
+								"anchor": {
+									"input_index": 0,
+									"input_id": 0,
+									"input_label": "Pose",
+									"input_node": "dfa8b356aa92720fbb25f71389eee77e352cbbd1",
+									"output_index": 0,
+									"output_id": 0,
+									"output_label": "Pose",
+									"output_node": "24b55ca6fe5bc867e214b96d37c888a919f2c2fc"
+								}
+							}
+						}
+					},
+					"State": {
+						"guid": "aa752b00147afc6733ff48bf60ac6c6337255d86",
+						"x": 410,
+						"y": -384,
+						"collapsed": false,
+						"props": {
+							"prop": {
+								"widget": "String",
+								"value": "sprint"
+							}
+						},
+						"state_name": "sprint",
+						"is_entry": 0,
+						"state_graph": {
+							"file_guid": "457a3478f7ee61a998dd247d46369714520f422b",
+							"camera_offset_x": 700,
+							"camera_offset_y": 528,
+							"nodes": {
+								"Output Pose": {
+									"guid": "e421ee48b6236f77f7c24a678bfb5063f1c5718e",
+									"x": 192,
+									"y": -32,
+									"collapsed": false,
+									"inputs": {
+										"input": {
+											"label": "Pose",
+											"type": "AnimPose",
+											"id": 0
+										}
+									}
+								},
+								"Animation Player": {
+									"guid": "c96ab66a8079b721f67c1bf7bae9eae345924b95",
+									"x": -96,
+									"y": -64,
+									"collapsed": false,
+									"props": {
+										"prop": {
+											"widget": "String",
+											"value": ""
+										},
+										"prop": {
+											"widget": "Combobox",
+											"x": 0
+										},
+										"prop": {
+											"widget": "Combobox",
+											"x": 0
+										}
+									},
+									"inputs": {
+										"input": {
+											"label": "Anim",
+											"type": "Animation",
+											"id": 0
+										},
+										"input": {
+											"label": "Loop",
+											"type": "Bool",
+											"id": 1
+										},
+										"input": {
+											"label": "Speed",
+											"type": "Float",
+											"id": 2
+										}
+									},
+									"outputs": {
+										"output": {
+											"label": "Pose",
+											"type": "AnimPose",
+											"id": 0
+										}
+									}
+								}
+							},
+							"inputs": {
+								"input": {
+									"node_guid": "e421ee48b6236f77f7c24a678bfb5063f1c5718e",
+									"anchor_id": 0,
+									"show_label": true,
+									"show_inline_widget": false
+								},
+								"input": {
+									"node_guid": "c96ab66a8079b721f67c1bf7bae9eae345924b95",
+									"anchor_id": 0,
+									"show_label": false,
+									"show_inline_widget": true,
+									"anim_guid": "6b03935baef6970f19e1ad6647d050f169bb818a",
+									"string_value": "Running"
+								},
+								"input": {
+									"node_guid": "c96ab66a8079b721f67c1bf7bae9eae345924b95",
+									"anchor_id": 1,
+									"show_label": true,
+									"show_inline_widget": true,
+									"bool_value": 1
+								},
+								"input": {
+									"node_guid": "c96ab66a8079b721f67c1bf7bae9eae345924b95",
+									"anchor_id": 2,
+									"show_label": true,
+									"show_inline_widget": true,
+									"float_value": 1.3999999761581421
+								}
+							},
+							"anchors": {
+								"anchor": {
+									"input_index": 0,
+									"input_id": 0,
+									"input_label": "Pose",
+									"input_node": "e421ee48b6236f77f7c24a678bfb5063f1c5718e",
+									"output_index": 0,
+									"output_id": 0,
+									"output_label": "Pose",
+									"output_node": "c96ab66a8079b721f67c1bf7bae9eae345924b95"
+								}
+							}
+						}
+					},
+					"Condition": {
+						"guid": "cb8913e244ec025b1555104f9e60d53e0eae172d",
+						"x": 415,
+						"y": -75,
+						"collapsed": false,
+						"props": {
+							"prop": {
+								"widget": "String",
+								"value": "Condition_0"
+							}
+						},
+						"condition_name": "Condition_0",
+						"duration": 0.10000000149011612,
+						"condition_graph": {
+							"file_guid": "dc6d9032a4ca993a69e726094d15dee49be70ea8",
+							"camera_offset_x": 1247,
+							"camera_offset_y": 547,
+							"nodes": {
+								"Transition Result": {
+									"guid": "1024afe4118ee078d64ca81932dd718fa569a1e7",
+									"x": 0,
+									"y": 0,
+									"collapsed": false,
+									"props": {
+										"prop": {
+											"widget": "Bool",
+											"x": 0
+										}
+									},
+									"inputs": {
+										"input": {
+											"label": "Can Transition",
+											"type": "Bool",
+											"id": 0
+										},
+										"input": {
+											"label": "Enter Time",
+											"type": "Float",
+											"id": 1
+										}
+									}
+								},
+								"Bool": {
+									"guid": "da3b5028213e4bae083d58ed10711ee43d5f5b1b",
+									"x": -139,
+									"y": 25,
+									"collapsed": true,
+									"outputs": {
+										"output": {
+											"label": "",
+											"type": "Bool",
+											"id": 0
+										}
+									},
+									"param_guid": "a6253386b4664bdb605d9203eda03447183a3341"
+								}
+							},
+							"inputs": {
+								"input": {
+									"node_guid": "1024afe4118ee078d64ca81932dd718fa569a1e7",
+									"anchor_id": 0,
+									"show_label": true,
+									"show_inline_widget": true,
+									"bool_value": 1
+								},
+								"input": {
+									"node_guid": "1024afe4118ee078d64ca81932dd718fa569a1e7",
+									"anchor_id": 1,
+									"show_label": true,
+									"show_inline_widget": false,
+									"float_value": 0
+								}
+							},
+							"anchors": {
+								"anchor": {
+									"input_index": 0,
+									"input_id": 0,
+									"input_label": "Can Transition",
+									"input_node": "1024afe4118ee078d64ca81932dd718fa569a1e7",
+									"output_index": 0,
+									"output_id": 0,
+									"output_label": "",
+									"output_node": "da3b5028213e4bae083d58ed10711ee43d5f5b1b"
+								}
+							}
+						}
+					},
+					"Condition": {
+						"guid": "2db0490630acccc87a672e4d3faa1fcb4c7a385c",
+						"x": 457,
+						"y": -268,
+						"collapsed": false,
+						"props": {
+							"prop": {
+								"widget": "String",
+								"value": "Condition_1"
+							}
+						},
+						"condition_name": "Condition_1",
+						"duration": 0.10000000149011612,
+						"condition_graph": {
+							"file_guid": "7a53dfd88d19cb32bc1c515d328c44af5214780b",
+							"camera_offset_x": 700,
+							"camera_offset_y": 528,
+							"nodes": {
+								"Transition Result": {
+									"guid": "0bdff1a877d592b17cea0a47717ef02b48606dee",
+									"x": 0,
+									"y": 0,
+									"collapsed": false,
+									"props": {
+										"prop": {
+											"widget": "Bool",
+											"x": 0
+										}
+									},
+									"inputs": {
+										"input": {
+											"label": "Can Transition",
+											"type": "Bool",
+											"id": 0
+										},
+										"input": {
+											"label": "Enter Time",
+											"type": "Float",
+											"id": 1
+										}
+									}
+								},
+								"Bool": {
+									"guid": "185d1a00b0f886e2a80ac047504b4c92ab68e91c",
+									"x": -147,
+									"y": 25,
+									"collapsed": true,
+									"outputs": {
+										"output": {
+											"label": "",
+											"type": "Bool",
+											"id": 0
+										}
+									},
+									"param_guid": "f73eb5f849ed916e47e07857c88ebeb83e3655be"
+								}
+							},
+							"inputs": {
+								"input": {
+									"node_guid": "0bdff1a877d592b17cea0a47717ef02b48606dee",
+									"anchor_id": 0,
+									"show_label": true,
+									"show_inline_widget": true,
+									"bool_value": 1
+								},
+								"input": {
+									"node_guid": "0bdff1a877d592b17cea0a47717ef02b48606dee",
+									"anchor_id": 1,
+									"show_label": true,
+									"show_inline_widget": false,
+									"float_value": 0
+								}
+							},
+							"anchors": {
+								"anchor": {
+									"input_index": 0,
+									"input_id": 0,
+									"input_label": "Can Transition",
+									"input_node": "0bdff1a877d592b17cea0a47717ef02b48606dee",
+									"output_index": 0,
+									"output_id": 0,
+									"output_label": "",
+									"output_node": "185d1a00b0f886e2a80ac047504b4c92ab68e91c"
+								}
+							}
+						}
+					},
+					"Condition": {
+						"guid": "0fb5270c3434bc1b46cf06e18c0f3aacc1163e6f",
+						"x": 418,
+						"y": -267,
+						"collapsed": false,
+						"props": {
+							"prop": {
+								"widget": "String",
+								"value": "Condition_2"
+							}
+						},
+						"condition_name": "Condition_2",
+						"duration": 0.10000000149011612,
+						"condition_graph": {
+							"file_guid": "eb2a55dcd63c98fee29a5a6bd3e1920e00475902",
+							"camera_offset_x": 703,
+							"camera_offset_y": 527,
+							"nodes": {
+								"Transition Result": {
+									"guid": "c3ab831efd3c81e4977cbcfb01a50fc55eb74479",
+									"x": 0,
+									"y": 0,
+									"collapsed": false,
+									"props": {
+										"prop": {
+											"widget": "Bool",
+											"x": 0
+										}
+									},
+									"inputs": {
+										"input": {
+											"label": "Can Transition",
+											"type": "Bool",
+											"id": 0
+										},
+										"input": {
+											"label": "Enter Time",
+											"type": "Float",
+											"id": 1
+										}
+									}
+								},
+								"Not": {
+									"guid": "d4018ecaad1c8a5591ab134f5a98bf3b815ff1cb",
+									"x": -65,
+									"y": 25,
+									"collapsed": true,
+									"inputs": {
+										"input": {
+											"label": "X",
+											"type": "Bool",
+											"id": 0
+										}
+									},
+									"outputs": {
+										"output": {
+											"label": "",
+											"type": "Bool",
+											"id": 0
+										}
+									}
+								},
+								"Bool": {
+									"guid": "b0f0832cc22255a43e27d1b9a1b912b7644220d5",
+									"x": -212,
+									"y": 25,
+									"collapsed": true,
+									"outputs": {
+										"output": {
+											"label": "",
+											"type": "Bool",
+											"id": 0
+										}
+									},
+									"param_guid": "f73eb5f849ed916e47e07857c88ebeb83e3655be"
+								}
+							},
+							"inputs": {
+								"input": {
+									"node_guid": "c3ab831efd3c81e4977cbcfb01a50fc55eb74479",
+									"anchor_id": 0,
+									"show_label": true,
+									"show_inline_widget": true,
+									"bool_value": 1
+								},
+								"input": {
+									"node_guid": "c3ab831efd3c81e4977cbcfb01a50fc55eb74479",
+									"anchor_id": 1,
+									"show_label": true,
+									"show_inline_widget": false,
+									"float_value": 0
+								},
+								"input": {
+									"node_guid": "d4018ecaad1c8a5591ab134f5a98bf3b815ff1cb",
+									"anchor_id": 0,
+									"show_label": true,
+									"show_inline_widget": false,
+									"bool_value": 0
+								}
+							},
+							"anchors": {
+								"anchor": {
+									"input_index": 0,
+									"input_id": 0,
+									"input_label": "Can Transition",
+									"input_node": "c3ab831efd3c81e4977cbcfb01a50fc55eb74479",
+									"output_index": 0,
+									"output_id": 0,
+									"output_label": "",
+									"output_node": "d4018ecaad1c8a5591ab134f5a98bf3b815ff1cb"
+								},
+								"anchor": {
+									"input_index": 0,
+									"input_id": 0,
+									"input_label": "X",
+									"input_node": "d4018ecaad1c8a5591ab134f5a98bf3b815ff1cb",
+									"output_index": 0,
+									"output_id": 0,
+									"output_label": "",
+									"output_node": "b0f0832cc22255a43e27d1b9a1b912b7644220d5"
+								}
+							}
+						}
+					},
+					"Condition": {
+						"guid": "3ca19550c3164e46b6d264cfdc2a25c558a58b56",
+						"x": 455,
+						"y": -73,
+						"collapsed": false,
+						"props": {
+							"prop": {
+								"widget": "String",
+								"value": "Condition_3"
+							}
+						},
+						"condition_name": "Condition_3",
+						"duration": 0.10000000149011612,
+						"condition_graph": {
+							"file_guid": "9ae0f2b2151577977071705f41aed75b4dc14abd",
+							"camera_offset_x": 698,
+							"camera_offset_y": 528,
+							"nodes": {
+								"Transition Result": {
+									"guid": "9d626302f34c1f6fe2f28099a586551e7f7c0cf8",
+									"x": 0,
+									"y": 0,
+									"collapsed": false,
+									"props": {
+										"prop": {
+											"widget": "Bool",
+											"x": 0
+										}
+									},
+									"inputs": {
+										"input": {
+											"label": "Can Transition",
+											"type": "Bool",
+											"id": 0
+										},
+										"input": {
+											"label": "Enter Time",
+											"type": "Float",
+											"id": 1
+										}
+									}
+								},
+								"Not": {
+									"guid": "a21f25d4715ede7fcb5d6c0bf026fec2e1ac7c30",
+									"x": -65,
+									"y": 25,
+									"collapsed": true,
+									"inputs": {
+										"input": {
+											"label": "X",
+											"type": "Bool",
+											"id": 0
+										}
+									},
+									"outputs": {
+										"output": {
+											"label": "",
+											"type": "Bool",
+											"id": 0
+										}
+									}
+								},
+								"Bool": {
+									"guid": "35d3fc3e7ee4d9e2df0953937e1a3afb8c5c61cf",
+									"x": -204,
+									"y": 25,
+									"collapsed": true,
+									"outputs": {
+										"output": {
+											"label": "",
+											"type": "Bool",
+											"id": 0
+										}
+									},
+									"param_guid": "a6253386b4664bdb605d9203eda03447183a3341"
+								}
+							},
+							"inputs": {
+								"input": {
+									"node_guid": "9d626302f34c1f6fe2f28099a586551e7f7c0cf8",
+									"anchor_id": 0,
+									"show_label": true,
+									"show_inline_widget": true,
+									"bool_value": 1
+								},
+								"input": {
+									"node_guid": "9d626302f34c1f6fe2f28099a586551e7f7c0cf8",
+									"anchor_id": 1,
+									"show_label": true,
+									"show_inline_widget": false,
+									"float_value": 0
+								},
+								"input": {
+									"node_guid": "a21f25d4715ede7fcb5d6c0bf026fec2e1ac7c30",
+									"anchor_id": 0,
+									"show_label": true,
+									"show_inline_widget": false,
+									"bool_value": 0
+								}
+							},
+							"anchors": {
+								"anchor": {
+									"input_index": 0,
+									"input_id": 0,
+									"input_label": "Can Transition",
+									"input_node": "9d626302f34c1f6fe2f28099a586551e7f7c0cf8",
+									"output_index": 0,
+									"output_id": 0,
+									"output_label": "",
+									"output_node": "a21f25d4715ede7fcb5d6c0bf026fec2e1ac7c30"
+								},
+								"anchor": {
+									"input_index": 0,
+									"input_id": 0,
+									"input_label": "X",
+									"input_node": "a21f25d4715ede7fcb5d6c0bf026fec2e1ac7c30",
+									"output_index": 0,
+									"output_id": 0,
+									"output_label": "",
+									"output_node": "35d3fc3e7ee4d9e2df0953937e1a3afb8c5c61cf"
+								}
+							}
+						}
+					},
+					"State": {
+						"guid": "c42881760e868296c51ffdfde0ab2c4541e6fb4c",
+						"x": 936,
+						"y": -275,
+						"collapsed": false,
+						"props": {
+							"prop": {
+								"widget": "String",
+								"value": "fall"
+							}
+						},
+						"state_name": "fall",
+						"is_entry": 0,
+						"state_graph": {
+							"file_guid": "00b0b9708f30cb77c8d6ee5527660280bde22543",
+							"camera_offset_x": 700,
+							"camera_offset_y": 528,
+							"nodes": {
+								"Output Pose": {
+									"guid": "d8e49140169c6c8ff0a6b1ffef40df3a9f4e89c6",
+									"x": 192,
+									"y": -32,
+									"collapsed": false,
+									"inputs": {
+										"input": {
+											"label": "Pose",
+											"type": "AnimPose",
+											"id": 0
+										}
+									}
+								},
+								"Animation Player": {
+									"guid": "446d5422e48e39ce05e3c98f7b5b8dc912a6d66d",
+									"x": -96,
+									"y": -64,
+									"collapsed": false,
+									"props": {
+										"prop": {
+											"widget": "String",
+											"value": ""
+										},
+										"prop": {
+											"widget": "Combobox",
+											"x": 0
+										},
+										"prop": {
+											"widget": "Combobox",
+											"x": 0
+										}
+									},
+									"inputs": {
+										"input": {
+											"label": "Anim",
+											"type": "Animation",
+											"id": 0
+										},
+										"input": {
+											"label": "Loop",
+											"type": "Bool",
+											"id": 1
+										},
+										"input": {
+											"label": "Speed",
+											"type": "Float",
+											"id": 2
+										}
+									},
+									"outputs": {
+										"output": {
+											"label": "Pose",
+											"type": "AnimPose",
+											"id": 0
+										}
+									}
+								}
+							},
+							"inputs": {
+								"input": {
+									"node_guid": "d8e49140169c6c8ff0a6b1ffef40df3a9f4e89c6",
+									"anchor_id": 0,
+									"show_label": true,
+									"show_inline_widget": false
+								},
+								"input": {
+									"node_guid": "446d5422e48e39ce05e3c98f7b5b8dc912a6d66d",
+									"anchor_id": 0,
+									"show_label": false,
+									"show_inline_widget": true,
+									"anim_guid": "c0e7be27cab1e032675c57c2382d68b41ca44426",
+									"string_value": "Falling Idle"
+								},
+								"input": {
+									"node_guid": "446d5422e48e39ce05e3c98f7b5b8dc912a6d66d",
+									"anchor_id": 1,
+									"show_label": true,
+									"show_inline_widget": true,
+									"bool_value": 1
+								},
+								"input": {
+									"node_guid": "446d5422e48e39ce05e3c98f7b5b8dc912a6d66d",
+									"anchor_id": 2,
+									"show_label": true,
+									"show_inline_widget": true,
+									"float_value": 1
+								}
+							},
+							"anchors": {
+								"anchor": {
+									"input_index": 0,
+									"input_id": 0,
+									"input_label": "Pose",
+									"input_node": "d8e49140169c6c8ff0a6b1ffef40df3a9f4e89c6",
+									"output_index": 0,
+									"output_id": 0,
+									"output_label": "Pose",
+									"output_node": "446d5422e48e39ce05e3c98f7b5b8dc912a6d66d"
+								}
+							}
+						}
+					},
+					"Condition": {
+						"guid": "6d48b1c86ff644ecec6dcd0dbd48a70f27b5fe3b",
+						"x": 656,
+						"y": -170,
+						"collapsed": false,
+						"props": {
+							"prop": {
+								"widget": "String",
+								"value": "Condition_4"
+							}
+						},
+						"condition_name": "Condition_4",
+						"duration": 0.10000000149011612,
+						"condition_graph": {
+							"file_guid": "33feff98eafb63a716c90177ba10536497bb5e5e",
+							"camera_offset_x": 1048,
+							"camera_offset_y": 511,
+							"nodes": {
+								"Transition Result": {
+									"guid": "deb9d43a15a9c89c7f7ed7070aeeb7b2cfba3225",
+									"x": 0,
+									"y": 0,
+									"collapsed": false,
+									"props": {
+										"prop": {
+											"widget": "Bool",
+											"x": 0
+										}
+									},
+									"inputs": {
+										"input": {
+											"label": "Can Transition",
+											"type": "Bool",
+											"id": 0
+										},
+										"input": {
+											"label": "Enter Time",
+											"type": "Float",
+											"id": 1
+										}
+									}
+								},
+								"Bool": {
+									"guid": "15101f266e832f7fcfe3a23583481300b94f64e2",
+									"x": -216,
+									"y": 25,
+									"collapsed": true,
+									"outputs": {
+										"output": {
+											"label": "",
+											"type": "Bool",
+											"id": 0
+										}
+									},
+									"param_guid": "db8e34de876b6b1f920f2d459fd4b7ea164bc474"
+								},
+								"Not": {
+									"guid": "1bafcad2c7a53341970cc177a444708df2ed3373",
+									"x": -65,
+									"y": 25,
+									"collapsed": true,
+									"inputs": {
+										"input": {
+											"label": "X",
+											"type": "Bool",
+											"id": 0
+										}
+									},
+									"outputs": {
+										"output": {
+											"label": "",
+											"type": "Bool",
+											"id": 0
+										}
+									}
+								}
+							},
+							"inputs": {
+								"input": {
+									"node_guid": "deb9d43a15a9c89c7f7ed7070aeeb7b2cfba3225",
+									"anchor_id": 0,
+									"show_label": true,
+									"show_inline_widget": true,
+									"bool_value": 1
+								},
+								"input": {
+									"node_guid": "deb9d43a15a9c89c7f7ed7070aeeb7b2cfba3225",
+									"anchor_id": 1,
+									"show_label": true,
+									"show_inline_widget": false,
+									"float_value": 0
+								},
+								"input": {
+									"node_guid": "1bafcad2c7a53341970cc177a444708df2ed3373",
+									"anchor_id": 0,
+									"show_label": true,
+									"show_inline_widget": false,
+									"bool_value": 0
+								}
+							},
+							"anchors": {
+								"anchor": {
+									"input_index": 0,
+									"input_id": 0,
+									"input_label": "Can Transition",
+									"input_node": "deb9d43a15a9c89c7f7ed7070aeeb7b2cfba3225",
+									"output_index": 0,
+									"output_id": 0,
+									"output_label": "",
+									"output_node": "1bafcad2c7a53341970cc177a444708df2ed3373"
+								},
+								"anchor": {
+									"input_index": 0,
+									"input_id": 0,
+									"input_label": "X",
+									"input_node": "1bafcad2c7a53341970cc177a444708df2ed3373",
+									"output_index": 0,
+									"output_id": 0,
+									"output_label": "",
+									"output_node": "15101f266e832f7fcfe3a23583481300b94f64e2"
+								}
+							}
+						}
+					},
+					"Condition": {
+						"guid": "a62269a693708ba8ee7d9ca36e2f5280e280c0e1",
+						"x": 701,
+						"y": -213,
+						"collapsed": false,
+						"props": {
+							"prop": {
+								"widget": "String",
+								"value": "Condition_7"
+							}
+						},
+						"condition_name": "Condition_7",
+						"condition_graph": {
+							"file_guid": "c30fe6f6750ff0bc037b757daad6c602dfcb64cc",
+							"camera_offset_x": 1108,
+							"camera_offset_y": 509,
+							"nodes": {
+								"Transition Result": {
+									"guid": "51253348eb72222999f5248dcdcac3827bd859bb",
+									"x": 0,
+									"y": 0,
+									"collapsed": false,
+									"props": {
+										"prop": {
+											"widget": "Bool",
+											"x": 0
+										}
+									},
+									"inputs": {
+										"input": {
+											"label": "Can Transition",
+											"type": "Bool",
+											"id": 0
+										},
+										"input": {
+											"label": "Enter Time",
+											"type": "Float",
+											"id": 1
+										}
+									}
+								},
+								"Bool": {
+									"guid": "94bc57a040b2349b13ced4fdf1689d9821bb1ed9",
+									"x": -309,
+									"y": 35,
+									"collapsed": true,
+									"outputs": {
+										"output": {
+											"label": "",
+											"type": "Bool",
+											"id": 0
+										}
+									},
+									"param_guid": "a6253386b4664bdb605d9203eda03447183a3341"
+								},
+								"And": {
+									"guid": "21ad74c8436624240c1b506f0a67ac44846afa64",
+									"x": -170,
+									"y": 9,
+									"collapsed": false,
+									"inputs": {
+										"input": {
+											"label": "A",
+											"type": "Bool",
+											"id": 0
+										},
+										"input": {
+											"label": "B",
+											"type": "Bool",
+											"id": 1
+										}
+									},
+									"outputs": {
+										"output": {
+											"label": "",
+											"type": "Bool",
+											"id": 0
+										}
+									}
+								},
+								"Bool": {
+									"guid": "c6e28c3a476ea4186f265e390f4346fe1b356236",
+									"x": -321,
+									"y": 60,
+									"collapsed": true,
+									"outputs": {
+										"output": {
+											"label": "",
+											"type": "Bool",
+											"id": 0
+										}
+									},
+									"param_guid": "db8e34de876b6b1f920f2d459fd4b7ea164bc474"
+								}
+							},
+							"inputs": {
+								"input": {
+									"node_guid": "51253348eb72222999f5248dcdcac3827bd859bb",
+									"anchor_id": 0,
+									"show_label": true,
+									"show_inline_widget": true,
+									"bool_value": 1
+								},
+								"input": {
+									"node_guid": "51253348eb72222999f5248dcdcac3827bd859bb",
+									"anchor_id": 1,
+									"show_label": true,
+									"show_inline_widget": false,
+									"float_value": 0
+								},
+								"input": {
+									"node_guid": "21ad74c8436624240c1b506f0a67ac44846afa64",
+									"anchor_id": 0,
+									"show_label": true,
+									"show_inline_widget": false,
+									"bool_value": 0
+								},
+								"input": {
+									"node_guid": "21ad74c8436624240c1b506f0a67ac44846afa64",
+									"anchor_id": 1,
+									"show_label": true,
+									"show_inline_widget": false,
+									"bool_value": 0
+								}
+							},
+							"anchors": {
+								"anchor": {
+									"input_index": 0,
+									"input_id": 0,
+									"input_label": "Can Transition",
+									"input_node": "51253348eb72222999f5248dcdcac3827bd859bb",
+									"output_index": 0,
+									"output_id": 0,
+									"output_label": "",
+									"output_node": "21ad74c8436624240c1b506f0a67ac44846afa64"
+								},
+								"anchor": {
+									"input_index": 0,
+									"input_id": 0,
+									"input_label": "A",
+									"input_node": "21ad74c8436624240c1b506f0a67ac44846afa64",
+									"output_index": 0,
+									"output_id": 0,
+									"output_label": "",
+									"output_node": "94bc57a040b2349b13ced4fdf1689d9821bb1ed9"
+								},
+								"anchor": {
+									"input_index": 1,
+									"input_id": 1,
+									"input_label": "B",
+									"input_node": "21ad74c8436624240c1b506f0a67ac44846afa64",
+									"output_index": 0,
+									"output_id": 0,
+									"output_label": "",
+									"output_node": "c6e28c3a476ea4186f265e390f4346fe1b356236"
+								}
+							}
+						}
+					},
+					"Condition": {
+						"guid": "89d95fe807e435566bd2db87ea0b3a36e3ef222e",
+						"x": 695,
+						"y": -128,
+						"collapsed": false,
+						"props": {
+							"prop": {
+								"widget": "String",
+								"value": "Condition_5"
+							}
+						},
+						"condition_name": "Condition_5",
+						"duration": 0.10000000149011612,
+						"condition_graph": {
+							"file_guid": "5ff3190a9c93b40ebb397517ecea89dd6db003b5",
+							"camera_offset_x": 692,
+							"camera_offset_y": 526,
+							"nodes": {
+								"Transition Result": {
+									"guid": "5bfa7f5ac6423f99f960e611dcec962d4c864190",
+									"x": 153,
+									"y": 9,
+									"collapsed": false,
+									"props": {
+										"prop": {
+											"widget": "Bool",
+											"x": 0
+										}
+									},
+									"inputs": {
+										"input": {
+											"label": "Can Transition",
+											"type": "Bool",
+											"id": 0
+										},
+										"input": {
+											"label": "Enter Time",
+											"type": "Float",
+											"id": 1
+										}
+									}
+								},
+								"Bool": {
+									"guid": "58c1207c6eb55de0f2c5384994315c1c884e5e65",
+									"x": -360,
+									"y": -10,
+									"collapsed": true,
+									"outputs": {
+										"output": {
+											"label": "",
+											"type": "Bool",
+											"id": 0
+										}
+									},
+									"param_guid": "a6253386b4664bdb605d9203eda03447183a3341"
+								},
+								"And": {
+									"guid": "4d1160547fbd888f268ced81952b90337a8c741d",
+									"x": -8,
+									"y": 14,
+									"collapsed": false,
+									"inputs": {
+										"input": {
+											"label": "A",
+											"type": "Bool",
+											"id": 0
+										},
+										"input": {
+											"label": "B",
+											"type": "Bool",
+											"id": 1
+										}
+									},
+									"outputs": {
+										"output": {
+											"label": "",
+											"type": "Bool",
+											"id": 0
+										}
+									}
+								},
+								"Not": {
+									"guid": "30153ffc9d642ed22323241309d0f645c2a966d8",
+									"x": -219,
+									"y": -10,
+									"collapsed": true,
+									"inputs": {
+										"input": {
+											"label": "X",
+											"type": "Bool",
+											"id": 0
+										}
+									},
+									"outputs": {
+										"output": {
+											"label": "",
+											"type": "Bool",
+											"id": 0
+										}
+									}
+								},
+								"Bool": {
+									"guid": "36894da6f02bc775038dc49babecb6f5a91b3c57",
+									"x": -160,
+									"y": 64,
+									"collapsed": true,
+									"outputs": {
+										"output": {
+											"label": "",
+											"type": "Bool",
+											"id": 0
+										}
+									},
+									"param_guid": "db8e34de876b6b1f920f2d459fd4b7ea164bc474"
+								},
+								"And": {
+									"guid": "5e12f58e3168a47424ad897dfabf702d915aadca",
+									"x": -153,
+									"y": -36,
+									"collapsed": false,
+									"inputs": {
+										"input": {
+											"label": "A",
+											"type": "Bool",
+											"id": 0
+										},
+										"input": {
+											"label": "B",
+											"type": "Bool",
+											"id": 1
+										}
+									},
+									"outputs": {
+										"output": {
+											"label": "",
+											"type": "Bool",
+											"id": 0
+										}
+									}
+								},
+								"Bool": {
+									"guid": "a2deb7482196254bfc341d450df70283b80242a1",
+									"x": -368,
+									"y": 13,
+									"collapsed": true,
+									"outputs": {
+										"output": {
+											"label": "",
+											"type": "Bool",
+											"id": 0
+										}
+									},
+									"param_guid": "f73eb5f849ed916e47e07857c88ebeb83e3655be"
+								},
+								"Not": {
+									"guid": "ac3ee170b44592f6226278f744e9b129fcd17b8c",
+									"x": -219,
+									"y": 13,
+									"collapsed": true,
+									"inputs": {
+										"input": {
+											"label": "X",
+											"type": "Bool",
+											"id": 0
+										}
+									},
+									"outputs": {
+										"output": {
+											"label": "",
+											"type": "Bool",
+											"id": 0
+										}
+									}
+								}
+							},
+							"inputs": {
+								"input": {
+									"node_guid": "5bfa7f5ac6423f99f960e611dcec962d4c864190",
+									"anchor_id": 0,
+									"show_label": true,
+									"show_inline_widget": true,
+									"bool_value": 1
+								},
+								"input": {
+									"node_guid": "5bfa7f5ac6423f99f960e611dcec962d4c864190",
+									"anchor_id": 1,
+									"show_label": true,
+									"show_inline_widget": false,
+									"float_value": 0
+								},
+								"input": {
+									"node_guid": "4d1160547fbd888f268ced81952b90337a8c741d",
+									"anchor_id": 0,
+									"show_label": true,
+									"show_inline_widget": false,
+									"bool_value": 0
+								},
+								"input": {
+									"node_guid": "4d1160547fbd888f268ced81952b90337a8c741d",
+									"anchor_id": 1,
+									"show_label": true,
+									"show_inline_widget": false,
+									"bool_value": 0
+								},
+								"input": {
+									"node_guid": "30153ffc9d642ed22323241309d0f645c2a966d8",
+									"anchor_id": 0,
+									"show_label": true,
+									"show_inline_widget": false,
+									"bool_value": 0
+								},
+								"input": {
+									"node_guid": "5e12f58e3168a47424ad897dfabf702d915aadca",
+									"anchor_id": 0,
+									"show_label": true,
+									"show_inline_widget": false,
+									"bool_value": 0
+								},
+								"input": {
+									"node_guid": "5e12f58e3168a47424ad897dfabf702d915aadca",
+									"anchor_id": 1,
+									"show_label": true,
+									"show_inline_widget": false,
+									"bool_value": 0
+								},
+								"input": {
+									"node_guid": "ac3ee170b44592f6226278f744e9b129fcd17b8c",
+									"anchor_id": 0,
+									"show_label": true,
+									"show_inline_widget": false,
+									"bool_value": 0
+								}
+							},
+							"anchors": {
+								"anchor": {
+									"input_index": 0,
+									"input_id": 0,
+									"input_label": "Can Transition",
+									"input_node": "5bfa7f5ac6423f99f960e611dcec962d4c864190",
+									"output_index": 0,
+									"output_id": 0,
+									"output_label": "",
+									"output_node": "4d1160547fbd888f268ced81952b90337a8c741d"
+								},
+								"anchor": {
+									"input_index": 0,
+									"input_id": 0,
+									"input_label": "A",
+									"input_node": "4d1160547fbd888f268ced81952b90337a8c741d",
+									"output_index": 0,
+									"output_id": 0,
+									"output_label": "",
+									"output_node": "5e12f58e3168a47424ad897dfabf702d915aadca"
+								},
+								"anchor": {
+									"input_index": 1,
+									"input_id": 1,
+									"input_label": "B",
+									"input_node": "4d1160547fbd888f268ced81952b90337a8c741d",
+									"output_index": 0,
+									"output_id": 0,
+									"output_label": "",
+									"output_node": "36894da6f02bc775038dc49babecb6f5a91b3c57"
+								},
+								"anchor": {
+									"input_index": 0,
+									"input_id": 0,
+									"input_label": "X",
+									"input_node": "30153ffc9d642ed22323241309d0f645c2a966d8",
+									"output_index": 0,
+									"output_id": 0,
+									"output_label": "",
+									"output_node": "58c1207c6eb55de0f2c5384994315c1c884e5e65"
+								},
+								"anchor": {
+									"input_index": 0,
+									"input_id": 0,
+									"input_label": "A",
+									"input_node": "5e12f58e3168a47424ad897dfabf702d915aadca",
+									"output_index": 0,
+									"output_id": 0,
+									"output_label": "",
+									"output_node": "30153ffc9d642ed22323241309d0f645c2a966d8"
+								},
+								"anchor": {
+									"input_index": 1,
+									"input_id": 1,
+									"input_label": "B",
+									"input_node": "5e12f58e3168a47424ad897dfabf702d915aadca",
+									"output_index": 0,
+									"output_id": 0,
+									"output_label": "",
+									"output_node": "ac3ee170b44592f6226278f744e9b129fcd17b8c"
+								},
+								"anchor": {
+									"input_index": 0,
+									"input_id": 0,
+									"input_label": "X",
+									"input_node": "ac3ee170b44592f6226278f744e9b129fcd17b8c",
+									"output_index": 0,
+									"output_id": 0,
+									"output_label": "",
+									"output_node": "a2deb7482196254bfc341d450df70283b80242a1"
+								}
+							}
+						}
+					},
+					"Condition": {
+						"guid": "f45f31760a756f96f56b69b3a026aa0a688d3171",
+						"x": 698,
+						"y": -321,
+						"collapsed": false,
+						"props": {
+							"prop": {
+								"widget": "String",
+								"value": "Condition_8"
+							}
+						},
+						"condition_name": "Condition_8",
+						"condition_graph": {
+							"file_guid": "0de7e2c620acba89f75ac50dd4a503f7a1567c1c",
+							"camera_offset_x": 1103,
+							"camera_offset_y": 445,
+							"nodes": {
+								"Transition Result": {
+									"guid": "06ae9f980ca3834937e8981d0b5fc794020268cb",
+									"x": 0,
+									"y": 0,
+									"collapsed": false,
+									"props": {
+										"prop": {
+											"widget": "Bool",
+											"x": 0
+										}
+									},
+									"inputs": {
+										"input": {
+											"label": "Can Transition",
+											"type": "Bool",
+											"id": 0
+										},
+										"input": {
+											"label": "Enter Time",
+											"type": "Float",
+											"id": 1
+										}
+									}
+								},
+								"And": {
+									"guid": "3e03dca0d2c717ddb745adfd8a434caf71aae7d9",
+									"x": -157,
+									"y": 17,
+									"collapsed": false,
+									"inputs": {
+										"input": {
+											"label": "A",
+											"type": "Bool",
+											"id": 0
+										},
+										"input": {
+											"label": "B",
+											"type": "Bool",
+											"id": 1
+										}
+									},
+									"outputs": {
+										"output": {
+											"label": "",
+											"type": "Bool",
+											"id": 0
+										}
+									}
+								},
+								"Bool": {
+									"guid": "203899c837b536fcb1a8b16fd9a054e5beae2f64",
+									"x": -308,
+									"y": 68,
+									"collapsed": true,
+									"outputs": {
+										"output": {
+											"label": "",
+											"type": "Bool",
+											"id": 0
+										}
+									},
+									"param_guid": "db8e34de876b6b1f920f2d459fd4b7ea164bc474"
+								},
+								"Bool": {
+									"guid": "c35970a60d2e116095f7339bd516f35e4988fb57",
+									"x": -304,
+									"y": 43,
+									"collapsed": true,
+									"outputs": {
+										"output": {
+											"label": "",
+											"type": "Bool",
+											"id": 0
+										}
+									},
+									"param_guid": "f73eb5f849ed916e47e07857c88ebeb83e3655be"
+								}
+							},
+							"inputs": {
+								"input": {
+									"node_guid": "06ae9f980ca3834937e8981d0b5fc794020268cb",
+									"anchor_id": 0,
+									"show_label": true,
+									"show_inline_widget": true,
+									"bool_value": 1
+								},
+								"input": {
+									"node_guid": "06ae9f980ca3834937e8981d0b5fc794020268cb",
+									"anchor_id": 1,
+									"show_label": true,
+									"show_inline_widget": false,
+									"float_value": 0
+								},
+								"input": {
+									"node_guid": "3e03dca0d2c717ddb745adfd8a434caf71aae7d9",
+									"anchor_id": 0,
+									"show_label": true,
+									"show_inline_widget": false,
+									"bool_value": 0
+								},
+								"input": {
+									"node_guid": "3e03dca0d2c717ddb745adfd8a434caf71aae7d9",
+									"anchor_id": 1,
+									"show_label": true,
+									"show_inline_widget": false,
+									"bool_value": 0
+								}
+							},
+							"anchors": {
+								"anchor": {
+									"input_index": 0,
+									"input_id": 0,
+									"input_label": "Can Transition",
+									"input_node": "06ae9f980ca3834937e8981d0b5fc794020268cb",
+									"output_index": 0,
+									"output_id": 0,
+									"output_label": "",
+									"output_node": "3e03dca0d2c717ddb745adfd8a434caf71aae7d9"
+								},
+								"anchor": {
+									"input_index": 0,
+									"input_id": 0,
+									"input_label": "A",
+									"input_node": "3e03dca0d2c717ddb745adfd8a434caf71aae7d9",
+									"output_index": 0,
+									"output_id": 0,
+									"output_label": "",
+									"output_node": "c35970a60d2e116095f7339bd516f35e4988fb57"
+								},
+								"anchor": {
+									"input_index": 1,
+									"input_id": 1,
+									"input_label": "B",
+									"input_node": "3e03dca0d2c717ddb745adfd8a434caf71aae7d9",
+									"output_index": 0,
+									"output_id": 0,
+									"output_label": "",
+									"output_node": "203899c837b536fcb1a8b16fd9a054e5beae2f64"
+								}
+							}
+						}
+					}
+				},
+				"inputs": {
+				},
+				"anchors": {
+				}
+			},
+			"transitions": [
+				{
+					"guid": "0b39289e7c12c5044053160532ed5329737a9234",
+					"from": "49fbdbfa68db5f78689685c7dbc59022dcbc5ae5",
+					"to": "f70dbe4a6942a2bb2b503a4134f6180f5e93cf00",
+					"name": "Transition"
+				},
+				{
+					"guid": "ecd274b43039aa0110d090632967652288dd361a",
+					"from": "f70dbe4a6942a2bb2b503a4134f6180f5e93cf00",
+					"to": "cb8913e244ec025b1555104f9e60d53e0eae172d",
+					"name": "Transition"
+				},
+				{
+					"guid": "d15107b613cafa5b5d0f50f3b41ab7199bc30eb1",
+					"from": "cb8913e244ec025b1555104f9e60d53e0eae172d",
+					"to": "cad7e3309746ae4ed7900715af7f5adf36fd1803",
+					"name": "Transition"
+				},
+				{
+					"guid": "16f790ca60474fbcad6f53d7c7c2191f115f5c75",
+					"from": "cad7e3309746ae4ed7900715af7f5adf36fd1803",
+					"to": "2db0490630acccc87a672e4d3faa1fcb4c7a385c",
+					"name": "Transition"
+				},
+				{
+					"guid": "4eb3e71a8a0944950f5232d1ddd70769248a4350",
+					"from": "2db0490630acccc87a672e4d3faa1fcb4c7a385c",
+					"to": "aa752b00147afc6733ff48bf60ac6c6337255d86",
+					"name": "Transition"
+				},
+				{
+					"guid": "fc2c3e6eb04def34ab0f7795c8f29fadc0d6a384",
+					"from": "aa752b00147afc6733ff48bf60ac6c6337255d86",
+					"to": "0fb5270c3434bc1b46cf06e18c0f3aacc1163e6f",
+					"name": "Transition"
+				},
+				{
+					"guid": "8b2b79801e9745743c2d0ca5c02d8a88845fd913",
+					"from": "0fb5270c3434bc1b46cf06e18c0f3aacc1163e6f",
+					"to": "cad7e3309746ae4ed7900715af7f5adf36fd1803",
+					"name": "Transition"
+				},
+				{
+					"guid": "6ee10b34d4d2a89aa8fae6a97efa8033671e6bf7",
+					"from": "cad7e3309746ae4ed7900715af7f5adf36fd1803",
+					"to": "3ca19550c3164e46b6d264cfdc2a25c558a58b56",
+					"name": "Transition"
+				},
+				{
+					"guid": "904ce4048b501b9f0ec94d735f2ffbf9231dd8ea",
+					"from": "3ca19550c3164e46b6d264cfdc2a25c558a58b56",
+					"to": "f70dbe4a6942a2bb2b503a4134f6180f5e93cf00",
+					"name": "Transition"
+				},
+				{
+					"guid": "8872c68a1550a8030c1c9d81cc1c54ccde7b3d40",
+					"from": "aa752b00147afc6733ff48bf60ac6c6337255d86",
+					"to": "6d48b1c86ff644ecec6dcd0dbd48a70f27b5fe3b",
+					"name": "Transition"
+				},
+				{
+					"guid": "42a737fc84652c566a64dd91502fb0cf9e588f9f",
+					"from": "6d48b1c86ff644ecec6dcd0dbd48a70f27b5fe3b",
+					"to": "c42881760e868296c51ffdfde0ab2c4541e6fb4c",
+					"name": "Transition"
+				},
+				{
+					"guid": "b67262cc1b377ab5093e649b6248e8d896ae9872",
+					"from": "cad7e3309746ae4ed7900715af7f5adf36fd1803",
+					"to": "6d48b1c86ff644ecec6dcd0dbd48a70f27b5fe3b",
+					"name": "Transition"
+				},
+				{
+					"guid": "1d7f1d8e61bc485cd942132b3b6526b6572c1d29",
+					"from": "f70dbe4a6942a2bb2b503a4134f6180f5e93cf00",
+					"to": "6d48b1c86ff644ecec6dcd0dbd48a70f27b5fe3b",
+					"name": "Transition"
+				},
+				{
+					"guid": "d377694c29999eda3eff8a217eaccf82046fa7af",
+					"from": "c42881760e868296c51ffdfde0ab2c4541e6fb4c",
+					"to": "89d95fe807e435566bd2db87ea0b3a36e3ef222e",
+					"name": "Transition"
+				},
+				{
+					"guid": "1c6f31ba2cbd62b2464efa87f969f048374a99a5",
+					"from": "a62269a693708ba8ee7d9ca36e2f5280e280c0e1",
+					"to": "cad7e3309746ae4ed7900715af7f5adf36fd1803",
+					"name": "Transition"
+				},
+				{
+					"guid": "0564d68a4cb3320cab6b7897f45c5b9fa1f84b35",
+					"from": "f45f31760a756f96f56b69b3a026aa0a688d3171",
+					"to": "aa752b00147afc6733ff48bf60ac6c6337255d86",
+					"name": "Transition"
+				},
+				{
+					"guid": "96caa3e464b1f9018e0ffadbeab5108a85e85f40",
+					"from": "c42881760e868296c51ffdfde0ab2c4541e6fb4c",
+					"to": "f45f31760a756f96f56b69b3a026aa0a688d3171",
+					"name": "Transition"
+				},
+				{
+					"guid": "e32046cec512c27814086c63597f1642ec6f499f",
+					"from": "c42881760e868296c51ffdfde0ab2c4541e6fb4c",
+					"to": "a62269a693708ba8ee7d9ca36e2f5280e280c0e1",
+					"name": "Transition"
+				},
+				{
+					"guid": "b69012debd3112f8e002c4651897dd9f17d05545",
+					"from": "89d95fe807e435566bd2db87ea0b3a36e3ef222e",
+					"to": "f70dbe4a6942a2bb2b503a4134f6180f5e93cf00",
+					"name": "Transition"
+				}
+			]
+		}
+	},
+	"inputs": {
+		"input": {
+			"node_guid": "00000000000000000000000000000000b00002b2",
+			"anchor_id": 0,
+			"show_label": true,
+			"show_inline_widget": false
+		}
+	},
+	"anchors": {
+		"anchor": {
+			"input_index": 0,
+			"input_id": 0,
+			"input_label": "Pose",
+			"input_node": "00000000000000000000000000000000b00002b2",
+			"output_index": 0,
+			"output_id": 0,
+			"output_label": "Pose",
+			"output_node": "a30ee3882e0244f8bf910dcd058401c7e31d98fb"
+		}
+	},
+	"graph_type": "final",
+	"preview_mesh_guid": "2dfd37932fef45e37670903e1f577b6ccef3b8e2",
+	"filter_by_skeleton": 1,
+	"fix_root_in_origin": 1,
+	"is_playing": 1,
+	"show_bones": 1,
+	"show_bone_axes": 0,
+	"show_bone_names": 0,
+	"show_ground": 1,
+	"root_motion_enabled": 1,
+	"parameters": {
+		"param": {
+			"name": "is_moving",
+			"type": "Bool",
+			"guid": "a6253386b4664bdb605d9203eda03447183a3341",
+			"bool_value": 0
+		},
+		"param": {
+			"name": "is_sprinting",
+			"type": "Bool",
+			"guid": "f73eb5f849ed916e47e07857c88ebeb83e3655be",
+			"bool_value": 0
+		},
+		"param": {
+			"name": "is_grounded",
+			"type": "Bool",
+			"guid": "db8e34de876b6b1f920f2d459fd4b7ea164bc474",
+			"bool_value": 1
+		},
+		"param": {
+			"name": "is_jumped",
+			"type": "Bool",
+			"guid": "c5aae0727599e94e4b263149393bd32998fc44e8",
+			"bool_value": 0
+		}
+	},
+	"preview_overrides": {
+		"override": {
+			"guid": "a6253386b4664bdb605d9203eda03447183a3341",
+			"type": "Bool",
+			"active": false,
+			"bool_value": 0
+		},
+		"override": {
+			"guid": "f73eb5f849ed916e47e07857c88ebeb83e3655be",
+			"type": "Bool",
+			"active": false,
+			"bool_value": 0
+		},
+		"override": {
+			"guid": "db8e34de876b6b1f920f2d459fd4b7ea164bc474",
+			"type": "Bool",
+			"active": true,
+			"bool_value": 1
+		},
+		"override": {
+			"guid": "c5aae0727599e94e4b263149393bd32998fc44e8",
+			"type": "Bool",
+			"active": false,
+			"bool_value": 0
+		}
+	},
+	"editor_layout": {
+		"main_weights": {
+			"w": 0.64201879501342773,
+			"w": 0.35798123478889465
+		},
+		"panel_weights": {
+			"w": 0.40000000596046448,
+			"w": 0.40000000596046448,
+			"w": 0.20000000298023224
+		},
+		"hierarchy_on_left": 0,
+		"hierarchy_weight": 0
+	}
+}

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
-	<guid>b87d00cdde2fc14b131da7327fdc1c01422e4bea</guid>
-	<type>file</type>
-	<hash>68309054cfa65f6fa0363f2c046ffd5ca518a2cd19cd0498125b67a50d4b49ff</hash>
-	<runtimes>
-		<runtime id="b87d00cdde2fc14b131da7327fdc1c01422e4bea" name="Crouching Idle.skeleton" link="0"/>
-	</runtimes>
-</asset>

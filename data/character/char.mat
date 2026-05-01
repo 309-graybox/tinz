@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material version="2.21.0.0" guid="e128f3de1149944d094658bb7f4043b9b0235239" base_material="6bdbc0e8a7ef8f4fccb74936393a3f42ff152868">
+	<texture name="albedo">guid://f8f685d91730cc4827733a5a62ea89eb04de75bd</texture>
+	<parameter name="emission_intensity" expression="0">0</parameter>
+</material>

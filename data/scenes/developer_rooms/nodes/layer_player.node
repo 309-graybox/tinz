@@ -13,7 +13,7 @@
 				<parameter name="action_look_file">guid://2e5b555222aebf467d3a9a6f16087e1c2a50bd16</parameter>
 				<parameter name="action_target_lock_file">guid://2605673950df7ff25848f990a7cef99c45d1250a</parameter>
 				<parameter name="search_stages_in_children">1</parameter>
-				<parameter name="target_node">510937540</parameter>
+				<parameter name="target_node">1330148965</parameter>
 				<parameter name="camera_node">1892598520</parameter>
 				<parameter name="collision_mask">0x7fffffff</parameter>
 				<parameter name="debug">1</parameter>
@@ -24,8 +24,8 @@
 			<property parent="c1ecde01068d0406f5dacfe348dfc1e5466c55ec" guid="719da7015d9fc96a4f30e37f727f8796370ba23e">
 				<parameter name="sprintTurnSpeed">300</parameter>
 				<parameter name="slopeLimit">44</parameter>
-				<parameter name="body">510937540</parameter>
-				<parameter name="target">510937540</parameter>
+				<parameter name="body">1330148965</parameter>
+				<parameter name="target">1330148965</parameter>
 			</property>
 		</properties>
 		<transform>0.999999761581 0 0 0.0 0 1 0 0.0 0 0 0.999999940395 0.0 -8.77421037377 -14.9420362567 2.65047817637 1.0</transform>
@@ -78,7 +78,7 @@
 			</node>
 		</node>
 	</node>
-	<node type="ObjectMeshStatic" id="510937540" immovable="1" name="Capsule">
+	<node type="ObjectMeshStatic" id="510937540" enabled="0" immovable="1" name="Capsule">
 		<mesh_name>guid://30a2c3df4360c3a29b876de716cc573fdc7af63e</mesh_name>
 		<surface name="capsule" intersection="1" intersection_mask="0x80000000" material="fa22583eadc45f89ebe8ae56d96c24e8fdd54989"/>
 		<body type="BodyDummy" id="1533853500" frozen="0">
@@ -97,8 +97,37 @@
 		<transform>0.999999940395 0 0 0.0 0 0.999999940395 0 0.0 0 0 0.999999940395 0.0 0 0 0 1.0</transform>
 		<node type="ObjectMeshStatic" id="1691979073" immovable="1" name="capsule">
 			<mesh_name>guid://30a2c3df4360c3a29b876de716cc573fdc7af63e</mesh_name>
-			<surface name="capsule" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+			<surface name="capsule" intersection="1" intersection_mask="0x80000001" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
 			<transform>0.200000053644 0 0 0.0 0 0.199999949336 0 0.0 0 0 0.400000309944 0.0 0 0.257959098627 0.828486378964 1.0</transform>
+		</node>
+	</node>
+	<node type="NodeSkeletonPose" id="1234864251" name="NodeSkeletonPose">
+		<transform>0.99999988079 0 0 0.0 0 1.00000011921 0 0.0 0 0 1 0.0 8.81240262837 1.86325858393 -1.20296077636 1.0</transform>
+		<skeleton>3f68d00b83f7388258f119d4120aa2fa30b105cf</skeleton>
+		<mode>0</mode>
+		<control_type>0</control_type>
+		<anim_script guid="2cdb9290a9943d1da578c7f541b52ade513121e3"/>
+		<node type="ObjectMeshSkinned" id="1330148965" name="ObjectMeshSkinned">
+			<mesh_name>guid://2dfd37932fef45e37670903e1f577b6ccef3b8e2</mesh_name>
+			<fps_visible_camera>-1</fps_visible_camera>
+			<fps_visible_shadow>30</fps_visible_shadow>
+			<fps_invisible>0</fps_invisible>
+			<surface name="Face" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+			<surface name="Body" material="e128f3de1149944d094658bb7f4043b9b0235239"/>
+			<body type="BodyDummy" id="130941542" frozen="0">
+				<shape type="ShapeCapsule" id="130941542" name="ShapeCapsule" transform="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.899999976 1">
+					<radius>0.400000006</radius>
+					<height>1</height>
+				</shape>
+			</body>
+			<properties>
+				<property parent="46997dd32566d8cc413cccc23e01f8023d5d3899" guid="c299634b6883366bea69a63c240e84a2bfe32659">
+					<parameter name="playerNode">1892598520</parameter>
+					<parameter name="cameraNode">1892598520</parameter>
+					<parameter name="magnetLineOfSightMask">0x40000000</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 		</node>
 	</node>
 </nodes>

@@ -90,6 +90,9 @@ private:
 	bool _adaptive_jump_pending = false;
 	TimedFlag _grounded_flag;
 
+	Unigine::AnimScriptPtr _anim;
+
+private:
 	friend class MoveState;
 	friend class IdleState;
 };

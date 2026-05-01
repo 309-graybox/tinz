@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
-	<guid>278db0c769cbcc37379bd3b49e3232773c585eac</guid>
-	<type>file</type>
-	<hash>8d3195cb868f49fad70e95f26233f25d4c408983d07de1bbbde430a6595544ec</hash>
-	<runtimes>
-		<runtime id="278db0c769cbcc37379bd3b49e3232773c585eac" name="Running.skeleton" link="0"/>
-	</runtimes>
-</asset>

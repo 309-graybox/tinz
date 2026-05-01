@@ -1076,6 +1076,12 @@
 			<reference>guid://9436cb2bf12fc6e8d4420a9b2e82f74941b03de6</reference>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -11.4522769502 50.8704095149 0.760848488602 1.0</transform>
 		</node>
+		<node type="NodeDummy" id="1845349016" name="T-Pose">
+			<transform>1 1.6703738393e-22 -3.82137050681e-15 0.0 1.67037409174e-22 1 8.7422769468e-08 0.0 3.82137050681e-15 -8.7422769468e-08 1 0.0 4.66552734372 -21.2506704331 4.00873298929 1.0</transform>
+			<node type="NodeDummy" id="971164951" name="Armature">
+				<transform>1 2.40890133757e-22 -6.6002355328e-15 0.0 2.40890133876e-22 1 7.54978941586e-08 0.0 6.6002355328e-15 -7.54978941586e-08 1 0.0 0 0 0 1.0</transform>
+			</node>
+		</node>
 	</editor>
 	<console>
 		<bake_lighting_bounces>4</bake_lighting_bounces>

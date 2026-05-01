@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
-	<guid>fe05deead651ad7e807e2f38f036a63d575daa0d</guid>
-	<type>animation</type>
-	<hash>f96a3d72132a96f423d1f349012a741c475df0c662f28d39a7eb3ae64891d99d</hash>
-	<runtimes>
-		<runtime id="fe05deead651ad7e807e2f38f036a63d575daa0d" name="Running.anim" link="0" type="2"/>
-	</runtimes>
-</asset>

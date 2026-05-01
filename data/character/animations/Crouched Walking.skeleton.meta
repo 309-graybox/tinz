@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
-	<guid>cb4fcd5101f6bdc311243006c060b593094c78be</guid>
-	<type>file</type>
-	<hash>d376645023e10e6e525f7be742fc593816147b4ec3dda00bc85d5a6ee8177fc3</hash>
-	<runtimes>
-		<runtime id="cb4fcd5101f6bdc311243006c060b593094c78be" name="Crouched Walking.skeleton" link="0"/>
-	</runtimes>
-</asset>

@@ -29,6 +29,12 @@ void CharacterMovement::init()
 	_body = checked_ptr_cast<BodyDummy>(obj->getBody());
 	FLOGERR(_body, "can't get BodyDummy from \"body\"\n");
 
+	auto pose = checked_ptr_cast<NodeSkeletonPose>(body->getParent());
+	FLOGERR(pose, "can't get NodeSkeletonPose\n");
+
+	_anim = pose->getAnimScript();
+	FLOGERR(_anim, "can't get anim\n");
+
 	for (int i = 0; i < _body->getNumShapes(); ++i)
 		if (!_shape)
 			_shape = checked_ptr_cast<ShapeCapsule>(_body->getShape(i));
@@ -66,9 +72,9 @@ void CharacterMovement::update()
 	_ctx.desired_input_direction = compute_desired_input_direction();
 	_ctx.is_grounded = _is_grounded;
 
-// #ifdef DEBUG_MOVEMENT
+	// #ifdef DEBUG_MOVEMENT
 	// Log::message("state: %s\n", _states[_current_state]->name());
-// #endif
+	// #endif
 	// set default context output values
 	_ctx.speed = 0.0f;
 	_ctx.turn_speed = 0.0f;
@@ -86,9 +92,7 @@ void CharacterMovement::update()
 	if (_ctx.is_grounded)
 		_grounded_flag.stamp();
 
-	if (_states[_current_state]->canJump()
-		&& (_ctx.is_grounded || _grounded_flag.isFresh(coyoteTime))
-		&& _ctx.input.consumeJump(jumpBufferTime))
+	if (_states[_current_state]->canJump() && (_ctx.is_grounded || _grounded_flag.isFresh(coyoteTime)) && _ctx.input.consumeJump(jumpBufferTime))
 	{
 		_grounded_flag.clear();
 		_ctx.vertical_impulse = jumpPower / ifps;
@@ -115,7 +119,7 @@ void CharacterMovement::update()
 	Visualizer::renderVector(p0, p0 + Vec3(_up), vec4_white);
 	Visualizer::renderVector(p0, p0 + Vec3(_gravity_direction), vec4_blue);
 	Visualizer::renderVector(p0, p0 + Vec3(_ctx.desired_input_direction), vec4_white);
-	
+
 	Visualizer::renderMessage3D(p0 + Vec3_up * 1.5, vec3_zero, "_is_grounded", _is_grounded ? vec4_green : vec4_red);
 	Visualizer::renderMessage3D(p0 + Vec3_up * 2, vec3_zero, String::format("_vertical_speed: %f", _vertical_speed), _vertical_speed != 0.0f ? vec4_green : vec4_red);
 #endif
@@ -144,6 +148,12 @@ void CharacterMovement::update()
 
 	target->setWorldTransform(_world_transform);
 	body->setWorldTransform(target->getWorldTransform());
+
+
+	//%%%%%%%%%%%%%%%%%%% Anim %%%%%%%%%%%%%%%
+	_anim->setParamBool("is_moving", !compare(_ctx.speed, 0.0f));
+	_anim->setParamBool("is_sprinting", abs(_ctx.speed) > runSpeed);
+	_anim->setParamBool("is_grounded", _is_grounded);
 }
 
 void CharacterMovement::shutdown()
@@ -186,7 +196,7 @@ Unigine::Math::vec3 CharacterMovement::get_ground_normal() const
 	{
 		Vec3 p0 = pos + axes[i] * radius;
 		auto object = World::getIntersection(p0, p0 + down_ray, groundCheckIntersectionMask, {body}, hit_normal);
-		
+
 #ifdef DEBUG_MOVEMENT
 		Visualizer::renderVector(p0, p0 + down_ray, vec4_blue, 0.01f);
 #endif
@@ -247,15 +257,15 @@ void CharacterMovement::resolve_collisions(float ifps)
 			float depth = contact->getDepth();
 
 			Vec3 contact_point = contact->getPoint();
-			
+
 			float slope_dot = dot(normal, _up);
 			bool is_below = dot(contact_point - bottom_cap, Vec3(_up)) < 0.0f;
 			bool is_walkable = is_below && slope_dot > _slope_cos;
 
 			pos_offset += is_walkable
-							// ? up * dot(normal, up) * depth * icount
-							? _up * depth * icount
-							: normal * depth * icount;
+							  // ? up * dot(normal, up) * depth * icount
+							  ? _up * depth * icount
+							  : normal * depth * icount;
 
 			float normal_speed = toFloat(dot(Vec3(normal), _horizontal_velocity));
 			if (normal_speed < 0.0f)
@@ -289,8 +299,9 @@ void CharacterMovement::rotate(const vec3 &direction, float turn_speed, float if
 	// forward = normalize(forward - _up * dot(forward, _up));
 
 	float angle = Math::atan2(
-		dot(cross(forward, direction), _up),
-		dot(forward, direction)) * Consts::RAD2DEG;
+					  dot(cross(forward, direction), _up),
+					  dot(forward, direction)) *
+				  Consts::RAD2DEG;
 
 	float max_step = turn_speed * ifps;
 
