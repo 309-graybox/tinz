@@ -27,6 +27,7 @@ struct State
 
 	Vector<AmbientSourcePtr> active_2d;
 	Vector<Active3D> active_3d;
+	AmbientSourcePtr music;
 };
 
 State &state()
@@ -130,6 +131,13 @@ void SoundManager::shutdown()
 		}
 	}
 	s.active_3d.clear();
+
+	if (s.music)
+	{
+		s.music->stop();
+		s.music.deleteLater();
+		s.music.clear();
+	}
 
 	s.events.clear();
 	s.initialized = false;
@@ -277,6 +285,50 @@ void SoundManager::playOnNode(const char *id_or_path, const NodePtr &node)
 	if (!node)
 		return;
 	play3DAt(id_or_path, node->getWorldPosition());
+}
+
+void SoundManager::playMusic(const char *id_or_path)
+{
+	ensureInitialized();
+
+	SoundEvent fallback;
+	const SoundEvent *e = resolveEvent(id_or_path, fallback);
+	if (!e || e->sample.empty())
+		return;
+
+	const float gain = resolveGain(*e);
+	if (gain <= 0.0f)
+	{
+		stopMusic();
+		return;
+	}
+
+	stopMusic();
+
+	AmbientSourcePtr as = AmbientSource::create(e->sample.get(), 1);
+	if (!as)
+	{
+		Log::warning("SoundManager::playMusic: failed to create AmbientSource for \"%s\"\n",
+			e->sample.get());
+		return;
+	}
+	as->setGain(gain);
+	as->setPitch(resolvePitch(*e));
+	as->setLoop(1);
+	as->setSourceMask(e->source_mask);
+	as->play();
+
+	state().music = as;
+}
+
+void SoundManager::stopMusic()
+{
+	State &s = state();
+	if (!s.music)
+		return;
+	s.music->stop();
+	s.music.deleteLater();
+	s.music.clear();
 }
 
 void SoundManager::setEnabled(bool enabled)

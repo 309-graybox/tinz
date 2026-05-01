@@ -4,5 +4,6 @@
 	<parameter name="exit" type="node">0</parameter>
 	<parameter name="startWorld" type="file"/>
 	<parameter name="outlineMat" type="file"/>
+	<parameter name="backgroundMusic" type="string"/>
 	<parameter name="intersectionMask" type="mask">-1</parameter>
 </property>

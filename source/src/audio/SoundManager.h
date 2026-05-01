@@ -71,6 +71,11 @@ public:
 	static void play3DAt(const char *id_or_path, const Unigine::Math::Vec3 &world_pos);
 	static void playOnNode(const char *id_or_path, const Unigine::NodePtr &node);
 
+	// Single global music slot. Looped, streamed; replaces any current music.
+	// id_or_path follows the same lookup rule as play2D.
+	static void playMusic(const char *id_or_path);
+	static void stopMusic();
+
 	// Global mute. While disabled, play* calls are silent no-ops. For per-bus
 	// volume use Unigine::Sound::setSourceVolume(slot, vol) on the bits selected
 	// by SoundEvent::source_mask. Master volume = Unigine::Sound::setVolume.

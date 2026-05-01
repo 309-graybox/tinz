@@ -19,6 +19,7 @@ public:
 	PROP_PARAM(Node, exit);
 	PROP_PARAM(File, startWorld);
 	PROP_PARAM(File, outlineMat);
+	PROP_PARAM(String, backgroundMusic);
 	PROP_PARAM(Mask, intersectionMask, ~0);
 
 private:

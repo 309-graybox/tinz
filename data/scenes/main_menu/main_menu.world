@@ -932,9 +932,20 @@ ASYLUM</text>
 					<parameter name="exit">142199938</parameter>
 					<parameter name="startWorld">guid://6c3a68954326ad72c48529500faaed3687c67a0c</parameter>
 					<parameter name="outlineMat">guid://6cb50fbd6ad5e6d5d19490120d01dacf060225a3</parameter>
+					<parameter name="backgroundMusic">main_menu_music</parameter>
 				</property>
 			</properties>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		</node>
+		<node type="NodeDummy" id="1521414648" name="sound_bank">
+			<properties>
+				<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="031766c9a4018262a9b36ed8a076345f7e324156">
+					<parameter name="eventId">main_menu_music</parameter>
+					<parameter name="sample">guid://f4bb9af79a732b3129aaf84ebe9875a0d64c3e5c</parameter>
+					<parameter name="stream">1</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -1.37765800953 -12.3081874847 4.76837158203e-07 1.0</transform>
 		</node>
 	</editor>
 	<console>

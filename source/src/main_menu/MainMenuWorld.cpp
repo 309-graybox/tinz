@@ -1,4 +1,5 @@
 #include "MainMenuWorld.h"
+#include "audio/SoundManager.h"
 #include "utils/Utils.h"
 #include <UnigineEngine.h>
 #include <UnigineGame.h>
@@ -36,6 +37,9 @@ void MainMenuWorld::init()
 	_interactives.reserve(2);
 	cache_interactive(start);
 	cache_interactive(exit);
+
+	if (strcmp(backgroundMusic, "") != 0)
+		audio::SoundManager::playMusic(backgroundMusic);
 }
 
 void MainMenuWorld::update()
@@ -61,6 +65,7 @@ void MainMenuWorld::update()
 
 void MainMenuWorld::shutdown()
 {
+	audio::SoundManager::stopMusic();
 	Input::setMouseHandle(_mouse_handle);
 	// Input::setMouseGrab(_mouse_grab);
 	// Input::setMouseCursorHide(_mouse_cursor_hide);
