@@ -835,7 +835,7 @@
 			<node type="NodeDummy" id="1110092738" name="Table">
 				<properties>
 					<property parent="6fb6e20332106eebd34a3ae7a23b685e049f60d1" guid="c32ab3c066224f6af1219990c32aee60f0afb9d7">
-						<parameter name="pos">0 0.5 512 243</parameter>
+						<parameter name="pos">-256 -121 0 0</parameter>
 						<parameter name="pivot">0.5 0.5</parameter>
 						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
 						<parameter name="min_cell_size">512 60</parameter>
@@ -1066,15 +1066,15 @@
 		</node>
 		<node type="NodeReference" id="576451383" name="skull_red">
 			<reference>guid://ec88fa0a4e63ff7bf9b12a5a245b9303a5f05a59</reference>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 52.3936279287 55.3296913825 1.16529622429 1.0</transform>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -32.7839603008 52.1304597841 1.16529622429 1.0</transform>
 		</node>
 		<node type="NodeReference" id="193582386" name="skull_blue">
 			<reference>guid://52731e319b1c0fd87bd3f421f41fda44bf9cf7b4</reference>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 72.3863937492 39.1198116599 1.05575085576 1.0</transform>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -12.7911944803 35.9205800615 1.05575085576 1.0</transform>
 		</node>
 		<node type="NodeReference" id="920093792" name="skull_green">
 			<reference>guid://9436cb2bf12fc6e8d4420a9b2e82f74941b03de6</reference>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 73.7253112793 54.0696411133 0.760848488602 1.0</transform>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -11.4522769502 50.8704095149 0.760848488602 1.0</transform>
 		</node>
 	</editor>
 	<console>

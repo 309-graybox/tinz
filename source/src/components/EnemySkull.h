@@ -32,6 +32,7 @@ public:
 	PROP_GROUP("Sight")
 	PROP_PARAM(Float, sightRange, 20.0f, "", "Maximum free line-of-sight length at which the skull notices the player")
 	PROP_PARAM(Mask, sightMask, ~0, "", "Intersection mask for the line-of-sight raycast")
+	PROP_PARAM(Float, memoryDuration, 3.0f, "", "After losing line of sight, the skull keeps tracking the player for this many seconds before going idle")
 
 	PROP_GROUP("Movement")
 	PROP_PARAM(Float, speed, 8.0f, "", "Target chase speed")
@@ -79,4 +80,5 @@ private:
 	bool _alerted = false;
 	bool _ramming = false; // Flank: sticky once we commit to the ram dash.
 	float _attackTimer = 0.0f;
+	float _memoryTimer = 0.0f; // Counts down after LOS is lost; while > 0 we still know where the player is.
 };

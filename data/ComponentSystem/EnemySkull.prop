@@ -5,6 +5,7 @@
 	<parameter name="behavior" type="switch" title="Skull behavior" items="Direct,Orbit,Flank">0</parameter>
 	<parameter name="sightRange" type="float" tooltip="Maximum free line-of-sight length at which the skull notices the player" group="Sight">20</parameter>
 	<parameter name="sightMask" type="mask" tooltip="Intersection mask for the line-of-sight raycast" group="Sight">-1</parameter>
+	<parameter name="memoryDuration" type="float" tooltip="After losing line of sight, the skull keeps tracking the player for this many seconds before going idle" group="Sight">3</parameter>
 	<parameter name="speed" type="float" tooltip="Target chase speed" group="Movement">8</parameter>
 	<parameter name="accel" type="float" tooltip="Maximum velocity change per second — smooths jerks and reactions to collisions" group="Movement">60</parameter>
 	<parameter name="linearDamping" type="float" tooltip="Linear damping applied to BodyRigid on init. 0 is fine since velocity is overwritten every frame" group="Movement">0</parameter>

@@ -68,6 +68,7 @@ void EnemySkull::updateSkull()
 	{
 		_alerted = false;
 		_ramming = false;
+		_memoryTimer = 0.0f;
 		applySteering(vec3_zero, ifps);
 		return;
 	}
@@ -76,7 +77,15 @@ void EnemySkull::updateSkull()
 	const Vec3 targetPos = target->getWorldPosition();
 	const float dist = (float)length(targetPos - myPos);
 
-	_alerted = dist <= sightRange && hasLineOfSight(myPos, targetPos, target);
+	const bool sees = dist <= sightRange && hasLineOfSight(myPos, targetPos, target);
+	if (sees)
+		_memoryTimer = memoryDuration;
+	else
+		_memoryTimer = max(_memoryTimer - ifps, 0.0f);
+
+	// While the memory timer is alive we still "know" the player's current
+	// position and keep chasing — losing sight doesn't immediately blank us.
+	_alerted = sees || _memoryTimer > 0.0f;
 
 	if (!_alerted)
 	{
