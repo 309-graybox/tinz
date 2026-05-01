@@ -1048,6 +1048,15 @@
 			<layer>guid://d7345f9f7a4e82c5e5b434a1dd365cd6cea5f683</layer>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 10.9148292542 27.3388557434 0.530339855431 1.0</transform>
 		</node>
+		<node type="NodeDummy" id="1234232690" name="SoundBank">
+			<properties>
+				<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="1f794755382095a1d7b90dd0cf2bb0d5e85667d4">
+					<parameter name="eventId">pickup</parameter>
+					<parameter name="sample">guid://7ad926dfbd7133596a953640f24d982399e4b123</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		</node>
 	</editor>
 	<console>
 		<bake_lighting_bounces>4</bake_lighting_bounces>
