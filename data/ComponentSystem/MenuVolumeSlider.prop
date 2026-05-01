@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="MenuVolumeSlider" manual="1" parent_name="node_base">
+	<parameter name="hoverSound" type="string" title="Hover Sound" group="Hover"/>
+	<parameter name="hoverCursor" type="file" group="Drag"/>
+	<parameter name="dragCursor" type="file" group="Drag"/>
+	<parameter name="buryOffset" type="vec3" group="Drag">0.000000 0.000000 0.000000</parameter>
+	<parameter name="sensitivity" type="float" title="Sensitivity" tooltip="Pixels of vertical mouse movement = full 0..1 range" group="Drag">200</parameter>
+	<parameter name="initialValue" type="float" title="Initial Value" tooltip="Starting slider value 0..1" group="Drag">1</parameter>
+	<parameter name="easeSpeed" type="float" title="Ease Speed" group="Drag">12</parameter>
+</property>

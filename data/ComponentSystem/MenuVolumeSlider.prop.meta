@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>b16523ab252286babe634bc617fbd74580762a5d</guid>
+	<type>property</type>
+	<hash>e9388b29cca487aea19ccd69d30dc265e5eccf27c7a41afe5555e35a804d6f41</hash>
+	<runtimes>
+		<runtime id="b16523ab252286babe634bc617fbd74580762a5d" name="MenuVolumeSlider" link="0" type="4"/>
+	</runtimes>
+</asset>

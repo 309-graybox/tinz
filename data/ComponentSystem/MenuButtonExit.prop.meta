@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>ea5954b2d1994bd73ad98e8dfeea4c23cbd7edd7</guid>
+	<type>property</type>
+	<hash>3c3e5f23d06754bffa3fd71f9f375cc9e23f829c581ac063ae1ce2ee241ad251</hash>
+	<runtimes>
+		<runtime id="ea5954b2d1994bd73ad98e8dfeea4c23cbd7edd7" name="MenuButtonExit" link="0" type="4"/>
+	</runtimes>
+</asset>

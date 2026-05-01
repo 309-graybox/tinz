@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="MenuButtonExit" manual="1" parent_name="node_base">
+	<parameter name="hoverSound" type="string" title="Hover Sound" group="Hover"/>
+	<parameter name="hoverOffset" type="vec3" group="Hover">0.000000 0.000000 0.000000</parameter>
+	<parameter name="easeSpeed" type="float" title="Ease Speed" group="Hover">8</parameter>
+	<parameter name="clickOffset" type="vec3" group="Click">0.000000 0.000000 0.000000</parameter>
+	<parameter name="clickDelay" type="float" title="Click Delay" tooltip="Seconds between press and action" group="Click">0.4</parameter>
+	<parameter name="fadeOnClick" type="toggle" title="Fade On Click" tooltip="Ramp screen brightness during click delay" group="Click">0</parameter>
+	<parameter name="clickSound" type="string" title="Click Sound" group="Click"/>
+</property>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>757fb3e25ac61b672f6616329dd6ad28c62286fc</guid>
+	<type>property</type>
+	<hash>012ab6b703f681c7223267166a71af568d933336a1bbb3743da826f20acfc6c4</hash>
+	<runtimes>
+		<runtime id="757fb3e25ac61b672f6616329dd6ad28c62286fc" name="MenuDragger" link="0" type="4"/>
+	</runtimes>
+</asset>

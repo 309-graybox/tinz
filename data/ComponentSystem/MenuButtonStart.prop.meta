@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>7e65541055354b793300ac5f0b09b92d592ac5a6</guid>
+	<type>property</type>
+	<hash>9fe9f32b92b0836bef2cf09c5b89da83be45af1ef69629ac1619511c610cf535</hash>
+	<runtimes>
+		<runtime id="7e65541055354b793300ac5f0b09b92d592ac5a6" name="MenuButtonStart" link="0" type="4"/>
+	</runtimes>
+</asset>

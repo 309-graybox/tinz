@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>933f0eda0f57a9265d224a844788e4c2a440d135</guid>
+	<type>property</type>
+	<hash>ff5bac31c90bee0f93a2b759c3d100cc1bb473382e18eca16d5743b6919e50c2</hash>
+	<runtimes>
+		<runtime id="933f0eda0f57a9265d224a844788e4c2a440d135" name="MenuInteractive" link="0" type="4"/>
+	</runtimes>
+</asset>

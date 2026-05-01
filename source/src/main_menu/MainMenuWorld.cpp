@@ -1,25 +1,25 @@
 #include "MainMenuWorld.h"
+#include "MenuButton.h"
+#include "MenuDragger.h"
+#include "MenuInteractive.h"
 #include "audio/SoundManager.h"
 #include "utils/Utils.h"
+
 #include <UnigineEngine.h>
 #include <UnigineGame.h>
-#include <UnigineInput.h>
 #include <UnigineMaterials.h>
 #include <UnigineRender.h>
 #include <UnigineWorld.h>
 #include <cstring>
 
+REGISTER_COMPONENT(MainMenuWorld);
+
 using namespace Unigine;
 using namespace Math;
 
-REGISTER_COMPONENT(MainMenuWorld);
-
 void MainMenuWorld::init()
 {
-	FLOGERR(start, "start is not set!\n");
-	FLOGERR(exit, "exit is not set!\n");
 	FLOGERR(strcmp(outlineMat, "") != 0, "outline material is not set!\n");
-	FLOGERR(strcmp(startWorld, "") != 0, "start world is not set!\n");
 	FLOGERR(_player = Game::getPlayer(), "player not found!\n");
 
 	_outline_material = Materials::findMaterialByPath(outlineMat);
@@ -28,124 +28,175 @@ void MainMenuWorld::init()
 	_player->addScriptableMaterial(_outline_material);
 
 	_mouse_handle = Input::getMouseHandle();
-	// _mouse_grab = Input::getMouseCur
-	
 	Input::setMouseHandle(Input::MOUSE_HANDLE_SOFT);
 	Input::setMouseGrab(false);
 	Input::setMouseCursorHide(false);
 
-	_interactives.reserve(2);
-	cache_interactive(start);
-	cache_interactive(exit);
+	_baseline_brightness = Render::getColorCorrectionBrightness();
 
-	if (strcmp(backgroundMusic, "") != 0)
-		audio::SoundManager::playMusic(backgroundMusic);
+	ComponentSystem::get()->getComponentsInWorld<MenuInteractive>(_interactives);
+
+	const char *music = backgroundMusic.get();
+	if (music && *music)
+		audio::SoundManager::playMusic(music);
 }
 
 void MainMenuWorld::update()
 {
-	ObjectPtr hit = get_mouse_intersection();
-	Interactive *hit_root = find_interactive_for(hit);
-
-	if (hit_root != _hovered)
+	switch (_state)
 	{
-		set_highlighted(_hovered, false);
-		set_highlighted(hit_root, true);
-		_hovered = hit_root;
-	}
-
-	if (_hovered && Input::isMouseButtonDown(Input::MOUSE_BUTTON_LEFT))
-	{
-		if (start && _hovered->root->getID() == start->getID())
-			on_start();
-		else if (exit && _hovered->root->getID() == exit->getID())
-			on_exit();
+		case State::Idle:          tick_idle();          break;
+		case State::PendingClick:  tick_pending_click(); break;
+		case State::Dragging:      tick_dragging();      break;
 	}
 }
 
 void MainMenuWorld::shutdown()
 {
 	audio::SoundManager::stopMusic();
+
+	if (_fading)
+		Render::setColorCorrectionBrightness(_baseline_brightness);
+
+	Input::clearMouseCursorCustom();
 	Input::setMouseHandle(_mouse_handle);
-	// Input::setMouseGrab(_mouse_grab);
-	// Input::setMouseCursorHide(_mouse_cursor_hide);
 }
 
-void MainMenuWorld::on_start()
+void MainMenuWorld::tick_idle()
 {
-	World::loadWorld(startWorld);
+	MenuInteractive *hit = raycast_interactive();
+	if (hit != _hovered)
+	{
+		if (_hovered)
+			_hovered->setHovered(false);
+		if (hit)
+			hit->setHovered(true);
+		_hovered = hit;
+	}
+
+	if (_hovered && Input::isMouseButtonDown(Input::MOUSE_BUTTON_LEFT))
+	{
+		if (auto *drg = dynamic_cast<MenuDragger *>(_hovered))
+			start_drag(drg);
+		else if (auto *btn = dynamic_cast<MenuButton *>(_hovered))
+			start_press(btn);
+	}
 }
 
-void MainMenuWorld::on_exit()
+void MainMenuWorld::tick_pending_click()
 {
-	Engine::get()->quit();
+	if (!_pending_button)
+	{
+		_state = State::Idle;
+		return;
+	}
+
+	const float dt = Game::getIFps();
+	_pending_timer += dt;
+
+	const float delay = max(_pending_button->getClickDelay(), 1e-4f);
+	if (_pending_button->shouldFadeOnClick())
+		apply_fade(saturate(_pending_timer / delay));
+
+	if (_pending_timer >= delay)
+	{
+		MenuButton *btn = _pending_button;
+		_pending_button = nullptr;
+		_pending_timer = 0.0f;
+		_state = State::Idle;
+		btn->onClick();
+	}
 }
 
-ObjectPtr MainMenuWorld::get_mouse_intersection()
+void MainMenuWorld::tick_dragging()
 {
-	ivec2 mouse = Input::getMousePosition();
-	dvec3 p0 = _player->getWorldPosition();
-	dvec3 p1 = p0 + dvec3(_player->getDirectionFromMainWindow(mouse.x, mouse.y)) * 100;
+	if (!_active_dragger)
+	{
+		_state = State::Idle;
+		return;
+	}
+
+	if (Input::isMouseButtonPressed(Input::MOUSE_BUTTON_LEFT))
+	{
+		const ivec2 mp = Input::getMousePosition();
+		_active_dragger->updateDrag(mp.y);
+	}
+	else
+	{
+		_active_dragger->endDrag();
+		_active_dragger = nullptr;
+		_state = State::Idle;
+	}
+
+	// Update cursor world point even while dragging, for character look-at.
+	raycast_interactive();
+}
+
+MenuInteractive *MainMenuWorld::raycast_interactive()
+{
+	const ivec2 mouse = Input::getMousePosition();
+	const dvec3 p0 = _player->getWorldPosition();
+	const dvec3 dir = dvec3(_player->getDirectionFromMainWindow(mouse.x, mouse.y));
+	const dvec3 p1 = p0 + dir * 100.0;
 
 	WorldIntersectionPtr intersection = WorldIntersection::create();
-	return World::getIntersection(p0, p1, intersectionMask, intersection);
+	ObjectPtr hit = World::getIntersection(p0, p1, intersectionMask, intersection);
+	_cursor_point = hit ? intersection->getPoint() : p1;
+
+	return find_interactive_for(hit);
 }
 
-void MainMenuWorld::cache_interactive(const NodePtr &node)
-{
-	Interactive entry;
-	entry.root = node;
-	collect_surfaces(node, entry.surfaces);
-	FLOGERR(entry.surfaces.size() > 0,
-		"interactive '%s' has no Object descendants with 'auxiliary' state\n", node->getName());
-
-	for (auto &sm : entry.surfaces)
-		sm.mat->setState(sm.aux_state_idx, 0);
-
-	_interactives.append(entry);
-}
-
-void MainMenuWorld::collect_surfaces(const NodePtr &node, Vector<SurfaceMat> &out)
-{
-	if (auto obj = checked_ptr_cast<Object>(node))
-	{
-		for (int s = 0; s < obj->getNumSurfaces(); ++s)
-		{
-			auto mat = obj->getMaterialInherit(s);
-			if (!mat)
-				continue;
-			int idx = mat->findState("auxiliary");
-			if (idx < 0)
-				continue;
-			out.append({mat, idx});
-		}
-	}
-	for (int i = 0; i < node->getNumChildren(); ++i)
-		collect_surfaces(node->getChild(i), out);
-}
-
-MainMenuWorld::Interactive *MainMenuWorld::find_interactive_for(const ObjectPtr &obj)
+MenuInteractive *MainMenuWorld::find_interactive_for(const ObjectPtr &obj) const
 {
 	if (!obj)
 		return nullptr;
 	NodePtr cur = obj;
 	while (cur)
 	{
-		for (auto &it : _interactives)
+		for (MenuInteractive *it : _interactives)
 		{
-			if (it.root && it.root->getID() == cur->getID())
-				return &it;
+			const NodePtr &it_node = it ? it->getNode() : NodePtr();
+			if (it_node && it_node->getID() == cur->getID())
+				return it;
 		}
 		cur = cur->getParent();
 	}
 	return nullptr;
 }
 
-void MainMenuWorld::set_highlighted(Interactive *it, bool on)
+void MainMenuWorld::start_press(MenuButton *btn)
 {
-	if (!it)
+	if (!btn)
 		return;
-	const int v = on ? 1 : 0;
-	for (auto &sm : it->surfaces)
-		sm.mat->setState(sm.aux_state_idx, v);
+	btn->press();
+	if (_hovered)
+	{
+		_hovered->setHovered(false);
+		_hovered = nullptr;
+	}
+	_pending_button = btn;
+	_pending_timer = 0.0f;
+	_state = State::PendingClick;
+
+	if (btn->shouldFadeOnClick())
+	{
+		_baseline_brightness = Render::getColorCorrectionBrightness();
+		_fading = true;
+	}
+}
+
+void MainMenuWorld::start_drag(MenuDragger *drg)
+{
+	if (!drg)
+		return;
+	const ivec2 mp = Input::getMousePosition();
+	drg->beginDrag(mp.y);
+	_active_dragger = drg;
+	_state = State::Dragging;
+}
+
+void MainMenuWorld::apply_fade(float t01)
+{
+	const float v = lerp(_baseline_brightness, (float)fadeBrightness, saturate(t01));
+	Render::setColorCorrectionBrightness(v);
 }

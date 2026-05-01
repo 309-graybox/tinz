@@ -1,10 +1,16 @@
 #pragma once
 
 #include <UnigineComponentSystem.h>
+#include <UnigineInput.h>
 #include <UnigineMaterial.h>
-#include <UnigineObjects.h>
+#include <UnigineMathLib.h>
 #include <UniginePlayers.h>
 #include <UnigineVector.h>
+
+
+class MenuInteractive;
+class MenuButton;
+class MenuDragger;
 
 
 class MainMenuWorld : public Unigine::ComponentBase
@@ -15,47 +21,55 @@ public:
 	COMPONENT_UPDATE(update);
 	COMPONENT_SHUTDOWN(shutdown);
 
-	PROP_PARAM(Node, start);
-	PROP_PARAM(Node, exit);
-	PROP_PARAM(File, startWorld);
-	PROP_PARAM(File, outlineMat);
-	PROP_PARAM(String, backgroundMusic);
-	PROP_PARAM(Mask, intersectionMask, ~0);
+	PROP_PARAM(File, outlineMat)
+	PROP_PARAM(String, backgroundMusic)
+	PROP_PARAM(Mask, intersectionMask, ~0)
+	PROP_PARAM(Float, fadeBrightness, -1.0f, "Fade Brightness", "Target color-correction brightness during click fade (-1 = black)")
+
+	const Unigine::Math::dvec3 &getCursorWorldPoint() const noexcept { return _cursor_point; }
+	MenuInteractive *getHovered() const noexcept { return _hovered; }
 
 private:
+	enum class State
+	{
+		Idle,
+		PendingClick,
+		Dragging,
+	};
+
 	void init();
 	void update();
 	void shutdown();
 
-	struct SurfaceMat
-	{
-		Unigine::MaterialPtr mat;
-		int aux_state_idx = -1;
-	};
+	MenuInteractive *raycast_interactive();
+	MenuInteractive *find_interactive_for(const Unigine::ObjectPtr &obj) const;
 
-	struct Interactive
-	{
-		Unigine::NodePtr root;
-		Unigine::Vector<SurfaceMat> surfaces;
-	};
+	void tick_idle();
+	void tick_pending_click();
+	void tick_dragging();
 
-	void on_start();
-	void on_exit();
-
-	Unigine::ObjectPtr get_mouse_intersection();
-
-	void cache_interactive(const Unigine::NodePtr &node);
-	void collect_surfaces(const Unigine::NodePtr &node, Unigine::Vector<SurfaceMat> &out);
-	Interactive *find_interactive_for(const Unigine::ObjectPtr &obj);
-	void set_highlighted(Interactive *it, bool on);
+	void start_press(MenuButton *btn);
+	void start_drag(MenuDragger *drg);
+	void apply_fade(float t01);
 
 	Unigine::PlayerPtr _player;
 	Unigine::MaterialPtr _outline_material;
-	Unigine::Vector<Interactive> _interactives;
-	Interactive *_hovered = nullptr;
+	Unigine::Vector<MenuInteractive *> _interactives;
 
-	Unigine::Input::MOUSE_HANDLE _mouse_handle;
-	// bool _mouse_grab = false;
-	// bool _mouse_cursor_hide = false;
+	State _state = State::Idle;
+	MenuInteractive *_hovered = nullptr;
+
+	// Pending click
+	MenuButton *_pending_button = nullptr;
+	float _pending_timer = 0.0f;
+	bool _fading = false;
+	float _baseline_brightness = 1.0f;
+
+	// Dragging
+	MenuDragger *_active_dragger = nullptr;
+
+	Unigine::Math::dvec3 _cursor_point = Unigine::Math::dvec3_zero;
+
+	Unigine::Input::MOUSE_HANDLE _mouse_handle = Unigine::Input::MOUSE_HANDLE_USER;
 };
 
