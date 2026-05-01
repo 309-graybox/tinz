@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <property version="2.21.0.0" name="MenuButtonStart" manual="1" parent_name="node_base">
+	<struct name="HoverPivotAnim">
+		<parameter name="target" type="node" title="Target" group="Hover">0</parameter>
+		<parameter name="pivot" type="node" title="Pivot" tooltip="Optional rotation pivot (null = target&apos;s own origin)" group="Hover">0</parameter>
+		<parameter name="axis" type="vec3" title="Axis" tooltip="Rotation axis in pivot&apos;s local space" group="Hover">0.000000 0.000000 1.000000</parameter>
+		<parameter name="angle" type="float" title="Angle" tooltip="Hover rotation, degrees (0 = no rotation)" group="Hover">0</parameter>
+		<parameter name="offset" type="vec3" group="Hover">0.000000 0.000000 0.000000</parameter>
+		<parameter name="speed" type="float" title="Speed" tooltip="Approach rate toward open pose" group="Hover">8</parameter>
+		<parameter name="damping" type="float" title="Damping" tooltip="Return rate to rest pose" group="Hover">8</parameter>
+	</struct>
 	<parameter name="hoverSound" type="string" title="Hover Sound" group="Hover"/>
-	<parameter name="hoverOffset" type="vec3" group="Hover">0.000000 0.000000 0.000000</parameter>
-	<parameter name="easeSpeed" type="float" title="Ease Speed" group="Hover">8</parameter>
-	<parameter name="clickOffset" type="vec3" group="Click">0.000000 0.000000 0.000000</parameter>
+	<parameter name="hoverAnims" type="array" group="Hover" array_type="HoverPivotAnim"/>
 	<parameter name="clickDelay" type="float" title="Click Delay" tooltip="Seconds between press and action" group="Click">0.4</parameter>
 	<parameter name="fadeOnClick" type="toggle" title="Fade On Click" tooltip="Ramp screen brightness during click delay" group="Click">0</parameter>
 	<parameter name="clickSound" type="string" title="Click Sound" group="Click"/>

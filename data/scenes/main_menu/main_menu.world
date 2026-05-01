@@ -897,6 +897,12 @@
 			<properties>
 				<property parent="ea5954b2d1994bd73ad98e8dfeea4c23cbd7edd7" guid="f24013e496bd6d747ac497d795e34a41b0335add">
 					<parameter name="hoverSound">main_menu_fart</parameter>
+					<parameter name="hoverAnims">
+						<value index="0">
+							<parameter name="target">282669564</parameter>
+							<parameter name="offset">-0.5 0 0</parameter>
+						</value>
+					</parameter>
 					<parameter name="clickDelay">1</parameter>
 					<parameter name="fadeOnClick">1</parameter>
 					<parameter name="clickSound">main_menu_fart</parameter>
@@ -932,10 +938,22 @@
 				<surface name="surface" physics_intersection="1" intersection="1" collision="1" shadow_mask="0x0" viewport_mask="0x0" material="f57501d721a5854f8ac1026ee8c524719369339c"/>
 				<transform>0.581993639469 0.579363226891 -0.570632576942 0.0 -0.708090424538 0.706101953983 -0.0052829827182 0.0 0.399864166975 0.407134264708 0.821188628674 0.0 5.21561771107 -6.9091130283 -0.397879422229 1.0</transform>
 			</node>
+			<node type="ObjectMeshStatic" id="282669564" immovable="1" name="box_4">
+				<mesh_name>guid://a3a42269bd8b37c4893b70b8f701e46a896c5156</mesh_name>
+				<surface name="box" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+				<transform>1 0 0 0.0 0 0.999999880791 0 0.0 0 0 0.999999821186 0.0 -18.980178638 17.1695662046 1.17602753534 1.0</transform>
+			</node>
 		</node>
 		<node type="NodeDummy" id="492666377" name="start">
 			<properties>
 				<property parent="7e65541055354b793300ac5f0b09b92d592ac5a6" guid="ae74c5a86e51c377252e9a099d28e3a62bf6f3f6">
+					<parameter name="hoverAnims">
+						<value index="0">
+							<parameter name="target">809052832</parameter>
+							<parameter name="pivot">1954209029</parameter>
+							<parameter name="angle">-25</parameter>
+						</value>
+					</parameter>
 					<parameter name="clickDelay">1</parameter>
 					<parameter name="fadeOnClick">1</parameter>
 					<parameter name="worldFile">guid://6c3a68954326ad72c48529500faaed3687c67a0c</parameter>
@@ -961,6 +979,22 @@ ASYLUM</text>
 				<mesh_name>guid://095d9a95f2e3f0baabdbe834602d8abadf8ff4f2</mesh_name>
 				<surface name="surface" intersection="1" viewport_mask="0x0" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
 				<transform>2 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -4.9983355761 -2.03351832076 -2.6999626939 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1589370046" name="hinge">
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -2.01451090086 -2.70605575494 -0.97573758179 1.0</transform>
+				<node type="ObjectMeshStatic" id="1250442779" immovable="1" name="box_3">
+					<mesh_name>guid://a3a42269bd8b37c4893b70b8f701e46a896c5156</mesh_name>
+					<surface name="box" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+					<transform>1 0 0 0.0 0 0.252819299698 0 0.0 0 0 1.72026216984 0.0 -0.503937964439 -0.00534969154596 -0.0580996285163 1.0</transform>
+				</node>
+			</node>
+			<node type="NodeDummy" id="1954209029" name="hinge_1">
+				<transform>-0.999999880791 -8.02678414402e-07 0 0.0 8.02678528089e-07 -1 0 0.0 0 0 0.999999880791 0.0 -4.0376949887 -2.76252764098 -0.97573758179 1.0</transform>
+				<node type="ObjectMeshStatic" id="809052832" immovable="1" name="box_3">
+					<mesh_name>guid://a3a42269bd8b37c4893b70b8f701e46a896c5156</mesh_name>
+					<surface name="box" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+					<transform>1 0 0 0.0 0 0.252819299698 0 0.0 0 0 1.72026216984 0.0 -0.503937964439 -0.00534969154596 -0.0580996285163 1.0</transform>
+				</node>
 			</node>
 		</node>
 		<node type="NodeDummy" id="509288709" name="volume">
