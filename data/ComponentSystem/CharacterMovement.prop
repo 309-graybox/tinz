@@ -8,10 +8,8 @@
 	<parameter name="coyoteTime" type="float" tooltip="Окно (в секундах) после схода с земли, в течение которого прыжок ещё считается возможным">0.2</parameter>
 	<parameter name="adaptiveJumpDamping" type="float" tooltip="Доля, на которую уменьшается текущая вертикальная скорость при отпускании прыжка для адаптивного прыжка">0.6</parameter>
 	<parameter name="adaptiveJumpThreshold" type="float" tooltip="Пороговое значение вертикальной скорости (в долях jumpPower), ниже которого адаптивный прыжок перестаёт применяться">0.05</parameter>
-	<parameter name="turningExitThreshold" type="float" tooltip="Минимальный угол до которого персонаж должен повернуться, чтобы начать идти во время резкого разворота">10</parameter>
 	<parameter name="sprintSpeed" type="float" tooltip="Максимальная скорость персонажа в режиме спринта" group="Sprint">8</parameter>
 	<parameter name="sprintTurnSpeed" type="float" tooltip="Скорость изменения направления движения во время спринта" group="Sprint">400</parameter>
-	<parameter name="sharpTurnAngleThreshold" type="float" tooltip="Минимальный угол изменения направления, при превышении которого активируется резкий разворот в спринте" group="Sprint">120</parameter>
 	<parameter name="stepHeight" type="float" tooltip="Максимальная выс та препятст вия, на которое персонаж может автоматически подняться">0.3</parameter>
 	<parameter name="slopeLimit" type="float" title="Slope Limit(degr ees)" tooltip="Максимальный угол наклона поверхности, по которой персонаж может двигаться">43</parameter>
 	<parameter name="body" type="node">0</parameter>

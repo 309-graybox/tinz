@@ -7,7 +7,6 @@ enum MovementStateIndex : int {
 	NONE = -1,
 	IDLE = 0,
 	MOVE,
-	TURN,
 	COUNT
 };
 

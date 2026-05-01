@@ -39,8 +39,6 @@ void CharacterMovement::init()
 
 	_player_ifps = 1.0f / playerFps;
 	_slope_cos = Math::cos(slopeLimit * Consts::DEG2RAD);
-	_sharp_turn_cos = Math::cos(sharpTurnAngleThreshold * Consts::DEG2RAD);
-	_turning_exit_cos = Math::cos(turningExitThreshold * Consts::DEG2RAD);
 
 	_world_transform = obj->getWorldTransform();
 
@@ -53,7 +51,6 @@ void CharacterMovement::init()
 	_ctx.owner = this;
 	_states[MovementStateIndex::IDLE] = &_idle_state;
 	_states[MovementStateIndex::MOVE] = &_move_state;
-	_states[MovementStateIndex::TURN] = &_turn_state;
 }
 
 void CharacterMovement::update()

@@ -12,7 +12,7 @@ MovementStateIndex IdleState::update(MovementContext &ctx, float ifps)
 {
 	if (ctx.input.isInputMoving())
 	{
-		ctx.owner->_move_state.init(false);
+		ctx.owner->_move_state.init();
 		return MovementStateIndex::MOVE;
 	}
 

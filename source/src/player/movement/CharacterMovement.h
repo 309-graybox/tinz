@@ -3,7 +3,6 @@
 #include "MovementState.h"
 #include "IdleState.h"
 #include "MoveState.h"
-#include "TurnState.h"
 #include "utils/TimedFlag.h"
 
 #include <UnigineComponentSystem.h>
@@ -28,12 +27,10 @@ public:
 	PROP_PARAM(Float, coyoteTime, 0.2f, "", "Окно (в секундах) после схода с земли, в течение которого прыжок ещё считается возможным");
 	PROP_PARAM(Float, adaptiveJumpDamping, 0.6f, "", "Доля, на которую уменьшается текущая вертикальная скорость при отпускании прыжка для адаптивного прыжка");
 	PROP_PARAM(Float, adaptiveJumpThreshold, 0.05f, "", "Пороговое значение вертикальной скорости (в долях jumpPower), ниже которого адаптивный прыжок перестаёт применяться");
-	PROP_PARAM(Float, turningExitThreshold, 10.0f, "", "Минимальный угол до которого персонаж должен повернуться, чтобы начать идти во время резкого разворота");
 
 	PROP_GROUP("Sprint");
 	PROP_PARAM(Float, sprintSpeed, 8.0f, "", "Максимальная скорость персонажа в режиме спринта");
 	PROP_PARAM(Float, sprintTurnSpeed, 400.0f, "", "Скорость изменения направления движения во время спринта");
-	PROP_PARAM(Float, sharpTurnAngleThreshold, 120.0f, "", "Минимальный угол изменения направления, при превышении которого активируется резкий разворот в спринте");
 
 	PROP_GROUP("");
 	PROP_PARAM(Float, stepHeight, 0.3f, "", "Максимальная выс та препятст вия, на которое персонаж может автоматически подняться");
@@ -55,13 +52,11 @@ private:
 public:
 	// TODO(vah): obmazat' with inkapsulation?
 	void setGravity(const Unigine::Math::Vec3 &gravity);
-	// float getSharpTurnCos() const noexcept { return _turning_exit_cos; };
 
 private:
 	MovementContext _ctx;
 	IdleState _idle_state;
 	MoveState _move_state;
-	TurnState _turn_state;
 	MovementState *_states[MovementStateIndex::COUNT];
 	MovementStateIndex _current_state = MovementStateIndex::IDLE;
 
@@ -85,14 +80,11 @@ private:
 	float _gravity_amount = 0.0f;
 
 	float _vertical_speed = 0.0f;
-	float _sharp_turn_cos = 0.0f;
-	float _turning_exit_cos = 0.0f;
 
 	bool _is_grounded = false;
 	bool _adaptive_jump_pending = false;
 	TimedFlag _grounded_flag;
 
 	friend class MoveState;
-	friend class TurnState;
 	friend class IdleState;
 };
