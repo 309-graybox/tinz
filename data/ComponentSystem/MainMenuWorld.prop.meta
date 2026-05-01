@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>ef4df286e211716f323bc95c2cc084c2107c31d0</guid>
+	<type>property</type>
+	<hash>25eabe18b0441999ac51f629816fbfc3d9d24b4d5239f0155557fea39957f834</hash>
+	<runtimes>
+		<runtime id="ef4df286e211716f323bc95c2cc084c2107c31d0" name="MainMenuWorld" link="0" type="4"/>
+	</runtimes>
+</asset>

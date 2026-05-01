@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>6cb50fbd6ad5e6d5d19490120d01dacf060225a3</guid>
+	<type>material</type>
+	<hash>6c2afbd06f9c6054b910d1c3332d8136e384f16cb127758717477d85efbf94f6</hash>
+	<runtimes>
+		<runtime id="6cb50fbd6ad5e6d5d19490120d01dacf060225a3" name="post_outline_main_menu" link="0" type="5"/>
+	</runtimes>
+</asset>
