@@ -29,6 +29,7 @@ public:
 
 	PROP_GROUP("Hover")
 	PROP_ARRAY_STRUCT(HoverPivotAnim, hoverAnims)
+	PROP_ARRAY(Node, hoverToggleNodes)
 
 	PROP_GROUP("Click")
 	PROP_PARAM(Float, clickDelay, 0.4f, "Click Delay", "Seconds between press and action")
@@ -42,6 +43,8 @@ public:
 	void press();
 
 	virtual void onClick() {}
+
+	void setHovered(bool on) override;
 
 protected:
 	void onInit() override;

@@ -23,6 +23,22 @@ void MenuButton::onInit()
 			s.rest_rot = t->getWorldRotation();
 		}
 	}
+
+	for (int i = 0; i < hoverToggleNodes.size(); ++i)
+	{
+		if (NodePtr n = hoverToggleNodes.get(i))
+			n->setEnabled(false);
+	}
+}
+
+void MenuButton::setHovered(bool on)
+{
+	MenuInteractive::setHovered(on);
+	for (int i = 0; i < hoverToggleNodes.size(); ++i)
+	{
+		if (NodePtr n = hoverToggleNodes.get(i))
+			n->setEnabled(on);
+	}
 }
 
 void MenuButton::onUpdate()
