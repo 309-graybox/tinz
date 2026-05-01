@@ -158,6 +158,15 @@ void CharacterMovement::setGravity(const Unigine::Math::Vec3 &gravity)
 	_up = -_gravity_direction;
 }
 
+void CharacterMovement::applyVerticalBounce(float speed)
+{
+	if (speed > _vertical_speed)
+		_vertical_speed = speed;
+	// Cancel adaptive jump damping — the bounce is intentional, releasing jump
+	// shouldn't immediately scrub the speed we just gave.
+	_adaptive_jump_pending = false;
+}
+
 Unigine::Math::vec3 CharacterMovement::get_ground_normal() const
 {
 	if (!_is_grounded)

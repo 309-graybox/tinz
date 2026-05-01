@@ -38,6 +38,7 @@ public:
 	PROP_PARAM(Float, speed, 8.0f, "", "Target chase speed")
 	PROP_PARAM(Float, accel, 60.0f, "", "Maximum velocity change per second — smooths jerks and reactions to collisions")
 	PROP_PARAM(Float, linearDamping, 0.0f, "", "Linear damping applied to BodyRigid on init. 0 is fine since velocity is overwritten every frame")
+	PROP_PARAM(Float, verticalSpeedFactor, 0.3f, "", "Multiplier on the vertical (Z) component of the desired velocity. Keeps skulls reachable for a stomp-kill — they can't dart up out of the player's jump arc")
 
 	PROP_GROUP("Orbit")
 	PROP_PARAM(Float, orbitDistance, 1.5f, "", "Below this distance the blue skull abandons the orbit and rams the player directly")
@@ -52,6 +53,10 @@ public:
 	PROP_PARAM(Float, attackDamage, 10.0f)
 	PROP_PARAM(Float, attackCooldown, 1.0f, "", "Minimum time between hits (only meaningful when dieOnHit is off)")
 	PROP_PARAM(Toggle, dieOnHit, true, "", "Skull is destroyed immediately after dealing damage (kamikaze)")
+
+	PROP_GROUP("Stomp")
+	PROP_PARAM(Float, stompZThreshold, 0.4f, "", "Player must be at least this much above the skull's center for a contact to count as a top-down stomp kill instead of a damage hit")
+	PROP_PARAM(Float, stompBouncePower, 5.0f, "", "Upward velocity (m/s) given to the player after a successful stomp. 0 = no bounce")
 
 	PROP_GROUP("Debug")
 	PROP_PARAM(Toggle, debugDraw, false, "", "Draw a line from the skull to its current target. Color encodes behavior")

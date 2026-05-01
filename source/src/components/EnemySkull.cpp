@@ -1,5 +1,6 @@
 #include "EnemySkull.h"
 #include "game/GameState.h"
+#include "player/movement/CharacterMovement.h"
 
 #include <UnigineGame.h>
 #include <UnigineVisualizer.h>
@@ -108,7 +109,10 @@ void EnemySkull::updateSkull()
 	}
 	_wasAlerted = true;
 
-	const vec3 desired = computeDesiredVelocity(target, myPos, targetPos);
+	vec3 desired = computeDesiredVelocity(target, myPos, targetPos);
+	// Damp vertical movement so the skull stays reachable for stomp-kills —
+	// without this it darts up out of the player's jump arc.
+	desired.z *= verticalSpeedFactor;
 	applySteering(desired, ifps);
 
 	if (debugDraw)
@@ -117,8 +121,8 @@ void EnemySkull::updateSkull()
 		switch (getBehavior())
 		{
 			case Behavior::Direct: color = vec4(1.0f, 0.2f, 0.2f, 1.0f); break;
-			case Behavior::Orbit:  color = vec4(0.2f, 0.4f, 1.0f, 1.0f); break;
-			case Behavior::Flank:  color = vec4(0.2f, 1.0f, 0.3f, 1.0f); break;
+			case Behavior::Orbit: color = vec4(0.2f, 0.4f, 1.0f, 1.0f); break;
+			case Behavior::Flank: color = vec4(0.2f, 1.0f, 0.3f, 1.0f); break;
 		}
 		Visualizer::renderLine3D(myPos, targetPos, color);
 	}
@@ -258,6 +262,29 @@ void EnemySkull::onContactEnter(const BodyPtr &body, int num)
 
 	if (!isInHierarchy(static_ptr_cast<Node>(otherObj), target))
 		return;
+
+	// Stomp from above: player is significantly higher than the skull's center
+	// at the moment of contact → the skull dies, player takes no damage and
+	// gets a small upward bounce (Mario-style rebound).
+	const Vec3 myPos = node->getWorldPosition();
+	const Vec3 playerPos = target->getWorldPosition();
+	if ((float)(playerPos.z - myPos.z) > stompZThreshold)
+	{
+		if (stompBouncePower > 0.0f)
+		{
+			// CharacterMovement lives on the PlayerDummy (camera) node, not on
+			// the character body — that's where input and movement state are.
+			if (auto player = Game::getPlayer())
+			{
+				auto cm = ComponentSystem::get()->getComponent<CharacterMovement>(static_ptr_cast<Node>(player));
+				if (cm)
+					cm->applyVerticalBounce(stompBouncePower);
+			}
+		}
+		Log::message("%s was killed by player\n", node->getName());
+		node.deleteLater();
+		return;
+	}
 
 	auto entity = ComponentSystem::get()->getComponent<Entity>(target);
 	if (entity)

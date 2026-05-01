@@ -53,6 +53,11 @@ public:
 	// TODO(vah): obmazat' with inkapsulation?
 	void setGravity(const Unigine::Math::Vec3 &gravity);
 
+	// External vertical impulse — overrides the current vertical speed to at
+	// least `speed` (m/s, positive = up). Used by stomp-killable enemies for
+	// rebound bounce. Doesn't slow the player if they're already going up faster.
+	void applyVerticalBounce(float speed);
+
 private:
 	MovementContext _ctx;
 	IdleState _idle_state;

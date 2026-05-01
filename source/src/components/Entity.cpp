@@ -11,6 +11,9 @@ void Entity::takeDamage(const DamageInfo &damageInfo)
 		return;
 
 	_hp = max(0.0f, _hp - damageInfo.amount);
+
+	Log::message("%s new hp: %f\n", node->getName(), _hp);
+
 	if (isDead())
 		node.deleteLater();
 }
