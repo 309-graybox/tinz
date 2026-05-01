@@ -26,6 +26,9 @@ void MainMenuWorld::init()
 
 	_player->addScriptableMaterial(_outline_material);
 
+	_mouse_handle = Input::getMouseHandle();
+	// _mouse_grab = Input::getMouseCur
+	
 	Input::setMouseHandle(Input::MOUSE_HANDLE_SOFT);
 	Input::setMouseGrab(false);
 	Input::setMouseCursorHide(false);
@@ -54,6 +57,13 @@ void MainMenuWorld::update()
 		else if (exit && _hovered->root->getID() == exit->getID())
 			on_exit();
 	}
+}
+
+void MainMenuWorld::shutdown()
+{
+	Input::setMouseHandle(_mouse_handle);
+	// Input::setMouseGrab(_mouse_grab);
+	// Input::setMouseCursorHide(_mouse_cursor_hide);
 }
 
 void MainMenuWorld::on_start()
