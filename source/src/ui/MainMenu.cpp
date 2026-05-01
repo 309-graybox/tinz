@@ -69,6 +69,7 @@ void MainMenu::init_main_menu()
 {
 	GET_CANVAS(_mainMenuCanvas, main_menu);
 	GET_BUTTON(_mainMenuCanvas, ButtonStart, [this] { toggle_main_menu(); });
+	GET_BUTTON(_mainMenuCanvas, ButtonRestart, [this] { World::reloadWorld(); });
 	GET_BUTTON(_mainMenuCanvas, ButtonSettings, [this] {
 		_mainMenuCanvas->setEnabled(false);
 		_settingsMenuCanvas->setEnabled(true);

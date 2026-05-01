@@ -17,20 +17,20 @@ namespace audio
 // — pick a bit per "category" and adjust its volume globally.
 struct SoundEvent
 {
-	Unigine::String sample;          // .wav / .oga / .mp3
+	Unigine::String sample; // .wav / .oga / .mp3
 
 	// Mix.
 	float gain = 1.0f;
 	float pitch_min = 1.0f;
-	float pitch_max = 1.0f;          // == pitch_min for no jitter
-	bool stream = false;             // true for long files (music)
+	float pitch_max = 1.0f; // == pitch_min for no jitter
+	bool stream = false;	// true for long files (music)
 
 	// Spatialization (3D one-shots only).
 	float min_distance = 1.0f;
 	float max_distance = 100.0f;
-	float air_absorption = 0.0f;     // 0..10, dB/m at high frequencies
-	float adaptation = 0.0f;         // auto-volume adaptation factor
-	float room_rolloff = 0.0f;       // reverb attenuation factor
+	float air_absorption = 0.0f; // 0..10, dB/m at high frequencies
+	float adaptation = 0.0f;	 // auto-volume adaptation factor
+	float room_rolloff = 0.0f;	 // reverb attenuation factor
 
 	// Cone (3D one-shots only). Defaults = omni.
 	float cone_inner_angle = 360.0f; // degrees
@@ -39,10 +39,10 @@ struct SoundEvent
 	float cone_outer_gain_hf = 1.0f;
 
 	// Routing / occlusion.
-	int source_mask = 0xffffffff;    // bit -> mixer source slot
-	int reverb_mask = 0xffffffff;    // matched against SoundReverb zones
-	int occlusion_mask = 0;          // physics intersection mask
-	bool occlusion = false;          // enable occlusion test
+	int source_mask = (int)0xffffffff; // bit -> mixer source slot
+	int reverb_mask = (int)0xffffffff; // matched against SoundReverb zones
+	int occlusion_mask = 0;			   // physics intersection mask
+	bool occlusion = false;			   // enable occlusion test
 };
 
 // Lightweight, static, fire-and-forget audio facade. Designed for game jams:
