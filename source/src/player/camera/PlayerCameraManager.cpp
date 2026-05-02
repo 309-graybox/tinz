@@ -143,6 +143,13 @@ void PlayerCameraManager::update()
 	_ctx.targetOldPosition = _ctx.target->getWorldPosition();
 }
 
+void PlayerCameraManager::addTrauma(float amount)
+{
+	if (amount <= 0.0f)
+		return;
+	_state.trauma = clamp(_state.trauma + amount, 0.0f, 1.0f);
+}
+
 void PlayerCameraManager::shutdown()
 {
 	auto ei = EISystem::get();

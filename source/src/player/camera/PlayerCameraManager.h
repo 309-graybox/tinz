@@ -27,6 +27,13 @@ public:
 
 	void rebuildPipeline();
 
+	// Gameplay-side request: add `amount` to the shake-trauma accumulator
+	// (clamped to [0,1]). The CameraShake stage consumes it. Multiple calls
+	// in a frame stack additively. Mirrors the existing target-lock channel —
+	// gameplay finds this via getComponent<PlayerCameraManager> on the player
+	// node, same as it does for CharacterMovement.
+	void addTrauma(float amount);
+
 private:
 	void init();
 	void update();

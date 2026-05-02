@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>c11aad75e29b6627c12a14e9da0367940f3b5732</guid>
+	<type>property</type>
+	<hash>e1ad1056f24daa2b759fb6378a864b1837c4e4555fdd591b19ed1ef26e46217f</hash>
+	<runtimes>
+		<runtime id="c11aad75e29b6627c12a14e9da0367940f3b5732" name="CameraShake" link="0" type="4"/>
+	</runtimes>
+</asset>

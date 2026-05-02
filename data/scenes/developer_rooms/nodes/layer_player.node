@@ -77,6 +77,14 @@
 				</properties>
 				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 			</node>
+			<node type="NodeDummy" id="399129342" name="presentation">
+				<properties>
+					<property parent="c11aad75e29b6627c12a14e9da0367940f3b5732" guid="0f20d59f0a850c4c67dcd622a7bff5f0e66af95e">
+						<parameter name="stage">3</parameter>
+					</property>
+				</properties>
+				<transform>1.00000005961 0 0 0.0 0 1.00000005961 0 0.0 0 0 1.00000005961 0.0 0 0 0 1.0</transform>
+			</node>
 		</node>
 	</node>
 	<node type="ObjectMeshStatic" id="510937540" enabled="0" immovable="1" name="Capsule">

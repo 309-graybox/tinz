@@ -36,4 +36,8 @@ struct CameraState
 	float dt = 1.0f;
 
 	CameraImpulses impulses;
+
+	// Camera-shake accumulator, 0..1. Gameplay code adds via
+	// PlayerCameraManager::addTrauma; CameraShake stage consumes and decays.
+	float trauma = 0.0f;
 };

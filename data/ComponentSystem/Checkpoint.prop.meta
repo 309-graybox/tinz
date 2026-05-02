@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>5cb9afc05957645058216dd6772ded2e46522ec1</guid>
+	<type>property</type>
+	<hash>1e4b1362c5d2e9b03eda5c49fc0b8fdb67765b43ea51762b6b6e572eb4d62094</hash>
+	<runtimes>
+		<runtime id="5cb9afc05957645058216dd6772ded2e46522ec1" name="Checkpoint" link="0" type="4"/>
+	</runtimes>
+</asset>

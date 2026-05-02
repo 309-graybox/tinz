@@ -1,5 +1,6 @@
 #include "EnemySkull.h"
 #include "game/GameState.h"
+#include "player/camera/PlayerCameraManager.h"
 #include "player/movement/CharacterMovement.h"
 
 #include <UnigineGame.h>
@@ -268,16 +269,20 @@ void EnemySkull::onContactEnter(const BodyPtr &body, int num)
 	// from the contact INTO `body`, so we flip the sign to get "skull-out".
 	if (dot(-body->getContactNormal(num), vec3_up) >= cos(stompMaxAngle * Consts::DEG2RAD))
 	{
-		if (stompBouncePower > 0.0f)
+		// Both bounce and shake live on components attached to the PlayerDummy
+		// (camera) node — same lookup chain as the existing applyVerticalBounce
+		// pattern. CameraShake reads state.trauma; we only request the kick.
+		if (auto player = Game::getPlayer())
 		{
-			// CharacterMovement lives on the PlayerDummy (camera) node, not on
-			// the character body — that's where input and movement state are.
-			if (auto player = Game::getPlayer())
+			auto playerNode = static_ptr_cast<Node>(player);
+			auto cs = ComponentSystem::get();
+			if (stompBouncePower > 0.0f)
 			{
-				auto cm = ComponentSystem::get()->getComponent<CharacterMovement>(static_ptr_cast<Node>(player));
-				if (cm)
+				if (auto cm = cs->getComponent<CharacterMovement>(playerNode))
 					cm->applyVerticalBounce(stompBouncePower);
 			}
+			if (auto pcm = cs->getComponent<PlayerCameraManager>(playerNode))
+				pcm->addTrauma(stompShake);
 		}
 		Log::message("%s was killed by player\n", node->getName());
 		node.deleteLater();
@@ -291,6 +296,12 @@ void EnemySkull::onContactEnter(const BodyPtr &body, int num)
 		info.source = node;
 		info.amount = attackDamage;
 		entity->takeDamage(info);
+		if (auto player = Game::getPlayer())
+		{
+			auto pcm = ComponentSystem::get()->getComponent<PlayerCameraManager>(static_ptr_cast<Node>(player));
+			if (pcm)
+				pcm->addTrauma(damageShake);
+		}
 	}
 	_attackTimer = attackCooldown;
 
