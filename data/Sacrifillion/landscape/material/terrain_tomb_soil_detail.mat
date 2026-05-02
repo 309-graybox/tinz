@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material version="2.21.0.0" guid="c213591d8b05a917c47345719741d2fe8c822142" parent="f0fa31eb0160efbff8d61cc8f19e745f4193f299" base_material="1879c38175a361597e59397b6a17b4412390e56b">
+	<texture name="albedo">guid://d4cafb6007c202882a4eec5c3b9e4bc084287abd</texture>
+</material>

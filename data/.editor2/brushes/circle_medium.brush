@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<brush_material version="2.21.0.0" guid="0a502487760173f6ef2a4bfbe6a302da4675a974" parent="2abb8de0fd5c67bf0d1d521299614a490b19cf14" base_material="4ead25919e699e8cee293bb91aceeaee9211d783">
+	<state name="height_blend_mode">0</state>
+	<parameter name="size" expression="0">5.5</parameter>
+	<parameter name="color_intensity" expression="0">0.125</parameter>
+	<parameter name="height" expression="0">2</parameter>
+	<state_override name="masks_overide">1</state_override>
+	<state_override name="color_srgb">1</state_override>
+	<state_override name="height_blend_mode">0</state_override>
+	<state_override name="data_mask">128</state_override>
+	<state_override name="data_mask_opacity">128</state_override>
+	<texture_override name="terrain_opacity_mask_3"/>
+	<texture_override name="opacity_src"/>
+	<texture_override name="terrain_opacity_mask_2"/>
+	<texture_override name="terrain_mask_0"/>
+	<texture_override name="terrain_mask_4"/>
+	<texture_override name="color_src"/>
+	<texture_override name="terrain_albedo"/>
+	<texture_override name="terrain_opacity_mask_0"/>
+	<texture_override name="terrain_mask_2"/>
+	<texture_override name="terrain_mask_3"/>
+	<texture_override name="terrain_opacity_height"/>
+	<texture_override name="opacity">core/textures/brushes/circle_medium.texture</texture_override>
+	<texture_override name="opacity_height_copy"/>
+	<texture_override name="height_copy"/>
+	<texture_override name="terrain_opacity_mask_4"/>
+	<texture_override name="terrain_mask_1"/>
+	<texture_override name="terrain_height"/>
+	<texture_override name="terrain_opacity_mask_1"/>
+	<texture_override name="terrain_preview"/>
+	<parameter_float_override name="contrast">0 0 0 0</parameter_float_override>
+	<parameter_float_override name="intensity">1 1 1 1</parameter_float_override>
+	<parameter_float_override name="opacity">1 1 1 1</parameter_float_override>
+	<parameter_float_override name="color_intensity">1 1 1 1</parameter_float_override>
+	<parameter_float_override name="color">1 1 1 1</parameter_float_override>
+	<parameter_float_override name="size">13 13 13 13</parameter_float_override>
+	<parameter_float_override name="angle">0 0 0 0</parameter_float_override>
+	<parameter_float_override name="height_scale">1 1 1 1</parameter_float_override>
+	<parameter_float_override name="radius">23.1615009 23.1615009 23.1615009 23.1615009</parameter_float_override>
+	<parameter_float_override name="use_opacity">1 1 1 1</parameter_float_override>
+	<parameter_float_override name="spacing">0.5 0.5 0.5 0.5</parameter_float_override>
+	<parameter_float_override name="height">2 2 2 2</parameter_float_override>
+	<parameter_float_override name="direction">0 0 0 0</parameter_float_override>
+	<parameter_int_override name="is_height_root">1 1 1 1</parameter_int_override>
+	<parameter_int_override name="current_mask">2 2 2 2</parameter_int_override>
+	<parameter_int_override name="data_mask">128 128 128 128</parameter_int_override>
+	<parameter_int_override name="enabled_rect">0 0 176 176</parameter_int_override>
+	<parameter_int_override name="data_mask_opacity">128 128 128 128</parameter_int_override>
+</brush_material>

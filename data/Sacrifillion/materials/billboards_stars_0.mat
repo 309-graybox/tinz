@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material version="2.21.0.0" guid="9a13be9eca6f5392ee287198b6bffab86a7fd5b5" parent="7e758d1ad8d5c60a93cddb1a8c3db5ed31eed3af" base_material="ee4cbd68892b61a53e7ded930b825d0f53ac250e">
+	<texture name="diffuse">guid://f4ee40b8c4ae8bbefa997d03d00b5341ea459b28</texture>
+	<parameter name="emission_color" expression="0">0 1 0 1</parameter>
+	<parameter name="emission_scale" expression="0">2.93971992</parameter>
+	<parameter name="emission_visibility_distance" expression="0">30</parameter>
+</material>

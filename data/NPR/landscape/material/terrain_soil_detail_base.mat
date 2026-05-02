@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <material version="2.21.0.0" guid="f0fa31eb0160efbff8d61cc8f19e745f4193f299" base_material="1879c38175a361597e59397b6a17b4412390e56b">
 	<texture name="albedo">guid://97be552503c7cd91ae70de141a12e335e71009ea</texture>
+	<parameter name="roughness_opacity" expression="0">0</parameter>
+	<parameter name="height_opacity" expression="0">0</parameter>
 </material>

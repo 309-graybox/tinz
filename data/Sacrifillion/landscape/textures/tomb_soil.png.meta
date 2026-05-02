@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <asset version="2.21.0.0">
-	<guid>3fc3af3f77ad1129c6b71cc6de7f67d3409d8724</guid>
+	<guid>93e8076173dc9e91f3692cf5c06dde31ae8d7b56</guid>
 	<type>texture</type>
-	<hash>9c53b5f045fdd0501d92003b8934359a9cf381ae5de36938f8f7024e4b68dd37</hash>
+	<hash>8891cfb4913f2d4217552c1a44b16eaecf4acb78a48f56668b5e2a46c8497e60</hash>
 	<runtimes>
-		<runtime id="3fc3af3f77ad1129c6b71cc6de7f67d3409d8724" name="heart.png" link="0" type="6"/>
-		<runtime id="441bd21d5070f71af46890620842055f7acb2833" name="heart.texture" link="1" type="6"/>
+		<runtime id="93e8076173dc9e91f3692cf5c06dde31ae8d7b56" name="tomb_soil.png" link="0" type="6"/>
+		<runtime id="d4cafb6007c202882a4eec5c3b9e4bc084287abd" name="tomb_soil.texture" link="1" type="6"/>
 	</runtimes>
 	<parameters>
 		<parameter type="int" name="blur_radius">1</parameter>

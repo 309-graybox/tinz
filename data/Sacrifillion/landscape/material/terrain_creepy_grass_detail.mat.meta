@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>593c56d5fceb82ff41f844a92e254a37fe7ff65a</guid>
+	<type>material</type>
+	<hash>ab7a186de82735663644c9fd02365595966de0259f23ba7ace24e65669c96747</hash>
+	<runtimes>
+		<runtime id="593c56d5fceb82ff41f844a92e254a37fe7ff65a" name="terrain_creepy_grass_detail" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>

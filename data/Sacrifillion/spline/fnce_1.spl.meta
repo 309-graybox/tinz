@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>fe1e35507180d0dd3ecedbae9bf653835bed0fca</guid>
+	<type>spline_graph</type>
+	<hash>662d9e0f33a4549aa48d906e44437ecd69f699536ad8782cd9335ab9ef69ba1e</hash>
+	<runtimes>
+		<runtime id="fe1e35507180d0dd3ecedbae9bf653835bed0fca" name="fnce_1.spl" link="0"/>
+	</runtimes>
+</asset>

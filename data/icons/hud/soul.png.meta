@@ -2,7 +2,7 @@
 <asset version="2.21.0.0">
 	<guid>ee738089e4b41c8fa468db68cf4dcc7157bf4ff6</guid>
 	<type>texture</type>
-	<hash>1c41a7f2e7ab2a9d30e756296aab4438b7a7fb12dfcc92d67379f4104b8d8f24</hash>
+	<hash>bb7488b9514897b45ffe12f3bdaa8576a747a04350396cac05405a1ee9b8909a</hash>
 	<runtimes>
 		<runtime id="ee738089e4b41c8fa468db68cf4dcc7157bf4ff6" name="soul.png" link="0" type="6"/>
 		<runtime id="7636b297d988af5baa361064c093278eba0806dd" name="soul.texture" link="1" type="6"/>

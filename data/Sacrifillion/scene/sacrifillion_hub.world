@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<world version="2.21.0.0">
+<world version="2.21.0.0" binary_nodes_data=".binary_nodes_data/54881e67eb8344eabccc05b990b1b626803d02fa">
 	<render_settings_path>guid://d83442641c14ba69ab99c13428c77de2d68cf1ca</render_settings_path>
 	<data>
 		<unigine_editor>
@@ -77,7 +77,7 @@
 		<environment_preset_0_moon_texture_name>guid://9fa37df380256b8d3321c1a5ea969c24c27c2d16</environment_preset_0_moon_texture_name>
 		<environment_preset_0_moon_angular_size>14.9994001</environment_preset_0_moon_angular_size>
 		<environment_preset_0_moon_texture_color>1 1 0.188235298 1</environment_preset_0_moon_texture_color>
-		<environment_preset_0_moon_texture_intensity>100</environment_preset_0_moon_texture_intensity>
+		<environment_preset_0_moon_texture_intensity>200</environment_preset_0_moon_texture_intensity>
 		<environment_preset_0_texture_name>core/textures/common/environment_default.texture</environment_preset_0_texture_name>
 		<environment_preset_0_texture_color>1 1 1 1</environment_preset_0_texture_color>
 		<environment_preset_0_texture_rotation>10 10 0</environment_preset_0_texture_rotation>
@@ -223,17 +223,17 @@
 		<render_clouds_dynamic_coverage_resolution>256</render_clouds_dynamic_coverage_resolution>
 		<render_clouds_enabled>1</render_clouds_enabled>
 		<render_clouds_environment_color>1 1 1 1</render_clouds_environment_color>
-		<render_clouds_environment_sky>1</render_clouds_environment_sky>
+		<render_clouds_environment_sky>0</render_clouds_environment_sky>
 		<render_clouds_environment_sky_color>1 1 1 1</render_clouds_environment_sky_color>
 		<render_clouds_far_clipping>1</render_clouds_far_clipping>
-		<render_clouds_ground_shadows>1</render_clouds_ground_shadows>
+		<render_clouds_ground_shadows>0</render_clouds_ground_shadows>
 		<render_clouds_interleaved_rendering>0</render_clouds_interleaved_rendering>
 		<render_clouds_interleaved_rendering_temporal>1</render_clouds_interleaved_rendering_temporal>
 		<render_clouds_lighting_cone_radius>0.300000012</render_clouds_lighting_cone_radius>
 		<render_clouds_lighting_quality>1</render_clouds_lighting_quality>
 		<render_clouds_lighting_samples_distribution>1.5</render_clouds_lighting_samples_distribution>
 		<render_clouds_lighting_tracelength>100</render_clouds_lighting_tracelength>
-		<render_clouds_mode>0</render_clouds_mode>
+		<render_clouds_mode>1</render_clouds_mode>
 		<render_clouds_noise_iterations>0.100000001</render_clouds_noise_iterations>
 		<render_clouds_noise_lighting>0.300000012</render_clouds_noise_lighting>
 		<render_clouds_noise_step>0.300000012</render_clouds_noise_step>
@@ -258,7 +258,7 @@
 		<render_cross_threshold>0</render_cross_threshold>
 		<render_debug>0</render_debug>
 		<render_decal_distance>1e+09</render_decal_distance>
-		<render_decals>0</render_decals>
+		<render_decals>1</render_decals>
 		<render_denoise_ao_mask_radius>1</render_denoise_ao_mask_radius>
 		<render_denoise_color_clamping_blur_intensity>0</render_denoise_color_clamping_blur_intensity>
 		<render_denoise_color_clamping_blur_intensity_ao>0</render_denoise_color_clamping_blur_intensity_ao>
@@ -763,119 +763,1227 @@
 		<frozen_angular_velocity>0.0199999996</frozen_angular_velocity>
 	</physics>
 	<editor>
-		<node id="784603924" type="ObjectMeshDynamic" name="ground">
-			<fps_visible_camera>-1</fps_visible_camera>
-			<fps_visible_shadow>30</fps_visible_shadow>
-			<fps_invisible>0</fps_invisible>
-			<object_surface name="grid_for_world_creation" begin="0" end="600"/>
-			<vertex type="float" num_vertex="121" offset="0" size="3">-500.000061 199.999893 -8.74227499e-06 -500.000061 299.999939 -1.31134148e-05 -500.000061 399.999969 -1.74845554e-05 -500.000061 499.999939 -2.18556925e-05 -500 -100.000084 4.37114068e-06 -500 -8.74227771e-05 1.91068559e-12 -500 99.9999313 -4.37113795e-06 -499.999939 -500.000061 2.18556961e-05 -499.999939 -400.000061 1.74845572e-05 -499.999939 -300.000061 1.31134193e-05 -499.999939 -200.000076 8.74227953e-06 -400.000061 199.999924 -8.7422759e-06 -400.000061 299.999939 -1.31134157e-05 -400.000061 399.999969 -1.74845554e-05 -400.000061 499.999939 -2.18556943e-05 -400 -100.000069 4.37114022e-06 -400 -6.99382217e-05 1.52854845e-12 -400 99.9999466 -4.3711384e-06 -399.999939 -500.000061 2.18556961e-05 -399.999939 -400.000061 1.74845572e-05 -399.999939 -300.000061 1.31134184e-05 -399.999939 -200.000046 8.74227862e-06 -300.000061 199.999924 -8.7422759e-06 -300.000061 299.999939 -1.31134157e-05 -300.000061 399.999969 -1.74845554e-05 -300.000061 499.999939 -2.18556943e-05 -300 -100.000038 4.37113977e-06 -300 -5.24536663e-05 1.14641142e-12 -300 99.9999771 -4.37113886e-06 -299.999939 -500.000061 2.18556961e-05 -299.999939 -400.000061 1.74845572e-05 -299.999939 -300.000061 1.31134184e-05 -299.999939 -200.000046 8.74227862e-06 -200.000076 499.999939 -2.18556943e-05 -200.000046 299.999939 -1.31134166e-05 -200.000046 399.999969 -1.74845572e-05 -200.000015 99.9999924 -4.37113931e-06 -200.000015 199.999954 -8.7422768e-06 -199.999985 -3.49691109e-05 7.64274169e-13 -199.999954 -200.000015 8.74227771e-06 -199.999954 -100.000023 4.37113931e-06 -199.999924 -400.000061 1.74845572e-05 -199.999924 -300.000061 1.31134175e-05 -199.999893 -500.000061 2.18556961e-05 -100.000084 500 -2.18556943e-05 -100.000069 400.000031 -1.74845572e-05 -100.000038 300 -1.31134166e-05 -100.000023 199.999954 -8.7422768e-06 -100.000008 100.000008 -4.37113977e-06 -99.9999924 -1.74845554e-05 3.82137085e-13 -99.9999771 -100.000008 4.37113886e-06 -99.9999619 -200.000015 8.74227771e-06 -99.9999466 -300 1.31134175e-05 -99.9999161 -400 1.74845572e-05 -99.9999008 -500 2.18556961e-05 -8.74227771e-05 500 -2.18556943e-05 -6.9938229e-05 400.000031 -1.74845572e-05 -5.24536663e-05 300 -1.31134166e-05 -3.49691109e-05 199.999985 -8.74227771e-06 -1.74845609e-05 100.000023 -4.37114022e-06 0 0 0 1.74845554e-05 -99.9999924 4.37113886e-06 3.49691109e-05 -199.999985 8.74227771e-06 5.24536663e-05 -300 1.31134166e-05 6.99382217e-05 -400 1.74845554e-05 8.74227771e-05 -500 2.18556943e-05 99.9999313 500 -2.18556961e-05 99.9999466 400.000031 -1.74845572e-05 99.9999771 300 -1.31134175e-05 99.9999924 200.000015 -8.74227771e-06 100.000008 100.000038 -4.37114022e-06 100.000023 1.74845609e-05 -3.8213722e-13 100.000038 -99.9999771 4.3711384e-06 100.000053 -199.999954 8.7422768e-06 100.000069 -300 1.31134166e-05 100.000099 -400 1.74845554e-05 100.000114 -500 2.18556943e-05 199.999893 500.000061 -2.18556961e-05 199.999924 300.000061 -1.31134175e-05 199.999924 400.000092 -1.74845572e-05 199.999954 100.000053 -4.37114068e-06 199.999954 200.000015 -8.74227771e-06 199.999985 3.49691109e-05 -7.64274169e-13 200.000015 -199.999954 8.7422768e-06 200.000015 -99.9999619 4.37113795e-06 200.000046 -399.999939 1.74845554e-05 200.000046 -299.999939 1.31134166e-05 200.000076 -499.999939 2.18556943e-05 299.999939 200.000046 -8.74227862e-06 299.999939 300.000061 -1.31134184e-05 299.999939 400.000092 -1.74845591e-05 299.999939 500.000061 -2.18556961e-05 300 -99.9999466 4.37113749e-06 300 5.24536663e-05 -1.14641142e-12 300 100.000069 -4.37114113e-06 300.000061 -499.999939 2.18556943e-05 300.000061 -399.999939 1.74845554e-05 300.000061 -299.999939 1.31134157e-05 300.000061 -199.999924 8.7422759e-06 399.999969 200.000046 -8.74227862e-06 399.999969 300.000061 -1.31134184e-05 399.999969 400.000092 -1.74845591e-05 399.999969 500.000061 -2.18556961e-05 400.000031 -99.9999161 4.37113704e-06 400.000031 6.9938229e-05 -1.52854866e-12 400.000031 100.000099 -4.37114159e-06 400.000092 -499.999939 2.18556943e-05 400.000092 -399.999939 1.74845536e-05 400.000092 -299.999939 1.31134157e-05 400.000092 -199.999924 8.7422759e-06 499.999939 200.000076 -8.74227953e-06 499.999939 300.000061 -1.31134193e-05 499.999939 400.000092 -1.74845591e-05 499.999939 500.000061 -2.18556961e-05 500 -99.9999008 4.37113658e-06 500 8.74227771e-05 -1.91068559e-12 500 100.000114 -4.37114204e-06 500.000061 -499.999939 2.18556925e-05 500.000061 -399.999939 1.74845536e-05 500.000061 -299.999939 1.31134148e-05 500.000061 -199.999893 8.74227499e-06</vertex>
-			<vertex type="float" num_vertex="121" offset="16" size="4">-249.5 -99.4999924 0 0 -249.5 -149.5 0 0 -249.5 -199.500015 0 0 -249.5 -249.5 0 0 -249.5 50.4999962 0 0 -249.5 0.5 0 0 -249.5 -49.5000114 0 0 -249.5 250.5 0 0 -249.5 200.5 0 0 -249.5 150.5 0 0 -249.5 100.499992 0 0 -199.5 -99.4999924 0 0 -199.5 -149.5 0 0 -199.5 -199.500015 0 0 -199.5 -249.5 0 0 -199.5 50.4999962 0 0 -199.5 0.5 0 0 -199.5 -49.5000114 0 0 -199.5 250.5 0 0 -199.5 200.5 0 0 -199.5 150.5 0 0 -199.5 100.499992 0 0 -149.5 -99.4999924 0 0 -149.5 -149.5 0 0 -149.5 -199.500015 0 0 -149.5 -249.5 0 0 -149.5 50.4999962 0 0 -149.5 0.5 0 0 -149.5 -49.5000114 0 0 -149.5 250.5 0 0 -149.5 200.5 0 0 -149.5 150.5 0 0 -149.5 100.499992 0 0 -99.4999924 -249.5 0 0 -99.4999924 -149.5 0 0 -99.4999924 -199.500015 0 0 -99.4999924 -49.5000114 0 0 -99.4999924 -99.4999924 0 0 -99.4999924 0.5 0 0 -99.4999924 100.499992 0 0 -99.4999924 50.4999962 0 0 -99.4999924 200.5 0 0 -99.4999924 150.5 0 0 -99.4999924 250.5 0 0 -49.4999962 -249.5 0 0 -49.4999962 -199.500015 0 0 -49.4999962 -149.5 0 0 -49.4999962 -99.4999924 0 0 -49.4999962 -49.5000114 0 0 -49.4999962 0.5 0 0 -49.4999962 50.4999962 0 0 -49.4999962 100.499992 0 0 -49.4999962 150.5 0 0 -49.4999962 200.5 0 0 -49.4999962 250.5 0 0 0.5 -249.5 0 0 0.5 -199.500015 0 0 0.5 -149.5 0 0 0.5 -99.4999924 0 0 0.5 -49.5000114 0 0 0.5 0.5 0 0 0.5 50.4999962 0 0 0.5 100.499992 0 0 0.5 150.5 0 0 0.5 200.5 0 0 0.5 250.5 0 0 50.5000114 -249.5 0 0 50.5000114 -199.500015 0 0 50.5000114 -149.5 0 0 50.5000114 -99.4999924 0 0 50.5000114 -49.5000114 0 0 50.5000114 0.5 0 0 50.5000114 50.4999962 0 0 50.5000114 100.499992 0 0 50.5000114 150.5 0 0 50.5000114 200.5 0 0 50.5000114 250.5 0 0 100.499992 -249.5 0 0 100.499992 -149.5 0 0 100.499992 -199.500015 0 0 100.499992 -49.5000114 0 0 100.499992 -99.4999924 0 0 100.499992 0.5 0 0 100.499992 100.499992 0 0 100.499992 50.4999962 0 0 100.499992 200.5 0 0 100.499992 150.5 0 0 100.499992 250.5 0 0 150.5 -99.4999924 0 0 150.5 -149.5 0 0 150.5 -199.500015 0 0 150.5 -249.5 0 0 150.5 50.4999962 0 0 150.5 0.5 0 0 150.5 -49.5000114 0 0 150.5 250.5 0 0 150.5 200.5 0 0 150.5 150.5 0 0 150.5 100.499992 0 0 200.500015 -99.4999924 0 0 200.500015 -149.5 0 0 200.500015 -199.500015 0 0 200.500015 -249.5 0 0 200.500015 50.4999962 0 0 200.500015 0.5 0 0 200.500015 -49.5000114 0 0 200.500015 250.5 0 0 200.500015 200.5 0 0 200.500015 150.5 0 0 200.500015 100.499992 0 0 250.5 -99.4999924 0 0 250.5 -149.5 0 0 250.5 -199.500015 0 0 250.5 -249.5 0 0 250.5 50.4999962 0 0 250.5 0.5 0 0 250.5 -49.5000114 0 0 250.5 250.5 0 0 250.5 200.5 0 0 250.5 150.5 0 0 250.5 100.499992 0 0</vertex>
-			<vertex type="float" num_vertex="121" offset="32" size="4">0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1 0 0 0 -1</vertex>
-			<vertex type="float" num_vertex="121" offset="48" size="4">1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</vertex>
-			<indices num_indices="600">107 106 117 118 119 107 107 119 108 118 107 117 18 19 7 7 19 8 19 18 29 30 19 29 9 8 19 30 31 19 20 9 19 19 31 20 43 41 29 29 41 30 31 30 41 110 111 99 99 111 100 99 105 116 110 99 116 112 101 111 101 100 111 104 116 105 115 116 104 112 113 101 101 113 102 115 104 114 3 2 13 14 3 13 24 13 23 24 25 13 13 25 14 24 35 25 23 35 24 23 22 37 34 23 37 34 35 23 35 33 25 45 35 46 45 44 35 35 44 33 35 34 46 0 11 1 6 11 0 11 12 1 11 17 28 17 11 6 22 11 28 22 23 11 11 23 12 12 13 1 1 13 2 6 5 16 17 6 16 13 12 23 77 66 79 79 91 77 79 78 89 90 91 79 90 79 89 79 68 78 91 90 101 102 91 101 81 78 68 81 89 78 101 89 100 89 101 90 89 88 99 100 89 99 88 89 81 4 10 21 15 4 21 16 4 15 4 16 5 9 21 10 21 20 31 32 21 31 20 21 9 26 21 32 21 26 15 16 15 26 54 64 53 64 54 65 75 64 76 64 65 76 76 85 75 87 85 76 85 87 95 96 85 95 96 97 85 85 97 86 107 95 106 95 107 96 97 96 107 108 97 107 108 109 97 97 109 98 98 83 97 83 86 97 82 84 92 93 82 92 83 92 84 92 98 109 103 92 109 103 104 92 92 104 93 98 92 83 120 109 119 114 109 120 109 114 103 109 108 119 104 103 114 45 56 44 56 55 44 46 56 45 67 56 68 67 66 56 56 46 57 56 66 55 56 57 68 46 47 58 57 46 58 66 67 79 68 79 67 42 31 41 42 39 31 31 39 32 39 42 52 41 52 42 41 43 54 53 41 54 52 41 53 51 39 52 51 50 39 39 50 40 63 52 64 63 62 52 52 53 64 52 62 51 69 81 68 70 81 69 81 80 94 88 81 94 80 81 70 70 71 82 80 70 82 82 94 80 94 93 104 105 94 104 105 99 94 94 99 88 93 94 82 16 28 17 27 16 26 27 28 16 28 37 22 28 27 38 36 28 38 37 28 36 26 38 27 40 38 26 26 32 39 40 26 39 37 46 34 37 36 48 47 37 48 47 46 37 38 48 36 38 40 50 49 38 50 49 48 38 61 50 62 50 51 62 62 72 61 62 63 74 73 62 74 72 62 73 84 72 83 82 72 84 72 73 83 72 82 71 64 74 63 74 75 85 86 74 85 74 64 75 86 83 74 74 83 73 48 58 47 59 48 60 59 58 48 48 49 60 69 68 58 58 68 57 58 59 70 69 58 70 60 70 59 60 61 72 71 60 72 61 60 50 70 60 71 50 60 49</indices>
-			<surface name="grid_for_world_creation" intersection="1" collision="1" physics_friction="1" physics_restitution="1" material="001dc611e2ca7385e50593ebc1c181e2e370240c"/>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-		</node>
-		<node type="LightWorld" id="824505625" name="sun">
-			<scattering>2</scattering>
-			<disable_angle>100</disable_angle>
-			<shadow_height>10</shadow_height>
-			<shadow_width>10</shadow_width>
-			<shadow_zfar>100</shadow_zfar>
-			<shadow_cascade_mode>0</shadow_cascade_mode>
-			<num_shadow_cascades>2</num_shadow_cascades>
-			<is_shadow_partial_update>0</is_shadow_partial_update>
-			<shadow_cascade_borders>0.0075000003 0.0500000007 0.200000003</shadow_cascade_borders>
-			<color_mode>1</color_mode>
-			<shadow_resolution>5</shadow_resolution>
-			<shadow_bias>1</shadow_bias>
-			<mode>1</mode>
-			<shadow_filter_mode>-1</shadow_filter_mode>
-			<shadow_filter>1</shadow_filter>
-			<shadow_penumbra_mode>-1</shadow_penumbra_mode>
-			<shadow_penumbra>0.150000006</shadow_penumbra>
-			<shadow_screen_space>1</shadow_screen_space>
-			<shadow_screen_space_num_rays>3</shadow_screen_space_num_rays>
-			<shadow_screen_space_num_steps>6</shadow_screen_space_num_steps>
-			<shadow_screen_space_noise_ray>0.150000006</shadow_screen_space_noise_ray>
-			<shadow_screen_space_noise_step>1</shadow_screen_space_noise_step>
-			<shadow_screen_space_step_size_near_distance>0</shadow_screen_space_step_size_near_distance>
-			<shadow_screen_space_step_size_far_distance>500</shadow_screen_space_step_size_far_distance>
-			<shadow_screen_space_step_size_near>2</shadow_screen_space_step_size_near>
-			<shadow_screen_space_step_size_far>30</shadow_screen_space_step_size_far>
-			<shadow_screen_space_threshold_near_distance>0</shadow_screen_space_threshold_near_distance>
-			<shadow_screen_space_threshold_far_distance>200</shadow_screen_space_threshold_far_distance>
-			<shadow_screen_space_threshold_near>3</shadow_screen_space_threshold_near>
-			<shadow_screen_space_threshold_far>0.5</shadow_screen_space_threshold_far>
-			<shadow_color_texture_mode>1</shadow_color_texture_mode>
-			<shadow_screen_space_softness>0</shadow_screen_space_softness>
-			<shadow_screen_space_translucent_depth_perspective_compensation>0.200000003</shadow_screen_space_translucent_depth_perspective_compensation>
-			<shadow_screen_space_translucent_depth>0.0299999993</shadow_screen_space_translucent_depth>
-			<baked_depth_texture replace="9dbe9b261482fb711c5ab1acadf5307e96b7766b"/>
-			<lens_flare_enabled>1</lens_flare_enabled>
-			<lens_flare_texture>core/textures/lens_flares_default.texture</lens_flare_texture>
-			<lens_flare_intensity>1</lens_flare_intensity>
-			<lens_flare_occlusion_fade>1</lens_flare_occlusion_fade>
-			<lens_flare_occlusion_fade_border>0.200000003</lens_flare_occlusion_fade_border>
-			<lens_flare_position_offset>0 0 0</lens_flare_position_offset>
-			<lens_flare_use_light_color>1</lens_flare_use_light_color>
-			<lens_flare_billboards num="31">
-				<billboard name="flare_0" offset="0" size="10" rotate="0" uv_lower_left="0 0" uv_upper_right="0.5 0.5" color="1 1 1 1" offset_scale="1" intensity="0.800000012"/>
-				<billboard name="flare_1" offset="0" size="0.289999992" rotate="1" uv_lower_left="0.5 0.75" uv_upper_right="0.75 1" color="1 1 1 1" offset_scale="1" intensity="0.0299999993"/>
-				<billboard name="flare_2" offset="0.0529999994" size="0.860000014" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.941176534 0.788235366 1 1" offset_scale="1" intensity="0.5"/>
-				<billboard name="flare_3" offset="0.0900000036" size="0.49000001" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.772549093 0.796078503 1 1" offset_scale="1" intensity="0.75999999"/>
-				<billboard name="flare_4" offset="0.122000001" size="0.409999996" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.792156935 1 0.82745105 1" offset_scale="1" intensity="0.200000003"/>
-				<billboard name="flare_5" offset="0.203999996" size="0.330000013" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.80392164 0.894117713 1 1" offset_scale="1" intensity="0.300000012"/>
-				<billboard name="flare_6" offset="0.432999998" size="0.649999976" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.929411829 1 0.768627524 1" offset_scale="1" intensity="0.200000003"/>
-				<billboard name="flare_7" offset="0.477999985" size="1.5" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.807843208 1 0.886274576 1" offset_scale="1" intensity="0.349999994"/>
-				<billboard name="flare_8" offset="0.52700001" size="0.810000002" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="1 0.90196085 0.788235366 1" offset_scale="1" intensity="0.200000003"/>
-				<billboard name="flare_9" offset="0.600000024" size="0.409999996" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.768627524 1 0.894117713 1" offset_scale="1" intensity="0.200000003"/>
-				<billboard name="flare_10" offset="0.615999997" size="0.569999993" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.796078503 1 0.921568692 1" offset_scale="1" intensity="0.400000006"/>
-				<billboard name="flare_11" offset="0.652999997" size="0.779999971" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.831372619 0.933333397 1 1" offset_scale="1" intensity="0.349999994"/>
-				<billboard name="flare_12" offset="0.717999995" size="1.71000004" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.878431439 1 0.796078503 1" offset_scale="1" intensity="0.150000006"/>
-				<billboard name="flare_13" offset="0.754999995" size="1.13999999" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.760784388 1 0.843137324 1" offset_scale="1" intensity="0.0500000007"/>
-				<billboard name="flare_14" offset="0.967000008" size="0.540000021" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="1 0.878431439 0.772549093 1" offset_scale="1" intensity="0.100000001"/>
-				<billboard name="flare_15" offset="0.338999987" size="0.289999992" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.674509823 1 0.698039234 1" offset_scale="1" intensity="0.300000012"/>
-				<billboard name="flare_16" offset="0.00499999989" size="2" rotate="1" uv_lower_left="0 0.75" uv_upper_right="0.25 1" color="1 1 1 1" offset_scale="0" intensity="0.0799999982"/>
-				<billboard name="flare_17" offset="-0.75" size="1" rotate="1" uv_lower_left="0.5 0.5" uv_upper_right="0.75 0.75" color="1 1 1 1" offset_scale="12.2399998" intensity="0.289999992"/>
-				<billboard name="flare_18" offset="0.75" size="1" rotate="1" uv_lower_left="0.5 0.5" uv_upper_right="0.75 0.75" color="1 1 1 1" offset_scale="12.2399998" intensity="0.289999992"/>
-				<billboard name="flare_19" offset="0" size="10" rotate="0" uv_lower_left="0.5 0" uv_upper_right="1 0.5" color="1 1 1 1" offset_scale="1" intensity="0.140000001"/>
-				<billboard name="flare_20" offset="0.245199993" size="0.610000014" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.972549081 1 0.898039281 1" offset_scale="1" intensity="0.289999992"/>
-				<billboard name="flare_21" offset="-0.1184" size="0.800000012" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.972549081 1 0.898039281 1" offset_scale="1" intensity="0.270000011"/>
-				<billboard name="flare_22" offset="-0.170000002" size="0.435000002" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.972549081 1 0.898039281 1" offset_scale="1" intensity="0.239999995"/>
-				<billboard name="flare_23" offset="-0.223599985" size="0.660000026" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.972549081 1 0.898039281 1" offset_scale="1" intensity="0.200000003"/>
-				<billboard name="flare_24" offset="-0.340499997" size="1.39499998" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.654901981 1 0.847058892 1" offset_scale="1" intensity="0.209999993"/>
-				<billboard name="flare_25" offset="-0.474399984" size="0.944999993" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="1 0.917647123 0.811764777 1" offset_scale="1" intensity="0.349999994"/>
-				<billboard name="flare_26" offset="-0.899999976" size="2.2650001" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.94901967 1 0.80392164 1" offset_scale="1" intensity="0.300000012"/>
-				<billboard name="flare_27" offset="0.845000029" size="3.19000006" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.972549081 1 0.898039281 1" offset_scale="1" intensity="0.180000007"/>
-				<billboard name="flare_28" offset="1" size="7.78999996" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.972549081 1 0.898039281 1" offset_scale="1" intensity="0.200000003"/>
-				<billboard name="flare_29" offset="0.936999977" size="0.449999988" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.972549081 1 0.898039281 1" offset_scale="1" intensity="0.180000007"/>
-				<billboard name="flare_30" offset="1" size="1.03999996" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.972549081 1 0.898039281 1" offset_scale="1" intensity="0.150000006"/>
-			</lens_flare_billboards>
-			<transform>-0.43301237 0.43559623 -0.78914917 0.0 -0.75000048 -0.6597392 0.047366858 0.0 -0.49999967 0.61237252 0.6123724 0.0 0 0 0 1.0</transform>
-		</node>
-		<node type="PlayerSpectator" id="620479819" name="main_player">
-			<collision>1</collision>
-			<collision_mask>0x1</collision_mask>
-			<collision_radius>0.5</collision_radius>
-			<min_velocity>2</min_velocity>
-			<max_velocity>4</max_velocity>
-			<min_theta_angle>-89.9000015</min_theta_angle>
-			<max_theta_angle>89.9000015</max_theta_angle>
-			<acceleration>4</acceleration>
-			<damping>8</damping>
-			<turning>90</turning>
-			<zfar>100000</zfar>
-			<oblique_frustum_plane>0 0 -1 0</oblique_frustum_plane>
-			<is_oblique_frustum>0</is_oblique_frustum>
-			<is_main>1</is_main>
-			<is_listener>1</is_listener>
-			<controlled>1</controlled>
-			<transform>1 -3.57627868652e-07 0 0.0 -0 0 1 0.0 -3.57627868652e-07 -1 -0 0.0 0.561405206249 0.703287596634 0.49999997043 1.0</transform>
+		<node type="NodeDummy" id="1442058760" name="side enviroment">
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.0106657477479 -1.72244270532 0.757865759039 1.0</transform>
+			<node type="LightWorld" id="824505625" name="sun">
+				<scattering>2</scattering>
+				<disable_angle>100</disable_angle>
+				<shadow_height>10</shadow_height>
+				<shadow_width>10</shadow_width>
+				<shadow_zfar>100</shadow_zfar>
+				<shadow_cascade_mode>0</shadow_cascade_mode>
+				<num_shadow_cascades>2</num_shadow_cascades>
+				<is_shadow_partial_update>0</is_shadow_partial_update>
+				<shadow_cascade_borders>0.0075000003 0.0500000007 0.200000003</shadow_cascade_borders>
+				<color_mode>1</color_mode>
+				<shadow_resolution>5</shadow_resolution>
+				<shadow_bias>1</shadow_bias>
+				<mode>1</mode>
+				<shadow_filter_mode>-1</shadow_filter_mode>
+				<shadow_filter>1</shadow_filter>
+				<shadow_penumbra_mode>-1</shadow_penumbra_mode>
+				<shadow_penumbra>0.150000006</shadow_penumbra>
+				<shadow_screen_space>1</shadow_screen_space>
+				<shadow_screen_space_num_rays>3</shadow_screen_space_num_rays>
+				<shadow_screen_space_num_steps>6</shadow_screen_space_num_steps>
+				<shadow_screen_space_noise_ray>0.150000006</shadow_screen_space_noise_ray>
+				<shadow_screen_space_noise_step>1</shadow_screen_space_noise_step>
+				<shadow_screen_space_step_size_near_distance>0</shadow_screen_space_step_size_near_distance>
+				<shadow_screen_space_step_size_far_distance>500</shadow_screen_space_step_size_far_distance>
+				<shadow_screen_space_step_size_near>2</shadow_screen_space_step_size_near>
+				<shadow_screen_space_step_size_far>30</shadow_screen_space_step_size_far>
+				<shadow_screen_space_threshold_near_distance>0</shadow_screen_space_threshold_near_distance>
+				<shadow_screen_space_threshold_far_distance>200</shadow_screen_space_threshold_far_distance>
+				<shadow_screen_space_threshold_near>3</shadow_screen_space_threshold_near>
+				<shadow_screen_space_threshold_far>0.5</shadow_screen_space_threshold_far>
+				<shadow_color_texture_mode>1</shadow_color_texture_mode>
+				<shadow_screen_space_softness>0</shadow_screen_space_softness>
+				<shadow_screen_space_translucent_depth_perspective_compensation>0.200000003</shadow_screen_space_translucent_depth_perspective_compensation>
+				<shadow_screen_space_translucent_depth>0.0299999993</shadow_screen_space_translucent_depth>
+				<baked_depth_texture replace="9dbe9b261482fb711c5ab1acadf5307e96b7766b"/>
+				<lens_flare_enabled>1</lens_flare_enabled>
+				<lens_flare_texture>core/textures/lens_flares_default.texture</lens_flare_texture>
+				<lens_flare_intensity>1</lens_flare_intensity>
+				<lens_flare_occlusion_fade>1</lens_flare_occlusion_fade>
+				<lens_flare_occlusion_fade_border>0.200000003</lens_flare_occlusion_fade_border>
+				<lens_flare_position_offset>0 0 0</lens_flare_position_offset>
+				<lens_flare_use_light_color>1</lens_flare_use_light_color>
+				<lens_flare_billboards num="31">
+					<billboard name="flare_0" offset="0" size="10" rotate="0" uv_lower_left="0 0" uv_upper_right="0.5 0.5" color="1 1 1 1" offset_scale="1" intensity="0.800000012"/>
+					<billboard name="flare_1" offset="0" size="0.289999992" rotate="1" uv_lower_left="0.5 0.75" uv_upper_right="0.75 1" color="1 1 1 1" offset_scale="1" intensity="0.0299999993"/>
+					<billboard name="flare_2" offset="0.0529999994" size="0.860000014" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.941176534 0.788235366 1 1" offset_scale="1" intensity="0.5"/>
+					<billboard name="flare_3" offset="0.0900000036" size="0.49000001" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.772549093 0.796078503 1 1" offset_scale="1" intensity="0.75999999"/>
+					<billboard name="flare_4" offset="0.122000001" size="0.409999996" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.792156935 1 0.82745105 1" offset_scale="1" intensity="0.200000003"/>
+					<billboard name="flare_5" offset="0.203999996" size="0.330000013" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.80392164 0.894117713 1 1" offset_scale="1" intensity="0.300000012"/>
+					<billboard name="flare_6" offset="0.432999998" size="0.649999976" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.929411829 1 0.768627524 1" offset_scale="1" intensity="0.200000003"/>
+					<billboard name="flare_7" offset="0.477999985" size="1.5" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.807843208 1 0.886274576 1" offset_scale="1" intensity="0.349999994"/>
+					<billboard name="flare_8" offset="0.52700001" size="0.810000002" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="1 0.90196085 0.788235366 1" offset_scale="1" intensity="0.200000003"/>
+					<billboard name="flare_9" offset="0.600000024" size="0.409999996" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.768627524 1 0.894117713 1" offset_scale="1" intensity="0.200000003"/>
+					<billboard name="flare_10" offset="0.615999997" size="0.569999993" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.796078503 1 0.921568692 1" offset_scale="1" intensity="0.400000006"/>
+					<billboard name="flare_11" offset="0.652999997" size="0.779999971" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.831372619 0.933333397 1 1" offset_scale="1" intensity="0.349999994"/>
+					<billboard name="flare_12" offset="0.717999995" size="1.71000004" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.878431439 1 0.796078503 1" offset_scale="1" intensity="0.150000006"/>
+					<billboard name="flare_13" offset="0.754999995" size="1.13999999" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.760784388 1 0.843137324 1" offset_scale="1" intensity="0.0500000007"/>
+					<billboard name="flare_14" offset="0.967000008" size="0.540000021" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="1 0.878431439 0.772549093 1" offset_scale="1" intensity="0.100000001"/>
+					<billboard name="flare_15" offset="0.338999987" size="0.289999992" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.674509823 1 0.698039234 1" offset_scale="1" intensity="0.300000012"/>
+					<billboard name="flare_16" offset="0.00499999989" size="2" rotate="1" uv_lower_left="0 0.75" uv_upper_right="0.25 1" color="1 1 1 1" offset_scale="0" intensity="0.0799999982"/>
+					<billboard name="flare_17" offset="-0.75" size="1" rotate="1" uv_lower_left="0.5 0.5" uv_upper_right="0.75 0.75" color="1 1 1 1" offset_scale="12.2399998" intensity="0.289999992"/>
+					<billboard name="flare_18" offset="0.75" size="1" rotate="1" uv_lower_left="0.5 0.5" uv_upper_right="0.75 0.75" color="1 1 1 1" offset_scale="12.2399998" intensity="0.289999992"/>
+					<billboard name="flare_19" offset="0" size="10" rotate="0" uv_lower_left="0.5 0" uv_upper_right="1 0.5" color="1 1 1 1" offset_scale="1" intensity="0.140000001"/>
+					<billboard name="flare_20" offset="0.245199993" size="0.610000014" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.972549081 1 0.898039281 1" offset_scale="1" intensity="0.289999992"/>
+					<billboard name="flare_21" offset="-0.1184" size="0.800000012" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.972549081 1 0.898039281 1" offset_scale="1" intensity="0.270000011"/>
+					<billboard name="flare_22" offset="-0.170000002" size="0.435000002" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.972549081 1 0.898039281 1" offset_scale="1" intensity="0.239999995"/>
+					<billboard name="flare_23" offset="-0.223599985" size="0.660000026" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.972549081 1 0.898039281 1" offset_scale="1" intensity="0.200000003"/>
+					<billboard name="flare_24" offset="-0.340499997" size="1.39499998" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.654901981 1 0.847058892 1" offset_scale="1" intensity="0.209999993"/>
+					<billboard name="flare_25" offset="-0.474399984" size="0.944999993" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="1 0.917647123 0.811764777 1" offset_scale="1" intensity="0.349999994"/>
+					<billboard name="flare_26" offset="-0.899999976" size="2.2650001" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.94901967 1 0.80392164 1" offset_scale="1" intensity="0.300000012"/>
+					<billboard name="flare_27" offset="0.845000029" size="3.19000006" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.972549081 1 0.898039281 1" offset_scale="1" intensity="0.180000007"/>
+					<billboard name="flare_28" offset="1" size="7.78999996" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.972549081 1 0.898039281 1" offset_scale="1" intensity="0.200000003"/>
+					<billboard name="flare_29" offset="0.936999977" size="0.449999988" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.972549081 1 0.898039281 1" offset_scale="1" intensity="0.180000007"/>
+					<billboard name="flare_30" offset="1" size="1.03999996" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.972549081 1 0.898039281 1" offset_scale="1" intensity="0.150000006"/>
+				</lens_flare_billboards>
+				<transform>-0.43301237 0.43559623 -0.78914917 0.0 -0.75000048 -0.6597392 0.047366858 0.0 -0.49999967 0.61237252 0.6123724 0.0 0.0106657477479 1.72244270532 -0.757865759039 1.0</transform>
+			</node>
+			<node type="ObjectWaterGlobal" id="1191127466" name="ObjectWaterGlobal">
+				<animation_old_time>4191.4082</animation_old_time>
+				<animation_time>0</animation_time>
+				<wave_layers num="0"/>
+				<distant_waves_texture_path>core/textures/water_global/distant_waves_n.texture</distant_waves_texture_path>
+				<detail_texture_path>core/textures/water_global/water_detail_n.texture</detail_texture_path>
+				<foam_texture_path>core/textures/water_global/foam_d.texture</foam_texture_path>
+				<foam_uv_scale_0>64</foam_uv_scale_0>
+				<foam_uv_scale_1>16</foam_uv_scale_1>
+				<foam_texture_affect>0.850000024</foam_texture_affect>
+				<subsurface_foam_intensity>0.200000003</subsurface_foam_intensity>
+				<subsurface_decals_intensity>0.5</subsurface_decals_intensity>
+				<underwater_depth_lut_texture_path>core/textures/water_global/water_depth_lut.tga</underwater_depth_lut_texture_path>
+				<planar_reflection_viewport_mask>1</planar_reflection_viewport_mask>
+				<caustics_texture_3d_path>core/textures/water_global/caustics.texture</caustics_texture_3d_path>
+				<caustics_distance_fade>20</caustics_distance_fade>
+				<field_shoreline_lut_texture_path>core/textures/water_global/shoreline_lut.png</field_shoreline_lut_texture_path>
+				<surface name="water_surface" intersection="1" material="721ee321d145af016697ccf60d913ae884451bcd"/>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0.0106657477479 1.72244270532 -2.28731126554 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="839540155" name="ObjectCloudLayer_Cumulus">
+				<transform>0.999999880791 0 0 0.0 0 0.999999880791 0 0.0 0 0 0.999999940395 0.0 -0.0106657477479 -1.72244270532 2.28731126554 1.0</transform>
+				<node type="ObjectCloudLayer" id="257295730" name="ObjectCloudLayer_Cumulus">
+					<coverage_animation_offset>0 0 0 0</coverage_animation_offset>
+					<noise_animation_offset>0 0 0 0</noise_animation_offset>
+					<surface name="clouds_surface" cast_shadow="0" cast_world_shadow="0" cast_env_probe_shadow="0" intersection="1" shadow_mask="0x0" physics_friction="1" physics_restitution="1" material="861bdcb639dd29ee8ce4d750d28d611c2dc07d8f"/>
+					<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 1500 1.0</transform>
+				</node>
+			</node>
 		</node>
 		<node type="NodeLayer" id="2046438632" name="NodeLayer">
 			<layer>guid://414010aa6ac6cf193bc290851500f656096989d1</layer>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0.209588050842 -0.49866682291 -0.0993784073093 1.0</transform>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -42.5617705219 42.3814256995 2.20763228305 1.0</transform>
+		</node>
+		<node type="NodeDummy" id="429334046" name="landscape">
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			<node type="ObjectLandscapeTerrain" id="1654159728" name="ObjectLandscapeTerrain">
+				<intersection_precision>0.5</intersection_precision>
+				<detail_mask_0>
+					<name>Soil</name>
+					<enabled>1</enabled>
+					<dithering>1</dithering>
+					<default_value>0</default_value>
+					<mask_by_albedo>1 1 1 0</mask_by_albedo>
+					<render_order>0</render_order>
+					<detail material="596e73d9b56bb95c6b84f6ed3bb41f9fe349122e">
+						<name>base_soil</name>
+						<enabled>1</enabled>
+						<mask_by_albedo>1 1 1 0</mask_by_albedo>
+						<min_visible_height>-1e+09</min_visible_height>
+						<max_visible_height>1e+09</max_visible_height>
+						<min_fade_height>0</min_fade_height>
+						<max_fade_height>0</max_fade_height>
+						<min_visible_texel_size>-1e+09</min_visible_texel_size>
+						<max_visible_texel_size>1e+09</max_visible_texel_size>
+						<min_fade_texel_size>0</min_fade_texel_size>
+						<max_fade_texel_size>0</max_fade_texel_size>
+						<mask_threshold>0</mask_threshold>
+						<mask_contrast>0</mask_contrast>
+					</detail>
+					<detail material="596e73d9b56bb95c6b84f6ed3bb41f9fe349122e">
+						<name>base_soil</name>
+						<enabled>1</enabled>
+						<mask_by_albedo>1 1 1 0</mask_by_albedo>
+						<min_visible_height>-1e+09</min_visible_height>
+						<max_visible_height>1e+09</max_visible_height>
+						<min_fade_height>0</min_fade_height>
+						<max_fade_height>0</max_fade_height>
+						<min_visible_texel_size>-1e+09</min_visible_texel_size>
+						<max_visible_texel_size>1e+09</max_visible_texel_size>
+						<min_fade_texel_size>0</min_fade_texel_size>
+						<max_fade_texel_size>0</max_fade_texel_size>
+						<mask_threshold>0</mask_threshold>
+						<mask_contrast>0</mask_contrast>
+					</detail>
+				</detail_mask_0>
+				<detail_mask_1>
+					<name>Moss</name>
+					<enabled>1</enabled>
+					<dithering>1</dithering>
+					<default_value>0</default_value>
+					<mask_by_albedo>1 1 1 0</mask_by_albedo>
+					<render_order>1</render_order>
+					<detail material="593c56d5fceb82ff41f844a92e254a37fe7ff65a">
+						<name>base_moss</name>
+						<enabled>1</enabled>
+						<mask_by_albedo>1 1 1 0</mask_by_albedo>
+						<min_visible_height>-1e+09</min_visible_height>
+						<max_visible_height>1e+09</max_visible_height>
+						<min_fade_height>0</min_fade_height>
+						<max_fade_height>0</max_fade_height>
+						<min_visible_texel_size>-1e+09</min_visible_texel_size>
+						<max_visible_texel_size>1e+09</max_visible_texel_size>
+						<min_fade_texel_size>0</min_fade_texel_size>
+						<max_fade_texel_size>0</max_fade_texel_size>
+						<mask_threshold>0</mask_threshold>
+						<mask_contrast>0</mask_contrast>
+					</detail>
+					<detail material="207d0f603e3bda4925fac05c8c01588d5a19debd">
+						<name>base_moss</name>
+						<enabled>1</enabled>
+						<mask_by_albedo>1 1 1 0</mask_by_albedo>
+						<min_visible_height>-1e+09</min_visible_height>
+						<max_visible_height>1e+09</max_visible_height>
+						<min_fade_height>0</min_fade_height>
+						<max_fade_height>0</max_fade_height>
+						<min_visible_texel_size>-1e+09</min_visible_texel_size>
+						<max_visible_texel_size>1e+09</max_visible_texel_size>
+						<min_fade_texel_size>0</min_fade_texel_size>
+						<max_fade_texel_size>0</max_fade_texel_size>
+						<mask_threshold>0</mask_threshold>
+						<mask_contrast>0</mask_contrast>
+					</detail>
+				</detail_mask_1>
+				<detail_mask_2>
+					<name>Grass</name>
+					<enabled>1</enabled>
+					<dithering>1</dithering>
+					<default_value>0</default_value>
+					<mask_by_albedo>1 1 1 0</mask_by_albedo>
+					<render_order>3</render_order>
+					<detail material="6ec90667bd7b4cab793d6599b1a6cd9d6e1512f7">
+						<name>grass</name>
+						<enabled>1</enabled>
+						<mask_by_albedo>1 1 1 0</mask_by_albedo>
+						<min_visible_height>-1e+09</min_visible_height>
+						<max_visible_height>1e+09</max_visible_height>
+						<min_fade_height>0</min_fade_height>
+						<max_fade_height>0</max_fade_height>
+						<min_visible_texel_size>-1e+09</min_visible_texel_size>
+						<max_visible_texel_size>1e+09</max_visible_texel_size>
+						<min_fade_texel_size>0</min_fade_texel_size>
+						<max_fade_texel_size>0</max_fade_texel_size>
+						<mask_threshold>0</mask_threshold>
+						<mask_contrast>0</mask_contrast>
+					</detail>
+				</detail_mask_2>
+				<detail_mask_3>
+					<name>Tomb</name>
+					<enabled>1</enabled>
+					<dithering>1</dithering>
+					<default_value>0</default_value>
+					<mask_by_albedo>1 1 1 0</mask_by_albedo>
+					<render_order>2</render_order>
+					<detail material="c213591d8b05a917c47345719741d2fe8c822142">
+						<name>tomb_soil</name>
+						<enabled>1</enabled>
+						<mask_by_albedo>1 1 1 0</mask_by_albedo>
+						<min_visible_height>-1e+09</min_visible_height>
+						<max_visible_height>1e+09</max_visible_height>
+						<min_fade_height>0</min_fade_height>
+						<max_fade_height>0</max_fade_height>
+						<min_visible_texel_size>-1e+09</min_visible_texel_size>
+						<max_visible_texel_size>1e+09</max_visible_texel_size>
+						<min_fade_texel_size>0</min_fade_texel_size>
+						<max_fade_texel_size>0</max_fade_texel_size>
+						<mask_threshold>0</mask_threshold>
+						<mask_contrast>0</mask_contrast>
+					</detail>
+				</detail_mask_3>
+				<detail_mask_4>
+					<name>Rock</name>
+					<enabled>1</enabled>
+					<dithering>1</dithering>
+					<default_value>0</default_value>
+					<mask_by_albedo>1 1 1 0</mask_by_albedo>
+					<render_order>5</render_order>
+					<detail material="c420b44fe382ed47cfc4f2fc83cad1125afecadd">
+						<name>base_rock</name>
+						<enabled>1</enabled>
+						<mask_by_albedo>1 1 1 0</mask_by_albedo>
+						<min_visible_height>-1e+09</min_visible_height>
+						<max_visible_height>1e+09</max_visible_height>
+						<min_fade_height>0</min_fade_height>
+						<max_fade_height>0</max_fade_height>
+						<min_visible_texel_size>-1e+09</min_visible_texel_size>
+						<max_visible_texel_size>1e+09</max_visible_texel_size>
+						<min_fade_texel_size>0</min_fade_texel_size>
+						<max_fade_texel_size>0</max_fade_texel_size>
+						<mask_threshold>0</mask_threshold>
+						<mask_contrast>0</mask_contrast>
+					</detail>
+				</detail_mask_4>
+				<detail_mask_5>
+					<name>Tree</name>
+					<enabled>1</enabled>
+					<dithering>1</dithering>
+					<default_value>0</default_value>
+					<mask_by_albedo>1 1 1 0</mask_by_albedo>
+					<render_order>4</render_order>
+					<detail material="6ec90667bd7b4cab793d6599b1a6cd9d6e1512f7">
+						<name>tree_0</name>
+						<enabled>1</enabled>
+						<mask_by_albedo>1 1 1 0</mask_by_albedo>
+						<min_visible_height>-1e+09</min_visible_height>
+						<max_visible_height>1e+09</max_visible_height>
+						<min_fade_height>0</min_fade_height>
+						<max_fade_height>0</max_fade_height>
+						<min_visible_texel_size>-1e+09</min_visible_texel_size>
+						<max_visible_texel_size>1e+09</max_visible_texel_size>
+						<min_fade_texel_size>0</min_fade_texel_size>
+						<max_fade_texel_size>0</max_fade_texel_size>
+						<mask_threshold>0</mask_threshold>
+						<mask_contrast>0</mask_contrast>
+					</detail>
+				</detail_mask_5>
+				<detail_mask_6>
+					<name>Mask 6</name>
+					<enabled>0</enabled>
+					<dithering>1</dithering>
+					<default_value>0</default_value>
+					<mask_by_albedo>1 1 1 0</mask_by_albedo>
+					<render_order>6</render_order>
+				</detail_mask_6>
+				<detail_mask_7>
+					<name>Mask 7</name>
+					<enabled>0</enabled>
+					<dithering>1</dithering>
+					<default_value>0</default_value>
+					<mask_by_albedo>1 1 1 0</mask_by_albedo>
+					<render_order>7</render_order>
+				</detail_mask_7>
+				<detail_mask_8>
+					<name>Mask 8</name>
+					<enabled>0</enabled>
+					<dithering>1</dithering>
+					<default_value>0</default_value>
+					<mask_by_albedo>1 1 1 0</mask_by_albedo>
+					<render_order>8</render_order>
+				</detail_mask_8>
+				<detail_mask_9>
+					<name>Mask 9</name>
+					<enabled>0</enabled>
+					<dithering>1</dithering>
+					<default_value>0</default_value>
+					<mask_by_albedo>1 1 1 0</mask_by_albedo>
+					<render_order>9</render_order>
+				</detail_mask_9>
+				<detail_mask_10>
+					<name>Mask 10</name>
+					<enabled>0</enabled>
+					<dithering>1</dithering>
+					<default_value>0</default_value>
+					<mask_by_albedo>1 1 1 0</mask_by_albedo>
+					<render_order>10</render_order>
+				</detail_mask_10>
+				<detail_mask_11>
+					<name>Mask 11</name>
+					<enabled>0</enabled>
+					<dithering>1</dithering>
+					<default_value>0</default_value>
+					<mask_by_albedo>1 1 1 0</mask_by_albedo>
+					<render_order>11</render_order>
+				</detail_mask_11>
+				<detail_mask_12>
+					<name>Mask 12</name>
+					<enabled>0</enabled>
+					<dithering>1</dithering>
+					<default_value>0</default_value>
+					<mask_by_albedo>1 1 1 0</mask_by_albedo>
+					<render_order>12</render_order>
+				</detail_mask_12>
+				<detail_mask_13>
+					<name>Mask 13</name>
+					<enabled>0</enabled>
+					<dithering>1</dithering>
+					<default_value>0</default_value>
+					<mask_by_albedo>1 1 1 0</mask_by_albedo>
+					<render_order>13</render_order>
+				</detail_mask_13>
+				<detail_mask_14>
+					<name>Mask 14</name>
+					<enabled>0</enabled>
+					<dithering>1</dithering>
+					<default_value>0</default_value>
+					<mask_by_albedo>1 1 1 0</mask_by_albedo>
+					<render_order>14</render_order>
+				</detail_mask_14>
+				<detail_mask_15>
+					<name>Mask 15</name>
+					<enabled>0</enabled>
+					<dithering>1</dithering>
+					<default_value>0</default_value>
+					<mask_by_albedo>1 1 1 0</mask_by_albedo>
+					<render_order>15</render_order>
+				</detail_mask_15>
+				<detail_mask_16>
+					<name>Mask 16</name>
+					<enabled>0</enabled>
+					<dithering>1</dithering>
+					<default_value>0</default_value>
+					<mask_by_albedo>1 1 1 0</mask_by_albedo>
+					<render_order>16</render_order>
+				</detail_mask_16>
+				<detail_mask_17>
+					<name>Mask 17</name>
+					<enabled>0</enabled>
+					<dithering>1</dithering>
+					<default_value>0</default_value>
+					<mask_by_albedo>1 1 1 0</mask_by_albedo>
+					<render_order>17</render_order>
+				</detail_mask_17>
+				<detail_mask_18>
+					<name>Mask 18</name>
+					<enabled>0</enabled>
+					<dithering>1</dithering>
+					<default_value>0</default_value>
+					<mask_by_albedo>1 1 1 0</mask_by_albedo>
+					<render_order>18</render_order>
+				</detail_mask_18>
+				<detail_mask_19>
+					<name>Mask 19</name>
+					<enabled>0</enabled>
+					<dithering>1</dithering>
+					<default_value>0</default_value>
+					<mask_by_albedo>1 1 1 0</mask_by_albedo>
+					<render_order>19</render_order>
+				</detail_mask_19>
+				<surface name="terrain_surface" intersection="1" collision="1" material="b7a7d6c1ee36a12c7679ec76af1c65b0ebc9e4b9"/>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+				<node type="NodeDummy" id="107777622" name="Props">
+					<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -3.97430863742 2.11557993728 7.89423513412 1.0</transform>
+					<node type="ObjectGrass" id="858659359" name="ObjectGrass">
+						<thinning>1</thinning>
+						<variation>1</variation>
+						<orientation>0</orientation>
+						<intersection>1</intersection>
+						<intersection_mask>-1</intersection_mask>
+						<num_textures>1</num_textures>
+						<seed>0</seed>
+						<size_x>150</size_x>
+						<size_y>150</size_y>
+						<step>400</step>
+						<subdivision>2</subdivision>
+						<density>10</density>
+						<threshold>0</threshold>
+						<angle>0</angle>
+						<probability>3 1 1 1</probability>
+						<min_bend_mean>0.100000001 0 0 0</min_bend_mean>
+						<min_bend_spread>0.200000003 0 0 0</min_bend_spread>
+						<max_bend_mean>2.0999999 0 0 0</max_bend_mean>
+						<max_bend_spread>1 0 0 0</max_bend_spread>
+						<min_height_mean>0.100000001 9.99999997e-07 9.99999997e-07 9.99999997e-07</min_height_mean>
+						<min_height_spread>0.0500000007 0.100000001 0.100000001 0.100000001</min_height_spread>
+						<max_height_mean>0.699999988 0.300000012 0.300000012 0.300000012</max_height_mean>
+						<max_height_spread>0.400000006 0.100000001 0.100000001 0.100000001</max_height_spread>
+						<aspect_mean>2.0999999 1 1 1</aspect_mean>
+						<aspect_spread>0.100000001 0.100000001 0.100000001 0.100000001</aspect_spread>
+						<offset_mean>0 0 0 0</offset_mean>
+						<offset_spread>0 0 0 0</offset_spread>
+						<rotation_mean>20 0 0 0</rotation_mean>
+						<rotation_spread>180 180 180 180</rotation_spread>
+						<terrain_masks>2 2 2 2</terrain_masks>
+						<mask_min_value>200</mask_min_value>
+						<surface name="grass" max_visible_distance="100" max_fade_distance="100" physics_friction="1" physics_restitution="1" material="37aaabd345d089d2c56f1065c71dfdb8e2f4d163"/>
+						<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -71.0256913626 -77.1155799373 -7.89423513412 1.0</transform>
+					</node>
+					<node type="ObjectMeshClutter" id="1689164414" enabled="0" name="tree_0">
+						<mesh_name>guid://1700855923fdfd2c9f10e25f966a0c8d1364d4b9</mesh_name>
+						<intersection>1</intersection>
+						<intersection_mask>-1</intersection_mask>
+						<visible_distance>150</visible_distance>
+						<fade_distance>80</fade_distance>
+						<seed>892205935</seed>
+						<size_x>150</size_x>
+						<size_y>150</size_y>
+						<step>20</step>
+						<density>0.00600000005</density>
+						<threshold>0</threshold>
+						<angle>0</angle>
+						<min_scale_mean>0.100000001</min_scale_mean>
+						<min_scale_spread>0</min_scale_spread>
+						<max_scale_mean>0.5</max_scale_mean>
+						<max_scale_spread>0.100000001</max_scale_spread>
+						<offset_mean>-1</offset_mean>
+						<offset_spread>0</offset_spread>
+						<rotation_mean>0 0 0</rotation_mean>
+						<rotation_spread>0 0 180</rotation_spread>
+						<terrain_mask>5</terrain_mask>
+						<mask_min_value>200</mask_min_value>
+						<surface name="Wood" intersection="1" collision="1" material="43be8119b2de685628e674dbf48ed7bf05309569"/>
+						<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -71.0256913626 -77.1155799373 -7.89423513412 1.0</transform>
+					</node>
+					<node type="ObjectMeshClutter" id="862844359" enabled="0" name="tree_1">
+						<mesh_name>guid://8f360f50f1a67793c7280272eddb77106b6d5a42</mesh_name>
+						<intersection>1</intersection>
+						<intersection_mask>-1</intersection_mask>
+						<visible_distance>150</visible_distance>
+						<fade_distance>80</fade_distance>
+						<seed>1649346937</seed>
+						<size_x>150</size_x>
+						<size_y>150</size_y>
+						<step>20</step>
+						<density>0.0119000003</density>
+						<threshold>0</threshold>
+						<angle>0</angle>
+						<min_scale_mean>0.100000001</min_scale_mean>
+						<min_scale_spread>0</min_scale_spread>
+						<max_scale_mean>0.300000012</max_scale_mean>
+						<max_scale_spread>0.100000001</max_scale_spread>
+						<offset_mean>0</offset_mean>
+						<offset_spread>0</offset_spread>
+						<rotation_mean>0 0 0</rotation_mean>
+						<rotation_spread>0 0 180</rotation_spread>
+						<terrain_mask>5</terrain_mask>
+						<mask_min_value>200</mask_min_value>
+						<surface name="Wood" intersection="1" collision="1" material="43be8119b2de685628e674dbf48ed7bf05309569"/>
+						<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -71.0256913626 -77.1155799373 -7.89423513412 1.0</transform>
+					</node>
+					<node type="ObjectMeshClutter" id="694204538" enabled="0" name="tree_2">
+						<mesh_name>guid://93958b8fd68f80f9f4efaea501988bbcddc334af</mesh_name>
+						<intersection>1</intersection>
+						<intersection_mask>-1</intersection_mask>
+						<visible_distance>150</visible_distance>
+						<fade_distance>80</fade_distance>
+						<seed>1013904223</seed>
+						<size_x>150</size_x>
+						<size_y>150</size_y>
+						<step>20</step>
+						<density>0.0119000003</density>
+						<threshold>0</threshold>
+						<angle>0</angle>
+						<min_scale_mean>0.100000001</min_scale_mean>
+						<min_scale_spread>0</min_scale_spread>
+						<max_scale_mean>0.5</max_scale_mean>
+						<max_scale_spread>0.100000001</max_scale_spread>
+						<offset_mean>0</offset_mean>
+						<offset_spread>0</offset_spread>
+						<rotation_mean>0 0 0</rotation_mean>
+						<rotation_spread>20 2.20000005 180</rotation_spread>
+						<terrain_mask>5</terrain_mask>
+						<mask_min_value>200</mask_min_value>
+						<surface name="Wood" intersection="1" collision="1" material="43be8119b2de685628e674dbf48ed7bf05309569"/>
+						<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -71.0256913626 -77.1155799373 -7.89423513412 1.0</transform>
+					</node>
+					<node type="ObjectMeshCluster" id="227457860" name="ObjectMeshClutter_9_Cluster">
+						<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
+						<visible_distance>80</visible_distance>
+						<fade_distance>80</fade_distance>
+						<cluster_file_id>227457860</cluster_file_id>
+						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<transform>-0.22386059165 0.974476993084 -0.0168774910271 0.0 -0.973959743977 -0.223035663366 0.0407658405602 0.0 0.0359609648585 0.0255637746304 0.999026894569 0.0 56.0846457378 4.82592545993 -5.960460852 1.0</transform>
+					</node>
+					<node type="ObjectMeshCluster" id="351243731" name="ObjectMeshClutter_9_Cluster_1">
+						<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
+						<visible_distance>80</visible_distance>
+						<fade_distance>80</fade_distance>
+						<cluster_file_id>351243731</cluster_file_id>
+						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<transform>0.143319621682 0.987942874432 -0.0585915893316 0.0 -0.983567357063 0.148753926158 0.102333597839 0.0 0.10981503129 0.0429621711373 0.993023633957 0.0 53.2417398447 -18.1493100868 -6.39349145132 1.0</transform>
+					</node>
+					<node type="ObjectMeshCluster" id="414595350" name="ObjectMeshClutter_8_Cluster">
+						<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
+						<visible_distance>80</visible_distance>
+						<fade_distance>80</fade_distance>
+						<cluster_file_id>414595350</cluster_file_id>
+						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<transform>0.893432021141 0.445364207029 -0.0585914179683 0.0 -0.438405185938 0.892934501171 0.102333523333 0.0 0.0978937149048 -0.0657410696149 0.993023455143 0.0 -8.4180703639 -60.8825472498 -6.39349145132 1.0</transform>
+					</node>
+					<node type="ObjectMeshCluster" id="731159933" name="ObjectMeshClutter_7_Cluster">
+						<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
+						<visible_distance>80</visible_distance>
+						<fade_distance>80</fade_distance>
+						<cluster_file_id>731159933</cluster_file_id>
+						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<transform>0.893432080746 0.445364445448 -0.0585914365947 0.0 -0.438405364752 0.892934441566 0.102333538234 0.0 0.0978937596083 -0.0657410770655 0.993023574352 0.0 14.5115942702 -39.3918794611 -6.39349145132 1.0</transform>
+					</node>
+					<node type="ObjectMeshCluster" id="183484600" name="ObjectMeshClutter_6_Cluster">
+						<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
+						<visible_distance>80</visible_distance>
+						<fade_distance>80</fade_distance>
+						<cluster_file_id>183484600</cluster_file_id>
+						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<transform>0.903650283813 -0.424248486757 -0.05859144032 0.0 0.42817658186 0.897884190083 0.102333560586 0.0 0.00919344183058 -0.117560885847 0.993023574352 0.0 9.14320637067 46.9432117438 -7.14183385006 1.0</transform>
+					</node>
+					<node type="ObjectMeshCluster" id="593300663" name="ObjectMeshClutter_5_Cluster">
+						<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
+						<visible_distance>80</visible_distance>
+						<fade_distance>80</fade_distance>
+						<cluster_file_id>593300663</cluster_file_id>
+						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<transform>0.964817643166 -0.256315261126 -0.0585914701223 0.0 0.261208623648 0.959844410419 0.102333560586 0.0 0.0300089493394 -0.114037483931 0.993023574352 0.0 -9.22129371095 52.7999152614 -7.14183385006 1.0</transform>
+					</node>
+					<node type="ObjectMeshCluster" id="1494778538" name="ObjectMeshClutter_4_Cluster">
+						<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
+						<visible_distance>80</visible_distance>
+						<fade_distance>80</fade_distance>
+						<cluster_file_id>1494778538</cluster_file_id>
+						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<transform>-0.00468254927546 0.999951660633 0.0088579012081 0.0 -0.999764502048 -0.00449300417677 -0.0212969984859 0.0 -0.0212561227381 -0.00895551592112 0.999734759331 0.0 -43.8114990328 -12.0870021851 -5.91981781418 1.0</transform>
+					</node>
+					<node type="ObjectMeshCluster" id="1230459393" name="ObjectMeshClutter_2_Cluster">
+						<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
+						<visible_distance>80</visible_distance>
+						<fade_distance>80</fade_distance>
+						<cluster_file_id>1230459393</cluster_file_id>
+						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<transform>-0.442358225584 0.896796762943 0.00885788910091 0.0 -0.896711468697 -0.442105710506 -0.0212972871959 0.0 -0.0151831833646 -0.0173639636487 0.999734938145 0.0 -36.0642681937 -32.5204064724 -5.91981781418 1.0</transform>
+					</node>
+					<node type="ObjectMeshCluster" id="1118012268" name="ObjectMeshClutter_3_Cluster">
+						<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
+						<visible_distance>80</visible_distance>
+						<fade_distance>80</fade_distance>
+						<cluster_file_id>1118012268</cluster_file_id>
+						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<transform>0.782582879066 -0.61978584528 -0.0585914626718 0.0 0.622290074825 0.776070773602 0.102333530784 0.0 -0.0179536901414 -0.116545036435 0.993023514748 0.0 -38.7504986464 50.8348179553 -7.14183385006 1.0</transform>
+					</node>
+					<node type="ObjectMeshCluster" id="447064027" name="ObjectMeshClutter_2_Cluster_1">
+						<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
+						<visible_distance>80</visible_distance>
+						<fade_distance>80</fade_distance>
+						<cluster_file_id>447064027</cluster_file_id>
+						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<transform>-0.442729562521 0.896078526974 -0.0322094671428 0.0 -0.896040678024 -0.440808296204 0.0529303960502 0.0 0.0332315228879 0.0522947348654 0.99807959795 0.0 -37.5690909812 27.151596132 -7.14183385006 1.0</transform>
+					</node>
+					<node type="ObjectMeshCluster" id="1285128968" name="tree_2_Cluster">
+						<mesh_name>guid://93958b8fd68f80f9f4efaea501988bbcddc334af</mesh_name>
+						<visible_distance>150</visible_distance>
+						<fade_distance>80</fade_distance>
+						<cluster_file_id>1285128968</cluster_file_id>
+						<surface name="Wood" intersection="1" collision="1" material="43be8119b2de685628e674dbf48ed7bf05309569"/>
+						<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -71.0256913626 -77.1155799373 -7.89423513412 1.0</transform>
+					</node>
+					<node type="ObjectMeshCluster" id="372755143" name="tree_1_Cluster">
+						<mesh_name>guid://8f360f50f1a67793c7280272eddb77106b6d5a42</mesh_name>
+						<visible_distance>150</visible_distance>
+						<fade_distance>80</fade_distance>
+						<cluster_file_id>372755143</cluster_file_id>
+						<surface name="Wood" intersection="1" collision="1" material="43be8119b2de685628e674dbf48ed7bf05309569"/>
+						<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -71.0256913626 -77.1155799373 -7.89423513412 1.0</transform>
+					</node>
+					<node type="ObjectMeshCluster" id="1702791546" name="tree_0_Cluster">
+						<mesh_name>guid://1700855923fdfd2c9f10e25f966a0c8d1364d4b9</mesh_name>
+						<visible_distance>150</visible_distance>
+						<fade_distance>80</fade_distance>
+						<cluster_file_id>1702791546</cluster_file_id>
+						<surface name="Wood" intersection="1" collision="1" material="43be8119b2de685628e674dbf48ed7bf05309569"/>
+						<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -71.0256913626 -77.1155799373 -7.89423513412 1.0</transform>
+					</node>
+					<node type="ObjectMeshStatic" id="264520993" immovable="1" name="cube.024">
+						<mesh_name>guid://161126eee5b0214b1d5bf5c0fa2eff58183bb510</mesh_name>
+						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<transform>0.715800225735 0.69119232893 -0.0994148850441 0.0 -0.698176622391 0.705649137497 -0.120865099132 0.0 -0.013389011845 0.155924409628 0.9876781106 0.0 -50.7339285156 50.4098823627 -6.42167061166 1.0</transform>
+					</node>
+					<node type="ObjectMeshClutter" id="1324460027" name="ObjectMeshClutter">
+						<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
+						<intersection>1</intersection>
+						<intersection_mask>-1</intersection_mask>
+						<visible_distance>80</visible_distance>
+						<fade_distance>80</fade_distance>
+						<size_x>10</size_x>
+						<size_y>10</size_y>
+						<step>5</step>
+						<density>0.100000001</density>
+						<threshold>0</threshold>
+						<angle>0</angle>
+						<min_scale_mean>9.99999997e-07</min_scale_mean>
+						<min_scale_spread>0</min_scale_spread>
+						<max_scale_mean>1.39999998</max_scale_mean>
+						<max_scale_spread>0.5</max_scale_spread>
+						<offset_mean>0</offset_mean>
+						<offset_spread>0</offset_spread>
+						<rotation_mean>0 0 0</rotation_mean>
+						<rotation_spread>0 0 30</rotation_spread>
+						<terrain_mask>-1</terrain_mask>
+						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<transform>-0.388604402542 -0.921404719353 0.00146652432159 0.0 0.921339273453 -0.388556748629 0.012635147199 0.0 -0.0110722361133 0.00626122672111 0.999919056892 0.0 -52.6181617127 52.7149668744 -6.88244444581 1.0</transform>
+					</node>
+					<node type="ObjectMeshClutter" id="1094789544" name="ObjectMeshClutter_1">
+						<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
+						<intersection>1</intersection>
+						<intersection_mask>-1</intersection_mask>
+						<visible_distance>80</visible_distance>
+						<fade_distance>80</fade_distance>
+						<seed>1196435762</seed>
+						<size_x>10</size_x>
+						<size_y>10</size_y>
+						<step>5</step>
+						<density>0.115939997</density>
+						<threshold>0</threshold>
+						<angle>0</angle>
+						<min_scale_mean>9.99999997e-07</min_scale_mean>
+						<min_scale_spread>0</min_scale_spread>
+						<max_scale_mean>1.39999998</max_scale_mean>
+						<max_scale_spread>0.5</max_scale_spread>
+						<offset_mean>0</offset_mean>
+						<offset_spread>0</offset_spread>
+						<rotation_mean>0 0 0</rotation_mean>
+						<rotation_spread>0 0 40</rotation_spread>
+						<terrain_mask>-1</terrain_mask>
+						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+						<transform>0.999062478542 -0.0289747565985 -0.0322098992765 0.0 0.0306541733444 0.998128533363 0.0529309846461 0.0 0.0306158922613 -0.0538686066866 0.99807882309 0.0 -41.9416336618 54.7186252319 -7.38796789567 1.0</transform>
+					</node>
+				</node>
+			</node>
+			<node type="LandscapeLayerMap" id="1518321167" name="LandscapeLayerMap">
+				<order>0</order>
+				<size>150 150</size>
+				<height_scale>1</height_scale>
+				<is_collision>1</is_collision>
+				<is_intersection>1</is_intersection>
+				<is_intersection_bicubic_filter>1</is_intersection_bicubic_filter>
+				<is_culling>1</is_culling>
+				<fade_attenuation>0 0</fade_attenuation>
+				<file_path>guid://26c1ccf5ceaeb033730cc4c99ed0ec8fac6b42fa</file_path>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -75 -75 0 1.0</transform>
+			</node>
+		</node>
+		<node type="NodeDummy" id="1900963455" name="Sacrifice Place">
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			<node type="NodeDummy" id="1866959607" name="Skull">
+				<transform>-188.367462158 -233.104522705 13.4154577255 0.0 191.453643799 -164.066040039 -162.566375732 0.0 133.653259277 -93.5125961304 251.778091431 0.0 -49.1088687247 54.2939089713 14.6064038547 1.0</transform>
+				<node type="ObjectMeshStatic" id="471363696" immovable="1" name="altar">
+					<mesh_name>guid://b3cbc23d3cc524273be66aa38079a1872e0c1e9d</mesh_name>
+					<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+					<transform>-0.0158776345003 0.0262020203394 0.0177639491645 0.0 -0.031616382984 -0.0141198403447 -0.00743219160325 0.0 0.0015836800017 -0.0191907973192 0.029722147282 0.0 -0.00243816231297 0.0234907371663 -0.0480918962688 1.0</transform>
+				</node>
+				<node type="LightOmni" id="513993243" name="LightOmni">
+					<attenuation_distance>15.151</attenuation_distance>
+					<near_attenuation_distance>0</near_attenuation_distance>
+					<near_attenuation_gradient_length>0</near_attenuation_gradient_length>
+					<shadow_near_clipping_distance>0.0199999996</shadow_near_clipping_distance>
+					<shape>2 1 0.200000003</shape>
+					<shape_type>0</shape_type>
+					<texture replace="32602762364568686550637c7abedf6e6bbb8f29"/>
+					<color_mode>1</color_mode>
+					<color_filter>0.80392158 1 0.654901981 1</color_filter>
+					<intensity>4.5999999</intensity>
+					<shadow_bias>1</shadow_bias>
+					<fade_distance>10</fade_distance>
+					<shadow_distance>30</shadow_distance>
+					<shadow_fade_distance>10</shadow_fade_distance>
+					<mode>1</mode>
+					<shadow_filter_mode>-1</shadow_filter_mode>
+					<shadow_filter>1</shadow_filter>
+					<shadow_penumbra_mode>-1</shadow_penumbra_mode>
+					<shadow_penumbra>0</shadow_penumbra>
+					<shadow_screen_space>0</shadow_screen_space>
+					<shadow_screen_space_num_rays>3</shadow_screen_space_num_rays>
+					<shadow_screen_space_num_steps>6</shadow_screen_space_num_steps>
+					<shadow_screen_space_noise_ray>0.150000006</shadow_screen_space_noise_ray>
+					<shadow_screen_space_noise_step>1</shadow_screen_space_noise_step>
+					<shadow_screen_space_step_size_near_distance>0</shadow_screen_space_step_size_near_distance>
+					<shadow_screen_space_step_size_far_distance>500</shadow_screen_space_step_size_far_distance>
+					<shadow_screen_space_step_size_near>2</shadow_screen_space_step_size_near>
+					<shadow_screen_space_step_size_far>30</shadow_screen_space_step_size_far>
+					<shadow_screen_space_threshold_near_distance>0</shadow_screen_space_threshold_near_distance>
+					<shadow_screen_space_threshold_far_distance>200</shadow_screen_space_threshold_far_distance>
+					<shadow_screen_space_threshold_near>3</shadow_screen_space_threshold_near>
+					<shadow_screen_space_threshold_far>0.5</shadow_screen_space_threshold_far>
+					<shadow_color_texture_mode>0</shadow_color_texture_mode>
+					<shadow_screen_space_softness>0</shadow_screen_space_softness>
+					<shadow_screen_space_translucent_depth_perspective_compensation>0.200000003</shadow_screen_space_translucent_depth_perspective_compensation>
+					<shadow_screen_space_translucent_depth>0.0299999993</shadow_screen_space_translucent_depth>
+					<baked_depth_texture replace="9c36cf0127da6d2120aada3fd61a658078415272"/>
+					<lens_flare_enabled>0</lens_flare_enabled>
+					<lens_flare_texture>core/textures/lens_flares_default.texture</lens_flare_texture>
+					<lens_flare_intensity>1</lens_flare_intensity>
+					<lens_flare_occlusion_fade>1</lens_flare_occlusion_fade>
+					<lens_flare_occlusion_fade_border>0.200000003</lens_flare_occlusion_fade_border>
+					<lens_flare_position_offset>0 0 0</lens_flare_position_offset>
+					<lens_flare_use_light_color>1</lens_flare_use_light_color>
+					<lens_flare_billboards num="31">
+						<billboard name="flare_0" offset="0" size="10" rotate="0" uv_lower_left="0 0" uv_upper_right="0.5 0.5" color="1 1 1 1" offset_scale="1" intensity="0.200000003"/>
+						<billboard name="flare_1" offset="0" size="0.289999992" rotate="1" uv_lower_left="0.5 0.75" uv_upper_right="0.75 1" color="1 1 1 1" offset_scale="1" intensity="0.00749999983"/>
+						<billboard name="flare_2" offset="0.0529999994" size="0.860000014" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.941176534 0.788235366 1 1" offset_scale="1" intensity="0.125"/>
+						<billboard name="flare_3" offset="0.0900000036" size="0.49000001" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.772549093 0.796078503 1 1" offset_scale="1" intensity="0.189999998"/>
+						<billboard name="flare_4" offset="0.122000001" size="0.409999996" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.792156935 1 0.82745105 1" offset_scale="1" intensity="0.0500000007"/>
+						<billboard name="flare_5" offset="0.203999996" size="0.330000013" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.80392164 0.894117713 1 1" offset_scale="1" intensity="0.075000003"/>
+						<billboard name="flare_6" offset="0.432999998" size="0.649999976" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.929411829 1 0.768627524 1" offset_scale="1" intensity="0.0500000007"/>
+						<billboard name="flare_7" offset="0.477999985" size="1.5" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.807843208 1 0.886274576 1" offset_scale="1" intensity="0.0874999985"/>
+						<billboard name="flare_8" offset="0.52700001" size="0.810000002" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="1 0.90196085 0.788235366 1" offset_scale="1" intensity="0.0500000007"/>
+						<billboard name="flare_9" offset="0.600000024" size="0.409999996" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.768627524 1 0.894117713 1" offset_scale="1" intensity="0.0500000007"/>
+						<billboard name="flare_10" offset="0.615999997" size="0.569999993" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.796078503 1 0.921568692 1" offset_scale="1" intensity="0.100000001"/>
+						<billboard name="flare_11" offset="0.652999997" size="0.779999971" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.831372619 0.933333397 1 1" offset_scale="1" intensity="0.0874999985"/>
+						<billboard name="flare_12" offset="0.717999995" size="1.71000004" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.878431439 1 0.796078503 1" offset_scale="1" intensity="0.0375000015"/>
+						<billboard name="flare_13" offset="0.754999995" size="1.13999999" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.760784388 1 0.843137324 1" offset_scale="1" intensity="0.0125000002"/>
+						<billboard name="flare_14" offset="0.967000008" size="0.540000021" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="1 0.878431439 0.772549093 1" offset_scale="1" intensity="0.0250000004"/>
+						<billboard name="flare_15" offset="0.338999987" size="0.289999992" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.674509823 1 0.698039234 1" offset_scale="1" intensity="0.075000003"/>
+						<billboard name="flare_16" offset="0.00499999989" size="2" rotate="1" uv_lower_left="0 0.75" uv_upper_right="0.25 1" color="1 1 1 1" offset_scale="0" intensity="0.0199999996"/>
+						<billboard name="flare_17" offset="-0.75" size="1" rotate="1" uv_lower_left="0.5 0.5" uv_upper_right="0.75 0.75" color="1 1 1 1" offset_scale="12.2399998" intensity="0.0724999979"/>
+						<billboard name="flare_18" offset="0.75" size="1" rotate="1" uv_lower_left="0.5 0.5" uv_upper_right="0.75 0.75" color="1 1 1 1" offset_scale="12.2399998" intensity="0.0724999979"/>
+						<billboard name="flare_19" offset="0" size="10" rotate="0" uv_lower_left="0.5 0" uv_upper_right="1 0.5" color="1 1 1 1" offset_scale="1" intensity="0.0350000001"/>
+						<billboard name="flare_20" offset="0.245199993" size="0.610000014" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.972549081 1 0.898039281 1" offset_scale="1" intensity="0.0724999979"/>
+						<billboard name="flare_21" offset="-0.1184" size="0.800000012" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.972549081 1 0.898039281 1" offset_scale="1" intensity="0.0675000027"/>
+						<billboard name="flare_22" offset="-0.170000002" size="0.435000002" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.972549081 1 0.898039281 1" offset_scale="1" intensity="0.0599999987"/>
+						<billboard name="flare_23" offset="-0.223599985" size="0.660000026" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.972549081 1 0.898039281 1" offset_scale="1" intensity="0.0500000007"/>
+						<billboard name="flare_24" offset="-0.340499997" size="1.39499998" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.654901981 1 0.847058892 1" offset_scale="1" intensity="0.0524999984"/>
+						<billboard name="flare_25" offset="-0.474399984" size="0.944999993" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="1 0.917647123 0.811764777 1" offset_scale="1" intensity="0.0874999985"/>
+						<billboard name="flare_26" offset="-0.899999976" size="2.2650001" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.94901967 1 0.80392164 1" offset_scale="1" intensity="0.075000003"/>
+						<billboard name="flare_27" offset="0.845000029" size="3.19000006" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.972549081 1 0.898039281 1" offset_scale="1" intensity="0.0450000018"/>
+						<billboard name="flare_28" offset="1" size="7.78999996" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.972549081 1 0.898039281 1" offset_scale="1" intensity="0.0500000007"/>
+						<billboard name="flare_29" offset="0.936999977" size="0.449999988" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.972549081 1 0.898039281 1" offset_scale="1" intensity="0.0450000018"/>
+						<billboard name="flare_30" offset="1" size="1.03999996" rotate="1" uv_lower_left="0.75 0.75" uv_upper_right="1 1" color="0.972549081 1 0.898039281 1" offset_scale="1" intensity="0.0375000015"/>
+					</lens_flare_billboards>
+					<transform>-0.00209297165188 0.00212726273419 0.00148503614242 0.0 -0.00259005201776 -0.00182295747297 -0.00103902946701 0.0 0.000149060551695 -0.00180629347783 0.0027975346651 0.0 0.00899980061929 0.0387249734431 -0.00197864886013 1.0</transform>
+				</node>
+				<node type="ObjectMeshStatic" id="1989045226" immovable="1" name="Skull">
+					<mesh_name>guid://e044c9a9cd83a2250bf1dba781cfb350f70276ba</mesh_name>
+					<surface name="SkullMI" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+					<transform>-96.717129311 19.7080923094 16.0432527271 0.0 16.1837828152 -0.906267779777 98.6775902986 0.0 19.5928751346 98.0345416889 -2.31298942001 0.0 -0.000640135529398 -0.0014348405413 -0.00212415921513 1.0</transform>
+					<node id="803629317" type="ObjectBillboards" immovable="1" name="ObjectBillboards_1">
+						<billboards num_billboards="1">0 0 0 10 10 0 0 5 5 0</billboards>
+						<surface name="billboards" max_visible_distance="30" max_fade_distance="30" material="9a13be9eca6f5392ee287198b6bffab86a7fd5b5"/>
+						<data>
+							<unigine_editor>
+								<body>
+									<generator>
+										<count>16</count>
+										<atlas_width>1</atlas_width>
+										<atlas_height>1</atlas_height>
+										<radius_mean>1</radius_mean>
+										<radius_spread>0</radius_spread>
+										<aspect_mean>1</aspect_mean>
+										<aspect_spread>0</aspect_spread>
+										<angle_mean>0</angle_mean>
+										<angle_spread>0</angle_spread>
+										<mesh/>
+									</generator>
+								</body>
+							</unigine_editor>
+						</data>
+						<transform>2.93090689707e-05 -8.73770110886e-07 1.58532671147e-05 0.0 7.58262961933e-06 3.00122814697e-05 -1.23643898803e-05 0.0 -1.39496692356e-05 1.44779326793e-05 2.65877092859e-05 0.0 3.96087689948e-05 1.21000234168e-05 7.15210803074e-05 1.0</transform>
+					</node>
+					<node type="ObjectBillboards" id="541149567" immovable="1" name="ObjectBillboards_2">
+						<reference>803629317</reference>
+						<surface name="billboards" max_visible_distance="30" max_fade_distance="30" material="9a13be9eca6f5392ee287198b6bffab86a7fd5b5"/>
+						<data>
+							<unigine_editor>
+								<body>
+									<generator>
+										<count>16</count>
+										<atlas_width>1</atlas_width>
+										<atlas_height>1</atlas_height>
+										<radius_mean>1</radius_mean>
+										<radius_spread>0</radius_spread>
+										<aspect_mean>1</aspect_mean>
+										<aspect_spread>0</aspect_spread>
+										<angle_mean>0</angle_mean>
+										<angle_spread>0</angle_spread>
+										<mesh/>
+									</generator>
+								</body>
+							</unigine_editor>
+						</data>
+						<transform>2.93090689707e-05 -8.73770110886e-07 1.58532671147e-05 0.0 7.58262961933e-06 3.00122814697e-05 -1.23643898803e-05 0.0 -1.39496692356e-05 1.44779326793e-05 2.65877092859e-05 0.0 -3.68978711976e-05 1.30603638525e-05 7.51846894995e-05 1.0</transform>
+					</node>
+				</node>
+			</node>
+			<node type="ObjectMeshStatic" id="311076611" immovable="1" name="Vessel">
+				<mesh_name>guid://b0f4193b9acb800f70729e4c0d176b18416f4000</mesh_name>
+				<surface name="Bottom" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+				<surface name="Metal" intersection="1" material="6e3c24ba5f8374fa5b056d9420887134e85d2fa1"/>
+				<surface name="GoldMat" intersection="1" material="843bb001dcf3563dcad9c8db4d9aa18ecee7f0fd"/>
+				<surface name="DarkWood" intersection="1" material="c298437df5694aedfb5d651872d03be91d77ab11"/>
+				<transform>2.04526805878 1.45638005051e-05 -0.00722905900329 0.0 1.45638668982e-05 2.04526162148 0.00824087951332 0.0 0.0072290529497 -0.00824088323861 2.04524993896 0.0 -43.8556341904 46.3779852268 -0.374679985295 1.0</transform>
+			</node>
+		</node>
+		<node type="NodeDummy" id="923693501" name="No Way">
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0.275765217486 11.3175672992 1.28111275296 1.0</transform>
+			<node curved="0" type="WorldSplineGraph" id="1798836500" name="WorldSplineGraph">
+				<spline_name>guid://07fc19afa9a2fe82d688bc7d0520abb11f7a5fd8</spline_name>
+				<source_nodes>
+					<source forward_axis="1">guid://9bab51ef68dc087c4e9d92bd53465304e1cd8118</source>
+					<source forward_axis="1">guid://e060c515aab5c9d920995073aebb28220637ca35</source>
+				</source_nodes>
+				<segment_nodes>
+					<range first="0" last="17" mode="1" enable_uv_tiling="0" adaptive_angle_threshold="1" gap="0">0</range>
+				</segment_nodes>
+				<point_nodes/>
+				<transform>0.965925633907 0.0669874176383 0.250000178814 0.0 -3.72528985437e-09 0.965925633907 -0.25881922245 0.0 -0.258819252253 0.250000208616 0.933012604713 0.0 -14.4078752175 12.8107876822 1.36809630849 1.0</transform>
+				<node type="ObjectDummy" id="641789051" name="mid_colliders">
+					<body type="BodyDummy" id="1380511073" frozen="0">
+						<shape type="ShapeBox" id="159124383" name="ShapeBox" transform="0.963772237 -0.266726434 -3.70158493e-17 0 0.266726404 0.963772297 1.33750248e-16 0 1.22422743e-22 -1.38777944e-16 1 0 -17.2006969 14.2318687 0.653420985 1">
+							<size>1 7.71938658 5.27107716</size>
+						</shape>
+						<shape type="ShapeBox" id="1189340274" name="ShapeBox" transform="0.852429748 -0.522841871 0 0 0.522841752 0.852429748 0 0 0 0 1 0 -19.7844601 8.15664005 0.0184554793 1">
+							<size>1 6.84885597 5.7939539</size>
+						</shape>
+						<shape type="ShapeSphere" id="1915287849" continuous="0" name="ShapeSphere" transform="1 0 0 0 0 1 0 0 0 0 1 0 -6.95896339 11.7989817 0 1">
+							<radius>10.5462999</radius>
+						</shape>
+						<shape type="ShapeSphere" id="818606196" continuous="0" name="ShapeSphere" transform="1 0 0 0 0 1 0 0 0 0 1 0 0.880595684 15.6835976 -3.55271368e-15 1">
+							<radius>8.02900028</radius>
+						</shape>
+						<shape type="ShapeSphere" id="1585268140" continuous="0" name="ShapeSphere" transform="1 0 0 0 0 1 0 0 0 0 1 0 14.7288017 0.988856912 -3.55271368e-15 1">
+							<radius>12.0289993</radius>
+						</shape>
+						<shape type="ShapeSphere" id="1079641371" continuous="0" name="ShapeSphere" transform="1 0 0 0 0 1 0 0 0 0 1 0 0.928242624 -15.5718174 -3.55271368e-15 1">
+							<radius>8.38900089</radius>
+						</shape>
+						<shape type="ShapeSphere" id="1588393918" continuous="0" name="ShapeSphere" transform="1 0 0 0 0 1 0 0 0 0 1 0 -13.4008503 -7.17402887 -3.55271368e-15 1">
+							<radius>13.4889994</radius>
+						</shape>
+						<shape type="ShapeSphere" id="662387717" continuous="0" name="ShapeSphere" transform="1 0 0 0 0 1 0 0 0 0 1 0 -11.2279968 -10.6975746 -3.55271368e-15 1">
+							<radius>13.4889994</radius>
+						</shape>
+						<shape type="ShapeSphere" id="873987488" continuous="0" name="ShapeSphere" transform="1 0 0 0 0 1 0 0 0 0 1 0 9.85455894 7.33124399 -3.55271368e-15 1">
+							<radius>13.4889994</radius>
+						</shape>
+						<shape type="ShapeBox" id="894735487" name="ShapeBox" transform="0.887739301 -0.460346669 0 0 0.46034655 0.887739301 0 0 0 0 1 0 -23.1536655 2.291471 0.25820446 1">
+							<size>1 7.77194309 5.16003895</size>
+						</shape>
+						<shape type="ShapeBox" id="625743826" name="ShapeBox" transform="0.995813787 -0.0914045647 0 0 0.0914045572 0.995813847 0 0 0 0 1 0 -4.29639912 -22.9889259 0.580089688 1">
+							<size>5.53937674 1 3.96166158</size>
+						</shape>
+						<shape type="ShapeBox" id="1179374857" name="ShapeBox" transform="0.686815083 0.726832569 0 0 -0.726832271 0.686814904 0 0 0 0 0.999999881 0 10.9144964 -15.9132595 1.8359828 1">
+							<size>7.26041317 1 5.90209579</size>
+						</shape>
+						<shape type="ShapeBox" id="496760908" name="ShapeBox" transform="0.853593409 0.520940304 0 0 -0.520940125 0.853593349 0 0 0 0 0.999999881 0 15.861515 -12.0001316 1.8359828 1">
+							<size>7.26041317 1 5.90209579</size>
+						</shape>
+						<shape type="ShapeBox" id="565499707" name="ShapeBox" transform="0.951135695 -0.308773249 0 0 0.30877319 0.951135695 0 0 0 0 1 0 8.38871956 21.6985798 0.740771353 1">
+							<size>11.447773 0.706396341 6.17566109</size>
+						</shape>
+						<shape type="ShapeBox" id="86139742" name="ShapeBox" transform="0.995605886 0.0936422944 0 0 -0.0936422795 0.995605886 0 0 0 0 1 0 -5.70410395 22.1410542 -0.562742949 1">
+							<size>6.87479544 1.41404819 3.72010279</size>
+						</shape>
+					</body>
+					<transform>0.965925900411 -8.15617262058e-09 -0.258819279305 0.0 0.0669874103924 0.965925785001 0.250000155265 0.0 0.250000243657 -0.258819340942 0.933012682377 0.0 11.5059433833 -16.8817708211 -6.44167021095 1.0</transform>
+				</node>
+			</node>
+			<node curved="0" type="WorldSplineGraph" id="810694723" name="WorldSplineGraph_1">
+				<spline_name>guid://fe1e35507180d0dd3ecedbae9bf653835bed0fca</spline_name>
+				<source_nodes>
+					<source forward_axis="1">guid://9bab51ef68dc087c4e9d92bd53465304e1cd8118</source>
+					<source forward_axis="1">guid://1c27e4a2052306c4dcddb53013c82109f83bd02c</source>
+				</source_nodes>
+				<segment_nodes>
+					<range first="0" last="14" mode="1" enable_uv_tiling="0" adaptive_angle_threshold="1" gap="0">0</range>
+					<range first="28" last="28" mode="1" enable_uv_tiling="0" adaptive_angle_threshold="1" gap="0">0</range>
+					<range first="33" last="51" mode="1" enable_uv_tiling="0" adaptive_angle_threshold="1" gap="0">0</range>
+					<range first="53" last="55" mode="1" enable_uv_tiling="0" adaptive_angle_threshold="1" gap="0">0</range>
+					<range first="59" last="61" mode="1" enable_uv_tiling="0" adaptive_angle_threshold="1" gap="0">0</range>
+					<range first="63" last="63" mode="1" enable_uv_tiling="0" adaptive_angle_threshold="1" gap="0">0</range>
+					<range first="71" last="71" mode="1" enable_uv_tiling="0" adaptive_angle_threshold="1" gap="0">0</range>
+					<range first="73" last="73" mode="1" enable_uv_tiling="0" adaptive_angle_threshold="1" gap="0">0</range>
+					<range first="75" last="76" mode="1" enable_uv_tiling="0" adaptive_angle_threshold="1" gap="0">0</range>
+					<range first="79" last="89" mode="1" enable_uv_tiling="0" adaptive_angle_threshold="1" gap="0">0</range>
+					<range first="15" last="27" mode="1" enable_uv_tiling="0" adaptive_angle_threshold="1" gap="0">1</range>
+					<range first="29" last="32" mode="1" enable_uv_tiling="0" adaptive_angle_threshold="1" gap="0">1</range>
+					<range first="56" last="58" mode="1" enable_uv_tiling="0" adaptive_angle_threshold="1" gap="0">1</range>
+					<range first="62" last="62" mode="1" enable_uv_tiling="0" adaptive_angle_threshold="1" gap="0">1</range>
+					<range first="64" last="70" mode="1" enable_uv_tiling="0" adaptive_angle_threshold="1" gap="0">1</range>
+					<range first="77" last="78" mode="1" enable_uv_tiling="0" adaptive_angle_threshold="1" gap="0">1</range>
+				</segment_nodes>
+				<point_nodes/>
+				<transform>0.999999284744 5.96268193931e-07 -0.00119805184659 0.0 5.96268762365e-07 0.999999523163 0.000995396170765 0.0 0.00119805184659 -0.000995396170765 0.999998807907 0.0 -41.6428613559 20.6104975424 -0.281921648398 1.0</transform>
+				<node type="ObjectDummy" id="1518131449" name="ObjectDummy">
+					<body type="BodyDummy" id="179293505" frozen="0">
+						<shape type="ShapeBox" id="1727230757" name="ShapeBox" transform="0.78617686 0.61800164 -1.22746424e-10 0 -0.618001461 0.786176801 4.15396134e-10 0 2.40632125e-10 -1.80236021e-10 1 0 -7.39597654 16.7422924 2.66725969 1">
+							<size>18.7294235 10.8073521 12.1300478</size>
+						</shape>
+						<shape type="ShapeBox" id="894011968" name="ShapeBox" transform="0.733305335 -0.679899633 -7.57628127e-10 0 0.679899335 0.733305335 -3.09301279e-10 0 8.94117835e-10 -2.39565923e-10 0.99999994 0 8.66570759 16.7611141 2.78190494 1">
+							<size>10.3698158 8.08805847 12.3921604</size>
+						</shape>
+						<shape type="ShapeBox" id="1048606879" name="ShapeBox" transform="0.537718773 0.843124509 -1.11796694e-09 0 -0.843124151 0.537718654 -4.10255198e-11 0 4.99866926e-10 7.48841211e-10 0.999999881 0 18.6016159 18.5981369 3.34466839 1">
+							<size>10.3698158 8.08805847 13.5176868</size>
+						</shape>
+						<shape type="ShapeSphere" id="1619750258" continuous="0" name="ShapeSphere" transform="1 0 0 0 0 1 6.50521303e-19 0 0 0 1 0 14.2516193 14.749362 4.243077e-10 1">
+							<radius>5.47601748</radius>
+						</shape>
+						<shape type="ShapeBox" id="1631645225" name="ShapeBox" transform="0.98506093 -0.172206178 1.14300479e-10 0 0.172206119 0.985060871 -1.0461394e-09 0 -3.72033342e-11 1.15741705e-09 0.99999994 0 29.518116 20.4415836 2.06009221 1">
+							<size>12.6829147 1 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="1302356340" name="ShapeBox" transform="0.93036586 -0.366632462 1.00365893e-09 0 0.366632313 0.930365741 -1.86667526e-09 0 -2.70033274e-10 2.0887394e-09 0.99999994 0 49.0115623 14.3635511 2.06009221 1">
+							<size>17.3067169 1 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="414981699" name="ShapeBox" transform="0.81594938 -0.57812345 -1.28562672e-09 0 0.578123212 0.815949321 -7.26504723e-09 0 5.47932189e-09 5.29128608e-09 1 0 59.5051956 9.34946537 2.06009221 1">
+							<size>10.2134333 1 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="1721118406" name="ShapeBox" transform="0.704134703 -0.710066497 -6.99123537e-11 0 0.710066259 0.704134643 -7.52804752e-09 0 5.59573676e-09 5.17487075e-09 1 0 73.9445343 17.4127007 2.06009221 1">
+							<size>10.2134333 1 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="1510487917" name="ShapeBox" transform="0.653879404 0.756598711 -7.97644528e-09 0 -0.756598532 0.653879404 1.3839907e-09 0 6.26782448e-09 5.06070119e-09 1.00000012 0 71.2878571 22.4118233 2.06009221 1">
+							<size>2.68871331 1 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="2123641320" name="ShapeBox" transform="0.999444425 -0.0333229788 -5.73249803e-09 0 0.0333229676 0.999444544 -4.4877031e-09 0 5.80216319e-09 4.36220926e-09 1.00000012 0 64.8564682 6.56388855 2.06009245 1">
+							<size>2.68871331 1 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="360705063" name="ShapeBox" transform="0.899301052 0.437329769 -7.08581549e-09 0 -0.43732959 0.899301052 -1.25696209e-09 0 5.96358429e-09 4.18870894e-09 1.00000024 0 67.3097916 7.05792665 2.06009245 1">
+							<size>2.68871331 1 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="1540651866" name="ShapeBox" transform="0.738985896 0.673720777 -7.69713182e-09 0 -0.673720419 0.738985837 8.37034775e-10 0 6.19641449e-09 4.30512426e-09 1.00000024 0 69.8999329 9.03874207 2.06009245 1">
+							<size>4.00884199 1 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="455676657" name="ShapeBox" transform="0.992088079 -0.125542238 -4.96216312e-09 0 0.125542209 0.992088079 -5.18712406e-09 0 5.587935e-09 4.54019977e-09 1.00000036 0 73.6324387 10.3910513 2.06009245 1">
+							<size>4.00884199 1 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="1419374492" name="ShapeBox" transform="0.996935844 0.0782224908 -6.56396582e-09 0 -0.078222461 0.996935725 -3.77574993e-09 0 6.1436074e-09 4.42603021e-09 1.00000048 0 76.3744431 10.1638765 2.06009245 1">
+							<size>2.15189362 1 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="1140082251" name="ShapeBox" transform="0.0108773196 0.999941051 -3.35821104e-09 0 -0.999940515 0.010877314 8.27789748e-09 0 8.35549585e-09 3.14546322e-09 1.00000048 0 77.485405 12.0876932 2.06009245 1">
+							<size>3.71258831 1 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="1630234414" name="ShapeBox" transform="0.990024984 -0.140890479 -5.69386494e-09 0 0.140890449 0.990025043 -6.18564444e-09 0 6.50065513e-09 5.40994716e-09 1.00000012 0 75.625473 23.2597733 2.06009221 1">
+							<size>6.62639046 1 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="171803829" name="ShapeBox" transform="0.990600884 0.136782929 -6.91644475e-09 0 -0.136782885 0.990600824 -4.43825243e-09 0 6.3842398e-09 5.29353184e-09 1.00000012 0 81.939476 23.3991108 2.06009221 1">
+							<size>6.62639046 1 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="974900880" name="ShapeBox" transform="0.943019807 -0.332735687 -4.07496126e-09 0 0.332735628 0.943019927 -7.62841257e-09 0 6.38424025e-09 5.99202377e-09 1.00000012 0 88.5484467 22.8322392 2.06009221 1">
+							<size>6.62639046 1.00026679 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="1882575023" name="ShapeBox" transform="0.943019807 -0.332735687 -4.07496126e-09 0 0.332735628 0.943019927 -7.62841257e-09 0 6.38424025e-09 5.99202377e-09 1.00000012 0 99.2266159 19.0959034 2.06009221 1">
+							<size>16.1004601 1.00026679 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="1097287234" name="ShapeBox" transform="0.521508634 0.853245795 -8.29748359e-09 0 -0.853245616 0.521508634 2.8821816e-09 0 6.84990109e-09 5.52636292e-09 1.00000012 0 104.380302 11.3130636 2.06009221 1">
+							<size>10.4088402 1.00026679 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="287166649" name="ShapeBox" transform="-0.901062429 0.433689505 2.87180191e-09 0 -0.433689386 -0.901062489 9.01793928e-09 0 6.77849243e-09 6.51701537e-09 1.00000024 0 98.2903214 9.26175213 2.06009221 1">
+							<size>7.70913124 1.00026679 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="1580024516" name="ShapeBox" transform="-0.936629176 -0.350322902 7.66343256e-09 0 0.350322843 -0.936629236 3.85842247e-09 0 6.05359674e-09 6.17001428e-09 1.00000036 0 90.7330551 9.30311966 2.06009221 1">
+							<size>9.44698048 1.00026679 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="309948243" name="ShapeBox" transform="-0.87043494 -0.492283523 8.28199642e-09 0 0.492283434 -0.870434999 2.58543409e-09 0 5.70435121e-09 6.5192598e-09 1.00000036 0 82.8329697 5.58584499 2.06009221 1">
+							<size>8.61310005 1.00026679 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="1846520982" name="ShapeBox" transform="-0.224879563 -0.974386573 9.68486535e-09 0 0.974386394 -0.224879563 -2.76704126e-09 0 4.61160976e-09 8.78823503e-09 1.00000024 0 78.8533707 1.32194412 2.06009221 1">
+							<size>5.26988983 1.00026679 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="1822718717" name="ShapeBox" transform="-0.399262846 -0.916836739 9.91365745e-09 0 0.9168365 -0.399262935 -8.65842786e-10 0 5.3101008e-09 8.55540438e-09 1.00000024 0 77.3059998 -3.60006499 2.06009221 1">
+							<size>5.26988983 1.00026679 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="555202580" name="ShapeBox" transform="0.853641748 -0.520860732 8.26105184e-10 0 0.520860791 0.853641987 -8.95876173e-09 0 4.02953315e-09 8.32257374e-09 1.00000024 0 78.1403122 -6.98236036 2.06009221 1">
+							<size>3.86789083 1.00026679 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="1475298403" name="ShapeBox" transform="0.974125922 -0.226005897 -2.18118634e-09 0 0.226005882 0.97412622 -8.95170338e-09 0 4.02953315e-09 8.20615842e-09 1.00000024 0 82.361618 -8.5630827 2.06009221 1">
+							<size>5.73281717 1.00026679 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="914349670" name="ShapeBox" transform="0.867354333 -0.497691244 3.13958387e-10 0 0.497691214 0.867354512 -9.18987464e-09 0 4.56660354e-09 8.1468281e-09 1.00000012 0 89.0350571 -11.4866028 1.85344434 1">
+							<size>9.50319767 1.00026679 7.03768826</size>
+						</shape>
+						<shape type="ShapeBox" id="729801357" name="ShapeBox" transform="-0.10087499 -0.994899452 3.61122088e-09 0 0.994899273 -0.100874975 -4.05897449e-09 0 4.56660043e-09 3.25738569e-09 1.00000024 0 94.8294144 -28.9222622 2.20277262 1">
+							<size>20.6195831 1.00026679 7.03768826</size>
+						</shape>
+						<shape type="ShapeBox" id="100049544" name="ShapeBox" transform="0.498509496 -0.866884291 4.87695173e-09 0 0.866884232 0.498509645 -7.07338765e-09 0 3.63528119e-09 7.79758214e-09 1.00000012 0 94.5581589 -16.15658 2.06009221 1">
+							<size>5.73281717 0.709041774 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="771712071" name="ShapeBox" transform="-0.994739234 0.102443084 4.99415798e-09 0 -0.102443069 -0.994739354 5.61169955e-09 0 5.70435033e-09 5.00586106e-09 1.00000036 0 93.3095932 -26.4043846 1.38658583 1">
+							<size>4.50079632 1.00026679 5.40531492</size>
+						</shape>
+						<shape type="ShapeBox" id="524965114" name="ShapeBox" transform="-0.162007138 -0.986790061 3.49195317e-09 0 0.986789942 -0.162007168 -3.53928398e-09 0 4.45018511e-09 3.02455505e-09 1.00000024 0 92.856575 -43.2428818 2.20277262 1">
+							<size>8.99417114 1.00026679 7.03768826</size>
+						</shape>
+						<shape type="ShapeBox" id="1031462929" name="ShapeBox" transform="-0.918264329 -0.395968825 2.48190557e-09 0 0.395968735 -0.918264508 -1.86742677e-10 0 2.16688445e-09 8.71993366e-10 1.00000024 0 90.1392517 -48.8628693 2.20277262 1">
+							<size>4.52965355 1.00026679 7.03768826</size>
+						</shape>
+						<shape type="ShapeBox" id="849091132" name="ShapeBox" transform="-0.990560234 0.137081355 3.26864447e-09 0 -0.137081355 -0.990560591 -5.32995648e-10 0 3.44745099e-09 -1.22348121e-09 1.00000024 0 83.9033356 -48.9085617 2.20277262 1">
+							<size>10.4017534 1.00026679 7.03768826</size>
+						</shape>
+						<shape type="ShapeBox" id="279720043" name="ShapeBox" transform="-0.992512405 -0.122148998 2.40895237e-09 0 0.122148998 -0.992512643 6.71670441e-10 0 2.70395506e-09 6.96248115e-10 1.00000024 0 76.3339233 -48.580513 2.62028646 1">
+							<size>5.24332714 1.00026679 7.87271547</size>
+						</shape>
+						<shape type="ShapeBox" id="1793788622" name="ShapeBox" transform="-0.486388803 -0.873743236 2.05338813e-09 0 0.873743176 -0.486388862 -6.18122054e-10 0 1.62981439e-09 1.51339985e-09 1.00000036 0 72.7096481 -51.1970787 2.88907886 1">
+							<size>5.86797857 1.00026679 8.41030025</size>
+						</shape>
+						<shape type="ShapeBox" id="1590334421" name="ShapeBox" transform="-0.354832917 -0.934930623 1.91499794e-09 0 0.934930503 -0.354833007 -6.71053713e-10 0 1.60341074e-09 1.63206038e-09 1.00000048 0 70.4145966 -55.9063034 3.00469518 1">
+							<size>5.86797857 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="862737200" name="ShapeBox" transform="-0.793328106 -0.608795464 1.65141256e-09 0 0.608795285 -0.793328166 1.71669706e-10 0 1.09274367e-09 1.10706866e-09 1.00000036 0 63.22435 -63.1094475 3.2650671 1">
+							<size>16.3529472 1.00026679 9.16227627</size>
+						</shape>
+						<shape type="ShapeBox" id="566512847" name="ShapeBox" transform="-0.908069134 -0.41882208 2.47846454e-09 0 0.418821931 -0.908069193 -1.30162769e-10 0 2.1404809e-09 8.74238626e-10 1.00000036 0 54.0906906 -69.3788605 3.00469518 1">
+							<size>6.25816011 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="708334562" name="ShapeBox" transform="-0.545551956 0.838077903 -2.7736502e-09 0 -0.838077724 -0.545552075 1.73059309e-08 0 1.29671056e-08 1.17008678e-08 1.00000036 0 48.3853951 -65.6069412 3.00469518 1">
+							<size>13.1804276 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="63521241" name="ShapeBox" transform="-0.313965142 0.949435472 -6.17381124e-09 0 -0.949435234 -0.313965142 1.53734447e-08 0 1.2752877e-08 1.05982902e-08 1.0000006 0 40.7942238 -51.0273094 3.00469518 1">
+							<size>4.97513151 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="202686820" name="ShapeBox" transform="-0.533771753 -0.845629454 2.13267581e-09 0 0.845629215 -0.533771753 -2.22400254e-09 0 2.95538727e-09 5.24993216e-10 1.00000036 0 49.1886177 -74.3668442 3.00469518 1">
+							<size>7.72216558 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="21929331" name="ShapeBox" transform="-0.533771753 -0.845629454 2.13267581e-09 0 0.845629215 -0.533771753 -2.22400254e-09 0 2.95538727e-09 5.24993216e-10 1.00000036 0 44.6609764 -81.6559601 3.00469518 1">
+							<size>10.0239363 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="6538294" name="ShapeBox" transform="-0.893724024 -0.448619038 3.62756536e-09 0 0.448618859 -0.893724084 7.15520143e-11 0 3.46605478e-09 1.51564616e-09 1.00000048 0 39.3698044 -87.1324768 3.00469518 1">
+							<size>6.74207687 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="720596509" name="ShapeBox" transform="-0.998730838 -0.0503801778 3.38064665e-09 0 0.0503801703 -0.998731077 1.5849696e-09 0 3.39464523e-09 1.45856116e-09 1.00000048 0 33.3877068 -88.6113663 3.00469518 1">
+							<size>6.74207687 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="696260824" name="ShapeBox" transform="-0.939682961 0.342048377 1.97416572e-09 0 -0.342048377 -0.939683139 5.07783104e-09 0 3.32323746e-09 4.42827375e-09 1.0000006 0 26.5305767 -87.6251755 3.00469518 1">
+							<size>7.71596718 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="1324238423" name="ShapeBox" transform="-0.668760359 0.743479133 -1.43344858e-09 0 -0.743479133 -0.668760478 6.33551256e-09 0 3.9953254e-09 4.89618079e-09 1.00000072 0 20.5364113 -83.8084488 3.00469518 1">
+							<size>7.21046209 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="219033546" name="ShapeBox" transform="-0.790463626 0.612509966 -1.60691058e-10 0 -0.612510026 -0.790463984 6.75276546e-09 0 4.04033162e-09 5.4211724e-09 1.00000072 0 16.5644951 -79.9236069 3.00469518 1">
+							<size>5.2221384 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="938204321" name="ShapeBox" transform="-0.997164071 0.0752682835 3.10436854e-09 0 -0.0752682984 -0.997164547 4.87007457e-09 0 3.92391586e-09 4.3734345e-09 1.00000072 0 10.0708494 -77.9040375 3.00469518 1">
+							<size>8.72620678 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="420105612" name="ShapeBox" transform="-0.92868185 -0.370880812 4.92353891e-09 0 0.370880932 -0.928682446 2.1333646e-09 0 4.29176295e-09 3.50368801e-09 1.00000095 0 3.9284153 -78.287735 3.0649488 1">
+							<size>4.05194998 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="797354875" name="ShapeBox" transform="-0.454917997 -0.890534759 5.30989919e-09 0 0.890535057 -0.454918325 -1.90302107e-09 0 4.03252898e-09 3.85517884e-09 1.00000107 0 1.25204456 -80.5332336 3.0649488 1">
+							<size>4.05194998 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="228305566" name="ShapeBox" transform="-0.049139712 -0.998793304 2.86104385e-09 0 0.998793662 -0.0491397306 -3.83559895e-09 0 4.00612432e-09 2.69327116e-09 1.00000119 0 0.155715168 -84.4275742 3.0649488 1">
+							<size>4.49303484 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="482316645" name="ShapeBox" transform="-0.475363165 -0.879791319 3.9794279e-09 0 0.879791737 -0.475363523 -2.14352713e-09 0 4.09613587e-09 2.34627073e-09 1.00000131 0 -0.984685123 -89.2246094 3.0649488 1">
+							<size>5.39300203 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="955552640" name="ShapeBox" transform="-0.990603507 -0.136776701 3.74442255e-09 0 0.136776775 -0.990604341 2.24907915e-09 0 3.67548059e-09 2.52201593e-09 1.00000131 0 -4.18825293 -92.1390839 3.0649488 1">
+							<size>4.20826626 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="2065658079" name="ShapeBox" transform="-0.652570307 0.757730424 6.42838338e-10 0 -0.757730961 -0.652570903 4.11239798e-09 0 3.60407104e-09 2.23210028e-09 1.00000143 0 -9.90579987 -88.448616 3.0649488 1">
+							<size>10.3475437 0.817278683 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="164071602" name="ShapeBox" transform="0.950483859 -0.310778052 -1.12060161e-09 0 0.31077826 0.950484693 -4.41259873e-09 0 2.32350428e-09 3.97832922e-09 1.00000143 0 -16.7496243 -83.7268066 3.0649488 1">
+							<size>7.53788996 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="359256169" name="ShapeBox" transform="0.945476115 -0.325691402 3.22188526e-10 0 0.325691283 0.945476055 -1.12528098e-09 0 -1.0861273e-10 1.33316258e-09 1 0 38.4871521 18.3340683 2.06009221 1">
+							<size>6.03959322 1 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="1444503220" name="ShapeBox" transform="-0.117829919 0.993035257 -4.98462338e-09 0 -0.993035793 -0.117830001 3.28896266e-09 0 2.52993182e-09 5.37755795e-09 1.00000143 0 -20.769022 -80.8771591 3.0649488 1">
+							<size>4.34775639 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="1997044355" name="ShapeBox" transform="0.915548027 0.402211934 -5.51902657e-09 0 -0.402212113 0.915548742 -3.84778742e-09 0 3.46125395e-09 5.61038904e-09 1.00000155 0 -19.0834579 -77.3006058 3.0649488 1">
+							<size>4.34775639 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="527982086" name="ShapeBox" transform="0.972810566 -0.231607631 -2.24265762e-09 0 0.23160775 0.972811341 -6.89397828e-09 0 3.69408482e-09 6.19246565e-09 1.00000155 0 -14.5362778 -77.3101654 3.0649488 1">
+							<size>5.37695503 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="2040012205" name="ShapeBox" transform="0.963316202 0.26837334 -4.83782125e-09 0 -0.26837346 0.963316977 -4.84704232e-09 0 3.34483885e-09 5.95963501e-09 1.00000143 0 -9.94834805 -77.1470413 3.0649488 1">
+							<size>4.38116264 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="1793090344" name="ShapeBox" transform="0.756697059 0.653767645 -6.6112027e-09 0 -0.653767884 0.756697595 -2.19736607e-09 0 3.57766949e-09 6.07605033e-09 1.00000155 0 -5.32246828 -74.0729218 3.0649488 1">
+							<size>7.94818306 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="1077800039" name="ShapeBox" transform="0.469914258 0.882713675 -7.85570631e-09 0 -0.882714152 0.469914675 -2.24699606e-10 0 3.57766994e-09 6.77454226e-09 1.00000143 0 -0.213644832 -67.6758118 3.0649488 1">
+							<size>8.64537811 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="1104412314" name="ShapeBox" transform="0.231607154 0.972810805 -7.30693106e-09 0 -0.972811282 0.231607363 1.30348432e-09 0 3.11200909e-09 7.00737246e-09 1.00000143 0 1.95545471 -61.9897614 3.0649488 1">
+							<size>4.40859509 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="1756249393" name="ShapeBox" transform="-0.410031468 0.912072897 -4.74179451e-09 0 -0.912073314 -0.410031766 5.70881475e-09 0 3.22842419e-09 6.65812694e-09 1.00000143 0 1.36997986 -57.4802551 3.0649488 1">
+							<size>5.84000921 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="1936889052" name="ShapeBox" transform="-0.410031468 0.912072897 -4.74179451e-09 0 -0.912073314 -0.410031766 5.70881475e-09 0 3.22842419e-09 6.65812694e-09 1.00000143 0 -1.23733699 -51.6805458 3.0649488 1">
+							<size>6.83998203 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="1242311307" name="ShapeBox" transform="-0.144496858 0.989506841 -5.70612357e-09 0 -0.989507198 -0.144496918 3.92095911e-09 0 3.11200843e-09 5.95963501e-09 1.00000143 0 -3.25097966 -44.0877419 3.0649488 1">
+							<size>9.05175686 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="2140372590" name="ShapeBox" transform="0.0374439545 0.999300301 -6.15278362e-09 0 -0.999300718 0.0374439768 2.79563572e-09 0 2.99559333e-09 6.07605033e-09 1.00000143 0 -4.05651903 -34.5856209 3.0649488 1">
+							<size>10.4289627 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="1409954549" name="ShapeBox" transform="-0.058066491 0.998314321 -5.94425842e-09 0 -0.998314738 -0.0580665246 2.96879121e-09 0 2.64634759e-09 6.07604989e-09 1.00000143 0 -4.20682001 -27.2753868 3.0649488 1">
+							<size>4.12419605 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="187574224" name="ShapeBox" transform="-0.340508908 0.940243185 -5.12154719e-09 0 -0.940243721 -0.340509206 4.51880267e-09 0 2.52993226e-09 6.07604989e-09 1.00000143 0 -4.85880709 -23.7361584 3.0649488 1">
+							<size>3.22467875 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="351525103" name="ShapeBox" transform="-0.691083252 0.722777843 -2.83972601e-09 0 -0.722778201 -0.691083789 6.34839603e-09 0 2.71775713e-09 6.24955021e-09 1.00000143 0 -6.85484409 -20.7057133 3.0649488 1">
+							<size>4.62580729 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="613888386" name="ShapeBox" transform="0.287139505 0.957890809 -4.42007186e-09 0 -0.957891107 0.287139744 2.57347343e-09 0 3.69408326e-09 3.63132924e-09 1.00000155 0 -7.81263065 -16.7961445 3.0649488 1">
+							<size>3.98229599 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="730350329" name="ShapeBox" transform="-0.466900378 0.884312034 -2.36241426e-09 0 -0.884312332 -0.466900706 5.33316813e-09 0 3.57766883e-09 4.79548223e-09 1.00000155 0 -8.7600069 -11.7813663 3.0649488 1">
+							<size>7.00554085 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="1197117444" name="ShapeBox" transform="0.763041615 0.646352112 -5.49242074e-09 0 -0.646352351 0.763042152 -1.81986937e-09 0 2.99559266e-09 5.02831243e-09 1.00000155 0 -2.30678892 -4.91707754 3.0649488 1">
+							<size>8.57070351 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="30268307" name="ShapeBox" transform="0.972105086 0.234552711 -3.42691453e-09 0 -0.234552816 0.972105861 -4.35444436e-09 0 2.36851072e-09 5.08539699e-09 1.00000143 0 -7.63564253 -8.02149773 3.0649488 1">
+							<size>4.38175249 0.792112172 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="1253747670" name="ShapeBox" transform="-0.479895234 0.8773278 -2.20766028e-09 0 -0.877328157 -0.479895651 4.64829641e-09 0 3.18341686e-09 4.27049063e-09 1.00000143 0 -1.6190666 2.4301517 3.0649488 1">
+							<size>11.2894144 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="809955645" name="ShapeBox" transform="-0.547977805 0.836494863 -1.87493421e-09 0 -0.836495221 -0.547978342 4.92558083e-09 0 3.06700176e-09 4.38690551e-09 1.00000143 0 -5.33129501 9.0346899 3.0649488 1">
+							<size>4.09013462 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="52199800" name="ShapeBox" transform="0.974529386 -0.224266738 -2.69074563e-09 0 0.224266872 0.974530339 -6.84267443e-09 0 4.04333056e-09 6.07605077e-09 1.00000155 0 12.2312813 10.5211201 3.06494856 1">
+							<size>4.61189604 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="1697601143" name="ShapeBox" transform="0.881975114 0.47129935 -6.22635898e-09 0 -0.471299678 0.881976068 -1.38842737e-09 0 4.85823604e-09 3.98057587e-09 1.00000155 0 16.6741791 11.2240629 3.06494856 1">
+							<size>6.16897869 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="770228586" name="ShapeBox" transform="-0.995935023 -0.0900830328 1.42822965e-09 0 0.0900830179 -0.995935142 1.55169777e-09 0 1.3705802e-09 1.63206026e-09 1.00000048 0 67.0110703 -53.5426598 3.45889497 1">
+							<size>11.4995737 1.14031804 9.54993248</size>
+						</shape>
+						<shape type="ShapeBox" id="833290689" name="ShapeBox" transform="-0.954571426 -0.297984838 1.51637658e-09 0 0.297984719 -0.954571366 1.11309106e-09 0 1.1113459e-09 1.51789015e-09 1.0000006 0 58.0613098 -55.0043564 3.45889497 1">
+							<size>8.86529541 1.14031804 9.54993248</size>
+						</shape>
+						<shape type="ShapeBox" id="279572524" name="ShapeBox" transform="-0.910354376 -0.413831174 1.70875802e-09 0 0.413831055 -0.910354435 7.5835116e-10 0 1.15635168e-09 1.46080514e-09 1.0000006 0 49.5571442 -58.474472 3.45889497 1">
+							<size>9.16660309 1.14031804 9.54993248</size>
+						</shape>
+						<shape type="ShapeBox" id="1057861019" name="ShapeBox" transform="0.185227945 -0.982695818 7.3325257e-09 0 0.982695758 0.18522796 -5.6982481e-09 0 4.37877867e-09 8.32257374e-09 1.00000024 0 80.6941757 -12.8262835 2.06009221 1">
+							<size>8.81833076 1.00026679 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="1466926654" name="ShapeBox" transform="0.0565929264 -0.998397708 7.95611665e-09 0 0.998397529 0.0565929264 -4.6139208e-09 0 4.37877867e-09 8.32257374e-09 1.00000024 0 81.9134598 -21.7899837 2.06009221 1">
+							<size>8.81833076 1.00026679 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="950237317" name="ShapeBox" transform="0.00501752365 -0.999987841 8.12349921e-09 0 0.999987543 0.00501752272 -4.21558877e-09 0 4.19095381e-09 8.14907342e-09 1.00000024 0 82.2670898 -30.3266983 2.06009221 1">
+							<size>8.35738182 1.00026679 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="62787616" name="ShapeBox" transform="-0.23330915 -0.972403169 8.46769765e-09 0 0.97240293 -0.233309135 -1.72209447e-09 0 3.95812316e-09 7.79982745e-09 1.00000024 0 81.4450073 -37.8039093 2.06009221 1">
+							<size>7.54471493 1.00026679 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="983729407" name="ShapeBox" transform="-0.23330915 -0.972403169 8.46769765e-09 0 0.97240293 -0.233309135 -1.72209447e-09 0 3.95812316e-09 7.79982745e-09 1.00000024 0 79.7959442 -44.6769867 2.06009221 1">
+							<size>7.54471493 1.00026679 6.62439251</size>
+						</shape>
+						<shape type="ShapeBox" id="1955876434" name="ShapeBox" transform="-0.997063458 0.0765912235 2.96013081e-09 0 -0.0765912086 -0.997063458 8.90080898e-10 0 3.42104833e-09 4.08578227e-10 1.00000036 0 43.7649307 -77.3736267 3.00469518 1">
+							<size>6.50260544 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="1697487241" name="ShapeBox" transform="-0.904791772 -0.425856978 -3.10377196e-10 0 0.425856799 -0.904791772 -1.61983564e-08 0 6.91349689e-09 -1.49582391e-08 1.00000036 0 35.7383308 -79.3756943 3.00469518 1">
+							<size>10.8173103 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeBox" id="156063060" name="ShapeBox" transform="-0.859080195 -0.511843622 -1.86737337e-09 0 0.511843383 -0.859080136 -1.62237015e-08 0 6.91349689e-09 -1.49582391e-08 1.00000036 0 27.2960281 -83.8911819 3.00469518 1">
+							<size>9.69365788 1.00026679 8.6415329</size>
+						</shape>
+						<shape type="ShapeCylinder" id="1519370403" name="ShapeCylinder" transform="1 -1.05879118e-21 0 0 -1.42301535e-19 1 1.88868018e-16 0 0 0 1 0 -2.50373077 14.4117823 2.53590322 1">
+							<radius>2.07908535</radius>
+							<height>12.5348463</height>
+						</shape>
+					</body>
+					<transform>0.999999880791 0 0 0.0 0 0.999999701977 0 0.0 0 0 0.999999701977 0.0 0 0 0 1.0</transform>
+				</node>
+			</node>
 		</node>
 	</editor>
 	<console>

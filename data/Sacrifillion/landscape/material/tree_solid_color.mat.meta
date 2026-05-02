@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>43be8119b2de685628e674dbf48ed7bf05309569</guid>
+	<type>material</type>
+	<hash>3af4868f93403f6888b62a2a061faaf4f84f95664edb1c5585f0d6b9f94832a2</hash>
+	<runtimes>
+		<runtime id="43be8119b2de685628e674dbf48ed7bf05309569" name="tree_solid_color" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>

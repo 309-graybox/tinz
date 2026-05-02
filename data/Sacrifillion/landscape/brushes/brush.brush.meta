@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>560c5ff62437c3b0ca66459ca25effe6455f109c</guid>
+	<type>material</type>
+	<hash>66e0a674955606fdc543d6a770bd088613956f021109cdf70705812aad011d73</hash>
+	<runtimes>
+		<runtime id="560c5ff62437c3b0ca66459ca25effe6455f109c" name="brush" link="0" type="5"/>
+	</runtimes>
+</asset>

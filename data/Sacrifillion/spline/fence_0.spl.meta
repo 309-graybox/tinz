@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>07fc19afa9a2fe82d688bc7d0520abb11f7a5fd8</guid>
+	<type>spline_graph</type>
+	<hash>298b897cdb25ac5c9cc1a0342c040da2953148edcea7b6ce991b8f2c1e6104b7</hash>
+	<runtimes>
+		<runtime id="07fc19afa9a2fe82d688bc7d0520abb11f7a5fd8" name="fence_0.spl" link="0"/>
+	</runtimes>
+</asset>

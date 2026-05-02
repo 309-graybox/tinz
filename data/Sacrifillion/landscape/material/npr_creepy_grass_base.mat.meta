@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>37aaabd345d089d2c56f1065c71dfdb8e2f4d163</guid>
+	<type>material</type>
+	<hash>44c152d8853917d1a1af3334620a19f35228139daf4386aebe95ed0d0247257f</hash>
+	<runtimes>
+		<runtime id="37aaabd345d089d2c56f1065c71dfdb8e2f4d163" name="npr_creepy_grass_base" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>

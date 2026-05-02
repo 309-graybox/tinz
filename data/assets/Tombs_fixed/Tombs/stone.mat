@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material version="2.21.0.0" guid="9b19e8d01c24539af3f42adaeb131e77846fb53f" base_material="6bdbc0e8a7ef8f4fccb74936393a3f42ff152868">
+	<texture name="albedo">guid://39d86af9fc2703317323f8ee40aa39df515620f7</texture>
+	<texture name="emission_map">guid://39d86af9fc2703317323f8ee40aa39df515620f7</texture>
+	<parameter name="roughness" expression="0">1</parameter>
+	<parameter name="specular" expression="0">0.0522800013</parameter>
+	<parameter name="auxiliary_tint" expression="0">0 0 0 1</parameter>
+</material>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>596e73d9b56bb95c6b84f6ed3bb41f9fe349122e</guid>
+	<type>material</type>
+	<hash>e0cac0d818e0e6a093de090e94d2eb2b345efbbd4b704491d0811e991e606432</hash>
+	<runtimes>
+		<runtime id="596e73d9b56bb95c6b84f6ed3bb41f9fe349122e" name="terrain_creepy_soil_detail" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>

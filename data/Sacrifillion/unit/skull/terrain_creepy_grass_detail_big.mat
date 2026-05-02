@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material version="2.21.0.0" guid="207d0f603e3bda4925fac05c8c01588d5a19debd" parent="975ae9c7bba9b7b0f6354dd4197c719f65bd5895" base_material="1879c38175a361597e59397b6a17b4412390e56b">
+	<texture name="albedo">guid://713d3afc9c7d9654daa72b3868a9c2895721a8c9</texture>
+	<parameter name="size" expression="0">3</parameter>
+	<parameter name="rotation" expression="0">24.4043999</parameter>
+	<parameter name="albedo_opacity" expression="0">0.405710012</parameter>
+</material>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material version="2.21.0.0" guid="6ec90667bd7b4cab793d6599b1a6cd9d6e1512f7" parent="975ae9c7bba9b7b0f6354dd4197c719f65bd5895" base_material="1879c38175a361597e59397b6a17b4412390e56b">
+	<state name="triplanar">1</state>
+	<texture name="albedo">guid://5219d6ddb5dbd1520e843a369ad2b64326bb24e2</texture>
+	<parameter name="albedo_opacity" expression="0">0</parameter>
+</material>

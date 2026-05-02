@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>f1f236a7a45158e40bb2f7d98676341c5634e337</guid>
+	<type>material</type>
+	<hash>91f48dbf10f5c36069ecb4d20b7a6044ba7f8c4b4d9248e62c9b55fe73b9f61e</hash>
+	<runtimes>
+		<runtime id="f1f236a7a45158e40bb2f7d98676341c5634e337" name="npr_grass_4_base" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>c213591d8b05a917c47345719741d2fe8c822142</guid>
+	<type>material</type>
+	<hash>14434a45928666a154914c607856a18fba6ed8b0905c941c48f31599f150ebe2</hash>
+	<runtimes>
+		<runtime id="c213591d8b05a917c47345719741d2fe8c822142" name="terrain_tomb_soil_detail" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>

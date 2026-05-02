@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>893eee9c483aed32d27cc806bcc8d5e91198ae1b</guid>
+	<type>material_graph</type>
+	<hash>cef0f00ed7fc1fe3836098d1d8f90ddcbf384074dc629ea34c7484e1dfac316f</hash>
+	<runtimes>
+		<runtime id="893eee9c483aed32d27cc806bcc8d5e91198ae1b" name="skullmi.mgraph" link="0"/>
+		<runtime id="875e752e2fc044422cd288a800c5d7684694cd05" name="skullmi" link="1" type="5"/>
+	</runtimes>
+</asset>

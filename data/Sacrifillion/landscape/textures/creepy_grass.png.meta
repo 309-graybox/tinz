@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <asset version="2.21.0.0">
-	<guid>3fc3af3f77ad1129c6b71cc6de7f67d3409d8724</guid>
+	<guid>ca62eb2d70b84edf5d448c81974aff13e2a20a92</guid>
 	<type>texture</type>
-	<hash>9c53b5f045fdd0501d92003b8934359a9cf381ae5de36938f8f7024e4b68dd37</hash>
+	<hash>bd7f3bd5c6e15d2fbcd733f93dd692a2f7c0799d88053123e8b0d3a20b31c2aa</hash>
 	<runtimes>
-		<runtime id="3fc3af3f77ad1129c6b71cc6de7f67d3409d8724" name="heart.png" link="0" type="6"/>
-		<runtime id="441bd21d5070f71af46890620842055f7acb2833" name="heart.texture" link="1" type="6"/>
+		<runtime id="ca62eb2d70b84edf5d448c81974aff13e2a20a92" name="creepy_grass.png" link="0" type="6"/>
+		<runtime id="713d3afc9c7d9654daa72b3868a9c2895721a8c9" name="creepy_grass.texture" link="1" type="6"/>
 	</runtimes>
 	<parameters>
 		<parameter type="int" name="blur_radius">1</parameter>
-		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="height">1024</parameter>
 		<parameter type="string" name="image_format">DXT5</parameter>
 		<parameter type="string" name="image_type">2d</parameter>
 		<parameter type="bool" name="invert_g">0</parameter>
@@ -20,6 +20,6 @@
 		<parameter type="float" name="sharpness_radius">1</parameter>
 		<parameter type="bool" name="srgb_correction">1</parameter>
 		<parameter type="bool" name="unchanged">0</parameter>
-		<parameter type="string" name="width">auto</parameter>
+		<parameter type="string" name="width">1024</parameter>
 	</parameters>
 </asset>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>211b3ea402522afccf88fe4ec86c53810b25a583</guid>
+	<type>material</type>
+	<hash>826afb9312e19e4815d6aa158e8837e3e2f7121a3d2be68bf1def98c7fd9ca16</hash>
+	<runtimes>
+		<runtime id="211b3ea402522afccf88fe4ec86c53810b25a583" name="metal_spike" link="0" type="5"/>
+	</runtimes>
+</asset>
