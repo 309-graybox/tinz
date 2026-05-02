@@ -2,6 +2,7 @@
 <property version="2.21.0.0" name="EnemySkull" manual="1" parent_name="node_base">
 	<parameter name="has_hp" type="toggle">0</parameter>
 	<parameter name="max_hp" type="float">0</parameter>
+	<parameter name="invulnerabilityTime" type="float" tooltip="Damage immunity duration in seconds after taking damage. 0 = disabled">0</parameter>
 	<parameter name="persistOnDeath" type="toggle" tooltip="If true, the node is NOT auto-deleted on death — owner reacts via eventDied (used by the player so respawn can revive it)">0</parameter>
 	<parameter name="behavior" type="switch" title="Skull behavior" items="Direct,Orbit,Flank">0</parameter>
 	<parameter name="sightRange" type="float" tooltip="Maximum free line-of-sight length at which the skull notices the player" group="Sight">20</parameter>

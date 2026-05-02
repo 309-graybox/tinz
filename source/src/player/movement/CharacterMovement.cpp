@@ -4,6 +4,7 @@
 #include "utils/Utils.h"
 
 #include <UnigineGame.h>
+#include <UnigineLog.h>
 #include <UnigineMathLib.h>
 #include <UnigineMathLibCommon.h>
 #include <UnigineMathLibVec3.h>
@@ -64,6 +65,9 @@ void CharacterMovement::init()
 	_states[MovementStateIndex::IDLE] = &_idle_state;
 	_states[MovementStateIndex::MOVE] = &_move_state;
 	_states[MovementStateIndex::SLIDE] = &_slide_state;
+	_damage_knockback_velocity = Vec3_zero;
+	_damage_knockback_timer = 0.0f;
+	_damage_knockback_duration = 0.0f;
 }
 
 void CharacterMovement::update()
@@ -129,6 +133,13 @@ void CharacterMovement::update()
 		_horizontal_velocity += (desired_horizontal - _horizontal_velocity) * Scalar(t);
 	}
 	// else: airborne with no input — keep current momentum.
+
+	Vec3 controlled_horizontal_velocity = _horizontal_velocity;
+	if (_damage_knockback_timer > 0.0f && _damage_knockback_duration > Consts::EPS)
+	{
+		const float weight = saturate(_damage_knockback_timer / _damage_knockback_duration);
+		_horizontal_velocity += _damage_knockback_velocity * Scalar(weight);
+	}
 
 	float slope_cos = dot(_ctx.move_direction, _up);
 	float move_coeff = 1.0f - slope_cos;
@@ -333,6 +344,16 @@ void CharacterMovement::update()
 	target->setWorldTransform(_world_transform);
 	body->setWorldTransform(target->getWorldTransform());
 
+	_horizontal_velocity = controlled_horizontal_velocity;
+	if (_damage_knockback_timer > 0.0f)
+	{
+		_damage_knockback_timer = max(_damage_knockback_timer - ifps, 0.0f);
+		if (compare(_damage_knockback_timer, 0.0f))
+		{
+			_damage_knockback_velocity = Vec3_zero;
+			_damage_knockback_duration = 0.0f;
+		}
+	}
 
 	//%%%%%%%%%%%%%%%%%%% Anim %%%%%%%%%%%%%%%
 	{
@@ -386,6 +407,41 @@ void CharacterMovement::applyVerticalBounce(float speed)
 	// Cancel adaptive jump damping — the bounce is intentional, releasing jump
 	// shouldn't immediately scrub the speed we just gave.
 	_adaptive_jump_pending = false;
+}
+
+void CharacterMovement::applyDamageKnockback(const Vec3 &source_position)
+{
+	const float horizontal_speed = max(damageKnockbackSpeed.get(), 0.0f);
+	const float duration = max(damageKnockbackDuration.get(), 0.0f);
+
+	if (horizontal_speed <= 0.0f || duration <= 0.0f)
+	{
+		Log::message("Damage knockback skipped: speed %.2f, duration %.2f\n", horizontal_speed, duration);
+		return;
+	}
+
+	const Vec3 self_position = target ? target->getWorldPosition() : _world_transform.getTranslate();
+	vec3 direction = vec3(self_position - source_position);
+	direction -= _up * dot(direction, _up);
+	if (length2(direction) <= Consts::EPS)
+	{
+		direction = -vec3(_world_transform.getAxisY());
+		direction -= _up * dot(direction, _up);
+	}
+
+	direction = normalizeValid(direction);
+	if (direction == vec3_zero)
+	{
+		Log::message("Damage knockback skipped: zero direction\n");
+		return;
+	}
+
+	_damage_knockback_velocity = Vec3(direction) * Scalar(horizontal_speed);
+	_damage_knockback_timer = duration;
+	_damage_knockback_duration = duration;
+
+	Log::message("Damage knockback applied: direction %.2f %.2f %.2f, speed %.2f, duration %.2f\n",
+		direction.x, direction.y, direction.z, horizontal_speed, duration);
 }
 
 Unigine::Math::vec3 CharacterMovement::get_ground_normal() const

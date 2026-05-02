@@ -14,19 +14,32 @@ bool Entity::isInvulnerable() const noexcept
 
 bool Entity::takeDamage(const DamageInfo &damageInfo)
 {
-	const bool receivesDamage = damageInfo.amount > 0.0f;
-	if (isDead() || (receivesDamage && isInvulnerable()))
+	const float amount = damageInfo.amount;
+	const bool receivesDamage = amount > 0.0f;
+	if (isDead())
+	{
+		Log::message("%s damage ignored: already dead, amount: %.2f\n", node->getName(), amount);
 		return false;
+	}
+
+	if (receivesDamage && isInvulnerable())
+	{
+		Log::message("%s damage ignored: invulnerable, amount: %.2f, time left: %.2f\n",
+			node->getName(), amount, max(_invulnerable_until - Game::getTime(), 0.0f));
+		return false;
+	}
 
 	const float old_hp = _hp;
-	_hp = max(0.0f, _hp - damageInfo.amount);
+	_hp = max(0.0f, _hp - amount);
 	if (receivesDamage)
 		_invulnerable_until = Game::getTime() + max(invulnerabilityTime.get(), 0.0f);
 
-	Log::message("%s new hp: %f\n", node->getName(), _hp);
+	Log::message("%s hp changed: %.2f -> %.2f, amount: %.2f, invulnerability: %.2f\n",
+		node->getName(), old_hp, _hp, amount, receivesDamage ? max(invulnerabilityTime.get(), 0.0f) : 0.0f);
 
 	if (isDead())
 	{
+		Log::message("%s died\n", node->getName());
 		_event_died.run(this);
 		if (!persistOnDeath)
 			node.deleteLater();

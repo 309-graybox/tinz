@@ -295,10 +295,15 @@ void EnemySkull::onContactEnter(const BodyPtr &body, int num)
 		DamageInfo info;
 		info.source = node;
 		info.amount = attackDamage;
-		entity->takeDamage(info);
-		if (auto player = Game::getPlayer())
+		const bool damage_applied = entity->takeDamage(info);
+		if (auto player = Game::getPlayer(); damage_applied && player)
 		{
-			auto pcm = ComponentSystem::get()->getComponent<PlayerCameraManager>(static_ptr_cast<Node>(player));
+			auto player_node = static_ptr_cast<Node>(player);
+			if (auto cm = ComponentSystem::get()->getComponent<CharacterMovement>(player_node))
+				cm->applyDamageKnockback(node->getWorldPosition());
+			else
+				Log::message("%s damage applied, but CharacterMovement was not found on player node\n", node->getName());
+			auto pcm = ComponentSystem::get()->getComponent<PlayerCameraManager>(player_node);
 			if (pcm)
 				pcm->addTrauma(damageShake);
 		}

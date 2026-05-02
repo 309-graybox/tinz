@@ -114,6 +114,12 @@
 					<parameter name="cameraNode">1892598520</parameter>
 					<parameter name="magnetLineOfSightMask">0x40000000</parameter>
 				</property>
+				<property parent="c7fb3177257942197ffaf1f26b2e8b00b4f667b2" guid="0bb69f1d0463111a1af4a7b44e7cd554bb9f3503">
+					<parameter name="has_hp">1</parameter>
+					<parameter name="max_hp">20</parameter>
+					<parameter name="invulnerabilityTime">1</parameter>
+					<parameter name="persistOnDeath">1</parameter>
+				</property>
 			</properties>
 			<transform>1 0 0 0.0 0 0.999999999999 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 			<node material="10891dd5883badf611ea3ba99875dcb9d9ae695a" type="DecalOrtho" id="1667129237" name="DecalOrtho">

@@ -54,6 +54,10 @@ public:
 	PROP_PARAM(Float, slideAcceleration, 8.0f, "", "Скорость, с которой текущая скорость скольжения подтягивается к расчётной целевой");
 	PROP_PARAM(Float, slideLateralStrength, 1.0f, "", "Сила бокового отклонения вектора движения от базового вектора скольжения по инпуту [0..1]");
 
+	PROP_GROUP("Damage");
+	PROP_PARAM(Float, damageKnockbackSpeed, 3.5f, "", "Горизонтальная скорость отталкивания при получении урона");
+	PROP_PARAM(Float, damageKnockbackDuration, 0.25f, "", "Время затухания отталкивания от урона");
+
 	PROP_GROUP("")
 	PROP_PARAM(Node, body);
 	PROP_PARAM(Float, fall_scale, 0.5f);
@@ -76,6 +80,7 @@ public:
 	// least `speed` (m/s, positive = up). Used by stomp-killable enemies for
 	// rebound bounce. Doesn't slow the player if they're already going up faster.
 	void applyVerticalBounce(float speed);
+	void applyDamageKnockback(const Unigine::Math::Vec3 &source_position);
 
 private:
 	MovementContext _ctx;
@@ -108,6 +113,9 @@ private:
 	float _gravity_amount = 0.0f;
 
 	float _vertical_speed = 0.0f;
+	Unigine::Math::Vec3 _damage_knockback_velocity = Unigine::Math::Vec3_zero;
+	float _damage_knockback_timer = 0.0f;
+	float _damage_knockback_duration = 0.0f;
 
 	bool _is_grounded = false;
 	bool _walkable_grounded = false;
