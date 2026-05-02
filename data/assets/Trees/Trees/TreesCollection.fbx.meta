@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>e383e736b126d3770da8f5482dea7baf68c3ab98</guid>
+	<type>fbx</type>
+	<hash>e23b5529f8794b5e7aebd9b3b35e522841cb38c7854723d187181b56028df1b3</hash>
+	<runtimes>
+		<runtime id="e383e736b126d3770da8f5482dea7baf68c3ab98" name="TreesCollection.fbx" link="0"/>
+		<runtime id="1233552bc0eb4ccb512d88e1f830cd7450a16a4b" name="TreesCollection.node" link="1" type="3">
+			<parameters>
+				<parameter type="string" name="id">a966f892</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="4a452fdc59fb94e7f7b4d6de8ce1e2d0064e3b2e" name="cylinder.009.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">a966f892</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="2fff7055263d9e0e835b0efbcd2b4425817a48b5" name="cylinder.010.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">a966f892</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="76eea86e4ef76cd2bd8173403aa235a3a249c290" name="cylinder.011.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">a966f892</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="93958b8fd68f80f9f4efaea501988bbcddc334af" name="cube.022.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">a966f892</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="8f360f50f1a67793c7280272eddb77106b6d5a42" name="cube.021.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">a966f892</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="1700855923fdfd2c9f10e25f966a0c8d1364d4b9" name="cube.020.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">a966f892</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="42f76d02d053e1084d7320f42b1b0b112b6076c4" name="cube.027.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">a966f892</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="500160334a2dff848623a8a9841da2e478cb1353" name="cube.028.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">a966f892</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="92b4fe04ae5ddebed80dbf4645b2e7a42b8d0096" name="cube.036.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">a966f892</parameter>
+			</parameters>
+		</runtime>
+	</runtimes>
+	<parameters>
+		<parameter type="float" name="angular_deflection">0.699999988</parameter>
+		<parameter type="bool" name="asset_name_as_prefix">0</parameter>
+		<parameter type="string" name="base_material_mode">unique_material_graph</parameter>
+		<parameter type="float" name="bound_size">10000</parameter>
+		<parameter type="bool" name="create_root_motion_joint">0</parameter>
+		<parameter type="bool" name="create_transform_bones_for_joints">0</parameter>
+		<parameter type="float" name="fps">30</parameter>
+		<parameter type="string" name="front_axis">default</parameter>
+		<parameter type="bool" name="import_animations">1</parameter>
+		<parameter type="bool" name="import_bones_without_skin">1</parameter>
+		<parameter type="bool" name="import_cameras">1</parameter>
+		<parameter type="bool" name="import_lights">1</parameter>
+		<parameter type="bool" name="import_materials">1</parameter>
+		<parameter type="string" name="import_materials_mode">take_by_name_or_create</parameter>
+		<parameter type="bool" name="import_meshes">1</parameter>
+		<parameter type="bool" name="import_morph_targets">0</parameter>
+		<parameter type="string" name="import_skeleton_mode">create</parameter>
+		<parameter type="bool" name="import_skeletons">1</parameter>
+		<parameter type="bool" name="import_tangent_space">0</parameter>
+		<parameter type="bool" name="import_textures">1</parameter>
+		<parameter type="bool" name="invert_gchannel_for_normal_maps">0</parameter>
+		<parameter type="bool" name="joints_reorientation">0</parameter>
+		<parameter type="string" name="lightmaps">{&quot;guid://1700855923fdfd2c9f10e25f966a0c8d1364d4b9&quot;:{&quot;Wood&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://8f360f50f1a67793c7280272eddb77106b6d5a42&quot;:{&quot;Wood&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://93958b8fd68f80f9f4efaea501988bbcddc334af&quot;:{&quot;Wood&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://42f76d02d053e1084d7320f42b1b0b112b6076c4&quot;:{&quot;Wood&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://500160334a2dff848623a8a9841da2e478cb1353&quot;:{&quot;Wood&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://92b4fe04ae5ddebed80dbf4645b2e7a42b8d0096&quot;:{&quot;Wood&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://4a452fdc59fb94e7f7b4d6de8ce1e2d0064e3b2e&quot;:{&quot;Wood&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Leaf&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://2fff7055263d9e0e835b0efbcd2b4425817a48b5&quot;:{&quot;Wood&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Leaf&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://76eea86e4ef76cd2bd8173403aa235a3a249c290&quot;:{&quot;Wood&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Leaf&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}}}</parameter>
+		<parameter type="float" name="linear_deflection">0.200000003</parameter>
+		<parameter type="string" name="lods">_lod_0,-1e+09,3,0,0,100,0,0,60;_lod_1,3,9,0,0,60,0,1,60;_lod_2,9,1e+09,0,0,30,0,1,60</parameter>
+		<parameter type="string" name="lods_mode">off</parameter>
+		<parameter type="string" name="material_guids">leaf,32f97ac99a1aac37369c024f34c6164295f6f229,wood,0ff10503ce2b9cdf250af8f98dc35144c3cdac23</parameter>
+		<parameter type="bool" name="merge_similar_materials">0</parameter>
+		<parameter type="bool" name="merge_static_meshes">0</parameter>
+		<parameter type="bool" name="merge_surfaces_by_materials">0</parameter>
+		<parameter type="float" name="morph_targets_normals_angle">180</parameter>
+		<parameter type="string" name="morph_targets_normals_mode">import</parameter>
+		<parameter type="bool" name="need_repivot">0</parameter>
+		<parameter type="bool" name="need_split">0</parameter>
+		<parameter type="bool" name="need_triangulate">1</parameter>
+		<parameter type="int" name="num_lods">3</parameter>
+		<parameter type="string" name="prefix_materials"/>
+		<parameter type="string" name="resolution">256</parameter>
+		<parameter type="int" name="root_motion_forward_axis">0</parameter>
+		<parameter type="int" name="root_motion_position_component">0</parameter>
+		<parameter type="int" name="root_motion_rotation_component">0</parameter>
+		<parameter type="float" name="scale">1</parameter>
+		<parameter type="string" name="shared_skeleton_path"/>
+		<parameter type="bool" name="skip_empty_nodes">0</parameter>
+		<parameter type="int" name="smooth_animation_size">0</parameter>
+		<parameter type="string" name="target_root_motion_joint"/>
+		<parameter type="bool" name="unwrap_uv_ch_0">0</parameter>
+		<parameter type="bool" name="unwrap_uv_ch_1">0</parameter>
+		<parameter type="string" name="up_axis">default</parameter>
+		<parameter type="bool" name="use_instances">1</parameter>
+		<parameter type="int" name="uv_ch">1</parameter>
+		<parameter type="string" name="uv_unwrap_version">xatlas_v1</parameter>
+		<parameter type="bool" name="vertex_cache">1</parameter>
+		<parameter type="string" name="workflow">metalness</parameter>
+	</parameters>
+</asset>

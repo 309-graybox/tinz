@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>65383ac8f464de9825a624aa8f00533249dd6f7a</guid>
+	<type>material_graph</type>
+	<hash>8abca61824a24388ff31029b76da889e3d7a9128248185959130d1613b42b384</hash>
+	<runtimes>
+		<runtime id="65383ac8f464de9825a624aa8f00533249dd6f7a" name="goldmat.mgraph" link="0"/>
+		<runtime id="4259153a247e3860e0a81decf9572052f73e98bc" name="goldmat" link="1" type="5"/>
+	</runtimes>
+</asset>

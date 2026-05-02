@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>967416d7edd38620e7f6b4adf46b7da1c03359f7</guid>
+	<type>texture</type>
+	<hash>0f38b9728bad644307160deb52ff67004322853ad61ba8c0d636c5a5d55725b3</hash>
+	<runtimes>
+		<runtime id="967416d7edd38620e7f6b4adf46b7da1c03359f7" name="StoneCrossNormal.png" link="0" type="6"/>
+		<runtime id="a61816b81ba6c9ab2047361ac79491e13e01eeea" name="StoneCrossNormal.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">ATI2</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">0</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">normal map (rg)</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">0</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>c0e633bc161390631b8a25be60dae176d30d960e</guid>
+	<type>material_graph</type>
+	<hash>d9fce8c9789e62a89318fd521108c7aecf6d929fe5a8ce358355cd67891c69c2</hash>
+	<runtimes>
+		<runtime id="c0e633bc161390631b8a25be60dae176d30d960e" name="tombmainmat.mgraph" link="0"/>
+		<runtime id="49398f4ec90cc5fa70139d20e8ab565e92454070" name="tombmainmat" link="1" type="5"/>
+	</runtimes>
+</asset>

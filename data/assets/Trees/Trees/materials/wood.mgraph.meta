@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>ad73f1a97aeaf2cc5b99ee2f216949d0989fd909</guid>
+	<type>material_graph</type>
+	<hash>3aa80c337e515c8a9536c3de4af14936f522f4407c165568e60572934bcb28fb</hash>
+	<runtimes>
+		<runtime id="ad73f1a97aeaf2cc5b99ee2f216949d0989fd909" name="wood.mgraph" link="0"/>
+		<runtime id="0ff10503ce2b9cdf250af8f98dc35144c3cdac23" name="wood" link="1" type="5"/>
+	</runtimes>
+</asset>

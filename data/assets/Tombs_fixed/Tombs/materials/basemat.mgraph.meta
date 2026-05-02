@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>0d09eee09b78f2ebfbecb8827d9165e5a4436252</guid>
+	<type>material_graph</type>
+	<hash>d298b6c7b46d5c4b34411ca65c67df1255f1fc4bdde1706963513e8a8e40785a</hash>
+	<runtimes>
+		<runtime id="0d09eee09b78f2ebfbecb8827d9165e5a4436252" name="basemat.mgraph" link="0"/>
+		<runtime id="68523712bede5a0b0675a58468e9747fcf118954" name="basemat" link="1" type="5"/>
+	</runtimes>
+</asset>

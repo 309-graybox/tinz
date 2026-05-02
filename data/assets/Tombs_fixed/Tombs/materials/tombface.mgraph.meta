@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>a2c88dd826d871e8ae821a3afe2900e70db9b70a</guid>
+	<type>material_graph</type>
+	<hash>13d9e7926531d4bc039bb6b86b4acc23061c8ae7f13bd78c1e5ccbb2b3fa83d5</hash>
+	<runtimes>
+		<runtime id="a2c88dd826d871e8ae821a3afe2900e70db9b70a" name="tombface.mgraph" link="0"/>
+		<runtime id="48c67ecabde28a14d13cedfc36201bfc04e196cc" name="tombface" link="1" type="5"/>
+	</runtimes>
+</asset>
