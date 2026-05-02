@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>7affacdf7945f2cab03fc7d36717d34fae24e3ac</guid>
+	<type>material_graph</type>
+	<hash>f2620be2cfe30e13903bae96c4e0307a5b009672a833ce799533a79d2b4c080a</hash>
+	<runtimes>
+		<runtime id="7affacdf7945f2cab03fc7d36717d34fae24e3ac" name="material_graph_decal_base.mgraph" link="0"/>
+		<runtime id="aed277298c8c3f1626a7533d58aa4f47c11c45be" name="material_graph_decal_base" link="1" type="5"/>
+	</runtimes>
+</asset>

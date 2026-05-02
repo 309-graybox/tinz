@@ -89,29 +89,6 @@
 			</node>
 		</node>
 	</node>
-	<node type="ObjectMeshStatic" id="510937540" enabled="0" immovable="1" name="Capsule">
-		<mesh_name>guid://30a2c3df4360c3a29b876de716cc573fdc7af63e</mesh_name>
-		<surface name="capsule" intersection="1" intersection_mask="0x80000000" material="fa22583eadc45f89ebe8ae56d96c24e8fdd54989"/>
-		<body type="BodyDummy" id="1533853500" frozen="0">
-			<shape type="ShapeCapsule" id="1644335467" name="ShapeCapsule">
-				<radius>0.492403865</radius>
-				<height>1.01519227</height>
-			</shape>
-		</body>
-		<properties>
-			<property parent="46997dd32566d8cc413cccc23e01f8023d5d3899" guid="7f4bb76fc0e2c5a6418edc5eee37dfcb87987ede">
-				<parameter name="playerNode">1892598520</parameter>
-				<parameter name="cameraNode">1892598520</parameter>
-				<parameter name="magnetLineOfSightMask">0x40000000</parameter>
-			</property>
-		</properties>
-		<transform>0.999999940395 0 0 0.0 0 0.999999940395 0 0.0 0 0 0.999999940395 0.0 0 0 0 1.0</transform>
-		<node type="ObjectMeshStatic" id="1691979073" immovable="1" name="capsule">
-			<mesh_name>guid://30a2c3df4360c3a29b876de716cc573fdc7af63e</mesh_name>
-			<surface name="capsule" intersection="1" intersection_mask="0x80000001" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
-			<transform>0.200000053644 0 0 0.0 0 0.199999949336 0 0.0 0 0 0.400000309944 0.0 0 0.257959098627 0.828486378964 1.0</transform>
-		</node>
-	</node>
 	<node type="NodeSkeletonPose" id="1234864251" name="NodeSkeletonPose">
 		<transform>0.99999988079 0 0 0.0 0 1.00000011921 0 0.0 0 0 1 0.0 2.20537159379e-05 1.26659885247e-06 0.115399816922 1.0</transform>
 		<skeleton>3f68d00b83f7388258f119d4120aa2fa30b105cf</skeleton>
@@ -123,8 +100,8 @@
 			<fps_visible_camera>-1</fps_visible_camera>
 			<fps_visible_shadow>30</fps_visible_shadow>
 			<fps_invisible>0</fps_invisible>
-			<surface name="Face" material="e082033d4dff46cb0ab1413f67ad7074ab89cc18"/>
-			<surface name="Body" material="e128f3de1149944d094658bb7f4043b9b0235239"/>
+			<surface name="Face" shadow_mask="0x0" material="e082033d4dff46cb0ab1413f67ad7074ab89cc18"/>
+			<surface name="Body" shadow_mask="0x0" material="e128f3de1149944d094658bb7f4043b9b0235239"/>
 			<body type="BodyDummy" id="130941542" frozen="0">
 				<shape type="ShapeCapsule" id="130941542" name="ShapeCapsule" transform="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.899999976 1">
 					<radius>0.400000006</radius>
@@ -138,7 +115,15 @@
 					<parameter name="magnetLineOfSightMask">0x40000000</parameter>
 				</property>
 			</properties>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			<transform>1 0 0 0.0 0 0.999999999999 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			<node material="10891dd5883badf611ea3ba99875dcb9d9ae695a" type="DecalOrtho" id="1667129237" name="DecalOrtho">
+				<width>1.39999998</width>
+				<height>1.39999998</height>
+				<znear>0.00100000005</znear>
+				<radius>100</radius>
+				<cast_baked_global_illumination>1</cast_baked_global_illumination>
+				<transform>0.999999940396 0 0 0.0 0 0.99999988079 0 0.0 0 0 1.00000011921 0.0 0 0 0.1 1.0</transform>
+			</node>
 		</node>
 	</node>
 </nodes>

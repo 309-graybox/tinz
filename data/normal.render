@@ -60,7 +60,7 @@
 		<environment_preset_0_moon_texture_name>guid://9fa37df380256b8d3321c1a5ea969c24c27c2d16</environment_preset_0_moon_texture_name>
 		<environment_preset_0_moon_angular_size>14.9994001</environment_preset_0_moon_angular_size>
 		<environment_preset_0_moon_texture_color>1 1 0.188235298 1</environment_preset_0_moon_texture_color>
-		<environment_preset_0_moon_texture_intensity>100</environment_preset_0_moon_texture_intensity>
+		<environment_preset_0_moon_texture_intensity>200</environment_preset_0_moon_texture_intensity>
 		<environment_preset_0_texture_name>core/textures/common/environment_default.texture</environment_preset_0_texture_name>
 		<environment_preset_0_texture_color>1 1 1 1</environment_preset_0_texture_color>
 		<environment_preset_0_texture_rotation>10 10 0</environment_preset_0_texture_rotation>
@@ -206,17 +206,17 @@
 		<render_clouds_dynamic_coverage_resolution>256</render_clouds_dynamic_coverage_resolution>
 		<render_clouds_enabled>1</render_clouds_enabled>
 		<render_clouds_environment_color>1 1 1 1</render_clouds_environment_color>
-		<render_clouds_environment_sky>1</render_clouds_environment_sky>
+		<render_clouds_environment_sky>0</render_clouds_environment_sky>
 		<render_clouds_environment_sky_color>1 1 1 1</render_clouds_environment_sky_color>
 		<render_clouds_far_clipping>1</render_clouds_far_clipping>
-		<render_clouds_ground_shadows>1</render_clouds_ground_shadows>
+		<render_clouds_ground_shadows>0</render_clouds_ground_shadows>
 		<render_clouds_interleaved_rendering>0</render_clouds_interleaved_rendering>
 		<render_clouds_interleaved_rendering_temporal>1</render_clouds_interleaved_rendering_temporal>
 		<render_clouds_lighting_cone_radius>0.300000012</render_clouds_lighting_cone_radius>
 		<render_clouds_lighting_quality>1</render_clouds_lighting_quality>
 		<render_clouds_lighting_samples_distribution>1.5</render_clouds_lighting_samples_distribution>
 		<render_clouds_lighting_tracelength>100</render_clouds_lighting_tracelength>
-		<render_clouds_mode>0</render_clouds_mode>
+		<render_clouds_mode>1</render_clouds_mode>
 		<render_clouds_noise_iterations>0.100000001</render_clouds_noise_iterations>
 		<render_clouds_noise_lighting>0.300000012</render_clouds_noise_lighting>
 		<render_clouds_noise_step>0.300000012</render_clouds_noise_step>
@@ -241,7 +241,7 @@
 		<render_cross_threshold>0</render_cross_threshold>
 		<render_debug>0</render_debug>
 		<render_decal_distance>1e+09</render_decal_distance>
-		<render_decals>0</render_decals>
+		<render_decals>1</render_decals>
 		<render_denoise_ao_mask_radius>1</render_denoise_ao_mask_radius>
 		<render_denoise_color_clamping_blur_intensity>0</render_denoise_color_clamping_blur_intensity>
 		<render_denoise_color_clamping_blur_intensity_ao>0</render_denoise_color_clamping_blur_intensity_ao>

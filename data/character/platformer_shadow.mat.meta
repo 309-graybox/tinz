@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>10891dd5883badf611ea3ba99875dcb9d9ae695a</guid>
+	<type>material</type>
+	<hash>d5ab10d43da72aa494289ddc8a731adfeac00087aef4a98f21819eb682b64a97</hash>
+	<runtimes>
+		<runtime id="10891dd5883badf611ea3ba99875dcb9d9ae695a" name="platformer_shadow" link="0" type="5"/>
+	</runtimes>
+</asset>
