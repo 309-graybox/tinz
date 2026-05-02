@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>c4e32ea13bd15dc02328a8ea98d4059522ce3b75</guid>
+	<type>property</type>
+	<hash>af34d706ed177c6f81d01992c31523a896fa8a6607d6ab5c88ce084b67174908</hash>
+	<runtimes>
+		<runtime id="c4e32ea13bd15dc02328a8ea98d4059522ce3b75" name="SoundSettings" link="0" type="4"/>
+	</runtimes>
+</asset>
