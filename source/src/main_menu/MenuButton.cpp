@@ -31,9 +31,9 @@ void MenuButton::onInit()
 	}
 }
 
-void MenuButton::setHovered(bool on)
+void MenuButton::setHovered(bool on, bool play_sound)
 {
-	MenuInteractive::setHovered(on);
+	MenuInteractive::setHovered(on, play_sound);
 	update_active_state();
 }
 

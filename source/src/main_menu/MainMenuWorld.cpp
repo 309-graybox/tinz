@@ -172,7 +172,7 @@ void MainMenuWorld::start_press(MenuButton *btn)
 	btn->press();
 	if (_hovered)
 	{
-		_hovered->setHovered(false);
+		_hovered->setHovered(false, /*play_sound=*/false);
 		_hovered = nullptr;
 	}
 	_pending_button = btn;

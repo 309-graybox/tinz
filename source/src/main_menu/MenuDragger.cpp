@@ -44,9 +44,9 @@ void MenuDragger::onUpdate()
 	node->setPosition(lerp(cur, target, t));
 }
 
-void MenuDragger::setHovered(bool on)
+void MenuDragger::setHovered(bool on, bool play_sound)
 {
-	MenuInteractive::setHovered(on);
+	MenuInteractive::setHovered(on, play_sound);
 	apply_cursor();
 }
 

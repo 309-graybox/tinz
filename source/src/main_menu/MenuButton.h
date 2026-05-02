@@ -45,7 +45,7 @@ public:
 
 	virtual void onClick() {}
 
-	void setHovered(bool on) override;
+	void setHovered(bool on, bool play_sound = true) override;
 
 protected:
 	void onInit() override;

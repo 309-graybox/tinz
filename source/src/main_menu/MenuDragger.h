@@ -27,7 +27,7 @@ public:
 	bool isDragging() const noexcept { return _dragging; }
 	float getValue() const noexcept { return _value; }
 
-	void setHovered(bool on) override;
+	void setHovered(bool on, bool play_sound = true) override;
 	void beginDrag(int mouse_y);
 	void updateDrag(int mouse_y);
 	void endDrag();

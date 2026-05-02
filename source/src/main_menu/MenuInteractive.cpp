@@ -21,13 +21,15 @@ void MenuInteractive::update()
 	onUpdate();
 }
 
-void MenuInteractive::setHovered(bool on)
+void MenuInteractive::setHovered(bool on, bool play_sound)
 {
 	if (_hovered == on)
 		return;
 	_hovered = on;
 	setOutlineEnabled(on);
 
+	if (!play_sound)
+		return;
 	const char *sfx = on ? hoverEnterSound.get() : hoverExitSound.get();
 	if (sfx && *sfx)
 		audio::SoundManager::play2D(sfx);

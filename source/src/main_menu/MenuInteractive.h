@@ -23,7 +23,7 @@ public:
 	bool isHovered() const noexcept { return _hovered; }
 	const Unigine::NodePtr &getNode() const noexcept { return node; }
 
-	virtual void setHovered(bool on);
+	virtual void setHovered(bool on, bool play_sound = true);
 	void setOutlineEnabled(bool on);
 
 protected:
