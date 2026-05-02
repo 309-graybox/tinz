@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>2e875ebdac595db3c5e4b23dc80c697a99d12f99</guid>
+	<type>material</type>
+	<hash>dfcba79b36fa8c8238e65f88dc4468fdaa127c7501f816e86292946e51e0ff31</hash>
+	<runtimes>
+		<runtime id="2e875ebdac595db3c5e4b23dc80c697a99d12f99" name="flame_emmiter_red" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>

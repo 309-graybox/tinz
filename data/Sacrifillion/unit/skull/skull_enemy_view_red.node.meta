@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>6f46f804ae281cea9a49aa8441ba53b78396a6e0</guid>
+	<type>node</type>
+	<hash>66c4584816fd5c964cc7282463a8c3ffe1120ed38e55456a0d892853207da7a2</hash>
+	<runtimes>
+		<runtime id="6f46f804ae281cea9a49aa8441ba53b78396a6e0" name="skull_enemy_view_red.node" link="0" type="3"/>
+	</runtimes>
+</asset>
