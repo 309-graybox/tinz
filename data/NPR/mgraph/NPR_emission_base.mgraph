@@ -194,6 +194,32 @@
 								],
 								"value_x": 1
 							}
+						},
+						"parameter": {
+							"type": "Color",
+							"guid": "60270d6f8e62bb7d2d9cad017b8d0b7be57b1862",
+							"value": {
+								"type": "float4",
+								"name": "emission_color",
+								"min_value": 0,
+								"max_value": 1,
+								"inactive_f": [
+									1,
+									1,
+									1,
+									1
+								],
+								"inactive_i": [
+									0,
+									0,
+									0,
+									0
+								],
+								"value_w": 1,
+								"value_z": 0,
+								"value_y": 0,
+								"value_x": 0
+							}
 						}
 					}
 				},
@@ -2029,8 +2055,8 @@
 			"type": "float",
 			"label": "Slider",
 			"guid": "fa5edbfc2f1b3f693f31d22a7bd8793ad41efcfc",
-			"x": -1320,
-			"y": 1561,
+			"x": -1042,
+			"y": 1573,
 			"collapsed": true,
 			"props": {
 				"prop": {
@@ -2084,8 +2110,8 @@
 		"_multiply": {
 			"label": "Multiply",
 			"guid": "ccdc25439de356771fe279fdf87d3b21a661244d",
-			"x": -1137,
-			"y": 1404,
+			"x": -859,
+			"y": 1416,
 			"collapsed": false,
 			"props": {
 			},
@@ -2466,6 +2492,62 @@
 					"label": "z,w",
 					"type": "float2",
 					"id": 0
+				}
+			}
+		},
+		"Parameter": {
+			"type": "float4",
+			"label": "Color",
+			"guid": "f75d30c9072cdd175cb53b2b393903b33c1b3734",
+			"x": -1296,
+			"y": 1560,
+			"collapsed": true,
+			"props": {
+				"prop": {
+					"label": "",
+					"widget": "Float4",
+					"w": 1,
+					"z": 0,
+					"y": 0,
+					"x": 0
+				}
+			},
+			"inputs": {
+			},
+			"outputs": {
+				"output": {
+					"label": "emission_color",
+					"type": "float4",
+					"id": 0
+				}
+			},
+			"parameter_guid": "60270d6f8e62bb7d2d9cad017b8d0b7be57b1862"
+		},
+		"_multiply": {
+			"label": "Multiply",
+			"guid": "abcaa9232c291c7c42a7c655de63be497c7e4a86",
+			"x": -1138,
+			"y": 1403,
+			"collapsed": false,
+			"props": {
+			},
+			"inputs": {
+				"input": {
+					"label": "A",
+					"type": "float4",
+					"id": -1822151033
+				},
+				"input": {
+					"label": "B",
+					"type": "float4",
+					"id": 291415938
+				}
+			},
+			"outputs": {
+				"output": {
+					"label": "",
+					"type": "float4",
+					"id": 1723312480
 				}
 			}
 		}
@@ -2935,9 +3017,9 @@
 			"input_node": "ccdc25439de356771fe279fdf87d3b21a661244d",
 			"output_index": 0,
 			"output_type": "float4",
-			"output_label": "Color",
-			"output_id": 0,
-			"output_node": "2cc22f9ff536ef1269a026b9364b7aba538f5d09"
+			"output_label": "",
+			"output_id": 1723312480,
+			"output_node": "abcaa9232c291c7c42a7c655de63be497c7e4a86"
 		},
 		"anchor": {
 			"input_index": 1,
@@ -3058,6 +3140,30 @@
 			"output_label": "uv_scale_offset",
 			"output_id": 0,
 			"output_node": "2e503231211145468eb9ce1be3880ca5320ed1ab"
+		},
+		"anchor": {
+			"input_index": 0,
+			"input_type": "float4",
+			"input_label": "A",
+			"input_id": -1822151033,
+			"input_node": "abcaa9232c291c7c42a7c655de63be497c7e4a86",
+			"output_index": 0,
+			"output_type": "float4",
+			"output_label": "Color",
+			"output_id": 0,
+			"output_node": "2cc22f9ff536ef1269a026b9364b7aba538f5d09"
+		},
+		"anchor": {
+			"input_index": 1,
+			"input_type": "float4",
+			"input_label": "B",
+			"input_id": 291415938,
+			"input_node": "abcaa9232c291c7c42a7c655de63be497c7e4a86",
+			"output_index": 0,
+			"output_type": "float4",
+			"output_label": "emission_color",
+			"output_id": 0,
+			"output_node": "f75d30c9072cdd175cb53b2b393903b33c1b3734"
 		}
 	}
 }

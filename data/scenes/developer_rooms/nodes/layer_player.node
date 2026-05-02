@@ -123,7 +123,7 @@
 			<fps_visible_camera>-1</fps_visible_camera>
 			<fps_visible_shadow>30</fps_visible_shadow>
 			<fps_invisible>0</fps_invisible>
-			<surface name="Face" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+			<surface name="Face" material="e082033d4dff46cb0ab1413f67ad7074ab89cc18"/>
 			<surface name="Body" material="e128f3de1149944d094658bb7f4043b9b0235239"/>
 			<body type="BodyDummy" id="130941542" frozen="0">
 				<shape type="ShapeCapsule" id="130941542" name="ShapeCapsule" transform="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.899999976 1">
