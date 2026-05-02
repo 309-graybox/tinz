@@ -3,6 +3,6 @@
 	<node type="ObjectMeshStatic" id="1225188831" immovable="1" name="Skull">
 		<mesh_name>guid://f199cf2b9a805f9daea25c9da899fc0fad5a6eee</mesh_name>
 		<surface name="Head" intersection="1" material="3f36314b7991321578bacfbd56882c82f9d7f28e"/>
-		<transform>100 8.74227908165e-06 -8.74227765735e-06 0.0 8.74227908165e-06 -1.6292067191e-05 100 0.0 8.74227765735e-06 -100 -1.62920679553e-05 0.0 0 0 0 1.0</transform>
+		<transform>1 8.74227836789e-08 -8.74227552572e-08 0.0 8.74227623626e-08 -1.1920927534e-07 0.999999821186 0.0 8.7422769468e-08 -0.999999940395 -1.19209303762e-07 0.0 0 0 0 1.0</transform>
 	</node>
 </nodes>

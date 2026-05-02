@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <nodes version="2.21.0.0">
 	<node type="ObjectMeshStatic" id="1593326566" name="Sphere">
-		<mesh_name>guid://4a4767364aff4b69efd87286f00fcf13e9777995</mesh_name>
-		<surface name="sphere" intersection="1" material="4fec63290d3d25673e9cdb1976799ba35327714c"/>
+		<mesh_name>guid://f199cf2b9a805f9daea25c9da899fc0fad5a6eee</mesh_name>
+		<surface name="Head" material="b08c10d080ef6cdbb1656086c53a6e066f8e2dfd"/>
 		<body type="BodyRigid" id="290144599" frozen="0">
 			<shape type="ShapeSphere" id="290144599" name="ShapeSphere">
 				<radius>0.350000024</radius>

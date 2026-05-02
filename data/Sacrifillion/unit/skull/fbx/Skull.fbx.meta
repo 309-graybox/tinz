@@ -2,7 +2,7 @@
 <asset version="2.21.0.0">
 	<guid>1362ff032006af63ab29cb3525c8fb9b810e7ee6</guid>
 	<type>fbx</type>
-	<hash>23d98eb2e566f4f29d4b010e2ba5155a9ea30106f6ac5d5b382cfe404e16eee4</hash>
+	<hash>753a5b37af4935c7b068ee8eaecca03fe2c4bf84756885b2956d9d11e50bbcae</hash>
 	<runtimes>
 		<runtime id="1362ff032006af63ab29cb3525c8fb9b810e7ee6" name="Skull.fbx" link="0"/>
 		<runtime id="f012614691bc823c245e8ecc8cd19054d6cf3d0b" name="Skull.node" link="1" type="3">
@@ -24,7 +24,7 @@
 		<parameter type="bool" name="create_root_motion_joint">0</parameter>
 		<parameter type="bool" name="create_transform_bones_for_joints">0</parameter>
 		<parameter type="float" name="fps">30</parameter>
-		<parameter type="string" name="front_axis">default</parameter>
+		<parameter type="string" name="front_axis">z</parameter>
 		<parameter type="bool" name="import_animations">1</parameter>
 		<parameter type="bool" name="import_bones_without_skin">1</parameter>
 		<parameter type="bool" name="import_cameras">1</parameter>
@@ -58,14 +58,14 @@
 		<parameter type="int" name="root_motion_forward_axis">0</parameter>
 		<parameter type="int" name="root_motion_position_component">0</parameter>
 		<parameter type="int" name="root_motion_rotation_component">0</parameter>
-		<parameter type="float" name="scale">1</parameter>
+		<parameter type="float" name="scale">100</parameter>
 		<parameter type="string" name="shared_skeleton_path"/>
 		<parameter type="bool" name="skip_empty_nodes">0</parameter>
 		<parameter type="int" name="smooth_animation_size">0</parameter>
 		<parameter type="string" name="target_root_motion_joint"/>
 		<parameter type="bool" name="unwrap_uv_ch_0">0</parameter>
 		<parameter type="bool" name="unwrap_uv_ch_1">0</parameter>
-		<parameter type="string" name="up_axis">default</parameter>
+		<parameter type="string" name="up_axis">ny</parameter>
 		<parameter type="bool" name="use_instances">1</parameter>
 		<parameter type="int" name="uv_ch">1</parameter>
 		<parameter type="string" name="uv_unwrap_version">xatlas_v1</parameter>
