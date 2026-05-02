@@ -2,7 +2,7 @@
 #include "game/GameState.h"
 #include "player/camera/PlayerCameraManager.h"
 #include "player/movement/CharacterMovement.h"
-
+#include "utils/Utils.h"
 #include <UnigineGame.h>
 #include <UnigineVisualizer.h>
 #include <UnigineWorld.h>
@@ -38,12 +38,7 @@ vec3 horizontal(const vec3 &v)
 void EnemySkull::initSkull()
 {
 	_body = node->getObjectBodyRigid();
-	if (!_body)
-	{
-		Log::error("EnemySkull \"%s\": no BodyRigid on node — disabling component\n", node->getName());
-		setEnabled(false);
-		return;
-	}
+	FLOGERR(_body, "EnemySkull \"%s\": no BodyRigid on node — disabling component\n", node->getName());
 
 	_body->setGravity(false);
 	_body->setLinearDamping(linearDamping);
@@ -285,7 +280,7 @@ void EnemySkull::onContactEnter(const BodyPtr &body, int num)
 				pcm->addTrauma(stompShake);
 		}
 		Log::message("%s was killed by player\n", node->getName());
-		node.deleteLater();
+		takeDamage(makeDamageInfo(target, "stomp", Consts::INF));
 		return;
 	}
 
@@ -311,5 +306,5 @@ void EnemySkull::onContactEnter(const BodyPtr &body, int num)
 	_attackTimer = attackCooldown;
 
 	if (dieOnHit)
-		node.deleteLater();
+		kill();
 }

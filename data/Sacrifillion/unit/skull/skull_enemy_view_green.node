@@ -1,13 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <nodes version="2.21.0.0">
-	<node type="NodeDummy" id="1088364063" name="skull_enemy_view_green">
-		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-		<node type="ObjectMeshStatic" id="1590351090" immovable="1" name="Skull">
-			<mesh_name>guid://f199cf2b9a805f9daea25c9da899fc0fad5a6eee</mesh_name>
-			<surface name="Head" intersection="1" material="b98f5dcfce97163124e280615bcd4425dd409542"/>
-			<transform>100 8.74227908165e-06 -8.74227765735e-06 0.0 8.74227908165e-06 -1.6292067191e-05 100 0.0 8.74227765735e-06 -100 -1.62920679553e-05 0.0 0 0 0 1.0</transform>
-		</node>
-		<node type="ObjectParticles" id="691417001" name="ObjectParticles" update_distance_limit="200">
+	<node type="ObjectMeshStatic" id="939551056" name="Skull">
+		<mesh_name>guid://f199cf2b9a805f9daea25c9da899fc0fad5a6eee</mesh_name>
+		<surface name="Head" intersection="1" material="b98f5dcfce97163124e280615bcd4425dd409542"/>
+		<body type="BodyRigid" id="192268180" frozen="0">
+			<shape_based>0</shape_based>
+			<mass>1</mass>
+			<inertia>0.0360000022 0 0 0 0 0.0360000022 0 0 0 0 0.0360000022 0</inertia>
+			<center_of_mass>0 0.00963120162 -0.0227674693</center_of_mass>
+			<shape type="ShapeSphere" id="192268180" name="ShapeSphere" transform="1 0 0 0 0 1 0 0 0 0 1 0 0 0.00963120162 -0.0227674693 1">
+				<radius>0.300000012</radius>
+			</shape>
+		</body>
+		<properties>
+			<property parent="5a10ea14e9407a11b7103368f5e492ac0a5b59bd" guid="8d6fa26d07f34bb3f85d21d05e535d31595cda21">
+				<parameter name="has_hp">1</parameter>
+				<parameter name="max_hp">100</parameter>
+				<parameter name="persistOnDeath">1</parameter>
+				<parameter name="deleteTimer">10</parameter>
+				<parameter name="disable_on_death">
+					<value index="0">121252975</value>
+				</parameter>
+				<parameter name="mat_float4_params">
+					<value index="0">
+						<parameter name="param">emission_color</parameter>
+						<parameter name="death_value">0 0 0 1</parameter>
+					</value>
+				</parameter>
+				<parameter name="behavior">2</parameter>
+			</property>
+		</properties>
+		<transform>1 0 0 0.0 0 0.999999880791 0 0.0 0 0 0.999999880791 0.0 0 0 0 1.0</transform>
+		<node type="ObjectParticles" id="121252975" name="ObjectParticles" update_distance_limit="200">
 			<depth_sort>1</depth_sort>
 			<clear_on_enable>1</clear_on_enable>
 			<number_per_spawn>5</number_per_spawn>
@@ -251,7 +275,7 @@
 			<fps_visible_shadow>30</fps_visible_shadow>
 			<fps_invisible>0</fps_invisible>
 			<surface name="particles" shadow_mask="0x0" material="5b488a41408900c188c3b5c198dfa6856cb957dd"/>
-			<transform>0.999999880791 0 0 0.0 0 0.999999761581 0 0.0 0 0 0.999998748302 0.0 0 0.217591632181 0 1.0</transform>
+			<transform>0.999999880791 0 0 0.0 0 0.99999988079 0 0.0 0 0 0.999998867511 0.0 0 0.21759165812 0 1.0</transform>
 		</node>
 	</node>
 </nodes>

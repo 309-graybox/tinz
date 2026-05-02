@@ -1,13 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <nodes version="2.21.0.0">
-	<node type="NodeDummy" id="313373940" name="skull_enemy_view_blue">
+	<node type="ObjectMeshStatic" id="1874921653" name="Skull">
+		<mesh_name>guid://f199cf2b9a805f9daea25c9da899fc0fad5a6eee</mesh_name>
+		<surface name="Head" intersection="1" material="b08c10d080ef6cdbb1656086c53a6e066f8e2dfd"/>
+		<body type="BodyRigid" id="1090052909" frozen="0">
+			<shape_based>0</shape_based>
+			<mass>1</mass>
+			<inertia>0.0360000022 0 0 0 0 0.0360000022 0 0 0 0 0.0360000022 0</inertia>
+			<center_of_mass>0 0.00963120162 -0.0227674693</center_of_mass>
+			<shape type="ShapeSphere" id="1090052909" name="ShapeSphere" transform="1 0 0 0 0 1 0 0 0 0 1 0 0 0.00963120162 -0.0227674693 1">
+				<radius>0.300000012</radius>
+			</shape>
+		</body>
+		<properties>
+			<property parent="5a10ea14e9407a11b7103368f5e492ac0a5b59bd" guid="e54274930caf263d260320be25cfbc18303a4de7">
+				<parameter name="has_hp">1</parameter>
+				<parameter name="max_hp">100</parameter>
+				<parameter name="persistOnDeath">1</parameter>
+				<parameter name="deleteTimer">10</parameter>
+				<parameter name="disable_on_death">
+					<value index="0">744587920</value>
+				</parameter>
+				<parameter name="mat_float4_params">
+					<value index="0">
+						<parameter name="param">emission_color</parameter>
+						<parameter name="death_value">0 0 0 1</parameter>
+					</value>
+				</parameter>
+				<parameter name="behavior">1</parameter>
+				<parameter name="speed">16</parameter>
+			</property>
+		</properties>
 		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-		<node type="ObjectMeshStatic" id="288250819" immovable="1" name="Skull">
-			<mesh_name>guid://f199cf2b9a805f9daea25c9da899fc0fad5a6eee</mesh_name>
-			<surface name="Head" intersection="1" material="b08c10d080ef6cdbb1656086c53a6e066f8e2dfd"/>
-			<transform>100 8.74227908165e-06 -8.74227765735e-06 0.0 8.74227908165e-06 -1.6292067191e-05 100 0.0 8.74227765735e-06 -100 -1.62920679553e-05 0.0 0 0 0 1.0</transform>
-		</node>
-		<node type="ObjectParticles" id="174345798" name="ObjectParticles" update_distance_limit="200">
+		<node type="ObjectParticles" id="744587920" name="ObjectParticles" update_distance_limit="200">
 			<depth_sort>1</depth_sort>
 			<clear_on_enable>1</clear_on_enable>
 			<number_per_spawn>5</number_per_spawn>

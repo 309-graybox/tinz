@@ -9,14 +9,16 @@
 		return;                                                                          \
 	}
 
-template <class T, class C>
+template <class C, class T>
 void convertTo(Unigine::ComponentVariableArray<C> &arr, Unigine::Vector<T> &ret)
 {
 	int n = arr.size();
+
+	ret.resize(ret.size() + n);
+
 	for (int i = 0; i < n; ++i)
 	{
-		auto el = Unigine::checked_ptr_cast<T>(arr[i].get());
-		if (el)
-			ret.append(el);
+		auto el = arr[i].get();
+		ret.append(el);
 	}
 }

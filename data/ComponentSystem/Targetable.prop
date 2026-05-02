@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <property version="2.21.0.0" name="Targetable" manual="1" parent_name="node_base">
+	<struct name="MaterialFloat4ParamInfo">
+		<parameter name="apply_to_target" type="toggle">0</parameter>
+		<parameter name="target" type="node" apply_to_target="1">0</parameter>
+		<parameter name="surface" type="int">0</parameter>
+		<parameter name="param" type="string"/>
+		<parameter name="death_value" type="vec4">1.000000 1.000000 1.000000 1.000000</parameter>
+	</struct>
 	<parameter name="has_hp" type="toggle">0</parameter>
 	<parameter name="max_hp" type="float">0</parameter>
 	<parameter name="invulnerabilityTime" type="float" tooltip="Damage immunity duration in seconds after taking damage. 0 = disabled">0</parameter>
 	<parameter name="persistOnDeath" type="toggle" tooltip="If true, the node is NOT auto-deleted on death — owner reacts via eventDied (used by the player so respawn can revive it)">0</parameter>
+	<parameter name="deleteTimer" type="float">0</parameter>
+	<parameter name="enable_on_death" type="array" array_type="node"/>
+	<parameter name="disable_on_death" type="array" array_type="node"/>
+	<parameter name="mat_float4_params" type="array" array_type="MaterialFloat4ParamInfo"/>
 	<parameter name="targets" type="array" array_type="node"/>
 </property>

@@ -1064,23 +1064,17 @@
 			</properties>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 		</node>
-		<node type="NodeReference" id="576451383" name="skull_red">
-			<reference>guid://ec88fa0a4e63ff7bf9b12a5a245b9303a5f05a59</reference>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -32.7839603008 52.1304597841 1.16529622429 1.0</transform>
-		</node>
-		<node type="NodeReference" id="193582386" name="skull_blue">
-			<reference>guid://52731e319b1c0fd87bd3f421f41fda44bf9cf7b4</reference>
+		<node type="NodeReference" id="57515808" name="skull_enemy_view_blue">
+			<reference>guid://f8b1f26e00b455efb77248eeebfb2674aff3ae2a</reference>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -12.7911944803 35.9205800615 1.05575085576 1.0</transform>
 		</node>
-		<node type="NodeReference" id="920093792" name="skull_green">
-			<reference>guid://9436cb2bf12fc6e8d4420a9b2e82f74941b03de6</reference>
+		<node type="NodeReference" id="1350562232" name="skull_enemy_view_green">
+			<reference>guid://4a0634dfeb95c23a0486b45fdbee3b3f1f68f95b</reference>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -11.4522769502 50.8704095149 0.760848488602 1.0</transform>
 		</node>
-		<node type="NodeDummy" id="1845349016" name="T-Pose">
-			<transform>1 1.6703738393e-22 -3.82137050681e-15 0.0 1.67037409174e-22 1 8.7422769468e-08 0.0 3.82137050681e-15 -8.7422769468e-08 1 0.0 4.66552734372 -21.2506704331 4.00873298929 1.0</transform>
-			<node type="NodeDummy" id="971164951" name="Armature">
-				<transform>1 2.40890133757e-22 -6.6002355328e-15 0.0 2.40890133876e-22 1 7.54978941586e-08 0.0 6.6002355328e-15 -7.54978941586e-08 1 0.0 0 0 0 1.0</transform>
-			</node>
+		<node type="NodeReference" id="996868549" name="skull_enemy_view_red">
+			<reference>guid://6f46f804ae281cea9a49aa8441ba53b78396a6e0</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -32.7839603008 52.1304597841 1.16529622429 1.0</transform>
 		</node>
 	</editor>
 	<console>
