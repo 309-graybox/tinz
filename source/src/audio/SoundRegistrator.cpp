@@ -1,5 +1,7 @@
 #include "SoundRegistrator.h"
 
+#include "SoundSettings.h"
+
 #include <UnigineLog.h>
 
 namespace audio
@@ -22,26 +24,21 @@ void SoundRegistrator::init()
 
 	SoundEvent e;
 	e.sample = sample.get();
-	e.gain = gain;
-	e.pitch_min = pitchMin;
-	e.pitch_max = pitchMax;
-	e.stream = ((int)stream) != 0;
 
-	e.min_distance = minDistance;
-	e.max_distance = maxDistance;
-	e.air_absorption = airAbsorption;
-	e.adaptation = adaptation;
-	e.room_rolloff = roomRolloff;
-
-	e.cone_inner_angle = coneInnerAngle;
-	e.cone_outer_angle = coneOuterAngle;
-	e.cone_outer_gain = coneOuterGain;
-	e.cone_outer_gain_hf = coneOuterGainHF;
-
-	e.source_mask = (int)sourceMask;
-	e.reverb_mask = (int)reverbMask;
-	e.occlusion_mask = (int)occlusionMask;
-	e.occlusion = ((int)occlusion) != 0;
+	NodePtr settingsNode = settings.get();
+	SoundSettings *cfg = nullptr;
+	if (settingsNode)
+	{
+		cfg = getComponent<SoundSettings>(settingsNode);
+		if (!cfg)
+			Log::warning(
+				"SoundRegistrator: Settings node \"%s\" has no SoundSettings — falling back\n",
+				settingsNode->getName());
+	}
+	if (!cfg)
+		cfg = getComponent<SoundSettings>(node);
+	if (cfg)
+		cfg->applyTo(e);
 
 	SoundManager::registerEvent(id, e);
 	_registered_id = id;

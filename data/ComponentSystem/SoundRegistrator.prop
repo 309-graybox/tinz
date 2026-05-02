@@ -2,21 +2,5 @@
 <property version="2.21.0.0" name="SoundRegistrator" manual="1" parent_name="node_base">
 	<parameter name="eventId" type="string" title="Event ID" tooltip="Identifier used by SoundManager::play*" group="Event"/>
 	<parameter name="sample" type="file" title="Sample" tooltip="Audio file" group="Event" filter=".wav|.oga|.mp3"/>
-	<parameter name="gain" type="float" title="Gain" group="Mix">1</parameter>
-	<parameter name="pitchMin" type="float" title="Pitch Min" group="Mix">1</parameter>
-	<parameter name="pitchMax" type="float" title="Pitch Max" tooltip="Random pitch is sampled from [Pitch Min, Pitch Max]" group="Mix">1</parameter>
-	<parameter name="stream" type="toggle" title="Stream" tooltip="Stream from disk instead of fully decoding (long files / music)" group="Mix">0</parameter>
-	<parameter name="minDistance" type="float" title="Min Distance" group="Spatial (3D)">1</parameter>
-	<parameter name="maxDistance" type="float" title="Max Distance" group="Spatial (3D)">100</parameter>
-	<parameter name="airAbsorption" type="float" title="Air Absorption" group="Spatial (3D)">0</parameter>
-	<parameter name="adaptation" type="float" title="Adaptation" group="Spatial (3D)">0</parameter>
-	<parameter name="roomRolloff" type="float" title="Room Rolloff" group="Spatial (3D)">0</parameter>
-	<parameter name="coneInnerAngle" type="float" title="Inner Angle" group="Cone (3D)">360</parameter>
-	<parameter name="coneOuterAngle" type="float" title="Outer Angle" group="Cone (3D)">360</parameter>
-	<parameter name="coneOuterGain" type="float" title="Outer Gain" group="Cone (3D)">0</parameter>
-	<parameter name="coneOuterGainHF" type="float" title="Outer Gain HF" group="Cone (3D)">1</parameter>
-	<parameter name="sourceMask" type="mask" title="Source Mask" group="Routing">-1</parameter>
-	<parameter name="reverbMask" type="mask" title="Reverb Mask" group="Routing">-1</parameter>
-	<parameter name="occlusionMask" type="mask" title="Occlusion Mask" group="Routing">0</parameter>
-	<parameter name="occlusion" type="toggle" title="Occlusion" tooltip="Enable occlusion test against Occlusion Mask" group="Routing">0</parameter>
+	<parameter name="settings" type="node" title="Settings" tooltip="SoundSettings node; falls back to self, then defaults" group="Event">0</parameter>
 </property>
