@@ -55,8 +55,10 @@ public:
 	PROP_PARAM(Toggle, dieOnHit, true, "", "Skull is destroyed immediately after dealing damage (kamikaze)")
 
 	PROP_GROUP("Stomp")
-	PROP_PARAM(Float, stompZThreshold, 0.4f, "", "Player must be at least this much above the skull's center for a contact to count as a top-down stomp kill instead of a damage hit")
+	PROP_PARAM(Float, stompMaxAngle, 45.0f, "", "Maximum angle (degrees) between the contact normal and world up for a contact to count as a top-down stomp. Smaller = stricter (only near-vertical landings count)")
 	PROP_PARAM(Float, stompBouncePower, 5.0f, "", "Upward velocity (m/s) given to the player after a successful stomp. 0 = no bounce")
+	PROP_PARAM(Float, stompShake, 0.5f, "", "Camera trauma added on a successful stomp kill. 0.3 = subtle, 0.6 = noticeable, 1.0 = screen-rocking. 0 = none")
+	PROP_PARAM(Float, damageShake, 0.7f, "", "Camera trauma added when this skull damages the player. 0 = none")
 
 	PROP_GROUP("Debug")
 	PROP_PARAM(Toggle, debugDraw, false, "", "Draw a line from the skull to its current target. Color encodes behavior")

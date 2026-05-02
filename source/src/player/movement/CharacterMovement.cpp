@@ -36,10 +36,14 @@ void CharacterMovement::init()
 	FLOGERR(_anim, "can't get anim\n");
 
 	for (int i = 0; i < _body->getNumShapes(); ++i)
+	{
 		if (!_shape)
 			_shape = checked_ptr_cast<ShapeCapsule>(_body->getShape(i));
+	}
 
 	FLOGERR(_shape, "can't get ShapeCapsule from \"body\"\n");
+
+	_shape_height = _shape->getHeight();
 
 	_ctx.input.init(node);
 
@@ -259,6 +263,11 @@ void CharacterMovement::update()
 		_anim->setParamBool("is_idle", is_idle);
 		_anim->setParamBool("is_sliding", is_sliding);
 		_anim->setParamFloat("rand_float", Game::getRandomFloat(0.0f, 1.0f));
+	}
+
+	//%%%%%%%%%%%%%%%%%%% Shape %%%%%%%%%%%%%%%
+	{
+		_shape->setHeight(_shape_height * (_is_grounded ? 1.0f : fall_scale));
 	}
 }
 

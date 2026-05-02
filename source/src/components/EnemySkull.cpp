@@ -1,5 +1,6 @@
 #include "EnemySkull.h"
 #include "game/GameState.h"
+#include "player/camera/PlayerCameraManager.h"
 #include "player/movement/CharacterMovement.h"
 
 #include <UnigineGame.h>
@@ -263,23 +264,25 @@ void EnemySkull::onContactEnter(const BodyPtr &body, int num)
 	if (!isInHierarchy(static_ptr_cast<Node>(otherObj), target))
 		return;
 
-	// Stomp from above: player is significantly higher than the skull's center
-	// at the moment of contact → the skull dies, player takes no damage and
-	// gets a small upward bounce (Mario-style rebound).
-	const Vec3 myPos = node->getWorldPosition();
-	const Vec3 playerPos = target->getWorldPosition();
-	if ((float)(playerPos.z - myPos.z) > stompZThreshold)
+	// Stomp from above: the skull's outward surface normal at the contact
+	// faces upward → player landed on top. Engine returns the normal pointing
+	// from the contact INTO `body`, so we flip the sign to get "skull-out".
+	if (dot(-body->getContactNormal(num), vec3_up) >= cos(stompMaxAngle * Consts::DEG2RAD))
 	{
-		if (stompBouncePower > 0.0f)
+		// Both bounce and shake live on components attached to the PlayerDummy
+		// (camera) node — same lookup chain as the existing applyVerticalBounce
+		// pattern. CameraShake reads state.trauma; we only request the kick.
+		if (auto player = Game::getPlayer())
 		{
-			// CharacterMovement lives on the PlayerDummy (camera) node, not on
-			// the character body — that's where input and movement state are.
-			if (auto player = Game::getPlayer())
+			auto playerNode = static_ptr_cast<Node>(player);
+			auto cs = ComponentSystem::get();
+			if (stompBouncePower > 0.0f)
 			{
-				auto cm = ComponentSystem::get()->getComponent<CharacterMovement>(static_ptr_cast<Node>(player));
-				if (cm)
+				if (auto cm = cs->getComponent<CharacterMovement>(playerNode))
 					cm->applyVerticalBounce(stompBouncePower);
 			}
+			if (auto pcm = cs->getComponent<PlayerCameraManager>(playerNode))
+				pcm->addTrauma(stompShake);
 		}
 		Log::message("%s was killed by player\n", node->getName());
 		node.deleteLater();
@@ -293,6 +296,12 @@ void EnemySkull::onContactEnter(const BodyPtr &body, int num)
 		info.source = node;
 		info.amount = attackDamage;
 		entity->takeDamage(info);
+		if (auto player = Game::getPlayer())
+		{
+			auto pcm = ComponentSystem::get()->getComponent<PlayerCameraManager>(static_ptr_cast<Node>(player));
+			if (pcm)
+				pcm->addTrauma(damageShake);
+		}
 	}
 	_attackTimer = attackCooldown;
 

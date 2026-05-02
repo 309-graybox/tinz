@@ -2,7 +2,7 @@
 <asset version="2.21.0.0">
 	<guid>8fb7d5bf6c2368856e408967e01795bdc35c4d15</guid>
 	<type>material_graph</type>
-	<hash>76f5afa57380e6661bfa137766ba5c5c38998c5e09197dffb4b8bf86bea3f4fd</hash>
+	<hash>e054800d3ff31f82acfbf2211fd7ea4a5ac4b7bea1c9d8a242533784b29eb868</hash>
 	<runtimes>
 		<runtime id="8fb7d5bf6c2368856e408967e01795bdc35c4d15" name="testnormal.mgraph" link="0"/>
 		<runtime id="5f287b090fd2c0c9a1db16f14d952cc02a8a980f" name="testnormal" link="1" type="5"/>

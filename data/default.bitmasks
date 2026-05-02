@@ -5,6 +5,7 @@
 		<name index="31">Player intersection</name>
 	</general>
 	<intersection>
+		<name index="29">enemy</name>
 		<name index="0">Intersection Mask 0</name>
 		<name index="31">Player</name>
 	</intersection>

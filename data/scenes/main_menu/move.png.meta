@@ -2,7 +2,7 @@
 <asset version="2.21.0.0">
 	<guid>dc56fa6afd63893a746e07c53f1854b0d7a0a45b</guid>
 	<type>texture</type>
-	<hash>d0791b9d7be86da35dc9c12b95d837fa9ba782a28088894071671493428a7d90</hash>
+	<hash>b3e212854ebb6874e323a402edea99c6742662f6d2ef0413d779d19e4932f676</hash>
 	<runtimes>
 		<runtime id="dc56fa6afd63893a746e07c53f1854b0d7a0a45b" name="move.png" link="0" type="6"/>
 		<runtime id="064299f06ea87840109e23f1a3c64ba03df68dfe" name="move.texture" link="1" type="6"/>

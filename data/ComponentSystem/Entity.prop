@@ -2,4 +2,5 @@
 <property version="2.21.0.0" name="Entity" manual="1" parent_name="node_base">
 	<parameter name="has_hp" type="toggle">0</parameter>
 	<parameter name="max_hp" type="float">0</parameter>
+	<parameter name="persistOnDeath" type="toggle" tooltip="If true, the node is NOT auto-deleted on death — owner reacts via eventDied (used by the player so respawn can revive it)">0</parameter>
 </property>

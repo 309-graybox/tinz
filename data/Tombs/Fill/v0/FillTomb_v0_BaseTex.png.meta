@@ -2,7 +2,7 @@
 <asset version="2.21.0.0">
 	<guid>2248fcffa60f10a7bd4b78a774fde8357d5ca255</guid>
 	<type>texture</type>
-	<hash>a2308a5798a822968923b3ef85cd145db1753bfec66973b5484f1d3017c0aa26</hash>
+	<hash>c9162b2cd3ffcfbb107433b45eef4ac2390edc8298c90d3ac722b2538a44e60e</hash>
 	<runtimes>
 		<runtime id="2248fcffa60f10a7bd4b78a774fde8357d5ca255" name="FillTomb_v0_BaseTex.png" link="0" type="6"/>
 		<runtime id="7bb98faa806debf3282983225809d72c5d1e0fb0" name="FillTomb_v0_BaseTex.texture" link="1" type="6"/>

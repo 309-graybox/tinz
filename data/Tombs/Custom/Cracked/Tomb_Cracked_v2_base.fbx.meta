@@ -2,7 +2,7 @@
 <asset version="2.21.0.0">
 	<guid>652a849704d518f061ba173ff98e3b75165d9c2d</guid>
 	<type>fbx</type>
-	<hash>6fe9ccaeaf5277db3cce270ce4748aaee0214c21ce54b897c9bc59814f2f2e45</hash>
+	<hash>1573ea6649c2958739d6f5ea38b2bdb28ad0e8b3d0860cf58bd72f83eb174800</hash>
 	<runtimes>
 		<runtime id="652a849704d518f061ba173ff98e3b75165d9c2d" name="Tomb_Cracked_v2_base.fbx" link="0"/>
 		<runtime id="b3479864a9044ea6b616b59c8d2e3aa8ca379f1a" name="Tomb_Cracked_v2_base.node" link="1" type="3">

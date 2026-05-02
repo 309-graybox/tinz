@@ -77,6 +77,14 @@
 				</properties>
 				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 			</node>
+			<node type="NodeDummy" id="399129342" name="presentation">
+				<properties>
+					<property parent="c11aad75e29b6627c12a14e9da0367940f3b5732" guid="0f20d59f0a850c4c67dcd622a7bff5f0e66af95e">
+						<parameter name="stage">3</parameter>
+					</property>
+				</properties>
+				<transform>1.00000005961 0 0 0.0 0 1.00000005961 0 0.0 0 0 1.00000005961 0.0 0 0 0 1.0</transform>
+			</node>
 		</node>
 	</node>
 	<node type="ObjectMeshStatic" id="510937540" enabled="0" immovable="1" name="Capsule">
@@ -103,7 +111,7 @@
 		</node>
 	</node>
 	<node type="NodeSkeletonPose" id="1234864251" name="NodeSkeletonPose">
-		<transform>0.999999880791 0 0 0.0 0 1.00000011921 0 0.0 0 0 1 0.0 0.626768700831 171.797985272 233.099516877 1.0</transform>
+		<transform>0.99999988079 0 0 0.0 0 1.00000011921 0 0.0 0 0 1 0.0 2.20537159379e-05 1.26659885247e-06 0.115399816922 1.0</transform>
 		<skeleton>3f68d00b83f7388258f119d4120aa2fa30b105cf</skeleton>
 		<mode>0</mode>
 		<control_type>0</control_type>

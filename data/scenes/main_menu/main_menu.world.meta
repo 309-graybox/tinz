@@ -2,7 +2,7 @@
 <asset version="2.21.0.0">
 	<guid>aaea6e5372e15ef0240fd5e03498d4ca8935e489</guid>
 	<type>world</type>
-	<hash>3195808f565f468624f821e6f2d3c66c66a349de8c3493db4b45ea7a9aae0f68</hash>
+	<hash>730b478779180b3a9ed70d30f198e78ec0907249175e309acc5f529e6c4a0c40</hash>
 	<runtimes>
 		<runtime id="aaea6e5372e15ef0240fd5e03498d4ca8935e489" name="main_menu.world" link="0"/>
 	</runtimes>

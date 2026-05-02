@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="Checkpoint" manual="1" parent_name="node_base">
+	<parameter name="trigger" type="node" title="Trigger" tooltip="WorldTrigger that detects player entry — required">0</parameter>
+	<parameter name="spawn_anchor" type="node" title="Spawn Anchor" tooltip="Optional — spawn position is read from this node&apos;s world position. If empty, uses the trigger&apos;s position">0</parameter>
+	<parameter name="once" type="toggle" title="Once" tooltip="Latch on first activation; further enters are ignored">1</parameter>
+	<parameter name="soundOnActivate" type="string" title="Activate Sound" tooltip="SoundManager event id (or sample path) played on activation; empty = silent"/>
+</property>

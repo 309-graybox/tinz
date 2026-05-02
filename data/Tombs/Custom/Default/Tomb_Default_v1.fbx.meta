@@ -2,7 +2,7 @@
 <asset version="2.21.0.0">
 	<guid>ad0138c9f2f8e01087f62cb11c900354c20f6fcf</guid>
 	<type>fbx</type>
-	<hash>217a5d04d7f14aed9e8feb991580615033428bf536c977e8a66c7d4e28ece6a5</hash>
+	<hash>0d4b72a4782676f64dc96c79b490aab6d7dc398ea6213ee6f99cb6a74868f5e5</hash>
 	<runtimes>
 		<runtime id="ad0138c9f2f8e01087f62cb11c900354c20f6fcf" name="Tomb_Default_v1.fbx" link="0"/>
 		<runtime id="8b9bee7ec69e6cb051f2f9767bc3c132c22e2064" name="Tomb_Default_v1.node" link="1" type="3">

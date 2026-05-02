@@ -10,6 +10,13 @@ void CameraOrbitIntent::runtimeReset(CameraState &state, const CameraContext &ct
 	state.rig.arm_len = default_arm;
 	state.rig.pitch_range = pitch_range;
 	state.rig.arm_range = arm_range;
+
+	// Place the pivot at the target right away so downstream rigs (especially
+	// the lag rigs that snapshot `_position = state.rig.pivot` on reset) start
+	// converged. Without this the camera lerps in from origin on the first
+	// frame. Mirrors the pivot calc in apply() with zero input.
+	auto base = ctx.target ? dvec3(ctx.target->getWorldPosition()) : dvec3_zero;
+	state.rig.pivot = base + pivot_offset.get();
 }
 
 void CameraOrbitIntent::apply(CameraState &state, const CameraInput &input, const CameraContext &ctx)
