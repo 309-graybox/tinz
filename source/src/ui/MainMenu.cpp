@@ -54,7 +54,7 @@ void MainMenu::update()
 		}
 	}
 
-	if (!_mainMenuCanvas->isEnabled() && !_settingsMenuCanvas->isEnabled())
+	if (!_mainMenuCanvas->isEnabled() && !_settingsMenuCanvas->isEnabled() && !Console::isActive())
 	{
 		Input::setMouseHandle(Input::MOUSE_HANDLE_GRAB);
 		Input::setMouseGrab(true);
