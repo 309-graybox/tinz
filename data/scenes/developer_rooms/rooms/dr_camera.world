@@ -775,7 +775,7 @@
 		</node>
 		<node type="NodeLayer" id="1850185643" name="player_layer">
 			<layer>guid://414010aa6ac6cf193bc290851500f656096989d1</layer>
-			<transform>1.00000011921 0 0 0.0 0 0.999999880791 0 0.0 0 0 1 0.0 0 0 1.16887711321 1.0</transform>
+			<transform>1.00000011921 0 0 0.0 0 0.999999880791 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 		</node>
 		<node type="NodeLayer" id="1668500170" name="global_logic">
 			<layer>guid://a217074d9ffbbfb7ba2bac7bfa25e325be333085</layer>
