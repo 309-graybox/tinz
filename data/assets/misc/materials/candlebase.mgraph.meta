@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>de55ece76265305f1e2b233a32a36ce15c64fc5b</guid>
+	<type>material_graph</type>
+	<hash>6cd42ce3c9a269fbd0ab3b3d1b5a2f3f15afb548301b84fac52ee0087bd83254</hash>
+	<runtimes>
+		<runtime id="de55ece76265305f1e2b233a32a36ce15c64fc5b" name="candlebase.mgraph" link="0"/>
+		<runtime id="da09967198a31d510831aefcaaf5e849f1937545" name="candlebase" link="1" type="5"/>
+	</runtimes>
+</asset>

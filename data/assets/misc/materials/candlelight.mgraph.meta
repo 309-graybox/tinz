@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>c009237f12dea0f32c2471f2803629b895e50073</guid>
+	<type>material_graph</type>
+	<hash>c90bd19b12c30367a4379aa9bceaa79cd699a268d46e18555453150b4c5e9f17</hash>
+	<runtimes>
+		<runtime id="c009237f12dea0f32c2471f2803629b895e50073" name="candlelight.mgraph" link="0"/>
+		<runtime id="78f2fec9fcf615f2eb14ac749718f477f5cec91d" name="candlelight" link="1" type="5"/>
+	</runtimes>
+</asset>
