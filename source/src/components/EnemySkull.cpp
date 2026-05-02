@@ -263,12 +263,10 @@ void EnemySkull::onContactEnter(const BodyPtr &body, int num)
 	if (!isInHierarchy(static_ptr_cast<Node>(otherObj), target))
 		return;
 
-	// Stomp from above: player is significantly higher than the skull's center
-	// at the moment of contact → the skull dies, player takes no damage and
-	// gets a small upward bounce (Mario-style rebound).
-	const Vec3 myPos = node->getWorldPosition();
-	const Vec3 playerPos = target->getWorldPosition();
-	if ((float)(playerPos.z - myPos.z) > stompZThreshold)
+	// Stomp from above: the skull's outward surface normal at the contact
+	// faces upward → player landed on top. Engine returns the normal pointing
+	// from the contact INTO `body`, so we flip the sign to get "skull-out".
+	if (dot(-body->getContactNormal(num), vec3_up) >= cos(stompMaxAngle * Consts::DEG2RAD))
 	{
 		if (stompBouncePower > 0.0f)
 		{

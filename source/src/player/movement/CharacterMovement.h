@@ -54,6 +54,7 @@ public:
 
 	PROP_GROUP("")
 	PROP_PARAM(Node, body);
+	PROP_PARAM(Float, fall_scale, 0.5f);
 	PROP_PARAM(Node, target);
 	PROP_PARAM(Float, groundCheckRaysLength, 1.2f, "", "Длина лучей для проверки нормали поверхности");
 	PROP_PARAM(Mask, groundCheckIntersectionMask, ~0, "", "Маска для проверки нормали поверхности");
@@ -114,6 +115,7 @@ private:
 	TimedFlag _grounded_flag;
 	TimedFlag _walkable_flag;
 
+	float _shape_height = 0.0f;
 	Unigine::AnimScriptPtr _anim;
 
 private:
