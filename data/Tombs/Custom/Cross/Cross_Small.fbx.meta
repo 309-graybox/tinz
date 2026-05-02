@@ -2,7 +2,7 @@
 <asset version="2.21.0.0">
 	<guid>4aa3acb74a5965050cc5735fcc7504b3f479a74d</guid>
 	<type>fbx</type>
-	<hash>4ae8bd0690ecde15a66075110d88e2f7efc077adda86324def55460d66fd0a43</hash>
+	<hash>aabeb7091507abc759288ce24a8bc41d0bfa8b7e9fdef27824e8029a70e4e3a2</hash>
 	<runtimes>
 		<runtime id="4aa3acb74a5965050cc5735fcc7504b3f479a74d" name="Cross_Small.fbx" link="0"/>
 		<runtime id="da9113a69c525c6eb2201d9e06b27d830012374c" name="Cross_Small.node" link="1" type="3">

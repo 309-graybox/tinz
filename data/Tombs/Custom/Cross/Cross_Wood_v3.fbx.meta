@@ -2,7 +2,7 @@
 <asset version="2.21.0.0">
 	<guid>c9bc107195f833ff0f98b5596eb09b8c3dd64937</guid>
 	<type>fbx</type>
-	<hash>8f798baa0337dd559b93b2ff7316f10b719ef7a5da73758b0613ad68346c78cc</hash>
+	<hash>2478ddb6f416249320d41648cb56deb7438d90103e309f99798aa58415a06e22</hash>
 	<runtimes>
 		<runtime id="c9bc107195f833ff0f98b5596eb09b8c3dd64937" name="Cross_Wood_v3.fbx" link="0"/>
 		<runtime id="4fcaf7467f6eec23fdbd9d3e012787d3a810b9ec" name="Cross_Wood_v3.node" link="1" type="3">

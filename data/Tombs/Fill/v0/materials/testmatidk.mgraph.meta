@@ -2,7 +2,7 @@
 <asset version="2.21.0.0">
 	<guid>2dd522e43a9c6f7c6a09301c5f56c2328b75659a</guid>
 	<type>material_graph</type>
-	<hash>d15a2ce3dc3f78036d34c88424c8ddbcf6c638618f89f56f8793b6ff9400aa48</hash>
+	<hash>4a27f14a5028b94e407289146a16308b20fa7e56005231c9c0b574d11b244447</hash>
 	<runtimes>
 		<runtime id="2dd522e43a9c6f7c6a09301c5f56c2328b75659a" name="testmatidk.mgraph" link="0"/>
 		<runtime id="a5a742b60c803489e43792aea736da4a980393dc" name="testmatidk" link="1" type="5"/>

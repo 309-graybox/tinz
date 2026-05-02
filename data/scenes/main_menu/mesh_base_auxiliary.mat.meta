@@ -2,7 +2,7 @@
 <asset version="2.21.0.0">
 	<guid>f57501d721a5854f8ac1026ee8c524719369339c</guid>
 	<type>material</type>
-	<hash>82b1c4ea8e0f6fdfdf8e92a43e86c7789392dc08036b86819d9b2e96661519c7</hash>
+	<hash>999cc22fb0a19c6f03e95a43a24e454c9486c0c7664cedec46e135f4914e61bf</hash>
 	<runtimes>
 		<runtime id="f57501d721a5854f8ac1026ee8c524719369339c" name="mesh_base_auxiliary" link="0" type="5"/>
 	</runtimes>

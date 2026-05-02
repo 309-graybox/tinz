@@ -2,7 +2,7 @@
 <asset version="2.21.0.0">
 	<guid>2e6a654b29091d5eaa22bc73a8a7dffe72e1fcc1</guid>
 	<type>fbx</type>
-	<hash>765c834e1d79d875e17687c5007731d1be5d3489e43621b56a920f4bfdbe6a14</hash>
+	<hash>0563fde7526d0192faffd3ffebaa9f103e5dd0b26d550d145319005be93532c5</hash>
 	<runtimes>
 		<runtime id="2e6a654b29091d5eaa22bc73a8a7dffe72e1fcc1" name="FillTomb_v1.fbx" link="0"/>
 		<runtime id="61c1d328e95d169ced58e1e0f52f7ec9853d9d3e" name="FillTomb_v1.node" link="1" type="3">
