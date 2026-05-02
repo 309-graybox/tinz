@@ -13,6 +13,12 @@ MovementStateIndex MoveState::update(MovementContext &ctx, float ifps)
 {
 	auto &o = *ctx.owner;
 
+	if (ctx.is_on_steep_slope)
+	{
+		o._slide_state.init();
+		return MovementStateIndex::SLIDE;
+	}
+
 	if (!ctx.input.isInputMoving())
 	{
 		o._idle_state.init();

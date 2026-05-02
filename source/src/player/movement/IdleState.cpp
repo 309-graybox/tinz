@@ -10,6 +10,12 @@ void IdleState::init()
 
 MovementStateIndex IdleState::update(MovementContext &ctx, float ifps)
 {
+	if (ctx.is_on_steep_slope)
+	{
+		ctx.owner->_slide_state.init();
+		return MovementStateIndex::SLIDE;
+	}
+
 	if (ctx.input.isInputMoving())
 	{
 		ctx.owner->_move_state.init();

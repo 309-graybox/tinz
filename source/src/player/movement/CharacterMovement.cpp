@@ -45,6 +45,8 @@ void CharacterMovement::init()
 
 	_player_ifps = 1.0f / playerFps;
 	_slope_cos = Math::cos(slopeLimit * Consts::DEG2RAD);
+	_slide_max_cos = Math::cos(slideMaxAngle * Consts::DEG2RAD);
+	_escape_slope_cos = Math::cos(escapeSlideAngle * Consts::DEG2RAD);
 
 	_world_transform = obj->getWorldTransform();
 
@@ -57,6 +59,7 @@ void CharacterMovement::init()
 	_ctx.owner = this;
 	_states[MovementStateIndex::IDLE] = &_idle_state;
 	_states[MovementStateIndex::MOVE] = &_move_state;
+	_states[MovementStateIndex::SLIDE] = &_slide_state;
 }
 
 void CharacterMovement::update()
@@ -71,6 +74,9 @@ void CharacterMovement::update()
 	_ctx.character_forward = vec3(_world_transform.getAxisY());
 	_ctx.desired_input_direction = compute_desired_input_direction();
 	_ctx.is_grounded = _is_grounded;
+	_ctx.is_on_steep_slope = _on_steep_slope;
+	_ctx.steep_slope_normal = _steep_slope_normal;
+	_ctx.max_below_slope_dot = _max_below_slope_dot;
 
 	// #ifdef DEBUG_MOVEMENT
 	// Log::message("state: %s\n", _states[_current_state]->name());
@@ -105,7 +111,20 @@ void CharacterMovement::update()
 		_adaptive_jump_pending = false;
 	}
 
-	_horizontal_velocity = Vec3(_ctx.move_direction * _ctx.speed * toFloat(_ctx.input.isInputMoving()));
+	Vec3 desired_horizontal = Vec3(_ctx.move_direction * _ctx.speed);
+	if (_is_grounded)
+	{
+		_horizontal_velocity = desired_horizontal;
+	}
+	else if (length2(desired_horizontal) > Consts::EPS)
+	{
+		// Airborne with input — gradually steer toward the desired direction
+		// without snapping. Preserves momentum from the previous state (e.g.,
+		// jumping out of a slide).
+		float t = saturate(airControl * ifps);
+		_horizontal_velocity += (desired_horizontal - _horizontal_velocity) * Scalar(t);
+	}
+	// else: airborne with no input — keep current momentum.
 
 	float slope_cos = dot(_ctx.move_direction, _up);
 	float move_coeff = 1.0f - slope_cos;
@@ -126,6 +145,10 @@ void CharacterMovement::update()
 
 	float update_time = ifps;
 	_is_grounded = false;
+	_walkable_grounded = false;
+	_on_steep_slope = false;
+	_max_below_slope_dot = 0.0f;
+	_steep_slope_normal = vec3_zero;
 	while (update_time > 0.0f)
 	{
 		float adaptive_time_step = min(update_time, _player_ifps);
@@ -146,20 +169,45 @@ void CharacterMovement::update()
 		rotate(_ctx.rotate_target, _ctx.turn_speed, adaptive_time_step);
 	}
 
+	// Walkable wins over slidable: if we touch a walkable surface anywhere,
+	// the character is treated as standing on it, not sliding.
+	if (_walkable_grounded)
+		_walkable_flag.stamp();
+
+	// Hysteresis: if we just had a walkable contact, suppress slide entry.
+	// Otherwise grazing a steep slope while walking on flat would chatter
+	// SLIDE↔MOVE (capsule's lower hemisphere intermittently loses the flat
+	// contact while still touching the slope).
+	bool slide_suppressed = _walkable_flag.isFresh(slideEntryDelay);
+	_on_steep_slope = !_walkable_grounded
+				   && (_steep_slope_normal != vec3_zero)
+				   && !slide_suppressed;
+	if (_on_steep_slope)
+		_steep_slope_normal = normalizeValid(_steep_slope_normal);
+	else
+		_steep_slope_normal = _up;
+
 	target->setWorldTransform(_world_transform);
 	body->setWorldTransform(target->getWorldTransform());
 
 
 	//%%%%%%%%%%%%%%%%%%% Anim %%%%%%%%%%%%%%%
 	{
-		bool is_moving = !compare(_ctx.speed, 0.0f);
-		bool is_spinting = abs(_ctx.speed) > runSpeed;
-		bool is_grounded = _is_grounded;
-		bool is_idle = !is_moving && !is_spinting && is_grounded;
+		bool is_sliding = _current_state == MovementStateIndex::SLIDE;
+		bool is_moving = !is_sliding && !compare(_ctx.speed, 0.0f);
+		bool is_spinting = !is_sliding && abs(_ctx.speed) > runSpeed;
+		// Smooth out micro losses of ground contact at surface seams: while
+		// the player is descending/standing and was on ground a moment ago,
+		// keep the animation in "grounded" state. Cleared on jump (the flag
+		// is reset there), so falling/jumping still shows airborne anim.
+		bool is_grounded = _is_grounded
+						|| (_vertical_speed <= 0.0f && _grounded_flag.isFresh(groundedAnimCoyote));
+		bool is_idle = !is_moving && !is_spinting && !is_sliding && is_grounded;
 		_anim->setParamBool("is_moving", is_moving);
 		_anim->setParamBool("is_sprinting", is_spinting);
 		_anim->setParamBool("is_grounded", is_grounded);
 		_anim->setParamBool("is_idle", is_idle);
+		_anim->setParamBool("is_sliding", is_sliding);
 		_anim->setParamFloat("rand_float", Game::getRandomFloat(0.0f, 1.0f));
 	}
 }
@@ -269,6 +317,8 @@ void CharacterMovement::resolve_collisions(float ifps)
 			float slope_dot = dot(normal, _up);
 			bool is_below = dot(contact_point - bottom_cap, Vec3(_up)) < 0.0f;
 			bool is_walkable = is_below && slope_dot > _slope_cos;
+			bool is_slidable = is_below && !is_walkable && slope_dot > _slide_max_cos;
+			bool is_ground_contact = is_walkable || is_slidable;
 
 			pos_offset += is_walkable
 							  // ? up * dot(normal, up) * depth * icount
@@ -284,14 +334,26 @@ void CharacterMovement::resolve_collisions(float ifps)
 			Visualizer::renderVector(contact_point, contact_point + Vec3(normal), vec4_black);
 #endif
 
-			if (is_walkable)
+			if (is_ground_contact)
 			{
 				_is_grounded = true;
+				_max_below_slope_dot = max(_max_below_slope_dot, slope_dot);
+
+				// Vertical speed is cancelled by the surface — let slide motion
+				// (or just standing) take over from there.
 				if (_vertical_speed < 0.0f)
 					_vertical_speed = 0.0f;
 
-				if (_vertical_speed > 0.0f)
-					_vertical_speed *= 0.3f;
+				if (is_walkable)
+				{
+					_walkable_grounded = true;
+					if (_vertical_speed > 0.0f)
+						_vertical_speed *= 0.3f;
+				}
+				else
+				{
+					_steep_slope_normal += normal;
+				}
 			}
 		}
 

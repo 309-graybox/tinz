@@ -3,6 +3,7 @@
 #include "MovementState.h"
 #include "IdleState.h"
 #include "MoveState.h"
+#include "SlideState.h"
 #include "utils/TimedFlag.h"
 
 #include <UnigineComponentSystem.h>
@@ -28,6 +29,10 @@ public:
 	PROP_PARAM(Float, adaptiveJumpDamping, 0.6f, "", "Доля, на которую уменьшается текущая вертикальная скорость при отпускании прыжка для адаптивного прыжка");
 	PROP_PARAM(Float, adaptiveJumpThreshold, 0.05f, "", "Пороговое значение вертикальной скорости (в долях jumpPower), ниже которого адаптивный прыжок перестаёт применяться");
 
+	PROP_PARAM(Float, airControl, 5.0f, "", "Скорость сведения горизонтальной скорости в воздухе к направлению ввода (1/сек). 0 — полное сохранение импульса (без ввода), выше — быстрее заходим в направление ввода");
+	PROP_PARAM(Float, groundedAnimCoyote, 0.1f, "", "Окно (сек) после потери walkable-контакта, в течение которого анимация всё ещё считает персонажа на земле. Гасит микро-разрывы grounded на стыках поверхностей. На прыжке игнорируется");
+	PROP_PARAM(Float, slideEntryDelay, 0.05f, "", "Окно (сек) после walkable-контакта, в течение которого вход в скольжение подавляется. Гасит дребезг на стыках плоской и наклонной поверхностей");
+
 	PROP_GROUP("Sprint");
 	PROP_PARAM(Float, sprintSpeed, 8.0f, "", "Максимальная скорость персонажа в режиме спринта");
 	PROP_PARAM(Float, sprintTurnSpeed, 400.0f, "", "Скорость изменения направления движения во время спринта");
@@ -35,6 +40,17 @@ public:
 	PROP_GROUP("");
 	PROP_PARAM(Float, stepHeight, 0.3f, "", "Максимальная выс та препятст вия, на которое персонаж может автоматически подняться");
 	PROP_PARAM(Float, slopeLimit, 43.0f, "Slope Limit(degr ees)", "Максимальный угол наклона поверхности, по которой персонаж может двигаться");
+
+	PROP_GROUP("Slide");
+	PROP_PARAM(Float, slideMaxAngle, 70.0f, "Slide Max Angle (degrees)", "Верхняя граница диапазона углов, при которых работает скольжение. Круче — поверхность считается стеной");
+	PROP_PARAM(Float, escapeSlideAngle, 40.0f, "Escape Slide Angle (degrees)", "Гистерезис выхода: пока угол поверхности больше этого значения, скольжение продолжается");
+	PROP_PARAM(Float, baseSlideSpeed, 4.0f, "Base Slide Speed", "Базовое значение скорости скольжения, к которому применяются модификаторы наклона и ввода");
+	PROP_PARAM(Float, slideForwardMultiplier, 1.4f, "", "Множитель скорости при вводе движения по направлению скольжения");
+	PROP_PARAM(Float, slideBackMultiplier, 0.6f, "", "Множитель скорости при вводе движения против направления скольжения");
+	PROP_PARAM(Float, slideMinSlopeMultiplier, 1.0f, "", "Множитель скорости у нижней границы диапазона скольжения (slopeLimit)");
+	PROP_PARAM(Float, slideMaxSlopeMultiplier, 1.8f, "", "Множитель скорости у верхней границы диапазона скольжения (slideMaxAngle)");
+	PROP_PARAM(Float, slideAcceleration, 8.0f, "", "Скорость, с которой текущая скорость скольжения подтягивается к расчётной целевой");
+	PROP_PARAM(Float, slideLateralStrength, 1.0f, "", "Сила бокового отклонения вектора движения от базового вектора скольжения по инпуту [0..1]");
 
 	PROP_GROUP("")
 	PROP_PARAM(Node, body);
@@ -62,6 +78,7 @@ private:
 	MovementContext _ctx;
 	IdleState _idle_state;
 	MoveState _move_state;
+	SlideState _slide_state;
 	MovementState *_states[MovementStateIndex::COUNT];
 	MovementStateIndex _current_state = MovementStateIndex::IDLE;
 
@@ -72,6 +89,8 @@ private:
 	void rotate(const Unigine::Math::vec3 &direction, float turn_speed, float ifps);
 
 	float _slope_cos = 0.0f;
+	float _slide_max_cos = 0.0f;
+	float _escape_slope_cos = 0.0f;
 	float _player_ifps = 1.0f / 60.0f;
 
 	Unigine::BodyDummyPtr _body;
@@ -87,12 +106,18 @@ private:
 	float _vertical_speed = 0.0f;
 
 	bool _is_grounded = false;
+	bool _walkable_grounded = false;
+	bool _on_steep_slope = false;
+	float _max_below_slope_dot = 0.0f;
+	Unigine::Math::vec3 _steep_slope_normal = Unigine::Math::vec3_up;
 	bool _adaptive_jump_pending = false;
 	TimedFlag _grounded_flag;
+	TimedFlag _walkable_flag;
 
 	Unigine::AnimScriptPtr _anim;
 
 private:
 	friend class MoveState;
 	friend class IdleState;
+	friend class SlideState;
 };

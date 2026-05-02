@@ -8,10 +8,22 @@
 	<parameter name="coyoteTime" type="float" tooltip="Окно (в секундах) после схода с земли, в течение которого прыжок ещё считается возможным">0.2</parameter>
 	<parameter name="adaptiveJumpDamping" type="float" tooltip="Доля, на которую уменьшается текущая вертикальная скорость при отпускании прыжка для адаптивного прыжка">0.6</parameter>
 	<parameter name="adaptiveJumpThreshold" type="float" tooltip="Пороговое значение вертикальной скорости (в долях jumpPower), ниже которого адаптивный прыжок перестаёт применяться">0.05</parameter>
+	<parameter name="airControl" type="float" tooltip="Скорость сведения горизонтальной скорости в воздухе к направлению ввода (1/сек). 0 — полное сохранение импульса (без ввода), выше — быстрее заходим в направление ввода">5</parameter>
+	<parameter name="groundedAnimCoyote" type="float" tooltip="Окно (сек) после потери walkable-контакта, в течение которого анимация всё ещё считает персонажа на земле. Гасит микро-разрывы grounded на стыках поверхностей. На прыжке игнорируется">0.1</parameter>
+	<parameter name="slideEntryDelay" type="float" tooltip="Окно (сек) после walkable-контакта, в течение которого вход в скольжение подавляется. Гасит дребезг на стыках плоской и наклонной поверхностей">0.05</parameter>
 	<parameter name="sprintSpeed" type="float" tooltip="Максимальная скорость персонажа в режиме спринта" group="Sprint">8</parameter>
 	<parameter name="sprintTurnSpeed" type="float" tooltip="Скорость изменения направления движения во время спринта" group="Sprint">400</parameter>
 	<parameter name="stepHeight" type="float" tooltip="Максимальная выс та препятст вия, на которое персонаж может автоматически подняться">0.3</parameter>
 	<parameter name="slopeLimit" type="float" title="Slope Limit(degr ees)" tooltip="Максимальный угол наклона поверхности, по которой персонаж может двигаться">43</parameter>
+	<parameter name="slideMaxAngle" type="float" title="Slide Max Angle (degrees)" tooltip="Верхняя граница диапазона углов, при которых работает скольжение. Круче — поверхность считается стеной" group="Slide">70</parameter>
+	<parameter name="escapeSlideAngle" type="float" title="Escape Slide Angle (degrees)" tooltip="Гистерезис выхода: пока угол поверхности больше этого значения, скольжение продолжается" group="Slide">40</parameter>
+	<parameter name="baseSlideSpeed" type="float" title="Base Slide Speed" tooltip="Базовое значение скорости скольжения, к которому применяются модификаторы наклона и ввода" group="Slide">4</parameter>
+	<parameter name="slideForwardMultiplier" type="float" tooltip="Множитель скорости при вводе движения по направлению скольжения" group="Slide">1.4</parameter>
+	<parameter name="slideBackMultiplier" type="float" tooltip="Множитель скорости при вводе движения против направления скольжения" group="Slide">0.6</parameter>
+	<parameter name="slideMinSlopeMultiplier" type="float" tooltip="Множитель скорости у нижней границы диапазона скольжения (slopeLimit)" group="Slide">1</parameter>
+	<parameter name="slideMaxSlopeMultiplier" type="float" tooltip="Множитель скорости у верхней границы диапазона скольжения (slideMaxAngle)" group="Slide">1.8</parameter>
+	<parameter name="slideAcceleration" type="float" tooltip="Скорость, с которой текущая скорость скольжения подтягивается к расчётной целевой" group="Slide">8</parameter>
+	<parameter name="slideLateralStrength" type="float" tooltip="Сила бокового отклонения вектора движения от базового вектора скольжения по инпуту [0..1]" group="Slide">1</parameter>
 	<parameter name="body" type="node">0</parameter>
 	<parameter name="target" type="node">0</parameter>
 	<parameter name="groundCheckRaysLength" type="float" tooltip="Длина лучей для проверки нормали поверхности">1.2</parameter>

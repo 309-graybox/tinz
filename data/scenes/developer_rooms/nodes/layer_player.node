@@ -22,6 +22,7 @@
 				<parameter name="useGamepad">1</parameter>
 			</property>
 			<property parent="c1ecde01068d0406f5dacfe348dfc1e5466c55ec" guid="719da7015d9fc96a4f30e37f727f8796370ba23e">
+				<parameter name="airControl">5</parameter>
 				<parameter name="sprintTurnSpeed">300</parameter>
 				<parameter name="slopeLimit">44</parameter>
 				<parameter name="body">1330148965</parameter>
@@ -102,7 +103,7 @@
 		</node>
 	</node>
 	<node type="NodeSkeletonPose" id="1234864251" name="NodeSkeletonPose">
-		<transform>0.99999988079 0 0 0.0 0 1.00000011921 0 0.0 0 0 1 0.0 8.81240262837 1.86325858393 -1.20296077636 1.0</transform>
+		<transform>0.999999880791 0 0 0.0 0 1.00000011921 0 0.0 0 0 1 0.0 0.626768700831 171.797985272 233.099516877 1.0</transform>
 		<skeleton>3f68d00b83f7388258f119d4120aa2fa30b105cf</skeleton>
 		<mode>0</mode>
 		<control_type>0</control_type>
