@@ -24,6 +24,7 @@
 			<property parent="c1ecde01068d0406f5dacfe348dfc1e5466c55ec" guid="719da7015d9fc96a4f30e37f727f8796370ba23e">
 				<parameter name="airControl">5</parameter>
 				<parameter name="sprintTurnSpeed">300</parameter>
+				<parameter name="stepHeight">0.409999996</parameter>
 				<parameter name="slopeLimit">44</parameter>
 				<parameter name="body">1330148965</parameter>
 				<parameter name="target">1330148965</parameter>

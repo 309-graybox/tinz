@@ -267,7 +267,14 @@ void CharacterMovement::update()
 
 	//%%%%%%%%%%%%%%%%%%% Shape %%%%%%%%%%%%%%%
 	{
-		_shape->setHeight(_shape_height * (_is_grounded ? 1.0f : fall_scale));
+		// Use the same stabilized "grounded" signal as the animation block:
+		// raw _is_grounded flickers on flat surfaces (FP-noise contact loss),
+		// and shrinking the capsule lifts its bottom — once shrunk it's even
+		// less likely to contact ground next frame, producing a fall/run/fall
+		// loop. Coyote-grace prevents that.
+		bool stable_grounded = _is_grounded
+							|| (_vertical_speed <= 0.0f && _grounded_flag.isFresh(groundedAnimCoyote));
+		_shape->setHeight(_shape_height * (stable_grounded ? 1.0f : fall_scale));
 	}
 }
 
