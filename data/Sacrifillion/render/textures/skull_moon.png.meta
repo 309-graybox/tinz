@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>28e7bf6ec7564bbec35b75b4713ae695c62451d3</guid>
+	<type>texture</type>
+	<hash>7d0e857feeb3025baa4f5b99574e5a29cfa727fc1167f52c6e3e664a10194b81</hash>
+	<runtimes>
+		<runtime id="28e7bf6ec7564bbec35b75b4713ae695c62451d3" name="skull_moon.png" link="0" type="6"/>
+		<runtime id="9fa37df380256b8d3321c1a5ea969c24c27c2d16" name="skull_moon.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">DXT5</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">custom</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">1</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>

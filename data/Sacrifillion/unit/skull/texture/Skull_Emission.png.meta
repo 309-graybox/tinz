@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>aca97327f7d6c604adce007956dd9cc05f1660ba</guid>
+	<type>texture</type>
+	<hash>1e07b43b581cdb4503707abecd8eef1a0716eed5fa0f0b822d1d4394dc64f877</hash>
+	<runtimes>
+		<runtime id="aca97327f7d6c604adce007956dd9cc05f1660ba" name="Skull_Emission.png" link="0" type="6"/>
+		<runtime id="e946a5945b6eb9c5fb04182a87ded2a36d45f8d1" name="Skull_Emission.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">DXT1</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">emission</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">1</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>

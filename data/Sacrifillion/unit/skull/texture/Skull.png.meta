@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>2743fad2b906b4fde57806f8f5aef5bce9c7cec7</guid>
+	<type>texture</type>
+	<hash>be8e2bf1001c9f04bdc14033bbaef6cd35c81b6d6240cc553e7b15660495ef23</hash>
+	<runtimes>
+		<runtime id="2743fad2b906b4fde57806f8f5aef5bce9c7cec7" name="Skull.png" link="0" type="6"/>
+		<runtime id="fd3fec71eb14b9034f751413a98562d6b0eb16bc" name="Skull.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">Auto (DXT1 or DXT5)</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">albedo (rgba)</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">1</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>
