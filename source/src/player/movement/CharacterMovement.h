@@ -39,6 +39,7 @@ public:
 
 	PROP_GROUP("");
 	PROP_PARAM(Float, stepHeight, 0.3f, "", "Максимальная выс та препятст вия, на которое персонаж может автоматически подняться");
+	PROP_PARAM(Float, stepClimbSpeed, 5.0f, "Step Climb Speed (m/s)", "Скорость вертикального подъёма при автостеппинге. Гравитация в это время выключена, персонаж считается на земле");
 	PROP_PARAM(Float, slopeLimit, 43.0f, "Slope Limit(degr ees)", "Максимальный угол наклона поверхности, по которой персонаж может двигаться");
 
 	PROP_GROUP("Slide");
@@ -86,6 +87,7 @@ private:
 	Unigine::Math::vec3 compute_desired_input_direction() const;
 	Unigine::Math::vec3 project_forward_on_ground(const Unigine::Math::vec3 &ground_normal);
 	void resolve_collisions(float ifps);
+	void try_auto_step(const Unigine::Math::Mat4 &pre_motion, const Unigine::Math::Vec3 &horiz_motion, float ifps);
 	void rotate(const Unigine::Math::vec3 &direction, float turn_speed, float ifps);
 
 	float _slope_cos = 0.0f;
@@ -108,6 +110,11 @@ private:
 	bool _is_grounded = false;
 	bool _walkable_grounded = false;
 	bool _on_steep_slope = false;
+	bool _hit_wall = false;
+	Unigine::Math::vec3 _hit_wall_normal = Unigine::Math::vec3_zero;
+	bool _climbing = false;
+	float _climb_target_height = 0.0f;
+	float _climb_time = 0.0f;
 	float _max_below_slope_dot = 0.0f;
 	Unigine::Math::vec3 _steep_slope_normal = Unigine::Math::vec3_up;
 	bool _adaptive_jump_pending = false;

@@ -155,25 +155,75 @@ void CharacterMovement::update()
 		update_time -= adaptive_time_step;
 
 		_vertical_speed += _ctx.vertical_impulse * adaptive_time_step;
-		if (!_is_grounded)
+		// Suppress gravity while auto-stepping: the climb lift handles vertical
+		// motion, and the player is treated as grounded throughout.
+		if (!_is_grounded && !_climbing)
 			_vertical_speed -= _gravity_amount * adaptive_time_step;
 
+		// Apply gradual vertical lift before motion. Capsule rises in place
+		// until it clears the obstacle; horizontal motion follows naturally.
+		if (_climbing)
+		{
+			Scalar current_h = dot(_world_transform.getTranslate(), Vec3(_up));
+			Scalar remaining = Scalar(_climb_target_height) - current_h;
+			if (remaining > Scalar(0.0))
+			{
+				Scalar lift_amt = Scalar(stepClimbSpeed) * Scalar(adaptive_time_step);
+				Scalar lift = remaining < lift_amt ? remaining : lift_amt;
+				_world_transform.setColumn3(3, _world_transform.getTranslate() + Vec3(_up) * lift);
+			}
+			_vertical_speed = 0.0f;
+		}
+
 		Vec3 verticale_velocity = Vec3(_up * _vertical_speed);
+
+		Mat4 pre_motion_transform = _world_transform;
+		Vec3 horiz_step = _horizontal_velocity * Scalar(move_coeff) * Scalar(adaptive_time_step);
 
 		mul(_world_transform, translate((_horizontal_velocity * move_coeff + verticale_velocity) * adaptive_time_step), _world_transform);
 
 		Vec3 saved_velocity = _horizontal_velocity;
+		_hit_wall = false;
+		_hit_wall_normal = vec3_zero;
 		resolve_collisions(adaptive_time_step);
 		_horizontal_velocity = saved_velocity;
+
+		if (_walkable_grounded || _hit_wall)
+			_walkable_flag.stamp();
+
+		// Update climbing state. Exit when we're on a walkable surface, hit
+		// the target height, or hit the failsafe timeout (e.g. wedged under
+		// a ceiling so lift can't make progress).
+		if (_climbing)
+		{
+			_climb_time += adaptive_time_step;
+			Scalar current_h = dot(_world_transform.getTranslate(), Vec3(_up));
+			bool target_reached = current_h >= Scalar(_climb_target_height) - Scalar(0.005);
+			bool timeout = _climb_time > 1.0f;
+			if (_walkable_grounded || target_reached || timeout)
+			{
+				_climbing = false;
+			}
+			else
+			{
+				// Force grounded for downstream consumers (state machine,
+				// animation, jump coyote) — the lift is the player's "ground".
+				_is_grounded = true;
+				_walkable_grounded = true;
+			}
+		}
+
+		if (!_climbing && _hit_wall && _is_grounded && stepHeight > 0.0f && length2(horiz_step) > Consts::EPS)
+			try_auto_step(pre_motion_transform, horiz_step, adaptive_time_step);
 
 		rotate(_ctx.rotate_target, _ctx.turn_speed, adaptive_time_step);
 	}
 
 	// Walkable wins over slidable: if we touch a walkable surface anywhere,
 	// the character is treated as standing on it, not sliding.
-	if (_walkable_grounded)
-		_walkable_flag.stamp();
-
+	// (`_walkable_flag` is stamped inside the substep loop above — both on
+	// walkable contacts and on wall contacts, so brushing stair corner edges
+	// whose normals fall into the slidable range doesn't chatter into SLIDE.)
 	// Hysteresis: if we just had a walkable contact, suppress slide entry.
 	// Otherwise grazing a steep slope while walking on flat would chatter
 	// SLIDE↔MOVE (capsule's lower hemisphere intermittently loses the flat
@@ -352,13 +402,131 @@ void CharacterMovement::resolve_collisions(float ifps)
 				}
 				else
 				{
-					_steep_slope_normal += normal;
+					// Slidable. Distinguish a real slope (motion glides along
+					// the surface, normal_speed ≈ 0) from a stair-corner edge
+					// or any obstacle the player is walking INTO (normal_speed
+					// < 0). Only the former should accumulate as a slide
+					// candidate — otherwise SlideState hijacks stair-climbing
+					// and pushes the player away from obstacles.
+					if (normal_speed >= 0.0f)
+					{
+						_steep_slope_normal += normal;
+					}
+					else
+					{
+						_hit_wall = true;
+						_hit_wall_normal += normal;
+					}
 				}
+			}
+			else if (normal_speed < 0.0f)
+			{
+				// Side/wall contact pushing back against horizontal motion —
+				// candidate for auto-stepping over a low obstacle.
+				_hit_wall = true;
+				_hit_wall_normal += normal;
 			}
 		}
 
 		_world_transform.setColumn3(3, _world_transform.getTranslate() + Vec3(pos_offset));
 	}
+}
+
+void CharacterMovement::try_auto_step(const Mat4 &pre_motion, const Vec3 &horiz_motion, float ifps)
+{
+	Mat4 post_resolved = _world_transform;
+
+	// Direction to push the probe past the obstacle. Prefer the wall's outward
+	// normal (so the capsule clears perpendicular to the wall regardless of
+	// which way the player is heading — needed to climb when running diagonally
+	// into stairs). Fall back to motion direction if no wall normal recorded.
+	Vec3 motion_horiz = horiz_motion - Vec3(_up) * Scalar(toFloat(dot(horiz_motion, Vec3(_up))));
+	Scalar motion_dist = length(motion_horiz);
+
+	Vec3 step_dir = Vec3_zero;
+	if (length2(_hit_wall_normal) > Consts::EPS)
+	{
+		vec3 wall_n = normalizeValid(_hit_wall_normal);
+		vec3 dir = -wall_n;
+		dir -= _up * dot(dir, _up);
+		if (length2(dir) > Consts::EPS)
+			step_dir = Vec3(normalizeValid(dir));
+	}
+	if (length2(step_dir) < Consts::EPS)
+		step_dir = Vec3(normalizeValid(vec3(motion_horiz)));
+
+	// Probe at least far enough that the capsule's center clears the wall
+	// (one radius), but never less than the substep's intended motion. This
+	// is the perpendicular displacement to wall — the player's actual motion
+	// (which may be diagonal) doesn't matter for the probe.
+	Scalar min_forward = Scalar(_shape->getRadius() + 0.02);
+	Scalar forward_dist = motion_dist > min_forward ? motion_dist : min_forward;
+
+	// Probe position: pre-motion lifted by stepHeight, then translated past
+	// the wall edge along step_dir.
+	Mat4 elevated = pre_motion;
+	elevated.setColumn3(3, pre_motion.getTranslate() + Vec3(_up) * Scalar(stepHeight) + step_dir * forward_dist);
+
+	_body->setTransform(elevated);
+	_shape->getCollision(_contacts, ifps);
+
+	Vec3 elevated_bottom_cap = _shape->getBottomCap();
+
+	// If anything still pushes back against motion at the elevated probe, the
+	// obstacle is too tall to step over.
+	int probe_count = Math::min(_contacts.size(), 16);
+	for (int i = 0; i < probe_count; ++i)
+	{
+		const ConstShapeContactPtr &c = _contacts[i];
+		vec3 normal = c->getNormal();
+		Vec3 contact_point = c->getPoint();
+		float slope_dot = dot(normal, _up);
+		bool is_below = dot(contact_point - elevated_bottom_cap, Vec3(_up)) < 0.0f;
+		if (is_below && slope_dot > _slope_cos)
+			continue; // walkable below — that's the step we'd land on
+		// Ceiling-like contact at the elevated probe (normal points down)
+		// means lifting into geometry above. The step is too tall to fit
+		// under whatever is overhead — abort instead of teleporting forward.
+		if (slope_dot < 0.0f)
+			return;
+		float v_into = toFloat(dot(Vec3(normal), _horizontal_velocity));
+		if (v_into < 0.0f)
+			return;
+	}
+
+	// Drop down from the elevated probe to find the surface to land on.
+	Scalar radius = Scalar(_shape->getRadius());
+	Vec3 ray_origin = elevated_bottom_cap;
+	Vec3 ray_end = ray_origin + Vec3(_gravity_direction) * (radius + Scalar(stepHeight) + Scalar(0.05));
+
+	WorldIntersectionNormalPtr hit = WorldIntersectionNormal::create();
+	auto obj = World::getIntersection(ray_origin, ray_end, groundCheckIntersectionMask, {body}, hit);
+	if (!obj || dot(hit->getNormal(), _up) < _slope_cos)
+		return;
+
+	// drop > 0: ray hit is below capsule's bottom — descend to land.
+	// drop < 0: ray hit is above capsule's bottom — the obstacle's top
+	//           sticks above where stepHeight lifted us, so we'd actually
+	//           need to lift further. Don't clamp — let height_gain reflect
+	//           the true step height so the stepHeight check rejects it.
+	Scalar drop = length(hit->getPoint() - ray_origin) - radius;
+
+	Vec3 final_pos = elevated.getTranslate() + Vec3(_gravity_direction) * drop;
+
+	// Only commit if we're actually stepping UP (and not by more than the
+	// configured max). A non-positive height gain means the probe found the
+	// same surface or below — let regular physics handle that.
+	Scalar height_gain = dot(final_pos - post_resolved.getTranslate(), Vec3(_up));
+	if (height_gain <= Scalar(0.0) || height_gain > Scalar(stepHeight))
+		return;
+
+	// Don't teleport. Queue a vertical climb: the substep loop lifts the
+	// capsule gradually toward this absolute target height while suppressing
+	// gravity and forcing grounded state. The player walks forward naturally
+	// once the lift carries them above the obstacle.
+	_climbing = true;
+	_climb_target_height = toFloat(dot(final_pos, Vec3(_up)));
+	_climb_time = 0.0f;
 }
 
 void CharacterMovement::rotate(const vec3 &direction, float turn_speed, float ifps)
