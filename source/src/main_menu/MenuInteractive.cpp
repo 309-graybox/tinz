@@ -39,7 +39,8 @@ void MenuInteractive::setOutlineEnabled(bool on)
 {
 	const int v = on ? 1 : 0;
 	for (auto &sm : _surfaces)
-		sm.mat->setState(sm.aux_state_idx, v);
+		if (!sm.mat->isStateInternal(sm.aux_state_idx))
+			sm.mat->setState(sm.aux_state_idx, v);
 }
 
 void MenuInteractive::collect_surfaces(const NodePtr &n)
