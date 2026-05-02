@@ -12,6 +12,7 @@ using namespace Math;
 
 void MenuDragger::onInit()
 {
+	_rest_pos = buryNode->getWorldPosition();
 	_value = clamp((float)initialValue, 0.0f, 1.0f);
 	apply_value(_value);
 	onValueChanged(_value);
@@ -39,9 +40,9 @@ void MenuDragger::onUpdate()
 		return;
 
 	const Vec3 target = _rest_pos + Vec3(buryOffset.get()) * (1.0f - _value);
-	const Vec3 cur = node->getPosition();
+	const Vec3 cur = buryNode->getWorldPosition();
 	const float t = saturate((float)easeSpeed * Game::getIFps());
-	node->setPosition(lerp(cur, target, t));
+	buryNode->setWorldPosition(lerp(cur, target, t));
 }
 
 void MenuDragger::setHovered(bool on, bool play_sound)
@@ -85,7 +86,7 @@ void MenuDragger::apply_value(float v01)
 	if (!node)
 		return;
 	const Vec3 target = _rest_pos + Vec3(buryOffset.get()) * (1.0f - v01);
-	node->setPosition(target);
+	buryNode->setWorldPosition(target);
 }
 
 void MenuDragger::apply_cursor()

@@ -20,6 +20,7 @@ public:
 	PROP_PARAM(File, hoverCursor)
 	PROP_PARAM(File, dragCursor)
 	PROP_PARAM(Vec3, buryOffset)
+	PROP_PARAM(Node, buryNode)
 	PROP_PARAM(Float, sensitivity, 200.0f, "Sensitivity", "Pixels of vertical mouse movement = full 0..1 range")
 	PROP_PARAM(Float, initialValue, 1.0f, "Initial Value", "Starting slider value 0..1")
 	PROP_PARAM(Float, easeSpeed, 12.0f, "Ease Speed")
