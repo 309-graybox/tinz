@@ -24,6 +24,7 @@ void SoundRegistrator::init()
 
 	SoundEvent e;
 	e.sample = sample.get();
+	e.loop_event_id = loopEventId.get();
 
 	NodePtr settingsNode = settings.get();
 	SoundSettings *cfg = nullptr;

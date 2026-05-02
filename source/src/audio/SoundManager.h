@@ -18,6 +18,7 @@ namespace audio
 struct SoundEvent
 {
 	Unigine::String sample; // .wav / .oga / .mp3
+	Unigine::String loop_event_id; // optional music event id after sample intro
 
 	// Mix.
 	float gain = 1.0f;
@@ -72,7 +73,8 @@ public:
 	static void playOnNode(const char *id_or_path, const Unigine::NodePtr &node);
 
 	// Single global music slot. Looped, streamed; replaces any current music.
-	// id_or_path follows the same lookup rule as play2D.
+	// id_or_path follows the same lookup rule as play2D. If the event has
+	// loop_event_id, sample plays once as intro and loop_event_id loops afterwards.
 	static void playMusic(const char *id_or_path);
 	static void stopMusic();
 
