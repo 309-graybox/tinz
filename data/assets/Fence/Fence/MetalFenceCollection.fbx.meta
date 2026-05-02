@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>d14699053bd5019ea2bd2169ee12a88e86ee05df</guid>
+	<type>fbx</type>
+	<hash>003fa0d210f86290d09f0750f6de6d44ea2b33106831b263a1124a34b90578d9</hash>
+	<runtimes>
+		<runtime id="d14699053bd5019ea2bd2169ee12a88e86ee05df" name="MetalFenceCollection.fbx" link="0"/>
+		<runtime id="4c5d093ecfc10054879e6b0a8edd205241eb531c" name="MetalFenceCollection.node" link="1" type="3">
+			<parameters>
+				<parameter type="string" name="id">9409d998</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="aa2c50115541cae5546de335e5a024fd763b53cb" name="cube.087.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">9409d998</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="4c48bca04face0a382cf0b4c4beaefb60fa816ae" name="cube.107.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">9409d998</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="cfa339abb3828f90bee4096f7dbca18037ff6e35" name="cube.067.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">9409d998</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="17c63ad20619ffddc53b815e0be25d039d7daa10" name="cube.131.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">9409d998</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="5bc0e8d55835df7110a80639859e52e8e922f62f" name="cube.083.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">9409d998</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="cb33e054e57f2e368bcb21c0e3c7fca80be32dc2" name="cube.132.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">9409d998</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="f49ab80f46be7c58ecb39c13b207f47dd3259239" name="cube.061.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">9409d998</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="28765da6b79d90454ca454f2a4f5cbaf352b1644" name="cube.133.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">9409d998</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="3f4885d9c37a9b9c9649517da524859947222cd3" name="cube.059.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">9409d998</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="4b78d748a1d5dce364dab774677b7152d7a24c16" name="cube.134.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">9409d998</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="696054b307d7180adb5a10f7f91b56ca4823947d" name="cube.057.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">9409d998</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="686a05bad83a2fd9b78a39c6e866ad27939c4bb8" name="cube.108.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">9409d998</parameter>
+			</parameters>
+		</runtime>
+	</runtimes>
+	<parameters>
+		<parameter type="float" name="angular_deflection">0.699999988</parameter>
+		<parameter type="bool" name="asset_name_as_prefix">0</parameter>
+		<parameter type="string" name="base_material_mode">unique_material_graph</parameter>
+		<parameter type="float" name="bound_size">10000</parameter>
+		<parameter type="bool" name="create_root_motion_joint">0</parameter>
+		<parameter type="bool" name="create_transform_bones_for_joints">0</parameter>
+		<parameter type="float" name="fps">30</parameter>
+		<parameter type="string" name="front_axis">default</parameter>
+		<parameter type="bool" name="import_animations">1</parameter>
+		<parameter type="bool" name="import_bones_without_skin">1</parameter>
+		<parameter type="bool" name="import_cameras">1</parameter>
+		<parameter type="bool" name="import_lights">1</parameter>
+		<parameter type="bool" name="import_materials">1</parameter>
+		<parameter type="string" name="import_materials_mode">take_by_name_or_create</parameter>
+		<parameter type="bool" name="import_meshes">1</parameter>
+		<parameter type="bool" name="import_morph_targets">0</parameter>
+		<parameter type="string" name="import_skeleton_mode">create</parameter>
+		<parameter type="bool" name="import_skeletons">1</parameter>
+		<parameter type="bool" name="import_tangent_space">0</parameter>
+		<parameter type="bool" name="import_textures">1</parameter>
+		<parameter type="bool" name="invert_gchannel_for_normal_maps">0</parameter>
+		<parameter type="bool" name="joints_reorientation">0</parameter>
+		<parameter type="string" name="lightmaps">{&quot;guid://696054b307d7180adb5a10f7f91b56ca4823947d&quot;:{&quot;StonePillar&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;MetalSpike&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://3f4885d9c37a9b9c9649517da524859947222cd3&quot;:{&quot;StonePillar&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://f49ab80f46be7c58ecb39c13b207f47dd3259239&quot;:{&quot;MetalSpike&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Metal&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://cfa339abb3828f90bee4096f7dbca18037ff6e35&quot;:{&quot;Metal&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://5bc0e8d55835df7110a80639859e52e8e922f62f&quot;:{&quot;MetalSpike&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Metal&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://aa2c50115541cae5546de335e5a024fd763b53cb&quot;:{&quot;Metal&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;StonePillar&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;MetalSpike&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://4c48bca04face0a382cf0b4c4beaefb60fa816ae&quot;:{&quot;Metal&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;MetalSpike&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;StonePillar&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://686a05bad83a2fd9b78a39c6e866ad27939c4bb8&quot;:{&quot;StonePillar&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;MetalSpike&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://17c63ad20619ffddc53b815e0be25d039d7daa10&quot;:{&quot;Metal&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://cb33e054e57f2e368bcb21c0e3c7fca80be32dc2&quot;:{&quot;MetalSpike&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Metal&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://28765da6b79d90454ca454f2a4f5cbaf352b1644&quot;:{&quot;MetalSpike&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Metal&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://4b78d748a1d5dce364dab774677b7152d7a24c16&quot;:{&quot;StonePillar&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}}}</parameter>
+		<parameter type="float" name="linear_deflection">0.200000003</parameter>
+		<parameter type="string" name="lods">_lod_0,-1e+09,3,0,0,100,0,0,60;_lod_1,3,9,0,0,60,0,1,60;_lod_2,9,1e+09,0,0,30,0,1,60</parameter>
+		<parameter type="string" name="lods_mode">off</parameter>
+		<parameter type="string" name="material_guids">checkmatv1.001,4639598c13babb9388189b78c4b73c8f1897a93a,metal,12adbdb02d039459012e135cc96e50d2523c073e,metalspike,7e965aa89176eda0b30014d485c0df422b054476,stonepillar,6a0bfd04523e881c4071fb700c833c36bce774f2</parameter>
+		<parameter type="bool" name="merge_similar_materials">0</parameter>
+		<parameter type="bool" name="merge_static_meshes">0</parameter>
+		<parameter type="bool" name="merge_surfaces_by_materials">0</parameter>
+		<parameter type="float" name="morph_targets_normals_angle">180</parameter>
+		<parameter type="string" name="morph_targets_normals_mode">import</parameter>
+		<parameter type="bool" name="need_repivot">0</parameter>
+		<parameter type="bool" name="need_split">0</parameter>
+		<parameter type="bool" name="need_triangulate">1</parameter>
+		<parameter type="int" name="num_lods">3</parameter>
+		<parameter type="string" name="prefix_materials"/>
+		<parameter type="string" name="resolution">256</parameter>
+		<parameter type="int" name="root_motion_forward_axis">0</parameter>
+		<parameter type="int" name="root_motion_position_component">0</parameter>
+		<parameter type="int" name="root_motion_rotation_component">0</parameter>
+		<parameter type="float" name="scale">0.439999998</parameter>
+		<parameter type="string" name="shared_skeleton_path"/>
+		<parameter type="bool" name="skip_empty_nodes">0</parameter>
+		<parameter type="int" name="smooth_animation_size">0</parameter>
+		<parameter type="string" name="target_root_motion_joint"/>
+		<parameter type="bool" name="unwrap_uv_ch_0">0</parameter>
+		<parameter type="bool" name="unwrap_uv_ch_1">0</parameter>
+		<parameter type="string" name="up_axis">default</parameter>
+		<parameter type="bool" name="use_instances">1</parameter>
+		<parameter type="int" name="uv_ch">1</parameter>
+		<parameter type="string" name="uv_unwrap_version">xatlas_v1</parameter>
+		<parameter type="bool" name="vertex_cache">1</parameter>
+		<parameter type="string" name="workflow">metalness</parameter>
+	</parameters>
+</asset>
