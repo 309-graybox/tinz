@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>79d4c6ad2ecaa9e0fe6d6b78f1cd8281e7abc9b6</guid>
+	<type>property</type>
+	<hash>20091de7a623beee89a4e8ee6ce59db15e5052445c4d41c2d900c63b121c1390</hash>
+	<runtimes>
+		<runtime id="79d4c6ad2ecaa9e0fe6d6b78f1cd8281e7abc9b6" name="HUD" link="0" type="4"/>
+	</runtimes>
+</asset>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>0011dc4c454ca56c0ab24ab8cda8fccd0218b7aa</guid>
+	<type>material</type>
+	<hash>581554a35d452213e6d154c5567a7c64345b213d4b2ecc2430abf68f8884d0af</hash>
+	<runtimes>
+		<runtime id="0011dc4c454ca56c0ab24ab8cda8fccd0218b7aa" name="heart" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>

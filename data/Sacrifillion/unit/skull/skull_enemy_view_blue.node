@@ -29,6 +29,7 @@
 				</parameter>
 				<parameter name="behavior">1</parameter>
 				<parameter name="speed">16</parameter>
+				<parameter name="attackDamage">25</parameter>
 			</property>
 		</properties>
 		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>

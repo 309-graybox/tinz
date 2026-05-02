@@ -69,4 +69,27 @@
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -4.71333836575 3.18133608868 1.7763568394e-15 1.0</transform>
 		</node>
 	</node>
+	<node type="NodeDummy" id="474925045" name="hearts">
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 7.27981948848 24.7103614807 -0.105658882249 1.0</transform>
+		<node type="NodeReference" id="347172888" name="pickup_magnet_heart">
+			<reference>guid://a9fbbf26971b178abd5e9af24b12c75df691d6f4</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -2.8668954247 -5.95986566249 -1.7763568394e-15 1.0</transform>
+		</node>
+		<node type="NodeReference" id="2020960769" name="pickup_magnet_heart_1">
+			<reference>guid://a9fbbf26971b178abd5e9af24b12c75df691d6f4</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 5.82581269648 -4.06579029192 0 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1838199678" name="pickup_magnet_heart_2">
+			<reference>guid://a9fbbf26971b178abd5e9af24b12c75df691d6f4</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		</node>
+		<node type="NodeReference" id="251026239" name="pickup_magnet_heart_3">
+			<reference>guid://a9fbbf26971b178abd5e9af24b12c75df691d6f4</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -4.14795082209 6.05326278267 0 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1018661012" name="pickup_magnet_heart_4">
+			<reference>guid://a9fbbf26971b178abd5e9af24b12c75df691d6f4</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0.678346678205 5.57756974953 -3.5527136788e-15 1.0</transform>
+		</node>
+	</node>
 </nodes>

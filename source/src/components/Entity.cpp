@@ -15,7 +15,8 @@ bool Entity::isInvulnerable() const noexcept
 
 bool Entity::takeDamage(const DamageInfo &damageInfo)
 {
-	const float amount = !isInf(damageInfo.amount.get()) ? _hp : damageInfo.amount;
+	const float raw_amount = damageInfo.amount.get();
+	const float amount = isInf(raw_amount) ? _hp : raw_amount;
 	const bool receivesDamage = amount > 0.0f;
 	if (isDead())
 	{
@@ -47,15 +48,48 @@ bool Entity::takeDamage(const DamageInfo &damageInfo)
 			node.deleteLater();
 	}
 
-	return !compare(old_hp, _hp);
+	bool changed = !compare(old_hp, _hp);
+
+	if (changed)
+	{
+		_eventHpChanged.run(this);
+	}
+
+	return changed;
+}
+
+bool Entity::heal(float amount)
+{
+	if (amount <= 0.0f || isDead())
+		return false;
+
+	const float old_hp = _hp;
+	_hp = clamp(_hp + amount, 0.0f, max_hp.get());
+
+	const bool changed = !compare(old_hp, _hp);
+	if (changed)
+	{
+		Log::message("%s hp healed: %.2f -> %.2f, amount: %.2f\n",
+			node->getName(), old_hp, _hp, amount);
+		_eventHpChanged.run(this);
+	}
+
+	return changed;
 }
 
 void Entity::revive()
 {
+	auto hp = _hp;
+
 	_hp = max_hp;
 	_invulnerable_until = 0.0f;
 
 	updateDeathStates();
+
+	if (compare(max_hp, hp) != 0)
+	{
+		_eventHpChanged.run(this);
+	}
 }
 
 void Entity::init()
@@ -95,9 +129,7 @@ void Entity::init()
 		auto el = param;
 
 		param->material = mat;
-		vec4 v = mat->getParameterFloat4(param->param);
-		vec4 dv = param->death_value;
-		param->init_value = v;
+		param->init_value = mat->getParameterFloat4(param->param);
 
 		_matFloatParams.append(param);
 	}
@@ -107,8 +139,11 @@ void Entity::update()
 {
 	if (has_hp && isDead())
 	{
-		if (_death_time > Consts::EPS && Game::getTime() - _death_time >= deleteTimer)
+		if (deleteTimer > Consts::EPS && Game::getTime() - _death_time >= deleteTimer)
+		{
+			Log::message("[%s] Clear corpse\n", node->getName());
 			node.deleteLater();
+		}
 	}
 }
 

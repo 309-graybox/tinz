@@ -1,9 +1,13 @@
 #include "Pickup.h"
 
+#include "Entity.h"
+#include "Inventory.h"
 #include "../audio/SoundManager.h"
 
 #include <UnigineGame.h>
 #include <UnigineLog.h>
+
+#include <cstring>
 
 REGISTER_COMPONENT(Pickup)
 
@@ -161,6 +165,15 @@ float Pickup::getInteractProgress01() const noexcept
 	return clamp(_interact_timer / (float)interactHoldTime, 0.0f, 1.0f);
 }
 
+bool Pickup::canBePickedUp(const NodePtr &player) const
+{
+	if (strcmp(typeId.get(), "health") != 0)
+		return true;
+
+	auto entity = ComponentSystem::get()->getComponent<Entity>(player);
+	return entity && entity->isAlive() && entity->getHP() < entity->getMaxHP() - Consts::EPS;
+}
+
 void Pickup::pickUp(const NodePtr &player)
 {
 	if (!canBePickedUp(player))
@@ -174,6 +187,15 @@ void Pickup::pickUp(const NodePtr &player)
 	}
 
 	const int amount = (int)count;
+	if (strcmp(typeId.get(), "health") == 0)
+	{
+		if (auto entity = ComponentSystem::get()->getComponent<Entity>(player))
+			entity->heal((float)amount);
+	} else if (auto inventory = ComponentSystem::get()->getComponent<Inventory>(player))
+	{
+		inventory->addItem(typeId.get(), amount);
+	}
+
 	onPickedUp(player, amount);
 	_event_picked_up.run(player, amount);
 

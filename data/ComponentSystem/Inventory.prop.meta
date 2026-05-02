@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>300d29fd5f327e8c7a0f4614d4125d93570eeeff</guid>
+	<type>property</type>
+	<hash>772534323412a5de3d2f3d99d637f48712bd43cf761c9a2b27e096dcef433a22</hash>
+	<runtimes>
+		<runtime id="300d29fd5f327e8c7a0f4614d4125d93570eeeff" name="Inventory" link="0" type="4"/>
+	</runtimes>
+</asset>

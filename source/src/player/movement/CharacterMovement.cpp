@@ -123,8 +123,7 @@ void CharacterMovement::update()
 	if (_is_grounded)
 	{
 		_horizontal_velocity = desired_horizontal;
-	}
-	else if (length2(desired_horizontal) > Consts::EPS)
+	} else if (length2(desired_horizontal) > Consts::EPS)
 	{
 		// Airborne with input — gradually steer toward the desired direction
 		// without snapping. Preserves momentum from the previous state (e.g.,
@@ -241,8 +240,7 @@ void CharacterMovement::update()
 				// surface in front of the step before the player has time
 				// to walk forward onto the step's top.
 				_post_climb_flag.stamp();
-			}
-			else
+			} else
 			{
 				// Force grounded for downstream consumers (state machine,
 				// animation, jump coyote) — the lift is the player's "ground".
@@ -264,8 +262,7 @@ void CharacterMovement::update()
 			if (_walkable_grounded || target_reached || timeout)
 			{
 				_descending = false;
-			}
-			else
+			} else
 			{
 				// Force grounded — the descent IS the player's ground motion.
 				_is_grounded = true;
@@ -289,9 +286,7 @@ void CharacterMovement::update()
 	// SLIDE↔MOVE (capsule's lower hemisphere intermittently loses the flat
 	// contact while still touching the slope).
 	bool slide_suppressed = _walkable_flag.isFresh(slideEntryDelay);
-	_on_steep_slope = !_walkable_grounded
-				   && (_steep_slope_normal != vec3_zero)
-				   && !slide_suppressed;
+	_on_steep_slope = !_walkable_grounded && (_steep_slope_normal != vec3_zero) && !slide_suppressed;
 	if (_on_steep_slope)
 		_steep_slope_normal = normalizeValid(_steep_slope_normal);
 	else
@@ -312,12 +307,7 @@ void CharacterMovement::update()
 	//   ago — intentional jumps off cliffs aren't snapped down.
 	// - !_post_climb_flag.isFresh: don't tug back down right after climbing.
 	// - !_climbing && !_descending: don't fight ongoing vertical adjustments.
-	if (!_is_grounded
-		&& _vertical_speed <= 0.0f
-		&& _grounded_flag.isFresh(coyoteTime)
-		&& !_post_climb_flag.isFresh(0.3f)
-		&& !_climbing
-		&& !_descending)
+	if (!_is_grounded && _vertical_speed <= 0.0f && _grounded_flag.isFresh(coyoteTime) && !_post_climb_flag.isFresh(0.3f) && !_climbing && !_descending)
 	{
 		_body->setTransform(_world_transform);
 		Vec3 origin = _shape->getBottomCap();
@@ -364,8 +354,7 @@ void CharacterMovement::update()
 		// the player is descending/standing and was on ground a moment ago,
 		// keep the animation in "grounded" state. Cleared on jump (the flag
 		// is reset there), so falling/jumping still shows airborne anim.
-		bool is_grounded = _is_grounded
-						|| (_vertical_speed <= 0.0f && _grounded_flag.isFresh(groundedAnimCoyote));
+		bool is_grounded = _is_grounded || (_vertical_speed <= 0.0f && _grounded_flag.isFresh(groundedAnimCoyote));
 		bool is_idle = !is_moving && !is_spinting && !is_sliding && is_grounded;
 		_anim->setParamBool("is_moving", is_moving);
 		_anim->setParamBool("is_sprinting", is_spinting);
@@ -382,8 +371,7 @@ void CharacterMovement::update()
 		// and shrinking the capsule lifts its bottom — once shrunk it's even
 		// less likely to contact ground next frame, producing a fall/run/fall
 		// loop. Coyote-grace prevents that.
-		bool stable_grounded = _is_grounded
-							|| (_vertical_speed <= 0.0f && _grounded_flag.isFresh(groundedAnimCoyote));
+		bool stable_grounded = _is_grounded || (_vertical_speed <= 0.0f && _grounded_flag.isFresh(groundedAnimCoyote));
 		_shape->setHeight(_shape_height * (stable_grounded ? 1.0f : fall_scale));
 	}
 }
@@ -416,7 +404,6 @@ void CharacterMovement::applyDamageKnockback(const Vec3 &source_position)
 
 	if (horizontal_speed <= 0.0f || duration <= 0.0f)
 	{
-		Log::message("Damage knockback skipped: speed %.2f, duration %.2f\n", horizontal_speed, duration);
 		return;
 	}
 
@@ -432,16 +419,12 @@ void CharacterMovement::applyDamageKnockback(const Vec3 &source_position)
 	direction = normalizeValid(direction);
 	if (direction == vec3_zero)
 	{
-		Log::message("Damage knockback skipped: zero direction\n");
 		return;
 	}
 
 	_damage_knockback_velocity = Vec3(direction) * Scalar(horizontal_speed);
 	_damage_knockback_timer = duration;
 	_damage_knockback_duration = duration;
-
-	Log::message("Damage knockback applied: direction %.2f %.2f %.2f, speed %.2f, duration %.2f\n",
-		direction.x, direction.y, direction.z, horizontal_speed, duration);
 }
 
 Unigine::Math::vec3 CharacterMovement::get_ground_normal() const
@@ -560,8 +543,7 @@ void CharacterMovement::resolve_collisions(float ifps)
 					_walkable_grounded = true;
 					if (_vertical_speed > 0.0f)
 						_vertical_speed *= 0.3f;
-				}
-				else
+				} else
 				{
 					// Slidable. Distinguish a real slope (motion glides along
 					// the surface, normal_speed ≈ 0) from a stair-corner edge
@@ -572,15 +554,13 @@ void CharacterMovement::resolve_collisions(float ifps)
 					if (normal_speed >= 0.0f)
 					{
 						_steep_slope_normal += normal;
-					}
-					else
+					} else
 					{
 						_hit_wall = true;
 						_hit_wall_normal += normal;
 					}
 				}
-			}
-			else if (normal_speed < 0.0f)
+			} else if (normal_speed < 0.0f)
 			{
 				// Side/wall contact pushing back against horizontal motion —
 				// candidate for auto-stepping over a low obstacle.

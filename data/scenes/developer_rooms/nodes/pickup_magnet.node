@@ -8,7 +8,7 @@
 				<parameter name="mode">1</parameter>
 				<parameter name="range">7</parameter>
 				<parameter name="magnetSpeed">10</parameter>
-				<parameter name="typeId">0</parameter>
+				<parameter name="typeId">soul</parameter>
 				<parameter name="stackable">1</parameter>
 				<parameter name="soundPickedUp">pickup</parameter>
 			</property>

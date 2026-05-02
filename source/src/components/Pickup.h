@@ -54,7 +54,7 @@ public:
 	void pickUp(const Unigine::NodePtr &player); // immediate (Instant mode or end of Magnet/Interact)
 
 	// Subclass extension (GoldPickup, AmmoPickup, ...)
-	virtual bool canBePickedUp(const Unigine::NodePtr &player) const { return true; }
+	virtual bool canBePickedUp(const Unigine::NodePtr &player) const;
 
 	// External subscribers (HUD, sound, inventory)
 	Unigine::EventInvoker<Unigine::NodePtr, int> &eventPickedUp() noexcept { return _event_picked_up; }

@@ -54,10 +54,12 @@ public:
 	bool isInvulnerable() const noexcept;
 	float getHP() const noexcept { return _hp; }
 	float getMaxHP() const noexcept { return max_hp; }
+	bool heal(float amount);
 	void kill() { takeDamage(makeDamageInfo(node, "selfharm", Unigine::Math::Consts::INF)); }
 	void revive(); // restores _hp to max_hp; safe to call regardless of state
 
-	Unigine::EventInvoker<Entity *> &eventDied() noexcept { return _event_died; }
+	Unigine::Event<Entity *> &hpChanged() noexcept { return _eventHpChanged; }
+	Unigine::Event<Entity *> &eventDied() noexcept { return _event_died; }
 
 private:
 	void init();
@@ -76,6 +78,8 @@ private:
 	float _init_damping = 0.0f;
 	float _init_mass = 0.0f;
 	float _death_time = 0.0f;
+
+	Unigine::EventInvoker<Entity *> _eventHpChanged;
 	Unigine::EventInvoker<Entity *> _event_died;
 
 	Unigine::Vector<Unigine::NodePtr> _enableOnDeath;

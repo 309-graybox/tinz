@@ -28,6 +28,7 @@
 					</value>
 				</parameter>
 				<parameter name="behavior">2</parameter>
+				<parameter name="attackDamage">25</parameter>
 			</property>
 		</properties>
 		<transform>1 0 0 0.0 0 0.999999880791 0 0.0 0 0 0.999999880791 0.0 0 0 0 1.0</transform>

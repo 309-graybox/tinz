@@ -96,6 +96,8 @@ void PlayerInteraction::update()
 		const float dist = (float)length(p_node->getWorldPosition() - player_pos);
 		if (dist > p->range)
 			continue;
+		if (!p->canBePickedUp(node))
+			continue;
 
 		switch (p->getMode())
 		{
@@ -153,6 +155,8 @@ Pickup *PlayerInteraction::resolveFocus() const
 		if (!p || !p->isReady())
 			continue;
 		if (p->getMode() != Pickup::Mode::Interact)
+			continue;
+		if (!p->canBePickedUp(node))
 			continue;
 
 		const NodePtr p_node = p->getNode();
