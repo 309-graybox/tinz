@@ -22,7 +22,7 @@ public:
 	PROP_PARAM(Float, invulnerabilityTime, 0.0f, "", "Damage immunity duration in seconds after taking damage. 0 = disabled")
 	PROP_PARAM(Toggle, persistOnDeath, false, "", "If true, the node is NOT auto-deleted on death — owner reacts via eventDied (used by the player so respawn can revive it)")
 
-	void takeDamage(const DamageInfo &damageInfo);
+	bool takeDamage(const DamageInfo &damageInfo);
 	bool isDead() const noexcept { return Unigine::Math::compare(_hp, 0.0f); }
 	bool isAlive() const noexcept { return !isDead(); }
 	bool isInvulnerable() const noexcept;

@@ -12,12 +12,13 @@ bool Entity::isInvulnerable() const noexcept
 	return Game::getTime() < _invulnerable_until;
 }
 
-void Entity::takeDamage(const DamageInfo &damageInfo)
+bool Entity::takeDamage(const DamageInfo &damageInfo)
 {
 	const bool receivesDamage = damageInfo.amount > 0.0f;
 	if (isDead() || (receivesDamage && isInvulnerable()))
-		return;
+		return false;
 
+	const float old_hp = _hp;
 	_hp = max(0.0f, _hp - damageInfo.amount);
 	if (receivesDamage)
 		_invulnerable_until = Game::getTime() + max(invulnerabilityTime.get(), 0.0f);
@@ -30,6 +31,8 @@ void Entity::takeDamage(const DamageInfo &damageInfo)
 		if (!persistOnDeath)
 			node.deleteLater();
 	}
+
+	return !compare(old_hp, _hp);
 }
 
 void Entity::revive()
