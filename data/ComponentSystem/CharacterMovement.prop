@@ -15,6 +15,7 @@
 	<parameter name="sprintTurnSpeed" type="float" tooltip="Скорость изменения направления движения во время спринта" group="Sprint">400</parameter>
 	<parameter name="stepHeight" type="float" tooltip="Максимальная выс та препятст вия, на которое персонаж может автоматически подняться">0.3</parameter>
 	<parameter name="stepClimbSpeed" type="float" title="Step Climb Speed (m/s)" tooltip="Скорость вертикального подъёма при автостеппинге. Гравитация в это время выключена, персонаж считается на земле">5</parameter>
+	<parameter name="groundSnapMinGap" type="float" title="Ground Snap Min Gap (m)" tooltip="Минимальный разрыв между низом капсулы и грунтом, при котором срабатывает прибивание к земле при спуске со ступенек. Меньшие разрывы считаются физическим шумом на стыках поверхностей и игнорируются">0.02</parameter>
 	<parameter name="slopeLimit" type="float" title="Slope Limit(degr ees)" tooltip="Максимальный угол наклона поверхности, по которой персонаж может двигаться">43</parameter>
 	<parameter name="slideMaxAngle" type="float" title="Slide Max Angle (degrees)" tooltip="Верхняя граница диапазона углов, при которых работает скольжение. Круче — поверхность считается стеной" group="Slide">70</parameter>
 	<parameter name="escapeSlideAngle" type="float" title="Escape Slide Angle (degrees)" tooltip="Гистерезис выхода: пока угол поверхности больше этого значения, скольжение продолжается" group="Slide">40</parameter>

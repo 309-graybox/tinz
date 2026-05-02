@@ -25,6 +25,7 @@
 				<parameter name="airControl">5</parameter>
 				<parameter name="sprintTurnSpeed">300</parameter>
 				<parameter name="stepHeight">0.409999996</parameter>
+				<parameter name="groundSnapMinGap">0.0500000007</parameter>
 				<parameter name="slopeLimit">44</parameter>
 				<parameter name="body">1330148965</parameter>
 				<parameter name="target">1330148965</parameter>

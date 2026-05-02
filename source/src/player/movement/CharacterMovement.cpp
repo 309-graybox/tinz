@@ -159,9 +159,9 @@ void CharacterMovement::update()
 		update_time -= adaptive_time_step;
 
 		_vertical_speed += _ctx.vertical_impulse * adaptive_time_step;
-		// Suppress gravity while auto-stepping: the climb lift handles vertical
-		// motion, and the player is treated as grounded throughout.
-		if (!_is_grounded && !_climbing)
+		// Suppress gravity while auto-stepping or descending: vertical motion
+		// is driven explicitly, and the player is treated as grounded throughout.
+		if (!_is_grounded && !_climbing && !_descending)
 			_vertical_speed -= _gravity_amount * adaptive_time_step;
 
 		// Apply gradual vertical lift before motion. Capsule rises in place
@@ -175,6 +175,23 @@ void CharacterMovement::update()
 				Scalar lift_amt = Scalar(stepClimbSpeed) * Scalar(adaptive_time_step);
 				Scalar lift = remaining < lift_amt ? remaining : lift_amt;
 				_world_transform.setColumn3(3, _world_transform.getTranslate() + Vec3(_up) * lift);
+			}
+			_vertical_speed = 0.0f;
+		}
+
+		// Apply gradual vertical drop before motion. Mirror of climb but
+		// downward — pulls capsule toward a lower walkable surface (descending
+		// stairs, stepping off curbs) without the visual "jump" of an instant
+		// snap.
+		if (_descending)
+		{
+			Scalar current_h = dot(_world_transform.getTranslate(), Vec3(_up));
+			Scalar remaining = current_h - Scalar(_descent_target_height);
+			if (remaining > Scalar(0.0))
+			{
+				Scalar drop_amt = Scalar(stepClimbSpeed) * Scalar(adaptive_time_step);
+				Scalar drop = remaining < drop_amt ? remaining : drop_amt;
+				_world_transform.setColumn3(3, _world_transform.getTranslate() - Vec3(_up) * drop);
 			}
 			_vertical_speed = 0.0f;
 		}
@@ -207,11 +224,39 @@ void CharacterMovement::update()
 			if (_walkable_grounded || target_reached || timeout)
 			{
 				_climbing = false;
+				// Suppress ground snap briefly: when we lifted to target_h
+				// the capsule is above the step but not yet over it
+				// horizontally — snap would yank it back down to the
+				// surface in front of the step before the player has time
+				// to walk forward onto the step's top.
+				_post_climb_flag.stamp();
 			}
 			else
 			{
 				// Force grounded for downstream consumers (state machine,
 				// animation, jump coyote) — the lift is the player's "ground".
+				_is_grounded = true;
+				_walkable_grounded = true;
+			}
+		}
+
+		// Update descent state. Mirror of climb: exit on walkable contact
+		// (landed on the lower surface), reaching the target height, or
+		// timeout (e.g. surface vanished under us so the descent target is
+		// no longer reachable).
+		if (_descending)
+		{
+			_descent_time += adaptive_time_step;
+			Scalar current_h = dot(_world_transform.getTranslate(), Vec3(_up));
+			bool target_reached = current_h <= Scalar(_descent_target_height) + Scalar(0.005);
+			bool timeout = _descent_time > 1.0f;
+			if (_walkable_grounded || target_reached || timeout)
+			{
+				_descending = false;
+			}
+			else
+			{
+				// Force grounded — the descent IS the player's ground motion.
 				_is_grounded = true;
 				_walkable_grounded = true;
 			}
@@ -240,6 +285,50 @@ void CharacterMovement::update()
 		_steep_slope_normal = normalizeValid(_steep_slope_normal);
 	else
 		_steep_slope_normal = _up;
+
+	// Ground snap on descent: when stepping off a small ledge or running
+	// down stairs, the capsule briefly free-falls between the surface it
+	// just left and the one below. Without it that's several frames of
+	// airborne state and a visible fall animation. Instead of teleporting
+	// the capsule down (instant jolt and visible "skipping" between steps),
+	// queue a gradual descent — substep loop pulls capsule down at
+	// stepClimbSpeed while keeping it grounded.
+	//
+	// Gated by:
+	// - !_is_grounded: only when we lost contact this frame.
+	// - _vertical_speed <= 0: only when falling, never during a jump.
+	// - _grounded_flag.isFresh(coyoteTime): only if we were grounded a moment
+	//   ago — intentional jumps off cliffs aren't snapped down.
+	// - !_post_climb_flag.isFresh: don't tug back down right after climbing.
+	// - !_climbing && !_descending: don't fight ongoing vertical adjustments.
+	if (!_is_grounded
+		&& _vertical_speed <= 0.0f
+		&& _grounded_flag.isFresh(coyoteTime)
+		&& !_post_climb_flag.isFresh(0.3f)
+		&& !_climbing
+		&& !_descending)
+	{
+		_body->setTransform(_world_transform);
+		Vec3 origin = _shape->getBottomCap();
+		Scalar radius = Scalar(_shape->getRadius());
+		Scalar ray_len = radius + Scalar(stepHeight);
+		Vec3 ray_end = origin + Vec3(_gravity_direction) * ray_len;
+
+		WorldIntersectionNormalPtr hit = WorldIntersectionNormal::create();
+		auto obj = World::getIntersection(origin, ray_end, groundCheckIntersectionMask, {body}, hit);
+		if (obj && dot(hit->getNormal(), _up) > _slope_cos)
+		{
+			Scalar gap = length(hit->getPoint() - origin) - radius;
+			if (gap > Scalar(groundSnapMinGap))
+			{
+				Scalar current_h = dot(_world_transform.getTranslate(), Vec3(_up));
+				_descending = true;
+				_descent_target_height = toFloat(current_h - gap);
+				_descent_time = 0.0f;
+				_vertical_speed = 0.0f;
+			}
+		}
+	}
 
 	target->setWorldTransform(_world_transform);
 	body->setWorldTransform(target->getWorldTransform());
@@ -470,6 +559,16 @@ void CharacterMovement::try_auto_step(const Mat4 &pre_motion, const Vec3 &horiz_
 	}
 	if (length2(step_dir) < Consts::EPS)
 		step_dir = Vec3(normalizeValid(vec3(motion_horiz)));
+
+	// Skip auto-step if the player is moving nearly tangent to the wall.
+	// Otherwise capsule bumps the wall corner with a tiny perpendicular
+	// component, climb engages, but lifting + 1s timeout completes before
+	// the slow horizontal approach actually reaches the step's top — capsule
+	// falls back, hits the wall again, climb engages again. Cycle.
+	// Threshold: cos(angle from perpendicular) >= 0.2 (~78° max approach).
+	Scalar motion_perp = dot(motion_horiz, step_dir);
+	if (motion_perp < motion_dist * Scalar(0.2))
+		return;
 
 	// Probe at least far enough that the capsule's center clears the wall
 	// (one radius), but never less than the substep's intended motion. This

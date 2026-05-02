@@ -40,6 +40,7 @@ public:
 	PROP_GROUP("");
 	PROP_PARAM(Float, stepHeight, 0.3f, "", "Максимальная выс та препятст вия, на которое персонаж может автоматически подняться");
 	PROP_PARAM(Float, stepClimbSpeed, 5.0f, "Step Climb Speed (m/s)", "Скорость вертикального подъёма при автостеппинге. Гравитация в это время выключена, персонаж считается на земле");
+	PROP_PARAM(Float, groundSnapMinGap, 0.02f, "Ground Snap Min Gap (m)", "Минимальный разрыв между низом капсулы и грунтом, при котором срабатывает прибивание к земле при спуске со ступенек. Меньшие разрывы считаются физическим шумом на стыках поверхностей и игнорируются");
 	PROP_PARAM(Float, slopeLimit, 43.0f, "Slope Limit(degr ees)", "Максимальный угол наклона поверхности, по которой персонаж может двигаться");
 
 	PROP_GROUP("Slide");
@@ -116,11 +117,15 @@ private:
 	bool _climbing = false;
 	float _climb_target_height = 0.0f;
 	float _climb_time = 0.0f;
+	bool _descending = false;
+	float _descent_target_height = 0.0f;
+	float _descent_time = 0.0f;
 	float _max_below_slope_dot = 0.0f;
 	Unigine::Math::vec3 _steep_slope_normal = Unigine::Math::vec3_up;
 	bool _adaptive_jump_pending = false;
 	TimedFlag _grounded_flag;
 	TimedFlag _walkable_flag;
+	TimedFlag _post_climb_flag;
 
 	float _shape_height = 0.0f;
 	Unigine::AnimScriptPtr _anim;
