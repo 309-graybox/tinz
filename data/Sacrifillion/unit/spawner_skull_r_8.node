@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="NodeDummy" id="37087359" name="spawner_skull_r_8">
+		<properties>
+			<property parent="113b9cb4e976b043172f1f5397c1cf3a69acb245" guid="2657ca6cb21d144b5338bcddfb59834dd798e3cb">
+				<parameter name="cooldown">15</parameter>
+				<parameter name="spawnPoint">37087359</parameter>
+				<parameter name="spawnNodes">
+					<value index="0">guid://6f46f804ae281cea9a49aa8441ba53b78396a6e0</value>
+					<value index="1">guid://6f46f804ae281cea9a49aa8441ba53b78396a6e0</value>
+					<value index="2">guid://6f46f804ae281cea9a49aa8441ba53b78396a6e0</value>
+					<value index="3">guid://6f46f804ae281cea9a49aa8441ba53b78396a6e0</value>
+					<value index="4">guid://6f46f804ae281cea9a49aa8441ba53b78396a6e0</value>
+					<value index="5">guid://6f46f804ae281cea9a49aa8441ba53b78396a6e0</value>
+					<value index="6">guid://6f46f804ae281cea9a49aa8441ba53b78396a6e0</value>
+					<value index="7">guid://6f46f804ae281cea9a49aa8441ba53b78396a6e0</value>
+					<value index="8">guid://6f46f804ae281cea9a49aa8441ba53b78396a6e0</value>
+					<value index="9">guid://aae51217b7811fd877847eba16a39a448b5ddd85</value>
+				</parameter>
+			</property>
+		</properties>
+		<transform>0.999992847443 9.28194931475e-05 0.00378637970425 0.0 9.2807749752e-05 0.998799145222 -0.0489953793585 0.0 -0.00378638016991 0.0489953719079 0.998791873455 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

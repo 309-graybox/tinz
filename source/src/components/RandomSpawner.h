@@ -14,7 +14,7 @@ public:
 	PROP_PARAM(Float, cooldown, 5.0f, "", "Seconds between spawn attempts")
 	PROP_PARAM(Toggle, cooldownAfterDeathOnly, true, "", "If true, next cooldown starts only after spawned entity dies")
 	PROP_PARAM(Node, spawnPoint, "", "Spawn Point", "World position for spawned node")
-	PROP_ARRAY(Node, spawnNodes)
+	PROP_ARRAY(File, spawnNodes)
 
 private:
 	void init();

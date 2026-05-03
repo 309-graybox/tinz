@@ -3,6 +3,7 @@
 #include "Pickup.h"
 
 #include <UnigineGame.h>
+#include <UnigineGui.h>
 #include <UnigineInput.h>
 #include <UnigineWorld.h>
 #include <UnigineLog.h>
@@ -16,6 +17,9 @@ using namespace Unigine::Math;
 
 void PlayerInteraction::init()
 {
+	_gui = Gui::getCurrent();
+	ensureInteractPrompt();
+
 	const float side = (float)scanRadius * 2.0f;
 	_trigger = WorldTrigger::create(vec3(side));
 	_trigger->setName("PlayerInteractionTrigger");
@@ -57,6 +61,13 @@ void PlayerInteraction::init()
 
 void PlayerInteraction::shutdown()
 {
+	hideInteractPrompt();
+	if (_interact_prompt)
+	{
+		_interact_prompt.deleteLater();
+		_interact_prompt.clear();
+	}
+
 	if (_trigger)
 	{
 		_trigger.deleteLater();
@@ -126,6 +137,7 @@ void PlayerInteraction::update()
 	}
 
 	updateHover(resolveFocus());
+	updateInteractPrompt(resolveInteractCandidate());
 	handleInteractInput();
 }
 
@@ -159,6 +171,41 @@ Interactable *PlayerInteraction::resolveFocus() const
 {
 	Interactable *hit = raycastFocus();
 	return canFocus(hit) ? hit : nullptr;
+}
+
+Interactable *PlayerInteraction::resolveInteractCandidate() const
+{
+	Interactable *best = nullptr;
+	float best_dist2 = Consts::INF;
+
+	for (int i = 0; i < _in_range.size(); ++i)
+	{
+		Interactable *interactable = _in_range[i];
+		if (!interactable || !interactable->isEnabled())
+			continue;
+		if (!interactable->isInteractionReady() && !interactable->isInteracting())
+			continue;
+
+		const bool was_in_range = _range_interactables.find(interactable) != _range_interactables.end();
+		const bool in_range = was_in_range ? shouldKeepInteractRange(interactable) : isInInteractRange(interactable);
+		if (!in_range)
+			continue;
+		if (!interactable->canInteract(node))
+			continue;
+
+		const NodePtr i_node = interactable->getNode();
+		if (!i_node)
+			continue;
+
+		const float dist2 = (float)length2(i_node->getWorldPosition() - node->getWorldPosition());
+		if (dist2 < best_dist2)
+		{
+			best_dist2 = dist2;
+			best = interactable;
+		}
+	}
+
+	return best;
 }
 
 Interactable *PlayerInteraction::raycastFocus() const
@@ -299,7 +346,7 @@ void PlayerInteraction::handleInteractInput()
 			std::sort(_in_range.begin(), _in_range.end(), [np](const Interactable *a, const Interactable *b) {
 				auto da = distance2(a->getNode()->getWorldPosition(), np);
 				auto db = distance2(b->getNode()->getWorldPosition(), np);
-				return da > db;
+				return da < db;
 			});
 
 			_in_range[0]->startInteract(node);
@@ -308,6 +355,57 @@ void PlayerInteraction::handleInteractInput()
 			Log::message("No iteractables in range\n");
 		}
 	}
+}
+
+void PlayerInteraction::ensureInteractPrompt()
+{
+	if (_interact_prompt)
+		return;
+	if (!_gui)
+		_gui = Gui::getCurrent();
+	if (!_gui)
+		return;
+
+	_interact_prompt = WidgetLabel::create(_gui, "");
+	if (!_interact_prompt)
+		return;
+
+	_interact_prompt->setFontSize(24);
+	_interact_prompt->setPosition(0, -48);
+	_interact_prompt->setHidden(true);
+	_gui->addChild(_interact_prompt, Gui::ALIGN_CENTER);
+}
+
+void PlayerInteraction::updateInteractPrompt(Interactable *candidate)
+{
+	ensureInteractPrompt();
+	if (!_interact_prompt)
+		return;
+
+	if (!candidate)
+	{
+		hideInteractPrompt();
+		return;
+	}
+
+	const char *custom = candidate->interactPromptText.get();
+	String text;
+	if (custom && custom[0] != '\0')
+	{
+		text = custom;
+	} else
+	{
+		text = ((float)candidate->interactHoldTime > Consts::EPS) ? "Hold Interact" : "Interact";
+	}
+
+	_interact_prompt->setText(text.get());
+	_interact_prompt->setHidden(false);
+}
+
+void PlayerInteraction::hideInteractPrompt()
+{
+	if (_interact_prompt)
+		_interact_prompt->setHidden(true);
 }
 
 void PlayerInteraction::onTriggerEnter(const Unigine::NodePtr &n)

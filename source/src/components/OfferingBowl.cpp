@@ -12,6 +12,7 @@
 #include <UniginePlayers.h>
 #include <UniginePtr.h>
 #include <UnigineWidgets.h>
+#include <cstring>
 
 REGISTER_COMPONENT(OfferingBowl)
 
@@ -56,6 +57,10 @@ void OfferingBowl::init()
 	_drain_timer = 0.0f;
 	_draining = false;
 	_was_filled = isFilled();
+	_has_soul_requirement = getRequiredByType("soul") > 0;
+
+	ensureSoulProgressUi();
+	updateSoulProgressUi();
 
 	FLOGERR(playerEnd, "NO PLAYER_END");
 	FLOGERR(head, "no head");
@@ -83,6 +88,7 @@ void OfferingBowl::update()
 
 
 	updateFlights(dt);
+	updateSoulProgressUi();
 
 	if (!_draining)
 		return;
@@ -122,6 +128,13 @@ void OfferingBowl::update()
 			break;
 		}
 	}
+}
+
+void OfferingBowl::shutdown()
+{
+	_label.deleteLater();
+
+	shutdownSoulProgressUi();
 }
 
 bool OfferingBowl::canInteract(const NodePtr &interactor) const
@@ -349,6 +362,95 @@ int OfferingBowl::getTotalDeposited() const
 	for (int i = 0; i < _requirements_state.size(); ++i)
 		total += clamp(_requirements_state[i].deposited, 0, _requirements_state[i].required);
 	return total;
+}
+
+int OfferingBowl::getRequiredByType(const char *type_id) const
+{
+	if (!type_id || !*type_id)
+		return 0;
+
+	int total = 0;
+	for (int i = 0; i < _requirements_state.size(); ++i)
+	{
+		const RequirementState &req = _requirements_state[i];
+		if (strcmp(req.type_id.get(), type_id) == 0)
+			total += max(req.required, 0);
+	}
+	return total;
+}
+
+int OfferingBowl::getDepositedByType(const char *type_id) const
+{
+	if (!type_id || !*type_id)
+		return 0;
+
+	int total = 0;
+	for (int i = 0; i < _requirements_state.size(); ++i)
+	{
+		const RequirementState &req = _requirements_state[i];
+		if (strcmp(req.type_id.get(), type_id) == 0)
+			total += clamp(req.deposited, 0, req.required);
+	}
+	return total;
+}
+
+void OfferingBowl::ensureSoulProgressUi()
+{
+	if (!_has_soul_requirement || _soul_progress_label)
+		return;
+
+	_gui = Gui::getCurrent();
+	if (!_gui)
+		return;
+
+	_soul_progress_label = WidgetLabel::create(_gui, "");
+	if (!_soul_progress_label)
+		return;
+
+	_soul_progress_label->setFont(font);
+	_soul_progress_label->setFontSize(fontSize);
+	_soul_progress_label->setHidden(true);
+	_gui->addChild(_soul_progress_label, Gui::ALIGN_CENTER | Gui::ALIGN_RIGHT);
+}
+
+void OfferingBowl::updateSoulProgressUi()
+{
+	if (!_has_soul_requirement)
+		return;
+
+	ensureSoulProgressUi();
+	if (!_soul_progress_label)
+		return;
+
+	const int required = getRequiredByType("soul");
+	if (required <= 0)
+	{
+		_soul_progress_label->setHidden(true);
+		return;
+	}
+
+	const bool visible = _draining || isInRange();
+	if (!visible)
+	{
+		_soul_progress_label->setHidden(true);
+		return;
+	}
+
+	const int deposited = clamp(getDepositedByType("soul"), 0, required);
+	String text = String::format("SOUL %d/%d", deposited, required);
+
+	_soul_progress_label->setText(text.get());
+	_soul_progress_label->setHidden(false);
+}
+
+void OfferingBowl::shutdownSoulProgressUi()
+{
+	if (_soul_progress_label)
+	{
+		_soul_progress_label.deleteLater();
+		_soul_progress_label.clear();
+	}
+	_gui.clear();
 }
 
 void OfferingBowl::end(float dt)

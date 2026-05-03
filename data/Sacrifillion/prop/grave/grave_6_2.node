@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <nodes version="2.21.0.0">
 	<node type="NodeDummy" id="378872233" name="grave_6_2">
-		<transform>1 5.55111512313e-17 0 0.0 5.55111512313e-17 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		<transform>1 5.55111512313e-17 0 0.0 5.55111512313e-17 1 0 0.0 0 0 1 0.0 0 3.5527136788e-15 0 1.0</transform>
 		<node type="ObjectMeshStatic" id="970305189" immovable="1" name="grave_6_1">
 			<mesh_name>guid://b3cbc23d3cc524273be66aa38079a1872e0c1e9d</mesh_name>
 			<surface name="TombMainMat" intersection="1" collision="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+			<body type="BodyDummy" id="1764423358" frozen="0">
+				<shape type="ShapeBox" id="293387526" name="ShapeBox" transform="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.781819761 1">
+					<size>1.24716103 1.04374897 1.56363952</size>
+				</shape>
+			</body>
 			<transform>0.999999940395 0 0 0.0 0 0.999999940395 0 0.0 0 0 1.00000011921 0.0 -0.000413760493545 4.70457542484e-05 -1.25841122569 1.0</transform>
 		</node>
 		<node type="ObjectMeshStatic" id="1195098143" immovable="1" name="gold_cross">

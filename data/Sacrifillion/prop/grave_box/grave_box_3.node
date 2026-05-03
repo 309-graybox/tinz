@@ -4,12 +4,22 @@
 		<mesh_name>guid://d944d6c3c0cf959b97c311e4cdecd7c6c757dde2</mesh_name>
 		<surface name="Stone" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
 		<surface name="CoffinInner" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+		<body type="BodyDummy" id="1330384529" frozen="0">
+			<shape type="ShapeBox" id="600421305" name="ShapeBox" transform="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.236700267 1">
+				<size>2.62789154 0.972062051 0.473400533</size>
+			</shape>
+		</body>
 		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 		<node type="ObjectMeshStatic" id="1790494338" immovable="1" name="grave_box_cup_3">
 			<mesh_name>guid://2e4af84d2ffc91ac3f1181b8a1c773150a0def73</mesh_name>
 			<surface name="Stone" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
 			<surface name="CoffinInner" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
 			<surface name="GoldMat" intersection="1" material="211b3ea402522afccf88fe4ec86c53810b25a583"/>
+			<body type="BodyDummy" id="2101507772" frozen="0">
+				<shape type="ShapeBox" id="2019150276" name="ShapeBox" transform="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.135687709 1">
+					<size>2.60159588 0.938221633 0.271375299</size>
+				</shape>
+			</body>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.011668281479 0.000151197310004 0.461452228811 1.0</transform>
 		</node>
 	</node>

@@ -4,12 +4,22 @@
 		<mesh_name>guid://8370abad546abc6e06b239b6b34086564b7edb64</mesh_name>
 		<surface name="Wood" intersection="1" material="4202624b26ca597ccf39165e0d032e1a43378981"/>
 		<surface name="LightWood" intersection="1" material="4202624b26ca597ccf39165e0d032e1a43378981"/>
-		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		<body type="BodyDummy" id="1110156067" frozen="0">
+			<shape type="ShapeBox" id="1538565515" name="ShapeBox" transform="1 0 0 0 0 1 0 0 0 0 1 0 -0.192823708 -3.57627869e-07 0.258761346 1">
+				<size>2.47713137 1.06006837 0.53670156</size>
+			</shape>
+		</body>
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 3.10862446895e-15 1.0</transform>
 		<node type="ObjectMeshStatic" id="1024584964" immovable="1" name="grave_box_cup_6">
 			<mesh_name>guid://fcbee4476ccba347ee1ad5aab0d4aabfa2b8901d</mesh_name>
 			<surface name="CrossWood" enabled="0" intersection="1" material="4202624b26ca597ccf39165e0d032e1a43378981"/>
 			<surface name="DarkWood_v2" intersection="1" material="4202624b26ca597ccf39165e0d032e1a43378981"/>
 			<surface name="LightWood" intersection="1" material="4202624b26ca597ccf39165e0d032e1a43378981"/>
+			<body type="BodyDummy" id="1779510822" frozen="0">
+				<shape type="ShapeBox" id="153337198" name="ShapeBox" transform="1 0 0 0 0 1 0 0 0 0 1 0 -0.189485371 -5.96046448e-07 0.0623495989 1">
+					<size>2.46969271 1.0564903 0.17306757</size>
+				</shape>
+			</body>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0.00187253917689 -0.00381186538 0.520434998363 1.0</transform>
 		</node>
 	</node>

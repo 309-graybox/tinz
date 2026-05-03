@@ -4,6 +4,11 @@
 		<mesh_name>guid://d944d6c3c0cf959b97c311e4cdecd7c6c757dde2</mesh_name>
 		<surface name="Stone" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
 		<surface name="CoffinInner" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+		<body type="BodyDummy" id="491954163" frozen="0">
+			<shape type="ShapeBox" id="211022939" name="ShapeBox" transform="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.236700267 1">
+				<size>2.62789154 0.972062051 0.473400533</size>
+			</shape>
+		</body>
 		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 	</node>
 </nodes>

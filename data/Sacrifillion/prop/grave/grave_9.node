@@ -4,6 +4,11 @@
 		<mesh_name>guid://be37ea8367d344909b75aca42139b57fbef192a2</mesh_name>
 		<surface name="Stone" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
 		<surface name="LightMineral_v2" intersection="1" material="211b3ea402522afccf88fe4ec86c53810b25a583"/>
-		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		<body type="BodyDummy" id="1683429450" frozen="0">
+			<shape type="ShapeBox" id="1471283730" name="ShapeBox" transform="1 0 0 0 0 1 0 0 0 0 1 0 -0.133892953 -0.00706270337 0.0959320515 1">
+				<size>2.66037846 0.931672931 0.191864103</size>
+			</shape>
+		</body>
+		<transform>1 0 -3.46944695195e-18 0.0 3.42607886505e-17 1 -1.38777878078e-17 0.0 -1.73472347598e-18 1.38777878078e-17 1 0.0 -7.1054273576e-15 0 0 1.0</transform>
 	</node>
 </nodes>

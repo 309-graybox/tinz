@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>09cfcd0459ca27719512ddd7b1ea18791b43bfcf</guid>
+	<type>property</type>
+	<hash>25165efb1d9c8a8107f4b94b4ee9124052dc85f627f02cca93c92baceb43793c</hash>
+	<runtimes>
+		<runtime id="09cfcd0459ca27719512ddd7b1ea18791b43bfcf" name="LootDropper" link="0" type="4"/>
+	</runtimes>
+</asset>

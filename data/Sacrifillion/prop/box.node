@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="1324357226" immovable="1" trigger_interaction_enabled="1" name="box">
+		<mesh_name>guid://2193d656cb7b844ef94d2b7741a4997cbf89e733</mesh_name>
+		<surface name="box" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+		<transform>0.999999523163 4.17238607042e-06 -0.000894030206837 0.0 4.17238697992e-06 0.9999563694 0.00933367572725 0.0 0.000894030206837 -0.00933367572725 0.999955952168 0.0 0 0 1.11022302463e-15 1.0</transform>
+	</node>
+</nodes>

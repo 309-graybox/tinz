@@ -18,6 +18,7 @@
 				<parameter name="max_hp">100</parameter>
 				<parameter name="persistOnDeath">1</parameter>
 				<parameter name="deleteTimer">10</parameter>
+				<parameter name="soundOnDamage">damage/skull</parameter>
 				<parameter name="disable_on_death">
 					<value index="0">744587920</value>
 				</parameter>
@@ -31,8 +32,21 @@
 				<parameter name="speed">16</parameter>
 				<parameter name="attackDamage">25</parameter>
 			</property>
+			<property parent="09cfcd0459ca27719512ddd7b1ea18791b43bfcf" guid="4bdfaf7c0bc74cc701b6372dc8f140db8474d39b">
+				<parameter name="drops">
+					<value index="0">
+						<parameter name="dropNode">guid://c2dd6314a90227fbecd19e73a5a0dee165218cf3</parameter>
+						<parameter name="chance">1</parameter>
+						<parameter name="maxCount">3</parameter>
+					</value>
+					<value index="1">
+						<parameter name="dropNode">guid://bc91d9c8e9b52136b1196e5d534a2e38a873a6f8</parameter>
+						<parameter name="chance">0.25</parameter>
+					</value>
+				</parameter>
+			</property>
 		</properties>
-		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		<transform>1 -8.67308798429e-19 0 0.0 1.05879118407e-22 1 0 0.0 8.29337351583e-18 2.16840434497e-19 1 0.0 0 0 4.4408920985e-16 1.0</transform>
 		<node type="ObjectParticles" id="744587920" name="ObjectParticles" update_distance_limit="200">
 			<depth_sort>1</depth_sort>
 			<clear_on_enable>1</clear_on_enable>
