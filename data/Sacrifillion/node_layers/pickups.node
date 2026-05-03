@@ -109,6 +109,7 @@
 			<properties>
 				<property parent="b03fcb358b76833a3f94e3a23ab734e56026a016" guid="8d8b6c9ab5487404fd2c178beff9d3f8c5e3fa07">
 					<parameter name="range">10</parameter>
+					<parameter name="exitRange">6</parameter>
 					<parameter name="lines">
 						<value index="0">
 							<parameter name="text">Не плачь. Лучше смешай лавандовый раф.</parameter>
@@ -163,6 +164,74 @@
 				</property>
 			</properties>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1307924899" name="box">
+			<reference>guid://be7e7109443e45b74abafa84452ce2e0bdcd980d</reference>
+			<properties>
+				<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="60e580ef1760ac456354788092d501593a99a0e4">
+					<parameter name="eventId">dialog_auf</parameter>
+					<parameter name="sample">guid://5ebac9cdbcdd340d8873a4963fe04e9dc5d8185a</parameter>
+					<parameter name="loopEventId">dialog_auf</parameter>
+				</property>
+				<property parent="b03fcb358b76833a3f94e3a23ab734e56026a016" guid="672a7d475b3c407ef990466a4d52079c9f9359eb">
+					<parameter name="range">5</parameter>
+					<parameter name="exitRange">10</parameter>
+					<parameter name="lines">
+						<value index="0">
+							<parameter name="text">Волк не ищет стаю.
+Он становится причиной, по которой стая собирается.</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="1">
+							<parameter name="text">Собаки лают на каждого.
+Волк выбирает, когда показать клыки.</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="2">
+							<parameter name="text">Волк не боится быть один.
+Он боится стать как все.</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="3">
+							<parameter name="text">Там, где другие ищут путь —
+волк его прокладывает.</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="4">
+							<parameter name="text">Слабые прячутся в стае.
+Сильный идёт вперёд — даже один.</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="5">
+							<parameter name="text">Волк не доказывает силу.
+Её либо чувствуют, либо нет.</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="6">
+							<parameter name="text">Не каждый, кто идёт рядом — твоя стая.
+Волк это понимает слишком рано.</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="7">
+							<parameter name="text">Когда становится тихо —
+волк уже принял решение.</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="8">
+							<parameter name="text">Волк не соревнуется с овцами.
+Он просто охотится.</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="9">
+							<parameter name="text">Быть одному — не слабость.
+Это фильтр.</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+					</parameter>
+					<parameter name="musicEvent">dialog_auf</parameter>
+				</property>
+			</properties>
+			<transform>-0.436664134264 -0.0013550769072 -0.89962404368 0.0 -0.000592029071412 0.999999344349 -0.00121890725848 0.0 0.899624824523 3.50526647708e-07 -0.436664577523 0.0 34.1354781431 54.8322685837 0.595494960618 1.0</transform>
 		</node>
 	</node>
 </nodes>
