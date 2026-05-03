@@ -138,7 +138,7 @@
 	<node type="NodeDummy" id="1178518142" name="HUD">
 		<properties>
 			<property parent="79d4c6ad2ecaa9e0fe6d6b78f1cd8281e7abc9b6" guid="af835e81f74a00c2deb35096b83256fabc10bcf7">
-				<parameter name="font">guid://5d45a89caa16f0e22584d277fbedbd561b8fdc8d</parameter>
+				<parameter name="font">guid://a70bf07d6f9351f4ddcf32a8893d0d83c04ca59f</parameter>
 				<parameter name="hpIcon">guid://441bd21d5070f71af46890620842055f7acb2833</parameter>
 				<parameter name="soulIcon">guid://7636b297d988af5baa361064c093278eba0806dd</parameter>
 			</property>
@@ -148,7 +148,7 @@
 	<node type="NodeDummy" id="304510821" name="dialogue_controller">
 		<properties>
 			<property parent="460e2b5772cf83c3f3b79f17ae0892083fe5a04a" guid="79b1968f1204781368edb0c24bf076de7a75b9e9">
-				<parameter name="font">guid://5d45a89caa16f0e22584d277fbedbd561b8fdc8d</parameter>
+				<parameter name="font">guid://a70bf07d6f9351f4ddcf32a8893d0d83c04ca59f</parameter>
 			</property>
 		</properties>
 		<transform>0.99999988079 0 0 0.0 0 1.00000011921 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
