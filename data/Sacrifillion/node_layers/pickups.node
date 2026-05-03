@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <nodes version="2.21.0.0">
-	<node type="NodeDummy" id="2092048788" name="group">
+	<node type="NodeDummy" id="2092048788" name="souls">
 		<transform>1.00000011921 0 0 0.0 0 1 0 0.0 0 0 1.00000017881 0.0 1.65290006746 8.51071311361 2.77108041038 1.0</transform>
 		<node type="NodeReference" id="361906363" name="red_soul">
 			<reference>guid://abe1601a80e3ae7ff9f72d81da585a1e865ad541</reference>
@@ -63,7 +63,7 @@
 			<transform>0.994814038277 -0.0143520720303 -0.100691765547 0.0 -0.00833015143871 0.975171148777 -0.221295878291 0.0 0.101367771626 0.220987036824 0.969994485378 0.0 -5.15501966812 52.5184700942 -1.28378721712 1.0</transform>
 		</node>
 	</node>
-	<node type="NodeDummy" id="329201735" name="group">
+	<node type="NodeDummy" id="329201735" name="spawners">
 		<transform>1.00000011921 0 0 0.0 0 1 0 0.0 0 0 1.00000017881 0.0 -12.9177447112 -15.3312307612 2.50846568049 1.0</transform>
 		<node type="NodeReference" id="647421698" name="spawner_skull_rg_15">
 			<reference>guid://0beedbaeed8c0496f1cafd47ecc7f7ddcb6d0ca5</reference>
@@ -99,6 +99,70 @@
 		<node type="NodeReference" id="1007746858" name="skull_enemy_view_blue">
 			<reference>guid://f8b1f26e00b455efb77248eeebfb2674aff3ae2a</reference>
 			<transform>0.999999821186 -2.96777585618e-07 0.000452820386272 0.0 -2.970064088e-07 0.999999165535 0.00131130067166 0.0 -0.000452820415376 -0.00131130067166 0.999999046326 0.0 3.06611832656 3.21298446316 -0.0456737592061 1.0</transform>
+		</node>
+	</node>
+	<node type="NodeDummy" id="1242004859" name="dialogs">
+		<transform>1.00000011921 0 0 0.0 0 1 0 0.0 0 0 1.00000011921 0.0 3.60175751345 -41.8713166547 2.76540710525 1.0</transform>
+		<node type="ObjectMeshStatic" id="1305938039" immovable="1" trigger_interaction_enabled="1" name="Box">
+			<mesh_name>guid://2193d656cb7b844ef94d2b7741a4997cbf89e733</mesh_name>
+			<surface name="box" intersection="1" material="d4c1b78e68d096cde120c6f1376c1a70e285fa8a"/>
+			<properties>
+				<property parent="b03fcb358b76833a3f94e3a23ab734e56026a016" guid="8d8b6c9ab5487404fd2c178beff9d3f8c5e3fa07">
+					<parameter name="range">10</parameter>
+					<parameter name="lines">
+						<value index="0">
+							<parameter name="text">Не плачь. Лучше смешай лавандовый раф.</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="1">
+							<parameter name="text">Возьми:</parameter>
+							<parameter name="duration">2</parameter>
+						</value>
+						<value index="2">
+							<parameter name="text">— молока — столько, сколько хватит на одно воспоминание</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="3">
+							<parameter name="text">— сливок — чтобы смягчить горечь прожитого</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="4">
+							<parameter name="text">— кофе — крепче, чем мои ошибки</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="5">
+							<parameter name="text">— сироп лаванды — пару капель, как запах забытого лета</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="6">
+							<parameter name="text">— сахар — если не боишься сделать жизнь слаще, чем она была у меня</parameter>
+							<parameter name="duration">7</parameter>
+						</value>
+						<value index="7">
+							<parameter name="text">Подогрей молоко, но не доводи до кипения —
+как чувства, которые я так и не решился сказать вслух</parameter>
+							<parameter name="duration">10</parameter>
+						</value>
+						<value index="8">
+							<parameter name="text">Влей в него кофе</parameter>
+							<parameter name="duration">2</parameter>
+						</value>
+						<value index="9">
+							<parameter name="text">Медленно</parameter>
+							<parameter name="duration">2</parameter>
+						</value>
+						<value index="10">
+							<parameter name="text">Добавь</parameter>
+							<parameter name="duration">2</parameter>
+						</value>
+						<value index="11">
+							<parameter name="text">Ээээ, я забыл</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+					</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 		</node>
 	</node>
 </nodes>
