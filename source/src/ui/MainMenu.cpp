@@ -1,6 +1,7 @@
 #include "MainMenu.h"
 #include "UnigineToolkit/ui/elements/Button.h"
 #include "UnigineToolkit/ui/elements/Slider.h"
+#include "audio/SoundManager.h"
 #include <UnigineConsole.h>
 #include <UnigineGame.h>
 #include <UnigineSounds.h>
@@ -93,6 +94,7 @@ void MainMenu::toggle_main_menu()
 	if (_mainMenuCanvas->isEnabled())
 	{
 		Game::setScale(_prevGameScale);
+		audio::SoundManager::setPaused(_prevSoundPaused);
 
 		_mainMenuCanvas->setEnabled(false);
 		Input::setMouseHandle(Input::MOUSE_HANDLE_GRAB);
@@ -102,7 +104,9 @@ void MainMenu::toggle_main_menu()
 	} else
 	{
 		_prevGameScale = Game::getScale();
+		_prevSoundPaused = audio::SoundManager::isPaused();
 		Game::setScale(0.0f);
+		audio::SoundManager::setPaused(true);
 
 		_mainMenuCanvas->setEnabled(true);
 		Input::setMouseHandle(Input::MOUSE_HANDLE_SOFT);

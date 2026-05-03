@@ -158,6 +158,11 @@ bool Interactable::canInteract(const NodePtr &interactor) const
 	return interactor != nullptr;
 }
 
+float Interactable::getRangeExitDistance() const
+{
+	return range;
+}
+
 void Interactable::onRangeEntered(const NodePtr &interactor)
 {
 }

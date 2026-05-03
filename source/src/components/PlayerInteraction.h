@@ -56,6 +56,8 @@ private:
 	Interactable *raycastFocus() const;
 	bool canFocus(Interactable *interactable) const;
 	bool isInInteractRange(const Interactable *interactable) const;
+	bool shouldKeepInteractRange(const Interactable *interactable) const;
+	bool isWithinDistance(const Interactable *interactable, float distance) const;
 	void updateRange();
 	void updateHover(Interactable *next_focus);
 

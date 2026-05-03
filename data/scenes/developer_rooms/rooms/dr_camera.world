@@ -1061,6 +1061,10 @@
 					<parameter name="eventId">pickup</parameter>
 					<parameter name="sample">guid://7ad926dfbd7133596a953640f24d982399e4b123</parameter>
 				</property>
+				<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="a5eb4e27b83f47c8a116e2da034f6d0d3a3a81ca">
+					<parameter name="eventId">strange_dialogue</parameter>
+					<parameter name="sample">guid://4bef50a71ab374a1aff9cf881921512b52b78667</parameter>
+				</property>
 			</properties>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 		</node>
@@ -1084,9 +1088,50 @@
 			<mesh_name>guid://209252c0ae5bc8c3c340e5908fc4f18ddcdbd53f</mesh_name>
 			<surface name="box" intersection="1" intersection_mask="0x10000000" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
 			<properties>
-				<property parent="239a3c2f25d64246c5e6bce1c630a0ae1ca9462a" guid="33bd6f6e45622c799991cdbec0aa445f9043f695">
-					<parameter name="range">4</parameter>
-					<parameter name="interactPromptText">Gay</parameter>
+				<property parent="b03fcb358b76833a3f94e3a23ab734e56026a016" guid="8de9d099ccf7460efb256f624e0674dfc8ef8fa4">
+					<parameter name="lines">
+						<value index="0">
+							<parameter name="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is the first dialogue line, short enough to appear cleanly at the bottom of the screen.</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="1">
+							<parameter name="text">Vivamus porta, neque at blandit pretium, magna erat posuere justo, non facilisis sem urna vitae nibh. The line should wrap if the label width is working.</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="2">
+							<parameter name="text">A distant voice speaks from the dark: not every door is meant to open, and not every silence is empty.</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="3">
+							<parameter name="text">Integer vitae lacus in arcu pretium tincidunt. Curabitur non massa sed ipsum gravida feugiat at quis libero.</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="4">
+							<parameter name="text">This one is intentionally longer: the old stones remember every footstep, every broken promise, every small flame carried through the rain, and every player who stood too close to a suspicious box.</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="5">
+							<parameter name="text">Suspendisse potenti. Morbi vehicula, lorem sed feugiat luctus, metus justo pharetra velit, id gravida erat mi in sapien.</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="6">
+							<parameter name="text">If this message appears after the previous one, automatic timing works. If it also keeps the music layer alive, even better.</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="7">
+							<parameter name="text">Praesent commodo, augue nec ultricies imperdiet, risus nibh fermentum elit, sit amet convallis turpis lacus vitae mi.</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="8">
+							<parameter name="text">The dialogue should not start another dialogue while this sequence is active. One speaker at a time; the abyss can wait its turn.</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="9">
+							<parameter name="text">Final test line. After five seconds this text should disappear, restore its dialogue music layer if needed, and leave the background layer alone.</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+					</parameter>
+					<parameter name="musicEvent">strange_dialogue</parameter>
 				</property>
 			</properties>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 5.82507038116 10.9167251587 0.919390221613 1.0</transform>

@@ -13,9 +13,23 @@ using namespace Unigine;
 namespace
 {
 
+constexpr const char *kDefaultMusicLayer = "music";
+
 struct Active3D
 {
 	SoundSourcePtr source;
+};
+
+struct PausedAmbient
+{
+	AmbientSourcePtr source;
+	float pitch = 1.0f;
+};
+
+struct Paused3D
+{
+	SoundSourcePtr source;
+	float pitch = 1.0f;
 };
 
 struct MusicStep
@@ -25,18 +39,34 @@ struct MusicStep
 	bool loop = false;
 };
 
+struct MusicStackEntry
+{
+	String previous_request;
+	String override_request;
+};
+
+struct MusicLayer
+{
+	AmbientSourcePtr source;
+	Vector<MusicStep> sequence;
+	int sequence_index = 0;
+	String current_request;
+	Vector<MusicStackEntry> stack;
+};
+
 struct State
 {
 	bool initialized = false;
 	bool enabled = true;
+	bool paused = false;
 
 	HashMap<String, SoundEvent> events;
 
 	Vector<AmbientSourcePtr> active_2d;
 	Vector<Active3D> active_3d;
-	AmbientSourcePtr music;
-	Vector<MusicStep> music_sequence;
-	int music_sequence_index = 0;
+	HashMap<String, MusicLayer> music_layers;
+	Vector<PausedAmbient> paused_ambient;
+	Vector<Paused3D> paused_3d;
 	float master_volume = 1;
 };
 
@@ -120,14 +150,55 @@ void apply3DSpatialization(const SoundSourcePtr &src, const SoundEvent &e)
 	src->setOcclusion(e.occlusion ? 1 : 0);
 }
 
-void stopMusicSource(State &s)
+String normalizeMusicLayer(const char *layer)
 {
-	if (!s.music)
+	return (layer && *layer) ? layer : kDefaultMusicLayer;
+}
+
+MusicLayer &getMusicLayer(State &s, const char *layer)
+{
+	return s.music_layers.get(normalizeMusicLayer(layer));
+}
+
+void stopMusicSource(MusicLayer &layer)
+{
+	if (!layer.source)
 		return;
 
-	s.music->stop();
-	s.music.deleteLater();
-	s.music.clear();
+	layer.source->stop();
+	layer.source.deleteLater();
+	layer.source.clear();
+}
+
+void stopMusicPlayback(MusicLayer &layer)
+{
+	stopMusicSource(layer);
+	layer.sequence.clear();
+	layer.sequence_index = 0;
+}
+
+void pauseAmbientSource(State &s, const AmbientSourcePtr &source)
+{
+	if (!source || source->isStopped())
+		return;
+
+	PausedAmbient rec;
+	rec.source = source;
+	rec.pitch = source->getPitch();
+	s.paused_ambient.append(rec);
+	source->setPitch(0.0f);
+}
+
+void pause3DSource(State &s, const SoundSourcePtr &source)
+{
+	if (!source || source->isStopped())
+		return;
+
+	Paused3D rec;
+	rec.source = source;
+	rec.pitch = source->getPitch();
+	s.paused_3d.append(rec);
+	source->setPitch(0.0f);
 }
 
 void appendMusicStep(Vector<MusicStep> &sequence, const SoundEvent &event, const char *event_id,
@@ -166,12 +237,12 @@ void appendResolvedMusicStep(Vector<MusicStep> &sequence, const char *event_id, 
 	appendMusicStep(sequence, *e, event_id, e->sample.get(), loop);
 }
 
-bool playMusicStep(State &s, int index)
+bool playMusicStep(MusicLayer &layer, const char *layer_name, int index)
 {
-	if (index < 0 || index >= (int)s.music_sequence.size())
+	if (index < 0 || index >= (int)layer.sequence.size())
 		return false;
 
-	const MusicStep &step = s.music_sequence[index];
+	const MusicStep &step = layer.sequence[index];
 	const SoundEvent &e = step.event;
 	const float gain = resolveGain(e);
 	if (gain <= 0.0f)
@@ -191,32 +262,34 @@ bool playMusicStep(State &s, int index)
 	as->play();
 
 	Log::message(
-		"SoundManager::playMusic: step %d/%d event=\"%s\" sample=\"%s\" loop=%d gain=%.3f mask=0x%08x\n",
-		index + 1, (int)s.music_sequence.size(), step.event_id.get(), e.sample.get(),
-		step.loop ? 1 : 0, gain, e.source_mask);
+		"SoundManager::playMusicLayer: layer=\"%s\" step %d/%d event=\"%s\" sample=\"%s\" loop=%d gain=%.3f mask=0x%08x\n",
+		layer_name ? layer_name : "", index + 1, (int)layer.sequence.size(),
+		step.event_id.get(), e.sample.get(), step.loop ? 1 : 0, gain, e.source_mask);
 
-	s.music = as;
-	s.music_sequence_index = index;
+	layer.source = as;
+	layer.sequence_index = index;
 	return true;
 }
 
-void playNextMusicStep(State &s)
+void playNextMusicStep(MusicLayer &layer, const char *layer_name)
 {
-	const int previous_index = s.music_sequence_index;
-	stopMusicSource(s);
+	const int previous_index = layer.sequence_index;
+	stopMusicSource(layer);
 
-	for (int i = s.music_sequence_index + 1; i < (int)s.music_sequence.size(); ++i)
+	for (int i = layer.sequence_index + 1; i < (int)layer.sequence.size(); ++i)
 	{
-		Log::message("SoundManager::playMusic: step %d finished, switching to step %d\n",
-			previous_index + 1, i + 1);
-		if (playMusicStep(s, i))
+		Log::message(
+			"SoundManager::playMusicLayer: layer=\"%s\" step %d finished, switching to step %d\n",
+			layer_name ? layer_name : "", previous_index + 1, i + 1);
+		if (playMusicStep(layer, layer_name, i))
 			return;
 	}
 
-	if (!s.music_sequence.empty())
-		Log::message("SoundManager::playMusic: sequence finished\n");
-	s.music_sequence.clear();
-	s.music_sequence_index = 0;
+	if (!layer.sequence.empty())
+		Log::message("SoundManager::playMusicLayer: layer=\"%s\" sequence finished\n",
+			layer_name ? layer_name : "");
+	layer.sequence.clear();
+	layer.sequence_index = 0;
 }
 
 } // namespace
@@ -228,8 +301,10 @@ void SoundManager::init()
 	s.events.clear();
 	s.active_2d.clear();
 	s.active_3d.clear();
-	s.music_sequence.clear();
-	s.music_sequence_index = 0;
+	s.music_layers.clear();
+	s.paused = false;
+	s.paused_ambient.clear();
+	s.paused_3d.clear();
 	Unigine::Sound::setVolume(s.master_volume);
 }
 
@@ -257,10 +332,12 @@ void SoundManager::shutdown()
 	}
 	s.active_3d.clear();
 
-	if (s.music)
-		stopMusicSource(s);
-	s.music_sequence.clear();
-	s.music_sequence_index = 0;
+	for (auto &it : s.music_layers)
+		stopMusicPlayback(it.data);
+	s.music_layers.clear();
+	s.paused = false;
+	s.paused_ambient.clear();
+	s.paused_3d.clear();
 
 	s.events.clear();
 	s.initialized = false;
@@ -270,6 +347,9 @@ void SoundManager::update()
 {
 	State &s = state();
 	if (!s.initialized)
+		return;
+
+	if (s.paused)
 		return;
 
 	for (int i = (int)s.active_2d.size() - 1; i >= 0; --i)
@@ -294,8 +374,54 @@ void SoundManager::update()
 		}
 	}
 
-	if (s.music && s.music->isStopped())
-		playNextMusicStep(s);
+	for (auto &it : s.music_layers)
+	{
+		MusicLayer &layer = it.data;
+		if (layer.source && layer.source->isStopped())
+			playNextMusicStep(layer, it.key.get());
+	}
+}
+
+void SoundManager::setPaused(bool paused)
+{
+	ensureInitialized();
+	State &s = state();
+	if (s.paused == paused)
+		return;
+
+	s.paused = paused;
+	if (paused)
+	{
+		for (auto &as : s.active_2d)
+			pauseAmbientSource(s, as);
+
+		for (auto &rec : s.active_3d)
+			pause3DSource(s, rec.source);
+
+		for (auto &it : s.music_layers)
+			pauseAmbientSource(s, it.data.source);
+
+		return;
+	}
+
+	for (auto &rec : s.paused_ambient)
+	{
+		if (rec.source && !rec.source->isStopped())
+			rec.source->setPitch(rec.pitch);
+	}
+	s.paused_ambient.clear();
+
+	for (auto &rec : s.paused_3d)
+	{
+		if (rec.source && !rec.source->isStopped())
+			rec.source->setPitch(rec.pitch);
+	}
+	s.paused_3d.clear();
+}
+
+bool SoundManager::isPaused()
+{
+	return state().paused;
 }
 
 void SoundManager::registerEvent(const char *id, const SoundEvent &event)
@@ -419,55 +545,137 @@ void SoundManager::playOnNode(const char *id_or_path, const NodePtr &node)
 
 void SoundManager::playMusic(const char *id_or_path)
 {
+	playMusicLayer(kDefaultMusicLayer, id_or_path);
+}
+
+void SoundManager::stopMusic()
+{
+	stopMusicLayer(kDefaultMusicLayer);
+}
+
+void SoundManager::pushMusic(const char *id_or_path)
+{
+	pushMusicLayer(kDefaultMusicLayer, id_or_path);
+}
+
+void SoundManager::popMusic()
+{
+	popMusicLayer(kDefaultMusicLayer);
+}
+
+void SoundManager::playMusicLayer(const char *layer, const char *id_or_path)
+{
 	ensureInitialized();
 
+	const String layer_name = normalizeMusicLayer(layer);
 	SoundEvent fallback;
 	const SoundEvent *e = resolveEvent(id_or_path, fallback);
 	if (!e || (e->sample.empty() && e->loop_event_id.empty()))
 	{
-		Log::warning("SoundManager::playMusic: empty or unresolved request \"%s\"\n",
-			id_or_path ? id_or_path : "<null>");
+		Log::warning(
+			"SoundManager::playMusicLayer: layer=\"%s\" empty or unresolved request \"%s\"\n",
+			layer_name.get(), id_or_path ? id_or_path : "<null>");
 		return;
 	}
 
 	const float gain = resolveGain(*e);
 	if (gain <= 0.0f)
 	{
-		Log::message("SoundManager::playMusic: request=\"%s\" skipped because gain is %.3f\n",
-			id_or_path ? id_or_path : "<null>", gain);
-		stopMusic();
+		Log::message(
+			"SoundManager::playMusicLayer: layer=\"%s\" request=\"%s\" skipped because gain is %.3f\n",
+			layer_name.get(), id_or_path ? id_or_path : "<null>", gain);
+		stopMusicLayer(layer_name.get());
 		return;
 	}
 
 	Vector<MusicStep> sequence;
-	Log::message("SoundManager::playMusic: request=\"%s\" sample=\"%s\" loop_event_id=\"%s\"\n",
-		id_or_path ? id_or_path : "<null>", e->sample.get(), e->loop_event_id.get());
+	Log::message(
+		"SoundManager::playMusicLayer: layer=\"%s\" request=\"%s\" sample=\"%s\" loop_event_id=\"%s\"\n",
+		layer_name.get(), id_or_path ? id_or_path : "<null>", e->sample.get(),
+		e->loop_event_id.get());
 
 	appendMusicStep(sequence, *e, id_or_path, e->sample.get(), e->loop_event_id.empty());
 	appendResolvedMusicStep(sequence, e->loop_event_id.get(), true);
 	if (sequence.empty())
 	{
-		Log::warning("SoundManager::playMusic: request=\"%s\" has no playable steps\n",
-			id_or_path ? id_or_path : "<null>");
+		Log::warning(
+			"SoundManager::playMusicLayer: layer=\"%s\" request=\"%s\" has no playable steps\n",
+			layer_name.get(), id_or_path ? id_or_path : "<null>");
 		return;
 	}
 
-	stopMusic();
-
 	State &s = state();
-	s.music_sequence = sequence;
-	if (!playMusicStep(s, 0))
-		playNextMusicStep(s);
+	MusicLayer &music_layer = getMusicLayer(s, layer_name.get());
+	stopMusicPlayback(music_layer);
+
+	music_layer.sequence = sequence;
+	music_layer.current_request = id_or_path ? id_or_path : "";
+	if (!playMusicStep(music_layer, layer_name.get(), 0))
+		playNextMusicStep(music_layer, layer_name.get());
 }
 
-void SoundManager::stopMusic()
+void SoundManager::stopMusicLayer(const char *layer)
 {
+	ensureInitialized();
+
 	State &s = state();
-	if (s.music)
-		Log::message("SoundManager::stopMusic\n");
-	stopMusicSource(s);
-	s.music_sequence.clear();
-	s.music_sequence_index = 0;
+	const String layer_name = normalizeMusicLayer(layer);
+	MusicLayer &music_layer = getMusicLayer(s, layer_name.get());
+	if (music_layer.source)
+		Log::message("SoundManager::stopMusicLayer: layer=\"%s\"\n", layer_name.get());
+	stopMusicPlayback(music_layer);
+	music_layer.current_request.clear();
+	music_layer.stack.clear();
+}
+
+void SoundManager::pushMusicLayer(const char *layer, const char *id_or_path)
+{
+	ensureInitialized();
+	if (!id_or_path || !*id_or_path)
+		return;
+
+	const String layer_name = normalizeMusicLayer(layer);
+	State &s = state();
+	MusicLayer &music_layer = getMusicLayer(s, layer_name.get());
+
+	MusicStackEntry entry;
+	entry.previous_request = music_layer.current_request;
+	entry.override_request = id_or_path;
+	music_layer.stack.append(entry);
+
+	playMusicLayer(layer_name.get(), id_or_path);
+}
+
+void SoundManager::popMusicLayer(const char *layer)
+{
+	ensureInitialized();
+
+	const String layer_name = normalizeMusicLayer(layer);
+	State &s = state();
+	MusicLayer &music_layer = getMusicLayer(s, layer_name.get());
+	if (music_layer.stack.empty())
+		return;
+
+	MusicStackEntry entry = music_layer.stack.last();
+	music_layer.stack.removeLast();
+
+	if (music_layer.current_request != entry.override_request)
+	{
+		Log::message(
+			"SoundManager::popMusicLayer: layer=\"%s\" current music changed from override \"%s\" to \"%s\", not restoring \"%s\"\n",
+			layer_name.get(), entry.override_request.get(), music_layer.current_request.get(),
+			entry.previous_request.get());
+		return;
+	}
+
+	if (entry.previous_request.empty())
+	{
+		stopMusicPlayback(music_layer);
+		music_layer.current_request.clear();
+		return;
+	}
+
+	playMusicLayer(layer_name.get(), entry.previous_request.get());
 }
 
 void SoundManager::setEnabled(bool enabled)

@@ -59,6 +59,11 @@ public:
 	// Call once per frame from world update. Cleans up finished one-shots.
 	static void update();
 
+	// Pauses currently playing managed sounds/music without muting future UI
+	// sounds created while paused.
+	static void setPaused(bool paused);
+	static bool isPaused();
+
 	// Library — optional. If you don't register, callers pass the raw sample path.
 	static void registerEvent(const char *id, const SoundEvent &event);
 	static void registerEvent(const char *id, const char *sample, float gain = 1.0f,
@@ -72,11 +77,20 @@ public:
 	static void play3DAt(const char *id_or_path, const Unigine::Math::Vec3 &world_pos);
 	static void playOnNode(const char *id_or_path, const Unigine::NodePtr &node);
 
-	// Single global music slot. Looped, streamed; replaces any current music.
+	// Layered music slots. `playMusic()` targets the default "music" layer for
+	// backwards compatibility. Named layers can play together, so a dialogue
+	// layer can sit over the background layer without stopping it.
 	// id_or_path follows the same lookup rule as play2D. If the event has
 	// loop_event_id, sample plays once as intro and loop_event_id loops afterwards.
 	static void playMusic(const char *id_or_path);
 	static void stopMusic();
+	static void pushMusic(const char *id_or_path);
+	static void popMusic();
+	static void playMusicLayer(const char *layer, const char *id_or_path);
+	static void stopMusicLayer(const char *layer);
+	// Temporary override inside one layer. Other layers keep playing.
+	static void pushMusicLayer(const char *layer, const char *id_or_path);
+	static void popMusicLayer(const char *layer);
 
 	// Global mute. While disabled, play* calls are silent no-ops. For per-bus
 	// volume use Unigine::Sound::setSourceVolume(slot, vol) on the bits selected

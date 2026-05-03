@@ -18,6 +18,7 @@ public:
 	bool isInRange() const noexcept { return _in_range; }
 	bool isHovered() const noexcept { return _hovered; }
 	float getInteractProgress01() const noexcept;
+	virtual float getRangeExitDistance() const;
 
 	// Driven by PlayerInteraction.
 	void beginRange(const Unigine::NodePtr &interactor);

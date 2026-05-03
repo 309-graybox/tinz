@@ -181,7 +181,10 @@ bool PlayerInteraction::canFocus(Interactable *interactable) const
 		return false;
 	if (!interactable->isInteractionReady() && !interactable->isInteracting())
 		return false;
-	if (!isInInteractRange(interactable))
+
+	const bool was_in_range = _range_interactables.find(interactable) != _range_interactables.end();
+	const bool is_in_range = was_in_range ? shouldKeepInteractRange(interactable) : isInInteractRange(interactable);
+	if (!is_in_range)
 		return false;
 	if (!interactable->canInteract(node))
 		return false;
@@ -191,12 +194,22 @@ bool PlayerInteraction::canFocus(Interactable *interactable) const
 
 bool PlayerInteraction::isInInteractRange(const Interactable *interactable) const
 {
+	return interactable && isWithinDistance(interactable, (float)interactable->range);
+}
+
+bool PlayerInteraction::shouldKeepInteractRange(const Interactable *interactable) const
+{
+	return interactable && isWithinDistance(interactable, interactable->getRangeExitDistance());
+}
+
+bool PlayerInteraction::isWithinDistance(const Interactable *interactable, float distance) const
+{
 	if (!interactable || !interactable->getNode())
 		return false;
 
 	const Vec3 player_pos = node->getWorldPosition();
 	const float dist = (float)length(interactable->getNode()->getWorldPosition() - player_pos);
-	return dist <= interactable->range;
+	return dist <= distance;
 }
 
 void PlayerInteraction::updateRange()
@@ -208,7 +221,12 @@ void PlayerInteraction::updateRange()
 	for (int i = 0; i < candidates.size(); ++i)
 	{
 		Interactable *interactable = candidates[i];
-		if (!interactable || !interactable->isEnabled() || !isInInteractRange(interactable))
+		if (!interactable || !interactable->isEnabled())
+			continue;
+
+		const bool was_in_range = _range_interactables.find(interactable) != _range_interactables.end();
+		const bool is_in_range = was_in_range ? shouldKeepInteractRange(interactable) : isInInteractRange(interactable);
+		if (!is_in_range)
 			continue;
 
 		trackInteractable(interactable);

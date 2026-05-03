@@ -8,5 +8,6 @@
 		<name index="29">enemy</name>
 		<name index="0">Intersection Mask 0</name>
 		<name index="31">Player</name>
+		<name index="28">Interactable</name>
 	</intersection>
 </bit_mask_names>

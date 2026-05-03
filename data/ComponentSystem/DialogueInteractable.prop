@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="DialogueInteractable" manual="1" parent_name="node_base">
+	<struct name="DialogueLineInfo">
+		<parameter name="text" type="string"/>
+		<parameter name="duration" type="float" title="Duration" tooltip="0 = wait until interact / close">0</parameter>
+	</struct>
+	<parameter name="range" type="float">3</parameter>
+	<parameter name="interactHoldTime" type="float">0</parameter>
+	<parameter name="interactPromptText" type="string"/>
+	<parameter name="exitRange" type="float" title="Exit Range" tooltip="Distance where range dialogue closes">4</parameter>
+	<parameter name="triggerMode" type="switch" title="Trigger Mode" items="Range,Interact">1</parameter>
+	<parameter name="lines" type="array" array_type="DialogueLineInfo"/>
+	<parameter name="musicEvent" type="string" title="Music Event" tooltip="SoundManager event id or direct audio path"/>
+	<parameter name="musicLayer" type="string" title="Music Layer" tooltip="Named SoundManager music layer; use &apos;music&apos; to replace background">dialogue</parameter>
+	<parameter name="restoreMusicOnEnd" type="toggle" title="Restore Music On End" tooltip="Restore previous music in this layer when dialogue ends; other layers keep playing">1</parameter>
+	<parameter name="hideOnRangeLeft" type="toggle">1</parameter>
+	<parameter name="playOnce" type="toggle">0</parameter>
+	<parameter name="advanceOnInteract" type="toggle">1</parameter>
+</property>

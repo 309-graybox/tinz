@@ -29,4 +29,5 @@ private:
 	UI::Canvas *_settingsMenuCanvas{nullptr};
 
 	float _prevGameScale{0.0f};
+	bool _prevSoundPaused{false};
 };

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>7d64ebf6206a7e511218ba0ff5389c4ba4a6bdbc</guid>
+	<type>file</type>
+	<hash>e6dcfc0e4d03fb18f5866cf491fbc37d026a0302dded84d9331997368bd56122</hash>
+	<runtimes>
+		<runtime id="7d64ebf6206a7e511218ba0ff5389c4ba4a6bdbc" name="DialogueController.prop" link="0"/>
+	</runtimes>
+</asset>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>26d32d2aa6cc7c6d8b8c551e929b6824b2089b3a</guid>
+	<type>file</type>
+	<hash>c86619ee1f2004e9672d6fee46207ffaa64afa8214054aeb852884c5d2bf537d</hash>
+	<runtimes>
+		<runtime id="26d32d2aa6cc7c6d8b8c551e929b6824b2089b3a" name="DialogueInteractable.prop" link="0"/>
+	</runtimes>
+</asset>

@@ -144,4 +144,12 @@
 		</properties>
 		<transform>0.99999988079 0 0 0.0 0 1.00000011921 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 	</node>
+	<node type="NodeDummy" id="304510821" name="dialogue_controller">
+		<properties>
+			<property parent="460e2b5772cf83c3f3b79f17ae0892083fe5a04a" guid="79b1968f1204781368edb0c24bf076de7a75b9e9">
+				<parameter name="font">guid://5d45a89caa16f0e22584d277fbedbd561b8fdc8d</parameter>
+			</property>
+		</properties>
+		<transform>0.99999988079 0 0 0.0 0 1.00000011921 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+	</node>
 </nodes>

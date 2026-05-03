@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="DialogueController" manual="1" parent_name="node_base">
+	<parameter name="font" type="file"/>
+	<parameter name="fontSize" type="int">30</parameter>
+	<parameter name="fontColor" type="color">0.920000 0.900000 0.840000 1.000000</parameter>
+	<parameter name="maxTextWidth" type="int">1100</parameter>
+	<parameter name="textHeight" type="int">180</parameter>
+	<parameter name="bottomOffset" type="int">96</parameter>
+</property>
