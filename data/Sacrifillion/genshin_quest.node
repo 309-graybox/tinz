@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="NodeDummy" id="310608550" name="Genshin quest">
+		<transform>0.998449060498 -0.00333179387117 0.0555882750197 0.0 -0.00333180672 0.99284386429 0.119354202837 0.0 -0.0555879245719 -0.119353070468 0.9913015079 0.0 -0.261393487082 -1.86970780481 5.68878478082 1.0</transform>
+		<node type="NodeDummy" id="157600223" name="gate">
+			<properties>
+				<property parent="6de05515603e4bb65d3c6605cc3dc27a77d4b240" guid="07f58302dda94a67a20c625a25d1da446c74a56e">
+					<parameter name="anims">
+						<value index="0">
+							<parameter name="target">1307459857</parameter>
+							<parameter name="angle">-100</parameter>
+						</value>
+						<value index="1">
+							<parameter name="target">2048788284</parameter>
+							<parameter name="angle">100</parameter>
+						</value>
+					</parameter>
+				</property>
+			</properties>
+			<transform>0.921289801598 -0.388876676559 0 0.0 0.388876676559 0.921289801598 0 0.0 0 0 1 0.0 6.66103480881 -0.468459710395 0.914570758533 1.0</transform>
+			<node type="ObjectMeshStatic" id="1307459857" immovable="1" name="Metal_long_gate_left">
+				<mesh_name>guid://23f877281f927c528c4f2954db1f695fea903cf6</mesh_name>
+				<surface name="Metal" intersection="1" material="6e3c24ba5f8374fa5b056d9420887134e85d2fa1"/>
+				<surface name="MetalSpike" intersection="1" material="211b3ea402522afccf88fe4ec86c53810b25a583"/>
+				<body type="BodyDummy" id="850909494" frozen="0">
+					<shape type="ShapeBox" id="2019287678" name="ShapeBox" transform="1 0 0 0 0 1 0 0 0 0 1 0 -0.000293626275 -1.35855663 3.74173594 1">
+						<size>0.2433137 2.96692181 7.09858418</size>
+					</shape>
+				</body>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0.000293377211939 2.84895453992 -1.47332948446 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="2048788284" immovable="1" name="Metal_long_gate_right">
+				<mesh_name>guid://e4b67913eef845e1c7794b57a2d5dacc92120fdd</mesh_name>
+				<surface name="Metal" intersection="1" material="6e3c24ba5f8374fa5b056d9420887134e85d2fa1"/>
+				<surface name="MetalSpike" intersection="1" material="211b3ea402522afccf88fe4ec86c53810b25a583"/>
+				<body type="BodyDummy" id="1184268061" frozen="0">
+					<shape type="ShapeBox" id="329623493" name="ShapeBox" transform="1 0 0 0 0 1 0 0 0 0 1 0 -0.000293626275 1.35855782 3.06613731 1">
+						<size>0.2433137 2.96692181 5.74738693</size>
+					</shape>
+				</body>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0.000293875339032 -2.84895573192 -1.47332948446 1.0</transform>
+			</node>
+			<node type="NodeReference" id="2101495231" name="gate_0">
+				<reference>guid://3b761bccc260f818669d998a009ca3c3e091a444</reference>
+				<transform>0.99875768122 0.0498201670072 0.00113530724775 0.0 -0.0498163975035 0.998753578996 -0.00311430823058 0.0 -0.00128904740439 0.00305388247197 0.999994635582 0.0 -0.12872126905 4.43025964873 -1.49132739489 1.0</transform>
+			</node>
+			<node type="NodeReference" id="988818356" name="gate_1">
+				<reference>guid://3b761bccc260f818669d998a009ca3c3e091a444</reference>
+				<transform>-0.98986566099 -0.142004469285 -0.000842324574478 0.0 0.142001133019 -0.989861052413 0.00320598226972 0.0 -0.00128904864789 0.00305388219981 0.999994575977 0.0 0.163121352633 -4.38617924786 -1.28207783242 1.0</transform>
+			</node>
+		</node>
+		<node type="NodeDummy" id="523413923" name="quest">
+			<properties>
+				<property parent="17405ba239bde66238c7c9d7d3b4fa8db097641b" guid="619cc09fe44d5b37487325e7dc788167c0d93e93">
+					<parameter name="plates">
+						<value index="0">1265009213</value>
+						<value index="1">1562513271</value>
+						<value index="2">628586139</value>
+						<value index="3">837574143</value>
+					</parameter>
+					<parameter name="door">157600223</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -6.66103480881 0.468459710395 -0.914570758533 1.0</transform>
+			<node type="NodeDummy" id="1265009213" name="press_plate">
+				<properties>
+					<property parent="4d420e5e1bfe082d910da7a9ddc8877578d5ba19" guid="a815693bbc1fecf3fc2b3203d7f3373ade858bef">
+						<parameter name="plate">2045386289</parameter>
+						<parameter name="trigger">545054328</parameter>
+					</property>
+				</properties>
+				<transform>0.454470694065 -0.890761852264 0 0.0 0.890761733055 0.45447063446 0 0.0 0 0 1 0.0 5.55740836879 -5.58147171652 0.354134641037 1.0</transform>
+				<node type="NodeReference" id="2045386289" name="grave_10">
+					<reference>guid://3beeadc25194a93bcb62817f8bec6b434042c572</reference>
+					<transform>0.999999880791 0 0 0.0 0 0.999999642372 0 0.0 0 0 0.999999940395 0.0 0 0 0 1.0</transform>
+				</node>
+				<node type="WorldTrigger" id="545054328" name="WorldTrigger">
+					<touch>1</touch>
+					<size>1 1.41934872 0.713264167</size>
+					<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.00380252347915 0.0287683168268 -0.0621723681688 1.0</transform>
+				</node>
+			</node>
+			<node type="NodeDummy" id="1562513271" name="press_plate_1">
+				<properties>
+					<property parent="4d420e5e1bfe082d910da7a9ddc8877578d5ba19" guid="b88dc8d6b493b27ae5b64daec1a14da8694f4882">
+						<parameter name="plate">200418922</parameter>
+						<parameter name="trigger">489266476</parameter>
+					</property>
+				</properties>
+				<transform>0.516777217388 0.856120169163 -1.41561059763e-07 0.0 -0.849833548069 0.512982428074 -0.120964750648 0.0 -0.103560239077 0.062511920929 0.992656826973 0.0 -5.55740836879 1.146517997 0.236187651843 1.0</transform>
+				<node type="NodeReference" id="200418922" name="grave_10">
+					<reference>guid://3beeadc25194a93bcb62817f8bec6b434042c572</reference>
+					<transform>5.96046447754e-08 0.999999940395 0 0.0 -0.999999940395 5.96046447754e-08 0 0.0 0 0 1 0.0 -0.00706267193203 0.0203965000311 -0.0959320515394 1.0</transform>
+				</node>
+				<node type="WorldTrigger" id="489266476" name="WorldTrigger">
+					<touch>1</touch>
+					<size>1 1.41934872 0.713264167</size>
+					<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.00380252347915 0.0287683168268 -0.0621723681688 1.0</transform>
+				</node>
+			</node>
+			<node type="NodeDummy" id="628586139" name="press_plate_2">
+				<properties>
+					<property parent="4d420e5e1bfe082d910da7a9ddc8877578d5ba19" guid="a74282e5ff8a9dc52b83f8ed17cc8463410b6df9">
+						<parameter name="plate">1373944638</parameter>
+						<parameter name="trigger">304745760</parameter>
+					</property>
+				</properties>
+				<transform>0.432596236467 -0.901587665081 0 0.0 0.901587963104 0.432596355677 0 0.0 0 0 0.999999880791 0.0 2.56360036606 -6.89212806601 0.313710964719 1.0</transform>
+				<node type="NodeReference" id="1373944638" name="grave_10">
+					<reference>guid://3beeadc25194a93bcb62817f8bec6b434042c572</reference>
+					<transform>0.999999821186 0 0 0.0 0 0.999999701977 0 0.0 0 0 0.999999761581 0.0 0 0 0 1.0</transform>
+				</node>
+				<node type="WorldTrigger" id="304745760" name="WorldTrigger">
+					<touch>1</touch>
+					<size>1 1.41934872 0.713264167</size>
+					<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.00380252347915 0.0287683168268 -0.0621723681688 1.0</transform>
+				</node>
+			</node>
+			<node type="NodeDummy" id="837574143" name="press_plate_3">
+				<properties>
+					<property parent="4d420e5e1bfe082d910da7a9ddc8877578d5ba19" guid="5408d5f8e1bb1ae388512690314303ead525bf04">
+						<parameter name="plate">550130514</parameter>
+						<parameter name="trigger">985834068</parameter>
+					</property>
+				</properties>
+				<transform>0.999992549419 -0.00318071339279 0.00213208701462 0.0 0.00343971792608 0.990817189217 -0.135166421533 0.0 -0.00168258300982 0.135172769427 0.9908208251 0.0 2.82271812694 5.58147171652 -0.487924913653 1.0</transform>
+				<node type="NodeReference" id="550130514" name="grave_10">
+					<reference>guid://3beeadc25194a93bcb62817f8bec6b434042c572</reference>
+					<transform>5.96046447754e-08 0.999999940395 0 0.0 -0.999999940395 5.96046447754e-08 0 0.0 0 0 1 0.0 -0.00706267193203 0.0203965000311 -0.0959320515394 1.0</transform>
+				</node>
+				<node type="WorldTrigger" id="985834068" name="WorldTrigger">
+					<touch>1</touch>
+					<size>1 1.41934872 0.713264167</size>
+					<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.00380252347915 0.0287683168268 -0.0621723681688 1.0</transform>
+				</node>
+			</node>
+		</node>
+	</node>
+</nodes>

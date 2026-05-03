@@ -4,6 +4,11 @@
 		<mesh_name>guid://d1310e01117fecd4a356082561110ee4365f0f3b</mesh_name>
 		<surface name="MetalSpike" intersection="1" material="211b3ea402522afccf88fe4ec86c53810b25a583"/>
 		<surface name="Metal" intersection="1" material="6e3c24ba5f8374fa5b056d9420887134e85d2fa1"/>
-		<transform>1 0 0 0.0 0 0.999999940395 0 0.0 0 0 0.999999940395 0.0 0 0 0 1.0</transform>
+		<body type="BodyDummy" id="1520506058" frozen="0">
+			<shape type="ShapeBox" id="1005735570" name="ShapeBox" transform="1 -5.59549965e-18 -2.36356074e-17 0 2.05096323e-17 1 0 0 0 0 1 0 -0.000107755455 -0.643013954 3.39850664 1">
+				<size>0.2433137 1.73502243 6.95387745</size>
+			</shape>
+		</body>
+		<transform>1 5.55111512313e-17 0 0.0 2.05096322683e-17 0.999999940395 -4.33680868994e-19 0.0 0 -4.33680868994e-19 0.999999940395 0.0 0 7.1054273576e-15 2.22044604925e-16 1.0</transform>
 	</node>
 </nodes>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>2e5ba0e9f19a9503592e0771033b90ae8e5f4c3d</guid>
+	<type>node</type>
+	<hash>aeb17291a6c2dd6510c8df7ef51aea4749ea2d31cc3a2627d5566fa50419d73d</hash>
+	<runtimes>
+		<runtime id="2e5ba0e9f19a9503592e0771033b90ae8e5f4c3d" name="genshin_quest.node" link="0" type="3"/>
+	</runtimes>
+</asset>
