@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>c7bafae6367441724c2706a032facf5ea5084a10</guid>
+	<type>file</type>
+	<hash>3df207fc2a8b802ad36c9e2125b93448d86d0ed1bea687ec0de7d5235328cb83</hash>
+	<runtimes>
+		<runtime id="c7bafae6367441724c2706a032facf5ea5084a10" name="SpikeTrap.prop" link="0"/>
+	</runtimes>
+</asset>

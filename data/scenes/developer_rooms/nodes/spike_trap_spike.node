@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="1353000103" immovable="1" name="spike_trap_spike">
+		<mesh_name>guid://905f491b669291dd0333d7dfaefcb10cf7726b25</mesh_name>
+		<surface name="MetalSpike" intersection="1" material="7e965aa89176eda0b30014d485c0df422b054476"/>
+		<transform>1 1.74845538936e-07 0 0.0 -1.74845538936e-07 1 0 0.0 0 0 0.499999970198 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

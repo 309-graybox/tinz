@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>6c9a4d6656b39bdc3448d82e4ae03d6430ed23c4</guid>
+	<type>node</type>
+	<hash>a6e14105ac70973edec33db5f6500238d24bef72e9b616c5cb739a6b9a1683db</hash>
+	<runtimes>
+		<runtime id="6c9a4d6656b39bdc3448d82e4ae03d6430ed23c4" name="spike_trap_row.node" link="0" type="3"/>
+	</runtimes>
+</asset>

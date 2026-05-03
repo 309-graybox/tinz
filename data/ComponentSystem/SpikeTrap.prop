@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="SpikeTrap" manual="1" parent_name="node_base">
+	<parameter name="active" type="toggle">1</parameter>
+	<parameter name="trigger" type="node" title="Trigger" tooltip="WorldTrigger that detects stepping on spikes">0</parameter>
+	<parameter name="damage" type="float">10</parameter>
+	<parameter name="cooldown" type="float" tooltip="Minimum seconds between damage ticks">1</parameter>
+	<parameter name="repeatWhileInside" type="toggle" tooltip="If true, damages again every cooldown while player stays inside">1</parameter>
+</property>

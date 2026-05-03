@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="NodeDummy" id="2018092827" name="spike_trap">
+		<properties>
+			<property parent="7d94dab15cebef57296dd6ff179c52490c9bbffb" guid="52e5be3219bf725561429add0a8872970acbe819">
+				<parameter name="trigger">40120766</parameter>
+				<parameter name="damage">25</parameter>
+			</property>
+		</properties>
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		<node type="WorldTrigger" id="40120766" name="WorldTrigger_2">
+			<touch>1</touch>
+			<size>0.5 0.5 0.125</size>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0.105801524095 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1130074825" name="group">
+			<reference>guid://6c9a4d6656b39bdc3448d82e4ae03d6430ed23c4</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.2 0 0 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1502000631" name="group_1">
+			<reference>guid://6c9a4d6656b39bdc3448d82e4ae03d6430ed23c4</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		</node>
+		<node type="NodeReference" id="429871432" name="group_2">
+			<reference>guid://6c9a4d6656b39bdc3448d82e4ae03d6430ed23c4</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0.2 0 0 1.0</transform>
+		</node>
+	</node>
+</nodes>

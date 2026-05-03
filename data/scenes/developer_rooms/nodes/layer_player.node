@@ -95,7 +95,7 @@
 		<mode>0</mode>
 		<control_type>0</control_type>
 		<anim_script guid="2cdb9290a9943d1da578c7f541b52ade513121e3"/>
-		<node type="ObjectMeshSkinned" id="1330148965" name="ObjectMeshSkinned">
+		<node type="ObjectMeshSkinned" id="1330148965" trigger_interaction_enabled="1" name="ObjectMeshSkinned">
 			<mesh_name>guid://2dfd37932fef45e37670903e1f577b6ccef3b8e2</mesh_name>
 			<fps_visible_camera>-1</fps_visible_camera>
 			<fps_visible_shadow>30</fps_visible_shadow>
