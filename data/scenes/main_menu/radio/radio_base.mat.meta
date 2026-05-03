@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>1f9a235ab30479ab6e5709d8d1f8d5dc8a3bcb50</guid>
+	<type>material</type>
+	<hash>ff1350d43aa2f01798708c05a9625f9b8fab7ed32d2c9a3f47624d41d7f9a5bd</hash>
+	<runtimes>
+		<runtime id="1f9a235ab30479ab6e5709d8d1f8d5dc8a3bcb50" name="radio_base" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="1813056589" immovable="1" name="spike">
+		<mesh_name>guid://e1bce89a5a38ceb4cd9a3ea6f131e3076640cf98</mesh_name>
+		<surface name="MetalSpike" intersection="1" material="e977e5ebf12be89775766fbcb09e1a314a75a670"/>
+		<surface name="Metal" intersection="1" material="e977e5ebf12be89775766fbcb09e1a314a75a670"/>
+		<transform>0.998740792274 0.00206559291109 -0.0501252375543 0.0 0.00967630650848 0.972459077835 0.232873216271 0.0 0.0492257475853 -0.233064934611 0.971214175224 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

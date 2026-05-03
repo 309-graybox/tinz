@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>2b345e9becd942295f02786e17730c7802929551</guid>
+	<type>material</type>
+	<hash>23353c8f05b149ea84807eb35b997c1786f8d5abb24b49044005281d2b4afbf9</hash>
+	<runtimes>
+		<runtime id="2b345e9becd942295f02786e17730c7802929551" name="shovel_metal" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>

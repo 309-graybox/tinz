@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>f4fb7e00b5521c1f9f02c6acf9ad7fec58883d0e</guid>
+	<type>node</type>
+	<hash>191c8a31b7664ca9b3bd610542c73eef9673e8b947d53e0bb7ec347819e3f7d6</hash>
+	<runtimes>
+		<runtime id="f4fb7e00b5521c1f9f02c6acf9ad7fec58883d0e" name="wall.node" link="0" type="3"/>
+	</runtimes>
+</asset>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>27efac67833a013f0e0dc341898c7ecfc98d828f</guid>
+	<type>material</type>
+	<hash>3294867a8d86b1dbb7e0b960bd7ecb80d2d5bfdc0062974e1da7eb291e23c5bb</hash>
+	<runtimes>
+		<runtime id="27efac67833a013f0e0dc341898c7ecfc98d828f" name="radio_darkwood" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>

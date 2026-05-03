@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material version="2.21.0.0" guid="6a03bee6b0d0c6b4e0e0bf4cc1be50af4d597c31" base_material="9ff6ca7ff89202ecdbd93dc4a6271d42718d6d74">
+	<options transparent="2" blend_src="5" blend_dest="6" blend_alpha_src="2" overlap="0"/>
+	<state name="height">1</state>
+	<state name="use_sky_color">1</state>
+	<parameter name="diffuse_color" expression="0">0.156862751 0.576470613 0.505882382 1</parameter>
+	<parameter name="volume_density" expression="0">0.706799984</parameter>
+</material>

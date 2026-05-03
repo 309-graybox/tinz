@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>6a2d8d8bc2beda272c30d60512dfb87d6c7f9e33</guid>
+	<type>fbx</type>
+	<hash>14d9ced37b4b53276d2e6721c09ea59e354504497a82f5e86d0cf7dd56f8813b</hash>
+	<runtimes>
+		<runtime id="6a2d8d8bc2beda272c30d60512dfb87d6c7f9e33" name="Radio.fbx" link="0"/>
+		<runtime id="1b7d99fe62a6f70c8da44bdc02dbc924e43b5654" name="Radio.node" link="1" type="3">
+			<parameters>
+				<parameter type="string" name="id">aa90f5fc</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="d5f702fba68f95e124b694f5375b5dbbe60bcda3" name="cube.044.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">aa90f5fc</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="6dfe3b6012fe12295e64946e2142dcfdb3e256a6" name="cylinder.014.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">aa90f5fc</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="80be32a529db21ad7b6c912fc41da8d103a97dcd" name="cylinder.012.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">aa90f5fc</parameter>
+			</parameters>
+		</runtime>
+	</runtimes>
+	<parameters>
+		<parameter type="float" name="angular_deflection">0.699999988</parameter>
+		<parameter type="bool" name="asset_name_as_prefix">0</parameter>
+		<parameter type="string" name="base_material_mode">unique_material_graph</parameter>
+		<parameter type="float" name="bound_size">10000</parameter>
+		<parameter type="bool" name="create_root_motion_joint">0</parameter>
+		<parameter type="bool" name="create_transform_bones_for_joints">0</parameter>
+		<parameter type="float" name="fps">30</parameter>
+		<parameter type="string" name="front_axis">default</parameter>
+		<parameter type="bool" name="import_animations">1</parameter>
+		<parameter type="bool" name="import_bones_without_skin">1</parameter>
+		<parameter type="bool" name="import_cameras">1</parameter>
+		<parameter type="bool" name="import_lights">1</parameter>
+		<parameter type="bool" name="import_materials">1</parameter>
+		<parameter type="string" name="import_materials_mode">take_by_name_or_create</parameter>
+		<parameter type="bool" name="import_meshes">1</parameter>
+		<parameter type="bool" name="import_morph_targets">0</parameter>
+		<parameter type="string" name="import_skeleton_mode">create</parameter>
+		<parameter type="bool" name="import_skeletons">1</parameter>
+		<parameter type="bool" name="import_tangent_space">0</parameter>
+		<parameter type="bool" name="import_textures">1</parameter>
+		<parameter type="bool" name="invert_gchannel_for_normal_maps">0</parameter>
+		<parameter type="bool" name="joints_reorientation">0</parameter>
+		<parameter type="string" name="lightmaps">{&quot;guid://d5f702fba68f95e124b694f5375b5dbbe60bcda3&quot;:{&quot;DarkIronAntenka&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;DarkWood&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Iron&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;RadioBase&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;LightWood&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;ScreenMat&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Wood&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://80be32a529db21ad7b6c912fc41da8d103a97dcd&quot;:{&quot;Iron&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://6dfe3b6012fe12295e64946e2142dcfdb3e256a6&quot;:{&quot;Iron&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}}}</parameter>
+		<parameter type="float" name="linear_deflection">0.200000003</parameter>
+		<parameter type="string" name="lods">_lod_0,-1e+09,3,0,0,100,0,0,60;_lod_1,3,9,0,0,60,0,1,60;_lod_2,9,1e+09,0,0,30,0,1,60</parameter>
+		<parameter type="string" name="lods_mode">off</parameter>
+		<parameter type="string" name="material_guids">darkironantenka,762e2c78389d8ef27b12e7c64cd916afa8f527fe,darkwood,68a31168aab0e3a311c913369ff5dd3c48e6c76e,iron,d3bab5d40437180b67b5a5c26a26935b569a0dfa,lightwood,4c94ac7005a510b381ebcefeea8155e96953ad36,radiobase,3eaccc4cb261dd7a57abbf7aec1ca1f8db28a1b2,screenmat,d0e2b7c4365dbc4999b0a632399629a1805f3a6a,wood,0ff10503ce2b9cdf250af8f98dc35144c3cdac23</parameter>
+		<parameter type="bool" name="merge_similar_materials">0</parameter>
+		<parameter type="bool" name="merge_static_meshes">0</parameter>
+		<parameter type="bool" name="merge_surfaces_by_materials">0</parameter>
+		<parameter type="float" name="morph_targets_normals_angle">180</parameter>
+		<parameter type="string" name="morph_targets_normals_mode">import</parameter>
+		<parameter type="bool" name="need_repivot">0</parameter>
+		<parameter type="bool" name="need_split">0</parameter>
+		<parameter type="bool" name="need_triangulate">1</parameter>
+		<parameter type="int" name="num_lods">3</parameter>
+		<parameter type="string" name="prefix_materials"/>
+		<parameter type="string" name="resolution">256</parameter>
+		<parameter type="int" name="root_motion_forward_axis">0</parameter>
+		<parameter type="int" name="root_motion_position_component">0</parameter>
+		<parameter type="int" name="root_motion_rotation_component">0</parameter>
+		<parameter type="float" name="scale">1</parameter>
+		<parameter type="string" name="shared_skeleton_path"/>
+		<parameter type="bool" name="skip_empty_nodes">0</parameter>
+		<parameter type="int" name="smooth_animation_size">0</parameter>
+		<parameter type="string" name="target_root_motion_joint"/>
+		<parameter type="bool" name="unwrap_uv_ch_0">0</parameter>
+		<parameter type="bool" name="unwrap_uv_ch_1">0</parameter>
+		<parameter type="string" name="up_axis">default</parameter>
+		<parameter type="bool" name="use_instances">1</parameter>
+		<parameter type="int" name="uv_ch">1</parameter>
+		<parameter type="string" name="uv_unwrap_version">xatlas_v1</parameter>
+		<parameter type="bool" name="vertex_cache">1</parameter>
+		<parameter type="string" name="workflow">metalness</parameter>
+	</parameters>
+</asset>

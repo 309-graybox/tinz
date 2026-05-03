@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <asset version="2.21.0.0">
-	<guid>dc56fa6afd63893a746e07c53f1854b0d7a0a45b</guid>
+	<guid>9b6548d1e7a2ee3eb01ce67a076f2963fecc748e</guid>
 	<type>texture</type>
-	<hash>4497f58d8a80c1fd24386139201dc072f747c2331b27a0229269101889e56bfc</hash>
+	<hash>1d92dbf361307c0eaff09dc18070d7b4c88b9624d5dce401d43c9b814943cdc7</hash>
 	<runtimes>
-		<runtime id="dc56fa6afd63893a746e07c53f1854b0d7a0a45b" name="move.png" link="0" type="6"/>
-		<runtime id="064299f06ea87840109e23f1a3c64ba03df68dfe" name="move.texture" link="1" type="6"/>
+		<runtime id="9b6548d1e7a2ee3eb01ce67a076f2963fecc748e" name="WoodEmission.png" link="0" type="6"/>
+		<runtime id="9fd492c192c176f3f4f9fd0c9cc2efe5051f7295" name="WoodEmission.texture" link="1" type="6"/>
 	</runtimes>
 	<parameters>
 		<parameter type="int" name="blur_radius">1</parameter>
 		<parameter type="string" name="height">auto</parameter>
-		<parameter type="string" name="image_format">ATI2</parameter>
+		<parameter type="string" name="image_format">DXT5</parameter>
 		<parameter type="string" name="image_type">2d</parameter>
 		<parameter type="bool" name="invert_g">0</parameter>
 		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
 		<parameter type="string" name="mipmap_type">box</parameter>
-		<parameter type="string" name="preset_name">mask (rg)</parameter>
+		<parameter type="string" name="preset_name">custom</parameter>
 		<parameter type="float" name="sharpness_intensity">0.25</parameter>
 		<parameter type="float" name="sharpness_radius">1</parameter>
-		<parameter type="bool" name="srgb_correction">0</parameter>
+		<parameter type="bool" name="srgb_correction">1</parameter>
 		<parameter type="bool" name="unchanged">0</parameter>
 		<parameter type="string" name="width">auto</parameter>
 	</parameters>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>b3ab67421f8f6d696a95e380085a607f635e94f8</guid>
+	<type>material</type>
+	<hash>a1eaa6c670efd5d5ac984c4417e86809ab5ec8df79c2c0efecdfb1623f1ba764</hash>
+	<runtimes>
+		<runtime id="b3ab67421f8f6d696a95e380085a607f635e94f8" name="radio_screen" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>

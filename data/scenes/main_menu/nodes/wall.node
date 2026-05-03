@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="1064598569" immovable="1" name="wall">
+		<mesh_name>guid://bf54c244a71543f21b804cb04794f21bc3731032</mesh_name>
+		<surface name="StonePillar" intersection="1" material="4bceda73f81f2774a79812b77d7aec972cbe903d"/>
+		<surface name="StoneConnection" intersection="1" material="c97f01ceda6cbd115e1a329a00073673d796b32c"/>
+		<transform>-0.680055081844 -0.733160793781 0 0.0 0.7331610322 -0.680055320263 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

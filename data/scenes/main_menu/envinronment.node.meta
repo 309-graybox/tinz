@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>0b8b904e0353adf6f9602b7487a6beecdc9b61f9</guid>
+	<type>node</type>
+	<hash>f4a43b1ff5b798e15cdc6d160955943a120be9984ee09a9c6badd38e3b6e63f2</hash>
+	<runtimes>
+		<runtime id="0b8b904e0353adf6f9602b7487a6beecdc9b61f9" name="envinronment.node" link="0" type="3"/>
+	</runtimes>
+</asset>

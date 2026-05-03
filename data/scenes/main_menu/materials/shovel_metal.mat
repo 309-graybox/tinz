@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material version="2.21.0.0" guid="2b345e9becd942295f02786e17730c7802929551" base_material="4dfec30f491f753f6e89094db6d3d695e89f9d6f">
+	<texture name="normal">guid://fdf882d5fccfd9c2e4e7560ec9d36fbac5c517e2</texture>
+	<texture name="emission">guid://9fd492c192c176f3f4f9fd0c9cc2efe5051f7295</texture>
+	<parameter name="albedo_color" expression="0">0.513725519 0.337254912 0.270588249 1</parameter>
+	<parameter name="metalness" expression="0">0.77293998</parameter>
+	<parameter name="roughness" expression="0">0.632849991</parameter>
+	<parameter name="emission_color" expression="0">0.325490206 0.286274523 0.0549019612 1</parameter>
+</material>

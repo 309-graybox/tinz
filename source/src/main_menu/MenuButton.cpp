@@ -24,11 +24,11 @@ void MenuButton::onInit()
 		}
 	}
 
-	for (int i = 0; i < hoverToggleNodes.size(); ++i)
-	{
-		if (NodePtr n = hoverToggleNodes.get(i))
-			n->setEnabled(false);
-	}
+	// for (int i = 0; i < hoverToggleNodes.size(); ++i)
+	// {
+	// 	if (NodePtr n = hoverToggleNodes.get(i))
+	// 		n->setEnabled(false);
+	// }
 }
 
 void MenuButton::setHovered(bool on, bool play_sound)
@@ -107,7 +107,9 @@ void MenuButton::update_active_state()
 	const bool active = isHovered() || _pressed;
 	for (int i = 0; i < hoverToggleNodes.size(); ++i)
 	{
-		if (NodePtr n = hoverToggleNodes.get(i))
+		if (NodePtr n = hoverToggleNodes[i])
+		{
 			n->setEnabled(active);
+		}
 	}
 }

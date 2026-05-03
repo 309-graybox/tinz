@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>c97f01ceda6cbd115e1a329a00073673d796b32c</guid>
+	<type>material</type>
+	<hash>97015a09dcbe81d1c07d4ada0c8f88455cd7430659b856215cb0b93365345b19</hash>
+	<runtimes>
+		<runtime id="c97f01ceda6cbd115e1a329a00073673d796b32c" name="wall_connection" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>

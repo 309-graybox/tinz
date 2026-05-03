@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material version="2.21.0.0" guid="7364c8e7423d704bd3b38905649c535820944625" parent="b17ce1802887264ae4cf3750f93b83b617616186" base_material="773af4a63c30b60aba488f9dc007340969de1e35">
+	<texture name="diffuse">guid://03d2fd2f2fa08ef9c9c00ea16404c0249f19a9bf</texture>
+	<parameter name="animation_stem_offset" expression="0">0.96983999</parameter>
+</material>

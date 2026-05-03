@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>4bceda73f81f2774a79812b77d7aec972cbe903d</guid>
+	<type>material</type>
+	<hash>72ac74523b754d37b4b3371b45ac8fff83922f4d4d4674652c3f7a0cacf831b9</hash>
+	<runtimes>
+		<runtime id="4bceda73f81f2774a79812b77d7aec972cbe903d" name="wall_pillar" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>

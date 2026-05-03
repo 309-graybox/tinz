@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>3ab8c47f7ffa3e915481fef205b5a334ede4b173</guid>
+	<type>material</type>
+	<hash>7d781b2826516a1f70928e1594aeb2c2a05d73ffea80429e7179c265e6ea571f</hash>
+	<runtimes>
+		<runtime id="3ab8c47f7ffa3e915481fef205b5a334ede4b173" name="cross_sign" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>

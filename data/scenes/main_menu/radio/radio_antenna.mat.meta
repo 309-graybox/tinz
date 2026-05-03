@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>2a8f82f4fe5a2584eafb0de23ebf789cb4b6fe1a</guid>
+	<type>material</type>
+	<hash>8e047f16513f313a6382c99a8f3234f0c6b1993b7b01db18cd66a8499b887b94</hash>
+	<runtimes>
+		<runtime id="2a8f82f4fe5a2584eafb0de23ebf789cb4b6fe1a" name="radio_antenna" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>

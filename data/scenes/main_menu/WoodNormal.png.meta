@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <asset version="2.21.0.0">
-	<guid>dc56fa6afd63893a746e07c53f1854b0d7a0a45b</guid>
+	<guid>b73ecf1baf02d0f20066eb5e5d5baa54387720cf</guid>
 	<type>texture</type>
-	<hash>4497f58d8a80c1fd24386139201dc072f747c2331b27a0229269101889e56bfc</hash>
+	<hash>2c3a97c635bbec5bd8ca40f87d2cbcc64183f569f0554fd37adb488a711b4dd9</hash>
 	<runtimes>
-		<runtime id="dc56fa6afd63893a746e07c53f1854b0d7a0a45b" name="move.png" link="0" type="6"/>
-		<runtime id="064299f06ea87840109e23f1a3c64ba03df68dfe" name="move.texture" link="1" type="6"/>
+		<runtime id="b73ecf1baf02d0f20066eb5e5d5baa54387720cf" name="WoodNormal.png" link="0" type="6"/>
+		<runtime id="fdf882d5fccfd9c2e4e7560ec9d36fbac5c517e2" name="WoodNormal.texture" link="1" type="6"/>
 	</runtimes>
 	<parameters>
 		<parameter type="int" name="blur_radius">1</parameter>
@@ -13,9 +13,9 @@
 		<parameter type="string" name="image_format">ATI2</parameter>
 		<parameter type="string" name="image_type">2d</parameter>
 		<parameter type="bool" name="invert_g">0</parameter>
-		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">0</parameter>
 		<parameter type="string" name="mipmap_type">box</parameter>
-		<parameter type="string" name="preset_name">mask (rg)</parameter>
+		<parameter type="string" name="preset_name">normal map (rg)</parameter>
 		<parameter type="float" name="sharpness_intensity">0.25</parameter>
 		<parameter type="float" name="sharpness_radius">1</parameter>
 		<parameter type="bool" name="srgb_correction">0</parameter>

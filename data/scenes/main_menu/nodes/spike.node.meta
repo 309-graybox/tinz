@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>80514c672fa19a2b3a87ccba74fdbed9986bd3db</guid>
+	<type>node</type>
+	<hash>0509e21c943565f03165954157fe7523a3bdb2bac6dcff0700c571b4ac9cbf97</hash>
+	<runtimes>
+		<runtime id="80514c672fa19a2b3a87ccba74fdbed9986bd3db" name="spike.node" link="0" type="3"/>
+	</runtimes>
+</asset>

@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectVolumeBox" id="1991880894" immovable="1" name="ObjectVolumeBox">
+		<size>30 25 7</size>
+		<surface name="volume" material="6a03bee6b0d0c6b4e0e0bf4cc1be50af4d597c31"/>
+		<transform>0.861726109769 0.507373944944 0.000256573563668 0.0 -0.507373947823 0.861725921206 -0.000404676783289 0.0 -0.000426418711213 0.000218541796746 0.999999770407 0.0 -3.17007954761 5.3162448429 1.64006706328 1.0</transform>
+	</node>
+	<node type="ObjectLandscapeTerrain" id="251252871" name="ObjectLandscapeTerrain">
+		<intersection_precision>0.5</intersection_precision>
+		<detail_mask_0>
+			<name>Mask 0</name>
+			<enabled>1</enabled>
+			<dithering>1</dithering>
+			<default_value>0</default_value>
+			<mask_by_albedo>1 1 1 0</mask_by_albedo>
+			<render_order>0</render_order>
+			<detail material="48f6731f4a21056388ca9c4789f8840fb1377e51">
+				<name>ground</name>
+				<enabled>1</enabled>
+				<mask_by_albedo>1 1 1 0</mask_by_albedo>
+				<min_visible_height>-1e+09</min_visible_height>
+				<max_visible_height>1e+09</max_visible_height>
+				<min_fade_height>0</min_fade_height>
+				<max_fade_height>0</max_fade_height>
+				<min_visible_texel_size>-1e+09</min_visible_texel_size>
+				<max_visible_texel_size>1e+09</max_visible_texel_size>
+				<min_fade_texel_size>0</min_fade_texel_size>
+				<max_fade_texel_size>0</max_fade_texel_size>
+				<mask_threshold>0</mask_threshold>
+				<mask_contrast>0</mask_contrast>
+			</detail>
+		</detail_mask_0>
+		<detail_mask_1>
+			<name>Mask 1</name>
+			<enabled>1</enabled>
+			<dithering>1</dithering>
+			<default_value>0</default_value>
+			<mask_by_albedo>1 1 1 0</mask_by_albedo>
+			<render_order>1</render_order>
+			<detail material="593c56d5fceb82ff41f844a92e254a37fe7ff65a">
+				<name>grass</name>
+				<enabled>1</enabled>
+				<mask_by_albedo>1 1 1 0</mask_by_albedo>
+				<min_visible_height>-1e+09</min_visible_height>
+				<max_visible_height>1e+09</max_visible_height>
+				<min_fade_height>0</min_fade_height>
+				<max_fade_height>0</max_fade_height>
+				<min_visible_texel_size>-1e+09</min_visible_texel_size>
+				<max_visible_texel_size>1e+09</max_visible_texel_size>
+				<min_fade_texel_size>0</min_fade_texel_size>
+				<max_fade_texel_size>0</max_fade_texel_size>
+				<mask_threshold>0</mask_threshold>
+				<mask_contrast>0</mask_contrast>
+			</detail>
+		</detail_mask_1>
+		<detail_mask_2>
+			<name>Mask 2</name>
+			<enabled>1</enabled>
+			<dithering>1</dithering>
+			<default_value>0</default_value>
+			<mask_by_albedo>1 1 1 0</mask_by_albedo>
+			<render_order>2</render_order>
+			<detail material="596e73d9b56bb95c6b84f6ed3bb41f9fe349122e">
+				<name>road</name>
+				<enabled>1</enabled>
+				<mask_by_albedo>1 1 1 0</mask_by_albedo>
+				<min_visible_height>-1e+09</min_visible_height>
+				<max_visible_height>1e+09</max_visible_height>
+				<min_fade_height>0</min_fade_height>
+				<max_fade_height>0</max_fade_height>
+				<min_visible_texel_size>-1e+09</min_visible_texel_size>
+				<max_visible_texel_size>1e+09</max_visible_texel_size>
+				<min_fade_texel_size>0</min_fade_texel_size>
+				<max_fade_texel_size>0</max_fade_texel_size>
+				<mask_threshold>0</mask_threshold>
+				<mask_contrast>0</mask_contrast>
+			</detail>
+		</detail_mask_2>
+		<detail_mask_3>
+			<name>Mask 3</name>
+			<enabled>1</enabled>
+			<dithering>1</dithering>
+			<default_value>0</default_value>
+			<mask_by_albedo>1 1 1 0</mask_by_albedo>
+			<render_order>3</render_order>
+		</detail_mask_3>
+		<detail_mask_4>
+			<name>Mask 4</name>
+			<enabled>1</enabled>
+			<dithering>1</dithering>
+			<default_value>0</default_value>
+			<mask_by_albedo>1 1 1 0</mask_by_albedo>
+			<render_order>4</render_order>
+		</detail_mask_4>
+		<detail_mask_5>
+			<name>Mask 5</name>
+			<enabled>1</enabled>
+			<dithering>1</dithering>
+			<default_value>0</default_value>
+			<mask_by_albedo>1 1 1 0</mask_by_albedo>
+			<render_order>5</render_order>
+		</detail_mask_5>
+		<detail_mask_6>
+			<name>Mask 6</name>
+			<enabled>1</enabled>
+			<dithering>1</dithering>
+			<default_value>0</default_value>
+			<mask_by_albedo>1 1 1 0</mask_by_albedo>
+			<render_order>6</render_order>
+		</detail_mask_6>
+		<detail_mask_7>
+			<name>Mask 7</name>
+			<enabled>1</enabled>
+			<dithering>1</dithering>
+			<default_value>0</default_value>
+			<mask_by_albedo>1 1 1 0</mask_by_albedo>
+			<render_order>7</render_order>
+		</detail_mask_7>
+		<detail_mask_8>
+			<name>Mask 8</name>
+			<enabled>1</enabled>
+			<dithering>1</dithering>
+			<default_value>0</default_value>
+			<mask_by_albedo>1 1 1 0</mask_by_albedo>
+			<render_order>8</render_order>
+		</detail_mask_8>
+		<detail_mask_9>
+			<name>Mask 9</name>
+			<enabled>1</enabled>
+			<dithering>1</dithering>
+			<default_value>0</default_value>
+			<mask_by_albedo>1 1 1 0</mask_by_albedo>
+			<render_order>9</render_order>
+		</detail_mask_9>
+		<detail_mask_10>
+			<name>Mask 10</name>
+			<enabled>1</enabled>
+			<dithering>1</dithering>
+			<default_value>0</default_value>
+			<mask_by_albedo>1 1 1 0</mask_by_albedo>
+			<render_order>10</render_order>
+		</detail_mask_10>
+		<detail_mask_11>
+			<name>Mask 11</name>
+			<enabled>1</enabled>
+			<dithering>1</dithering>
+			<default_value>0</default_value>
+			<mask_by_albedo>1 1 1 0</mask_by_albedo>
+			<render_order>11</render_order>
+		</detail_mask_11>
+		<detail_mask_12>
+			<name>Mask 12</name>
+			<enabled>1</enabled>
+			<dithering>1</dithering>
+			<default_value>0</default_value>
+			<mask_by_albedo>1 1 1 0</mask_by_albedo>
+			<render_order>12</render_order>
+		</detail_mask_12>
+		<detail_mask_13>
+			<name>Mask 13</name>
+			<enabled>1</enabled>
+			<dithering>1</dithering>
+			<default_value>0</default_value>
+			<mask_by_albedo>1 1 1 0</mask_by_albedo>
+			<render_order>13</render_order>
+		</detail_mask_13>
+		<detail_mask_14>
+			<name>Mask 14</name>
+			<enabled>1</enabled>
+			<dithering>1</dithering>
+			<default_value>0</default_value>
+			<mask_by_albedo>1 1 1 0</mask_by_albedo>
+			<render_order>14</render_order>
+		</detail_mask_14>
+		<detail_mask_15>
+			<name>Mask 15</name>
+			<enabled>1</enabled>
+			<dithering>1</dithering>
+			<default_value>0</default_value>
+			<mask_by_albedo>1 1 1 0</mask_by_albedo>
+			<render_order>15</render_order>
+		</detail_mask_15>
+		<detail_mask_16>
+			<name>Mask 16</name>
+			<enabled>1</enabled>
+			<dithering>1</dithering>
+			<default_value>0</default_value>
+			<mask_by_albedo>1 1 1 0</mask_by_albedo>
+			<render_order>16</render_order>
+		</detail_mask_16>
+		<detail_mask_17>
+			<name>Mask 17</name>
+			<enabled>1</enabled>
+			<dithering>1</dithering>
+			<default_value>0</default_value>
+			<mask_by_albedo>1 1 1 0</mask_by_albedo>
+			<render_order>17</render_order>
+		</detail_mask_17>
+		<detail_mask_18>
+			<name>Mask 18</name>
+			<enabled>1</enabled>
+			<dithering>1</dithering>
+			<default_value>0</default_value>
+			<mask_by_albedo>1 1 1 0</mask_by_albedo>
+			<render_order>18</render_order>
+		</detail_mask_18>
+		<detail_mask_19>
+			<name>Mask 19</name>
+			<enabled>1</enabled>
+			<dithering>1</dithering>
+			<default_value>0</default_value>
+			<mask_by_albedo>1 1 1 0</mask_by_albedo>
+			<render_order>19</render_order>
+		</detail_mask_19>
+		<surface name="terrain_surface" intersection="1" material="b7a7d6c1ee36a12c7679ec76af1c65b0ebc9e4b9"/>
+		<transform>1.00000011619 4.65951539369e-08 0.000426418565694 0.0 4.65951591175e-08 0.999999952239 -0.000218541767642 0.0 -0.000426418711213 0.000218541796746 0.999999770407 0.0 0 0 0 1.0</transform>
+		<node type="LandscapeLayerMap" id="1701008442" name="LandscapeLayerMap">
+			<order>0</order>
+			<size>24.288803100585938 20</size>
+			<height_scale>1</height_scale>
+			<is_collision>1</is_collision>
+			<is_intersection>1</is_intersection>
+			<is_intersection_bicubic_filter>1</is_intersection_bicubic_filter>
+			<is_culling>1</is_culling>
+			<fade_attenuation>0 0</fade_attenuation>
+			<file_path>guid://5d4e748aa6ece0ce27449ed023893dc5bff2a945</file_path>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -10.6055542735 -13.5913730056 -1.7763568394e-15 1.0</transform>
+		</node>
+		<node type="ObjectGrass" id="960750681" name="grass">
+			<thinning>1</thinning>
+			<variation>1</variation>
+			<orientation>0</orientation>
+			<intersection>1</intersection>
+			<intersection_mask>-1</intersection_mask>
+			<num_textures>1</num_textures>
+			<seed>1338634754</seed>
+			<size_x>20.6407108</size_x>
+			<size_y>22.7511826</size_y>
+			<step>100</step>
+			<subdivision>8</subdivision>
+			<density>500</density>
+			<threshold>0.831120014</threshold>
+			<angle>0.536419988</angle>
+			<probability>1 1 1 1</probability>
+			<min_bend_mean>0.200000003 0.200000003 0.200000003 0.200000003</min_bend_mean>
+			<min_bend_spread>0.5 0 0 0</min_bend_spread>
+			<max_bend_mean>0.400000006 0 0 0</max_bend_mean>
+			<max_bend_spread>0 0 0 0</max_bend_spread>
+			<min_height_mean>0.00999999978 0.100000001 0.100000001 0.100000001</min_height_mean>
+			<min_height_spread>0.100000001 0.100000001 0.100000001 0.100000001</min_height_spread>
+			<max_height_mean>0.0500000007 1.5 0.899999976 1</max_height_mean>
+			<max_height_spread>0.200000003 0.300000012 0.300000012 0.300000012</max_height_spread>
+			<aspect_mean>1 1 1 1</aspect_mean>
+			<aspect_spread>-1.20000005 0.100000001 0.100000001 0.100000001</aspect_spread>
+			<offset_mean>0 0 0 0</offset_mean>
+			<offset_spread>0 0 0 0</offset_spread>
+			<rotation_mean>0 0 0 0</rotation_mean>
+			<rotation_spread>180 180 180 180</rotation_spread>
+			<terrain_masks>1 -1 -1 -1</terrain_masks>
+			<mask_min_value>160</mask_min_value>
+			<surface name="grass" cast_shadow="0" cast_world_shadow="0" cast_env_probe_shadow="0" shadow_mask="0x0" max_visible_distance="100" physics_friction="1" physics_restitution="1" material="37aaabd345d089d2c56f1065c71dfdb8e2f4d163"/>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -11.1868945108 -14.4246730242 0 1.0</transform>
+			<node type="ObjectGrass" id="2123235812" enabled="0" name="impostor">
+				<thinning>1</thinning>
+				<variation>0</variation>
+				<orientation>0</orientation>
+				<intersection>1</intersection>
+				<intersection_mask>-1</intersection_mask>
+				<num_textures>1</num_textures>
+				<seed>0</seed>
+				<size_x>20.6407108</size_x>
+				<size_y>20.6407108</size_y>
+				<step>100</step>
+				<subdivision>1</subdivision>
+				<density>500</density>
+				<threshold>0.774460018</threshold>
+				<angle>0.548929989</angle>
+				<probability>1 1 1 1</probability>
+				<min_bend_mean>0 0 0 0</min_bend_mean>
+				<min_bend_spread>0 0 0 0</min_bend_spread>
+				<max_bend_mean>0 0 0 0</max_bend_mean>
+				<max_bend_spread>0 0 0 0</max_bend_spread>
+				<min_height_mean>9.99999997e-07 9.99999997e-07 9.99999997e-07 9.99999997e-07</min_height_mean>
+				<min_height_spread>0 0 0 0</min_height_spread>
+				<max_height_mean>0.0500000007 1 1 1</max_height_mean>
+				<max_height_spread>0.0199999996 1 1 1</max_height_spread>
+				<aspect_mean>1 1 1 1</aspect_mean>
+				<aspect_spread>0 0 0 0</aspect_spread>
+				<offset_mean>0 0 0 0</offset_mean>
+				<offset_spread>0 0 0 0</offset_spread>
+				<rotation_mean>0 0 0 0</rotation_mean>
+				<rotation_spread>180 180 180 180</rotation_spread>
+				<terrain_masks>1 -1 -1 -1</terrain_masks>
+				<mask_min_value>160</mask_min_value>
+				<surface name="grass" cast_shadow="0" cast_world_shadow="0" cast_env_probe_shadow="0" shadow_mask="0x0" min_visible_distance="0" max_visible_distance="200" max_fade_distance="200" physics_friction="1" physics_restitution="1" material="62c893340cea4c51104106046d5dc62596777a1a"/>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+		</node>
+	</node>
+	<node type="NodeDummy" id="1724981365" name="trees">
+		<transform>1.00000011619 4.65951539369e-08 0.000426418565694 0.0 4.65951591175e-08 0.999999952239 -0.000218541767642 0.0 -0.000426418711213 0.000218541796746 0.999999770407 0.0 -3.52414423217 -3.89345789114 2.57397154486 1.0</transform>
+		<node type="ObjectMeshStatic" id="1458095838" immovable="1" name="cube.020">
+			<mesh_name>guid://1700855923fdfd2c9f10e25f966a0c8d1364d4b9</mesh_name>
+			<surface name="Wood" intersection="1" material="0ff10503ce2b9cdf250af8f98dc35144c3cdac23"/>
+			<transform>0.16375169158 -0.187914580107 0.0246408488601 0.0 0.185673698783 0.165593877435 0.0289405398071 0.0 -0.0380039028823 -0.000654391362332 0.247565865517 0.0 10.8792257767 -5.88557712304 -2.71505423819 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1375690256" immovable="1" name="cube.036">
+			<mesh_name>guid://92b4fe04ae5ddebed80dbf4645b2e7a42b8d0096</mesh_name>
+			<surface name="Wood" intersection="1" material="0ff10503ce2b9cdf250af8f98dc35144c3cdac23"/>
+			<transform>0.151471853256 1.95006703757e-27 3.39449571555e-25 0.0 1.63183466455e-21 0.151471853256 3.11483845409e-24 0.0 -3.76794917217e-17 2.67770645072e-17 0.151471853256 0.0 -2.69604390491 3.32282581401 -2.19151138188 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1544335980" immovable="1" name="cube.022">
+			<mesh_name>guid://93958b8fd68f80f9f4efaea501988bbcddc334af</mesh_name>
+			<surface name="Wood" intersection="1" material="0ff10503ce2b9cdf250af8f98dc35144c3cdac23"/>
+			<transform>0.0949033051729 0 0 0.0 0 0.0930844321847 0.0184914637357 0.0 0 -0.0184914339334 0.0930842831731 0.0 -4.07616174618 8.6762154013 -1.50762712074 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1689717467" immovable="1" name="cube.021">
+			<mesh_name>guid://8f360f50f1a67793c7280272eddb77106b6d5a42</mesh_name>
+			<surface name="Wood" intersection="1" material="0ff10503ce2b9cdf250af8f98dc35144c3cdac23"/>
+			<transform>0.0420454703271 -0.0305154584348 -0.00740160420537 0.0 0.0312514156103 0.0418702363968 0.00490313256159 0.0 0.00305441068485 -0.00833635777235 0.0517201274633 0.0 -5.09172297462 7.47510581204 -1.51219727236 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1955092047" immovable="1" name="tree_evil">
+			<mesh_name>guid://0e352eb02264c3d72a9c78d2023b28c62dd81ca2</mesh_name>
+			<surface name="wood_lod_0" intersection="1" material="0ff10503ce2b9cdf250af8f98dc35144c3cdac23"/>
+			<surface name="wood_lod_1" enabled="0" intersection="1" material="0ff10503ce2b9cdf250af8f98dc35144c3cdac23"/>
+			<surface name="wood_lod_2" intersection="1" material="0ff10503ce2b9cdf250af8f98dc35144c3cdac23"/>
+			<transform>0.117941126227 0.0996814817191 -0.00942706223577 0.0 -0.0997039079666 0.11825850606 0.00307542388327 0.0 0.00918742455542 0.00373080698773 0.15439248085 0.0 0.912646902073 1.10066128186 -3.04086400942 1.0</transform>
+		</node>
+		<node type="NodeReference" id="314504750" name="tree">
+			<reference>guid://813e9dbca1e1d6492ad2836a0cfa5b5b5d39e1a2</reference>
+			<transform>1.29468047619 0 -0.440900534391 0.0 0 1.36769521236 0 0.0 0.440900593996 0 1.2946805954 0.0 -2.58991210489 -0.257117064486 -2.88182070461 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1991468700" immovable="1" name="cube.020_1">
+			<mesh_name>guid://1700855923fdfd2c9f10e25f966a0c8d1364d4b9</mesh_name>
+			<surface name="Wood" intersection="1" material="0ff10503ce2b9cdf250af8f98dc35144c3cdac23"/>
+			<transform>-0.0712249800563 0.179506421089 -0.0173486359417 0.0 -0.180229246616 -0.0715117827058 -2.8893082591e-09 0.0 -0.00639836583287 0.0161256231368 0.193120449781 0.0 3.29005200872 6.61137512698 -2.35529483692 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="2038428475" immovable="1" name="cube.036_1">
+			<mesh_name>guid://92b4fe04ae5ddebed80dbf4645b2e7a42b8d0096</mesh_name>
+			<surface name="Wood" intersection="1" material="d2210813b629fe2a9e2d4a579b6f272e6e6336dd"/>
+			<transform>0.0595779567957 0.135497197509 0.032166980207 0.0 0.0135987214744 0.0291594527662 -0.148015350103 0.0 -0.138597562909 0.0611062496901 -0.00069536070805 0.0 7.16865081408 -8.54461992526 -2.49195715745 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="643578880" immovable="1" name="cube.020_2">
+			<mesh_name>guid://1700855923fdfd2c9f10e25f966a0c8d1364d4b9</mesh_name>
+			<surface name="Wood" intersection="1" material="0ff10503ce2b9cdf250af8f98dc35144c3cdac23"/>
+			<transform>0.0807611495256 0 0 0.0 0 0.0807611271739 0 0.0 0 0 0.0807611346245 0.0 -3.86524137065 4.08079919287 -2.35529483692 1.0</transform>
+		</node>
+		<node type="NodeReference" id="380171002" name="tree_1">
+			<reference>guid://813e9dbca1e1d6492ad2836a0cfa5b5b5d39e1a2</reference>
+			<transform>1.74984359741 -5.10503562808e-23 -0.595905184746 0.0 -9.97018686387e-17 1.84852731228 3.39533090537e-17 0.0 0.595905184746 3.09342257843e-16 1.74984359741 0.0 14.5932967369 8.17152614681 -2.88182070461 1.0</transform>
+		</node>
+	</node>
+	<node type="NodeDummy" id="660417778" name="devochki">
+		<transform>-0.259054050448 -0.965862955367 0.000100615980406 0.0 0.965862910765 -0.259053858362 0.000468475935018 0.0 -0.000426418711213 0.000218541796746 0.999999770407 0.0 0.188468092734 -8.68634242445 0.896146915042 1.0</transform>
+		<node type="ObjectMeshSkinnedLegacy" id="1735774050" name="plane_1">
+			<mesh_name>guid://2dfd37932fef45e37670903e1f577b6ccef3b8e2</mesh_name>
+			<fps_visible_camera>-1</fps_visible_camera>
+			<fps_visible_shadow>30</fps_visible_shadow>
+			<fps_invisible>0</fps_invisible>
+			<anim_name>guid://fcd5a63512ce296da80b3326df9f49f6e88b62d9</anim_name>
+			<speed>30</speed>
+			<surface name="Face" intersection="1" material="e082033d4dff46cb0ab1413f67ad7074ab89cc18"/>
+			<surface name="Body" intersection="1" material="e128f3de1149944d094658bb7f4043b9b0235239"/>
+			<transform>-0.093519374575 -0.995618024525 -1.61658629969e-22 0.0 0.995617386834 -0.0935193163486 8.16143535876e-23 0.0 -2.68630925764e-16 3.10028597868e-16 0.999999940395 0.0 -4.34943754029 0.162661528524 -0.903929461599 1.0</transform>
+		</node>
+	</node>
+	<node type="NodeDummy" id="934822216" name="spikes">
+		<transform>1.00000011619 4.65951539369e-08 0.000426418565694 0.0 4.65951591175e-08 0.999999952239 -0.000218541767642 0.0 -0.000426418711213 0.000218541796746 0.999999770407 0.0 -5.70252145071 -5.73627340834 1.21137910165 1.0</transform>
+		<node type="NodeReference" id="1541925023" name="spike">
+			<reference>guid://80514c672fa19a2b3a87ccba74fdbed9986bd3db</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.0563016893831 0.26656791586 -1.11082718365 1.0</transform>
+		</node>
+		<node type="NodeReference" id="291206325" name="spike_1">
+			<reference>guid://80514c672fa19a2b3a87ccba74fdbed9986bd3db</reference>
+			<transform>0.665661275387 0.299934089184 -0.041634362191 0.0 -0.302211105824 0.664356470108 -0.0458055101335 0.0 0.0190365519375 0.0588997080922 0.728675186634 0.0 1.21751380111 2.81501548822 -1.11082718365 1.0</transform>
+		</node>
+		<node type="NodeReference" id="20182594" name="spike_2">
+			<reference>guid://80514c672fa19a2b3a87ccba74fdbed9986bd3db</reference>
+			<transform>0.827012181282 0.804392635822 -0.0657885149121 0.0 -0.807072103024 0.823847174644 -0.0723796784878 0.0 -0.00348056317307 0.0977488905191 1.1514172554 0.0 14.1179602682 1.93759167991 -0.814140257223 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1669062483" name="spike_3">
+			<reference>guid://80514c672fa19a2b3a87ccba74fdbed9986bd3db</reference>
+			<transform>1.0607098341 0.423562794924 0.175539657474 0.0 -0.356162697077 1.03979337215 -0.356799840927 0.0 -0.288735628128 0.273408323526 1.08499205112 0.0 14.0712860483 1.9482645816 -0.579692919514 1.0</transform>
+		</node>
+		<node type="NodeReference" id="2068459576" name="spike_4">
+			<reference>guid://80514c672fa19a2b3a87ccba74fdbed9986bd3db</reference>
+			<transform>0.365702271461 0.981943249702 -0.487210690975 0.0 -1.06236457825 0.190921798348 -0.412623882294 0.0 -0.270131736994 0.57850009203 0.96316921711 0.0 13.8891693605 1.69262107378 -0.579692919514 1.0</transform>
+		</node>
+	</node>
+	<node type="NodeDummy" id="352997023" name="tombs">
+		<transform>1.00000011619 4.65951539369e-08 0.000426418565694 0.0 4.65951591175e-08 0.999999952239 -0.000218541767642 0.0 -0.000426418711213 0.000218541796746 0.999999770407 0.0 3.46906729387 3.75562494218 0.902748148184 1.0</transform>
+		<node type="ObjectMeshStatic" id="916073257" immovable="1" name="cube.013">
+			<mesh_name>guid://c83bfc0fb51b0aa7ab416b25db2d3504f02b852f</mesh_name>
+			<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+			<surface name="CrossMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+			<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+			<transform>0.490883171558 0 0 0.0 0 0.490883141756 0 0.0 0 0 0.490883141756 0.0 0.924756697 -0.829816612077 -0.902156568628 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="338581797" immovable="1" name="cube.006">
+			<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
+			<surface name="TombMainMat" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+			<surface name="TombFace" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+			<transform>0.342899888754 -0.110537931323 0.049078065902 0.0 0.0976379513741 0.3400811553 0.0837814360857 0.0 -0.0713732466102 -0.0658320710063 0.35039961338 0.0 -0.881046502656 -4.96149193374 -0.901331661762 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1860909120" immovable="1" name="cube.024">
+			<mesh_name>guid://161126eee5b0214b1d5bf5c0fa2eff58183bb510</mesh_name>
+			<surface name="TombMainMat" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+			<surface name="TombFace" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+			<transform>0.64644664526 0 0 0.0 0 0.646446526051 0 0.0 0 0 0.64644664526 0.0 -0.91688966976 2.15930740137 -0.902953721073 1.0</transform>
+		</node>
+	</node>
+	<node type="NodeDummy" id="279140322" name="StonesCollection">
+		<transform>1.00000011619 2.21440684522e-07 0.000426418527483 0.0 -1.28250400134e-07 0.999999952239 -0.0002185418422 0.0 -0.000426418711213 0.000218541796746 0.999999770407 0.0 0.52212493772 -10.5353254263 0.0432786535603 1.0</transform>
+		<node type="ObjectMeshStatic" id="1053849049" immovable="1" name="Stone_10">
+			<mesh_name>guid://a4d0dcb7a9aed5663118522817e76b11674e0806</mesh_name>
+			<surface name="Stone" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+			<transform>0.465281222824 0.196377255627 0 0.0 -0.196377255627 0.465281222824 0 0.0 0 0 0.50502538681 0.0 1.6920583676 3.14316168139 0 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="2116707684" immovable="1" name="Stone_V3">
+			<mesh_name>guid://5ab7d2570da291535820167a1a47118f5b2dbfad</mesh_name>
+			<surface name="Stone" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -4.18587227006e-07 -4.78807975921 0 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1874850163" immovable="1" name="Stone_v1">
+			<mesh_name>guid://ad33fac1da7bbb345bb3ab9a0e7605c1d0059d28</mesh_name>
+			<surface name="Stone" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 2.83823250989 1.10532532614 8.881784197e-16 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="770957853" immovable="1" name="Stone_v4">
+			<mesh_name>guid://1c4d13db46a9243587381e5ca2148f27983f489a</mesh_name>
+			<surface name="Stone" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0.600796523442 5.82090956165 0 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1388182744" immovable="1" name="Stone_v5">
+			<mesh_name>guid://8ee0837b4db7043fc044a3ce40cbc61f459cff31</mesh_name>
+			<surface name="Stone" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+			<transform>0.377746045589 2.99816205527e-15 0 0.0 -8.20896517469e-15 0.377746015787 0 0.0 0 0 0.37774592638 0.0 4.47073353997 -0.837763994952 -0.0706916120669 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1407900247" immovable="1" name="Stone_v6">
+			<mesh_name>guid://4fa17e85290f7b4080afaaeeda694ac03ede6edc</mesh_name>
+			<surface name="Stone" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+			<transform>0.575735986233 1.4195991484e-15 0 0.0 2.36964932796e-15 0.575735926628 0 0.0 0 0 0.575735807419 0.0 0.592060227164 -1.09842832314 0 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1691988938" immovable="1" name="Stone_v7">
+			<mesh_name>guid://e09aa7254df66fdf33f7b9b07a04593de1623c8b</mesh_name>
+			<surface name="Stone" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+			<transform>-0.442551471622 -0.896743279803 0 0.0 0.896743279803 -0.442551471622 0 0.0 0 0 1 0.0 -3.71303171812 4.44116063613 0.000644046323533 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="668569761" immovable="1" name="Stone_v8">
+			<mesh_name>guid://5281753f4b52b648700b45d01906df49bc1e686e</mesh_name>
+			<surface name="Stone" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 1.44727397284 3.32050072662 2.22044604925e-16 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="299135372" immovable="1" name="Stone_v9">
+			<mesh_name>guid://a314fedfab579eb6a2fe5e629004835e1a5414f5</mesh_name>
+			<surface name="Stone" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0.37207397214 5.6767537638 -8.881784197e-16 1.0</transform>
+		</node>
+	</node>
+	<node type="NodeDummy" id="1193600249" name="BonesCollection">
+		<transform>1.00000011619 2.21440684522e-07 0.000426418527483 0.0 -1.28250400134e-07 0.999999952239 -0.0002185418422 0.0 -0.000426418711213 0.000218541796746 0.999999770407 0.0 4.95711346028 -1.38201538738 0.00245471226006 1.0</transform>
+		<node type="ObjectMeshStatic" id="1759169028" immovable="1" name="Bone_v1">
+			<mesh_name>guid://aae33dddbc0b887f1e01caa60fa32ae48c2cf4d4</mesh_name>
+			<surface name="Bone" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+			<transform>0.637272246614 0.385981180108 0.0241991244256 0.0 -0.386718370495 0.636472590828 0.0321693457663 0.0 -0.0040047606639 -0.040055285439 0.744353890419 0.0 -1.28323368255 -0.936274056382 0.0330120467831 1.0</transform>
+		</node>
+	</node>
+	<node type="NodeDummy" id="839540155" name="ObjectCloudLayer_Cumulus">
+		<transform>0.999999996981 4.65951483823e-08 0.000426418514861 0.0 4.65951563402e-08 0.999999892635 -0.000218541754616 0.0 -0.000426418685796 0.00021854178372 0.999999710802 0.0 2.06102552531 -11.5839945113 3.1237259748 1.0</transform>
+		<node type="ObjectCloudLayer" id="257295730" name="ObjectCloudLayer_Cumulus">
+			<coverage_animation_offset>0 0 0 0</coverage_animation_offset>
+			<noise_animation_offset>0 0 0 0</noise_animation_offset>
+			<surface name="clouds_surface" physics_friction="1" physics_restitution="1" material="861bdcb639dd29ee8ce4d750d28d611c2dc07d8f"/>
+			<transform>1.0000000596 -9.31902859358e-08 -3.45067784314e-16 0.0 9.31902985959e-08 1.0000000596 -2.21990453437e-16 0.0 -1.3556689959e-16 1.76101548362e-16 1 0.0 -4.4408920985e-16 0 1500 1.0</transform>
+		</node>
+	</node>
+</nodes>

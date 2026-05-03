@@ -2,13 +2,13 @@
 <asset version="2.21.0.0">
 	<guid>aaea6e5372e15ef0240fd5e03498d4ca8935e489</guid>
 	<type>world</type>
-	<hash>730b478779180b3a9ed70d30f198e78ec0907249175e309acc5f529e6c4a0c40</hash>
+	<hash>c7c7596d7ccc1c3fd0d8894cf86224c5cca3465ccdb4a7ff61d781af126bd223</hash>
 	<runtimes>
 		<runtime id="aaea6e5372e15ef0240fd5e03498d4ca8935e489" name="main_menu.world" link="0"/>
 	</runtimes>
 	<parameters>
 		<parameter type="string" name="physics_settings_path"/>
-		<parameter type="string" name="render_settings_path"/>
+		<parameter type="string" name="render_settings_path">guid://d83442641c14ba69ab99c13428c77de2d68cf1ca</parameter>
 		<parameter type="string" name="script_name"/>
 		<parameter type="string" name="sound_settings_path"/>
 		<parameter type="string" name="viewports_settings"/>

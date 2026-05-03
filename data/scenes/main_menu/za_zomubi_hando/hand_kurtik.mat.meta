@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>44aa84d9cb7664ded7304f83437a7a107113d581</guid>
+	<type>material</type>
+	<hash>481c50a171b9c7a2d3adb21dcf239bb5b2b1cf90092bd2345fc97144f3fc4fd0</hash>
+	<runtimes>
+		<runtime id="44aa84d9cb7664ded7304f83437a7a107113d581" name="hand_kurtik" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>

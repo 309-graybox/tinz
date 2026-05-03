@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>cc4200d0ef15d6935d882c5e0557dae576869296</guid>
+	<type>material</type>
+	<hash>db978002a6a80b44363764a5fe6cc7770f8abb1d15c7518ac8161eafa4ea81b7</hash>
+	<runtimes>
+		<runtime id="cc4200d0ef15d6935d882c5e0557dae576869296" name="hand_body" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>

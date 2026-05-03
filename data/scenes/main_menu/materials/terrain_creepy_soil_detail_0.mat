@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material version="2.21.0.0" guid="48f6731f4a21056388ca9c4789f8840fb1377e51" parent="596e73d9b56bb95c6b84f6ed3bb41f9fe349122e" base_material="1879c38175a361597e59397b6a17b4412390e56b">
+	<parameter name="albedo" expression="0">0.384313732 0.294117659 0.152941182 1</parameter>
+</material>
