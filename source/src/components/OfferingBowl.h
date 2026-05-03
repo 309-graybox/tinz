@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Interactable.h"
+#include <UnigineGui.h>
+#include <UnigineWidgets.h>
 
 class Inventory;
 
@@ -22,6 +24,7 @@ public:
 	COMPONENT_DEFINE(OfferingBowl, Interactable)
 	COMPONENT_INIT(init)
 	COMPONENT_UPDATE(update)
+	COMPONENT_SHUTDOWN(shutdown)
 
 	PROP_ARRAY_STRUCT(BowlRequirementInfo, requirements)
 	PROP_ARRAY_STRUCT(BowlVisualNodeInfo, visuals)
@@ -36,6 +39,9 @@ public:
 
 	PROP_PARAM(String, soundDrain, "", "Drain Sound", "SoundManager event id or direct audio path")
 	PROP_PARAM(String, soundFilled, "", "Filled Sound", "SoundManager event id or direct audio path")
+
+	PROP_PARAM(File, font)
+	PROP_PARAM(Int, fontSize, 24)
 
 	bool canInteract(const Unigine::NodePtr &interactor) const override;
 	bool isFilled() const noexcept;
@@ -70,6 +76,7 @@ private:
 
 	void init();
 	void update();
+	void shutdown();
 
 	Inventory *resolveInventory(const Unigine::NodePtr &interactor) const;
 	bool hasAnyTransferable(const Inventory *inventory) const;
@@ -83,6 +90,11 @@ private:
 
 	int getTotalRequired() const;
 	int getTotalDeposited() const;
+	int getRequiredByType(const char *type_id) const;
+	int getDepositedByType(const char *type_id) const;
+	void ensureSoulProgressUi();
+	void updateSoulProgressUi();
+	void shutdownSoulProgressUi();
 
 private:
 	Unigine::Vector<RequirementState> _requirements_state;
@@ -93,4 +105,8 @@ private:
 	float _drain_timer = 0.0f;
 	bool _draining = false;
 	bool _was_filled = false;
+	bool _has_soul_requirement = false;
+
+	Unigine::GuiPtr _gui;
+	Unigine::WidgetLabelPtr _soul_progress_label;
 };

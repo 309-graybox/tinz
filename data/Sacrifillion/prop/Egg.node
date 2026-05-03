@@ -20,9 +20,10 @@
 				</parameter>
 				<parameter name="soundDrain">bowl_drain</parameter>
 				<parameter name="soundFilled">bowl_filled</parameter>
+				<parameter name="font">guid://5d45a89caa16f0e22584d277fbedbd561b8fdc8d</parameter>
 			</property>
 		</properties>
-		<transform>99.9989242554 0.000925385334995 -0.462560504675 0.0 0.462560534477 -0.396309643984 99.9981155396 0.0 -0.000907829962671 -99.9992141724 -0.396309792995 0.0 0 0 0 1.0</transform>
+		<transform>99.9989242554 0.000925385335044 -0.462560504675 0.0 0.462560534477 -0.396309643984 99.9981155396 0.0 -0.000907829962649 -99.9992141724 -0.396309792995 0.0 0 0 0 1.0</transform>
 		<node type="NodeDummy" id="1016862397" name="bowl_sound_bank">
 			<properties>
 				<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="dd4df090baa32c0dec64cdd4b10ec2ac224047c9">

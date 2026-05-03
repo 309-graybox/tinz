@@ -21,4 +21,6 @@
 	<parameter name="lockWhenFilled" type="toggle" tooltip="Disable interactions when all requirements are satisfied">1</parameter>
 	<parameter name="soundDrain" type="string" title="Drain Sound" tooltip="SoundManager event id or direct audio path"/>
 	<parameter name="soundFilled" type="string" title="Filled Sound" tooltip="SoundManager event id or direct audio path"/>
+	<parameter name="font" type="file"/>
+	<parameter name="fontSize" type="int">24</parameter>
 </property>
