@@ -11,6 +11,7 @@
 				<parameter name="typeId">soul</parameter>
 				<parameter name="count">5</parameter>
 				<parameter name="stackable">1</parameter>
+				<parameter name="soundPickedUp">pickup</parameter>
 			</property>
 		</properties>
 		<transform>0.999997735023 -1.15603893391e-06 -0.00208615488373 0.0 -1.15640239073e-06 0.999999403954 -0.00110846897587 0.0 0.0020861546509 0.00110846874304 0.999996960163 0.0 0 0 0 1.0</transform>

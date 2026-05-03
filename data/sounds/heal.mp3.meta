@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>ec9a840e003bb526561e06b28f874b7797fab91f</guid>
+	<type>sound</type>
+	<hash>c4212fa879380b210115313be422f6fee2373a52a0d52cbfb4436bc9a572e9e0</hash>
+	<runtimes>
+		<runtime id="ec9a840e003bb526561e06b28f874b7797fab91f" name="heal.mp3" link="0" type="7"/>
+	</runtimes>
+</asset>

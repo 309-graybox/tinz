@@ -388,4 +388,17 @@
 			</node>
 		</node>
 	</node>
+	<node type="NodeDummy" id="1435318381" name="sound_bank">
+		<properties>
+			<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="16aa2e0ad1588e51a1faeb6eafb107ea6ab8674b">
+				<parameter name="eventId">pickup</parameter>
+				<parameter name="sample">guid://bd9afc99d73ed1f23a39b1c52ebd2630edf3b3f2</parameter>
+			</property>
+			<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="6b45015f5698f384bb5cd8abf43d4792dc8d0390">
+				<parameter name="eventId">heal</parameter>
+				<parameter name="sample">guid://ec9a840e003bb526561e06b28f874b7797fab91f</parameter>
+			</property>
+		</properties>
+		<transform>0.99999988079 0 0 0.0 0 1.00000011921 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+	</node>
 </nodes>
