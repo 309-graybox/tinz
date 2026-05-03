@@ -5,6 +5,11 @@
 		<surface name="IronCover" intersection="1" material="211b3ea402522afccf88fe4ec86c53810b25a583"/>
 		<surface name="Wood" intersection="1" material="3ab8c47f7ffa3e915481fef205b5a334ede4b173"/>
 		<surface name="Light" intersection="1" material="c7e4d9edcf8a7207f012bce77a5dcbdbe889c10f"/>
+		<body type="BodyDummy" id="1103935691" frozen="0">
+			<shape type="ShapeBox" id="94219315" name="ShapeBox" transform="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.275184065 1">
+				<size>0.528276801 0.528276801 0.55036813</size>
+			</shape>
+		</body>
 		<transform>0.999999880791 0 0 0.0 0 1 0 0.0 0 0 0.999999761581 0.0 0 0 0 1.0</transform>
 	</node>
 </nodes>

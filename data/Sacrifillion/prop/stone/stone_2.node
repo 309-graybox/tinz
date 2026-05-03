@@ -2,7 +2,7 @@
 <nodes version="2.21.0.0">
 	<node type="ObjectMeshStatic" id="1237338573" immovable="1" name="stone_2">
 		<mesh_name>guid://ad33fac1da7bbb345bb3ab9a0e7605c1d0059d28</mesh_name>
-		<surface name="Stone" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+		<surface name="Stone" intersection="1" collision="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
 		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 	</node>
 </nodes>

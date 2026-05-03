@@ -3,6 +3,6 @@
 	<node type="ObjectMeshStatic" id="1302168946" immovable="1" name="big_tree">
 		<mesh_name>guid://cee450ce2944a80ba2385aa06767b32f22688df0</mesh_name>
 		<surface name="Wood" intersection="1" collision="1" material="43be8119b2de685628e674dbf48ed7bf05309569"/>
-		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		<transform>1 1.23259516441e-32 -4.81570621296e-31 0.0 4.49059946493e-33 1 6.31088724177e-30 0.0 1.06573651581e-30 0 1 0.0 0 0 8.881784197e-16 1.0</transform>
 	</node>
 </nodes>
