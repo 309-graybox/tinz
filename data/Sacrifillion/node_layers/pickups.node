@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="NodeReference" id="361906363" name="red_soul">
+		<reference>guid://abe1601a80e3ae7ff9f72d81da585a1e865ad541</reference>
+		<transform>1.00000011921 0 0 0.0 0 1 0 0.0 0 0 1.00000017881 0.0 59.6026594304 45.4593903514 1.00078667329 1.0</transform>
+	</node>
+</nodes>

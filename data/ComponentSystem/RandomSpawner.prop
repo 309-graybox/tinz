@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="RandomSpawner" manual="1" parent_name="node_base">
+	<parameter name="cooldown" type="float" tooltip="Seconds between spawn attempts">5</parameter>
+	<parameter name="cooldownAfterDeathOnly" type="toggle" tooltip="If true, next cooldown starts only after spawned entity dies">1</parameter>
+	<parameter name="spawnPoint" type="node" tooltip="Spawn Point" group="World position for spawned node">0</parameter>
+	<parameter name="spawnNodes" type="array" array_type="node"/>
+</property>

@@ -2014,6 +2014,10 @@
 			<layer>guid://2e5ba0e9f19a9503592e0771033b90ae8e5f4c3d</layer>
 			<transform>0.998447418213 -0.00333180068992 -0.0555878356099 0.0 -0.00333180907182 0.99284863472 -0.11935364455 0.0 0.0555874854326 0.119352512062 0.991287469864 0.0 48.4075729897 48.9003300864 -4.30887744727 1.0</transform>
 		</node>
+		<node type="NodeLayer" id="1900984322" name="pickups">
+			<layer>guid://edd05cc6b31be4974e89b0f14f65cf09dee4e35c</layer>
+			<transform>0.999999880791 0 0 0.0 0 1 0 0.0 0 0 0.999999821186 0.0 0 0 0 1.0</transform>
+		</node>
 	</editor>
 	<console>
 		<bake_lighting_bounces>4</bake_lighting_bounces>
