@@ -1051,10 +1051,6 @@
 				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 			</node>
 		</node>
-		<node type="NodeLayer" id="1837161089" name="pickups">
-			<layer>guid://d7345f9f7a4e82c5e5b434a1dd365cd6cea5f683</layer>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 10.9148292542 27.3388557434 0.530339855431 1.0</transform>
-		</node>
 		<node type="NodeDummy" id="1234232690" name="SoundBank">
 			<properties>
 				<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="1f794755382095a1d7b90dd0cf2bb0d5e85667d4">
@@ -1064,10 +1060,6 @@
 				<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="a5eb4e27b83f47c8a116e2da034f6d0d3a3a81ca">
 					<parameter name="eventId">strange_dialogue</parameter>
 					<parameter name="sample">guid://4bef50a71ab374a1aff9cf881921512b52b78667</parameter>
-				</property>
-				<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="1b5363e7e2fae7690e5c935654fc5bcadd508a53">
-					<parameter name="eventId">drain</parameter>
-					<parameter name="sample">guid://3b9a583f82c837880262ac99dfafabd342050a3a</parameter>
 				</property>
 			</properties>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
@@ -1142,26 +1134,6 @@
 		</node>
 		<node type="NodeReference" id="2117273565" name="Egg">
 			<reference>guid://beee5dac3fc5287c9fad406a897430824d90e624</reference>
-			<properties>
-				<property parent="f9a9fa049f50c77d9981a5f5487215a5bc3b87c9" guid="bbee84e1f09a3ed46e624028d00e749d386c4a6d">
-					<parameter name="range">10</parameter>
-					<parameter name="requirements">
-						<value index="0">
-							<parameter name="typeId">soul</parameter>
-							<parameter name="requiredCount">10</parameter>
-						</value>
-					</parameter>
-					<parameter name="visuals">
-						<value index="0">
-							<parameter name="typeId">soul</parameter>
-							<parameter name="sourceNode">guid://650b933f3a66094850753e4e425425853dc3382b</parameter>
-						</value>
-					</parameter>
-					<parameter name="requireVisualNode">1</parameter>
-					<parameter name="soundDrain">drain</parameter>
-					<parameter name="soundFilled">pickup</parameter>
-				</property>
-			</properties>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 10.3560640601 -9.58329027843 1.86305468232 1.0</transform>
 		</node>
 	</editor>

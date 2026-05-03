@@ -3,6 +3,38 @@
 	<node type="ObjectMeshStatic" id="589171616" immovable="1" trigger_interaction_enabled="1" name="Egg">
 		<mesh_name>guid://a3ce38e0dae2128d0799bd7ebc7ca8cfc2868858</mesh_name>
 		<surface name="Material.001" intersection="1" intersection_mask="0x10000000" material="641e47e497bf276136a35de2023aa275803c1c5c"/>
+		<properties>
+			<property parent="f9a9fa049f50c77d9981a5f5487215a5bc3b87c9" guid="7c8bed5260ea06c821b17936c2bddadc5ba09d33">
+				<parameter name="range">10</parameter>
+				<parameter name="requirements">
+					<value index="0">
+						<parameter name="typeId">soul</parameter>
+						<parameter name="requiredCount">25</parameter>
+					</value>
+				</parameter>
+				<parameter name="visuals">
+					<value index="0">
+						<parameter name="typeId">soul</parameter>
+						<parameter name="sourceNode">guid://c2dd6314a90227fbecd19e73a5a0dee165218cf3</parameter>
+					</value>
+				</parameter>
+				<parameter name="soundDrain">bowl_drain</parameter>
+				<parameter name="soundFilled">bowl_filled</parameter>
+			</property>
+		</properties>
 		<transform>99.9989242554 0.000925385334995 -0.462560504675 0.0 0.462560534477 -0.396309643984 99.9981155396 0.0 -0.000907829962671 -99.9992141724 -0.396309792995 0.0 0 0 0 1.0</transform>
+		<node type="NodeDummy" id="1016862397" name="bowl_sound_bank">
+			<properties>
+				<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="dd4df090baa32c0dec64cdd4b10ec2ac224047c9">
+					<parameter name="eventId">bowl_drain</parameter>
+					<parameter name="sample">guid://3b9a583f82c837880262ac99dfafabd342050a3a</parameter>
+				</property>
+				<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="439fdb93ccff3f354c42429f62e0f5b098edae94">
+					<parameter name="eventId">bowl_filled</parameter>
+					<parameter name="sample">guid://7ad926dfbd7133596a953640f24d982399e4b123</parameter>
+				</property>
+			</properties>
+			<transform>0.00999989361017 4.62560702557e-05 -9.07804317456e-08 0.0 9.25360172608e-08 -3.96309870702e-05 -0.00999992151986 0.0 -4.62560662784e-05 0.00999981741885 -3.96309802897e-05 0.0 0 -3.46944695195e-18 0 1.0</transform>
+		</node>
 	</node>
 </nodes>

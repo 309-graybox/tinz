@@ -3,6 +3,13 @@
 	<node type="ObjectMeshStatic" id="2085182995" immovable="1" name="blue_soul">
 		<mesh_name>guid://3b45edfe554bbc90e10e6a2b39418888e3ded62e</mesh_name>
 		<surface name="sphere" cast_shadow="0" cast_world_shadow="0" cast_env_probe_shadow="0" intersection="1" shadow_mask="0x0" material="18fcb14609802a7fef536393da0d8f52d1a80e76"/>
+		<properties>
+			<property parent="a51122c1008c9b214f1e982f089eb0a2dd22fa29" guid="f18c33c035e45012b319c004b8551f56137f3cb9">
+				<parameter name="mode">1</parameter>
+				<parameter name="typeId">soul</parameter>
+				<parameter name="stackable">1</parameter>
+			</property>
+		</properties>
 		<transform>0.999997735023 -1.15603893391e-06 -0.00208615488373 0.0 -1.15640239073e-06 0.999999403954 -0.00110846897587 0.0 0.0020861546509 0.00110846874304 0.999996960163 0.0 0 0 0 1.0</transform>
 		<node type="ObjectParticles" id="2004831318" name="particles">
 			<warming>1</warming>
