@@ -5,7 +5,9 @@
 		<surface name="sphere" cast_shadow="0" cast_world_shadow="0" cast_env_probe_shadow="0" intersection="1" shadow_mask="0x0" material="18fcb14609802a7fef536393da0d8f52d1a80e76"/>
 		<properties>
 			<property parent="a51122c1008c9b214f1e982f089eb0a2dd22fa29" guid="f18c33c035e45012b319c004b8551f56137f3cb9">
+				<parameter name="range">5</parameter>
 				<parameter name="mode">1</parameter>
+				<parameter name="magnetSpeed">9</parameter>
 				<parameter name="typeId">soul</parameter>
 				<parameter name="stackable">1</parameter>
 			</property>

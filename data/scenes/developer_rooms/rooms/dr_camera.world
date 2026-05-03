@@ -1140,10 +1140,6 @@
 			<reference>guid://c2dd6314a90227fbecd19e73a5a0dee165218cf3</reference>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 31.6564137116 11.559161032 0.692244388478 1.0</transform>
 		</node>
-		<node type="NodeReference" id="2129165147" name="blue_soul">
-			<reference>guid://c2dd6314a90227fbecd19e73a5a0dee165218cf3</reference>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 28.1325748345 23.4905618515 0.692244388478 1.0</transform>
-		</node>
 		<node type="NodeReference" id="320802066" name="green_soul">
 			<reference>guid://bc91d9c8e9b52136b1196e5d534a2e38a873a6f8</reference>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 28.0087738037 2.57681274414 0.692244388478 1.0</transform>
@@ -1155,6 +1151,10 @@
 		<node type="NodeReference" id="4711484" name="silver_soul">
 			<reference>guid://ab80e8c2575adc0135fe7f093efe10e8c5bc5ac9</reference>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 19.9124526978 2.4511013031 0.692245342152 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1615649236" name="gold_soul">
+			<reference>guid://a1eca40c0f8414c75be50a31838df67dd26eb7bc</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 25.8834805065 21.5410619017 -1.90734863281e-06 1.0</transform>
 		</node>
 	</editor>
 	<console>

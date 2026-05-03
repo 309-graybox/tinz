@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <nodes version="2.21.0.0">
-	<node type="ObjectMeshStatic" id="334152057" immovable="1" name="gold_soul">
+	<node type="ObjectMeshStatic" id="334152057" immovable="1" trigger_interaction_enabled="1" name="gold_soul">
 		<mesh_name>guid://3b45edfe554bbc90e10e6a2b39418888e3ded62e</mesh_name>
 		<surface name="sphere" cast_shadow="0" cast_world_shadow="0" cast_env_probe_shadow="0" intersection="1" shadow_mask="0x0" material="7bb61c1cc1e6a0dd229ce481c46d161f382675cc"/>
 		<properties>
 			<property parent="a51122c1008c9b214f1e982f089eb0a2dd22fa29" guid="5e8f86b887370cff527e387cd6f00cd0cf74cc11">
+				<parameter name="range">5</parameter>
 				<parameter name="mode">1</parameter>
+				<parameter name="magnetSpeed">9</parameter>
 				<parameter name="typeId">soul</parameter>
 				<parameter name="count">5</parameter>
 				<parameter name="stackable">1</parameter>
