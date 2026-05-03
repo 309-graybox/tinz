@@ -2,7 +2,7 @@
 <nodes version="2.21.0.0">
 	<node type="ObjectMeshStatic" id="1668511334" immovable="1" name="tree_5">
 		<mesh_name>guid://92b4fe04ae5ddebed80dbf4645b2e7a42b8d0096</mesh_name>
-		<surface name="Wood" intersection="1" material="43be8119b2de685628e674dbf48ed7bf05309569"/>
-		<transform>0.999999940395 0 0 0.0 0 0.999999940395 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		<surface name="Wood" intersection="1" collision="1" material="43be8119b2de685628e674dbf48ed7bf05309569"/>
+		<transform>0.999999940395 -4.33680868994e-19 3.7947076037e-19 0.0 0 0.999999940395 0 0.0 -1.59919820442e-18 -2.77555756156e-17 1 0.0 0 0 0 1.0</transform>
 	</node>
 </nodes>

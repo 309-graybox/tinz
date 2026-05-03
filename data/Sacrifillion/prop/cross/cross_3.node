@@ -3,6 +3,11 @@
 	<node type="ObjectMeshStatic" id="749887070" immovable="1" name="cross_3">
 		<mesh_name>guid://5a7bc79a30bb16a1208e9f4c1870bd0068c12e1c</mesh_name>
 		<surface name="WoodTomb" intersection="1" material="4202624b26ca597ccf39165e0d032e1a43378981"/>
-		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		<body type="BodyDummy" id="1029933631" frozen="0">
+			<shape type="ShapeBox" id="656292391" name="ShapeBox" transform="1 0 0 0 0 1 0 0 0 0 1 0 0.00737927854 0 1.11353922 1">
+				<size>0.864318371 0.162459761 2.22742701</size>
+			</shape>
+		</body>
+		<transform>1 0 -2.08166817117e-17 0.0 4.92343723943e-17 1 4.69542126399e-18 0.0 -1.38777878078e-17 0 1 0.0 0 0 -2.22044604925e-16 1.0</transform>
 	</node>
 </nodes>

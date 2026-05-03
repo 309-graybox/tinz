@@ -3,6 +3,11 @@
 	<node type="ObjectMeshStatic" id="779196467" immovable="1" name="grave_2">
 		<mesh_name>guid://b8bc3dab8649df342bd0fd6181a3c91e075972cb</mesh_name>
 		<surface name="CrossMat" intersection="1" material="e8562f5890b80769d24a9d36671739169f41bed0"/>
-		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		<body type="BodyDummy" id="2004184011" frozen="0">
+			<shape type="ShapeBox" id="1670463283" name="ShapeBox" transform="1 0 0 0 0 1 0 0 0 0 1 0 0 7.4505806e-09 1.27938128 1">
+				<size>1.64442968 0.299223661 2.55876255</size>
+			</shape>
+		</body>
+		<transform>1 0 6.93889390391e-18 0.0 -1.08307455987e-17 1 0 0.0 0 2.86229373536e-17 1 0.0 0 -8.881784197e-16 -1.11022302463e-16 1.0</transform>
 	</node>
 </nodes>
