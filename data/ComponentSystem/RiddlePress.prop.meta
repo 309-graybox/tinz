@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>17405ba239bde66238c7c9d7d3b4fa8db097641b</guid>
+	<type>property</type>
+	<hash>20ba3f0112b239d40ea471d24f93cbfd60072fec22e966734bb6bcbe5a02990d</hash>
+	<runtimes>
+		<runtime id="17405ba239bde66238c7c9d7d3b4fa8db097641b" name="RiddlePress" link="0" type="4"/>
+	</runtimes>
+</asset>

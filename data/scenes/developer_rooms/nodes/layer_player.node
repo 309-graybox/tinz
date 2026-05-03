@@ -152,4 +152,253 @@
 		</properties>
 		<transform>0.99999988079 0 0 0.0 0 1.00000011921 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 	</node>
+	<node type="NodeDummy" id="232227612" name="menu">
+		<transform>0.99999988079 0 0 0.0 0 1.00000011921 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		<node type="NodeDummy" id="475644875" name="main_menu">
+			<properties>
+				<property parent="eabcffd8d5120b660823e2c294a8dc252da5ea29" guid="379bfd44c20d2dde20c7e6c8ef6f8e9518b48d0d">
+					<parameter name="main_menu">265537198</parameter>
+					<parameter name="settings_menu">782059076</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		</node>
+		<node type="NodeDummy" id="265537198" name="canvas_main_menu">
+			<properties>
+				<property parent="481e47ba54f50bc51c49f0400a2fcb32a7854368" guid="98704a77d54724fdb90bca4359452af334124b08"/>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			<node type="NodeDummy" id="1381457461" name="Table">
+				<properties>
+					<property parent="6fb6e20332106eebd34a3ae7a23b685e049f60d1" guid="f4d054163954eeb22358a13af8195d147f09f2c7">
+						<parameter name="pos">-256 -121 0 0</parameter>
+						<parameter name="pivot">0.5 0.5</parameter>
+						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
+						<parameter name="min_cell_size">512 60</parameter>
+						<parameter name="max_cell_size">512 60</parameter>
+						<parameter name="spacing">1</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+				<node type="NodeDummy" id="1838471696" name="ButtonStart">
+					<properties>
+						<property parent="d007a1033e4bf5d44e6ec54f2ae558534547be19" guid="34b99e8110785737d28b3b2d1aeeae5c5c1a917a">
+							<parameter name="pos">0 0 512 60</parameter>
+							<parameter name="text">Start</parameter>
+							<parameter name="font_color">0 0 0 1</parameter>
+							<parameter name="font_offset">0 0</parameter>
+							<parameter name="bg_uv">0 0 1 1</parameter>
+							<parameter name="bg_color">1 1 1 1</parameter>
+						</property>
+					</properties>
+					<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+				</node>
+				<node type="NodeDummy" id="1735419439" name="ButtonRestart">
+					<properties>
+						<property parent="d007a1033e4bf5d44e6ec54f2ae558534547be19" guid="d96d4338291fb9a6debf5cfc81becf1fb4a8f291">
+							<parameter name="pos">0 61 512 60</parameter>
+							<parameter name="text">Restart</parameter>
+							<parameter name="font_color">0 0 0 1</parameter>
+							<parameter name="font_offset">0 0</parameter>
+							<parameter name="bg_uv">0 0 1 1</parameter>
+							<parameter name="bg_color">1 1 1 1</parameter>
+						</property>
+					</properties>
+					<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+				</node>
+				<node type="NodeDummy" id="1081204162" name="ButtonSettings">
+					<properties>
+						<property parent="d007a1033e4bf5d44e6ec54f2ae558534547be19" guid="fcd7dd9b26fdb0e1238d2227815a70f569d20abc">
+							<parameter name="pos">0 122 512 60</parameter>
+							<parameter name="text">Settings</parameter>
+							<parameter name="font_color">0 0 0 1</parameter>
+							<parameter name="font_offset">0 0</parameter>
+							<parameter name="bg_uv">0 0 1 1</parameter>
+							<parameter name="bg_color">1 1 1 1</parameter>
+						</property>
+					</properties>
+					<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+				</node>
+				<node type="NodeDummy" id="142901817" name="ButtonQuit">
+					<properties>
+						<property parent="d007a1033e4bf5d44e6ec54f2ae558534547be19" guid="afdae32a2ce4173c7f805a8e6b2a9f5458bc66eb">
+							<parameter name="pos">0 183 512 60</parameter>
+							<parameter name="text">Quit</parameter>
+							<parameter name="font_color">0 0 0 1</parameter>
+							<parameter name="font_offset">0 0</parameter>
+							<parameter name="bg_uv">0 0 1 1</parameter>
+							<parameter name="bg_color">1 1 1 1</parameter>
+						</property>
+					</properties>
+					<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+				</node>
+			</node>
+		</node>
+		<node type="NodeDummy" id="782059076" name="canvas_settings">
+			<properties>
+				<property parent="481e47ba54f50bc51c49f0400a2fcb32a7854368" guid="ea89de451863fc2627054db182745880dbf4cf4e"/>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			<node type="NodeDummy" id="554605779" name="Table">
+				<properties>
+					<property parent="6fb6e20332106eebd34a3ae7a23b685e049f60d1" guid="38e6006c9d89a2857110ce70f5e2630c31148e55">
+						<parameter name="pos">1 -122 0 0</parameter>
+						<parameter name="pivot">0 0.5</parameter>
+						<parameter name="anchor">0 0.5 0 0.5</parameter>
+						<parameter name="max_columns">2</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="222559254" name="Label">
+				<properties>
+					<property parent="1a914610540f70f5c7f1612a28d8511750320139" guid="94f55affa9e9e68760e7304baa46ecfed17d0bb0">
+						<parameter name="pos">-256 50 256 50</parameter>
+						<parameter name="pivot">0.5 0.5</parameter>
+						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
+						<parameter name="text">Volume</parameter>
+						<parameter name="font_color">1 1 1 1</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="494503037" name="SliderVolume">
+				<properties>
+					<property parent="db7098052827b16790dd0086559222e73aa8d85b" guid="10a73b7e1748b83d89180122e52dd8ded6a0ab4f">
+						<parameter name="pos">128 35 512 20</parameter>
+						<parameter name="pivot">0.5 0.5</parameter>
+						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
+						<parameter name="bg_color">1 1 1 1</parameter>
+						<parameter name="fg_color">1 1 1 1</parameter>
+						<parameter name="handle_color">1 1 1 1</parameter>
+						<parameter name="value">1</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="379157432" name="Label">
+				<properties>
+					<property parent="1a914610540f70f5c7f1612a28d8511750320139" guid="b9f992496bf286e8e3a680750ea86d82e1902062">
+						<parameter name="pos">-256 100 256 50</parameter>
+						<parameter name="pivot">0.5 0.5</parameter>
+						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
+						<parameter name="text">Music</parameter>
+						<parameter name="font_color">1 1 1 1</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="511544247" name="SliderMusicVolume">
+				<properties>
+					<property parent="db7098052827b16790dd0086559222e73aa8d85b" guid="157f28e0607210ed48556f24eca4472f4739a459">
+						<parameter name="pos">128 85 512 20</parameter>
+						<parameter name="pivot">0.5 0.5</parameter>
+						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
+						<parameter name="bg_color">1 1 1 1</parameter>
+						<parameter name="fg_color">1 1 1 1</parameter>
+						<parameter name="handle_color">1 1 1 1</parameter>
+						<parameter name="value">1</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1935209898" name="Label">
+				<properties>
+					<property parent="1a914610540f70f5c7f1612a28d8511750320139" guid="7082e6a3538bc3bd1e68d8afc207653bde88c1e4">
+						<parameter name="pos">-256 -100 256 50</parameter>
+						<parameter name="pivot">0.5 0.5</parameter>
+						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
+						<parameter name="text">Brightness</parameter>
+						<parameter name="font_color">1 1 1 1</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="124725505" name="SliderBrightness">
+				<properties>
+					<property parent="db7098052827b16790dd0086559222e73aa8d85b" guid="652f71124f4eb0f64fb3e8f6d0c41decf5e5a3f3">
+						<parameter name="pos">122 -115 500 20</parameter>
+						<parameter name="pivot">0.5 0.5</parameter>
+						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
+						<parameter name="bg_color">1 1 1 1</parameter>
+						<parameter name="fg_color">1 1 1 1</parameter>
+						<parameter name="handle_color">1 1 1 1</parameter>
+						<parameter name="min_value">-1</parameter>
+						<parameter name="max_value">1</parameter>
+						<parameter name="value">0</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1753443948" name="Label">
+				<properties>
+					<property parent="1a914610540f70f5c7f1612a28d8511750320139" guid="d9c77e8d660b31b07150577929e635393b2618b6">
+						<parameter name="pos">-256 -50 256 50</parameter>
+						<parameter name="pivot">0.5 0.5</parameter>
+						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
+						<parameter name="text">Contrast</parameter>
+						<parameter name="font_color">1 1 1 1</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="833001179" name="SliderContrast">
+				<properties>
+					<property parent="db7098052827b16790dd0086559222e73aa8d85b" guid="9358f0946fbf37aebb51b318ed869116d4fcb89d">
+						<parameter name="pos">128 -65 512 20</parameter>
+						<parameter name="pivot">0.5 0.5</parameter>
+						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
+						<parameter name="bg_color">1 1 1 1</parameter>
+						<parameter name="fg_color">1 1 1 1</parameter>
+						<parameter name="handle_color">1 1 1 1</parameter>
+						<parameter name="min_value">-1</parameter>
+						<parameter name="max_value">1</parameter>
+						<parameter name="value">0</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1566760574" name="Label">
+				<properties>
+					<property parent="1a914610540f70f5c7f1612a28d8511750320139" guid="c994e4877f25e65bf3873f537a5fc45bc627e158">
+						<parameter name="pos">-256 0 256 50</parameter>
+						<parameter name="pivot">0.5 0.5</parameter>
+						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
+						<parameter name="text">Gamma</parameter>
+						<parameter name="font_color">1 1 1 1</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="426275781" name="SliderGamma">
+				<properties>
+					<property parent="db7098052827b16790dd0086559222e73aa8d85b" guid="5de6d7e6f57a1f745a85a60a9deee1de31d674d7">
+						<parameter name="pos">128 -15 512 20</parameter>
+						<parameter name="pivot">0.5 0.5</parameter>
+						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
+						<parameter name="bg_color">1 1 1 1</parameter>
+						<parameter name="fg_color">1 1 1 1</parameter>
+						<parameter name="handle_color">1 1 1 1</parameter>
+						<parameter name="min_value">-1</parameter>
+						<parameter name="max_value">1</parameter>
+						<parameter name="value">0</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			</node>
+		</node>
+	</node>
+	<node type="NodeDummy" id="1435318381" name="sound_bank">
+		<properties>
+			<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="16aa2e0ad1588e51a1faeb6eafb107ea6ab8674b">
+				<parameter name="eventId">pickup</parameter>
+				<parameter name="sample">guid://bd9afc99d73ed1f23a39b1c52ebd2630edf3b3f2</parameter>
+			</property>
+			<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="6b45015f5698f384bb5cd8abf43d4792dc8d0390">
+				<parameter name="eventId">heal</parameter>
+				<parameter name="sample">guid://ec9a840e003bb526561e06b28f874b7797fab91f</parameter>
+			</property>
+		</properties>
+		<transform>0.99999988079 0 0 0.0 0 1.00000011921 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+	</node>
 </nodes>

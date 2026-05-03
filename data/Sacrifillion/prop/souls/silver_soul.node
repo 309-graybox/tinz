@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <nodes version="2.21.0.0">
-	<node type="ObjectMeshStatic" id="1352326790" immovable="1" name="silver_soul">
+	<node type="ObjectMeshStatic" id="1352326790" immovable="1" trigger_interaction_enabled="1" name="silver_soul">
 		<mesh_name>guid://3b45edfe554bbc90e10e6a2b39418888e3ded62e</mesh_name>
 		<surface name="sphere" cast_shadow="0" cast_world_shadow="0" cast_env_probe_shadow="0" intersection="1" shadow_mask="0x0" material="6eee9e5567efdbb089553b4ff61b7062a42cb459"/>
+		<properties>
+			<property parent="a51122c1008c9b214f1e982f089eb0a2dd22fa29" guid="64ac7ded77e20f794e9f88d9a6ccd1a8411b0596">
+				<parameter name="range">5</parameter>
+				<parameter name="mode">1</parameter>
+				<parameter name="magnetSpeed">9</parameter>
+				<parameter name="typeId">soul</parameter>
+				<parameter name="count">4</parameter>
+				<parameter name="stackable">1</parameter>
+				<parameter name="soundPickedUp">pickup</parameter>
+			</property>
+		</properties>
 		<transform>0.999997735023 -1.15603950235e-06 -0.00208615581505 0.0 -1.15640295917e-06 0.999999403954 -0.00110846897587 0.0 0.00208615581505 0.00110846885946 0.999997079372 0.0 0 0 0 1.0</transform>
 		<node type="ObjectParticles" id="1141613613" name="particles">
 			<warming>1</warming>

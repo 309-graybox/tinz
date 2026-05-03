@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="PressurePlate" manual="1" parent_name="node_base">
+	<parameter name="plate" type="node" tooltip="plate to move">0</parameter>
+	<parameter name="trigger" type="node" title="Trigger" tooltip="WorldTrigger that detects stepping on spikes">0</parameter>
+	<parameter name="depth" type="float">0.1</parameter>
+	<parameter name="pressSoundId" type="string"/>
+	<parameter name="unpressSoundId" type="string"/>
+	<parameter name="speed" type="float" title="Speed" tooltip="Approach rate toward open pose">8</parameter>
+	<parameter name="damping" type="float" title="Damping" tooltip="Return rate to rest pose">8</parameter>
+</property>

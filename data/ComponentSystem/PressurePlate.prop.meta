@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>4d420e5e1bfe082d910da7a9ddc8877578d5ba19</guid>
+	<type>property</type>
+	<hash>7846147d0d95f3d15b3f8f047f78ae658835df4ba41039b29b3e0d61b8dbc7fe</hash>
+	<runtimes>
+		<runtime id="4d420e5e1bfe082d910da7a9ddc8877578d5ba19" name="PressurePlate" link="0" type="4"/>
+	</runtimes>
+</asset>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>aae51217b7811fd877847eba16a39a448b5ddd85</guid>
+	<type>node</type>
+	<hash>c3f8de525dd44f37225d74a1e24fb244f3ba443df8d27753d7f7d84e94b80916</hash>
+	<runtimes>
+		<runtime id="aae51217b7811fd877847eba16a39a448b5ddd85" name="Heart.node" link="0" type="3"/>
+	</runtimes>
+</asset>

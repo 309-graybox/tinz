@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <nodes version="2.21.0.0">
-	<node type="ObjectMeshStatic" id="334152057" immovable="1" trigger_interaction_enabled="1" name="gold_soul">
-		<mesh_name>guid://3b45edfe554bbc90e10e6a2b39418888e3ded62e</mesh_name>
-		<surface name="sphere" cast_shadow="0" cast_world_shadow="0" cast_env_probe_shadow="0" intersection="1" shadow_mask="0x0" material="7bb61c1cc1e6a0dd229ce481c46d161f382675cc"/>
+	<node type="ObjectMeshStatic" id="1730977113" immovable="1" trigger_interaction_enabled="1" name="Heart">
+		<mesh_name>guid://ea320c65d215bb1a44479d7086bc3c263ce20523</mesh_name>
+		<surface name="Material.004" intersection="1" material="f9c356edf5525c69e0261b58fff7bbf60c53cd6b"/>
 		<properties>
-			<property parent="a51122c1008c9b214f1e982f089eb0a2dd22fa29" guid="5e8f86b887370cff527e387cd6f00cd0cf74cc11">
+			<property parent="a51122c1008c9b214f1e982f089eb0a2dd22fa29" guid="9c18eabd224d4dab51a4f4a9bbcc054aba8d7da6">
 				<parameter name="range">5</parameter>
 				<parameter name="mode">1</parameter>
 				<parameter name="magnetSpeed">9</parameter>
-				<parameter name="typeId">soul</parameter>
-				<parameter name="count">5</parameter>
+				<parameter name="typeId">health</parameter>
+				<parameter name="count">25</parameter>
 				<parameter name="stackable">1</parameter>
-				<parameter name="soundPickedUp">pickup</parameter>
+				<parameter name="soundPickedUp">heal</parameter>
 			</property>
 		</properties>
-		<transform>0.999997735023 -1.15603893391e-06 -0.00208615488373 0.0 -1.15640239073e-06 0.999999403954 -0.00110846897587 0.0 0.0020861546509 0.00110846874304 0.999996960163 0.0 0 0 0 1.0</transform>
-		<node type="ObjectParticles" id="759299204" name="particles">
+		<transform>0.999998629093 3.9893493522e-06 0.00160914973821 0.0 3.99032569476e-06 0.999987721443 -0.00495890527964 0.0 -0.00160914973821 0.00495890481398 0.999986350536 0.0 0 0 0 1.0</transform>
+		<node type="ObjectParticles" id="1791213624" name="particles">
 			<warming>1</warming>
 			<clear_on_enable>1</clear_on_enable>
 			<number_per_spawn>2</number_per_spawn>
@@ -91,7 +91,7 @@
 					</keys>
 				</curve_max>
 			</velocity_modifier>
-			<linear_damping_modifier mode="0" value="4.1637001" value_min="0" value_max="2" curve_scale="1">
+			<linear_damping_modifier mode="0" value="10" value_min="0" value_max="2" curve_scale="1">
 				<curve_min>
 					<keys>
 						<key point="0 0" left_tangent="0 0" right_tangent="0 0"/>
@@ -250,15 +250,15 @@
 			<emitter_type>1</emitter_type>
 			<emitter_enabled>1</emitter_enabled>
 			<emitter_sync>0</emitter_sync>
-			<emitter_size>0.200000003 0 0</emitter_size>
+			<emitter_size>0.300000012 0 0</emitter_size>
 			<texture_atlas_size>4 4</texture_atlas_size>
 			<life_mean>2</life_mean>
 			<life_spread>0</life_spread>
 			<fps_visible_camera>-1</fps_visible_camera>
 			<fps_visible_shadow>30</fps_visible_shadow>
 			<fps_invisible>0</fps_invisible>
-			<surface name="particles" material="83e39c0adcdb637b17e17eb1dca88dd3f9d28671"/>
-			<transform>1.00000065565 -4.69399497273e-13 9.02130437488e-10 0.0 5.51159683485e-13 1.00000023842 3.14503132738e-11 0.0 -7.48597164483e-10 9.5130071355e-12 1.0000012517 0.0 0 0 0 1.0</transform>
+			<surface name="particles" material="2db58b339bb27c794dc446a642fbd51a35ee96c1"/>
+			<transform>0.999997496602 8.90066642487e-14 7.02233370527e-11 0.0 5.06730430321e-14 0.999999046314 -7.26250847655e-11 0.0 3.36855665633e-11 1.17219719174e-10 0.99999922513 0.0 1.58184576549e-11 2.80451217805e-11 0.164922986443 1.0</transform>
 		</node>
 	</node>
 </nodes>

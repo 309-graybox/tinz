@@ -818,256 +818,11 @@
 		<node type="NodeDummy" id="1670013548" name="NodeDummy_4">
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 		</node>
-		<node type="NodeDummy" id="590803037" name="main_menu">
-			<properties>
-				<property parent="eabcffd8d5120b660823e2c294a8dc252da5ea29" guid="cedd70ffecade17e66ccfc6b46f20e5c1cf5dc6a">
-					<parameter name="main_menu">698217871</parameter>
-					<parameter name="settings_menu">1662203416</parameter>
-				</property>
-			</properties>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-		</node>
-		<node type="NodeDummy" id="698217871" name="canvas_main_menu">
-			<properties>
-				<property parent="481e47ba54f50bc51c49f0400a2fcb32a7854368" guid="721884c02fed0a3a34e80e305c349dd70b0c0e5a"/>
-			</properties>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-			<node type="NodeDummy" id="1110092738" name="Table">
-				<properties>
-					<property parent="6fb6e20332106eebd34a3ae7a23b685e049f60d1" guid="c32ab3c066224f6af1219990c32aee60f0afb9d7">
-						<parameter name="pos">-256 -121 0 0</parameter>
-						<parameter name="pivot">0.5 0.5</parameter>
-						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
-						<parameter name="min_cell_size">512 60</parameter>
-						<parameter name="max_cell_size">512 60</parameter>
-						<parameter name="spacing">1</parameter>
-					</property>
-				</properties>
-				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-				<node type="NodeDummy" id="1593505849" name="ButtonStart">
-					<properties>
-						<property parent="d007a1033e4bf5d44e6ec54f2ae558534547be19" guid="264def9fb4ab0a9e13d5620fd81ca5ed9f660d4a">
-							<parameter name="pos">0 0 512 60</parameter>
-							<parameter name="text">Start</parameter>
-							<parameter name="font_color">0 0 0 1</parameter>
-							<parameter name="font_offset">0 0</parameter>
-							<parameter name="bg_uv">0 0 1 1</parameter>
-							<parameter name="bg_color">1 1 1 1</parameter>
-						</property>
-					</properties>
-					<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-				</node>
-				<node type="NodeDummy" id="1280465336" name="ButtonRestart">
-					<properties>
-						<property parent="d007a1033e4bf5d44e6ec54f2ae558534547be19" guid="9d3e629c9da803a329e0cf6c782a29426d30d603">
-							<parameter name="pos">0 61 512 60</parameter>
-							<parameter name="text">Restart</parameter>
-							<parameter name="font_color">0 0 0 1</parameter>
-							<parameter name="font_offset">0 0</parameter>
-							<parameter name="bg_uv">0 0 1 1</parameter>
-							<parameter name="bg_color">1 1 1 1</parameter>
-						</property>
-					</properties>
-					<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-				</node>
-				<node type="NodeDummy" id="1781236650" name="ButtonSettings">
-					<properties>
-						<property parent="d007a1033e4bf5d44e6ec54f2ae558534547be19" guid="9190b9c2a8dc1077e4007812322a71e43cb35cb1">
-							<parameter name="pos">0 122 512 60</parameter>
-							<parameter name="text">Settings</parameter>
-							<parameter name="font_color">0 0 0 1</parameter>
-							<parameter name="font_offset">0 0</parameter>
-							<parameter name="bg_uv">0 0 1 1</parameter>
-							<parameter name="bg_color">1 1 1 1</parameter>
-						</property>
-					</properties>
-					<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-				</node>
-				<node type="NodeDummy" id="1387552513" name="ButtonQuit">
-					<properties>
-						<property parent="d007a1033e4bf5d44e6ec54f2ae558534547be19" guid="d4423a5304bd5bae816d4fc33d9f6bd09549d3ee">
-							<parameter name="pos">0 183 512 60</parameter>
-							<parameter name="text">Quit</parameter>
-							<parameter name="font_color">0 0 0 1</parameter>
-							<parameter name="font_offset">0 0</parameter>
-							<parameter name="bg_uv">0 0 1 1</parameter>
-							<parameter name="bg_color">1 1 1 1</parameter>
-						</property>
-					</properties>
-					<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-				</node>
-			</node>
-		</node>
-		<node type="NodeDummy" id="1662203416" name="canvas_settings">
-			<properties>
-				<property parent="481e47ba54f50bc51c49f0400a2fcb32a7854368" guid="62f083804abefcc124e27d24a5e2fe2d97bc649b"/>
-			</properties>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-			<node type="NodeDummy" id="877544087" name="Table">
-				<properties>
-					<property parent="6fb6e20332106eebd34a3ae7a23b685e049f60d1" guid="55405ca383b89308366b26cfb80753f9d438d13e">
-						<parameter name="pos">1 -122 0 0</parameter>
-						<parameter name="pivot">0 0.5</parameter>
-						<parameter name="anchor">0 0.5 0 0.5</parameter>
-						<parameter name="max_columns">2</parameter>
-					</property>
-				</properties>
-				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-			</node>
-			<node type="NodeDummy" id="330268426" name="Label">
-				<properties>
-					<property parent="1a914610540f70f5c7f1612a28d8511750320139" guid="baf90cb20b7eda72308ba6f685bfd4de15be4785">
-						<parameter name="pos">-256 50 256 50</parameter>
-						<parameter name="pivot">0.5 0.5</parameter>
-						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
-						<parameter name="text">Volume</parameter>
-						<parameter name="font_color">1 1 1 1</parameter>
-					</property>
-				</properties>
-				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-			</node>
-			<node type="NodeDummy" id="284189409" name="SliderVolume">
-				<properties>
-					<property parent="db7098052827b16790dd0086559222e73aa8d85b" guid="fcf5e48da498a8b99e151299ac2cd24e23949320">
-						<parameter name="pos">128 35 512 20</parameter>
-						<parameter name="pivot">0.5 0.5</parameter>
-						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
-						<parameter name="bg_color">1 1 1 1</parameter>
-						<parameter name="fg_color">1 1 1 1</parameter>
-						<parameter name="handle_color">1 1 1 1</parameter>
-						<parameter name="value">1</parameter>
-					</property>
-				</properties>
-				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-			</node>
-			<node type="NodeDummy" id="134389452" name="Label">
-				<properties>
-					<property parent="1a914610540f70f5c7f1612a28d8511750320139" guid="9c47e65cc32c82d60088e2c06129d466582f0b87">
-						<parameter name="pos">-256 100 256 50</parameter>
-						<parameter name="pivot">0.5 0.5</parameter>
-						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
-						<parameter name="text">Music</parameter>
-						<parameter name="font_color">1 1 1 1</parameter>
-					</property>
-				</properties>
-				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-			</node>
-			<node type="NodeDummy" id="314330590" name="SliderMusicVolume">
-				<properties>
-					<property parent="db7098052827b16790dd0086559222e73aa8d85b" guid="0e34b2eee181c9efebcc8df29b20801d0d0b4951">
-						<parameter name="pos">128 85 512 20</parameter>
-						<parameter name="pivot">0.5 0.5</parameter>
-						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
-						<parameter name="bg_color">1 1 1 1</parameter>
-						<parameter name="fg_color">1 1 1 1</parameter>
-						<parameter name="handle_color">1 1 1 1</parameter>
-						<parameter name="value">1</parameter>
-					</property>
-				</properties>
-				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-			</node>
-			<node type="NodeDummy" id="1370708901" name="Label">
-				<properties>
-					<property parent="1a914610540f70f5c7f1612a28d8511750320139" guid="970a3897228b221a8ff89083cf9da6667aa71a22">
-						<parameter name="pos">-256 -100 256 50</parameter>
-						<parameter name="pivot">0.5 0.5</parameter>
-						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
-						<parameter name="text">Brightness</parameter>
-						<parameter name="font_color">1 1 1 1</parameter>
-					</property>
-				</properties>
-				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-			</node>
-			<node type="NodeDummy" id="1277909184" name="SliderBrightness">
-				<properties>
-					<property parent="db7098052827b16790dd0086559222e73aa8d85b" guid="9608ed560c99d66c5a295cda05397b6498a6d319">
-						<parameter name="pos">122 -115 500 20</parameter>
-						<parameter name="pivot">0.5 0.5</parameter>
-						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
-						<parameter name="bg_color">1 1 1 1</parameter>
-						<parameter name="fg_color">1 1 1 1</parameter>
-						<parameter name="handle_color">1 1 1 1</parameter>
-						<parameter name="min_value">-1</parameter>
-						<parameter name="max_value">1</parameter>
-						<parameter name="value">0</parameter>
-					</property>
-				</properties>
-				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-			</node>
-			<node type="NodeDummy" id="1732189865" name="Label">
-				<properties>
-					<property parent="1a914610540f70f5c7f1612a28d8511750320139" guid="e460f16968cb7359a75578b5b68a50cd6da635cc">
-						<parameter name="pos">-256 -50 256 50</parameter>
-						<parameter name="pivot">0.5 0.5</parameter>
-						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
-						<parameter name="text">Contrast</parameter>
-						<parameter name="font_color">1 1 1 1</parameter>
-					</property>
-				</properties>
-				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-			</node>
-			<node type="NodeDummy" id="526112756" name="SliderContrast">
-				<properties>
-					<property parent="db7098052827b16790dd0086559222e73aa8d85b" guid="c5a88c20262395eee25207c4467c9224483af6bb">
-						<parameter name="pos">128 -65 512 20</parameter>
-						<parameter name="pivot">0.5 0.5</parameter>
-						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
-						<parameter name="bg_color">1 1 1 1</parameter>
-						<parameter name="fg_color">1 1 1 1</parameter>
-						<parameter name="handle_color">1 1 1 1</parameter>
-						<parameter name="min_value">-1</parameter>
-						<parameter name="max_value">1</parameter>
-						<parameter name="value">0</parameter>
-					</property>
-				</properties>
-				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-			</node>
-			<node type="NodeDummy" id="155529197" name="Label">
-				<properties>
-					<property parent="1a914610540f70f5c7f1612a28d8511750320139" guid="b24e50cb5b55be10e92482778edcebef2085f846">
-						<parameter name="pos">-256 0 256 50</parameter>
-						<parameter name="pivot">0.5 0.5</parameter>
-						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
-						<parameter name="text">Gamma</parameter>
-						<parameter name="font_color">1 1 1 1</parameter>
-					</property>
-				</properties>
-				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-			</node>
-			<node type="NodeDummy" id="1949290600" name="SliderGamma">
-				<properties>
-					<property parent="db7098052827b16790dd0086559222e73aa8d85b" guid="52ce813a4b2c3d1a736769fe9509e42382fe72ed">
-						<parameter name="pos">128 -15 512 20</parameter>
-						<parameter name="pivot">0.5 0.5</parameter>
-						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
-						<parameter name="bg_color">1 1 1 1</parameter>
-						<parameter name="fg_color">1 1 1 1</parameter>
-						<parameter name="handle_color">1 1 1 1</parameter>
-						<parameter name="min_value">-1</parameter>
-						<parameter name="max_value">1</parameter>
-						<parameter name="value">0</parameter>
-					</property>
-				</properties>
-				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-			</node>
-		</node>
-		<node type="NodeLayer" id="1837161089" name="pickups">
-			<layer>guid://d7345f9f7a4e82c5e5b434a1dd365cd6cea5f683</layer>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 10.9148292542 27.3388557434 0.530339855431 1.0</transform>
-		</node>
 		<node type="NodeDummy" id="1234232690" name="SoundBank">
 			<properties>
-				<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="1f794755382095a1d7b90dd0cf2bb0d5e85667d4">
-					<parameter name="eventId">pickup</parameter>
-					<parameter name="sample">guid://7ad926dfbd7133596a953640f24d982399e4b123</parameter>
-				</property>
 				<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="a5eb4e27b83f47c8a116e2da034f6d0d3a3a81ca">
 					<parameter name="eventId">strange_dialogue</parameter>
 					<parameter name="sample">guid://4bef50a71ab374a1aff9cf881921512b52b78667</parameter>
-				</property>
-				<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="1b5363e7e2fae7690e5c935654fc5bcadd508a53">
-					<parameter name="eventId">drain</parameter>
-					<parameter name="sample">guid://3b9a583f82c837880262ac99dfafabd342050a3a</parameter>
 				</property>
 			</properties>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
@@ -1142,27 +897,31 @@
 		</node>
 		<node type="NodeReference" id="2117273565" name="Egg">
 			<reference>guid://beee5dac3fc5287c9fad406a897430824d90e624</reference>
-			<properties>
-				<property parent="f9a9fa049f50c77d9981a5f5487215a5bc3b87c9" guid="bbee84e1f09a3ed46e624028d00e749d386c4a6d">
-					<parameter name="range">10</parameter>
-					<parameter name="requirements">
-						<value index="0">
-							<parameter name="typeId">soul</parameter>
-							<parameter name="requiredCount">10</parameter>
-						</value>
-					</parameter>
-					<parameter name="visuals">
-						<value index="0">
-							<parameter name="typeId">soul</parameter>
-							<parameter name="sourceNode">guid://650b933f3a66094850753e4e425425853dc3382b</parameter>
-						</value>
-					</parameter>
-					<parameter name="requireVisualNode">1</parameter>
-					<parameter name="soundDrain">drain</parameter>
-					<parameter name="soundFilled">pickup</parameter>
-				</property>
-			</properties>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 10.3560640601 -9.58329027843 1.86305468232 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1656400440" name="blue_soul">
+			<reference>guid://c2dd6314a90227fbecd19e73a5a0dee165218cf3</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 31.6564137116 11.559161032 0.692244388478 1.0</transform>
+		</node>
+		<node type="NodeReference" id="320802066" name="green_soul">
+			<reference>guid://bc91d9c8e9b52136b1196e5d534a2e38a873a6f8</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 28.0087738037 2.57681274414 0.692244388478 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1268135053" name="red_soul">
+			<reference>guid://abe1601a80e3ae7ff9f72d81da585a1e865ad541</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 20.6337547302 14.9635410309 0.692244388478 1.0</transform>
+		</node>
+		<node type="NodeReference" id="4711484" name="silver_soul">
+			<reference>guid://ab80e8c2575adc0135fe7f093efe10e8c5bc5ac9</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 19.9124526978 2.4511013031 0.692245342152 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1615649236" name="gold_soul">
+			<reference>guid://a1eca40c0f8414c75be50a31838df67dd26eb7bc</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 25.8834805065 21.5410619017 -1.90734863281e-06 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1925894795" name="Heart">
+			<reference>guid://aae51217b7811fd877847eba16a39a448b5ddd85</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 15.9150981903 26.1048316956 0.378243397598 1.0</transform>
 		</node>
 	</editor>
 	<console>
