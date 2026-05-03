@@ -923,6 +923,10 @@
 			<reference>guid://a1eca40c0f8414c75be50a31838df67dd26eb7bc</reference>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 25.8834805065 21.5410619017 -1.90734863281e-06 1.0</transform>
 		</node>
+		<node type="NodeReference" id="1925894795" name="Heart">
+			<reference>guid://aae51217b7811fd877847eba16a39a448b5ddd85</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 15.9150981903 26.1048316956 0.378243397598 1.0</transform>
+		</node>
 	</editor>
 	<console>
 		<bake_lighting_bounces>4</bake_lighting_bounces>
