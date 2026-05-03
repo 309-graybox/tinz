@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>025080dba46389cd65b31dae46476dec8f46cd91</guid>
+	<type>material_graph</type>
+	<hash>5ab292f600f86301b961228ad47a778864a8fc1c19c3fc295150a69e4a557f7e</hash>
+	<runtimes>
+		<runtime id="025080dba46389cd65b31dae46476dec8f46cd91" name="lightmineral_v2.mgraph" link="0"/>
+		<runtime id="8862238580a2d6ec620106901251553b4da5f9eb" name="lightmineral_v2" link="1" type="5"/>
+	</runtimes>
+</asset>

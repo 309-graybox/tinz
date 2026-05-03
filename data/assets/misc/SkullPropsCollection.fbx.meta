@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>9ca18015641a3f72c40034bee617d852ba744a2c</guid>
+	<type>fbx</type>
+	<hash>8e16aa919b4c9a9af7b0186565746b62924f6fad51577c0b098f6eaf1be2203f</hash>
+	<runtimes>
+		<runtime id="9ca18015641a3f72c40034bee617d852ba744a2c" name="SkullPropsCollection.fbx" link="0"/>
+		<runtime id="2fc162ef002fa900ae0e5d325cee0e641cedda85" name="SkullPropsCollection.node" link="1" type="3">
+			<parameters>
+				<parameter type="string" name="id">1be1827d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="c643b119bd73915bd5957e5257700d08d0910a20" name="cube.184.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">1be1827d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="8a136bb96c5b95cee5b609b48f54035a9af536ff" name="cube.183.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">1be1827d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="bcfb81f3b7c12ce77def3fd485440bfa2db35852" name="cube.185.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">1be1827d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="e183ed93d513d657bb83e606bb3173a9a3bd1b89" name="cube.186.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">1be1827d</parameter>
+			</parameters>
+		</runtime>
+	</runtimes>
+	<parameters>
+		<parameter type="float" name="angular_deflection">0.699999988</parameter>
+		<parameter type="bool" name="asset_name_as_prefix">0</parameter>
+		<parameter type="string" name="base_material_mode">unique_material_graph</parameter>
+		<parameter type="float" name="bound_size">10000</parameter>
+		<parameter type="bool" name="create_root_motion_joint">0</parameter>
+		<parameter type="bool" name="create_transform_bones_for_joints">0</parameter>
+		<parameter type="float" name="fps">30</parameter>
+		<parameter type="string" name="front_axis">default</parameter>
+		<parameter type="bool" name="import_animations">1</parameter>
+		<parameter type="bool" name="import_bones_without_skin">1</parameter>
+		<parameter type="bool" name="import_cameras">1</parameter>
+		<parameter type="bool" name="import_lights">1</parameter>
+		<parameter type="bool" name="import_materials">1</parameter>
+		<parameter type="string" name="import_materials_mode">take_by_name_or_create</parameter>
+		<parameter type="bool" name="import_meshes">1</parameter>
+		<parameter type="bool" name="import_morph_targets">0</parameter>
+		<parameter type="string" name="import_skeleton_mode">create</parameter>
+		<parameter type="bool" name="import_skeletons">1</parameter>
+		<parameter type="bool" name="import_tangent_space">0</parameter>
+		<parameter type="bool" name="import_textures">1</parameter>
+		<parameter type="bool" name="invert_gchannel_for_normal_maps">0</parameter>
+		<parameter type="bool" name="joints_reorientation">0</parameter>
+		<parameter type="string" name="lightmaps">{&quot;guid://8a136bb96c5b95cee5b609b48f54035a9af536ff&quot;:{&quot;Bone&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://c643b119bd73915bd5957e5257700d08d0910a20&quot;:{&quot;Bone&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://bcfb81f3b7c12ce77def3fd485440bfa2db35852&quot;:{&quot;Bone&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://e183ed93d513d657bb83e606bb3173a9a3bd1b89&quot;:{&quot;Bone&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}}}</parameter>
+		<parameter type="float" name="linear_deflection">0.200000003</parameter>
+		<parameter type="string" name="lods">_lod_0,-1e+09,3,0,0,100,0,0,60;_lod_1,3,9,0,0,60,0,1,60;_lod_2,9,1e+09,0,0,30,0,1,60</parameter>
+		<parameter type="string" name="lods_mode">off</parameter>
+		<parameter type="string" name="material_guids">bone,a0780571e92d6ea16c503b0ca16eb2cf15bde7f7</parameter>
+		<parameter type="bool" name="merge_similar_materials">0</parameter>
+		<parameter type="bool" name="merge_static_meshes">0</parameter>
+		<parameter type="bool" name="merge_surfaces_by_materials">0</parameter>
+		<parameter type="float" name="morph_targets_normals_angle">180</parameter>
+		<parameter type="string" name="morph_targets_normals_mode">import</parameter>
+		<parameter type="bool" name="need_repivot">0</parameter>
+		<parameter type="bool" name="need_split">0</parameter>
+		<parameter type="bool" name="need_triangulate">1</parameter>
+		<parameter type="int" name="num_lods">3</parameter>
+		<parameter type="string" name="prefix_materials"/>
+		<parameter type="string" name="resolution">256</parameter>
+		<parameter type="int" name="root_motion_forward_axis">0</parameter>
+		<parameter type="int" name="root_motion_position_component">0</parameter>
+		<parameter type="int" name="root_motion_rotation_component">0</parameter>
+		<parameter type="float" name="scale">0.109999999</parameter>
+		<parameter type="string" name="shared_skeleton_path"/>
+		<parameter type="bool" name="skip_empty_nodes">0</parameter>
+		<parameter type="int" name="smooth_animation_size">0</parameter>
+		<parameter type="string" name="target_root_motion_joint"/>
+		<parameter type="bool" name="unwrap_uv_ch_0">0</parameter>
+		<parameter type="bool" name="unwrap_uv_ch_1">0</parameter>
+		<parameter type="string" name="up_axis">default</parameter>
+		<parameter type="bool" name="use_instances">1</parameter>
+		<parameter type="int" name="uv_ch">1</parameter>
+		<parameter type="string" name="uv_unwrap_version">xatlas_v1</parameter>
+		<parameter type="bool" name="vertex_cache">1</parameter>
+		<parameter type="string" name="workflow">metalness</parameter>
+	</parameters>
+</asset>

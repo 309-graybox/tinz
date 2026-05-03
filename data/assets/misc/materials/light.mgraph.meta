@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>92e17a2f4272ae27e4a993728f306da72802dfc5</guid>
+	<type>material_graph</type>
+	<hash>da7d2eb79601a0cfbb517ab96eb97f1010555bb519aeade746dc0737bda15119</hash>
+	<runtimes>
+		<runtime id="92e17a2f4272ae27e4a993728f306da72802dfc5" name="light.mgraph" link="0"/>
+		<runtime id="aebed4f977171a280a63a9f47a0d93d85fb8ae3f" name="light" link="1" type="5"/>
+	</runtimes>
+</asset>

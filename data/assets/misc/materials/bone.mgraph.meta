@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>242083e7ec16a43d178174cab5c62ba5e77666bd</guid>
+	<type>material_graph</type>
+	<hash>4bc2c2f1d1ae6dea40bd7f18fe4c9b5bbdd7329424dc46498c32565b99dbeffb</hash>
+	<runtimes>
+		<runtime id="242083e7ec16a43d178174cab5c62ba5e77666bd" name="bone.mgraph" link="0"/>
+		<runtime id="a0780571e92d6ea16c503b0ca16eb2cf15bde7f7" name="bone" link="1" type="5"/>
+	</runtimes>
+</asset>

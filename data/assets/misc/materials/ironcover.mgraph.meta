@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>cf6823c35fc547308ba9a47620e5e09fccb4ae39</guid>
+	<type>material_graph</type>
+	<hash>937ab9df6bed144c434a64c420b13f5020198a570c9e2f1423f06597fb09998f</hash>
+	<runtimes>
+		<runtime id="cf6823c35fc547308ba9a47620e5e09fccb4ae39" name="ironcover.mgraph" link="0"/>
+		<runtime id="139430adcde827029a2eda988f8300bc94aba8d3" name="ironcover" link="1" type="5"/>
+	</runtimes>
+</asset>

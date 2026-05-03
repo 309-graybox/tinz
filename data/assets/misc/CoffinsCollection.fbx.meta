@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>189e3bf18fe26faa13f2878a5efff0888765f198</guid>
+	<type>fbx</type>
+	<hash>5d459c88f51f5182581420ac39c9d4b68d30821ae27358a052c0802c18641afd</hash>
+	<runtimes>
+		<runtime id="189e3bf18fe26faa13f2878a5efff0888765f198" name="CoffinsCollection.fbx" link="0"/>
+		<runtime id="0e4c50098d42da978e9a33c4da33555f22797ecf" name="CoffinsCollection.node" link="1" type="3">
+			<parameters>
+				<parameter type="string" name="id">bea9971</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="d944d6c3c0cf959b97c311e4cdecd7c6c757dde2" name="cube.198.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">bea9971</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="8445ca63f2d3017e328afe96156f99c7095f43d9" name="cube.203.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">bea9971</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="8370abad546abc6e06b239b6b34086564b7edb64" name="cube.207.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">bea9971</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="2e4af84d2ffc91ac3f1181b8a1c773150a0def73" name="cube.199.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">bea9971</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="dced96a7d132558fac9461d854d91e7caec6ee36" name="cube.204.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">bea9971</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="fcbee4476ccba347ee1ad5aab0d4aabfa2b8901d" name="cube.209.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">bea9971</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="f61066317fa9da490987e2caa159d8c41c0ed2d8" name="cube.206.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">bea9971</parameter>
+			</parameters>
+		</runtime>
+	</runtimes>
+	<parameters>
+		<parameter type="float" name="angular_deflection">0.699999988</parameter>
+		<parameter type="bool" name="asset_name_as_prefix">0</parameter>
+		<parameter type="string" name="base_material_mode">unique_material_graph</parameter>
+		<parameter type="float" name="bound_size">10000</parameter>
+		<parameter type="bool" name="create_root_motion_joint">0</parameter>
+		<parameter type="bool" name="create_transform_bones_for_joints">0</parameter>
+		<parameter type="float" name="fps">30</parameter>
+		<parameter type="string" name="front_axis">default</parameter>
+		<parameter type="bool" name="import_animations">1</parameter>
+		<parameter type="bool" name="import_bones_without_skin">1</parameter>
+		<parameter type="bool" name="import_cameras">1</parameter>
+		<parameter type="bool" name="import_lights">1</parameter>
+		<parameter type="bool" name="import_materials">1</parameter>
+		<parameter type="string" name="import_materials_mode">take_by_name_or_create</parameter>
+		<parameter type="bool" name="import_meshes">1</parameter>
+		<parameter type="bool" name="import_morph_targets">0</parameter>
+		<parameter type="string" name="import_skeleton_mode">create</parameter>
+		<parameter type="bool" name="import_skeletons">1</parameter>
+		<parameter type="bool" name="import_tangent_space">0</parameter>
+		<parameter type="bool" name="import_textures">1</parameter>
+		<parameter type="bool" name="invert_gchannel_for_normal_maps">0</parameter>
+		<parameter type="bool" name="joints_reorientation">0</parameter>
+		<parameter type="string" name="lightmaps">{&quot;guid://d944d6c3c0cf959b97c311e4cdecd7c6c757dde2&quot;:{&quot;Stone&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;CoffinInner&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://2e4af84d2ffc91ac3f1181b8a1c773150a0def73&quot;:{&quot;Stone&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;CoffinInner&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;GoldMat&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://8445ca63f2d3017e328afe96156f99c7095f43d9&quot;:{&quot;Stone&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;CoffinInner&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://dced96a7d132558fac9461d854d91e7caec6ee36&quot;:{&quot;Stone&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;CoffinInner&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;GoldMat&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://f61066317fa9da490987e2caa159d8c41c0ed2d8&quot;:{&quot;Stone&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;CoffinInner&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;GoldMat&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://8370abad546abc6e06b239b6b34086564b7edb64&quot;:{&quot;Wood&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;LightWood&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://fcbee4476ccba347ee1ad5aab0d4aabfa2b8901d&quot;:{&quot;CrossWood&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;DarkWood_v2&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;LightWood&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}}}</parameter>
+		<parameter type="float" name="linear_deflection">0.200000003</parameter>
+		<parameter type="string" name="lods">_lod_0,-1e+09,3,0,0,100,0,0,60;_lod_1,3,9,0,0,60,0,1,60;_lod_2,9,1e+09,0,0,30,0,1,60</parameter>
+		<parameter type="string" name="lods_mode">off</parameter>
+		<parameter type="string" name="material_guids">coffininner,cc30569f13235f6079a72b22de960c0d4dc566b5,crosswood,4202624b26ca597ccf39165e0d032e1a43378981,darkwood_v2,b2805a37fd5b95c8156328dab9aeac4de794848d,goldmat,4259153a247e3860e0a81decf9572052f73e98bc,lightwood,4c94ac7005a510b381ebcefeea8155e96953ad36,stone,9b19e8d01c24539af3f42adaeb131e77846fb53f,wood,0ff10503ce2b9cdf250af8f98dc35144c3cdac23</parameter>
+		<parameter type="bool" name="merge_similar_materials">0</parameter>
+		<parameter type="bool" name="merge_static_meshes">0</parameter>
+		<parameter type="bool" name="merge_surfaces_by_materials">0</parameter>
+		<parameter type="float" name="morph_targets_normals_angle">180</parameter>
+		<parameter type="string" name="morph_targets_normals_mode">import</parameter>
+		<parameter type="bool" name="need_repivot">0</parameter>
+		<parameter type="bool" name="need_split">0</parameter>
+		<parameter type="bool" name="need_triangulate">1</parameter>
+		<parameter type="int" name="num_lods">3</parameter>
+		<parameter type="string" name="prefix_materials"/>
+		<parameter type="string" name="resolution">256</parameter>
+		<parameter type="int" name="root_motion_forward_axis">0</parameter>
+		<parameter type="int" name="root_motion_position_component">0</parameter>
+		<parameter type="int" name="root_motion_rotation_component">0</parameter>
+		<parameter type="float" name="scale">0.439999998</parameter>
+		<parameter type="string" name="shared_skeleton_path"/>
+		<parameter type="bool" name="skip_empty_nodes">0</parameter>
+		<parameter type="int" name="smooth_animation_size">0</parameter>
+		<parameter type="string" name="target_root_motion_joint"/>
+		<parameter type="bool" name="unwrap_uv_ch_0">0</parameter>
+		<parameter type="bool" name="unwrap_uv_ch_1">0</parameter>
+		<parameter type="string" name="up_axis">default</parameter>
+		<parameter type="bool" name="use_instances">1</parameter>
+		<parameter type="int" name="uv_ch">1</parameter>
+		<parameter type="string" name="uv_unwrap_version">xatlas_v1</parameter>
+		<parameter type="bool" name="vertex_cache">1</parameter>
+		<parameter type="string" name="workflow">metalness</parameter>
+	</parameters>
+</asset>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>33c958bd80db1511bb434d68d6359e7760b21663</guid>
+	<type>material_graph</type>
+	<hash>834f15f9fa32a8f97b4972c9e3418b929b64dba268b54201a1d0c8f5ebfcb063</hash>
+	<runtimes>
+		<runtime id="33c958bd80db1511bb434d68d6359e7760b21663" name="darkwood_v2.mgraph" link="0"/>
+		<runtime id="b2805a37fd5b95c8156328dab9aeac4de794848d" name="darkwood_v2" link="1" type="5"/>
+	</runtimes>
+</asset>

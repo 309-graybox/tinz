@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>ff0da8e5a00f8562f7da6870ccc393db6758584b</guid>
+	<type>material_graph</type>
+	<hash>4675994f8b57fa251652098549e49ea41e9d1e9a0e22dc03c1e217e376a05487</hash>
+	<runtimes>
+		<runtime id="ff0da8e5a00f8562f7da6870ccc393db6758584b" name="coffininner.mgraph" link="0"/>
+		<runtime id="cc30569f13235f6079a72b22de960c0d4dc566b5" name="coffininner" link="1" type="5"/>
+	</runtimes>
+</asset>
