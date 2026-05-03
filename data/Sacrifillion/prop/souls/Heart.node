@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <nodes version="2.21.0.0">
-	<node type="ObjectMeshStatic" id="1730977113" immovable="1" name="Heart">
+	<node type="ObjectMeshStatic" id="1730977113" immovable="1" trigger_interaction_enabled="1" name="Heart">
 		<mesh_name>guid://ea320c65d215bb1a44479d7086bc3c263ce20523</mesh_name>
 		<surface name="Material.004" intersection="1" material="f9c356edf5525c69e0261b58fff7bbf60c53cd6b"/>
 		<properties>
