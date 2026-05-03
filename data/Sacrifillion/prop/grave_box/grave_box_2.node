@@ -4,6 +4,11 @@
 		<mesh_name>guid://8370abad546abc6e06b239b6b34086564b7edb64</mesh_name>
 		<surface name="Wood" intersection="1" material="4202624b26ca597ccf39165e0d032e1a43378981"/>
 		<surface name="LightWood" intersection="1" material="4202624b26ca597ccf39165e0d032e1a43378981"/>
-		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		<body type="BodyDummy" id="1219213846" frozen="0">
+			<shape type="ShapeBox" id="1339346725" name="ShapeBox" transform="1 0 0 0 0 1 0 0 0 0 1 0 -0.192823708 -3.57627869e-07 0.258761346 1">
+				<size>2.47713137 1.06006837 0.53670156</size>
+			</shape>
+		</body>
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 -8.881784197e-16 0 1.0</transform>
 	</node>
 </nodes>

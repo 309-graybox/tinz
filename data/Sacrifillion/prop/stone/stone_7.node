@@ -3,6 +3,6 @@
 	<node type="ObjectMeshStatic" id="958110844" immovable="1" name="stone_7">
 		<mesh_name>guid://e09aa7254df66fdf33f7b9b07a04593de1623c8b</mesh_name>
 		<surface name="Stone" intersection="1" collision="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 0.999999853628 0.0 -2.22044604925e-16 0 -0.0798540203396 1.0</transform>
 	</node>
 </nodes>
