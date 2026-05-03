@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>ab224b51965363d31db26ddc6738fa145bb46562</guid>
+	<type>property</type>
+	<hash>65b6562e97f77e1980d0171d91d3ceee12209d19667d600692e9d4e0b92bee3e</hash>
+	<runtimes>
+		<runtime id="ab224b51965363d31db26ddc6738fa145bb46562" name="Floating" link="0" type="4"/>
+	</runtimes>
+</asset>
