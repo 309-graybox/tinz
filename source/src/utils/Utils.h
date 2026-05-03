@@ -10,7 +10,7 @@
 	}
 
 template <class C, class T>
-void convertTo(Unigine::ComponentVariableArray<C> &arr, Unigine::Vector<T> &ret)
+UNIGINE_INLINE void convertTo(Unigine::ComponentVariableArray<C> &arr, Unigine::Vector<T> &ret)
 {
 	int n = arr.size();
 
@@ -21,4 +21,22 @@ void convertTo(Unigine::ComponentVariableArray<C> &arr, Unigine::Vector<T> &ret)
 		auto el = arr[i].get();
 		ret.append(el);
 	}
+}
+
+// Walks up parents of `n` looking for `target`. Used to attribute a contact /
+// raycast hit on a child mesh to the player character root.
+UNIGINE_INLINE bool isInHierarchy(Unigine::NodePtr n, const Unigine::NodePtr &target)
+{
+	while (n)
+	{
+		if (n == target)
+			return true;
+		n = n->getParent();
+	}
+	return false;
+}
+
+UNIGINE_INLINE Unigine::Math::vec3 horizontal(const Unigine::Math::vec3 &v)
+{
+	return {v.x, v.y, 0.0f};
 }

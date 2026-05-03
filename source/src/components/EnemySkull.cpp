@@ -12,29 +12,6 @@ REGISTER_COMPONENT(EnemySkull)
 using namespace Unigine;
 using namespace Unigine::Math;
 
-namespace
-{
-
-// Walks up parents of `n` looking for `target`. Used to attribute a contact /
-// raycast hit on a child mesh to the player character root.
-bool isInHierarchy(NodePtr n, const NodePtr &target)
-{
-	while (n)
-	{
-		if (n == target)
-			return true;
-		n = n->getParent();
-	}
-	return false;
-}
-
-vec3 horizontal(const vec3 &v)
-{
-	return vec3(v.x, v.y, 0.0f);
-}
-
-} // namespace
-
 void EnemySkull::initSkull()
 {
 	_body = node->getObjectBodyRigid();

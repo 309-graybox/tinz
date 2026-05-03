@@ -1,5 +1,5 @@
 #include "Checkpoint.h"
-
+#include "utils/Utils.h"
 #include "audio/SoundManager.h"
 #include "game/GameState.h"
 
@@ -9,22 +9,6 @@ REGISTER_COMPONENT(Checkpoint)
 
 using namespace Unigine;
 using namespace Unigine::Math;
-
-namespace
-{
-
-bool isInHierarchy(NodePtr n, const NodePtr &target)
-{
-	while (n)
-	{
-		if (n == target)
-			return true;
-		n = n->getParent();
-	}
-	return false;
-}
-
-} // namespace
 
 void Checkpoint::init()
 {

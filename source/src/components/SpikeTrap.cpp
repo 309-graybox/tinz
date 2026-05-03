@@ -12,22 +12,6 @@ REGISTER_COMPONENT(SpikeTrap)
 using namespace Unigine;
 using namespace Unigine::Math;
 
-namespace
-{
-
-bool isInHierarchy(NodePtr n, const NodePtr &target)
-{
-	while (n)
-	{
-		if (n == target)
-			return true;
-		n = n->getParent();
-	}
-	return false;
-}
-
-} // namespace
-
 void SpikeTrap::init()
 {
 	_trigger = checked_ptr_cast<WorldTrigger>(trigger.get());
