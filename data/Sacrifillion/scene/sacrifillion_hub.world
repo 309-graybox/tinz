@@ -4,7 +4,16 @@
 	<data>
 		<unigine_editor>
 			<body>
-				<node_extensions/>
+				<node_extensions>
+					<node_ext id="834133757" flags="3"/>
+					<node_ext id="1461645503" flags="3"/>
+					<node_ext id="255358059" flags="3"/>
+					<node_ext id="1940753428" flags="3"/>
+					<node_ext id="2079265534" flags="3"/>
+					<node_ext id="149547905" flags="3"/>
+					<node_ext id="968353584" flags="3"/>
+					<node_ext id="311986426" flags="3"/>
+				</node_extensions>
 			</body>
 		</unigine_editor>
 	</data>
@@ -844,7 +853,7 @@
 				<transform>-0.43301237 0.43559623 -0.78914917 0.0 -0.75000048 -0.6597392 0.047366858 0.0 -0.49999967 0.61237252 0.6123724 0.0 0.0106657477479 1.72244270532 -0.757865759039 1.0</transform>
 			</node>
 			<node type="ObjectWaterGlobal" id="1191127466" name="ObjectWaterGlobal">
-				<animation_old_time>2492.48975</animation_old_time>
+				<animation_old_time>3569.70581</animation_old_time>
 				<animation_time>0</animation_time>
 				<wave_layers num="0"/>
 				<distant_waves_texture_path>core/textures/water_global/distant_waves_n.texture</distant_waves_texture_path>
@@ -1996,6 +2005,10 @@
 					<transform>0.999999880791 0 0 0.0 0 0.999999701977 0 0.0 0 0 0.999999701977 0.0 0 0 0 1.0</transform>
 				</node>
 			</node>
+		</node>
+		<node type="NodeLayer" id="684386447" name="NodeLayer_1">
+			<layer>guid://319fb3d24ed45239a120209531c44efbd27d8360</layer>
+			<transform>0.999999880791 0 0 0.0 0 0.999999880791 0 0.0 0 0 0.999999940395 0.0 -34.3392976812 36.4550755116 5.59680583999 1.0</transform>
 		</node>
 	</editor>
 	<console>

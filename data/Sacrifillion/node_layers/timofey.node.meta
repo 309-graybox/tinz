@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>319fb3d24ed45239a120209531c44efbd27d8360</guid>
+	<type>node</type>
+	<hash>896c8141b1a7ff2db24ab68b0d25cd7bcc5e702a1e6fc6c292e4620a44ca32d6</hash>
+	<runtimes>
+		<runtime id="319fb3d24ed45239a120209531c44efbd27d8360" name="timofey.node" link="0" type="3"/>
+	</runtimes>
+</asset>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>878b59ab6d8ef0a603b48eabeef32578da8811ae</guid>
+	<type>material</type>
+	<hash>525c87880e099c8db44eb04499c7f81c5aa3dd202ecbe4d6b12c01a153346b0a</hash>
+	<runtimes>
+		<runtime id="878b59ab6d8ef0a603b48eabeef32578da8811ae" name="kucha_v2" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>
