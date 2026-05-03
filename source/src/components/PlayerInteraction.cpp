@@ -76,6 +76,10 @@ void PlayerInteraction::shutdown()
 
 void PlayerInteraction::update()
 {
+#ifdef DEBUG
+	_trigger->renderVisualizer();
+#endif
+
 	const Vec3 player_pos = node->getWorldPosition();
 
 	updateRange();
@@ -280,12 +284,30 @@ void PlayerInteraction::handleInteractInput()
 	for (int i = 0; i < _in_range.size(); ++i)
 	{
 		Interactable *interactable = _in_range[i];
-		if (interactable && interactable->isInteracting() && interactable != _current_focus)
+		if (interactable && interactable->isInteracting())
 			interactable->cancelInteract();
 	}
 
-	if (pressed && _current_focus && _current_focus->isInteractionReady())
-		_current_focus->startInteract(node);
+	// if (pressed && _current_focus && _current_focus->isInteractionReady())
+	// 	_current_focus->startInteract(node);
+
+	if (pressed)
+	{
+		if (!_in_range.empty())
+		{
+			auto np = node->getWorldPosition();
+			std::sort(_in_range.begin(), _in_range.end(), [np](const Interactable *a, const Interactable *b) {
+				auto da = distance2(a->getNode()->getWorldPosition(), np);
+				auto db = distance2(b->getNode()->getWorldPosition(), np);
+				return da > db;
+			});
+
+			_in_range[0]->startInteract(node);
+		} else
+		{
+			Log::message("No iteractables in range\n");
+		}
+	}
 }
 
 void PlayerInteraction::onTriggerEnter(const Unigine::NodePtr &n)

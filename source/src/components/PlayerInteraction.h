@@ -23,7 +23,7 @@ public:
 
 	// Trigger size (max distance any Interactable in this game can be detected from).
 	// Per-object `range` is then checked in code against this set.
-	PROP_PARAM(Float, scanRadius, 15.0f)
+	PROP_PARAM(Float, scanRadius, 7.0f)
 
 	// Optional camera node — used only as ray origin for Magnet line-of-sight.
 	// If unset, ray starts from the player node.

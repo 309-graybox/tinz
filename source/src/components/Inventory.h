@@ -10,6 +10,7 @@ public:
 	COMPONENT_DEFINE(Inventory, Unigine::ComponentBase)
 
 	int addItem(const char *type_id, int amount);
+	int removeItem(const char *type_id, int amount); // returns actually removed amount
 	int getCount(const char *type_id) const;
 
 	Unigine::EventInvoker<const char *, int> &itemChanged() noexcept { return _event_item_changed; }

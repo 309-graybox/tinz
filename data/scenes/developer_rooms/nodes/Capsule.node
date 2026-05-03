@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="1151323267" immovable="1" name="Capsule">
+		<mesh_name>guid://0f92871114fc94719b237b9835ac9dbb0a592d9d</mesh_name>
+		<surface name="capsule" intersection="1" material="04749f2ba312cbfcf0007cc010910ffdc03cdf0c"/>
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

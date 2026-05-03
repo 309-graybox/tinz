@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>f9a9fa049f50c77d9981a5f5487215a5bc3b87c9</guid>
+	<type>file</type>
+	<hash>3c33eb7d9bd8ca3938203f766ed3f1bf1553f03d6ee9ba82b888dde2b3bd3f44</hash>
+	<runtimes>
+		<runtime id="f9a9fa049f50c77d9981a5f5487215a5bc3b87c9" name="OfferingBowl" link="0" type="4"/>
+	</runtimes>
+</asset>

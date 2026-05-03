@@ -1065,6 +1065,10 @@
 					<parameter name="eventId">strange_dialogue</parameter>
 					<parameter name="sample">guid://4bef50a71ab374a1aff9cf881921512b52b78667</parameter>
 				</property>
+				<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="1b5363e7e2fae7690e5c935654fc5bcadd508a53">
+					<parameter name="eventId">drain</parameter>
+					<parameter name="sample">guid://3b9a583f82c837880262ac99dfafabd342050a3a</parameter>
+				</property>
 			</properties>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 		</node>
@@ -1084,7 +1088,7 @@
 			<reference>guid://8b2068cd4cba17160b6ba92b4b22d7029f7e99cd</reference>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -4.58270120621 5.2002696991 0 1.0</transform>
 		</node>
-		<node type="ObjectMeshStatic" id="1141887237" immovable="1" name="Box">
+		<node type="ObjectMeshStatic" id="1141887237" immovable="1" trigger_interaction_enabled="1" name="stone_speaker">
 			<mesh_name>guid://209252c0ae5bc8c3c340e5908fc4f18ddcdbd53f</mesh_name>
 			<surface name="box" intersection="1" intersection_mask="0x10000000" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
 			<properties>
@@ -1135,6 +1139,30 @@
 				</property>
 			</properties>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 5.82507038116 10.9167251587 0.919390221613 1.0</transform>
+		</node>
+		<node type="NodeReference" id="2117273565" name="Egg">
+			<reference>guid://beee5dac3fc5287c9fad406a897430824d90e624</reference>
+			<properties>
+				<property parent="f9a9fa049f50c77d9981a5f5487215a5bc3b87c9" guid="bbee84e1f09a3ed46e624028d00e749d386c4a6d">
+					<parameter name="range">10</parameter>
+					<parameter name="requirements">
+						<value index="0">
+							<parameter name="typeId">soul</parameter>
+							<parameter name="requiredCount">10</parameter>
+						</value>
+					</parameter>
+					<parameter name="visuals">
+						<value index="0">
+							<parameter name="typeId">soul</parameter>
+							<parameter name="sourceNode">guid://650b933f3a66094850753e4e425425853dc3382b</parameter>
+						</value>
+					</parameter>
+					<parameter name="requireVisualNode">1</parameter>
+					<parameter name="soundDrain">drain</parameter>
+					<parameter name="soundFilled">pickup</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 10.3560640601 -9.58329027843 1.86305468232 1.0</transform>
 		</node>
 	</editor>
 	<console>

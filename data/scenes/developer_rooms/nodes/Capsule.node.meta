@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>650b933f3a66094850753e4e425425853dc3382b</guid>
+	<type>node</type>
+	<hash>a6f64ecdcdecd218176ec4b8f7e8af41cb7df38e7e64cb0af36558403e7a3505</hash>
+	<runtimes>
+		<runtime id="650b933f3a66094850753e4e425425853dc3382b" name="Capsule.node" link="0" type="3"/>
+	</runtimes>
+</asset>

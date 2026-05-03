@@ -105,7 +105,13 @@ void Interactable::endHover(const NodePtr &interactor)
 
 void Interactable::startInteract(const NodePtr &interactor)
 {
-	if (_state != State::Idle || !interactor || !canInteract(interactor))
+	bool can = canInteract(interactor);
+
+#ifdef DEBUG
+	Log::error("[%s] start interract with %s (state: %i; can: %i)\n", interactor->getName(), node->getName(), _state, can);
+#endif
+
+	if (_state != State::Idle || !interactor || !can)
 		return;
 
 	_state = State::Interact;

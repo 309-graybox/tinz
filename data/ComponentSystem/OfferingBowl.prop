@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="OfferingBowl" manual="1" parent_name="node_base">
+	<struct name="BowlRequirementInfo">
+		<parameter name="typeId" type="string"/>
+		<parameter name="requiredCount" type="int">1</parameter>
+	</struct>
+	<struct name="BowlVisualNodeInfo">
+		<parameter name="typeId" type="string"/>
+		<parameter name="sourceNode" type="file"/>
+	</struct>
+	<parameter name="range" type="float">3</parameter>
+	<parameter name="interactHoldTime" type="float">0</parameter>
+	<parameter name="interactPromptText" type="string"/>
+	<parameter name="requirements" type="array" array_type="BowlRequirementInfo"/>
+	<parameter name="visuals" type="array" array_type="BowlVisualNodeInfo"/>
+	<parameter name="transferInterval" type="float" tooltip="Seconds between draining one item">0.12</parameter>
+	<parameter name="flightDuration" type="float" tooltip="Seconds for one visual node to fly into the bowl">0.45</parameter>
+	<parameter name="arcHeight" type="float" tooltip="Arc height of flying visual nodes">1.4</parameter>
+	<parameter name="arrivalRadius" type="float" tooltip="Random radius around bowl center for visual arrivals">0.25</parameter>
+	<parameter name="requireVisualNode" type="toggle" tooltip="If true, item is drained only when matching visual node exists">0</parameter>
+	<parameter name="lockWhenFilled" type="toggle" tooltip="Disable interactions when all requirements are satisfied">1</parameter>
+	<parameter name="soundDrain" type="string" title="Drain Sound" tooltip="SoundManager event id or direct audio path"/>
+	<parameter name="soundFilled" type="string" title="Filled Sound" tooltip="SoundManager event id or direct audio path"/>
+</property>
