@@ -117,9 +117,10 @@
 				</property>
 				<property parent="c7fb3177257942197ffaf1f26b2e8b00b4f667b2" guid="0bb69f1d0463111a1af4a7b44e7cd554bb9f3503">
 					<parameter name="has_hp">1</parameter>
-					<parameter name="max_hp">75</parameter>
+					<parameter name="max_hp">100</parameter>
 					<parameter name="invulnerabilityTime">1</parameter>
 					<parameter name="persistOnDeath">1</parameter>
+					<parameter name="soundOnDamage">hurt</parameter>
 				</property>
 				<property parent="300d29fd5f327e8c7a0f4614d4125d93570eeeff" guid="9dd9f428a41cf0ea342df2a0c88b07b7601ad165"/>
 			</properties>
@@ -397,6 +398,10 @@
 			<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="6b45015f5698f384bb5cd8abf43d4792dc8d0390">
 				<parameter name="eventId">heal</parameter>
 				<parameter name="sample">guid://ec9a840e003bb526561e06b28f874b7797fab91f</parameter>
+			</property>
+			<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="e0bdcffb2681cfe09b61c9df6d3a8a18c6fe8661">
+				<parameter name="eventId">hurt</parameter>
+				<parameter name="sample">guid://1c2619a84615539f8622c6f6091286aa59a606ab</parameter>
 			</property>
 		</properties>
 		<transform>0.99999988079 0 0 0.0 0 1.00000011921 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>

@@ -12,6 +12,8 @@
 	<parameter name="invulnerabilityTime" type="float" tooltip="Damage immunity duration in seconds after taking damage. 0 = disabled">0</parameter>
 	<parameter name="persistOnDeath" type="toggle" tooltip="If true, the node is NOT auto-deleted on death — owner reacts via eventDied (used by the player so respawn can revive it)">0</parameter>
 	<parameter name="deleteTimer" type="float">0</parameter>
+	<parameter name="soundOnDamage" type="string" title="Damage Sound" tooltip="SoundManager event id or direct audio path"/>
+	<parameter name="damageShake" type="float" tooltip="Camera trauma added when this entity is the player and receives damage">0.7</parameter>
 	<parameter name="enable_on_death" type="array" array_type="node"/>
 	<parameter name="disable_on_death" type="array" array_type="node"/>
 	<parameter name="mat_float4_params" type="array" array_type="MaterialFloat4ParamInfo"/>

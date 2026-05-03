@@ -275,9 +275,6 @@ void EnemySkull::onContactEnter(const BodyPtr &body, int num)
 				cm->applyDamageKnockback(node->getWorldPosition());
 			else
 				Log::message("%s damage applied, but CharacterMovement was not found on player node\n", node->getName());
-			auto pcm = ComponentSystem::get()->getComponent<PlayerCameraManager>(player_node);
-			if (pcm)
-				pcm->addTrauma(damageShake);
 		}
 	}
 	_attackTimer = attackCooldown;
