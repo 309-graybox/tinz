@@ -78,6 +78,8 @@ void PlayerInteraction::update()
 {
 	const Vec3 player_pos = node->getWorldPosition();
 
+	updateRange();
+
 	// Snapshot — pickup->pickUp() fires eventDestroyed synchronously,
 	// which mutates _in_range mid-iteration. Validate against live set each step.
 	Vector<Interactable *> snapshot = _in_range;
@@ -197,6 +199,38 @@ bool PlayerInteraction::isInInteractRange(const Interactable *interactable) cons
 	return dist <= interactable->range;
 }
 
+void PlayerInteraction::updateRange()
+{
+	Vector<Interactable *> candidates;
+	ComponentSystem::get()->getComponentsInWorld<Interactable>(candidates, true);
+
+	Vector<Interactable *> next_range;
+	for (int i = 0; i < candidates.size(); ++i)
+	{
+		Interactable *interactable = candidates[i];
+		if (!interactable || !interactable->isEnabled() || !isInInteractRange(interactable))
+			continue;
+
+		trackInteractable(interactable);
+		next_range.append(interactable);
+		interactable->tickRange(node);
+	}
+
+	Vector<Interactable *> previous = _range_interactables;
+	for (int i = 0; i < previous.size(); ++i)
+	{
+		Interactable *interactable = previous[i];
+		if (!interactable || next_range.find(interactable) != next_range.end())
+			continue;
+
+		if (interactable->isInteracting())
+			interactable->cancelInteract();
+		interactable->endRange(node);
+	}
+
+	_range_interactables = next_range;
+}
+
 void PlayerInteraction::updateHover(Interactable *next_focus)
 {
 	if (_current_focus == next_focus)
@@ -244,7 +278,7 @@ void PlayerInteraction::onTriggerEnter(const Unigine::NodePtr &n)
 	if (_in_range.find(interactable) == _in_range.end())
 	{
 		_in_range.append(interactable);
-		interactable->eventDestroyed().connect(this, &PlayerInteraction::onInteractableDestroyed);
+		trackInteractable(interactable);
 	}
 }
 
@@ -253,8 +287,23 @@ void PlayerInteraction::onInteractableDestroyed(Interactable *interactable)
 	auto it = _in_range.find(interactable);
 	if (it != _in_range.end())
 		_in_range.remove(it);
+	it = _range_interactables.find(interactable);
+	if (it != _range_interactables.end())
+		_range_interactables.remove(it);
+	it = _tracked_interactables.find(interactable);
+	if (it != _tracked_interactables.end())
+		_tracked_interactables.remove(it);
 	if (interactable == _current_focus)
 		_current_focus = nullptr;
+}
+
+void PlayerInteraction::trackInteractable(Interactable *interactable)
+{
+	if (!interactable || _tracked_interactables.find(interactable) != _tracked_interactables.end())
+		return;
+
+	_tracked_interactables.append(interactable);
+	interactable->eventDestroyed().connect(this, &PlayerInteraction::onInteractableDestroyed);
 }
 
 void PlayerInteraction::onTriggerLeave(const Unigine::NodePtr &n)

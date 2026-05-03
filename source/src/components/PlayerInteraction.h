@@ -47,6 +47,7 @@ private:
 	void onTriggerEnter(const Unigine::NodePtr &node);
 	void onTriggerLeave(const Unigine::NodePtr &node);
 	void onInteractableDestroyed(Interactable *interactable);
+	void trackInteractable(Interactable *interactable);
 
 	void tryStartMagnet(Pickup *pickup);
 	bool hasLineOfSight(const Pickup *pickup) const;
@@ -55,6 +56,7 @@ private:
 	Interactable *raycastFocus() const;
 	bool canFocus(Interactable *interactable) const;
 	bool isInInteractRange(const Interactable *interactable) const;
+	void updateRange();
 	void updateHover(Interactable *next_focus);
 
 	void handleInteractInput();
@@ -65,6 +67,8 @@ private:
 	Unigine::EventConnection _conn_leave;
 
 	Unigine::Vector<Interactable *> _in_range;
+	Unigine::Vector<Interactable *> _range_interactables;
+	Unigine::Vector<Interactable *> _tracked_interactables;
 	Interactable *_current_focus = nullptr;
 
 	EIBinding *_binding_interact = nullptr;

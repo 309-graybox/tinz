@@ -15,10 +15,14 @@ public:
 
 	bool isInteractionReady() const noexcept { return _state == State::Idle; }
 	bool isInteracting() const noexcept { return _state == State::Interact; }
+	bool isInRange() const noexcept { return _in_range; }
 	bool isHovered() const noexcept { return _hovered; }
 	float getInteractProgress01() const noexcept;
 
 	// Driven by PlayerInteraction.
+	void beginRange(const Unigine::NodePtr &interactor);
+	void tickRange(const Unigine::NodePtr &interactor);
+	void endRange(const Unigine::NodePtr &interactor);
 	void beginHover(const Unigine::NodePtr &interactor);
 	void tickHover(const Unigine::NodePtr &interactor);
 	void endHover(const Unigine::NodePtr &interactor);
@@ -27,6 +31,8 @@ public:
 
 	virtual bool canInteract(const Unigine::NodePtr &interactor) const;
 
+	Unigine::EventInvoker<Unigine::NodePtr> &eventRangeEntered() noexcept { return _event_range_entered; }
+	Unigine::EventInvoker<Unigine::NodePtr> &eventRangeLeft() noexcept { return _event_range_left; }
 	Unigine::EventInvoker<Unigine::NodePtr> &eventHoverStarted() noexcept { return _event_hover_started; }
 	Unigine::EventInvoker<Unigine::NodePtr> &eventHoverEnded() noexcept { return _event_hover_ended; }
 	Unigine::EventInvoker<Unigine::NodePtr> &eventInteractStarted() noexcept { return _event_interact_started; }
@@ -36,6 +42,9 @@ public:
 
 protected:
 	// Placeholders for game-specific feedback and behavior.
+	virtual void onRangeEntered(const Unigine::NodePtr &interactor);
+	virtual void onInRange(const Unigine::NodePtr &interactor);
+	virtual void onRangeLeft(const Unigine::NodePtr &interactor);
 	virtual void onHoverStarted(const Unigine::NodePtr &interactor);
 	virtual void onHover(const Unigine::NodePtr &interactor);
 	virtual void onHoverEnded(const Unigine::NodePtr &interactor);
@@ -58,11 +67,15 @@ private:
 	void completeInteract(const Unigine::NodePtr &interactor);
 
 	State _state = State::Idle;
+	bool _in_range = false;
 	bool _hovered = false;
+	Unigine::NodePtr _range_interactor;
 	Unigine::NodePtr _hovered_by;
 	Unigine::NodePtr _target_interactor;
 	float _interact_timer = 0.0f;
 
+	Unigine::EventInvoker<Unigine::NodePtr> _event_range_entered;
+	Unigine::EventInvoker<Unigine::NodePtr> _event_range_left;
 	Unigine::EventInvoker<Unigine::NodePtr> _event_hover_started;
 	Unigine::EventInvoker<Unigine::NodePtr> _event_hover_ended;
 	Unigine::EventInvoker<Unigine::NodePtr> _event_interact_started;

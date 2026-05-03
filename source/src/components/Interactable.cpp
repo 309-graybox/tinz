@@ -11,7 +11,9 @@ using namespace Unigine::Math;
 void Interactable::init()
 {
 	_state = State::Idle;
+	_in_range = false;
 	_hovered = false;
+	_range_interactor.clear();
 	_hovered_by.clear();
 	_target_interactor.clear();
 	_interact_timer = 0.0f;
@@ -21,6 +23,45 @@ void Interactable::update()
 {
 	if (_state == State::Interact)
 		tickInteract(Game::getIFps());
+}
+
+void Interactable::beginRange(const NodePtr &interactor)
+{
+	if (!interactor)
+		return;
+
+	if (_in_range && _range_interactor == interactor)
+		return;
+
+	if (_in_range)
+		endRange(_range_interactor);
+
+	_in_range = true;
+	_range_interactor = interactor;
+	_event_range_entered.run(interactor);
+	onRangeEntered(interactor);
+}
+
+void Interactable::tickRange(const NodePtr &interactor)
+{
+	if (!interactor)
+		return;
+
+	beginRange(interactor);
+	onInRange(interactor);
+}
+
+void Interactable::endRange(const NodePtr &interactor)
+{
+	if (!_in_range)
+		return;
+
+	NodePtr who = _range_interactor ? _range_interactor : interactor;
+	_in_range = false;
+	_range_interactor.clear();
+
+	_event_range_left.run(who);
+	onRangeLeft(who);
 }
 
 void Interactable::beginHover(const NodePtr &interactor)
@@ -117,6 +158,18 @@ bool Interactable::canInteract(const NodePtr &interactor) const
 	return interactor != nullptr;
 }
 
+void Interactable::onRangeEntered(const NodePtr &interactor)
+{
+}
+
+void Interactable::onInRange(const NodePtr &interactor)
+{
+}
+
+void Interactable::onRangeLeft(const NodePtr &interactor)
+{
+}
+
 void Interactable::onHoverStarted(const NodePtr &interactor)
 {
 }
@@ -156,6 +209,8 @@ void Interactable::notifyDestroyed()
 {
 	if (_hovered)
 		endHover(_hovered_by);
+	if (_in_range)
+		endRange(_range_interactor);
 	if (_state == State::Interact)
 		cancelInteract();
 
