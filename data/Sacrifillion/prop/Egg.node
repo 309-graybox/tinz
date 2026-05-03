@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="589171616" immovable="1" name="Egg">
+		<mesh_name>guid://a3ce38e0dae2128d0799bd7ebc7ca8cfc2868858</mesh_name>
+		<surface name="Material.001" intersection="1" material="641e47e497bf276136a35de2023aa275803c1c5c"/>
+		<transform>99.9989242554 0.000925478467252 -0.46256056428 0.0 0.462560594082 -0.396345466375 99.9981307983 0.0 -0.000907899870072 -99.9992218018 -0.396345585585 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

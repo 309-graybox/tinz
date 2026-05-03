@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>beee5dac3fc5287c9fad406a897430824d90e624</guid>
+	<type>node</type>
+	<hash>ef6dd08aae112a13260af0d7cb1aa3f60518e67035c32bf2381956430854363f</hash>
+	<runtimes>
+		<runtime id="beee5dac3fc5287c9fad406a897430824d90e624" name="Egg.node" link="0" type="3"/>
+	</runtimes>
+</asset>

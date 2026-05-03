@@ -844,7 +844,7 @@
 				<transform>-0.43301237 0.43559623 -0.78914917 0.0 -0.75000048 -0.6597392 0.047366858 0.0 -0.49999967 0.61237252 0.6123724 0.0 0.0106657477479 1.72244270532 -0.757865759039 1.0</transform>
 			</node>
 			<node type="ObjectWaterGlobal" id="1191127466" name="ObjectWaterGlobal">
-				<animation_old_time>4191.4082</animation_old_time>
+				<animation_old_time>409.55426</animation_old_time>
 				<animation_time>0</animation_time>
 				<wave_layers num="0"/>
 				<distant_waves_texture_path>core/textures/water_global/distant_waves_n.texture</distant_waves_texture_path>
@@ -1620,7 +1620,6 @@
 				<spline_name>guid://07fc19afa9a2fe82d688bc7d0520abb11f7a5fd8</spline_name>
 				<source_nodes>
 					<source forward_axis="1">guid://9bab51ef68dc087c4e9d92bd53465304e1cd8118</source>
-					<source forward_axis="1">guid://e060c515aab5c9d920995073aebb28220637ca35</source>
 				</source_nodes>
 				<segment_nodes>
 					<range first="0" last="17" mode="1" enable_uv_tiling="0" adaptive_angle_threshold="1" gap="0">0</range>
@@ -1984,6 +1983,10 @@
 					<transform>0.999999880791 0 0 0.0 0 0.999999701977 0 0.0 0 0 0.999999701977 0.0 0 0 0 1.0</transform>
 				</node>
 			</node>
+		</node>
+		<node type="NodeReference" id="143983955" name="Egg">
+			<reference>guid://beee5dac3fc5287c9fad406a897430824d90e624</reference>
+			<transform>0.733821690083 -0.67934191227 -0.00047185269068 0.0 0.67053937912 0.724424302578 -0.159957930446 0.0 0.109007939696 0.117064207792 0.987123727798 0.0 -43.8447917844 46.3314956064 3.28855073074 1.0</transform>
 		</node>
 	</editor>
 	<console>

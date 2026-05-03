@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>641e47e497bf276136a35de2023aa275803c1c5c</guid>
+	<type>material</type>
+	<hash>44be0eebd37b205d9c56d7b0ef789a4604a8a962750b2e6242e00bd75d9edb06</hash>
+	<runtimes>
+		<runtime id="641e47e497bf276136a35de2023aa275803c1c5c" name="Egg" link="0" type="5"/>
+	</runtimes>
+</asset>
