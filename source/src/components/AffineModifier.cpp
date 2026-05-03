@@ -1,4 +1,5 @@
 #include "AffineModifier.h"
+#include "utils/Utils.h"
 
 #include <UnigineComponentSystem.h>
 #include <UnigineGame.h>
@@ -14,6 +15,8 @@ void AffineModifier::init()
 	for (int i = 0; i < anims.size(); ++i)
 	{
 		NodePtr t = anims[i]->target;
+		FLOGERR(t, "target is not set : %s", node->getName());
+		// FLOGERR(anims[i]->pivot, "pivot is not set: %s",  node->getName());
 		auto &s = _anim_states[i];
 		s.t = 0.0f;
 		if (t)
@@ -30,11 +33,17 @@ void AffineModifier::update()
 		return;
 
 	const float dt = Game::getIFps();
+	int finish = 0;
 
 	for (int i = 0; i < anims.size() && i < _anim_states.size(); ++i)
 	{
 		auto &cfg = anims[i];
 		auto &st = _anim_states[i];
+		if (!st._need_update)
+		{
+			++finish;
+			continue;
+		}
 
 		NodePtr target = cfg->target;
 		if (!target)
@@ -66,8 +75,22 @@ void AffineModifier::update()
 		auto new_trans = Mat4(new_rot, new_pos);
 
 		if (new_trans == target->getWorldTransform())
-			_need_update = false;
+			st._need_update = false;
 
 		target->setWorldTransform(new_trans);
 	}
+
+	if (finish == _anim_states.size())
+		_need_update = false;
 }
+
+void AffineModifier::setOpen(bool open)
+{ 
+	_need_update = true;
+	_open = open;
+
+	for (auto &state : _anim_states)
+	{
+		state._need_update = true;
+	}
+};

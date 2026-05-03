@@ -18,8 +18,6 @@ public:
 	COMPONENT_INIT(init);
 	COMPONENT_UPDATE(update);
 
-	PROP_PARAM(Node, settings, "Settings", "SoundSettings node; falls back to self, then defaults")
-
 	PROP_ARRAY_STRUCT(AffineStruct, anims);
 
 private:
@@ -27,10 +25,7 @@ private:
 	void update();
 
 public:
-	void setOpen(bool open) noexcept { 
-		_need_update = true;
-		_open = open;
-	};
+	void setOpen(bool open);
 
 private:
 	struct AnimState
@@ -38,6 +33,7 @@ private:
 		Unigine::Math::Vec3 rest_pos = Unigine::Math::Vec3_zero;
 		Unigine::Math::quat rest_rot;
 		float t = 0.0f;
+		bool _need_update = false;
 	};
 
 	void update_active_state();

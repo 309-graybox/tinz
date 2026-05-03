@@ -9,6 +9,5 @@
 		<parameter name="speed" type="float" title="Speed" tooltip="Approach rate toward open pose">8</parameter>
 		<parameter name="damping" type="float" title="Damping" tooltip="Return rate to rest pose">8</parameter>
 	</struct>
-	<parameter name="settings" type="node" title="Settings" tooltip="SoundSettings node; falls back to self, then defaults">0</parameter>
 	<parameter name="anims" type="array" array_type="AffineStruct"/>
 </property>
