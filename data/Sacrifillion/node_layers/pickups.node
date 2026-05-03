@@ -233,6 +233,85 @@
 			</properties>
 			<transform>-0.436664134264 -0.0013550769072 -0.89962404368 0.0 -0.000592029071412 0.999999344349 -0.00121890725848 0.0 0.899624824523 3.50526647708e-07 -0.436664577523 0.0 34.1354781431 54.8322685837 0.595494960618 1.0</transform>
 		</node>
+		<node type="NodeReference" id="709459247" name="box_1">
+			<reference>guid://be7e7109443e45b74abafa84452ce2e0bdcd980d</reference>
+			<properties>
+				<property parent="b03fcb358b76833a3f94e3a23ab734e56026a016" guid="ff151b55a84221e953c1845b1b51e36894044e1b">
+					<parameter name="range">10</parameter>
+					<parameter name="exitRange">10</parameter>
+					<parameter name="lines">
+						<value index="0">
+							<parameter name="text">Создатели игры просят прощения за то, что им не удалось поместить сюда достойного монстра</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="1">
+							<parameter name="text">
+Кризис на рынке компьютерных монстров.</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+					</parameter>
+				</property>
+			</properties>
+			<transform>0.999999463557 -0.00135451951064 -2.39083036075e-07 0.0 0.00135451939423 0.999999344349 -3.01580584051e-10 0.0 2.39083192355e-07 -2.22622007634e-11 1.00000041723 0.0 -42.806648018 22.696301672 0.519873301451 1.0</transform>
+		</node>
+		<node type="NodeReference" id="551397700" name="box_2">
+			<reference>guid://be7e7109443e45b74abafa84452ce2e0bdcd980d</reference>
+			<properties>
+				<property parent="b03fcb358b76833a3f94e3a23ab734e56026a016" guid="be0bea4e29c7694e6b2582407c0c74631868acbe">
+					<parameter name="range">10</parameter>
+					<parameter name="exitRange">10</parameter>
+					<parameter name="lines">
+						<value index="0">
+							<parameter name="text">Что вершит судьбу человечества в этом мире? </parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="1">
+							<parameter name="text">Некое незримое существо или закон, подобно Длани Господней парящей над миром? </parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+						<value index="2">
+							<parameter name="text">По крайне мере истинно то, что человек не властен даже над своей волей.</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+					</parameter>
+				</property>
+			</properties>
+			<transform>0.999998927115 -0.000169266902958 0.00169376817849 0.0 -5.90648123761e-05 0.990994155407 0.133906923765 0.0 -0.00170117954258 -0.133906826377 0.990992783963 0.0 -21.7289180831 -7.68637202528 -1.04649965803 1.0</transform>
+		</node>
+		<node type="NodeReference" id="828804792" name="box_3">
+			<reference>guid://be7e7109443e45b74abafa84452ce2e0bdcd980d</reference>
+			<properties>
+				<property parent="b03fcb358b76833a3f94e3a23ab734e56026a016" guid="37dd2e8f1b9d07c0d0226305baa9bcd20d216d05">
+					<parameter name="range">10</parameter>
+					<parameter name="exitRange">10</parameter>
+					<parameter name="lines">
+						<value index="0">
+							<parameter name="text">Здесь могло быть ВАШЕ имя!
+(Рекламное аенство &apos;Упокоение душ&apos;)</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+					</parameter>
+				</property>
+			</properties>
+			<transform>0.849561631679 -0.345113456249 0.398927026923 0.0 -0.369580954313 0.150175094604 0.916982884227 0.0 -0.376371771097 -0.926468670368 3.56286785381e-05 0.0 -10.8251388731 80.7762800269 1.06675654959 1.0</transform>
+		</node>
+		<node type="NodeReference" id="243873793" name="box_4">
+			<reference>guid://be7e7109443e45b74abafa84452ce2e0bdcd980d</reference>
+			<properties>
+				<property parent="b03fcb358b76833a3f94e3a23ab734e56026a016" guid="ba7b6430fe06c718109ca972ec6f3c91de0e7aa0">
+					<parameter name="range">10</parameter>
+					<parameter name="exitRange">10</parameter>
+					<parameter name="lines">
+						<value index="0">
+							<parameter name="text">Одинокая девушка желает познакомиться... 
+</parameter>
+							<parameter name="duration">5</parameter>
+						</value>
+					</parameter>
+				</property>
+			</properties>
+			<transform>0.895526766776 -0.199097692966 0.397985958933 0.0 -0.385575383901 0.099366158247 0.917310352165 0.0 -0.222180515528 -0.974928796291 0.0122178856115 0.0 20.4047687648 73.5962648552 0.605429948079 1.0</transform>
+		</node>
 	</node>
 	<node type="NodeDummy" id="1399529390" name="traps">
 		<transform>0.997811197973 -0.00211497605778 0.0660946487358 0.0 -0.00211498678729 0.997956395149 0.0638631547445 0.0 -0.0660946522468 -0.0638631433249 0.995767711836 0.0 0 0 0 1.0</transform>
