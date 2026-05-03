@@ -1,4 +1,7 @@
 #include "Entity.h"
+#include "../audio/SoundManager.h"
+#include "game/GameState.h"
+#include "player/camera/PlayerCameraManager.h"
 #include "utils/Utils.h"
 
 #include <UnigineGame.h>
@@ -36,6 +39,28 @@ bool Entity::takeDamage(const DamageInfo &damageInfo)
 	if (receivesDamage)
 		_invulnerable_until = Game::getTime() + max(invulnerabilityTime.get(), 0.0f);
 
+	const bool changed = !compare(old_hp, _hp);
+	const bool took_damage = receivesDamage && changed;
+
+	if (took_damage)
+	{
+		audio::SoundManager::play3DAt(soundOnDamage.get(), node->getWorldPosition());
+
+		const NodePtr player_character = game::GameState::getPlayerCharacter();
+		const bool is_player_entity = player_character &&
+			(isInHierarchy(node, player_character) || isInHierarchy(player_character, node));
+		if (is_player_entity)
+		{
+			auto player = Game::getPlayer();
+			if (player)
+			{
+				auto player_node = static_ptr_cast<Node>(player);
+				if (auto pcm = ComponentSystem::get()->getComponent<PlayerCameraManager>(player_node))
+					pcm->addTrauma(max((float)damageShake, 0.0f));
+			}
+		}
+	}
+
 	Log::message("%s hp changed: %.2f -> %.2f, amount: %.2f, invulnerability: %.2f\n",
 		node->getName(), old_hp, _hp, amount, receivesDamage ? max(invulnerabilityTime.get(), 0.0f) : 0.0f);
 
@@ -47,8 +72,6 @@ bool Entity::takeDamage(const DamageInfo &damageInfo)
 		if (!persistOnDeath)
 			node.deleteLater();
 	}
-
-	bool changed = !compare(old_hp, _hp);
 
 	if (changed)
 	{

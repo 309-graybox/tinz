@@ -43,6 +43,8 @@ public:
 	PROP_PARAM(Float, invulnerabilityTime, 0.0f, "", "Damage immunity duration in seconds after taking damage. 0 = disabled")
 	PROP_PARAM(Toggle, persistOnDeath, false, "", "If true, the node is NOT auto-deleted on death — owner reacts via eventDied (used by the player so respawn can revive it)")
 	PROP_PARAM(Float, deleteTimer, 0.0f)
+	PROP_PARAM(String, soundOnDamage, "", "Damage Sound", "SoundManager event id or direct audio path")
+	PROP_PARAM(Float, damageShake, 0.7f, "", "Camera trauma added when this entity is the player and receives damage")
 
 	PROP_ARRAY(Node, enable_on_death)
 	PROP_ARRAY(Node, disable_on_death)

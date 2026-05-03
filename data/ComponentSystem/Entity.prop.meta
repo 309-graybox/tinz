@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <asset version="2.21.0.0">
-	<guid>c7fb3177257942197ffaf1f26b2e8b00b4f667b2</guid>
-	<type>property</type>
-	<hash>9fc82cf2f590b11c5967dc2bd1f8d2d9fd3f8df2b28728762b5d90c2e66e5275</hash>
+	<guid>49a66aa97d17d6122d15325302047fa3205b421a</guid>
+	<type>file</type>
+	<hash>ac69e223c468f1e2d203f19ca99c5bc71f8a162151dd55966ed9e35f9d33f89d</hash>
 	<runtimes>
-		<runtime id="c7fb3177257942197ffaf1f26b2e8b00b4f667b2" name="Entity" link="0" type="4"/>
+		<runtime id="49a66aa97d17d6122d15325302047fa3205b421a" name="Entity.prop" link="0"/>
 	</runtimes>
 </asset>

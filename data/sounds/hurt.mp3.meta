@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>1c2619a84615539f8622c6f6091286aa59a606ab</guid>
+	<type>sound</type>
+	<hash>145d42cd281ac004048e07375ecb8551260cba793026c5dd8236d810b6602a4b</hash>
+	<runtimes>
+		<runtime id="1c2619a84615539f8622c6f6091286aa59a606ab" name="hurt.mp3" link="0" type="7"/>
+	</runtimes>
+</asset>
