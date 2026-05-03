@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>5ab247e305708c501f62ba9b02046fce7b67ba70</guid>
+	<type>material</type>
+	<hash>b2a8e00586d33a3766a6857178b1c484820a6c3987f10d6a9d95278af0210f94</hash>
+	<runtimes>
+		<runtime id="5ab247e305708c501f62ba9b02046fce7b67ba70" name="player_face_no_aux" link="0" type="5"/>
+	</runtimes>
+</asset>

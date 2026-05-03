@@ -863,7 +863,7 @@
 				<is_main>1</is_main>
 				<is_listener>1</is_listener>
 				<controlled>0</controlled>
-				<transform>1 0 0 0.0 0 5.960463767e-08 0.999999821186 0.0 0 -0.999999880791 5.96046412227e-08 0.0 0 0 0 1.0</transform>
+				<transform>1 0 0 0.0 0 5.960463767e-08 0.999999821186 0.0 0 -0.999999761581 5.96046341172e-08 0.0 0 0 0 1.0</transform>
 			</node>
 		</node>
 		<node type="NodeDummy" id="229341078" name="logic">
@@ -887,11 +887,11 @@
 				</property>
 				<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="ccd8b4ec6cc75d32d337a5e2bdac2839fe5a5ad5">
 					<parameter name="eventId">main_menu_door_open</parameter>
-					<parameter name="sample">guid://8767a1c4532cd66dd0e4edfac0c6e535e5b2c98d</parameter>
+					<parameter name="sample">guid://bf790656e39f269b9ed7cfd6f4cabb31e00f32a6</parameter>
 				</property>
 				<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="5804c809beff42ced89c6acb58e3be3f06036e30">
 					<parameter name="eventId">main_menu_door_close</parameter>
-					<parameter name="sample">guid://fc365c412c32216c84f334c363a4b597d1965d88</parameter>
+					<parameter name="sample">guid://73003bed4c4d66d2e1e0486d542afd4c9d98a9cd</parameter>
 				</property>
 			</properties>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -1.37765800953 -12.3081874847 4.76837158203e-07 1.0</transform>
@@ -899,14 +899,15 @@
 		<node type="NodeDummy" id="142199938" name="exit">
 			<properties>
 				<property parent="ea5954b2d1994bd73ad98e8dfeea4c23cbd7edd7" guid="f24013e496bd6d747ac497d795e34a41b0335add">
-					<parameter name="hoverEnterSound">main_menu_fart</parameter>
 					<parameter name="hoverAnims">
 						<value index="0">
-							<parameter name="target">1882081629</parameter>
-							<parameter name="pivot">2034230991</parameter>
-							<parameter name="axis">0 1 0</parameter>
-							<parameter name="angle">-86</parameter>
+							<parameter name="target">1671732429</parameter>
+							<parameter name="pivot">46739878</parameter>
+							<parameter name="axis">1 0 0</parameter>
+							<parameter name="angle">80</parameter>
 							<parameter name="offset">0 0 0</parameter>
+							<parameter name="speed">6</parameter>
+							<parameter name="damping">6</parameter>
 						</value>
 					</parameter>
 					<parameter name="clickDelay">1</parameter>
@@ -915,20 +916,6 @@
 				</property>
 			</properties>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 3.78501303023 -4.327056311 1.30000001192 1.0</transform>
-			<node type="NodeDummy" id="2034230991" name="pivot">
-				<transform>0.879332005978 -0.476209193468 -8.27180612553e-25 0.0 0.476209193468 0.879332005978 2.77555392197e-17 0.0 -1.32174429074e-17 -2.44063345503e-17 1 0.0 -4.53652614803 -4.73785822904 -2.12691201991 1.0</transform>
-				<node type="ObjectMeshSkinnedLegacy" id="1882081629" name="plane">
-					<mesh_name>guid://2dfd37932fef45e37670903e1f577b6ccef3b8e2</mesh_name>
-					<fps_visible_camera>-1</fps_visible_camera>
-					<fps_visible_shadow>30</fps_visible_shadow>
-					<fps_invisible>0</fps_invisible>
-					<anim_name>guid://fcd5a63512ce296da80b3326df9f49f6e88b62d9</anim_name>
-					<speed>30</speed>
-					<surface name="Face" intersection="1" material="e082033d4dff46cb0ab1413f67ad7074ab89cc18"/>
-					<surface name="Body" intersection="1" material="e128f3de1149944d094658bb7f4043b9b0235239"/>
-					<transform>0.0220077570658 -0.999757591263 0.000119201591588 0.0 0.999742017912 0.0220081012235 0.00550205074251 0.0 -0.00550334473198 -1.91648842222e-06 0.999984800816 0.0 0 0 0 1.0</transform>
-				</node>
-			</node>
 			<node type="ObjectMeshStatic" id="1799320590" immovable="1" name="2_1">
 				<mesh_name>guid://095d9a95f2e3f0baabdbe834602d8abadf8ff4f2</mesh_name>
 				<surface name="surface" intersection="1" shadow_mask="0x0" viewport_mask="0x0" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
@@ -940,7 +927,7 @@
 				<transform>0.168208092451 0.817230761051 -0.202480733395 0.0 -0.821514070034 0.114103719592 -0.221928536892 0.0 -0.184331268072 0.237218514085 0.804305016994 0.0 -6.34462377425 -3.804142749 -1.29991681781 1.0</transform>
 				<node type="ObjectMeshStatic" id="200313583" immovable="1" name="sign">
 					<mesh_name>guid://91f061fd41cc18177f70d8d6be27e814389eb22a</mesh_name>
-					<surface name="Wood" intersection="1" material="0ff10503ce2b9cdf250af8f98dc35144c3cdac23"/>
+					<surface name="Wood" intersection="1" material="d10a2999a729b576a660724315e6db3b523ff241"/>
 					<surface name="WoodSign" intersection="1" material="3ab8c47f7ffa3e915481fef205b5a334ede4b173"/>
 					<transform>-0.0575186215645 0.740324408445 -0.124545663579 0.0 -0.658048371686 0.0104019429947 0.3657367476 0.0 0.361334534756 0.136790945261 0.646238523829 0.0 -0.0353282333035 -0.103231308646 1.37634145341 1.0</transform>
 				</node>
@@ -970,6 +957,20 @@
 				<surface name="Wood" intersection="1" material="d10a2999a729b576a660724315e6db3b523ff241"/>
 				<transform>-0.070087082684 -0.211752593517 -0.974807143211 0.0 0.315455704927 0.922356247902 -0.223039701581 0.0 0.946348786354 -0.323140710592 0.00215333746746 0.0 -5.78226053801 -5.81377926457 -1.2408452535 1.0</transform>
 			</node>
+			<node type="NodeDummy" id="46739878" name="pivot_2">
+				<transform>-0.469528228045 -0.882918059826 -3.25264994444e-19 0.0 0.882917284966 -0.469527810812 2.77555640351e-17 0.0 -2.46586031304e-17 1.27448365731e-17 0.999999940395 0.0 -4.43336124032 -4.99850798421 -2.16213182404 1.0</transform>
+				<node type="ObjectMeshSkinnedLegacy" id="1671732429" name="plane">
+					<mesh_name>guid://2dfd37932fef45e37670903e1f577b6ccef3b8e2</mesh_name>
+					<fps_visible_camera>-1</fps_visible_camera>
+					<fps_visible_shadow>30</fps_visible_shadow>
+					<fps_invisible>0</fps_invisible>
+					<anim_name>guid://fcd5a63512ce296da80b3326df9f49f6e88b62d9</anim_name>
+					<speed>30</speed>
+					<surface name="Face" intersection="1" material="5ab247e305708c501f62ba9b02046fce7b67ba70"/>
+					<surface name="Body" intersection="1" material="e6905222a7e681444685824a1afacd9108bd1fb3"/>
+					<transform>0.999998569489 0 0 0.0 0 1.00000023842 0 0.0 0 0 0.999999940395 0.0 0 0 0 1.0</transform>
+				</node>
+			</node>
 		</node>
 		<node type="NodeDummy" id="492666377" name="start">
 			<properties>
@@ -993,7 +994,7 @@
 					</parameter>
 					<parameter name="clickDelay">1</parameter>
 					<parameter name="fadeOnClick">1</parameter>
-					<parameter name="worldFile">guid://6c3a68954326ad72c48529500faaed3687c67a0c</parameter>
+					<parameter name="worldFile">guid://54881e67eb8344eabccc05b990b1b626803d02fa</parameter>
 				</property>
 			</properties>
 			<transform>0.982088923454 0.188421174884 0 0.0 -0.18842113018 0.982088685036 0 0.0 0 0 1 0.0 4.27141187296 -2.19508344781 -0.652025306343 1.0</transform>
@@ -1395,7 +1396,8 @@
 		<node type="NodeDummy" id="509288709" name="volume">
 			<properties>
 				<property parent="b16523ab252286babe634bc617fbd74580762a5d" guid="8c65f42891c0e16bf29e740b97d2ea57e3bdc5f1">
-					<parameter name="dragCursor">guid://064299f06ea87840109e23f1a3c64ba03df68dfe</parameter>
+					<parameter name="hoverCursor">guid://de22de30f3ab8cbeea4a83b01fbc436dbc234080</parameter>
+					<parameter name="dragCursor">guid://71b8fae432f0cf42b2e058642f5792f406a45bb4</parameter>
 					<parameter name="buryOffset">0 0 -1</parameter>
 					<parameter name="buryNode">777926137</parameter>
 					<parameter name="sensitivity">400</parameter>

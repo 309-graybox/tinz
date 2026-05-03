@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>5198a48bbc3fef5528db99f235a4b4672feaabd3</guid>
+	<type>sound</type>
+	<hash>7fc16b5f07fc3eefaab1d43ec12bead62e9094b57ccbffe5bec49adbd98e6fda</hash>
+	<runtimes>
+		<runtime id="5198a48bbc3fef5528db99f235a4b4672feaabd3" name="ending.wav" link="0" type="7"/>
+	</runtimes>
+</asset>

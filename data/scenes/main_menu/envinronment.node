@@ -321,9 +321,7 @@
 		</node>
 		<node type="ObjectMeshStatic" id="1955092047" immovable="1" name="tree_evil">
 			<mesh_name>guid://0e352eb02264c3d72a9c78d2023b28c62dd81ca2</mesh_name>
-			<surface name="wood_lod_0" intersection="1" material="0ff10503ce2b9cdf250af8f98dc35144c3cdac23"/>
-			<surface name="wood_lod_1" enabled="0" intersection="1" material="0ff10503ce2b9cdf250af8f98dc35144c3cdac23"/>
-			<surface name="wood_lod_2" intersection="1" material="0ff10503ce2b9cdf250af8f98dc35144c3cdac23"/>
+			<surface name="Wood" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
 			<transform>0.117941126227 0.0996814817191 -0.00942706223577 0.0 -0.0997039079666 0.11825850606 0.00307542388327 0.0 0.00918742455542 0.00373080698773 0.15439248085 0.0 0.912646902073 1.10066128186 -3.04086400942 1.0</transform>
 		</node>
 		<node type="NodeReference" id="314504750" name="tree">
@@ -348,20 +346,6 @@
 		<node type="NodeReference" id="380171002" name="tree_1">
 			<reference>guid://813e9dbca1e1d6492ad2836a0cfa5b5b5d39e1a2</reference>
 			<transform>1.74984359741 -5.10503562808e-23 -0.595905184746 0.0 -9.97018686387e-17 1.84852731228 3.39533090537e-17 0.0 0.595905184746 3.09342257843e-16 1.74984359741 0.0 14.5932967369 8.17152614681 -2.88182070461 1.0</transform>
-		</node>
-	</node>
-	<node type="NodeDummy" id="660417778" name="devochki">
-		<transform>-0.259054050448 -0.965862955367 0.000100615980406 0.0 0.965862910765 -0.259053858362 0.000468475935018 0.0 -0.000426418711213 0.000218541796746 0.999999770407 0.0 0.188468092734 -8.68634242445 0.896146915042 1.0</transform>
-		<node type="ObjectMeshSkinnedLegacy" id="1735774050" name="plane_1">
-			<mesh_name>guid://2dfd37932fef45e37670903e1f577b6ccef3b8e2</mesh_name>
-			<fps_visible_camera>-1</fps_visible_camera>
-			<fps_visible_shadow>30</fps_visible_shadow>
-			<fps_invisible>0</fps_invisible>
-			<anim_name>guid://fcd5a63512ce296da80b3326df9f49f6e88b62d9</anim_name>
-			<speed>30</speed>
-			<surface name="Face" intersection="1" material="e082033d4dff46cb0ab1413f67ad7074ab89cc18"/>
-			<surface name="Body" intersection="1" material="e128f3de1149944d094658bb7f4043b9b0235239"/>
-			<transform>-0.093519374575 -0.995618024525 -1.61658629969e-22 0.0 0.995617386834 -0.0935193163486 8.16143535876e-23 0.0 -2.68630925764e-16 3.10028597868e-16 0.999999940395 0.0 -4.34943754029 0.162661528524 -0.903929461599 1.0</transform>
 		</node>
 	</node>
 	<node type="NodeDummy" id="934822216" name="spikes">
@@ -429,7 +413,7 @@
 		<node type="ObjectMeshStatic" id="770957853" immovable="1" name="Stone_v4">
 			<mesh_name>guid://1c4d13db46a9243587381e5ca2148f27983f489a</mesh_name>
 			<surface name="Stone" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0.600796523442 5.82090956165 0 1.0</transform>
+			<transform>1 3.57712601537e-19 -1.2585433417e-22 0.0 3.23751874308e-19 1 2.02194910769e-28 0.0 -3.05470592188e-16 7.91060957631e-16 1 0.0 0.326657901825 5.01554563217 6.73072708679e-16 1.0</transform>
 		</node>
 		<node type="ObjectMeshStatic" id="1388182744" immovable="1" name="Stone_v5">
 			<mesh_name>guid://8ee0837b4db7043fc044a3ce40cbc61f459cff31</mesh_name>
@@ -454,7 +438,7 @@
 		<node type="ObjectMeshStatic" id="299135372" immovable="1" name="Stone_v9">
 			<mesh_name>guid://a314fedfab579eb6a2fe5e629004835e1a5414f5</mesh_name>
 			<surface name="Stone" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0.37207397214 5.6767537638 -8.881784197e-16 1.0</transform>
+			<transform>1 3.57712601537e-19 -7.29147749664e-23 0.0 3.23751874308e-19 1 2.02194910769e-28 0.0 -3.05470645128e-16 7.91060957631e-16 1 0.0 0.0316139412401 4.89838506275 -1.05471187339e-15 1.0</transform>
 		</node>
 	</node>
 	<node type="NodeDummy" id="1193600249" name="BonesCollection">
@@ -470,8 +454,8 @@
 		<node type="ObjectCloudLayer" id="257295730" name="ObjectCloudLayer_Cumulus">
 			<coverage_animation_offset>0 0 0 0</coverage_animation_offset>
 			<noise_animation_offset>0 0 0 0</noise_animation_offset>
-			<surface name="clouds_surface" physics_friction="1" physics_restitution="1" material="861bdcb639dd29ee8ce4d750d28d611c2dc07d8f"/>
-			<transform>1.0000000596 -9.31902859358e-08 -3.45067784314e-16 0.0 9.31902985959e-08 1.0000000596 -2.21990453437e-16 0.0 -1.3556689959e-16 1.76101548362e-16 1 0.0 -4.4408920985e-16 0 1500 1.0</transform>
+			<surface name="clouds_surface" cast_shadow="0" cast_world_shadow="0" cast_env_probe_shadow="0" shadow_mask="0x0" physics_friction="1" physics_restitution="1" material="861bdcb639dd29ee8ce4d750d28d611c2dc07d8f"/>
+			<transform>1.0000000596 -4.65951529155e-07 -3.45067701564e-16 0.0 4.6595158535e-07 1.0000000596 -2.21990582065e-16 0.0 -1.3556689959e-16 1.76101548362e-16 1 0.0 -2.22044604925e-15 0 1500 1.0</transform>
 		</node>
 	</node>
 </nodes>

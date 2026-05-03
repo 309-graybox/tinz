@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>73003bed4c4d66d2e1e0486d542afd4c9d98a9cd</guid>
+	<type>sound</type>
+	<hash>08eafd124e23c80033189fe08e56e42818d8fbc244458fa765a19c0bd94e26ef</hash>
+	<runtimes>
+		<runtime id="73003bed4c4d66d2e1e0486d542afd4c9d98a9cd" name="gate_close_2.wav" link="0" type="7"/>
+	</runtimes>
+</asset>

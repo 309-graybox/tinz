@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>bf790656e39f269b9ed7cfd6f4cabb31e00f32a6</guid>
+	<type>sound</type>
+	<hash>173b4133f7f823d5131af5e76a97ab0507e0301b25527b0f5191587b8cc633ae</hash>
+	<runtimes>
+		<runtime id="bf790656e39f269b9ed7cfd6f4cabb31e00f32a6" name="gate_open_2.wav" link="0" type="7"/>
+	</runtimes>
+</asset>

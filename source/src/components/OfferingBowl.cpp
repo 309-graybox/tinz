@@ -72,8 +72,6 @@ void OfferingBowl::init()
 	_emission = _mat->findParameter("emission_color");
 	FLOGERR(_emission != -1, "no emission");
 	_color = _mat->getParameterFloat4(_emission);
-
-	triggerEnd();
 }
 
 void OfferingBowl::update()

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material version="2.21.0.0" guid="5ab247e305708c501f62ba9b02046fce7b67ba70" parent="e082033d4dff46cb0ab1413f67ad7074ab89cc18" base_material="6bdbc0e8a7ef8f4fccb74936393a3f42ff152868">
+	<texture name="auxiliary">guid://d15782a509aae84ba85cebcb4e69571f60a7e33a</texture>
+</material>

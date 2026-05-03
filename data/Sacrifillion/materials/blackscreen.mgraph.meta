@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>46f0520d4550488ed10a995e136699c0e5680767</guid>
+	<type>material_graph</type>
+	<hash>f1ffb6e2c91aab282dd916aefce7797ca63cf058934ebc7665194f126555be31</hash>
+	<runtimes>
+		<runtime id="46f0520d4550488ed10a995e136699c0e5680767" name="blackscreen.mgraph" link="0"/>
+		<runtime id="0b245407872516effa8689c0697ed8d4fb2e1031" name="blackscreen" link="1" type="5"/>
+	</runtimes>
+</asset>
