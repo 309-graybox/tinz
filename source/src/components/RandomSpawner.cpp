@@ -56,7 +56,7 @@ bool RandomSpawner::spawnOne()
 	if (index < 0)
 		return false;
 
-	NodePtr source = spawnNodes[index].get();
+	NodePtr source = World::loadNode(spawnNodes[index]);
 	if (!source)
 		return false;
 

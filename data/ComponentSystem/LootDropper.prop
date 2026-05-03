@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="LootDropper" manual="1" parent_name="node_base">
+	<struct name="LootDropEntry">
+		<parameter name="dropNode" type="node" tooltip="Drop Node" group="Template node that will be cloned on death">0</parameter>
+		<parameter name="chance" type="float" tooltip="Drop chance (0..1 or 0..100)">1</parameter>
+		<parameter name="minCount" type="int">1</parameter>
+		<parameter name="maxCount" type="int">1</parameter>
+	</struct>
+	<parameter name="drops" type="array" array_type="LootDropEntry"/>
+	<parameter name="scatterRadius" type="float" tooltip="Random horizontal scatter radius">0.45</parameter>
+	<parameter name="scatterHeight" type="float" tooltip="Random vertical scatter height">0.1</parameter>
+</property>
