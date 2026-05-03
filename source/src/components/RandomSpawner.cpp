@@ -10,6 +10,28 @@ REGISTER_COMPONENT(RandomSpawner)
 using namespace Unigine;
 using namespace Unigine::Math;
 
+namespace
+{
+Entity *findEntityInHierarchy(const NodePtr &root)
+{
+	if (!root)
+		return nullptr;
+
+	if (Entity *entity = ComponentSystem::get()->getComponent<Entity>(root))
+		return entity;
+
+	const int children_count = root->getNumChildren();
+	for (int i = 0; i < children_count; ++i)
+	{
+		Entity *entity = findEntityInHierarchy(root->getChild(i));
+		if (entity)
+			return entity;
+	}
+
+	return nullptr;
+}
+} // namespace
+
 void RandomSpawner::init()
 {
 	_cooldown_timer = 0.0f;
@@ -56,7 +78,7 @@ bool RandomSpawner::spawnOne()
 	if (index < 0)
 		return false;
 
-	NodePtr source = spawnNodes[index].get();
+	NodePtr source = World::loadNode(spawnNodes[index]);
 	if (!source)
 		return false;
 
@@ -73,7 +95,7 @@ bool RandomSpawner::spawnOne()
 
 	if (cooldownAfterDeathOnly)
 	{
-		Entity *entity = ComponentSystem::get()->getComponent<Entity>(spawned);
+		Entity *entity = findEntityInHierarchy(spawned);
 		if (entity && entity->isAlive())
 		{
 			_active_spawn = spawned;
@@ -111,7 +133,7 @@ bool RandomSpawner::isActiveSpawnAlive() const
 	if (!_active_spawn)
 		return false;
 
-	Entity *entity = ComponentSystem::get()->getComponent<Entity>(_active_spawn);
+	Entity *entity = findEntityInHierarchy(_active_spawn);
 	return entity && entity->isAlive();
 }
 

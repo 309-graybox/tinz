@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>4b10915ef414c5c9e3625929b95ebfe14f9da234</guid>
+	<type>sound</type>
+	<hash>cbf820a9350a411eb3f1cea2408150463845bb7fb141c8e1460c524b5f1bcc94</hash>
+	<runtimes>
+		<runtime id="4b10915ef414c5c9e3625929b95ebfe14f9da234" name="skull_crash.mp3" link="0" type="7"/>
+	</runtimes>
+</asset>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <asset version="2.21.0.0">
-	<guid>0be08cd8c1bf38fa0781bd3bb98b2e8c7b5e78de</guid>
-	<type>file</type>
-	<hash>a4535eee65db567fb8d6f9bbe75c7af985b31b498eb5137f631950e39e145e97</hash>
+	<guid>113b9cb4e976b043172f1f5397c1cf3a69acb245</guid>
+	<type>property</type>
+	<hash>0adf7539b68812c6df56f0f230ac2a3cf3c31dc6401aea0b164413d14069344d</hash>
 	<runtimes>
-		<runtime id="0be08cd8c1bf38fa0781bd3bb98b2e8c7b5e78de" name="RandomSpawner.prop" link="0"/>
+		<runtime id="113b9cb4e976b043172f1f5397c1cf3a69acb245" name="RandomSpawner" link="0" type="4"/>
 	</runtimes>
 </asset>

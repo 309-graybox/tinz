@@ -403,6 +403,10 @@
 				<parameter name="eventId">hurt</parameter>
 				<parameter name="sample">guid://1c2619a84615539f8622c6f6091286aa59a606ab</parameter>
 			</property>
+			<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="ba45467818bac8762aa86dd93b3e9f890ea671e7">
+				<parameter name="eventId">damage/skull</parameter>
+				<parameter name="sample">guid://4b10915ef414c5c9e3625929b95ebfe14f9da234</parameter>
+			</property>
 		</properties>
 		<transform>0.99999988079 0 0 0.0 0 1.00000011921 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 	</node>

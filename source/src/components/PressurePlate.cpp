@@ -5,6 +5,10 @@
 #include <UnigineComponentSystem.h>
 #include <UnigineEvent.h>
 #include <UnigineGame.h>
+#include <UnigineNodes.h>
+#include <UnigineObjects.h>
+#include <UniginePtr.h>
+#include <cstring>
 
 using namespace Unigine;
 using namespace Math;
@@ -23,6 +27,23 @@ void PressurePlate::init()
 	_trigger->getEventLeave().connect(this, &PressurePlate::onLeave);
 
 	_default_pos = plate->getWorldPosition();
+
+	auto ref = checked_ptr_cast<NodeReference>(plate.get());
+	if (!ref)
+		_node = checked_ptr_cast<ObjectMeshStatic>(plate.get());
+	else
+		_node = checked_ptr_cast<ObjectMeshStatic>(ref->getReference());
+	FLOGERR(_node, "not ObjectMeshStatic");
+
+	for (int i = 0; i < _node->getNumSurfaces(); ++i)
+	{
+		if (strcmp(_node->getSurfaceName(i), "LightMineral_v2") == 0)
+		{
+			_mat = _node->getMaterialInherit(i);
+			_emission_idx = _mat->findParameter("emission_color");
+			FLOGERR(_emission_idx != -1, "no emission");
+		}
+	}
 }
 
 void PressurePlate::update()
@@ -53,6 +74,7 @@ void PressurePlate::onEnter(const NodePtr &n)
 	if (_locked)
 		return;
 
+	_mat->setParameterFloat4(_emission_idx, vec4(0.88f, 0.64f, 0.7f, 1.0f));
 	_need_update = true;
 	pressed_event.run();
 }
@@ -67,6 +89,7 @@ void PressurePlate::onLeave(const NodePtr &n)
 	if (_locked)
 		return;
 
+	_mat->setParameterFloat4(_emission_idx, vec4_zero);
 	_need_update = true;
 	unpressed_event.run();
 }
@@ -85,6 +108,8 @@ void PressurePlate::lock()
 
 void PressurePlate::release()
 {
+	if (!_player_inside)
+		_mat->setParameterFloat4(_emission_idx, vec4_zero);
 	_locked = false;
 	_need_update = true;
 }

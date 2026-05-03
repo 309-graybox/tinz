@@ -1,5 +1,7 @@
 #include <UnigineComponentSystem.h>
 #include <UnigineEvent.h>
+#include <UnigineMaterial.h>
+#include <UnigineObjects.h>
 #include <UnigineWorlds.h>
 
 class PressurePlate: public Unigine::ComponentBase
@@ -42,4 +44,8 @@ public:
 
 	Unigine::EventInvoker<> pressed_event;
 	Unigine::EventInvoker<> unpressed_event;
+	Unigine::ObjectMeshStaticPtr _node;
+	Unigine::MaterialPtr _mat;;
+	int _emission_idx = 0;
+	int _surface = 0;
 };
