@@ -80,9 +80,11 @@ public:
 
 	// Global mute. While disabled, play* calls are silent no-ops. For per-bus
 	// volume use Unigine::Sound::setSourceVolume(slot, vol) on the bits selected
-	// by SoundEvent::source_mask. Master volume = Unigine::Sound::setVolume.
+	// by SoundEvent::source_mask.
 	static void setEnabled(bool enabled);
 	static bool isEnabled();
+
+	static void setMasterVolume(float volume);
 };
 
 } // namespace audio

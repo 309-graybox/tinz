@@ -1,5 +1,6 @@
 #include "SoundRegistrator.h"
 
+#include "SoundManager.h"
 #include "SoundSettings.h"
 
 #include <UnigineLog.h>
@@ -43,6 +44,11 @@ void SoundRegistrator::init()
 
 	SoundManager::registerEvent(id, e);
 	_registered_id = id;
+
+	if (music)
+	{
+		SoundManager::playMusic(eventId);
+	}
 }
 
 void SoundRegistrator::shutdown()

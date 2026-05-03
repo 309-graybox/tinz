@@ -37,6 +37,7 @@ struct State
 	AmbientSourcePtr music;
 	Vector<MusicStep> music_sequence;
 	int music_sequence_index = 0;
+	float master_volume = 1;
 };
 
 State &state()
@@ -229,6 +230,7 @@ void SoundManager::init()
 	s.active_3d.clear();
 	s.music_sequence.clear();
 	s.music_sequence_index = 0;
+	Unigine::Sound::setVolume(s.master_volume);
 }
 
 void SoundManager::shutdown()
@@ -476,6 +478,13 @@ void SoundManager::setEnabled(bool enabled)
 bool SoundManager::isEnabled()
 {
 	return state().enabled;
+}
+
+void SoundManager::setMasterVolume(float volume)
+{
+	auto &s = state();
+	s.master_volume = volume;
+	Unigine::Sound::setVolume(volume);
 }
 
 } // namespace audio

@@ -27,6 +27,7 @@ public:
 	PROP_PARAM(File, sample, "", "Sample", "Audio file", "", "filter=.wav|.oga|.mp3")
 	PROP_PARAM(String, loopEventId, "", "Loop Event ID", "Optional SoundManager event id looped after Sample intro")
 	PROP_PARAM(Node, settings, "Settings", "SoundSettings node; falls back to self, then defaults")
+	PROP_PARAM(Toggle, music, false, "music is looped and starts to play on init");
 
 private:
 	void init();
