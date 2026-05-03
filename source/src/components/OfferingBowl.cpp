@@ -2,9 +2,16 @@
 
 #include "Inventory.h"
 #include "../audio/SoundManager.h"
+#include "game/GameState.h"
+#include "utils/Utils.h"
+#include "Entity.h"
 
 #include <UnigineGame.h>
 #include <UnigineLog.h>
+#include <UnigineObjects.h>
+#include <UniginePlayers.h>
+#include <UniginePtr.h>
+#include <UnigineWidgets.h>
 
 REGISTER_COMPONENT(OfferingBowl)
 
@@ -49,11 +56,32 @@ void OfferingBowl::init()
 	_drain_timer = 0.0f;
 	_draining = false;
 	_was_filled = isFilled();
+
+	FLOGERR(playerEnd, "NO PLAYER_END");
+	FLOGERR(head, "no head");
+
+	auto bil = checked_ptr_cast<ObjectBillboards>(head->getChild(0));
+	_mat = bil->getMaterialInherit(0);
+	auto bil2 = checked_ptr_cast<ObjectBillboards>(head->getChild(1));
+	bil2->setMaterial(_mat, 0);
+	_emission = _mat->findParameter("emission_color");
+	FLOGERR(_emission != -1, "no emission");
+	_color = _mat->getParameterFloat4(_emission);
+
+	triggerEnd();
 }
 
 void OfferingBowl::update()
 {
 	const float dt = Game::getIFps();
+
+	if (_end)
+	{
+		end(dt);
+		return;
+	}
+
+
 	updateFlights(dt);
 
 	if (!_draining)
@@ -218,6 +246,8 @@ bool OfferingBowl::drainOne(Inventory *inventory)
 		if (node)
 			audio::SoundManager::play3DAt(soundFilled.get(), node->getWorldPosition());
 		Log::message("OfferingBowl \"%s\" filled\n", node->getName());
+
+		triggerEnd();
 	}
 
 	return true;
@@ -319,4 +349,77 @@ int OfferingBowl::getTotalDeposited() const
 	for (int i = 0; i < _requirements_state.size(); ++i)
 		total += clamp(_requirements_state[i].deposited, 0, _requirements_state[i].required);
 	return total;
+}
+
+void OfferingBowl::end(float dt)
+{
+	if (_eye_timer > eye_time)
+	{
+		if (!_blackscreen)
+		{
+			_blackscreen = true;
+
+			auto b = Materials::findMaterialByPath(black);
+			checked_ptr_cast<PlayerDummy>(playerEnd.get())->addScriptableMaterial(b);
+			audio::SoundManager::stopMusic();
+			audio::SoundManager::play2D(sound_final);
+			_eye_timer = 0.0f;
+		}
+	}
+
+	if (_blackscreen)
+	{
+		_eye_timer += dt;
+
+		if (_eye_timer > blackscreen_time)
+		{
+			_blackscreen = false;
+
+			_label = WidgetLabel::create("СПАСИБО ЗА ИГРУ!");
+			_label->setFont(font);
+			
+			auto gui = Gui::getCurrent();
+			gui->addChild((_label), Gui::ALIGN_CENTER);
+			_label->setFontSize(100);
+			// Widget::
+			_thanks = true;
+			_eye_timer = 0;
+		}
+		return;
+	}
+
+	if (_thanks)
+	{
+		_eye_timer += dt;
+
+		if (_eye_timer > eye_time)
+		{
+			_label.deleteLater();
+			World::loadWorld("scenes/main_menu/main_menu.world");
+		}
+
+		return;
+	}
+
+	_eye_timer += dt;
+
+	
+
+	float t = _eye_timer / eye_time;
+	if (t > 1.0f) t = 1.0f;
+
+	_color.x = t;
+	_color.y = 1.0f - t;
+	_color.z = 0.0f;
+	_color.w = 1.0f;
+
+	_mat->setParameterFloat4(_emission, _color);
+}
+
+void OfferingBowl::triggerEnd()
+{
+	Game::setPlayer(checked_ptr_cast<PlayerDummy>(playerEnd.get()));
+	_end = true;
+	getComponent<Entity>(game::GameState::getPlayerCharacter())->kill();
+	game::GameState::invalidatePlayerCharacter();
 }

@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Interactable.h"
+#include <UnigineMaterial.h>
+#include <UnigineWidgets.h>
 
 class Inventory;
 
@@ -22,6 +24,7 @@ public:
 	COMPONENT_DEFINE(OfferingBowl, Interactable)
 	COMPONENT_INIT(init)
 	COMPONENT_UPDATE(update)
+	COMPONENT_SHUTDOWN(shutdown);
 
 	PROP_ARRAY_STRUCT(BowlRequirementInfo, requirements)
 	PROP_ARRAY_STRUCT(BowlVisualNodeInfo, visuals)
@@ -36,6 +39,15 @@ public:
 
 	PROP_PARAM(String, soundDrain, "", "Drain Sound", "SoundManager event id or direct audio path")
 	PROP_PARAM(String, soundFilled, "", "Filled Sound", "SoundManager event id or direct audio path")
+
+	PROP_PARAM(Node, playerEnd, "final");
+	PROP_PARAM(Node, head) 
+	PROP_PARAM(File, black);
+	PROP_PARAM(Float, blackscreen_time, 5.0f)
+	PROP_PARAM(Float, eye_time, 5.0f);
+	PROP_PARAM(File, sound_final);
+	PROP_PARAM(File, font);
+
 
 	bool canInteract(const Unigine::NodePtr &interactor) const override;
 	bool isFilled() const noexcept;
@@ -70,6 +82,10 @@ private:
 
 	void init();
 	void update();
+	void shutdown()
+	{
+		_label.deleteLater();
+	}
 
 	Inventory *resolveInventory(const Unigine::NodePtr &interactor) const;
 	bool hasAnyTransferable(const Inventory *inventory) const;
@@ -84,6 +100,9 @@ private:
 	int getTotalRequired() const;
 	int getTotalDeposited() const;
 
+	void end(float ifps);
+	void triggerEnd();
+
 private:
 	Unigine::Vector<RequirementState> _requirements_state;
 	Unigine::Vector<VisualState> _visual_state;
@@ -93,4 +112,13 @@ private:
 	float _drain_timer = 0.0f;
 	bool _draining = false;
 	bool _was_filled = false;
+	bool _end = false;
+	bool _thanks = false;
+
+	bool _blackscreen = false;
+	Unigine::MaterialPtr _mat;
+	Unigine::WidgetPtr _label;
+	int _emission = -1;
+	float _eye_timer = 0;
+	Unigine::Math::vec4 _color;
 };
