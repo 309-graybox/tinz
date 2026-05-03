@@ -85,8 +85,7 @@ void MainMenu::init_settings_menu()
 	GET_SLIDER(_settingsMenuCanvas, SliderContrast, [](UI::Slider *s) { Render::setColorCorrectionContrast(s->getValue()); });
 	GET_SLIDER(_settingsMenuCanvas, SliderGamma, [](UI::Slider *s) { Render::setColorCorrectionGamma(s->getValue()); });
 	// GET_SLIDER(_settingsMenuCanvas, SliderWhite, [](UI::Slider *s) { Render::setColorCorrectionWhite({s->getValue(), s->getValue(), s->getValue(), 1.0f}); });
-	GET_SLIDER(_settingsMenuCanvas, SliderVolume, [](UI::Slider *s) { Sound::setVolume(s->getValue()); });
-	GET_SLIDER(_settingsMenuCanvas, SliderMusicVolume, [this](UI::Slider *s) { Sound::setSourceVolume(sound_music_volume_channel, s->getValue()); });
+	GET_SLIDER(_settingsMenuCanvas, SliderVolume, [](UI::Slider *s) { audio::SoundManager::setMasterVolume(s->getValue()); });
 }
 
 void MainMenu::toggle_main_menu()
