@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="654037102" immovable="1" name="lamp_3">
+		<mesh_name>guid://78234851f7838d0dd4adac6c0d2b94ace1f017d7</mesh_name>
+		<surface name="IronCover" intersection="1" material="211b3ea402522afccf88fe4ec86c53810b25a583"/>
+		<surface name="Wood" intersection="1" material="3ab8c47f7ffa3e915481fef205b5a334ede4b173"/>
+		<surface name="Light" intersection="1" material="c7e4d9edcf8a7207f012bce77a5dcbdbe889c10f"/>
+		<transform>0.999999880791 0 0 0.0 0 1 0 0.0 0 0 0.999999761581 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

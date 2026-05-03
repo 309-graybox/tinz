@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>71c59ac68e2865d01dd3d7bd1d953629a734d67d</guid>
+	<type>material</type>
+	<hash>c1ae099ea7f8c54920abd8ce3ce13e5a60dccf358643ff1f113ee9a267b1d617</hash>
+	<runtimes>
+		<runtime id="71c59ac68e2865d01dd3d7bd1d953629a734d67d" name="soul_particle_blue" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>e3885978dab94e77d6ba596a1edfb9c115a7482c</guid>
+	<type>world</type>
+	<hash>78ad3e03da07ee6f270e71ec05ce73a13fcd431674a8d7b160616f1e5a6b07e5</hash>
+	<runtimes>
+		<runtime id="e3885978dab94e77d6ba596a1edfb9c115a7482c" name="ice.world" link="0"/>
+	</runtimes>
+	<parameters>
+		<parameter type="string" name="physics_settings_path"/>
+		<parameter type="string" name="render_settings_path"/>
+		<parameter type="string" name="script_name"/>
+		<parameter type="string" name="sound_settings_path"/>
+		<parameter type="string" name="viewports_settings"/>
+	</parameters>
+</asset>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>0b5b9490a41aac719d767dae193d21cf61a0bc08</guid>
+	<type>material</type>
+	<hash>72d939bf05afb01be0a778c76690b7f1ebb3c6330f9a6e7eaac99186cbef9a72</hash>
+	<runtimes>
+		<runtime id="0b5b9490a41aac719d767dae193d21cf61a0bc08" name="tree_leaf" link="0" type="5"/>
+	</runtimes>
+</asset>

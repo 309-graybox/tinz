@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>b710c361d7543c1075ed1b7baacb945168a81423</guid>
+	<type>material</type>
+	<hash>bdd66b37f1fa2a8fccc0c744fb1a0f1a66f0905131e2d39e8f4e021ce5c9c9b9</hash>
+	<runtimes>
+		<runtime id="b710c361d7543c1075ed1b7baacb945168a81423" name="candle_body" link="0" type="5"/>
+	</runtimes>
+</asset>

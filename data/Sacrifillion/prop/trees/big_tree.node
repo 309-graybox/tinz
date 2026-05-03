@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="1302168946" immovable="1" name="big_tree">
+		<mesh_name>guid://cee450ce2944a80ba2385aa06767b32f22688df0</mesh_name>
+		<surface name="Wood" intersection="1" material="43be8119b2de685628e674dbf48ed7bf05309569"/>
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

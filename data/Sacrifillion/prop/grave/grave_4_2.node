@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="NodeDummy" id="524909911" name="grave_4_2">
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		<node type="ObjectMeshStatic" id="936574966" immovable="1" name="grave_4_add">
+			<mesh_name>guid://9e4c2a5c8b1557727b9d355e123d7a367589a9ae</mesh_name>
+			<surface name="BaseMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0.016860242933 0.0149230211973 0.81100772 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="2056874968" immovable="1" name="grave_4">
+			<mesh_name>guid://c83bfc0fb51b0aa7ab416b25db2d3504f02b852f</mesh_name>
+			<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+			<surface name="CrossMat" intersection="1" material="e8562f5890b80769d24a9d36671739169f41bed0"/>
+			<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0.016860242933 0.0149230211973 -2.93464789963 1.0</transform>
+		</node>
+	</node>
+</nodes>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>deb546b6e3893bc983f248e4d80088db00f888ee</guid>
+	<type>node</type>
+	<hash>19fd59c8c131e8351b494c8b118fdcc3c7557c387ecf7402273efd01545d409e</hash>
+	<runtimes>
+		<runtime id="deb546b6e3893bc983f248e4d80088db00f888ee" name="wand.node" link="0" type="3"/>
+	</runtimes>
+</asset>

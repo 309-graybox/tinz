@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>ab80e8c2575adc0135fe7f093efe10e8c5bc5ac9</guid>
+	<type>node</type>
+	<hash>4aebfdab9954f5d9a502ef6d2cf9bb15b2ec8ba1abc03f35756e475baf11500f</hash>
+	<runtimes>
+		<runtime id="ab80e8c2575adc0135fe7f093efe10e8c5bc5ac9" name="silver_soul.node" link="0" type="3"/>
+	</runtimes>
+</asset>

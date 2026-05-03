@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material version="2.21.0.0" guid="a1ff0845eb77dbad32b162ff3c64982a98b1b827" base_material="ee4cbd68892b61a53e7ded930b825d0f53ac250e">
+	<texture name="diffuse">guid://200386361225d7765ece91fb69d383014d0d2029</texture>
+	<parameter name="diffuse_color" expression="0">1 1 1 0</parameter>
+	<parameter name="billboard_scale" expression="0">1.19744003</parameter>
+</material>

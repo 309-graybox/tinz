@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>8d4ea1163ac57aea959e8ca3bc2021c9db783846</guid>
+	<type>material</type>
+	<hash>483d3a981869787a9cca52dbd3aebe8087bb925ecdc6a275f519d0790713cf7f</hash>
+	<runtimes>
+		<runtime id="8d4ea1163ac57aea959e8ca3bc2021c9db783846" name="red_soul" link="0" type="5"/>
+	</runtimes>
+</asset>

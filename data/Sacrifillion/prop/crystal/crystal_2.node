@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="1728208117" immovable="1" name="crystal_2">
+		<mesh_name>guid://5390ecaff6d79f3949dc3900ff5552b26810c61e</mesh_name>
+		<surface name="LightMineral" intersection="1" material="4e08657df26d6d42c62312f773a810748592f51f"/>
+		<surface name="IronCover" intersection="1" material="4e08657df26d6d42c62312f773a810748592f51f"/>
+		<transform>0.999999880791 3.25260651746e-19 -1.58564567726e-18 0.0 2.16840434497e-19 1 -1.38777878078e-17 0.0 -5.88179678573e-18 1.38777878078e-17 0.999999761581 0.0 0 0 -2.22044604925e-16 1.0</transform>
+	</node>
+</nodes>

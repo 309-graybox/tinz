@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="2075438709" immovable="1" name="world_spline_fence">
+		<mesh_name>guid://6cfff3678eb1fa13c313fc75cdc997962d4db370</mesh_name>
+		<surface name="Metal" intersection="1" material="6e3c24ba5f8374fa5b056d9420887134e85d2fa1"/>
+		<surface name="StonePillar" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+		<surface name="MetalSpike" intersection="1" material="211b3ea402522afccf88fe4ec86c53810b25a583"/>
+		<transform>1 1.74845538936e-07 2.45470148114e-18 0.0 -1.74845538936e-07 1 1.04083408559e-17 0.0 2.56058059955e-18 3.46944695195e-18 1 0.0 -3.5527136788e-15 0 8.881784197e-16 1.0</transform>
+	</node>
+</nodes>

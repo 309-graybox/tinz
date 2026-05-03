@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="176552780" immovable="1" name="cross_2">
+		<mesh_name>guid://8693a186f3c02d2f0a7a9418b60cd8e952914868</mesh_name>
+		<surface name="WoodTomb" intersection="1" material="4202624b26ca597ccf39165e0d032e1a43378981"/>
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

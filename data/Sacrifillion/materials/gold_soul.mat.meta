@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>7bb61c1cc1e6a0dd229ce481c46d161f382675cc</guid>
+	<type>material</type>
+	<hash>f09919764e313adadae655c327261ace67efd4b87a30fcbcece0c4ca0d5511e1</hash>
+	<runtimes>
+		<runtime id="7bb61c1cc1e6a0dd229ce481c46d161f382675cc" name="gold_soul" link="0" type="5"/>
+	</runtimes>
+</asset>

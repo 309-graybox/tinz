@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>8b129b4d5f1d6e6ae9499d4735c0060fd5abf56f</guid>
+	<type>node</type>
+	<hash>24c343d57bc500ae050b46470b9de89917cb29c1cd821c82fe45a57c454281cf</hash>
+	<runtimes>
+		<runtime id="8b129b4d5f1d6e6ae9499d4735c0060fd5abf56f" name="crystal_0.node" link="0" type="3"/>
+	</runtimes>
+</asset>

@@ -844,7 +844,7 @@
 				<transform>-0.43301237 0.43559623 -0.78914917 0.0 -0.75000048 -0.6597392 0.047366858 0.0 -0.49999967 0.61237252 0.6123724 0.0 0.0106657477479 1.72244270532 -0.757865759039 1.0</transform>
 			</node>
 			<node type="ObjectWaterGlobal" id="1191127466" name="ObjectWaterGlobal">
-				<animation_old_time>409.55426</animation_old_time>
+				<animation_old_time>2492.48975</animation_old_time>
 				<animation_time>0</animation_time>
 				<wave_layers num="0"/>
 				<distant_waves_texture_path>core/textures/water_global/distant_waves_n.texture</distant_waves_texture_path>
@@ -871,6 +871,11 @@
 					<surface name="clouds_surface" cast_shadow="0" cast_world_shadow="0" cast_env_probe_shadow="0" intersection="1" shadow_mask="0x0" physics_friction="1" physics_restitution="1" material="861bdcb639dd29ee8ce4d750d28d611c2dc07d8f"/>
 					<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 1500 1.0</transform>
 				</node>
+			</node>
+			<node type="FieldWeather" id="835910195" name="FieldWeather">
+				<size>1000 1000 1000</size>
+				<intensity>0.600000024</intensity>
+				<transform>5 0 0 0.0 0 5 0 0.0 0 0 0.899999976158 0.0 -2107.63756777 2759.65491947 3634.46109266 1.0</transform>
 			</node>
 		</node>
 		<node type="NodeLayer" id="2046438632" name="NodeLayer">
@@ -1449,6 +1454,10 @@
 						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
 						<transform>0.999062478542 -0.0289747565985 -0.0322098992765 0.0 0.0306541733444 0.998128533363 0.0529309846461 0.0 0.0306158922613 -0.0538686066866 0.99807882309 0.0 -41.9416336618 54.7186252319 -7.38796789567 1.0</transform>
 					</node>
+					<node type="NodeReference" id="1081509418" name="big_tree">
+						<reference>guid://1c22e92136390e7560dc373b9d6101c41eac17e3</reference>
+						<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 3.14630613355 6.36580938693 -4.46372597202 1.0</transform>
+					</node>
 				</node>
 			</node>
 			<node type="LandscapeLayerMap" id="1518321167" name="LandscapeLayerMap">
@@ -1612,6 +1621,10 @@
 				<surface name="GoldMat" intersection="1" material="843bb001dcf3563dcad9c8db4d9aa18ecee7f0fd"/>
 				<surface name="DarkWood" intersection="1" material="c298437df5694aedfb5d651872d03be91d77ab11"/>
 				<transform>2.04526805878 1.45638005051e-05 -0.00722905900329 0.0 1.45638668982e-05 2.04526162148 0.00824087951332 0.0 0.0072290529497 -0.00824088323861 2.04524993896 0.0 -43.8556341904 46.3779852268 -0.374679985295 1.0</transform>
+			</node>
+			<node type="NodeReference" id="143983955" name="Egg">
+				<reference>guid://beee5dac3fc5287c9fad406a897430824d90e624</reference>
+				<transform>0.733821690083 -0.67934191227 -0.00047185269068 0.0 0.67053937912 0.724424302578 -0.159957930446 0.0 0.109007939696 0.117064207792 0.987123727798 0.0 -43.8447917844 46.3314956064 3.28855073074 1.0</transform>
 			</node>
 		</node>
 		<node type="NodeDummy" id="923693501" name="No Way">
@@ -1983,10 +1996,6 @@
 					<transform>0.999999880791 0 0 0.0 0 0.999999701977 0 0.0 0 0 0.999999701977 0.0 0 0 0 1.0</transform>
 				</node>
 			</node>
-		</node>
-		<node type="NodeReference" id="143983955" name="Egg">
-			<reference>guid://beee5dac3fc5287c9fad406a897430824d90e624</reference>
-			<transform>0.733821690083 -0.67934191227 -0.00047185269068 0.0 0.67053937912 0.724424302578 -0.159957930446 0.0 0.109007939696 0.117064207792 0.987123727798 0.0 -43.8447917844 46.3314956064 3.28855073074 1.0</transform>
 		</node>
 	</editor>
 	<console>

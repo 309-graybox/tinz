@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>3b761bccc260f818669d998a009ca3c3e091a444</guid>
+	<type>node</type>
+	<hash>6c5e76d22cd09c92e603db1efa2723e58b88d5d14cbd5d7d49f0e4026163bb86</hash>
+	<runtimes>
+		<runtime id="3b761bccc260f818669d998a009ca3c3e091a444" name="gate_0.node" link="0" type="3"/>
+	</runtimes>
+</asset>

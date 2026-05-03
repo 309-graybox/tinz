@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>e8562f5890b80769d24a9d36671739169f41bed0</guid>
+	<type>material</type>
+	<hash>dc5ee21e7f7c13d8f114731049f626b39a590946188039c352b4ee851484157d</hash>
+	<runtimes>
+		<runtime id="e8562f5890b80769d24a9d36671739169f41bed0" name="stone_0" link="0" type="5"/>
+	</runtimes>
+</asset>

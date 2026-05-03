@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material version="2.21.0.0" guid="6eee9e5567efdbb089553b4ff61b7062a42cb459" base_material="602532cbe66269ae7787a5357c527510d5d3452f">
+	<parameter name="Outer Color" expression="0">1 1 1 1</parameter>
+	<parameter name="Outer Color Intensity" expression="0">1</parameter>
+	<parameter name="Inner Color" expression="0">1 1 1 1</parameter>
+	<parameter name="Inner Color Intensity" expression="0">0.460480005</parameter>
+	<parameter name="Emission Color" expression="0">1 1 1 1</parameter>
+	<parameter name="Emission Intensity" expression="0">10</parameter>
+	<parameter name="Translucency" expression="0">0.962189972</parameter>
+	<parameter name="Parallax Intensity" expression="0">0</parameter>
+	<parameter name="Parallax Min Layers" expression="0">24.9344006</parameter>
+	<parameter name="Parallax Max Layers" expression="0">46.6803207</parameter>
+	<parameter name="Anim Multiplier" expression="0">0.17182</parameter>
+</material>

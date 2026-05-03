@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="1333263630" immovable="1" name="grave_6_1">
+		<mesh_name>guid://b3cbc23d3cc524273be66aa38079a1872e0c1e9d</mesh_name>
+		<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+		<transform>0.999999940395 0 0 0.0 0 0.999999940395 0 0.0 0 0 1.00000011921 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

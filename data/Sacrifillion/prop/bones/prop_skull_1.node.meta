@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>061b8406a682040dfdcfb9b46cb0bbe78d79a23e</guid>
+	<type>node</type>
+	<hash>b9bf15ee0cd4427a15f4cc45d98b243835f61a3f5cab911febb048f918617926</hash>
+	<runtimes>
+		<runtime id="061b8406a682040dfdcfb9b46cb0bbe78d79a23e" name="prop_skull_1.node" link="0" type="3"/>
+	</runtimes>
+</asset>

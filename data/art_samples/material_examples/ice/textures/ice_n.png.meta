@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>a152234098e63d9fc1346e72b93bfb29118e0a74</guid>
+	<type>texture</type>
+	<hash>e841efc21b284e12698e9ea6bdbc742628e19a50819548724b6561883142a2d8</hash>
+	<runtimes>
+		<runtime id="a152234098e63d9fc1346e72b93bfb29118e0a74" name="ice_n.png" link="0" type="6"/>
+		<runtime id="be23b3439f36bfc6dcf5946dccafeae8a99e5127" name="ice_n.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">ATI2</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">0</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">normal map (rg)</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">0</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>

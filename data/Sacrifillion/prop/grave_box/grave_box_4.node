@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="1941483814" immovable="1" name="grave_box_4">
+		<mesh_name>guid://8445ca63f2d3017e328afe96156f99c7095f43d9</mesh_name>
+		<surface name="Stone" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+		<surface name="CoffinInner" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		<node type="ObjectMeshStatic" id="698012665" immovable="1" name="grave_box_cup_4">
+			<mesh_name>guid://dced96a7d132558fac9461d854d91e7caec6ee36</mesh_name>
+			<surface name="Stone" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+			<surface name="CoffinInner" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+			<surface name="GoldMat" intersection="1" material="211b3ea402522afccf88fe4ec86c53810b25a583"/>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -0.0167546655237 -0.002741539047 0.524073397706 1.0</transform>
+		</node>
+	</node>
+</nodes>

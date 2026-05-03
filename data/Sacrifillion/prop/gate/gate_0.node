@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="854134148" immovable="1" name="gate_0">
+		<mesh_name>guid://d1310e01117fecd4a356082561110ee4365f0f3b</mesh_name>
+		<surface name="MetalSpike" intersection="1" material="211b3ea402522afccf88fe4ec86c53810b25a583"/>
+		<surface name="Metal" intersection="1" material="6e3c24ba5f8374fa5b056d9420887134e85d2fa1"/>
+		<transform>1 0 0 0.0 0 0.999999940395 0 0.0 0 0 0.999999940395 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

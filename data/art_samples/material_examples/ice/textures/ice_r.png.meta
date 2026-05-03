@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>9b9c98d274c86209948c83d4a3cc1d23b9d36026</guid>
+	<type>texture</type>
+	<hash>667eae7e0ca119ececdea93a68f753e4b811345aa878054831ab6b5e480d6678</hash>
+	<runtimes>
+		<runtime id="9b9c98d274c86209948c83d4a3cc1d23b9d36026" name="ice_r.png" link="0" type="6"/>
+		<runtime id="482ff94d5cb84a48a06b69076f6b12ba627f02d1" name="ice_r.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">R8</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">mask veg (r)</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">0</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>

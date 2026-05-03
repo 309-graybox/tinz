@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="2089044432" immovable="1" name="sword">
+		<mesh_name>guid://dadc51b1695f7a2796166c4aa12180d2b9ea5058</mesh_name>
+		<surface name="IronCover" intersection="1" material="843bb001dcf3563dcad9c8db4d9aa18ecee7f0fd"/>
+		<surface name="LightMineral" intersection="1" material="6e3c24ba5f8374fa5b056d9420887134e85d2fa1"/>
+		<surface name="Wood" intersection="1" material="3ab8c47f7ffa3e915481fef205b5a334ede4b173"/>
+		<transform>0.999999880791 0 0 0.0 0 1 0 0.0 0 0 0.999999761581 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

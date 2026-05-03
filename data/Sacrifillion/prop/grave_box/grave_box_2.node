@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="2013495791" immovable="1" name="grave_box_2">
+		<mesh_name>guid://8370abad546abc6e06b239b6b34086564b7edb64</mesh_name>
+		<surface name="Wood" intersection="1" material="4202624b26ca597ccf39165e0d032e1a43378981"/>
+		<surface name="LightWood" intersection="1" material="4202624b26ca597ccf39165e0d032e1a43378981"/>
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

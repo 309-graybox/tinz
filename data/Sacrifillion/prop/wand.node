@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="838733049" immovable="1" name="wand">
+		<mesh_name>guid://ad85c61997ae1094706b5c94ea17c2670bdb725f</mesh_name>
+		<surface name="GoldMat" intersection="1" material="843bb001dcf3563dcad9c8db4d9aa18ecee7f0fd"/>
+		<surface name="IronCover" intersection="1" material="211b3ea402522afccf88fe4ec86c53810b25a583"/>
+		<surface name="Wood" intersection="1" material="3ab8c47f7ffa3e915481fef205b5a334ede4b173"/>
+		<surface name="LightMineral_v2" intersection="1" material="b468df76f86c31eb5985e3a4e9bd39c7796df1ae"/>
+		<transform>0.999999880791 0 0 0.0 0 1 0 0.0 0 0 0.999999761581 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

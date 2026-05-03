@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="1888486638" immovable="1" name="candle_7">
+		<mesh_name>guid://d64f8433624a266f7e6e1696e592c4596ad1bf67</mesh_name>
+		<surface name="CandleLight" intersection="1" material="0acd478234e781bb908947d0a6964535498bcdba"/>
+		<surface name="CandleBottom" intersection="1" material="843bb001dcf3563dcad9c8db4d9aa18ecee7f0fd"/>
+		<surface name="CandleBase" intersection="1" material="b710c361d7543c1075ed1b7baacb945168a81423"/>
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		<node id="606973556" type="ObjectBillboards" immovable="1" name="ObjectBillboards">
+			<billboards num_billboards="1">0 0 0 10 1 0 0 0.0299999993 0.100000001 0</billboards>
+			<surface name="billboards" material="e49dbc49d7dd0da607ef6ea3d572d2e7ee3cd24b"/>
+			<data>
+				<unigine_editor>
+					<body>
+						<generator>
+							<count>16</count>
+							<atlas_width>1</atlas_width>
+							<atlas_height>1</atlas_height>
+							<radius_mean>1</radius_mean>
+							<radius_spread>0</radius_spread>
+							<aspect_mean>1</aspect_mean>
+							<aspect_spread>0</aspect_spread>
+							<angle_mean>0</angle_mean>
+							<angle_spread>0</angle_spread>
+							<mesh/>
+						</generator>
+					</body>
+				</unigine_editor>
+			</data>
+			<transform>0.999999821186 0 0 0.0 0 1 0 0.0 0 0 0.999999940395 0.0 0.000875754314443 -0.00114144867528 0.0677969090191 1.0</transform>
+		</node>
+	</node>
+</nodes>

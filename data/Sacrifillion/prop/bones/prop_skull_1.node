@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="629012547" immovable="1" name="prop_skull_1">
+		<mesh_name>guid://c643b119bd73915bd5957e5257700d08d0910a20</mesh_name>
+		<surface name="Bone" intersection="1" material="b710c361d7543c1075ed1b7baacb945168a81423"/>
+		<transform>0.999881386757 0.000385071354685 0.0153924748302 0.0 0.000385063933209 0.998749196529 -0.0499989800155 0.0 -0.0153924757615 0.0499989800155 0.998630642891 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

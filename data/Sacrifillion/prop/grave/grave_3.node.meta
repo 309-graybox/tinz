@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>6d8bb95d035068430aacc9d785fdadf23fa1efff</guid>
+	<type>node</type>
+	<hash>79184785f1aa3b74132a654ad2b07188de289f841bbd34704643fff74b2f254a</hash>
+	<runtimes>
+		<runtime id="6d8bb95d035068430aacc9d785fdadf23fa1efff" name="grave_3.node" link="0" type="3"/>
+	</runtimes>
+</asset>

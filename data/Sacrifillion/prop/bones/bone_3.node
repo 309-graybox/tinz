@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="1028972885" immovable="1" name="bone_3">
+		<mesh_name>guid://8d3a19f7505b270b16883d9a38e4b935e5fbbe4d</mesh_name>
+		<surface name="Bone" intersection="1" material="b710c361d7543c1075ed1b7baacb945168a81423"/>
+		<transform>0.999999940395 0 0 0.0 0 0.999999940395 0 0.0 0 0 0.999999880791 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

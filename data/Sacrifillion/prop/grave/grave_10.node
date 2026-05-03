@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="1124422666" immovable="1" name="grave_10">
+		<mesh_name>guid://d7303e238bc1247e86d1b756faafbc7f80f1f199</mesh_name>
+		<surface name="Stone" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+		<surface name="LightMineral_v2" intersection="1" material="211b3ea402522afccf88fe4ec86c53810b25a583"/>
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

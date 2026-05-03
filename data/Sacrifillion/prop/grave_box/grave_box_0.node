@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="1040528373" immovable="1" name="grave_box_0">
+		<mesh_name>guid://d944d6c3c0cf959b97c311e4cdecd7c6c757dde2</mesh_name>
+		<surface name="Stone" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+		<surface name="CoffinInner" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

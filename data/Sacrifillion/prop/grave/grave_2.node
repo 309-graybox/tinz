@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="779196467" immovable="1" name="grave_2">
+		<mesh_name>guid://b8bc3dab8649df342bd0fd6181a3c91e075972cb</mesh_name>
+		<surface name="CrossMat" intersection="1" material="e8562f5890b80769d24a9d36671739169f41bed0"/>
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

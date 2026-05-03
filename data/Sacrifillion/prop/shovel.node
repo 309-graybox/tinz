@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="786090490" immovable="1" name="shovel">
+		<mesh_name>guid://38a3d15fc6fe4872c9e8367030e48cebaafcac0e</mesh_name>
+		<surface name="Iron" intersection="1" material="6e3c24ba5f8374fa5b056d9420887134e85d2fa1"/>
+		<surface name="DarkWood" intersection="1" material="211b3ea402522afccf88fe4ec86c53810b25a583"/>
+		<surface name="Wood" intersection="1" material="4202624b26ca597ccf39165e0d032e1a43378981"/>
+		<transform>0.999999821186 -5.37674154089e-08 0.000644032086711 0.0 -5.37169881909e-08 1 0.000166892903508 0.0 -0.000644032086711 -0.000166892903508 0.999999821186 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

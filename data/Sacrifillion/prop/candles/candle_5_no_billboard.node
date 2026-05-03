@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="583205542" immovable="1" name="candle_5_no_billboard">
+		<mesh_name>guid://0e634ec36f67ba9b4b7054f423be111d1f29c228</mesh_name>
+		<surface name="CandleBottom" intersection="1" material="843bb001dcf3563dcad9c8db4d9aa18ecee7f0fd"/>
+		<surface name="CandleLight" intersection="1" material="0acd478234e781bb908947d0a6964535498bcdba"/>
+		<surface name="CandleBase" intersection="1" material="b710c361d7543c1075ed1b7baacb945168a81423"/>
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

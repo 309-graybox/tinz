@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>83e5b5548b29a461ba9dc9d2146fef6d5b7fc9cc</guid>
+	<type>node</type>
+	<hash>896d3ffc330f9da66eed329f571fbddd46c165a364689b14811e640ad7b72c99</hash>
+	<runtimes>
+		<runtime id="83e5b5548b29a461ba9dc9d2146fef6d5b7fc9cc" name="cross_3.node" link="0" type="3"/>
+	</runtimes>
+</asset>

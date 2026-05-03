@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>18fcb14609802a7fef536393da0d8f52d1a80e76</guid>
+	<type>material</type>
+	<hash>6e1948032b16e466755bef5190ac875fcf4492855dcf7309617f6277eb4f2f0f</hash>
+	<runtimes>
+		<runtime id="18fcb14609802a7fef536393da0d8f52d1a80e76" name="blue_soul" link="0" type="5"/>
+	</runtimes>
+</asset>

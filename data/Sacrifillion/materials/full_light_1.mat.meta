@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>b468df76f86c31eb5985e3a4e9bd39c7796df1ae</guid>
+	<type>material</type>
+	<hash>899f97ef9e8f159ba41006698dda4e816f670b57a27fcd069a610484f38becfb</hash>
+	<runtimes>
+		<runtime id="b468df76f86c31eb5985e3a4e9bd39c7796df1ae" name="full_light_1" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>

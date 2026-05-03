@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<nodes version="2.21.0.0">
-	<node type="ObjectMeshStatic" id="1757237252" immovable="1" name="Stone_fence_half_opt">
-		<mesh_name>guid://3a6f55f88f2153beee5dee1641529169948268b2</mesh_name>
-		<surface name="StonePillar" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-		<surface name="StoneConnection" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-		<transform>1 1.74845538936e-07 1.03018727849e-19 0.0 -1.74845538936e-07 1 0 0.0 2.37367748578e-20 0 1 0.0 0 0 0 1.0</transform>
-	</node>
-</nodes>

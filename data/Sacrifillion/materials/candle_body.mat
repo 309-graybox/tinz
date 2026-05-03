@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material version="2.21.0.0" guid="b710c361d7543c1075ed1b7baacb945168a81423" base_material="6bdbc0e8a7ef8f4fccb74936393a3f42ff152868">
+	<parameter name="albedo_color" expression="0">1 0.949019611 0.666666687 1</parameter>
+	<parameter name="emission_intensity" expression="0">0.0895199999</parameter>
+	<parameter name="emission_color" expression="0">1 0.996078432 0.90196079 1</parameter>
+</material>

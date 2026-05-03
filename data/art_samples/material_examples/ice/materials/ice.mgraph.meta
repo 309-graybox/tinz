@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>31f600e1e03fa4cc133f99bb912d43de4573d9a5</guid>
+	<type>material_graph</type>
+	<hash>60690cac588f38e3e46271820376e7bbebd3c44dd43c1742306ef4e850694f84</hash>
+	<runtimes>
+		<runtime id="31f600e1e03fa4cc133f99bb912d43de4573d9a5" name="ice.mgraph" link="0"/>
+		<runtime id="602532cbe66269ae7787a5357c527510d5d3452f" name="ice" link="1" type="5"/>
+	</runtimes>
+</asset>

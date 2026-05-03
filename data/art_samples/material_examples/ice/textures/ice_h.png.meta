@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>f3d6eb793efc1e84de491813ff97be56435fe1bd</guid>
+	<type>texture</type>
+	<hash>1fbe0bfcf3bde3b0b863bed5a26666e1134cc75c9a69f2fbac2c18d51304f819</hash>
+	<runtimes>
+		<runtime id="f3d6eb793efc1e84de491813ff97be56435fe1bd" name="ice_h.png" link="0" type="6"/>
+		<runtime id="e7b3b7f893141af75951bbeab04eba41befd4eac" name="ice_h.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">ATI1</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">parallax</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">0</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>

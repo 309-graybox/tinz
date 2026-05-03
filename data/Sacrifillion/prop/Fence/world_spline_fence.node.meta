@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>9bab51ef68dc087c4e9d92bd53465304e1cd8118</guid>
+	<type>node</type>
+	<hash>c97f00a8c0bf7ff02e9193cd98c7447b1c4aaa47f549aaf5f0d862be50907bc6</hash>
+	<runtimes>
+		<runtime id="9bab51ef68dc087c4e9d92bd53465304e1cd8118" name="world_spline_fence.node" link="0" type="3"/>
+	</runtimes>
+</asset>

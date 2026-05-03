@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>afb1aa30662b581a7e46424ec212f9a1d91681a8</guid>
+	<type>node</type>
+	<hash>c0f5c14d4eef0e61921963249ba7681e3f7079a357e4abc7b8f8a8c68da7fd8f</hash>
+	<runtimes>
+		<runtime id="afb1aa30662b581a7e46424ec212f9a1d91681a8" name="lamp_5.node" link="0" type="3"/>
+	</runtimes>
+</asset>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>3bc73a099631c772e995a263ba194fbdaed92e0b</guid>
+	<type>node</type>
+	<hash>3917a6e3e8c76caff273dd9d8281e56c2d5a328ead0ed99bff9abf0505688885</hash>
+	<runtimes>
+		<runtime id="3bc73a099631c772e995a263ba194fbdaed92e0b" name="tree_0.node" link="0" type="3"/>
+	</runtimes>
+</asset>

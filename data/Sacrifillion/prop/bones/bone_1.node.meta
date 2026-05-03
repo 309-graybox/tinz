@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>5586fc642fca5c05821f1e6261b92766f36250dc</guid>
+	<type>node</type>
+	<hash>722d48121835a6b5f80ac5e8bd06d3daacd8ed0d0716460bd781f000bf001916</hash>
+	<runtimes>
+		<runtime id="5586fc642fca5c05821f1e6261b92766f36250dc" name="bone_1.node" link="0" type="3"/>
+	</runtimes>
+</asset>

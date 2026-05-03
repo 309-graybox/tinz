@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>6eee9e5567efdbb089553b4ff61b7062a42cb459</guid>
+	<type>material</type>
+	<hash>6d63d09c4963d3be9b0eb919b77f0bdba7ff713a971b8098c56468d49305db9a</hash>
+	<runtimes>
+		<runtime id="6eee9e5567efdbb089553b4ff61b7062a42cb459" name="silver_soul" link="0" type="5"/>
+	</runtimes>
+</asset>

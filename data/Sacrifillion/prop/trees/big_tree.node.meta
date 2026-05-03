@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>1c22e92136390e7560dc373b9d6101c41eac17e3</guid>
+	<type>node</type>
+	<hash>2f00f72855eee09ed9b5340ea7a76ac0e744e8de2374a6adf28d64bbe79e1740</hash>
+	<runtimes>
+		<runtime id="1c22e92136390e7560dc373b9d6101c41eac17e3" name="big_tree.node" link="0" type="3"/>
+	</runtimes>
+</asset>

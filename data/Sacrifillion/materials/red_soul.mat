@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material version="2.21.0.0" guid="8d4ea1163ac57aea959e8ca3bc2021c9db783846" parent="6eee9e5567efdbb089553b4ff61b7062a42cb459" base_material="602532cbe66269ae7787a5357c527510d5d3452f">
+	<parameter name="Outer Color" expression="0">1 0.541176498 0.725490212 1</parameter>
+	<parameter name="Inner Color Intensity" expression="0">1</parameter>
+	<parameter name="Emission Color" expression="0">0.847058833 0 0 1</parameter>
+</material>

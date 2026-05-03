@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>2afb36fe41bb3d986699f72b693359a8a0873f2e</guid>
+	<type>node</type>
+	<hash>743cf38a530a20e6c2bf8d458666483f8be8d46e24b7a8421c1e3a42127185a1</hash>
+	<runtimes>
+		<runtime id="2afb36fe41bb3d986699f72b693359a8a0873f2e" name="stone_3.node" link="0" type="3"/>
+	</runtimes>
+</asset>

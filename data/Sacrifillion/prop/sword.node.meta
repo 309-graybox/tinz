@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>7cbaddbfff4c4bc50f01e109b1996ecfdddefdb1</guid>
+	<type>node</type>
+	<hash>98ff64d0b08e28dba2c13dfe5545bf5fa8cbb2ede1d91750eae1eb69b701bc20</hash>
+	<runtimes>
+		<runtime id="7cbaddbfff4c4bc50f01e109b1996ecfdddefdb1" name="sword.node" link="0" type="3"/>
+	</runtimes>
+</asset>

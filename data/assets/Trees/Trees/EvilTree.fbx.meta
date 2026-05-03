@@ -2,7 +2,7 @@
 <asset version="2.21.0.0">
 	<guid>e48373198defcc0243eaba1f31efb7d65f64a279</guid>
 	<type>fbx</type>
-	<hash>3b203177e9def097a394501ce833e70ca14da9374f8c0cead1f9f278e300543a</hash>
+	<hash>ff351724f662b3d3bd405e1cbf1e8fcd724cc63391ef03d1db22e3f27c80ac87</hash>
 	<runtimes>
 		<runtime id="e48373198defcc0243eaba1f31efb7d65f64a279" name="EvilTree.fbx" link="0"/>
 		<runtime id="bb499135843eeaa8423f94db5e2314fae315c995" name="EvilTree.node" link="1" type="3">
@@ -10,7 +10,17 @@
 				<parameter type="string" name="id">4b8382e3</parameter>
 			</parameters>
 		</runtime>
-		<runtime id="0e352eb02264c3d72a9c78d2023b28c62dd81ca2" name="tree_evil.mesh" link="2" type="1">
+		<runtime id="cee450ce2944a80ba2385aa06767b32f22688df0" name="cube.023.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">4b8382e3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="af64d76f06ef900cc985e7851114a04b80bbc88f" name="cube.032.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">4b8382e3</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="0e352eb02264c3d72a9c78d2023b28c62dd81ca2" name="cube.033.mesh" link="2" type="1">
 			<parameters>
 				<parameter type="string" name="id">4b8382e3</parameter>
 			</parameters>
@@ -39,10 +49,10 @@
 		<parameter type="bool" name="import_textures">1</parameter>
 		<parameter type="bool" name="invert_gchannel_for_normal_maps">0</parameter>
 		<parameter type="bool" name="joints_reorientation">0</parameter>
-		<parameter type="string" name="lightmaps">{&quot;guid://0e352eb02264c3d72a9c78d2023b28c62dd81ca2&quot;:{&quot;wood_lod_0&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;wood_lod_1&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;wood_lod_2&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}}}</parameter>
+		<parameter type="string" name="lightmaps">{&quot;guid://cee450ce2944a80ba2385aa06767b32f22688df0&quot;:{&quot;Wood&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://af64d76f06ef900cc985e7851114a04b80bbc88f&quot;:{&quot;Wood&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://0e352eb02264c3d72a9c78d2023b28c62dd81ca2&quot;:{&quot;Wood&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}}}</parameter>
 		<parameter type="float" name="linear_deflection">0.200000003</parameter>
 		<parameter type="string" name="lods">_lod_0,-1e+09,3,0,0,100,0,0,60;_lod_1,3,9,0,0,60,0,1,60;_lod_2,9,1e+09,0,0,30,0,1,60</parameter>
-		<parameter type="string" name="lods_mode">by_postfix</parameter>
+		<parameter type="string" name="lods_mode">off</parameter>
 		<parameter type="string" name="material_guids">wood,0ff10503ce2b9cdf250af8f98dc35144c3cdac23</parameter>
 		<parameter type="bool" name="merge_similar_materials">0</parameter>
 		<parameter type="bool" name="merge_static_meshes">0</parameter>

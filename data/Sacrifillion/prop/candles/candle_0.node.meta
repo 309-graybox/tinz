@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>800379d5a91a53dfac210f0fd0874d0e2d451237</guid>
+	<type>node</type>
+	<hash>1be9440a25e79fac385aa2d19017155673d8a6012a2a0e14d7ea8eb0e9f7f08d</hash>
+	<runtimes>
+		<runtime id="800379d5a91a53dfac210f0fd0874d0e2d451237" name="candle_0.node" link="0" type="3"/>
+	</runtimes>
+</asset>

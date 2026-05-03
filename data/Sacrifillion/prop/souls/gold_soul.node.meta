@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>a1eca40c0f8414c75be50a31838df67dd26eb7bc</guid>
+	<type>node</type>
+	<hash>fc8cab86d90579833db713381290fe6228431b04187ea6951bc2a80a94f49feb</hash>
+	<runtimes>
+		<runtime id="a1eca40c0f8414c75be50a31838df67dd26eb7bc" name="gold_soul.node" link="0" type="3"/>
+	</runtimes>
+</asset>

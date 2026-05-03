@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material version="2.21.0.0" guid="e8562f5890b80769d24a9d36671739169f41bed0" parent="9b19e8d01c24539af3f42adaeb131e77846fb53f" base_material="6bdbc0e8a7ef8f4fccb74936393a3f42ff152868">
+	<parameter name="uv_scale_offset" expression="0">0.5 0.5 1 1</parameter>
+</material>

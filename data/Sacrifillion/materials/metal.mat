@@ -6,4 +6,5 @@
 	<parameter name="roughness" expression="0">0.687940001</parameter>
 	<parameter name="specular" expression="0">0.0496399999</parameter>
 	<parameter name="auxiliary_tint" expression="0">0 0 0 1</parameter>
+	<parameter name="uv_scale_offset" expression="0">3 3 1 1</parameter>
 </material>

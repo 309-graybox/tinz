@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="1137824260" immovable="1" name="crystal_1">
+		<mesh_name>guid://61e6e515175a8142e4b934e014c15dac1d18d4fb</mesh_name>
+		<surface name="LightMineral" intersection="1" material="4e08657df26d6d42c62312f773a810748592f51f"/>
+		<transform>0.999999880791 0 0 0.0 0 1 0 0.0 0 0 0.999999761581 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>ef17e47099bd196ce0941d9fa12961f2ecfc101f</guid>
+	<type>material</type>
+	<hash>e7aa6f2f4a2ce1d1b9e0fe9f2bf328d1ee74f91e8aff672391aa54ed8e266577</hash>
+	<runtimes>
+		<runtime id="ef17e47099bd196ce0941d9fa12961f2ecfc101f" name="green_soul" link="0" type="5"/>
+	</runtimes>
+</asset>

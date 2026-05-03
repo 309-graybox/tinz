@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>0acd478234e781bb908947d0a6964535498bcdba</guid>
+	<type>material</type>
+	<hash>15e7cee609ec782432d3e41fdac3015719595c9d4249dd79e209b53f2a05b57c</hash>
+	<runtimes>
+		<runtime id="0acd478234e781bb908947d0a6964535498bcdba" name="candle_fuze" link="0" type="5"/>
+	</runtimes>
+</asset>
