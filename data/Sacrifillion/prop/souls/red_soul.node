@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <nodes version="2.21.0.0">
-	<node type="ObjectMeshStatic" id="1717944567" immovable="1" name="red_soul">
+	<node type="ObjectMeshStatic" id="1717944567" immovable="1" trigger_interaction_enabled="1" name="red_soul">
 		<mesh_name>guid://3b45edfe554bbc90e10e6a2b39418888e3ded62e</mesh_name>
 		<surface name="sphere" cast_shadow="0" cast_world_shadow="0" cast_env_probe_shadow="0" intersection="1" shadow_mask="0x0" material="8d4ea1163ac57aea959e8ca3bc2021c9db783846"/>
 		<properties>
