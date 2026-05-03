@@ -740,11 +740,11 @@
 			<surface name="MetalSpike" intersection="1" material="211b3ea402522afccf88fe4ec86c53810b25a583"/>
 			<surface name="Metal" intersection="1" material="6e3c24ba5f8374fa5b056d9420887134e85d2fa1"/>
 			<body type="BodyDummy" id="304461436" frozen="0">
-				<shape type="ShapeBox" id="121020804" name="ShapeBox" transform="1 0 0 0 -5.55111512e-17 1 0 0 0 0 1 0 0.229596421 2.69379568 2.69825506 1">
-					<size>0.702716947 8.59976673 6.77349138</size>
+				<shape type="ShapeBox" id="121020804" name="ShapeBox" transform="1 -5.55111512e-17 0 0 0 1 0 0 0 0 1 0 0.229596421 3.39095283 2.69825506 1">
+					<size>0.702716947 7.20545244 6.77349138</size>
 				</shape>
 			</body>
-			<transform>-0.542206260097 -0.840245416179 0 0.0 0.840245366096 -0.542206227779 0 0.0 0 0 0.999999940395 0.0 -1.90959461595 -2.50616602259 -0.42742630569 1.0</transform>
+			<transform>0.363702944739 -0.931514974331 0 0.0 0.931514974331 0.363702944739 0 0.0 0 0 0.999999761582 0.0 -1.90959461595 -2.50616602259 -0.42742630569 1.0</transform>
 		</node>
 		<node type="NodeReference" id="545308129" name="crystal_1">
 			<reference>guid://cbbc1e0c330fadda950ee1caeb631c62c4202684</reference>
@@ -1164,6 +1164,125 @@
 		<node type="NodeReference" id="535976918" name="tree_6">
 			<reference>guid://b681cd34685ef10f17ded6b2e684269ca35401ac</reference>
 			<transform>1.0000000596 0 0 0.0 0 1.0000000596 0 0.0 0 0 1 0.0 -2.11104373621 0.548323000137 0.838053631637 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1893434861" immovable="1" name="world_spline_fence">
+			<mesh_name>guid://6cfff3678eb1fa13c313fc75cdc997962d4db370</mesh_name>
+			<surface name="Metal" intersection="1" material="6e3c24ba5f8374fa5b056d9420887134e85d2fa1"/>
+			<surface name="StonePillar" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+			<surface name="MetalSpike" intersection="1" material="211b3ea402522afccf88fe4ec86c53810b25a583"/>
+			<body type="BodyDummy" id="813088940" frozen="0">
+				<shape type="ShapeBox" id="1734523316" name="ShapeBox" transform="1 1.58818678e-22 0 0 0 1 0 0 0 -9.92616735e-24 1 0 -0.00967786089 0.700389147 1.53755605 1">
+					<size>0.775769293 6.93621826 3.38990355</size>
+				</shape>
+			</body>
+			<transform>0.127675295195 7.74860360764e-07 -0.991815864552 0.0 -0.917119314327 0.380726800051 -0.118059202615 0.0 0.377611026479 0.924687614999 0.0486102207667 0.0 57.6129119031 -63.8063871996 3.0704120986 1.0</transform>
+		</node>
+		<node type="NodeReference" id="112005610" name="stone_7">
+			<reference>guid://b0a3877a802c74cbace33917700ab1445013c62a</reference>
+			<transform>3.9839901905 0 0 0.0 0 3.9839901905 0 0.0 0 0 3.98398995304 0.0 58.2477078063 -63.886821018 3.13858031055 1.0</transform>
+		</node>
+		<node type="NodeReference" id="150308891" name="cross_3">
+			<reference>guid://83e5b5548b29a461ba9dc9d2146fef6d5b7fc9cc</reference>
+			<transform>1.0000000596 0 0 0.0 0 1.0000000596 0 0.0 0 0 1 0.0 60.323160156 -62.2072270442 2.42015019736 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1689861280" name="cross_1">
+			<reference>guid://5838463ea8d2fe9a750cef2cf9fefa4030920276</reference>
+			<transform>0.3749513179 0.927044561749 2.68220889055e-07 0.0 -0.884806738473 0.357867939218 -0.298408883715 0.0 -0.276638362007 0.111888548659 0.954437789586 0.0 58.0192451771 -61.9094802705 2.43830251989 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="71833351" immovable="1" name="grave_1">
+			<mesh_name>guid://de97b1d05a2850a914b948f29cb1eb94c74c70c2</mesh_name>
+			<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+			<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+			<body type="BodyDummy" id="1317003814" frozen="0">
+				<shape type="ShapeBox" id="483848558" name="ShapeBox" transform="1 0 0 0 0 1 0 0 0 0 1 0 -0.0778711438 -0.0510185212 1.02817845 1">
+					<size>2.00470877 0.401260704 2.05635691</size>
+				</shape>
+			</body>
+			<transform>-0.0323226974693 -0.546496754467 -8.15766614033e-09 0.0 0.52562284775 -0.0310881063149 -0.149858140937 0.0 0.149596723866 -0.00884793338602 0.526541324052 0.0 69.1199272516 -54.8555183787 2.70190868969 1.0</transform>
+		</node>
+		<node type="NodeReference" id="223445796" name="tree_6">
+			<reference>guid://b681cd34685ef10f17ded6b2e684269ca35401ac</reference>
+			<transform>0.58987809299 0 0 0.0 0 0.589878033385 0 0.0 0 0 0.589877998226 0.0 -15.8506685257 -125.195115539 0.829587436098 1.0</transform>
+		</node>
+		<node type="NodeReference" id="2129376138" name="big_tree">
+			<reference>guid://1c22e92136390e7560dc373b9d6101c41eac17e3</reference>
+			<transform>0.0983465803678 -0.245653688389 0 0.0 0.245653703291 0.098346595269 0 0.0 0 0 0.264608786381 0.0 -27.4603525973 -115.803836024 0.637819033788 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1851382331" name="grave_box_0">
+			<reference>guid://0fb8ff428bea5ea39b0933894ab96eb4a2390f49</reference>
+			<transform>0.435399226594 0.900237548379 0 0.0 -0.90023742917 0.435399166989 0 0.0 0 0 0.999999940396 0.0 -11.1855611057 -120.038854264 1.87993209922 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1612840743" name="grave_box_5">
+			<reference>guid://3b2f2e325bd728dd512791af1472b360cc11abe2</reference>
+			<transform>-0.974667844136 -0.223656636316 0 0.0 0.223656651217 -0.974667903741 0 0.0 0 0 0.999999821186 0.0 -12.6786140414 -109.362047538 1.8774714143 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1047547280" immovable="1" name="Kycha">
+			<mesh_name>guid://a758d556aa687777e71059a2b39ea70492190474</mesh_name>
+			<surface name="surface_0" intersection="1" material="878b59ab6d8ef0a603b48eabeef32578da8811ae"/>
+			<transform>-91.9179720781 -38.9000366807 6.151224503 0.0 10.4371655508 -9.00023663047 99.0458127884 0.0 -37.975243327 91.6829561809 12.3329189022 0.0 -11.7480674437 -121.753497322 1.39817251557 1.0</transform>
+		</node>
+		<node type="NodeReference" id="974799791" name="grave_2">
+			<reference>guid://92e627069c3c5354975064b4d0ebc20ad4d1853e</reference>
+			<transform>0.394714044894 0.918803920603 0 0.0 -0.918803741789 0.394713955487 0 0.0 0 0 0.999999880791 0.0 -10.7964401103 -122.397252301 1.38584678743 1.0</transform>
+		</node>
+		<node type="NodeReference" id="396505540" name="grave_5_2">
+			<reference>guid://810913f07545e5ff9687860e9248ddb60c2d8b68</reference>
+			<transform>0.987436114244 -0.00652884397254 0.157883817427 0.0 -0.00652883372799 0.996607422424 0.0820445020226 0.0 -0.157883886443 -0.0820445292645 0.984043716434 0.0 -10.4727859013 -106.439655344 3.15109294045 1.0</transform>
+		</node>
+		<node type="NodeReference" id="374575745" name="cross_1">
+			<reference>guid://5838463ea8d2fe9a750cef2cf9fefa4030920276</reference>
+			<transform>0.700564706393 0.713588740061 0 0.0 -0.713588680457 0.700564646788 0 0.0 0 0 1 0.0 -10.6696596706 -117.39056612 1.21412205189 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1738581472" name="grave_4_2">
+			<reference>guid://4fa6635017d79548ae17de6ef1c765f8ff79aac8</reference>
+			<transform>0.551962799068 -0.833868602975 0 0.0 0.833868602975 0.551962799068 0 0.0 0 0 0.999999940396 0.0 -24.6543363685 -117.438856211 1.66464240656 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1437090377" name="prop_skull_1">
+			<reference>guid://061b8406a682040dfdcfb9b46cb0bbe78d79a23e</reference>
+			<transform>-0.164459739859 -0.986384032533 0 0.0 0.986384032533 -0.164459739859 0 0.0 0 0 0.999999940396 0.0 -15.1545549761 -117.613402716 2.16235786976 1.0</transform>
+		</node>
+		<node type="NodeReference" id="220423526" name="prop_skull_1">
+			<reference>guid://061b8406a682040dfdcfb9b46cb0bbe78d79a23e</reference>
+			<transform>0.800106382382 -0.812322594204 -0.451343384465 0.0 0.917117108955 0.78632018403 0.210583788787 0.0 0.149916264405 -0.474954184884 1.12057668689 0.0 -16.4531945387 -117.842165489 2.03223472357 1.0</transform>
+		</node>
+		<node type="NodeReference" id="2104686407" name="bone_1">
+			<reference>guid://5586fc642fca5c05821f1e6261b92766f36250dc</reference>
+			<transform>0.999999761581 0 0 0.0 0 0.997722804275 0.0674460346965 0.0 0 -0.0674460387165 0.997722744806 0.0 -5.19055265939 -108.165401334 2.75592802225 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1910361813" name="bone_1">
+			<reference>guid://5586fc642fca5c05821f1e6261b92766f36250dc</reference>
+			<transform>0.71715715136 0 0 0.0 0 0.717157210965 0 0.0 0 0 0.717157287428 0.0 -9.8913944518 -111.509806443 1.91837940538 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1471654626" name="bone_1">
+			<reference>guid://5586fc642fca5c05821f1e6261b92766f36250dc</reference>
+			<transform>0.581162700792 -0.684276841196 0 0.0 0.684276841196 0.581162700792 0 0.0 0 0 0.897766286002 0.0 -9.85851569278 -111.511035516 1.93683255764 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1603443031" name="bone_1">
+			<reference>guid://5586fc642fca5c05821f1e6261b92766f36250dc</reference>
+			<transform>0.55598611307 -0.704886341677 0 0.0 0.704886103259 0.55598599386 0 0.0 0 0 0.897765928374 0.0 -10.3201664115 -114.374976578 1.93683255764 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1782228897" name="bone_1">
+			<reference>guid://5586fc642fca5c05821f1e6261b92766f36250dc</reference>
+			<transform>0.71715715136 0 0 0.0 0 0.717157210965 0 0.0 0 0 0.717157287428 0.0 -10.5254847549 -113.728133706 1.93683255764 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1610669443" name="bone_2">
+			<reference>guid://5586fc642fca5c05821f1e6261b92766f36250dc</reference>
+			<transform>0.896769153686 -0.0423135621623 0 0.0 0.0423135472612 0.896768855663 0 0.0 0 0 0.897765928374 0.0 -12.0902421662 -114.186659247 1.93683255764 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1917846056" name="bone_1">
+			<reference>guid://5586fc642fca5c05821f1e6261b92766f36250dc</reference>
+			<transform>0.674615701987 -0.592350553554 -3.34444225598e-09 0.0 0.583265433701 0.664268811258 -0.156630644598 0.0 0.103345533114 0.117698057615 0.883996896982 0.0 -12.0496771385 -112.024067343 1.93683255764 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="394487150" immovable="1" name="grave_1">
+			<mesh_name>guid://de97b1d05a2850a914b948f29cb1eb94c74c70c2</mesh_name>
+			<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+			<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+			<body type="BodyDummy" id="1794942231" frozen="0">
+				<shape type="ShapeBox" id="773469183" name="ShapeBox" transform="1 0 0 0 0 1 0 0 0 0 1 0 -0.0778711438 -0.0510185212 1.02817845 1">
+					<size>2.00470877 0.401260704 2.05635691</size>
+				</shape>
+			</body>
+			<transform>-0.309732056824 -0.432663998921 0.0358667246024 0.0 0.0295062063046 -0.0649354833287 -0.52851870826 0.0 0.433144710439 -0.304965532418 0.0616507455201 0.0 57.1786250451 -84.4550166816 5.70252094528 1.0</transform>
 		</node>
 	</node>
 </nodes>
