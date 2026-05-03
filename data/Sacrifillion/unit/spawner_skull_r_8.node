@@ -7,6 +7,15 @@
 				<parameter name="spawnPoint">37087359</parameter>
 				<parameter name="spawnNodes">
 					<value index="0">guid://6f46f804ae281cea9a49aa8441ba53b78396a6e0</value>
+					<value index="1">guid://6f46f804ae281cea9a49aa8441ba53b78396a6e0</value>
+					<value index="2">guid://6f46f804ae281cea9a49aa8441ba53b78396a6e0</value>
+					<value index="3">guid://6f46f804ae281cea9a49aa8441ba53b78396a6e0</value>
+					<value index="4">guid://6f46f804ae281cea9a49aa8441ba53b78396a6e0</value>
+					<value index="5">guid://6f46f804ae281cea9a49aa8441ba53b78396a6e0</value>
+					<value index="6">guid://6f46f804ae281cea9a49aa8441ba53b78396a6e0</value>
+					<value index="7">guid://6f46f804ae281cea9a49aa8441ba53b78396a6e0</value>
+					<value index="8">guid://6f46f804ae281cea9a49aa8441ba53b78396a6e0</value>
+					<value index="9">guid://aae51217b7811fd877847eba16a39a448b5ddd85</value>
 				</parameter>
 			</property>
 		</properties>
