@@ -63,5 +63,6 @@ private:
 
 	Unigine::Vector<AnimState> _anim_states;
 	bool _pressed = false;
+	bool _need_update = false;
 };
 

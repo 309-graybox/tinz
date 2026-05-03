@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="AffineModifier" manual="1" parent_name="node_base">
+	<struct name="AffineStruct">
+		<parameter name="target" type="node" title="Target">0</parameter>
+		<parameter name="pivot" type="node" title="Pivot" tooltip="Optional rotation pivot (null = target&apos;s own origin)">0</parameter>
+		<parameter name="axis" type="vec3" title="Axis" tooltip="Rotation axis in pivot&apos;s local space">0.000000 0.000000 1.000000</parameter>
+		<parameter name="angle" type="float" title="Angle" tooltip="Hover rotation, degrees (0 = no rotation)">0</parameter>
+		<parameter name="offset" type="vec3">0.000000 0.000000 0.000000</parameter>
+		<parameter name="speed" type="float" title="Speed" tooltip="Approach rate toward open pose">8</parameter>
+		<parameter name="damping" type="float" title="Damping" tooltip="Return rate to rest pose">8</parameter>
+	</struct>
+	<parameter name="settings" type="node" title="Settings" tooltip="SoundSettings node; falls back to self, then defaults">0</parameter>
+	<parameter name="anims" type="array" array_type="AffineStruct"/>
+</property>

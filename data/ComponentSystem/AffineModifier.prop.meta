@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>6de05515603e4bb65d3c6605cc3dc27a77d4b240</guid>
+	<type>property</type>
+	<hash>4af96c340f0a54971d6d75f817f2f89cb7f44074e5f0dfeab7043ab51d08bbfe</hash>
+	<runtimes>
+		<runtime id="6de05515603e4bb65d3c6605cc3dc27a77d4b240" name="AffineModifier" link="0" type="4"/>
+	</runtimes>
+</asset>

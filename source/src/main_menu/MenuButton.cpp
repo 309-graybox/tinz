@@ -34,11 +34,15 @@ void MenuButton::onInit()
 void MenuButton::setHovered(bool on, bool play_sound)
 {
 	MenuInteractive::setHovered(on, play_sound);
+	_need_update = true;
 	update_active_state();
 }
 
 void MenuButton::onUpdate()
 {
+	if (!_need_update)
+		return;
+
 	if (!node)
 		return;
 
@@ -76,9 +80,13 @@ void MenuButton::onUpdate()
 		const vec3 to_target = vec3(st.rest_pos - pivot_pos);
 		const Vec3 new_pos = pivot_pos + Vec3(rot * to_target) + current_offset;
 		const quat new_rot = rot * st.rest_rot;
+		
+		auto new_trans = Mat4(new_rot, new_pos);
 
-		target->setWorldPosition(new_pos);
-		target->setWorldRotation(new_rot);
+		if (new_trans == target->getWorldTransform())
+			_need_update = false;
+
+		target->setWorldTransform(new_trans);
 	}
 }
 
