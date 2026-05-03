@@ -2,6 +2,8 @@
 #include <UnigineComponentSystem.h>
 #include <UnigineWorlds.h>
 #include <UnigineCallback.h>
+#include <UnigineGui.h>
+#include <UnigineWidgets.h>
 #include <plugins/Ryutp/EnhancedInput/EnhancedInput.h>
 
 class Interactable;
@@ -53,6 +55,7 @@ private:
 	bool hasLineOfSight(const Pickup *pickup) const;
 
 	Interactable *resolveFocus() const;
+	Interactable *resolveInteractCandidate() const;
 	Interactable *raycastFocus() const;
 	bool canFocus(Interactable *interactable) const;
 	bool isInInteractRange(const Interactable *interactable) const;
@@ -62,6 +65,9 @@ private:
 	void updateHover(Interactable *next_focus);
 
 	void handleInteractInput();
+	void ensureInteractPrompt();
+	void updateInteractPrompt(Interactable *candidate);
+	void hideInteractPrompt();
 
 private:
 	Unigine::WorldTriggerPtr _trigger;
@@ -75,4 +81,7 @@ private:
 
 	EIBinding *_binding_interact = nullptr;
 	bool _interact_requested = false;
+
+	Unigine::GuiPtr _gui;
+	Unigine::WidgetLabelPtr _interact_prompt;
 };

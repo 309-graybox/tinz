@@ -86,4 +86,19 @@
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 66.7940287278 62.6311859407 -0.434325936666 1.0</transform>
 		</node>
 	</node>
+	<node type="NodeDummy" id="333769591" enabled="0" name="group">
+		<transform>1.00000011921 0 0 0.0 0 1 0 0.0 0 0 1.00000017881 0.0 -20.5673512207 -26.422116609 2.64587632397 1.0</transform>
+		<node type="NodeReference" id="1388349722" name="skull_enemy_view_red">
+			<reference>guid://6f46f804ae281cea9a49aa8441ba53b78396a6e0</reference>
+			<transform>0.999999940395 -4.95018639413e-07 -0.000417231261963 0.0 -4.94891025937e-07 0.999997317791 -0.00237256498076 0.0 0.000417231261963 0.00237256474793 0.999997138977 0.0 2.189390322 -4.45389472576 -0.049146071835 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1029190739" name="skull_enemy_view_green">
+			<reference>guid://4a0634dfeb95c23a0486b45fdbee3b3f1f68f95b</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -2.96365991141 4.49968212694 -0.0449060935072 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1007746858" name="skull_enemy_view_blue">
+			<reference>guid://f8b1f26e00b455efb77248eeebfb2674aff3ae2a</reference>
+			<transform>0.999999821186 -2.96777585618e-07 0.000452820386272 0.0 -2.970064088e-07 0.999999165535 0.00131130067166 0.0 -0.000452820415376 -0.00131130067166 0.999999046326 0.0 3.06611832656 3.21298446316 -0.0456737592061 1.0</transform>
+		</node>
+	</node>
 </nodes>

@@ -38,7 +38,7 @@ void LootDropper::dropLoot()
 	for (int i = 0; i < drops.size(); ++i)
 	{
 		auto &entry = drops[i];
-		NodePtr drop_node = entry->dropNode.get();
+		NodePtr drop_node = World::loadNode(entry->dropNode);
 		if (!drop_node)
 			continue;
 		if (!rollChance((float)entry->chance))

@@ -109,7 +109,7 @@ void Entity::revive()
 
 	updateDeathStates();
 
-	if (compare(max_hp, hp) != 0)
+	if (!compare(max_hp, hp))
 	{
 		_eventHpChanged.run(this);
 	}

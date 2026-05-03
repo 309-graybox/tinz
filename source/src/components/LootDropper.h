@@ -6,7 +6,7 @@ class Entity;
 
 struct LootDropEntry: Unigine::ComponentStruct
 {
-	PROP_PARAM(Node, dropNode, "", "Drop Node", "Template node that will be cloned on death")
+	PROP_PARAM(File, dropNode, "", "Drop Node", "Template node that will be cloned on death")
 	PROP_PARAM(Float, chance, 1.0f, "", "Drop chance (0..1 or 0..100)")
 	PROP_PARAM(Int, minCount, 1)
 	PROP_PARAM(Int, maxCount, 1)

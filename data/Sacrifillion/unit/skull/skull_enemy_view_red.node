@@ -31,8 +31,21 @@
 				<parameter name="accel">8</parameter>
 				<parameter name="attackDamage">25</parameter>
 			</property>
+			<property parent="09cfcd0459ca27719512ddd7b1ea18791b43bfcf" guid="34f5b4a8bc72cc92625d87c90527ceec85f90c57">
+				<parameter name="drops">
+					<value index="0">
+						<parameter name="dropNode">guid://c2dd6314a90227fbecd19e73a5a0dee165218cf3</parameter>
+						<parameter name="chance">1</parameter>
+						<parameter name="maxCount">3</parameter>
+					</value>
+					<value index="1">
+						<parameter name="dropNode">guid://bc91d9c8e9b52136b1196e5d534a2e38a873a6f8</parameter>
+						<parameter name="chance">0.25</parameter>
+					</value>
+				</parameter>
+			</property>
 		</properties>
-		<transform>1 -1.69406589451e-21 8.67361737988e-19 0.0 3.38813178902e-21 0.999999880791 8.67361737988e-19 0.0 -1.00918681709e-18 -1.73472347598e-18 0.999999880791 0.0 0 0 -4.4408920985e-16 1.0</transform>
+		<transform>1 -1.90582413132e-21 9.75781955237e-19 0.0 3.38813178902e-21 0.999999880791 8.67361737988e-19 0.0 -9.22859560031e-19 -1.73472347598e-18 0.999999880791 0.0 0 0 -4.4408920985e-16 1.0</transform>
 		<node type="ObjectParticles" id="398819907" name="ObjectParticles" update_distance_limit="200">
 			<depth_sort>1</depth_sort>
 			<clear_on_enable>1</clear_on_enable>

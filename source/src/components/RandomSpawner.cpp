@@ -78,17 +78,9 @@ bool RandomSpawner::spawnOne()
 	if (index < 0)
 		return false;
 
-	NodePtr source = World::loadNode(spawnNodes[index]);
-	if (!source)
-		return false;
-
-	NodePtr spawned = source->clone();
+	NodePtr spawned = World::loadNode(spawnNodes[index]);
 	if (!spawned)
-	{
-		Log::warning("RandomSpawner \"%s\": failed to clone node \"%s\"\n",
-			node ? node->getName() : "", source->getName());
 		return false;
-	}
 
 	spawned->setWorldTransform(getSpawnTransform());
 	spawned->setEnabled(true);
