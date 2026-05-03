@@ -18,6 +18,7 @@
 				<parameter name="max_hp">100</parameter>
 				<parameter name="persistOnDeath">1</parameter>
 				<parameter name="deleteTimer">10</parameter>
+				<parameter name="soundOnDamage">damage/skull</parameter>
 				<parameter name="disable_on_death">
 					<value index="0">121252975</value>
 				</parameter>
@@ -31,7 +32,7 @@
 				<parameter name="attackDamage">25</parameter>
 			</property>
 		</properties>
-		<transform>1 0 0 0.0 0 0.999999880791 0 0.0 0 0 0.999999880791 0.0 0 0 0 1.0</transform>
+		<transform>1 0 0 0.0 0 0.999999880791 3.46944695195e-18 0.0 7.21777950179e-19 -3.46944695195e-18 0.999999880791 0.0 0 0 0 1.0</transform>
 		<node type="ObjectParticles" id="121252975" name="ObjectParticles" update_distance_limit="200">
 			<depth_sort>1</depth_sort>
 			<clear_on_enable>1</clear_on_enable>
