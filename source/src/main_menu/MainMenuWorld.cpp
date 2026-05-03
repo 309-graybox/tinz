@@ -98,6 +98,9 @@ void MainMenuWorld::tick_pending_click()
 	if (_pending_button->shouldFadeOnClick())
 		apply_fade(saturate(_pending_timer / delay));
 
+	float volume = (delay - _pending_timer) / delay;
+	Unigine::Sound::setVolume(volume);
+
 	if (_pending_timer >= delay)
 	{
 		MenuButton *btn = _pending_button;

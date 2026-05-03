@@ -20,6 +20,7 @@ class SoundRegistrator: public Unigine::ComponentBase
 public:
 	COMPONENT_DEFINE(SoundRegistrator, Unigine::ComponentBase)
 	COMPONENT_INIT(init, -100000)
+	COMPONENT_UPDATE(update);
 	COMPONENT_SHUTDOWN(shutdown)
 
 	PROP_GROUP("Event")
@@ -28,12 +29,16 @@ public:
 	PROP_PARAM(String, loopEventId, "", "Loop Event ID", "Optional SoundManager event id looped after Sample intro")
 	PROP_PARAM(Node, settings, "Settings", "SoundSettings node; falls back to self, then defaults")
 	PROP_PARAM(Toggle, music, false, "music is looped and starts to play on init");
+	PROP_PARAM(Float, startDelay, 0.0f, "", "время через которое начнет играть музыка", "", "music=1");
+	// PROP_PARAM(Float, volumeDelay, 1.0f, "", "время через которое громкость станет максимальной (линейно идет от 0 до 1)", "", "music=1");
 
 private:
 	void init();
+	void update();
 	void shutdown();
 
 	Unigine::String _registered_id;
+	float _timer = 0.0f;;
 };
 
 } // namespace audio

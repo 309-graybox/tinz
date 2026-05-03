@@ -5,4 +5,5 @@
 	<parameter name="loopEventId" type="string" title="Loop Event ID" tooltip="Optional SoundManager event id looped after Sample intro" group="Event"/>
 	<parameter name="settings" type="node" title="Settings" tooltip="SoundSettings node; falls back to self, then defaults" group="Event">0</parameter>
 	<parameter name="music" type="toggle" title="music is looped and starts to play on init" group="Event">0</parameter>
+	<parameter name="startDelay" type="float" tooltip="время через которое начнет играть музыка" group="Event" music="1">0</parameter>
 </property>

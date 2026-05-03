@@ -4,6 +4,7 @@
 #include "SoundSettings.h"
 
 #include <UnigineLog.h>
+#include <UnigineGame.h>
 
 namespace audio
 {
@@ -45,9 +46,26 @@ void SoundRegistrator::init()
 	SoundManager::registerEvent(id, e);
 	_registered_id = id;
 
-	if (music)
+	_timer = startDelay;
+	
+	if (music && _timer <= 0)
 	{
 		SoundManager::playMusic(eventId);
+	}
+}
+
+void SoundRegistrator::update()
+{
+	float ifps = Game::getIFps();
+
+	if (_timer > 0)
+	{
+		_timer -= ifps;
+
+		if (_timer <= 0)
+		{
+			SoundManager::playMusic(eventId);
+		}
 	}
 }
 
