@@ -1,9 +1,12 @@
 #include "PlayerInteraction.h"
+#include "Interactable.h"
 #include "Pickup.h"
 
 #include <UnigineGame.h>
+#include <UnigineInput.h>
 #include <UnigineWorld.h>
 #include <UnigineLog.h>
+#include <UniginePlayers.h>
 #include <plugins/Ryutp/EnhancedInput/EnhancedInput.h>
 
 REGISTER_COMPONENT(PlayerInteraction)
@@ -63,7 +66,7 @@ void PlayerInteraction::shutdown()
 	auto ei = EISystem::get();
 	if (!ei)
 		return;
-	auto player = ComponentSystem::get()->getComponent<EILocalPlayer>(node);
+	auto player = ComponentSystem::get()->getComponent<EILocalPlayer>(playerNode);
 	if (!player)
 		return;
 	if (_binding_interact)
@@ -77,15 +80,19 @@ void PlayerInteraction::update()
 
 	// Snapshot — pickup->pickUp() fires eventDestroyed synchronously,
 	// which mutates _in_range mid-iteration. Validate against live set each step.
-	Vector<Pickup *> snapshot = _in_range;
+	Vector<Interactable *> snapshot = _in_range;
 
 	for (int i = 0; i < snapshot.size(); ++i)
 	{
-		Pickup *p = snapshot[i];
+		Interactable *interactable = snapshot[i];
+		if (!interactable)
+			continue;
+		if (_in_range.find(interactable) == _in_range.end())
+			continue; // removed by a prior iteration's destroy event
+
+		Pickup *p = dynamic_cast<Pickup *>(interactable);
 		if (!p)
 			continue;
-		if (_in_range.find(p) == _in_range.end())
-			continue; // removed by a prior iteration's destroy event
 		if (!p->isReady())
 			continue;
 
@@ -112,7 +119,7 @@ void PlayerInteraction::update()
 		}
 	}
 
-	_current_focus = resolveFocus();
+	updateHover(resolveFocus());
 	handleInteractInput();
 }
 
@@ -142,39 +149,74 @@ bool PlayerInteraction::hasLineOfSight(const Pickup *pickup) const
 	return hit_node && hit_node == pickup->getNode();
 }
 
-Pickup *PlayerInteraction::resolveFocus() const
+Interactable *PlayerInteraction::resolveFocus() const
 {
+	Interactable *hit = raycastFocus();
+	return canFocus(hit) ? hit : nullptr;
+}
+
+Interactable *PlayerInteraction::raycastFocus() const
+{
+	const NodePtr cam = cameraNode;
+	PlayerPtr player = dynamic_ptr_cast<Player>(cam);
+	if (!player)
+		player = Game::getPlayer();
+	if (!player)
+		return nullptr;
+
+	const ivec2 mouse = Input::getMousePosition();
+	const Vec3 from = player->getWorldPosition();
+	const Vec3 dir = Vec3(player->getDirectionFromMainWindow(mouse.x, mouse.y));
+	const Vec3 to = from + dir * (float)hoverRayDistance;
+
+	ObjectPtr hit = World::getIntersection(from, to, (int)hoverIntersectionMask);
+	return hit ? ComponentSystem::get()->getComponentInParent<Interactable>(hit) : nullptr;
+}
+
+bool PlayerInteraction::canFocus(Interactable *interactable) const
+{
+	if (!interactable)
+		return false;
+	if (!interactable->isInteractionReady() && !interactable->isInteracting())
+		return false;
+	if (!isInInteractRange(interactable))
+		return false;
+	if (!interactable->canInteract(node))
+		return false;
+
+	return true;
+}
+
+bool PlayerInteraction::isInInteractRange(const Interactable *interactable) const
+{
+	if (!interactable || !interactable->getNode())
+		return false;
+
 	const Vec3 player_pos = node->getWorldPosition();
+	const float dist = (float)length(interactable->getNode()->getWorldPosition() - player_pos);
+	return dist <= interactable->range;
+}
 
-	Pickup *best = nullptr;
-	float best_dist = FLT_MAX;
-
-	for (int i = 0; i < _in_range.size(); ++i)
+void PlayerInteraction::updateHover(Interactable *next_focus)
+{
+	if (_current_focus == next_focus)
 	{
-		Pickup *p = _in_range[i];
-		if (!p || !p->isReady())
-			continue;
-		if (p->getMode() != Pickup::Mode::Interact)
-			continue;
-		if (!p->canBePickedUp(node))
-			continue;
-
-		const NodePtr p_node = p->getNode();
-		if (!p_node)
-			continue;
-
-		const float dist = (float)length(p_node->getWorldPosition() - player_pos);
-		if (dist > p->range)
-			continue;
-
-		if (dist < best_dist)
-		{
-			best_dist = dist;
-			best = p;
-		}
+		if (_current_focus)
+			_current_focus->tickHover(node);
+		return;
 	}
 
-	return best;
+	if (_current_focus)
+	{
+		if (_current_focus->isInteracting())
+			_current_focus->cancelInteract();
+		_current_focus->endHover(node);
+	}
+
+	_current_focus = next_focus;
+
+	if (_current_focus)
+		_current_focus->tickHover(node);
 }
 
 void PlayerInteraction::handleInteractInput()
@@ -182,51 +224,54 @@ void PlayerInteraction::handleInteractInput()
 	const bool pressed = _interact_requested;
 	_interact_requested = false;
 
-	// Cancel any in-flight interact whose pickup is no longer the focus.
+	// Cancel any in-flight interaction whose object is no longer the focus.
 	for (int i = 0; i < _in_range.size(); ++i)
 	{
-		Pickup *p = _in_range[i];
-		if (p && p->isInteracting() && p != _current_focus)
-			p->cancelInteract();
+		Interactable *interactable = _in_range[i];
+		if (interactable && interactable->isInteracting() && interactable != _current_focus)
+			interactable->cancelInteract();
 	}
 
-	if (pressed && _current_focus && _current_focus->isReady())
+	if (pressed && _current_focus && _current_focus->isInteractionReady())
 		_current_focus->startInteract(node);
 }
 
 void PlayerInteraction::onTriggerEnter(const Unigine::NodePtr &n)
 {
-	Pickup *p = ComponentSystem::get()->getComponent<Pickup>(n);
-	if (!p)
+	Interactable *interactable = ComponentSystem::get()->getComponentInParent<Interactable>(n);
+	if (!interactable)
 		return;
-	if (_in_range.find(p) == _in_range.end())
+	if (_in_range.find(interactable) == _in_range.end())
 	{
-		_in_range.append(p);
-		p->eventDestroyed().connect(this, &PlayerInteraction::onPickupDestroyed);
+		_in_range.append(interactable);
+		interactable->eventDestroyed().connect(this, &PlayerInteraction::onInteractableDestroyed);
 	}
 }
 
-void PlayerInteraction::onPickupDestroyed(Pickup *p)
+void PlayerInteraction::onInteractableDestroyed(Interactable *interactable)
 {
-	auto it = _in_range.find(p);
+	auto it = _in_range.find(interactable);
 	if (it != _in_range.end())
 		_in_range.remove(it);
-	if (p == _current_focus)
+	if (interactable == _current_focus)
 		_current_focus = nullptr;
 }
 
 void PlayerInteraction::onTriggerLeave(const Unigine::NodePtr &n)
 {
-	Pickup *p = ComponentSystem::get()->getComponent<Pickup>(n);
-	if (!p)
+	Interactable *interactable = ComponentSystem::get()->getComponentInParent<Interactable>(n);
+	if (!interactable)
 		return;
 
-	if (p->isInteracting())
-		p->cancelInteract();
-	if (p == _current_focus)
+	if (interactable->isInteracting())
+		interactable->cancelInteract();
+	if (interactable == _current_focus)
+	{
+		interactable->endHover(node);
 		_current_focus = nullptr;
+	}
 
-	auto it = _in_range.find(p);
+	auto it = _in_range.find(interactable);
 	if (it != _in_range.end())
 		_in_range.remove(it);
 }

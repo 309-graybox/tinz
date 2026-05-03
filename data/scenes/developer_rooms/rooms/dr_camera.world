@@ -1080,6 +1080,17 @@
 			<reference>guid://8b2068cd4cba17160b6ba92b4b22d7029f7e99cd</reference>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -4.58270120621 5.2002696991 0 1.0</transform>
 		</node>
+		<node type="ObjectMeshStatic" id="1141887237" immovable="1" name="Box">
+			<mesh_name>guid://209252c0ae5bc8c3c340e5908fc4f18ddcdbd53f</mesh_name>
+			<surface name="box" intersection="1" intersection_mask="0x10000000" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+			<properties>
+				<property parent="239a3c2f25d64246c5e6bce1c630a0ae1ca9462a" guid="33bd6f6e45622c799991cdbec0aa445f9043f695">
+					<parameter name="range">4</parameter>
+					<parameter name="interactPromptText">Gay</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 5.82507038116 10.9167251587 0.919390221613 1.0</transform>
+		</node>
 	</editor>
 	<console>
 		<bake_lighting_bounces>4</bake_lighting_bounces>

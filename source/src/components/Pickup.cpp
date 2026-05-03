@@ -25,7 +25,6 @@ void Pickup::init()
 	_state = State::Idle;
 	_life_timer = 0.0f;
 	_magnet_timer = 0.0f;
-	_interact_timer = 0.0f;
 }
 
 void Pickup::update()
@@ -38,7 +37,6 @@ void Pickup::update()
 	switch (_state)
 	{
 		case State::Magnet: tickMagnet(dt); break;
-		case State::Interact: tickInteract(dt); break;
 		default: break;
 	}
 }
@@ -62,16 +60,16 @@ void Pickup::tickLifetime(float dt)
 		return;
 
 	_life_timer += dt;
-	if (_life_timer >= lifetime && _state == State::Idle)
+	if (_life_timer >= lifetime && isReady())
 	{
-		_event_destroyed.run(this);
+		notifyDestroyed();
 		node.deleteLater();
 	}
 }
 
 void Pickup::startMagnet(const NodePtr &player)
 {
-	if (_state != State::Idle || !player)
+	if (!isReady() || !player)
 		return;
 
 	_state = State::Magnet;
@@ -118,53 +116,6 @@ void Pickup::tickMagnet(float dt)
 		node->setWorldPosition(self_pos + step);
 }
 
-void Pickup::startInteract(const NodePtr &player)
-{
-	if (_state != State::Idle || !player)
-		return;
-
-	_state = State::Interact;
-	_target_player = player;
-	_interact_timer = 0.0f;
-
-	_event_interact_started.run(player);
-
-	if (interactHoldTime <= 0.0f)
-		pickUp(player); // tap-mode: complete immediately
-}
-
-void Pickup::tickInteract(float dt)
-{
-	if (!_target_player)
-	{
-		cancelInteract();
-		return;
-	}
-
-	_interact_timer += dt;
-	if (_interact_timer >= interactHoldTime)
-		pickUp(_target_player);
-}
-
-void Pickup::cancelInteract()
-{
-	if (_state != State::Interact)
-		return;
-
-	NodePtr who = _target_player;
-	_state = State::Idle;
-	_target_player.clear();
-	_interact_timer = 0.0f;
-	_event_interact_cancelled.run(who);
-}
-
-float Pickup::getInteractProgress01() const noexcept
-{
-	if (_state != State::Interact || interactHoldTime <= 0.0f)
-		return 0.0f;
-	return clamp(_interact_timer / (float)interactHoldTime, 0.0f, 1.0f);
-}
-
 bool Pickup::canBePickedUp(const NodePtr &player) const
 {
 	if (strcmp(typeId.get(), "health") != 0)
@@ -172,6 +123,17 @@ bool Pickup::canBePickedUp(const NodePtr &player) const
 
 	auto entity = ComponentSystem::get()->getComponent<Entity>(player);
 	return entity && entity->isAlive() && entity->getHP() < entity->getMaxHP() - Consts::EPS;
+}
+
+bool Pickup::canInteract(const NodePtr &player) const
+{
+	return getMode() == Mode::Interact && canBePickedUp(player);
+}
+
+void Pickup::onInteract(const NodePtr &player)
+{
+	Interactable::onInteract(player);
+	pickUp(player);
 }
 
 void Pickup::pickUp(const NodePtr &player)
@@ -204,7 +166,7 @@ void Pickup::pickUp(const NodePtr &player)
 
 	if (node)
 	{
-		_event_destroyed.run(this);
+		notifyDestroyed();
 		node.deleteLater();
 	}
 

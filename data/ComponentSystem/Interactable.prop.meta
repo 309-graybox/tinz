@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>239a3c2f25d64246c5e6bce1c630a0ae1ca9462a</guid>
+	<type>property</type>
+	<hash>d4342c928c8e3937bacb81e988d458f199fc794304e6cf733505dab7e2b05ed1</hash>
+	<runtimes>
+		<runtime id="239a3c2f25d64246c5e6bce1c630a0ae1ca9462a" name="Interactable" link="0" type="4"/>
+	</runtimes>
+</asset>

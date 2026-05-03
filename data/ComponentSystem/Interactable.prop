@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="Interactable" manual="1" parent_name="node_base">
+	<parameter name="range" type="float">3</parameter>
+	<parameter name="interactHoldTime" type="float">0</parameter>
+	<parameter name="interactPromptText" type="string"/>
+</property>

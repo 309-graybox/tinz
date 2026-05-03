@@ -5,4 +5,6 @@
 	<parameter name="cameraNode" type="node">0</parameter>
 	<parameter name="magnetRequiresLineOfSight" type="toggle">0</parameter>
 	<parameter name="magnetLineOfSightMask" type="mask">0</parameter>
+	<parameter name="hoverRayDistance" type="float">100</parameter>
+	<parameter name="hoverIntersectionMask" type="mask">-1</parameter>
 </property>
