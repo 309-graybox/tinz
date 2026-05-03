@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>72789e8bee3725a1851afbd3730cb6a136a5cc3d</guid>
+	<type>node</type>
+	<hash>74766bb4c9a4c148001c60977d8cb1688f86c51ce5d65406cb873282b2b82a90</hash>
+	<runtimes>
+		<runtime id="72789e8bee3725a1851afbd3730cb6a136a5cc3d" name="stone_fence_3.node" link="0" type="3"/>
+	</runtimes>
+</asset>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="88223205" immovable="1" name="stone_fence_4">
+		<mesh_name>guid://2b101d899a41ab1ae4bf0c2d09b1a394dea95803</mesh_name>
+		<surface name="StonePillar" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+		<surface name="StoneConnection" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+		<body type="BodyDummy" id="1228171382" frozen="0">
+			<shape type="ShapeBox" id="1624717758" name="ShapeBox" transform="1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.15085971 1">
+				<size>0.6887604 4.27548122 2.31945896</size>
+			</shape>
+		</body>
+		<transform>1 -1.08420217249e-19 7.11507675694e-19 0.0 -2.16840434497e-19 1 0 0.0 -2.66307158617e-18 -6.93889390391e-18 1 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

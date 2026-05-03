@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="985699075" immovable="1" name="brick_fence_2">
+		<mesh_name>guid://3c30a2db225ac832ef77ed9fe46cd69df6aa9ae5</mesh_name>
+		<surface name="StoneConnection" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+		<body type="BodyDummy" id="376930252" frozen="0">
+			<shape type="ShapeBox" id="973671636" name="ShapeBox" transform="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.210951313 1">
+				<size>0.421902627 0.421902627 0.421902567</size>
+			</shape>
+		</body>
+		<transform>1 -1.08420217249e-19 7.11507675694e-19 0.0 -2.16840434497e-19 1 0 0.0 -2.66307158617e-18 -6.93889390391e-18 1 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

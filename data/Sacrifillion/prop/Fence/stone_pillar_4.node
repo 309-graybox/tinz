@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="1144901030" immovable="1" name="stone_pillar_4">
+		<mesh_name>guid://4c01a56cb6232fb0caacf95861b3b0173470761a</mesh_name>
+		<surface name="StonePillar" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+		<body type="BodyDummy" id="958414351" frozen="0">
+			<shape type="ShapeBox" id="249864183" name="ShapeBox" transform="1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.15085971 1">
+				<size>0.688760102 0.688760102 2.30171943</size>
+			</shape>
+		</body>
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>5c1c7910077da6c7fbf6ba2834bb78da20665fb2</guid>
+	<type>node</type>
+	<hash>4c5a4fdd38180cdc2d4ef088c1cef4e2bf025e8cf38f91b4e059f3024700dadf</hash>
+	<runtimes>
+		<runtime id="5c1c7910077da6c7fbf6ba2834bb78da20665fb2" name="brick_fence_0.node" link="0" type="3"/>
+	</runtimes>
+</asset>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>5d912277b2686b02b22a853fe2a40a73c9660489</guid>
+	<type>node</type>
+	<hash>e46a098cf117afb714dc572790d06a518feae9bb3b0c3f95dbc76986f21e5a18</hash>
+	<runtimes>
+		<runtime id="5d912277b2686b02b22a853fe2a40a73c9660489" name="stone_pillar_2.node" link="0" type="3"/>
+	</runtimes>
+</asset>
