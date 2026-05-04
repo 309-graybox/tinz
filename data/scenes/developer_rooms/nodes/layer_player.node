@@ -22,7 +22,10 @@
 				<parameter name="useGamepad">1</parameter>
 			</property>
 			<property parent="c1ecde01068d0406f5dacfe348dfc1e5466c55ec" guid="719da7015d9fc96a4f30e37f727f8796370ba23e">
-				<parameter name="airControl">5</parameter>
+				<parameter name="jumpPower">8.39999962</parameter>
+				<parameter name="jumpBufferTime">0.180000007</parameter>
+				<parameter name="adaptiveJumpDamping">0.349999994</parameter>
+				<parameter name="airControl">4.5</parameter>
 				<parameter name="sprintTurnSpeed">300</parameter>
 				<parameter name="stepHeight">0.409999996</parameter>
 				<parameter name="groundSnapMinGap">0.0500000007</parameter>
@@ -38,6 +41,8 @@
 				<properties>
 					<property parent="338232982d1ffa35625e37494f55eed0f3031e90" guid="b6c60bd6354e217a585d061f8a10309c41bc7ae5">
 						<parameter name="stage">0</parameter>
+						<parameter name="default_arm">6</parameter>
+						<parameter name="arm_range">2 7</parameter>
 					</property>
 				</properties>
 				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
@@ -46,26 +51,40 @@
 				<properties>
 					<property parent="b61d5c7a5f3c588f76b0605d48eea0d2343198c9" guid="10c1afb45d29ff73eedc26d5d862f93c8254ddeb">
 						<parameter name="priority">-1000000</parameter>
+						<parameter name="speed">0.90000000000000002</parameter>
+						<parameter name="damping">3</parameter>
 					</property>
 					<property parent="e8101904cf50511562f0b28593fc6cd406d1cf22" guid="f1459a1abf0bb8e92f6bd2b38d95f58f099da359">
 						<parameter name="priority">-100000</parameter>
+						<parameter name="used_in_pipeline">1</parameter>
+						<parameter name="only_when_no_input">1</parameter>
 					</property>
 					<property parent="a197f5f8bbb9d292adf674e7c144519c3c3b4f24" guid="3753b94898203a23dde124f93605f3ee33735e6f">
 						<parameter name="priority">-10000</parameter>
+						<parameter name="enable_min_angle_bias">1</parameter>
+						<parameter name="enable_max_angle_bias">0</parameter>
 					</property>
 					<property parent="725def5a82138de00a22a9e3d1878c8141ff2032" guid="5be51118951987535a39aa74e6979e68a97ea7a8">
 						<parameter name="priority">-1000</parameter>
+						<parameter name="used_in_pipeline">0</parameter>
 						<parameter name="debug">1</parameter>
 					</property>
 					<property parent="9394cfe3b438df9214c16dd6ee132ccdd974168d" guid="653f7b08a622fce09c714e1b70ebe312fd7a2b56">
 						<parameter name="priority">-100</parameter>
+						<parameter name="delay">1</parameter>
+						<parameter name="speed">2</parameter>
+						<parameter name="reset_timer_on_stop">0</parameter>
 					</property>
 					<property parent="b587ac7619c52565fc92e30cd342ebb025601d55" guid="357324d994183a2a6373148de37dd52b80eed42d">
 						<parameter name="priority">-10</parameter>
+						<parameter name="delay">1</parameter>
+						<parameter name="speed">0.800000012</parameter>
+						<parameter name="reset_timer_on_stop">0</parameter>
 					</property>
 					<property parent="b6bb611a20f3ccf5ac2fe9ff31f1bc073db9dbbe" guid="0cbf9f5e6890a017d9708719333f3050f50d9dbc"/>
 					<property parent="94706d019d6fa8c71999d7a79a517525855d7821" guid="d2be80ab6c9fc5145e6803cfce6daec31cd60cab">
 						<parameter name="priority">10</parameter>
+						<parameter name="used_in_pipeline">0</parameter>
 					</property>
 				</properties>
 				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>

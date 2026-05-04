@@ -770,6 +770,7 @@
 	<physics>
 		<frozen_linear_velocity>0.0199999996</frozen_linear_velocity>
 		<frozen_angular_velocity>0.0199999996</frozen_angular_velocity>
+		<gravity>0 0 -10</gravity>
 	</physics>
 	<editor>
 		<node type="NodeDummy" id="1442058760" name="side enviroment">
@@ -853,7 +854,7 @@
 				<transform>-0.43301237 0.43559623 -0.78914917 0.0 -0.75000048 -0.6597392 0.047366858 0.0 -0.49999967 0.61237252 0.6123724 0.0 0.0106657477479 1.72244270532 -0.757865759039 1.0</transform>
 			</node>
 			<node type="ObjectWaterGlobal" id="1191127466" name="ObjectWaterGlobal">
-				<animation_old_time>90.0309753</animation_old_time>
+				<animation_old_time>363.596954</animation_old_time>
 				<animation_time>0</animation_time>
 				<wave_layers num="0"/>
 				<distant_waves_texture_path>core/textures/water_global/distant_waves_n.texture</distant_waves_texture_path>
@@ -887,7 +888,7 @@
 				<transform>5 0 0 0.0 0 5 0 0.0 0 0 0.899999976158 0.0 -2107.63756777 2759.65491947 3634.46109266 1.0</transform>
 			</node>
 		</node>
-		<node type="NodeLayer" id="2046438632" name="NodeLayer">
+		<node type="NodeLayer" id="2046438632" name="player">
 			<layer>guid://414010aa6ac6cf193bc290851500f656096989d1</layer>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -42.5617705219 42.3814256995 2.20763228305 1.0</transform>
 		</node>
@@ -2055,7 +2056,7 @@
 				</node>
 			</node>
 		</node>
-		<node type="NodeLayer" id="684386447" name="NodeLayer_1">
+		<node type="NodeLayer" id="684386447" name="propes">
 			<layer>guid://319fb3d24ed45239a120209531c44efbd27d8360</layer>
 			<transform>0.999999880791 0 0 0.0 0 0.999999880791 0 0.0 0 0 0.999999940395 0.0 -34.3392976812 36.4550755116 5.59680583999 1.0</transform>
 		</node>

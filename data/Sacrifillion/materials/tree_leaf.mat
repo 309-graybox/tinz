@@ -4,5 +4,6 @@
 	<parameter name="albedo_color" expression="0">0.78039217 0.78039217 0.78039217 1</parameter>
 	<parameter name="roughness" expression="0">0.0485000014</parameter>
 	<parameter name="specular" expression="0">0</parameter>
+	<parameter name="auxiliary_tint" expression="0">0 0 0 1</parameter>
 	<parameter name="uv_scale_offset" expression="0">0.300000012 0.100000001 1 1</parameter>
 </material>
