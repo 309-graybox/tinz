@@ -3,14 +3,14 @@
 #include "PressurePlate.h"
 #include "AffineModifier.h"
 
-#include "utils/Utils.h";
+#include "utils/Utils.h"
 
 REGISTER_COMPONENT(RiddlePress);
 
 using namespace Unigine;
 using namespace Unigine::Math;
 
-void RiddlePress::init() 
+void RiddlePress::init()
 {
 	_plates.reserve(plates.size());
 	for (int i = 0; i < plates.size(); ++i)
@@ -19,10 +19,10 @@ void RiddlePress::init()
 
 		auto comp = getComponent<PressurePlate>(plates[i]);
 		FLOGERR(comp, "NOo comp");
-		
+
 		_plates.append(comp);
 
-		comp->getEventPressed().connect(_conn, [this, i](){
+		comp->getEventPressed().connect(_conn, [this, i]() {
 			RiddlePress::pressed(i);
 		});
 	}
