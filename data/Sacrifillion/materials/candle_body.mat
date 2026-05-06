@@ -3,4 +3,5 @@
 	<parameter name="albedo_color" expression="0">1 0.949019611 0.666666687 1</parameter>
 	<parameter name="emission_intensity" expression="0">0.0895199999</parameter>
 	<parameter name="emission_color" expression="0">1 0.996078432 0.90196079 1</parameter>
+	<parameter name="auxiliary_tint" expression="0">0 0 0 1</parameter>
 </material>
