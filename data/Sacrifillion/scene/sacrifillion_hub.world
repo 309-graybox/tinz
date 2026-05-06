@@ -854,7 +854,7 @@
 				<transform>-0.43301237 0.43559623 -0.78914917 0.0 -0.75000048 -0.6597392 0.047366858 0.0 -0.49999967 0.61237252 0.6123724 0.0 0.0106657477479 1.72244270532 -0.757865759039 1.0</transform>
 			</node>
 			<node type="ObjectWaterGlobal" id="1191127466" name="ObjectWaterGlobal">
-				<animation_old_time>158.359543</animation_old_time>
+				<animation_old_time>1993.04297</animation_old_time>
 				<animation_time>0</animation_time>
 				<wave_layers num="0"/>
 				<distant_waves_texture_path>core/textures/water_global/distant_waves_n.texture</distant_waves_texture_path>
@@ -1177,9 +1177,297 @@
 					<render_order>19</render_order>
 				</detail_mask_19>
 				<surface name="terrain_surface" intersection="1" collision="1" material="b7a7d6c1ee36a12c7679ec76af1c65b0ebc9e4b9"/>
-				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+				<transform>0.999999940395 0 0 0.0 0 0.999999940395 0 0.0 0 0 0.999999940395 0.0 0 0 0 1.0</transform>
+				<node type="ObjectMeshClutter" id="883624710" clutter_interaction_enabled="1" name="SculltsCluster_1">
+					<mesh_name>guid://c643b119bd73915bd5957e5257700d08d0910a20</mesh_name>
+					<intersection>1</intersection>
+					<intersection_mask>-1</intersection_mask>
+					<visible_distance>80</visible_distance>
+					<fade_distance>80</fade_distance>
+					<seed>482055340</seed>
+					<size_x>24.8004646</size_x>
+					<size_y>24.5732307</size_y>
+					<step>50</step>
+					<density>0.200000003</density>
+					<threshold>0</threshold>
+					<angle>0</angle>
+					<min_scale_mean>0.5</min_scale_mean>
+					<min_scale_spread>0</min_scale_spread>
+					<max_scale_mean>0.600000024</max_scale_mean>
+					<max_scale_spread>0.5</max_scale_spread>
+					<offset_mean>0</offset_mean>
+					<offset_spread>0</offset_spread>
+					<rotation_mean>10 0 0</rotation_mean>
+					<rotation_spread>0 0 180</rotation_spread>
+					<terrain_mask>-1</terrain_mask>
+					<surface name="Bone" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+					<transform>0.755167320063 0.655531784562 0 0.0 -0.655531784562 0.755167320063 0 0.0 0 0 1 0.0 -49.3434415888 -65.6547612711 0.685929326524 1.0</transform>
+				</node>
+				<node type="ObjectMeshClutter" id="1277019060" clutter_interaction_enabled="1" name="BonesCluster_1">
+					<mesh_name>guid://5bde827d9da666bd5aab04285fa340302cf7da23</mesh_name>
+					<intersection>1</intersection>
+					<intersection_mask>-1</intersection_mask>
+					<visible_distance>80</visible_distance>
+					<fade_distance>80</fade_distance>
+					<seed>2076874817</seed>
+					<size_x>24.8004646</size_x>
+					<size_y>24.5732307</size_y>
+					<step>50</step>
+					<density>0.200000003</density>
+					<threshold>0</threshold>
+					<angle>0</angle>
+					<min_scale_mean>0.5</min_scale_mean>
+					<min_scale_spread>0</min_scale_spread>
+					<max_scale_mean>0.600000024</max_scale_mean>
+					<max_scale_spread>0.5</max_scale_spread>
+					<offset_mean>0</offset_mean>
+					<offset_spread>0</offset_spread>
+					<rotation_mean>10 0 0</rotation_mean>
+					<rotation_spread>0 0 180</rotation_spread>
+					<terrain_mask>-1</terrain_mask>
+					<surface name="Bone" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+					<transform>0.755167410086 0.655531862708 0 0.0 -0.655531862708 0.755167410086 0 0.0 0 0 1 0.0 -49.3434415888 -65.6547612711 0.685929326524 1.0</transform>
+				</node>
 				<node type="NodeDummy" id="107777622" name="Props">
 					<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -3.97430863742 2.11557993728 7.89423513412 1.0</transform>
+					<node type="NodeDummy" id="1504573213" name="Tombs">
+						<transform>0.999999880791 0 0 0.0 0 1 0 0.0 0 0 0.999999821186 0.0 0 0 0 1.0</transform>
+						<node type="ObjectMeshCluster" id="227457860" name="TombCluster_duo_2">
+							<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
+							<visible_distance>80</visible_distance>
+							<fade_distance>80</fade_distance>
+							<cluster_file_id>227457860</cluster_file_id>
+							<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+							<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+							<transform>-0.223860618336 0.974476993084 -0.016877494045 0.0 -0.973959860082 -0.223035663366 0.0407658478497 0.0 0.0359609691454 0.0255637746304 0.999027073209 0.0 56.0846524236 4.82592545993 -5.96046191781 1.0</transform>
+						</node>
+						<node type="ObjectMeshCluster" id="351243731" name="TombCluster_duo_1">
+							<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
+							<visible_distance>80</visible_distance>
+							<fade_distance>80</fade_distance>
+							<cluster_file_id>351243731</cluster_file_id>
+							<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+							<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+							<transform>0.143319638767 0.987942874432 -0.0585915998086 0.0 -0.983567474313 0.148753926158 0.102333616138 0.0 0.109815044381 0.0429621711373 0.993023811523 0.0 53.2417461916 -18.1493100868 -6.39349259457 1.0</transform>
+						</node>
+						<node type="ObjectMeshCluster" id="414595350" name="TombCluster_1">
+							<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
+							<visible_distance>80</visible_distance>
+							<fade_distance>80</fade_distance>
+							<cluster_file_id>414595350</cluster_file_id>
+							<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+							<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+							<transform>0.893432127646 0.445364207029 -0.0585914284453 0.0 -0.4384052382 0.892934501171 0.102333541632 0.0 0.0978937265746 -0.0657410696149 0.993023632709 0.0 -8.41807136741 -60.8825472498 -6.39349259457 1.0</transform>
+						</node>
+						<node type="ObjectMeshCluster" id="731159933" name="TombCluster_4">
+							<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
+							<visible_distance>80</visible_distance>
+							<fade_distance>80</fade_distance>
+							<cluster_file_id>731159933</cluster_file_id>
+							<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+							<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+							<transform>0.893432187251 0.445364445448 -0.0585914470717 0.0 -0.438405417014 0.892934441566 0.102333556533 0.0 0.0978937712781 -0.0657410770655 0.993023751918 0.0 14.5115960001 -39.3918794611 -6.39349259457 1.0</transform>
+						</node>
+						<node type="ObjectMeshCluster" id="593300663" name="TombCluster_3">
+							<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
+							<visible_distance>80</visible_distance>
+							<fade_distance>80</fade_distance>
+							<cluster_file_id>593300663</cluster_file_id>
+							<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+							<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+							<transform>0.964817758181 -0.256315261126 -0.0585914805993 0.0 0.261208654786 0.959844410419 0.102333578885 0.0 0.0300089529167 -0.114037483931 0.993023751918 0.0 -9.22129481021 52.7999152614 -7.14183512712 1.0</transform>
+						</node>
+						<node type="ObjectMeshCluster" id="1230459393" name="TombCluster_2">
+							<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
+							<visible_distance>80</visible_distance>
+							<fade_distance>80</fade_distance>
+							<cluster_file_id>1230459393</cluster_file_id>
+							<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+							<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+							<transform>-0.442358278317 0.896796762943 0.00885789068482 0.0 -0.896711575593 -0.442105710506 -0.0212972910042 0.0 -0.0151831851746 -0.0173639636487 0.999735116912 0.0 -36.0642724929 -32.5204064724 -5.91981887273 1.0</transform>
+						</node>
+						<node type="ObjectMeshCluster" id="1118012268" name="TombCluster_egg_right">
+							<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
+							<visible_distance>80</visible_distance>
+							<fade_distance>80</fade_distance>
+							<cluster_file_id>1118012268</cluster_file_id>
+							<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+							<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+							<transform>0.782582899794 -0.619785822617 -0.0585914766411 0.0 0.622290126495 0.77607070065 0.102333547731 0.0 -0.0179536914892 -0.116545035931 0.993023632294 0.0 -38.7505032658 50.8348179553 -7.14183512712 1.0</transform>
+						</node>
+						<node type="ObjectMeshCluster" id="447064027" name="TombCluster_egg_left">
+							<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
+							<visible_distance>80</visible_distance>
+							<fade_distance>80</fade_distance>
+							<cluster_file_id>447064027</cluster_file_id>
+							<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+							<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+							<transform>-0.442729615298 0.896078526974 -0.0322094729023 0.0 -0.89604078484 -0.440808296204 0.0529304055149 0.0 0.0332315268494 0.0522947348654 0.998079776421 0.0 -37.5690954598 27.151596132 -7.14183512712 1.0</transform>
+						</node>
+						<node type="ObjectMeshClutter" id="1324460027" name="TombClutter_1">
+							<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
+							<intersection>1</intersection>
+							<intersection_mask>-1</intersection_mask>
+							<visible_distance>80</visible_distance>
+							<fade_distance>80</fade_distance>
+							<size_x>10</size_x>
+							<size_y>10</size_y>
+							<step>5</step>
+							<density>0.100000001</density>
+							<threshold>0</threshold>
+							<angle>0</angle>
+							<min_scale_mean>9.99999997e-07</min_scale_mean>
+							<min_scale_spread>0</min_scale_spread>
+							<max_scale_mean>1.39999998</max_scale_mean>
+							<max_scale_spread>0.5</max_scale_spread>
+							<offset_mean>0</offset_mean>
+							<offset_spread>0</offset_spread>
+							<rotation_mean>0 0 0</rotation_mean>
+							<rotation_spread>0 0 30</rotation_spread>
+							<terrain_mask>-1</terrain_mask>
+							<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+							<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+							<transform>-0.388604448867 -0.921404719353 0.00146652458383 0.0 0.921339383285 -0.388556748629 0.0126351494583 0.0 -0.0110722374332 0.00626122672111 0.999919235691 0.0 -52.6181679853 52.7149668744 -6.88244567649 1.0</transform>
+						</node>
+						<node type="ObjectMeshClutter" id="1094789544" name="TombClutter_2">
+							<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
+							<intersection>1</intersection>
+							<intersection_mask>-1</intersection_mask>
+							<visible_distance>80</visible_distance>
+							<fade_distance>80</fade_distance>
+							<seed>1196435762</seed>
+							<size_x>10</size_x>
+							<size_y>10</size_y>
+							<step>5</step>
+							<density>0.115939997</density>
+							<threshold>0</threshold>
+							<angle>0</angle>
+							<min_scale_mean>9.99999997e-07</min_scale_mean>
+							<min_scale_spread>0</min_scale_spread>
+							<max_scale_mean>1.39999998</max_scale_mean>
+							<max_scale_spread>0.5</max_scale_spread>
+							<offset_mean>0</offset_mean>
+							<offset_spread>0</offset_spread>
+							<rotation_mean>0 0 0</rotation_mean>
+							<rotation_spread>0 0 40</rotation_spread>
+							<terrain_mask>-1</terrain_mask>
+							<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+							<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+							<transform>0.99906259764 -0.0289747565985 -0.0322099050361 0.0 0.0306541769987 0.998128533363 0.0529309941109 0.0 0.030615895911 -0.0538686066866 0.99807900156 0.0 -41.9416386616 54.7186252319 -7.38796921674 1.0</transform>
+						</node>
+					</node>
+					<node type="NodeDummy" id="1016008152" name="Trees">
+						<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+						<node type="ObjectMeshClutter" id="1689164414" enabled="0" name="tree_0">
+							<mesh_name>guid://1700855923fdfd2c9f10e25f966a0c8d1364d4b9</mesh_name>
+							<intersection>1</intersection>
+							<intersection_mask>-1</intersection_mask>
+							<visible_distance>150</visible_distance>
+							<fade_distance>80</fade_distance>
+							<seed>892205935</seed>
+							<size_x>150</size_x>
+							<size_y>150</size_y>
+							<step>20</step>
+							<density>0.00600000005</density>
+							<threshold>0</threshold>
+							<angle>0</angle>
+							<min_scale_mean>0.100000001</min_scale_mean>
+							<min_scale_spread>0</min_scale_spread>
+							<max_scale_mean>0.5</max_scale_mean>
+							<max_scale_spread>0.100000001</max_scale_spread>
+							<offset_mean>-1</offset_mean>
+							<offset_spread>0</offset_spread>
+							<rotation_mean>0 0 0</rotation_mean>
+							<rotation_spread>0 0 180</rotation_spread>
+							<terrain_mask>5</terrain_mask>
+							<mask_min_value>200</mask_min_value>
+							<surface name="Wood" intersection="1" collision="1" material="43be8119b2de685628e674dbf48ed7bf05309569"/>
+							<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -71.0256913626 -77.1155799373 -7.89423513412 1.0</transform>
+						</node>
+						<node type="ObjectMeshClutter" id="862844359" enabled="0" name="tree_1">
+							<mesh_name>guid://8f360f50f1a67793c7280272eddb77106b6d5a42</mesh_name>
+							<intersection>1</intersection>
+							<intersection_mask>-1</intersection_mask>
+							<visible_distance>150</visible_distance>
+							<fade_distance>80</fade_distance>
+							<seed>1649346937</seed>
+							<size_x>150</size_x>
+							<size_y>150</size_y>
+							<step>20</step>
+							<density>0.0119000003</density>
+							<threshold>0</threshold>
+							<angle>0</angle>
+							<min_scale_mean>0.100000001</min_scale_mean>
+							<min_scale_spread>0</min_scale_spread>
+							<max_scale_mean>0.300000012</max_scale_mean>
+							<max_scale_spread>0.100000001</max_scale_spread>
+							<offset_mean>0</offset_mean>
+							<offset_spread>0</offset_spread>
+							<rotation_mean>0 0 0</rotation_mean>
+							<rotation_spread>0 0 180</rotation_spread>
+							<terrain_mask>5</terrain_mask>
+							<mask_min_value>200</mask_min_value>
+							<surface name="Wood" intersection="1" collision="1" material="43be8119b2de685628e674dbf48ed7bf05309569"/>
+							<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -71.0256913626 -77.1155799373 -7.89423513412 1.0</transform>
+						</node>
+						<node type="ObjectMeshClutter" id="694204538" enabled="0" name="tree_2">
+							<mesh_name>guid://93958b8fd68f80f9f4efaea501988bbcddc334af</mesh_name>
+							<intersection>1</intersection>
+							<intersection_mask>-1</intersection_mask>
+							<visible_distance>150</visible_distance>
+							<fade_distance>80</fade_distance>
+							<seed>1013904223</seed>
+							<size_x>150</size_x>
+							<size_y>150</size_y>
+							<step>20</step>
+							<density>0.0119000003</density>
+							<threshold>0</threshold>
+							<angle>0</angle>
+							<min_scale_mean>0.100000001</min_scale_mean>
+							<min_scale_spread>0</min_scale_spread>
+							<max_scale_mean>0.5</max_scale_mean>
+							<max_scale_spread>0.100000001</max_scale_spread>
+							<offset_mean>0</offset_mean>
+							<offset_spread>0</offset_spread>
+							<rotation_mean>0 0 0</rotation_mean>
+							<rotation_spread>20 2.20000005 180</rotation_spread>
+							<terrain_mask>5</terrain_mask>
+							<mask_min_value>200</mask_min_value>
+							<surface name="Wood" intersection="1" collision="1" material="43be8119b2de685628e674dbf48ed7bf05309569"/>
+							<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -71.0256913626 -77.1155799373 -7.89423513412 1.0</transform>
+						</node>
+						<node type="ObjectMeshCluster" id="1285128968" name="TreeCluster_1">
+							<mesh_name>guid://93958b8fd68f80f9f4efaea501988bbcddc334af</mesh_name>
+							<visible_distance>150</visible_distance>
+							<fade_distance>80</fade_distance>
+							<cluster_file_id>1285128968</cluster_file_id>
+							<surface name="Wood" intersection="1" collision="1" material="43be8119b2de685628e674dbf48ed7bf05309569"/>
+							<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -71.0256913626 -77.1155799373 -7.89423513412 1.0</transform>
+						</node>
+						<node type="ObjectMeshCluster" id="372755143" name="TreeCluster_2">
+							<mesh_name>guid://8f360f50f1a67793c7280272eddb77106b6d5a42</mesh_name>
+							<visible_distance>150</visible_distance>
+							<fade_distance>80</fade_distance>
+							<cluster_file_id>372755143</cluster_file_id>
+							<surface name="Wood" intersection="1" collision="1" material="43be8119b2de685628e674dbf48ed7bf05309569"/>
+							<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -71.0256913626 -77.1155799373 -7.89423513412 1.0</transform>
+						</node>
+						<node type="ObjectMeshCluster" id="1702791546" name="TreeCluster_3">
+							<mesh_name>guid://1700855923fdfd2c9f10e25f966a0c8d1364d4b9</mesh_name>
+							<visible_distance>150</visible_distance>
+							<fade_distance>80</fade_distance>
+							<cluster_file_id>1702791546</cluster_file_id>
+							<surface name="Wood" intersection="1" collision="1" material="43be8119b2de685628e674dbf48ed7bf05309569"/>
+							<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -71.0256913626 -77.1155799373 -7.89423513412 1.0</transform>
+						</node>
+						<node type="NodeReference" id="1081509418" name="GrandEvilTree">
+							<reference>guid://1c22e92136390e7560dc373b9d6101c41eac17e3</reference>
+							<transform>0.999999940395 0 0 0.0 0 0.999999940395 0 0.0 0 0 1 0.0 3.14630613355 6.36580938693 -4.46372597202 1.0</transform>
+						</node>
+					</node>
+					<node type="NodeDummy" id="1233357161" name="Bones">
+						<transform>0.999999940395 0 0 0.0 0 0.999999940395 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+					</node>
 					<node type="ObjectGrass" id="858659359" name="ObjectGrass">
 						<thinning>1</thinning>
 						<variation>1</variation>
@@ -1214,259 +1502,6 @@
 						<mask_min_value>200</mask_min_value>
 						<surface name="grass" max_visible_distance="100" max_fade_distance="100" physics_friction="1" physics_restitution="1" material="37aaabd345d089d2c56f1065c71dfdb8e2f4d163"/>
 						<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -71.0256913626 -77.1155799373 -7.89423513412 1.0</transform>
-					</node>
-					<node type="ObjectMeshClutter" id="1689164414" enabled="0" name="tree_0">
-						<mesh_name>guid://1700855923fdfd2c9f10e25f966a0c8d1364d4b9</mesh_name>
-						<intersection>1</intersection>
-						<intersection_mask>-1</intersection_mask>
-						<visible_distance>150</visible_distance>
-						<fade_distance>80</fade_distance>
-						<seed>892205935</seed>
-						<size_x>150</size_x>
-						<size_y>150</size_y>
-						<step>20</step>
-						<density>0.00600000005</density>
-						<threshold>0</threshold>
-						<angle>0</angle>
-						<min_scale_mean>0.100000001</min_scale_mean>
-						<min_scale_spread>0</min_scale_spread>
-						<max_scale_mean>0.5</max_scale_mean>
-						<max_scale_spread>0.100000001</max_scale_spread>
-						<offset_mean>-1</offset_mean>
-						<offset_spread>0</offset_spread>
-						<rotation_mean>0 0 0</rotation_mean>
-						<rotation_spread>0 0 180</rotation_spread>
-						<terrain_mask>5</terrain_mask>
-						<mask_min_value>200</mask_min_value>
-						<surface name="Wood" intersection="1" collision="1" material="43be8119b2de685628e674dbf48ed7bf05309569"/>
-						<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -71.0256913626 -77.1155799373 -7.89423513412 1.0</transform>
-					</node>
-					<node type="ObjectMeshClutter" id="862844359" enabled="0" name="tree_1">
-						<mesh_name>guid://8f360f50f1a67793c7280272eddb77106b6d5a42</mesh_name>
-						<intersection>1</intersection>
-						<intersection_mask>-1</intersection_mask>
-						<visible_distance>150</visible_distance>
-						<fade_distance>80</fade_distance>
-						<seed>1649346937</seed>
-						<size_x>150</size_x>
-						<size_y>150</size_y>
-						<step>20</step>
-						<density>0.0119000003</density>
-						<threshold>0</threshold>
-						<angle>0</angle>
-						<min_scale_mean>0.100000001</min_scale_mean>
-						<min_scale_spread>0</min_scale_spread>
-						<max_scale_mean>0.300000012</max_scale_mean>
-						<max_scale_spread>0.100000001</max_scale_spread>
-						<offset_mean>0</offset_mean>
-						<offset_spread>0</offset_spread>
-						<rotation_mean>0 0 0</rotation_mean>
-						<rotation_spread>0 0 180</rotation_spread>
-						<terrain_mask>5</terrain_mask>
-						<mask_min_value>200</mask_min_value>
-						<surface name="Wood" intersection="1" collision="1" material="43be8119b2de685628e674dbf48ed7bf05309569"/>
-						<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -71.0256913626 -77.1155799373 -7.89423513412 1.0</transform>
-					</node>
-					<node type="ObjectMeshClutter" id="694204538" enabled="0" name="tree_2">
-						<mesh_name>guid://93958b8fd68f80f9f4efaea501988bbcddc334af</mesh_name>
-						<intersection>1</intersection>
-						<intersection_mask>-1</intersection_mask>
-						<visible_distance>150</visible_distance>
-						<fade_distance>80</fade_distance>
-						<seed>1013904223</seed>
-						<size_x>150</size_x>
-						<size_y>150</size_y>
-						<step>20</step>
-						<density>0.0119000003</density>
-						<threshold>0</threshold>
-						<angle>0</angle>
-						<min_scale_mean>0.100000001</min_scale_mean>
-						<min_scale_spread>0</min_scale_spread>
-						<max_scale_mean>0.5</max_scale_mean>
-						<max_scale_spread>0.100000001</max_scale_spread>
-						<offset_mean>0</offset_mean>
-						<offset_spread>0</offset_spread>
-						<rotation_mean>0 0 0</rotation_mean>
-						<rotation_spread>20 2.20000005 180</rotation_spread>
-						<terrain_mask>5</terrain_mask>
-						<mask_min_value>200</mask_min_value>
-						<surface name="Wood" intersection="1" collision="1" material="43be8119b2de685628e674dbf48ed7bf05309569"/>
-						<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -71.0256913626 -77.1155799373 -7.89423513412 1.0</transform>
-					</node>
-					<node type="ObjectMeshCluster" id="227457860" name="ObjectMeshClutter_9_Cluster">
-						<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
-						<visible_distance>80</visible_distance>
-						<fade_distance>80</fade_distance>
-						<cluster_file_id>227457860</cluster_file_id>
-						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<transform>-0.22386059165 0.974476993084 -0.0168774910271 0.0 -0.973959743977 -0.223035663366 0.0407658405602 0.0 0.0359609648585 0.0255637746304 0.999026894569 0.0 56.0846457378 4.82592545993 -5.960460852 1.0</transform>
-					</node>
-					<node type="ObjectMeshCluster" id="351243731" name="ObjectMeshClutter_9_Cluster_1">
-						<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
-						<visible_distance>80</visible_distance>
-						<fade_distance>80</fade_distance>
-						<cluster_file_id>351243731</cluster_file_id>
-						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<transform>0.143319621682 0.987942874432 -0.0585915893316 0.0 -0.983567357063 0.148753926158 0.102333597839 0.0 0.10981503129 0.0429621711373 0.993023633957 0.0 53.2417398447 -18.1493100868 -6.39349145132 1.0</transform>
-					</node>
-					<node type="ObjectMeshCluster" id="414595350" name="ObjectMeshClutter_8_Cluster">
-						<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
-						<visible_distance>80</visible_distance>
-						<fade_distance>80</fade_distance>
-						<cluster_file_id>414595350</cluster_file_id>
-						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<transform>0.893432021141 0.445364207029 -0.0585914179683 0.0 -0.438405185938 0.892934501171 0.102333523333 0.0 0.0978937149048 -0.0657410696149 0.993023455143 0.0 -8.4180703639 -60.8825472498 -6.39349145132 1.0</transform>
-					</node>
-					<node type="ObjectMeshCluster" id="731159933" name="ObjectMeshClutter_7_Cluster">
-						<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
-						<visible_distance>80</visible_distance>
-						<fade_distance>80</fade_distance>
-						<cluster_file_id>731159933</cluster_file_id>
-						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<transform>0.893432080746 0.445364445448 -0.0585914365947 0.0 -0.438405364752 0.892934441566 0.102333538234 0.0 0.0978937596083 -0.0657410770655 0.993023574352 0.0 14.5115942702 -39.3918794611 -6.39349145132 1.0</transform>
-					</node>
-					<node type="ObjectMeshCluster" id="183484600" name="ObjectMeshClutter_6_Cluster">
-						<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
-						<visible_distance>80</visible_distance>
-						<fade_distance>80</fade_distance>
-						<cluster_file_id>183484600</cluster_file_id>
-						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<transform>0.903650283813 -0.424248486757 -0.05859144032 0.0 0.42817658186 0.897884190083 0.102333560586 0.0 0.00919344183058 -0.117560885847 0.993023574352 0.0 9.14320637067 46.9432117438 -7.14183385006 1.0</transform>
-					</node>
-					<node type="ObjectMeshCluster" id="593300663" name="ObjectMeshClutter_5_Cluster">
-						<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
-						<visible_distance>80</visible_distance>
-						<fade_distance>80</fade_distance>
-						<cluster_file_id>593300663</cluster_file_id>
-						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<transform>0.964817643166 -0.256315261126 -0.0585914701223 0.0 0.261208623648 0.959844410419 0.102333560586 0.0 0.0300089493394 -0.114037483931 0.993023574352 0.0 -9.22129371095 52.7999152614 -7.14183385006 1.0</transform>
-					</node>
-					<node type="ObjectMeshCluster" id="1494778538" name="ObjectMeshClutter_4_Cluster">
-						<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
-						<visible_distance>80</visible_distance>
-						<fade_distance>80</fade_distance>
-						<cluster_file_id>1494778538</cluster_file_id>
-						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<transform>-0.00468254927546 0.999951660633 0.0088579012081 0.0 -0.999764502048 -0.00449300417677 -0.0212969984859 0.0 -0.0212561227381 -0.00895551592112 0.999734759331 0.0 -43.8114990328 -12.0870021851 -5.91981781418 1.0</transform>
-					</node>
-					<node type="ObjectMeshCluster" id="1230459393" name="ObjectMeshClutter_2_Cluster">
-						<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
-						<visible_distance>80</visible_distance>
-						<fade_distance>80</fade_distance>
-						<cluster_file_id>1230459393</cluster_file_id>
-						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<transform>-0.442358225584 0.896796762943 0.00885788910091 0.0 -0.896711468697 -0.442105710506 -0.0212972871959 0.0 -0.0151831833646 -0.0173639636487 0.999734938145 0.0 -36.0642681937 -32.5204064724 -5.91981781418 1.0</transform>
-					</node>
-					<node type="ObjectMeshCluster" id="1118012268" name="ObjectMeshClutter_3_Cluster">
-						<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
-						<visible_distance>80</visible_distance>
-						<fade_distance>80</fade_distance>
-						<cluster_file_id>1118012268</cluster_file_id>
-						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<transform>0.782582879066 -0.61978584528 -0.0585914626718 0.0 0.622290074825 0.776070773602 0.102333530784 0.0 -0.0179536901414 -0.116545036435 0.993023514748 0.0 -38.7504986464 50.8348179553 -7.14183385006 1.0</transform>
-					</node>
-					<node type="ObjectMeshCluster" id="447064027" name="ObjectMeshClutter_2_Cluster_1">
-						<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
-						<visible_distance>80</visible_distance>
-						<fade_distance>80</fade_distance>
-						<cluster_file_id>447064027</cluster_file_id>
-						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<transform>-0.442729562521 0.896078526974 -0.0322094671428 0.0 -0.896040678024 -0.440808296204 0.0529303960502 0.0 0.0332315228879 0.0522947348654 0.99807959795 0.0 -37.5690909812 27.151596132 -7.14183385006 1.0</transform>
-					</node>
-					<node type="ObjectMeshCluster" id="1285128968" name="tree_2_Cluster">
-						<mesh_name>guid://93958b8fd68f80f9f4efaea501988bbcddc334af</mesh_name>
-						<visible_distance>150</visible_distance>
-						<fade_distance>80</fade_distance>
-						<cluster_file_id>1285128968</cluster_file_id>
-						<surface name="Wood" intersection="1" collision="1" material="43be8119b2de685628e674dbf48ed7bf05309569"/>
-						<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -71.0256913626 -77.1155799373 -7.89423513412 1.0</transform>
-					</node>
-					<node type="ObjectMeshCluster" id="372755143" name="tree_1_Cluster">
-						<mesh_name>guid://8f360f50f1a67793c7280272eddb77106b6d5a42</mesh_name>
-						<visible_distance>150</visible_distance>
-						<fade_distance>80</fade_distance>
-						<cluster_file_id>372755143</cluster_file_id>
-						<surface name="Wood" intersection="1" collision="1" material="43be8119b2de685628e674dbf48ed7bf05309569"/>
-						<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -71.0256913626 -77.1155799373 -7.89423513412 1.0</transform>
-					</node>
-					<node type="ObjectMeshCluster" id="1702791546" name="tree_0_Cluster">
-						<mesh_name>guid://1700855923fdfd2c9f10e25f966a0c8d1364d4b9</mesh_name>
-						<visible_distance>150</visible_distance>
-						<fade_distance>80</fade_distance>
-						<cluster_file_id>1702791546</cluster_file_id>
-						<surface name="Wood" intersection="1" collision="1" material="43be8119b2de685628e674dbf48ed7bf05309569"/>
-						<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -71.0256913626 -77.1155799373 -7.89423513412 1.0</transform>
-					</node>
-					<node type="ObjectMeshStatic" id="264520993" immovable="1" name="cube.024">
-						<mesh_name>guid://161126eee5b0214b1d5bf5c0fa2eff58183bb510</mesh_name>
-						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<transform>0.715800225735 0.69119232893 -0.0994148850441 0.0 -0.698176622391 0.705649137497 -0.120865099132 0.0 -0.013389011845 0.155924409628 0.9876781106 0.0 -50.7339285156 50.4098823627 -6.42167061166 1.0</transform>
-					</node>
-					<node type="ObjectMeshClutter" id="1324460027" name="ObjectMeshClutter">
-						<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
-						<intersection>1</intersection>
-						<intersection_mask>-1</intersection_mask>
-						<visible_distance>80</visible_distance>
-						<fade_distance>80</fade_distance>
-						<size_x>10</size_x>
-						<size_y>10</size_y>
-						<step>5</step>
-						<density>0.100000001</density>
-						<threshold>0</threshold>
-						<angle>0</angle>
-						<min_scale_mean>9.99999997e-07</min_scale_mean>
-						<min_scale_spread>0</min_scale_spread>
-						<max_scale_mean>1.39999998</max_scale_mean>
-						<max_scale_spread>0.5</max_scale_spread>
-						<offset_mean>0</offset_mean>
-						<offset_spread>0</offset_spread>
-						<rotation_mean>0 0 0</rotation_mean>
-						<rotation_spread>0 0 30</rotation_spread>
-						<terrain_mask>-1</terrain_mask>
-						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<transform>-0.388604402542 -0.921404719353 0.00146652432159 0.0 0.921339273453 -0.388556748629 0.012635147199 0.0 -0.0110722361133 0.00626122672111 0.999919056892 0.0 -52.6181617127 52.7149668744 -6.88244444581 1.0</transform>
-					</node>
-					<node type="ObjectMeshClutter" id="1094789544" name="ObjectMeshClutter_1">
-						<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
-						<intersection>1</intersection>
-						<intersection_mask>-1</intersection_mask>
-						<visible_distance>80</visible_distance>
-						<fade_distance>80</fade_distance>
-						<seed>1196435762</seed>
-						<size_x>10</size_x>
-						<size_y>10</size_y>
-						<step>5</step>
-						<density>0.115939997</density>
-						<threshold>0</threshold>
-						<angle>0</angle>
-						<min_scale_mean>9.99999997e-07</min_scale_mean>
-						<min_scale_spread>0</min_scale_spread>
-						<max_scale_mean>1.39999998</max_scale_mean>
-						<max_scale_spread>0.5</max_scale_spread>
-						<offset_mean>0</offset_mean>
-						<offset_spread>0</offset_spread>
-						<rotation_mean>0 0 0</rotation_mean>
-						<rotation_spread>0 0 40</rotation_spread>
-						<terrain_mask>-1</terrain_mask>
-						<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
-						<transform>0.999062478542 -0.0289747565985 -0.0322098992765 0.0 0.0306541733444 0.998128533363 0.0529309846461 0.0 0.0306158922613 -0.0538686066866 0.99807882309 0.0 -41.9416336618 54.7186252319 -7.38796789567 1.0</transform>
-					</node>
-					<node type="NodeReference" id="1081509418" name="big_tree">
-						<reference>guid://1c22e92136390e7560dc373b9d6101c41eac17e3</reference>
-						<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 3.14630613355 6.36580938693 -4.46372597202 1.0</transform>
 					</node>
 				</node>
 			</node>
