@@ -532,8 +532,8 @@
 		"SampleTexture": {
 			"label": "SampleTexture: Default",
 			"guid": "3aab4dfba39d94bd4e05e13bbf867b77784ab238",
-			"x": 676,
-			"y": -1411,
+			"x": 1157,
+			"y": -1235,
 			"collapsed": false,
 			"props": {
 				"prop": {
@@ -578,31 +578,21 @@
 			"texture_data": "Color",
 			"normal_space": "Tangent Space for UV0"
 		},
-		"_multiply": {
-			"label": "Multiply",
-			"guid": "348365ae98e3bab52a4abb6e4deb72d782b45037",
-			"x": 938,
-			"y": -1066,
-			"collapsed": false,
+		"Depth Opacity": {
+			"label": "Texture Buffer Depth Opacity",
+			"guid": "84d90475640f5eccf1c97c7dea9d1d34f80219c1",
+			"x": -2176,
+			"y": 3522,
+			"collapsed": true,
 			"props": {
 			},
 			"inputs": {
-				"input": {
-					"label": "A",
-					"type": "float4",
-					"id": -1822151033
-				},
-				"input": {
-					"label": "B",
-					"type": "float4",
-					"id": 291415938
-				}
 			},
 			"outputs": {
 				"output": {
 					"label": "",
-					"type": "float4",
-					"id": 1723312480
+					"type": "Texture2D",
+					"id": 0
 				}
 			}
 		},
@@ -670,8 +660,8 @@
 		"Screen Color": {
 			"label": "Texture Buffer Screen Color",
 			"guid": "6827115fc35b43584fa4b89f7e8ff8a36890ccec",
-			"x": 430,
-			"y": -1172,
+			"x": 911,
+			"y": -996,
 			"collapsed": true,
 			"props": {
 			},
@@ -1263,14 +1253,14 @@
 			},
 			"texture_type": "Texture2D",
 			"sampler_type": "Fetch",
-			"texture_data": "Linear Depth",
+			"texture_data": "Native Depth",
 			"normal_space": "Tangent Space for UV0"
 		},
-		"Depth Opacity Fast": {
-			"label": "Texture Buffer Depth Opacity Fast",
-			"guid": "cd57fb581643a87bf8668a07e0474cc4007ca156",
-			"x": -2224,
-			"y": 1904,
+		"Depth Opacity": {
+			"label": "Texture Buffer Depth Opacity",
+			"guid": "334fa35340ced37e9dc35f1b3cce33707502dcff",
+			"x": -2183,
+			"y": 2994,
 			"collapsed": true,
 			"props": {
 			},
@@ -1434,13 +1424,13 @@
 			},
 			"texture_type": "Texture2D",
 			"sampler_type": "Fetch",
-			"texture_data": "Linear Depth",
+			"texture_data": "Native Depth",
 			"normal_space": "Tangent Space for UV0"
 		},
-		"Depth Opacity Fast": {
-			"label": "Texture Buffer Depth Opacity Fast",
-			"guid": "89640f74dd86ef87ae17c99979a9096b64f86bff",
-			"x": -2221,
+		"Depth Opacity": {
+			"label": "Texture Buffer Depth Opacity",
+			"guid": "e37886416e803bcf9380c7c9d1c19801dfa880cd",
+			"x": -2186,
 			"y": 2479,
 			"collapsed": true,
 			"props": {
@@ -1630,14 +1620,14 @@
 			},
 			"texture_type": "Texture2D",
 			"sampler_type": "Fetch",
-			"texture_data": "Linear Depth",
+			"texture_data": "Native Depth",
 			"normal_space": "Tangent Space for UV0"
 		},
-		"Depth Opacity Fast": {
-			"label": "Texture Buffer Depth Opacity Fast",
-			"guid": "beeb308c64df5100a2032611f8ad7189abe6adb7",
-			"x": -2218,
-			"y": 2994,
+		"Depth Opacity": {
+			"label": "Texture Buffer Depth Opacity",
+			"guid": "12e01298fa8b49d85a7eff306aedde2146af977c",
+			"x": -2189,
+			"y": 1904,
 			"collapsed": true,
 			"props": {
 			},
@@ -1925,14 +1915,14 @@
 			},
 			"texture_type": "Texture2D",
 			"sampler_type": "Fetch",
-			"texture_data": "Linear Depth",
+			"texture_data": "Native Depth",
 			"normal_space": "Tangent Space for UV0"
 		},
-		"Depth Opacity Fast": {
-			"label": "Texture Buffer Depth Opacity Fast",
-			"guid": "3ee82ea4b55197733784f38979fe445d37bad06f",
-			"x": -2211,
-			"y": 3522,
+		"Depth Old": {
+			"label": "Texture Buffer Depth Old",
+			"guid": "a1187fcf1e862e3811979b17fca4c2a2ecd9d6bb",
+			"x": -2494,
+			"y": 2226,
 			"collapsed": true,
 			"props": {
 			},
@@ -2917,18 +2907,6 @@
 			"input_type": "float4",
 			"input_label": "A",
 			"input_id": -1822151033,
-			"input_node": "348365ae98e3bab52a4abb6e4deb72d782b45037",
-			"output_index": 0,
-			"output_type": "float4",
-			"output_label": "Color",
-			"output_id": 0,
-			"output_node": "3aab4dfba39d94bd4e05e13bbf867b77784ab238"
-		},
-		"anchor": {
-			"input_index": 0,
-			"input_type": "float4",
-			"input_label": "A",
-			"input_id": -1822151033,
 			"input_node": "4233fe9082a19707a3da5a507fb0b191da34e181",
 			"output_index": 0,
 			"output_type": "float4",
@@ -3162,7 +3140,7 @@
 			"output_type": "Texture2D",
 			"output_label": "",
 			"output_id": 0,
-			"output_node": "cd57fb581643a87bf8668a07e0474cc4007ca156"
+			"output_node": "12e01298fa8b49d85a7eff306aedde2146af977c"
 		},
 		"anchor": {
 			"input_index": 1,
@@ -3222,7 +3200,7 @@
 			"output_type": "Texture2D",
 			"output_label": "",
 			"output_id": 0,
-			"output_node": "89640f74dd86ef87ae17c99979a9096b64f86bff"
+			"output_node": "e37886416e803bcf9380c7c9d1c19801dfa880cd"
 		},
 		"anchor": {
 			"input_index": 1,
@@ -3294,7 +3272,7 @@
 			"output_type": "Texture2D",
 			"output_label": "",
 			"output_id": 0,
-			"output_node": "beeb308c64df5100a2032611f8ad7189abe6adb7"
+			"output_node": "334fa35340ced37e9dc35f1b3cce33707502dcff"
 		},
 		"anchor": {
 			"input_index": 1,
@@ -3402,7 +3380,7 @@
 			"output_type": "Texture2D",
 			"output_label": "",
 			"output_id": 0,
-			"output_node": "3ee82ea4b55197733784f38979fe445d37bad06f"
+			"output_node": "84d90475640f5eccf1c97c7dea9d1d34f80219c1"
 		},
 		"anchor": {
 			"input_index": 1,
