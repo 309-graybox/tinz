@@ -47,21 +47,34 @@ void AffineModifier::update()
 
 		NodePtr target = cfg->target;
 		if (!target)
+		{
+			++finish;
 			continue;
+		}
 
 		const float aim = _open ? 1.0f : 0.0f;
 		const float rate = _open ? (float)cfg->speed : (float)cfg->damping;
 		st.t = lerp(st.t, aim, saturate(rate * dt));
 
-		NodePtr pivot = cfg->pivot ? cfg->pivot.get() : target;
-		const Vec3 pivot_pos = pivot->getWorldPosition();
-		const quat pivot_rot = pivot->getWorldRotation();
+		NodePtr pivot = cfg->pivot ? cfg->pivot : target;
+		Vec3 pivot_pos;
+		quat pivot_rot;
+		if (pivot == target)
+		{
+			pivot_pos = st.rest_pos;
+			pivot_rot = st.rest_rot;
+		}
+		else
+		{
+			pivot_pos = pivot->getWorldPosition();
+			pivot_rot = pivot->getWorldRotation();
+		}
 
 		const float current_angle = st.t * (float)cfg->angle;
-		const Vec3 current_offset = Vec3(cfg->offset.get()) * st.t;
+		const Vec3 current_offset = Vec3(cfg->offset) * st.t;
 
-		quat rot;
-		vec3 axis_local = vec3(cfg->axis.get());
+		quat rot = quat_identity;
+		vec3 axis_local = vec3(cfg->axis);
 		if (length2(axis_local) > 1e-8f)
 		{
 			const vec3 axis_world = pivot_rot * normalize(axis_local);
@@ -74,14 +87,19 @@ void AffineModifier::update()
 
 		auto new_trans = Mat4(new_rot, new_pos);
 
-		if (new_trans == target->getWorldTransform())
+		if (compare(st.t, aim))
+		{
+			++finish;
 			st._need_update = false;
+		}
 
 		target->setWorldTransform(new_trans);
 	}
 
 	if (finish == _anim_states.size())
+	{
 		_need_update = false;
+	}
 }
 
 void AffineModifier::setOpen(bool open)
