@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>f36b780580e131c324de76d4119bdc79d2ac317c</guid>
+	<type>node</type>
+	<hash>cc2811bbb1805af30bba7f0daf6a68dddcca4fdcad60231c94102b55180c2c52</hash>
+	<runtimes>
+		<runtime id="f36b780580e131c324de76d4119bdc79d2ac317c" name="Key.node" link="0" type="3"/>
+	</runtimes>
+</asset>

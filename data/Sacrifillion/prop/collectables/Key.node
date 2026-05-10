@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="NodeDummy" id="1217242378" name="Key">
+		<transform>0.999999880791 1.74845524725e-07 0 0.0 -1.74845524725e-07 0.999999880791 0 0.0 0 0 0.999999940395 0.0 0 0 0 1.0</transform>
+		<node type="ObjectMeshStatic" id="2036093153" immovable="1" name="Key">
+			<mesh_name>guid://7360d2af4f1413ea9da93456dff68708adb7a83e</mesh_name>
+			<surface name="Crystal" intersection="1" material="f9c356edf5525c69e0261b58fff7bbf60c53cd6b"/>
+			<surface name="Wood" intersection="1" material="843bb001dcf3563dcad9c8db4d9aa18ecee7f0fd"/>
+			<surface name="Metal" intersection="1" material="1c6a2ba9bf2f171f1181aa4764cbe88fd9825d57"/>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -1.20916720334e-07 1.05708754258e-14 -6.2088176378e-10 1.0</transform>
+		</node>
+	</node>
+</nodes>
