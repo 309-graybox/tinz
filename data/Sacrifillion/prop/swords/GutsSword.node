@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <nodes version="2.21.0.0">
 	<node type="NodeDummy" id="332622303" name="GutsSword">
-		<transform>0.999999880791 1.74845524725e-07 0 0.0 -1.74845524725e-07 0.999999880791 0 0.0 0 0 0.999999940395 0.0 0 0 0 1.0</transform>
+		<properties>
+			<property parent="ead533685e262eab09b5c9013bee5d4c120fcd26" guid="a1d3d079498e4c6496686f77cb775010f72b0f8f">
+				<parameter name="hitboxes">
+					<value index="0">1444852163</value>
+				</parameter>
+				<parameter name="damage">50</parameter>
+			</property>
+		</properties>
+		<transform>0.999999582767 -6.24500451352e-17 -1.64798730218e-17 0.0 1.38777878078e-17 0.999999642372 1.66533453694e-16 0.0 6.93889390391e-17 7.5460471205e-17 0.999999880791 0.0 5.55111512313e-17 0 2.77555756156e-17 1.0</transform>
 		<node type="ObjectMeshStatic" id="1361128882" immovable="1" name="GutsSword">
 			<mesh_name>guid://3e06f7e98062830ab97473645d24e5dee82dfb88</mesh_name>
 			<surface name="SwordMetal" intersection="1" material="6e3c24ba5f8374fa5b056d9420887134e85d2fa1"/>
 			<surface name="SwordDarkMetal" intersection="1" material="1c6a2ba9bf2f171f1181aa4764cbe88fd9825d57"/>
 			<surface name="SwordHandleHousing" intersection="1" material="211b3ea402522afccf88fe4ec86c53810b25a583"/>
 			<surface name="SwordHandle" intersection="1" material="b710c361d7543c1075ed1b7baacb945168a81423"/>
-			<transform>0.999999940395 1.04216066359e-14 0 0.0 -1.04216066359e-14 0.999999940395 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			<transform>1.00000011921 0 0 0.0 0 0.999999821186 0 0.0 0 0 0.999999642372 0.0 0 0 0 1.0</transform>
+		</node>
+		<node type="NodeDummy" id="1444852163" name="hitbox">
+			<properties>
+				<property parent="b427f552c4caf007404ca7c47e20265e3478f683" guid="439f8aa05bbe2e3e8ecc6571a6bc2b6546f00371">
+					<parameter name="shapeType">1</parameter>
+					<parameter name="radius">0.300000012</parameter>
+					<parameter name="capsuleHeight">2</parameter>
+					<parameter name="capsuleAxis">0</parameter>
+					<parameter name="damage">50</parameter>
+					<parameter name="debugDraw">1</parameter>
+				</property>
+			</properties>
+			<transform>1.00000035763 0 0 0.0 0 1.00000011921 0 0.0 0 0 1.00000095367 0.0 1.4 0 0 1.0</transform>
 		</node>
 	</node>
 </nodes>

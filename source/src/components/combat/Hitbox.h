@@ -57,9 +57,10 @@ public:
 	COMPONENT_UPDATE(update)
 
 	PROP_GROUP("Volume")
-	PROP_PARAM(Switch, shapeType, 0, "Sphere,Capsule,Box", "", "Volume shape. Capsule axis is the node's local Z; Box is OBB oriented by the node transform.")
+	PROP_PARAM(Switch, shapeType, 0, "Sphere,Capsule,Box", "", "Volume shape. Capsule axis defaults to local Z but is configurable per-hitbox; Box is OBB oriented by the node transform.")
 	PROP_PARAM(Float, radius, 0.5f, "", "Sphere/capsule radius in meters. Ignored when shapeType=Box.")
 	PROP_PARAM(Float, capsuleHeight, 1.0f, "", "Length of the capsule's cylindrical mid-section (m). Total capsule length is capsuleHeight + 2*radius.", "", "shapeType=1")
+	PROP_PARAM(Switch, capsuleAxis, 2, "X,Y,Z", "", "Local axis the capsule extends along. Default Z matches UNIGINE's ShapeCapsule convention; set Y if your mesh's blade/length runs along local Y (common for sword/weapon FBX exports).", "", "shapeType=1")
 	PROP_PARAM(Vec3, boxHalfExtents, Unigine::Math::vec3(0.5f, 0.5f, 0.5f), "", "Half-extents (m) along node local X/Y/Z. Box is OBB — orientation follows the node's transform.", "", "shapeType=2")
 
 	PROP_GROUP("Damage")

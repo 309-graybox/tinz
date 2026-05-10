@@ -165,8 +165,14 @@ bool Hitbox::sphereOverlaps(const Vec3 &c, float r) const
 			const float my_r = max(radius.get(), 0.0f);
 			const float h = max(capsuleHeight.get(), 0.0f);
 
-			// Capsule axis = node's local Z direction in world space.
-			Vec3 axis = t.getAxisZ();
+			// Capsule axis = the selected local axis (X/Y/Z) in world space.
+			Vec3 axis;
+			switch ((int)capsuleAxis)
+			{
+				case 0:  axis = t.getAxisX(); break;
+				case 1:  axis = t.getAxisY(); break;
+				default: axis = t.getAxisZ(); break;
+			}
 			const float al = (float)length(axis);
 			if (al < 1e-6f)
 				return false;
@@ -274,8 +280,20 @@ void Hitbox::drawDebug() const
 			break;
 
 		case Shape::Capsule:
-			Visualizer::renderCapsule(max(radius.get(), 0.0f), max(capsuleHeight.get(), 0.0f), t, color);
+		{
+			// Visualizer::renderCapsule draws along the transform's local Z;
+			// rotate the viz frame so its Z column points along the chosen
+			// capsule axis of `t`.
+			Mat4 viz = t;
+			switch ((int)capsuleAxis)
+			{
+				case 0: viz = t * rotateY(Scalar(90.0)); break;   // local X
+				case 1: viz = t * rotateX(Scalar(-90.0)); break;  // local Y
+				default: break;                                    // local Z
+			}
+			Visualizer::renderCapsule(max(radius.get(), 0.0f), max(capsuleHeight.get(), 0.0f), viz, color);
 			break;
+		}
 
 		case Shape::Box:
 			Visualizer::renderBox(boxHalfExtents.get() * 2.0f, t, color);

@@ -2,7 +2,7 @@
 <asset version="2.21.0.0">
 	<guid>db97c9e5d250818c223deeb04b8abb225bd70114</guid>
 	<type>fbx</type>
-	<hash>4660f9ad1f110de0ea730f27ae2b2795f61b4997f70e6435f29893a5650b9113</hash>
+	<hash>b79245216ed9fee68e8aebc98a0f3feee2a875f88d3e628d540483e7e670b8c4</hash>
 	<runtimes>
 		<runtime id="db97c9e5d250818c223deeb04b8abb225bd70114" name="GutsSword.fbx" link="0"/>
 		<runtime id="a9dc2789e922106db65b8142cf8bac98a6af5f8d" name="GutsSword.node" link="1" type="3">
@@ -24,7 +24,7 @@
 		<parameter type="bool" name="create_root_motion_joint">0</parameter>
 		<parameter type="bool" name="create_transform_bones_for_joints">0</parameter>
 		<parameter type="float" name="fps">30</parameter>
-		<parameter type="string" name="front_axis">default</parameter>
+		<parameter type="string" name="front_axis">y</parameter>
 		<parameter type="bool" name="import_animations">1</parameter>
 		<parameter type="bool" name="import_bones_without_skin">1</parameter>
 		<parameter type="bool" name="import_cameras">0</parameter>
@@ -64,7 +64,7 @@
 		<parameter type="string" name="target_root_motion_joint"/>
 		<parameter type="bool" name="unwrap_uv_ch_0">0</parameter>
 		<parameter type="bool" name="unwrap_uv_ch_1">0</parameter>
-		<parameter type="string" name="up_axis">default</parameter>
+		<parameter type="string" name="up_axis">nz</parameter>
 		<parameter type="bool" name="use_instances">1</parameter>
 		<parameter type="int" name="uv_ch">1</parameter>
 		<parameter type="string" name="uv_unwrap_version">xatlas_v1</parameter>

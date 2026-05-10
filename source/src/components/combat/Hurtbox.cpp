@@ -74,8 +74,20 @@ void Hurtbox::update()
 			break;
 
 		case Shape::Capsule:
-			Visualizer::renderCapsule(max(radius.get(), 0.0f), max(capsuleHeight.get(), 0.0f), t, color);
+		{
+			// Visualizer::renderCapsule renders along the transform's local Z;
+			// rotate the viz frame so its Z column points along the chosen
+			// capsule axis of `t`.
+			Mat4 viz = t;
+			switch ((int)capsuleAxis)
+			{
+				case 0: viz = t * rotateY(Scalar(90.0)); break;   // local X
+				case 1: viz = t * rotateX(Scalar(-90.0)); break;  // local Y
+				default: break;                                    // local Z
+			}
+			Visualizer::renderCapsule(max(radius.get(), 0.0f), max(capsuleHeight.get(), 0.0f), viz, color);
 			break;
+		}
 	}
 }
 
@@ -98,10 +110,16 @@ void Hurtbox::getCapsuleSegment(Vec3 &a, Vec3 &b) const
 		return;
 	}
 
-	// Axis = node's local Z in world space, normalised so radius/height stay
-	// in world-space meters even under uniform scale.
+	// Axis = chosen local axis (X/Y/Z) in world space, normalised so
+	// radius/height stay in world-space meters even under uniform scale.
 	const Mat4 t = node->getWorldTransform();
-	Vec3 axis = t.getAxisZ();
+	Vec3 axis;
+	switch ((int)capsuleAxis)
+	{
+		case 0:  axis = t.getAxisX(); break;
+		case 1:  axis = t.getAxisY(); break;
+		default: axis = t.getAxisZ(); break;
+	}
 	const float al = (float)length(axis);
 	if (al < 1e-6f)
 	{
