@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="NodeDummy" id="332622303" name="GutsSword">
+		<transform>0.999999880791 1.74845524725e-07 0 0.0 -1.74845524725e-07 0.999999880791 0 0.0 0 0 0.999999940395 0.0 0 0 0 1.0</transform>
+		<node type="ObjectMeshStatic" id="1361128882" immovable="1" name="GutsSword">
+			<mesh_name>guid://3e06f7e98062830ab97473645d24e5dee82dfb88</mesh_name>
+			<surface name="SwordMetal" intersection="1" material="6e3c24ba5f8374fa5b056d9420887134e85d2fa1"/>
+			<surface name="SwordDarkMetal" intersection="1" material="1c6a2ba9bf2f171f1181aa4764cbe88fd9825d57"/>
+			<surface name="SwordHandleHousing" intersection="1" material="211b3ea402522afccf88fe4ec86c53810b25a583"/>
+			<surface name="SwordHandle" intersection="1" material="b710c361d7543c1075ed1b7baacb945168a81423"/>
+			<transform>0.999999940395 1.04216066359e-14 0 0.0 -1.04216066359e-14 0.999999940395 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		</node>
+	</node>
+</nodes>

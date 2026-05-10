@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>22c78dd71be3358f72964a88559098afba13407b</guid>
+	<type>node</type>
+	<hash>0b2d1b17a5f1201eb382c9b551969fcc681c0998872a463e8e7a4386f1726061</hash>
+	<runtimes>
+		<runtime id="22c78dd71be3358f72964a88559098afba13407b" name="GutsSword.node" link="0" type="3"/>
+	</runtimes>
+</asset>
