@@ -1,8 +1,8 @@
-#include "Pickup.h"
+#include "components/interaction/Pickup.h"
 
-#include "Entity.h"
-#include "Inventory.h"
-#include "../audio/SoundManager.h"
+#include "components/Entity.h"
+#include "components/interaction/Inventory.h"
+#include "audio/SoundManager.h"
 
 #include <UnigineGame.h>
 #include <UnigineLog.h>

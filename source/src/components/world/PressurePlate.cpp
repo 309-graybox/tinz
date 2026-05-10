@@ -1,4 +1,4 @@
-#include "PressurePlate.h"
+#include "components/world/PressurePlate.h"
 #include "utils/Utils.h"
 #include "game/GameState.h"
 #include "utils/Utils.h"

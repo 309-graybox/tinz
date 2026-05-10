@@ -1,7 +1,7 @@
-#include "DialogueController.h"
+#include "components/interaction/DialogueController.h"
 
-#include "DialogueInteractable.h"
-#include "../audio/SoundManager.h"
+#include "components/interaction/DialogueInteractable.h"
+#include "audio/SoundManager.h"
 
 #include <UnigineGame.h>
 #include <UnigineGui.h>

@@ -1,4 +1,4 @@
-#include "EnemySkull.h"
+#include "components/enemies/EnemySkull.h"
 #include "game/GameState.h"
 #include "player/camera/PlayerCameraManager.h"
 #include "player/movement/CharacterMovement.h"

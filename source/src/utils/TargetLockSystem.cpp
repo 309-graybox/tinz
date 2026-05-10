@@ -1,6 +1,6 @@
 #include "TargetLockSystem.h"
 #include <UnigineVisualizer.h>
-#include <components/Targetable.h>
+#include <components/enemies/Targetable.h>
 
 using namespace Unigine;
 using namespace Unigine::Math;

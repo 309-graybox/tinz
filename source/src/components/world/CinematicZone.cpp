@@ -1,5 +1,5 @@
-#include "CinematicZone.h"
-#include "CameraTarget.h"
+#include "components/world/CinematicZone.h"
+#include "player/camera/CameraTarget.h"
 #include "player/camera/stages/CameraCinematicZone.h"
 #include "player/camera/PlayerCameraManager.h"
 #include "utils/Utils.h"

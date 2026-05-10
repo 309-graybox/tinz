@@ -1,7 +1,7 @@
 #pragma once
 
-#include "DialogueController.h"
-#include "Interactable.h"
+#include "components/interaction/DialogueController.h"
+#include "components/interaction/Interactable.h"
 
 struct DialogueLineInfo: Unigine::ComponentStruct
 {

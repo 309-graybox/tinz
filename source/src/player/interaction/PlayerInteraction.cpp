@@ -1,6 +1,6 @@
-#include "PlayerInteraction.h"
-#include "Interactable.h"
-#include "Pickup.h"
+#include "player/interaction/PlayerInteraction.h"
+#include "components/interaction/Interactable.h"
+#include "components/interaction/Pickup.h"
 
 #include <UnigineGame.h>
 #include <UnigineGui.h>

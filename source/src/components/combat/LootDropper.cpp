@@ -1,6 +1,6 @@
-#include "LootDropper.h"
+#include "components/combat/LootDropper.h"
 
-#include "Entity.h"
+#include "components/Entity.h"
 
 #include <UnigineGame.h>
 #include <UnigineLog.h>

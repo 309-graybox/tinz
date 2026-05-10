@@ -1,6 +1,7 @@
 #include "CharacterMovement.h"
 
 #include "MovementState.h"
+#include "components/Entity.h"
 #include "utils/Utils.h"
 
 #include <UnigineGame.h>
@@ -521,7 +522,22 @@ void CharacterMovement::resolve_collisions(float ifps)
 				if (other_shape)
 				{
 					BodyRigidPtr other_body = checked_ptr_cast<BodyRigid>(other_shape->getBody());
-					if (other_body && other_body->getMass() > 0.0f)
+					// Skip alive Entities: they control their own velocity (AI
+					// steering overrides our impulse anyway), and for kamikaze
+					// enemies our predictive push throws them away before the
+					// physics ContactEnter event fires — damage never lands.
+					// Dead corpses, static rocks, props all pass this check.
+					bool other_is_alive_entity = false;
+					if (other_body)
+					{
+						if (auto other_obj = other_body->getObject())
+						{
+							auto entity = ComponentSystem::get()->getComponent<Entity>(other_obj);
+							if (entity && entity->isAlive())
+								other_is_alive_entity = true;
+						}
+					}
+					if (other_body && other_body->getMass() > 0.0f && !other_is_alive_entity)
 					{
 						vec3 push_dir = -normal;
 						vec3 char_v = vec3(_horizontal_velocity) + _up * _vertical_speed;

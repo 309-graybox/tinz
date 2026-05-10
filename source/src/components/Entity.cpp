@@ -1,4 +1,4 @@
-#include "Entity.h"
+#include "components/Entity.h"
 #include "../audio/SoundManager.h"
 #include "game/GameState.h"
 #include "player/camera/PlayerCameraManager.h"

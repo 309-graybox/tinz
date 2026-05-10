@@ -1,5 +1,5 @@
 #pragma once
-#include "Interactable.h"
+#include "components/interaction/Interactable.h"
 
 #include <UnigineEvent.h>
 

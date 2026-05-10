@@ -1,6 +1,6 @@
-#include "SpikeTrap.h"
+#include "components/world/SpikeTrap.h"
 
-#include "Entity.h"
+#include "components/Entity.h"
 #include "game/GameState.h"
 #include "utils/Utils.h"
 
