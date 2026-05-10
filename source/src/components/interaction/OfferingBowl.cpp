@@ -1,10 +1,10 @@
-#include "OfferingBowl.h"
+#include "components/interaction/OfferingBowl.h"
 
-#include "Inventory.h"
-#include "../audio/SoundManager.h"
+#include "components/interaction/Inventory.h"
+#include "audio/SoundManager.h"
 #include "game/GameState.h"
 #include "utils/Utils.h"
-#include "Entity.h"
+#include "components/Entity.h"
 
 #include <UnigineGame.h>
 #include <UnigineLog.h>

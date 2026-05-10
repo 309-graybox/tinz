@@ -1,7 +1,7 @@
-#include "RiddlePress.h"
+#include "components/world/RiddlePress.h"
 #include <UnigineComponentSystem.h>
-#include "PressurePlate.h"
-#include "AffineModifier.h"
+#include "components/world/PressurePlate.h"
+#include "components/fx/AffineModifier.h"
 
 #include "utils/Utils.h"
 

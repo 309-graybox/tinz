@@ -1,7 +1,7 @@
-#include "HUD.h"
+#include "ui/HUD.h"
 #include "utils/Utils.h"
 #include "components/Entity.h"
-#include "components/Inventory.h"
+#include "components/interaction/Inventory.h"
 #include "game/GameState.h"
 
 #include <cstring>

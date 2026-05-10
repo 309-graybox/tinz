@@ -1,5 +1,5 @@
 #pragma once
-#include "Entity.h"
+#include "components/Entity.h"
 #include <UnigineEvent.h>
 #include <UniginePhysics.h>
 

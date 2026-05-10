@@ -1,5 +1,5 @@
 #include "PlayerCameraManager.h"
-#include "components/CameraTarget.h"
+#include "player/camera/CameraTarget.h"
 #include "utils/Utils.h"
 #include <UnigineConsole.h>
 #include <UnigineGame.h>

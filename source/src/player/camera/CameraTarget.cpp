@@ -1,4 +1,4 @@
-#include "CameraTarget.h"
+#include "player/camera/CameraTarget.h"
 
 REGISTER_COMPONENT(CameraTarget)
 

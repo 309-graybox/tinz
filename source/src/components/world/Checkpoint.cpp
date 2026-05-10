@@ -1,4 +1,4 @@
-#include "Checkpoint.h"
+#include "components/world/Checkpoint.h"
 #include "utils/Utils.h"
 #include "audio/SoundManager.h"
 #include "game/GameState.h"

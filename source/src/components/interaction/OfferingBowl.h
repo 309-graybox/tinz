@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Interactable.h"
+#include "components/interaction/Interactable.h"
 #include <UnigineMaterial.h>
 #include <UnigineWidgets.h>
 #include <UnigineGui.h>

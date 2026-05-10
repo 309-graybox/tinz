@@ -1,4 +1,4 @@
-#include "DialogueInteractable.h"
+#include "components/interaction/DialogueInteractable.h"
 
 #include <UnigineLog.h>
 

@@ -1,5 +1,5 @@
 #include "CameraCinematicZone.h"
-#include "components/CinematicZone.h"
+#include "components/world/CinematicZone.h"
 
 REGISTER_COMPONENT(CameraCinematicZone)
 

@@ -1,4 +1,4 @@
-#include "Inventory.h"
+#include "components/interaction/Inventory.h"
 
 #include <UnigineLog.h>
 

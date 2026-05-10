@@ -1,6 +1,6 @@
-#include "RandomSpawner.h"
+#include "components/world/RandomSpawner.h"
 
-#include "Entity.h"
+#include "components/Entity.h"
 
 #include <UnigineGame.h>
 #include <UnigineLog.h>

@@ -1,5 +1,5 @@
 #include "CameraLockOnTarget.h"
-#include "components/Targetable.h"
+#include "components/enemies/Targetable.h"
 #include <UniginePlayers.h>
 #include <UnigineWindowManager.h>
 #include <UnigineVisualizer.h>

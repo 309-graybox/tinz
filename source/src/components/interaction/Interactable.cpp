@@ -1,4 +1,4 @@
-#include "Interactable.h"
+#include "components/interaction/Interactable.h"
 
 #include <UnigineGame.h>
 #include <UnigineLog.h>

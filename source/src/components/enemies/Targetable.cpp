@@ -1,4 +1,4 @@
-#include "Targetable.h"
+#include "components/enemies/Targetable.h"
 
 REGISTER_COMPONENT(Targetable)
 

@@ -1,4 +1,4 @@
-#include "Floating.h"
+#include "components/fx/Floating.h"
 
 #include <UnigineComponentSystem.h>
 #include <UnigineGame.h>
