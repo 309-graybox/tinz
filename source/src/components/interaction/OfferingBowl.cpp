@@ -62,7 +62,7 @@ void OfferingBowl::init()
 	ensureSoulProgressUi();
 	updateSoulProgressUi();
 
-	FLOGERR(playerEnd, "NO PLAYER_END");
+	FLOGERR(playerEnd, "NO PLAYER_END\n");
 	FLOGERR(head, "no head");
 
 	auto bil = checked_ptr_cast<ObjectBillboards>(head->getChild(0));
@@ -477,7 +477,7 @@ void OfferingBowl::end(float dt)
 
 			_label = WidgetLabel::create("СПАСИБО ЗА ИГРУ!");
 			_label->setFont(font);
-			
+
 			auto gui = Gui::getCurrent();
 			gui->addChild((_label), Gui::ALIGN_CENTER);
 			_label->setFontSize(100);
@@ -503,10 +503,10 @@ void OfferingBowl::end(float dt)
 
 	_eye_timer += dt;
 
-	
 
 	float t = _eye_timer / eye_time;
-	if (t > 1.0f) t = 1.0f;
+	if (t > 1.0f)
+		t = 1.0f;
 
 	_color.x = t;
 	_color.y = 1.0f - t;

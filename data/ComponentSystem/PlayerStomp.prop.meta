@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>07697f4bb1fd619bbec1215b0e6764c8b290da27</guid>
+	<type>property</type>
+	<hash>c31a02921eef3f8981ac9df2bb2a8b9ef85124eede7c93b8167eec0b87728087</hash>
+	<runtimes>
+		<runtime id="07697f4bb1fd619bbec1215b0e6764c8b290da27" name="PlayerStomp" link="0" type="4"/>
+	</runtimes>
+</asset>

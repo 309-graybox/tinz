@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="Weapon" manual="1" parent_name="node_base">
+	<parameter name="hitboxes" type="array" tooltip="Child nodes carrying Hitbox components managed by this weapon. Their applyDamageOnHit will be forced to false. Team is inherited from the wielder Entity automatically." group="Hitboxes" array_type="node"/>
+	<parameter name="damage" type="float" tooltip="Damage applied per target per swing" group="Damage">10</parameter>
+	<parameter name="damageType" type="string" tooltip="Tag forwarded to Entity::takeDamage" group="Damage">physical</parameter>
+	<parameter name="applyPlayerKnockback" type="toggle" tooltip="If the target is the player, call CharacterMovement::applyDamageKnockback (uses the player&apos;s own knockback speed/duration tuning)." group="Damage">1</parameter>
+	<parameter name="startupTime" type="float" tooltip="Wind-up before active frames (s). Hitboxes are off." group="Timing">0.1</parameter>
+	<parameter name="activeTime" type="float" tooltip="Hitboxes are active for this many seconds" group="Timing">0.15</parameter>
+	<parameter name="recoveryTime" type="float" tooltip="Recovery after active frames (s). Weapon is busy, hitboxes off." group="Timing">0.3</parameter>
+	<parameter name="cooldown" type="float" tooltip="Extra delay after recovery before another swing can start (s)" group="Timing">0</parameter>
+</property>

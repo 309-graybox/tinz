@@ -15,7 +15,8 @@
 		<properties>
 			<property parent="5a10ea14e9407a11b7103368f5e492ac0a5b59bd" guid="8d6fa26d07f34bb3f85d21d05e535d31595cda21">
 				<parameter name="has_hp">1</parameter>
-				<parameter name="max_hp">100</parameter>
+				<parameter name="max_hp">25</parameter>
+				<parameter name="teamId">-1</parameter>
 				<parameter name="persistOnDeath">1</parameter>
 				<parameter name="deleteTimer">10</parameter>
 				<parameter name="soundOnDamage">damage/skull</parameter>
@@ -43,6 +44,14 @@
 						<parameter name="chance">0.25</parameter>
 					</value>
 				</parameter>
+			</property>
+			<property parent="635030e766f5627fb6ed50ee7cf3d01c524d1ecb" guid="f77cdd932432fe2cf1309222393e9ded2bf7964e">
+				<parameter name="teamId">-1</parameter>
+			</property>
+			<property parent="b427f552c4caf007404ca7c47e20265e3478f683" guid="38de9e8d72c5faed498dc3744bdfb17fba428b00">
+				<parameter name="damage">25</parameter>
+				<parameter name="debugDraw">1</parameter>
+				<parameter name="teamId">-1</parameter>
 			</property>
 		</properties>
 		<transform>1 0 0 0.0 0 0.999999880791 3.46944695195e-18 0.0 7.21777950179e-19 -3.46944695195e-18 0.999999880791 0.0 0 0 0 1.0</transform>

@@ -32,6 +32,11 @@
 				<parameter name="slopeLimit">44</parameter>
 				<parameter name="body">1330148965</parameter>
 				<parameter name="target">1330148965</parameter>
+				<parameter name="groundCheckIntersectionMask">0xffffffff</parameter>
+			</property>
+			<property parent="07697f4bb1fd619bbec1215b0e6764c8b290da27" guid="5b89c5b5e7950d9ba1597f82d8756479071fe501">
+				<parameter name="stompHitbox">1540605913</parameter>
+				<parameter name="verticalSpeedThreshold">-1</parameter>
 			</property>
 		</properties>
 		<transform>0.999999761581 0 0 0.0 0 1 0 0.0 0 0 0.999999940395 0.0 -8.77421037377 -14.9420362567 2.65047817637 1.0</transform>
@@ -151,6 +156,28 @@
 				<radius>100</radius>
 				<cast_baked_global_illumination>1</cast_baked_global_illumination>
 				<transform>0.999999940396 0 0 0.0 0 0.99999988079 0 0.0 0 0 1.00000011921 0.0 0 0 0.1 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="1540605913" name="stomp_hitbox">
+				<properties>
+					<property parent="b427f552c4caf007404ca7c47e20265e3478f683" guid="f743b961712c2c60d25367781ac120d8a97d5244">
+						<parameter name="shapeType">2</parameter>
+						<parameter name="boxHalfExtents">0.5 0.5 0.400000006</parameter>
+						<parameter name="damage">25</parameter>
+						<parameter name="applyPlayerKnockback">0</parameter>
+						<parameter name="debugDraw">1</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0.3 1.0</transform>
+			</node>
+			<node type="NodeDummy" id="54523807" name="hurtbox">
+				<properties>
+					<property parent="635030e766f5627fb6ed50ee7cf3d01c524d1ecb" guid="7dbf1495c82444b170528f2a597d8cb36c41731d">
+						<parameter name="shapeType">1</parameter>
+						<parameter name="radius">0.400000006</parameter>
+						<parameter name="debugDraw">1</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 1 1.0</transform>
 			</node>
 		</node>
 	</node>

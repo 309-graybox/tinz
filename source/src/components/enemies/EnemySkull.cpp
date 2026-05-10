@@ -1,7 +1,6 @@
 #include "components/enemies/EnemySkull.h"
+#include "components/combat/Hitbox.h"
 #include "game/GameState.h"
-#include "player/camera/PlayerCameraManager.h"
-#include "player/movement/CharacterMovement.h"
 #include "utils/Utils.h"
 #include <UnigineGame.h>
 #include <UnigineVisualizer.h>
@@ -23,12 +22,35 @@ void EnemySkull::initSkull()
 	// threshold and stop responding to setLinearVelocity for a frame. Disable
 	// freezing entirely — they're cheap and shouldn't sleep on their own.
 	_body->setFreezable(false);
-	// Make sure short, glancing contacts (e.g. ram-through) are still reported.
-	_body->setHighPriorityContacts(true);
-
-	_body->getEventContactEnter().connect(_contactEnterConn, this, &EnemySkull::onContactEnter);
 
 	_spawnPos = node->getWorldPosition();
+
+	// Stop the hitbox the moment we die, in case its update would otherwise
+	// run for one more frame after death (component init order is unspecified
+	// and the hitbox node may not be in disable_on_death).
+	eventDied().connect(_diedConn, this, &EnemySkull::onSelfDied);
+}
+
+void EnemySkull::configureHitbox()
+{
+	// Deferred from init: same-node component init order is unspecified, so
+	// Hitbox::init may run after our initSkull and overwrite _active. Doing
+	// the lookup + activation on the first update sidesteps that.
+	auto cs = ComponentSystem::get();
+	if (NodePtr hbn = hitboxNode.get())
+		_hitbox = cs->getComponent<Hitbox>(hbn);
+	else
+		_hitbox = cs->getComponentInChildren<Hitbox>(node);
+
+	if (_hitbox)
+	{
+		_hitbox->eventHit().connect(_hitboxHitConn, this, &EnemySkull::onHitboxHit);
+		_hitbox->setActive(true);
+	}
+	else
+	{
+		Log::warning("EnemySkull \"%s\": no Hitbox found (set hitboxNode or add a Hitbox to a child) — skull will not damage the player\n", node->getName());
+	}
 }
 
 void EnemySkull::updateSkull()
@@ -36,8 +58,22 @@ void EnemySkull::updateSkull()
 	if (isDead() || !_body)
 		return;
 
+	if (!_hitboxConfigured)
+	{
+		configureHitbox();
+		_hitboxConfigured = true;
+	}
+
 	const float ifps = Game::getIFps();
-	_attackTimer = max(_attackTimer - ifps, 0.0f);
+
+	// Cooldown after a successful non-lethal hit (dieOnHit=false). The hitbox
+	// was deactivated in onHitboxHit; re-arm it here when the timer expires.
+	if (_hitboxCooldownTimer > 0.0f)
+	{
+		_hitboxCooldownTimer = max(_hitboxCooldownTimer - ifps, 0.0f);
+		if (_hitboxCooldownTimer <= 0.0f && _hitbox)
+			_hitbox->setActive(true);
+	}
 
 	const NodePtr target = game::GameState::getPlayerCharacter();
 	if (!target)
@@ -212,73 +248,25 @@ void EnemySkull::applySteering(const vec3 &desiredVel, float ifps)
 	_body->setLinearVelocity(currentVel + deltaVel);
 }
 
-void EnemySkull::onContactEnter(const BodyPtr &body, int num)
+void EnemySkull::onHitboxHit(const HitInfo &)
 {
-	if (_attackTimer > 0.0f)
-		return;
-
-	const NodePtr target = game::GameState::getPlayerCharacter();
-	if (!target)
-		return;
-
-	// Identify the OTHER body in the contact (body0/body1 are the pair, one of
-	// them is ours).
-	BodyPtr other = body->getContactBody0(num);
-	if (other == body)
-		other = body->getContactBody1(num);
-	if (!other)
-		return;
-
-	const ObjectPtr otherObj = other->getObject();
-	if (!otherObj)
-		return;
-
-	if (!isInHierarchy(static_ptr_cast<Node>(otherObj), target))
-		return;
-
-	// Stomp from above: the skull's outward surface normal at the contact
-	// faces upward → player landed on top. Engine returns the normal pointing
-	// from the contact INTO `body`, so we flip the sign to get "skull-out".
-	if (dot(-body->getContactNormal(num), vec3_up) >= cos(stompMaxAngle * Consts::DEG2RAD))
-	{
-		// Both bounce and shake live on components attached to the PlayerDummy
-		// (camera) node — same lookup chain as the existing applyVerticalBounce
-		// pattern. CameraShake reads state.trauma; we only request the kick.
-		if (auto player = Game::getPlayer())
-		{
-			auto playerNode = static_ptr_cast<Node>(player);
-			auto cs = ComponentSystem::get();
-			if (stompBouncePower > 0.0f)
-			{
-				if (auto cm = cs->getComponent<CharacterMovement>(playerNode))
-					cm->applyVerticalBounce(stompBouncePower);
-			}
-			if (auto pcm = cs->getComponent<PlayerCameraManager>(playerNode))
-				pcm->addTrauma(stompShake);
-		}
-		Log::message("%s was killed by player\n", node->getName());
-		takeDamage(makeDamageInfo(target, "stomp", Consts::INF));
-		return;
-	}
-
-	auto entity = ComponentSystem::get()->getComponent<Entity>(target);
-	if (entity)
-	{
-		DamageInfo info;
-		info.source = node;
-		info.amount = attackDamage;
-		const bool damage_applied = entity->takeDamage(info);
-		if (auto player = Game::getPlayer(); damage_applied && player)
-		{
-			auto player_node = static_ptr_cast<Node>(player);
-			if (auto cm = ComponentSystem::get()->getComponent<CharacterMovement>(player_node))
-				cm->applyDamageKnockback(node->getWorldPosition());
-			else
-				Log::message("%s damage applied, but CharacterMovement was not found on player node\n", node->getName());
-		}
-	}
-	_attackTimer = attackCooldown;
-
 	if (dieOnHit)
+	{
+		Log::message("%s rammed the player and self-destructed\n", node->getName());
 		kill();
+		return;
+	}
+
+	// Non-kamikaze variant: park the hitbox for `attackCooldown` seconds. The
+	// update loop re-arms it (which also clears the per-activation hit
+	// registry, so the same player can be hit again next swing).
+	if (_hitbox)
+		_hitbox->setActive(false);
+	_hitboxCooldownTimer = max(attackCooldown.get(), 0.0f);
+}
+
+void EnemySkull::onSelfDied(Entity *)
+{
+	if (_hitbox)
+		_hitbox->setActive(false);
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>635030e766f5627fb6ed50ee7cf3d01c524d1ecb</guid>
+	<type>property</type>
+	<hash>b37b2e4a2a12cf4fe1275df19bfcb7240406ebe1e5f7aa5be5fd08537fe0bbf5</hash>
+	<runtimes>
+		<runtime id="635030e766f5627fb6ed50ee7cf3d01c524d1ecb" name="Hurtbox" link="0" type="4"/>
+	</runtimes>
+</asset>

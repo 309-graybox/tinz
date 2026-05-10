@@ -2,7 +2,7 @@
 <nodes version="2.21.0.0">
 	<node type="ObjectMeshStatic" id="1245336948" name="Skull">
 		<mesh_name>guid://f199cf2b9a805f9daea25c9da899fc0fad5a6eee</mesh_name>
-		<surface name="Head" intersection="1" material="f9e6188682655740bf7ddc0ca365e0342ed1e14b"/>
+		<surface name="Head" intersection="1" intersection_mask="0x20000000" material="f9e6188682655740bf7ddc0ca365e0342ed1e14b"/>
 		<body type="BodyRigid" id="1689625183" frozen="0">
 			<shape_based>0</shape_based>
 			<mass>1</mass>
@@ -15,7 +15,8 @@
 		<properties>
 			<property parent="5a10ea14e9407a11b7103368f5e492ac0a5b59bd" guid="b939376decec96c7803c8fbe433db7c8bf410c32">
 				<parameter name="has_hp">1</parameter>
-				<parameter name="max_hp">100</parameter>
+				<parameter name="max_hp">25</parameter>
+				<parameter name="teamId">-1</parameter>
 				<parameter name="persistOnDeath">1</parameter>
 				<parameter name="deleteTimer">10</parameter>
 				<parameter name="soundOnDamage">damage/skull</parameter>
@@ -44,6 +45,12 @@
 					</value>
 				</parameter>
 			</property>
+			<property parent="b427f552c4caf007404ca7c47e20265e3478f683" guid="8256d7bb6c2031e0c1055caa2f8b1710806a6756">
+				<parameter name="radius">0.5</parameter>
+				<parameter name="damage">25</parameter>
+				<parameter name="debugDraw">1</parameter>
+			</property>
+			<property parent="635030e766f5627fb6ed50ee7cf3d01c524d1ecb" guid="2121ed99ee71517cef91477e0fb730d8789fb1a1"/>
 		</properties>
 		<transform>1 -1.90582413132e-21 9.75781955237e-19 0.0 3.38813178902e-21 0.999999880791 8.67361737988e-19 0.0 -9.22859560031e-19 -1.73472347598e-18 0.999999880791 0.0 0 0 -4.4408920985e-16 1.0</transform>
 		<node type="ObjectParticles" id="398819907" name="ObjectParticles" update_distance_limit="200">

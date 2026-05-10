@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>b427f552c4caf007404ca7c47e20265e3478f683</guid>
+	<type>property</type>
+	<hash>a5825ecaf7e1a32a9779e13b3bacb60adbc48427d898558dbac22f76f8b05042</hash>
+	<runtimes>
+		<runtime id="b427f552c4caf007404ca7c47e20265e3478f683" name="Hitbox" link="0" type="4"/>
+	</runtimes>
+</asset>

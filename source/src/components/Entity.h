@@ -40,6 +40,7 @@ public:
 
 	PROP_PARAM(Toggle, has_hp)
 	PROP_PARAM(Float, max_hp)
+	PROP_PARAM(Int, teamId, 0, "", "Team identifier used by Hitbox to skip same-team targets (friendly fire prevention). 0 = player, 1 = enemy by convention.")
 	PROP_PARAM(Float, invulnerabilityTime, 0.0f, "", "Damage immunity duration in seconds after taking damage. 0 = disabled")
 	PROP_PARAM(Toggle, persistOnDeath, false, "", "If true, the node is NOT auto-deleted on death — owner reacts via eventDied (used by the player so respawn can revive it)")
 	PROP_PARAM(Float, deleteTimer, 0.0f)
@@ -54,6 +55,7 @@ public:
 	bool isDead() const noexcept { return _hp <= Unigine::Math::Consts::EPS; }
 	bool isAlive() const noexcept { return !isDead(); }
 	bool isInvulnerable() const noexcept;
+	int getTeamId() const noexcept { return teamId; }
 	float getHP() const noexcept { return _hp; }
 	float getMaxHP() const noexcept { return max_hp; }
 	bool heal(float amount);

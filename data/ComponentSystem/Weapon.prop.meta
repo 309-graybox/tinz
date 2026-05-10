@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>ead533685e262eab09b5c9013bee5d4c120fcd26</guid>
+	<type>property</type>
+	<hash>3547a9a4bb9f697a0d64dbd9a677a414715037aa6afe30ae5868be4a2d801c86</hash>
+	<runtimes>
+		<runtime id="ead533685e262eab09b5c9013bee5d4c120fcd26" name="Weapon" link="0" type="4"/>
+	</runtimes>
+</asset>

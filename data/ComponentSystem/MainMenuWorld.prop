@@ -4,4 +4,5 @@
 	<parameter name="backgroundMusic" type="string"/>
 	<parameter name="intersectionMask" type="mask">-1</parameter>
 	<parameter name="fadeBrightness" type="float" title="Fade Brightness" tooltip="Target color-correction brightness during click fade (-1 = black)">-1</parameter>
+	<parameter name="inputDelay" type="float" title="Input Delay" tooltip="Seconds to ignore input after world load">0.3</parameter>
 </property>

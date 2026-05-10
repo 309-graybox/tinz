@@ -775,7 +775,7 @@
 		</node>
 		<node type="NodeLayer" id="1850185643" name="player_layer">
 			<layer>guid://414010aa6ac6cf193bc290851500f656096989d1</layer>
-			<transform>1.00000011921 0 0 0.0 0 0.999999880791 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+			<transform>1.00000011921 0 0 0.0 0 0.999999880791 0 0.0 0 0 1 0.0 0 0 1.04154769301 1.0</transform>
 		</node>
 		<node type="NodeLayer" id="1668500170" name="global_logic">
 			<layer>guid://a217074d9ffbbfb7ba2bac7bfa25e325be333085</layer>
@@ -827,101 +827,107 @@
 			</properties>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 		</node>
-		<node type="NodeReference" id="57515808" name="skull_enemy_view_blue">
-			<reference>guid://f8b1f26e00b455efb77248eeebfb2674aff3ae2a</reference>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -12.7911944803 35.9205800615 1.05575085576 1.0</transform>
+		<node type="NodeDummy" id="1778009150" name="skulls">
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -6.97870107455 41.5569578996 0.97954117594 1.0</transform>
+			<node type="NodeReference" id="57515808" name="skull_enemy_view_blue">
+				<reference>guid://f8b1f26e00b455efb77248eeebfb2674aff3ae2a</reference>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -5.81249340575 -5.63637783808 0.0762096798204 1.0</transform>
+			</node>
+			<node type="NodeReference" id="1350562232" name="skull_enemy_view_green">
+				<reference>guid://4a0634dfeb95c23a0486b45fdbee3b3f1f68f95b</reference>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -4.47357587565 9.31345161532 -0.218692687338 1.0</transform>
+			</node>
+			<node type="NodeReference" id="996868549" name="skull_enemy_view_red">
+				<reference>guid://6f46f804ae281cea9a49aa8441ba53b78396a6e0</reference>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 5.8322763042 -9.27296894695 -0.379542701819 1.0</transform>
+			</node>
 		</node>
-		<node type="NodeReference" id="1350562232" name="skull_enemy_view_green">
-			<reference>guid://4a0634dfeb95c23a0486b45fdbee3b3f1f68f95b</reference>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -11.4522769502 50.8704095149 0.760848488602 1.0</transform>
-		</node>
-		<node type="NodeReference" id="996868549" name="skull_enemy_view_red">
-			<reference>guid://6f46f804ae281cea9a49aa8441ba53b78396a6e0</reference>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -32.7839603008 52.1304597841 1.16529622429 1.0</transform>
-		</node>
-		<node type="NodeReference" id="1645021726" name="spike_trap">
-			<reference>guid://8b2068cd4cba17160b6ba92b4b22d7029f7e99cd</reference>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -4.58270120621 5.2002696991 0 1.0</transform>
-		</node>
-		<node type="ObjectMeshStatic" id="1141887237" immovable="1" trigger_interaction_enabled="1" name="stone_speaker">
-			<mesh_name>guid://209252c0ae5bc8c3c340e5908fc4f18ddcdbd53f</mesh_name>
-			<surface name="box" intersection="1" intersection_mask="0x10000000" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
-			<properties>
-				<property parent="b03fcb358b76833a3f94e3a23ab734e56026a016" guid="8de9d099ccf7460efb256f624e0674dfc8ef8fa4">
-					<parameter name="lines">
-						<value index="0">
-							<parameter name="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is the first dialogue line, short enough to appear cleanly at the bottom of the screen.</parameter>
-							<parameter name="duration">5</parameter>
-						</value>
-						<value index="1">
-							<parameter name="text">Vivamus porta, neque at blandit pretium, magna erat posuere justo, non facilisis sem urna vitae nibh. The line should wrap if the label width is working.</parameter>
-							<parameter name="duration">5</parameter>
-						</value>
-						<value index="2">
-							<parameter name="text">A distant voice speaks from the dark: not every door is meant to open, and not every silence is empty.</parameter>
-							<parameter name="duration">5</parameter>
-						</value>
-						<value index="3">
-							<parameter name="text">Integer vitae lacus in arcu pretium tincidunt. Curabitur non massa sed ipsum gravida feugiat at quis libero.</parameter>
-							<parameter name="duration">5</parameter>
-						</value>
-						<value index="4">
-							<parameter name="text">This one is intentionally longer: the old stones remember every footstep, every broken promise, every small flame carried through the rain, and every player who stood too close to a suspicious box.</parameter>
-							<parameter name="duration">5</parameter>
-						</value>
-						<value index="5">
-							<parameter name="text">Suspendisse potenti. Morbi vehicula, lorem sed feugiat luctus, metus justo pharetra velit, id gravida erat mi in sapien.</parameter>
-							<parameter name="duration">5</parameter>
-						</value>
-						<value index="6">
-							<parameter name="text">If this message appears after the previous one, automatic timing works. If it also keeps the music layer alive, even better.</parameter>
-							<parameter name="duration">5</parameter>
-						</value>
-						<value index="7">
-							<parameter name="text">Praesent commodo, augue nec ultricies imperdiet, risus nibh fermentum elit, sit amet convallis turpis lacus vitae mi.</parameter>
-							<parameter name="duration">5</parameter>
-						</value>
-						<value index="8">
-							<parameter name="text">The dialogue should not start another dialogue while this sequence is active. One speaker at a time; the abyss can wait its turn.</parameter>
-							<parameter name="duration">5</parameter>
-						</value>
-						<value index="9">
-							<parameter name="text">Final test line. After five seconds this text should disappear, restore its dialogue music layer if needed, and leave the background layer alone.</parameter>
-							<parameter name="duration">5</parameter>
-						</value>
-					</parameter>
-					<parameter name="musicEvent">strange_dialogue</parameter>
-				</property>
-			</properties>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 5.82507038116 10.9167251587 0.919390221613 1.0</transform>
-		</node>
-		<node type="NodeReference" id="2117273565" name="Egg">
-			<reference>guid://beee5dac3fc5287c9fad406a897430824d90e624</reference>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 10.3560640601 -9.58329027843 1.86305468232 1.0</transform>
-		</node>
-		<node type="NodeReference" id="1656400440" name="blue_soul">
-			<reference>guid://c2dd6314a90227fbecd19e73a5a0dee165218cf3</reference>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 31.6564137116 11.559161032 0.692244388478 1.0</transform>
-		</node>
-		<node type="NodeReference" id="320802066" name="green_soul">
-			<reference>guid://bc91d9c8e9b52136b1196e5d534a2e38a873a6f8</reference>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 28.0087738037 2.57681274414 0.692244388478 1.0</transform>
-		</node>
-		<node type="NodeReference" id="1268135053" name="red_soul">
-			<reference>guid://abe1601a80e3ae7ff9f72d81da585a1e865ad541</reference>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 20.6337547302 14.9635410309 0.692244388478 1.0</transform>
-		</node>
-		<node type="NodeReference" id="4711484" name="silver_soul">
-			<reference>guid://ab80e8c2575adc0135fe7f093efe10e8c5bc5ac9</reference>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 19.9124526978 2.4511013031 0.692245342152 1.0</transform>
-		</node>
-		<node type="NodeReference" id="1615649236" name="gold_soul">
-			<reference>guid://a1eca40c0f8414c75be50a31838df67dd26eb7bc</reference>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 25.8834805065 21.5410619017 -1.90734863281e-06 1.0</transform>
-		</node>
-		<node type="NodeReference" id="1925894795" name="Heart">
-			<reference>guid://aae51217b7811fd877847eba16a39a448b5ddd85</reference>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 15.9150981903 26.1048316956 0.378243397598 1.0</transform>
+		<node type="NodeDummy" id="1033235115" name="group">
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 13.525305508 8.26983796754 1.01119108396 1.0</transform>
+			<node type="NodeReference" id="1645021726" name="spike_trap">
+				<reference>guid://8b2068cd4cba17160b6ba92b4b22d7029f7e99cd</reference>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -18.1080067143 -3.06956826844 -1.01119108396 1.0</transform>
+			</node>
+			<node type="ObjectMeshStatic" id="1141887237" immovable="1" trigger_interaction_enabled="1" name="stone_speaker">
+				<mesh_name>guid://209252c0ae5bc8c3c340e5908fc4f18ddcdbd53f</mesh_name>
+				<surface name="box" intersection="1" intersection_mask="0x10000000" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+				<properties>
+					<property parent="b03fcb358b76833a3f94e3a23ab734e56026a016" guid="8de9d099ccf7460efb256f624e0674dfc8ef8fa4">
+						<parameter name="lines">
+							<value index="0">
+								<parameter name="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is the first dialogue line, short enough to appear cleanly at the bottom of the screen.</parameter>
+								<parameter name="duration">5</parameter>
+							</value>
+							<value index="1">
+								<parameter name="text">Vivamus porta, neque at blandit pretium, magna erat posuere justo, non facilisis sem urna vitae nibh. The line should wrap if the label width is working.</parameter>
+								<parameter name="duration">5</parameter>
+							</value>
+							<value index="2">
+								<parameter name="text">A distant voice speaks from the dark: not every door is meant to open, and not every silence is empty.</parameter>
+								<parameter name="duration">5</parameter>
+							</value>
+							<value index="3">
+								<parameter name="text">Integer vitae lacus in arcu pretium tincidunt. Curabitur non massa sed ipsum gravida feugiat at quis libero.</parameter>
+								<parameter name="duration">5</parameter>
+							</value>
+							<value index="4">
+								<parameter name="text">This one is intentionally longer: the old stones remember every footstep, every broken promise, every small flame carried through the rain, and every player who stood too close to a suspicious box.</parameter>
+								<parameter name="duration">5</parameter>
+							</value>
+							<value index="5">
+								<parameter name="text">Suspendisse potenti. Morbi vehicula, lorem sed feugiat luctus, metus justo pharetra velit, id gravida erat mi in sapien.</parameter>
+								<parameter name="duration">5</parameter>
+							</value>
+							<value index="6">
+								<parameter name="text">If this message appears after the previous one, automatic timing works. If it also keeps the music layer alive, even better.</parameter>
+								<parameter name="duration">5</parameter>
+							</value>
+							<value index="7">
+								<parameter name="text">Praesent commodo, augue nec ultricies imperdiet, risus nibh fermentum elit, sit amet convallis turpis lacus vitae mi.</parameter>
+								<parameter name="duration">5</parameter>
+							</value>
+							<value index="8">
+								<parameter name="text">The dialogue should not start another dialogue while this sequence is active. One speaker at a time; the abyss can wait its turn.</parameter>
+								<parameter name="duration">5</parameter>
+							</value>
+							<value index="9">
+								<parameter name="text">Final test line. After five seconds this text should disappear, restore its dialogue music layer if needed, and leave the background layer alone.</parameter>
+								<parameter name="duration">5</parameter>
+							</value>
+						</parameter>
+						<parameter name="musicEvent">strange_dialogue</parameter>
+					</property>
+				</properties>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -7.70023512688 2.64688719116 -0.0918008623493 1.0</transform>
+			</node>
+			<node type="NodeReference" id="2117273565" name="Egg">
+				<reference>guid://beee5dac3fc5287c9fad406a897430824d90e624</reference>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -3.16924144794 -17.853128246 0.851863598358 1.0</transform>
+			</node>
+			<node type="NodeReference" id="1656400440" name="blue_soul">
+				<reference>guid://c2dd6314a90227fbecd19e73a5a0dee165218cf3</reference>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 18.1311082036 3.28932306446 -0.318946695484 1.0</transform>
+			</node>
+			<node type="NodeReference" id="320802066" name="green_soul">
+				<reference>guid://bc91d9c8e9b52136b1196e5d534a2e38a873a6f8</reference>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 14.4834682957 -5.6930252234 -0.318946695484 1.0</transform>
+			</node>
+			<node type="NodeReference" id="1268135053" name="red_soul">
+				<reference>guid://abe1601a80e3ae7ff9f72d81da585a1e865ad541</reference>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 7.10844922216 6.69370306336 -0.318946695484 1.0</transform>
+			</node>
+			<node type="NodeReference" id="4711484" name="silver_soul">
+				<reference>guid://ab80e8c2575adc0135fe7f093efe10e8c5bc5ac9</reference>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 6.38714718976 -5.81873666444 -0.31894574181 1.0</transform>
+			</node>
+			<node type="NodeReference" id="1615649236" name="gold_soul">
+				<reference>guid://a1eca40c0f8414c75be50a31838df67dd26eb7bc</reference>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 12.3581749985 13.2712239342 -1.01119299131 1.0</transform>
+			</node>
+			<node type="NodeReference" id="1925894795" name="Heart">
+				<reference>guid://aae51217b7811fd877847eba16a39a448b5ddd85</reference>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 2.38979268226 17.8349937281 -0.632947686364 1.0</transform>
+			</node>
 		</node>
 	</editor>
 	<console>

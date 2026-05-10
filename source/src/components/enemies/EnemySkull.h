@@ -3,6 +3,9 @@
 #include <UnigineEvent.h>
 #include <UniginePhysics.h>
 
+class Hitbox;
+struct HitInfo;
+
 // Flying skull enemy. Three behaviors selectable in editor:
 //   Direct — fly straight at the player.
 //   Orbit  — spiral around the player while continuously closing the distance.
@@ -10,9 +13,14 @@
 //            then commit to a straight ram.
 //
 // Vision: skull only acts while there is a free line of sight no longer than
-// `sightRange`. Out of sight → idle (zero velocity). Damage triggers on the
-// BodyRigid's contact-enter event with anything in the player character's
-// hierarchy (subscribed once in init).
+// `sightRange`. Out of sight → idle (zero velocity).
+//
+// Damage flow: skull carries a Hitbox (configured in editor on a child node
+// pointed to by `hitboxNode`). The Hitbox is what actually damages the player
+// — the skull just listens to its eventHit for cooldown / kamikaze logic.
+// Stomp ("player lands on me") is handled player-side now; the skull has no
+// direct knowledge of being stomped — its Hurtbox just absorbs the hit and
+// the skull dies normally via Entity HP.
 class EnemySkull: public Entity
 {
 public:
@@ -50,15 +58,9 @@ public:
 	PROP_PARAM(Float, flankRadialCorrection, 2.0f, "", "How aggressively (m/s) the skull corrects toward `flankDistance` while orbiting")
 
 	PROP_GROUP("Attack")
-	PROP_PARAM(Float, attackDamage, 10.0f)
-	PROP_PARAM(Float, attackCooldown, 1.0f, "", "Minimum time between hits (only meaningful when dieOnHit is off)")
+	PROP_PARAM(Node, hitboxNode, "", "", "Child node carrying the Hitbox component that damages the player on contact. Damage / team / shape are configured on the Hitbox itself.")
+	PROP_PARAM(Float, attackCooldown, 1.0f, "", "Minimum time between hits (only meaningful when dieOnHit is off). Hitbox is deactivated for this duration after each successful hit, then re-armed.")
 	PROP_PARAM(Toggle, dieOnHit, true, "", "Skull is destroyed immediately after dealing damage (kamikaze)")
-
-	PROP_GROUP("Stomp")
-	PROP_PARAM(Float, stompMaxAngle, 45.0f, "", "Maximum angle (degrees) between the contact normal and world up for a contact to count as a top-down stomp. Smaller = stricter (only near-vertical landings count)")
-	PROP_PARAM(Float, stompBouncePower, 5.0f, "", "Upward velocity (m/s) given to the player after a successful stomp. 0 = no bounce")
-	PROP_PARAM(Float, stompShake, 0.5f, "", "Camera trauma added on a successful stomp kill. 0.3 = subtle, 0.6 = noticeable, 1.0 = screen-rocking. 0 = none")
-	PROP_PARAM(Float, damageShake, 0.7f, "", "Camera trauma added when this skull damages the player. 0 = none")
 
 	PROP_GROUP("Debug")
 	PROP_PARAM(Toggle, debugDraw, false, "", "Draw a line from the skull to its current target. Color encodes behavior")
@@ -78,16 +80,25 @@ private:
 
 	void applySteering(const Unigine::Math::vec3 &desiredVel, float ifps);
 
-	void onContactEnter(const Unigine::BodyPtr &body, int num);
+	void configureHitbox();
+	void onHitboxHit(const HitInfo &info);
+	void onSelfDied(Entity *self);
 
 private:
 	Unigine::BodyRigidPtr _body;
-	Unigine::EventConnection _contactEnterConn;
+
+	Hitbox *_hitbox = nullptr;
+	Unigine::EventConnection _hitboxHitConn;
+	Unigine::EventConnection _diedConn;
+	float _hitboxCooldownTimer = 0.0f;
+	// Resolved on first update (not in init) — Hitbox::init may run after
+	// EnemySkull::initSkull on the same node, which would re-read activeOnInit
+	// and undo a setActive(true) we'd done at init time.
+	bool _hitboxConfigured = false;
 
 	bool _alerted = false;
 	bool _wasAlerted = false; // Used to detect the alerted→idle transition for the spawn teleport.
 	bool _ramming = false; // Flank: sticky once we commit to the ram dash.
-	float _attackTimer = 0.0f;
 	float _memoryTimer = 0.0f; // Counts down after LOS is lost; while > 0 we still know where the player is.
 	Unigine::Math::Vec3 _spawnPos = Unigine::Math::Vec3_zero;
 };

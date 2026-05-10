@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="PlayerStomp" manual="1" parent_name="node_base">
+	<parameter name="stompHitbox" type="node" group="Child node carrying the Hitbox component used for stomp. Damage / shape / team configured on the Hitbox itself.">0</parameter>
+	<parameter name="verticalSpeedThreshold" type="float" tooltip="Stomp hitbox is active while the player&apos;s vertical speed is below this (m/s, negative = falling). -2 means &quot;falling at least 2 m/s&quot;.">-2</parameter>
+	<parameter name="bouncePower" type="float" tooltip="Vertical speed (m/s) given to the player on a successful stomp">5</parameter>
+	<parameter name="cameraShake" type="float" tooltip="Camera trauma added on a successful stomp. 0 = none">0.5</parameter>
+</property>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="Hitbox" manual="1" parent_name="node_base">
+	<parameter name="shapeType" type="switch" tooltip="Volume shape. Capsule axis is the node&apos;s local Z; Box is OBB oriented by the node transform." group="Volume" items="Sphere,Capsule,Box">0</parameter>
+	<parameter name="radius" type="float" tooltip="Sphere/capsule radius in meters. Ignored when shapeType=Box." group="Volume">0.5</parameter>
+	<parameter name="capsuleHeight" type="float" tooltip="Length of the capsule&apos;s cylindrical mid-section (m). Total capsule length is capsuleHeight + 2*radius." group="Volume" shapeType="1">1</parameter>
+	<parameter name="boxHalfExtents" type="vec3" tooltip="Half-extents (m) along node local X/Y/Z. Box is OBB — orientation follows the node&apos;s transform." group="Volume" shapeType="2">0.500000 0.500000 0.500000</parameter>
+	<parameter name="damage" type="float" tooltip="Damage applied to the target&apos;s Entity per hit" group="Damage">10</parameter>
+	<parameter name="damageType" type="string" tooltip="Tag forwarded to Entity::takeDamage (used for resistances / death cause)" group="Damage">physical</parameter>
+	<parameter name="applyPlayerKnockback" type="toggle" tooltip="If the target is the player, call CharacterMovement::applyDamageKnockback (uses the player&apos;s own knockback speed/duration tuning)." group="Knockback">1</parameter>
+	<parameter name="activeOnInit" type="toggle" tooltip="Start active. Otherwise the hitbox sleeps until setActive(true) is called." group="Activation">0</parameter>
+	<parameter name="deactivateOnHit" type="toggle" tooltip="Disable after the first valid hit. Useful for projectiles / single-target attacks." group="Activation">0</parameter>
+	<parameter name="applyDamageOnHit" type="toggle" tooltip="If true, the hitbox calls Entity::takeDamage itself (standalone mode — traps, projectiles). Set false when an external orchestrator (e.g. Weapon) listens to eventHit and applies damage with its own profile. The overlap check, dedupe and event still run." group="Activation">1</parameter>
+	<parameter name="debugDraw" type="toggle" tooltip="Render the sphere volume each frame (yellow when idle, red when active)" group="Debug">0</parameter>
+</property>

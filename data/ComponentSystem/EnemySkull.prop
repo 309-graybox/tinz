@@ -9,6 +9,7 @@
 	</struct>
 	<parameter name="has_hp" type="toggle">0</parameter>
 	<parameter name="max_hp" type="float">0</parameter>
+	<parameter name="teamId" type="int" tooltip="Team identifier used by Hitbox to skip same-team targets (friendly fire prevention). 0 = player, 1 = enemy by convention.">0</parameter>
 	<parameter name="invulnerabilityTime" type="float" tooltip="Damage immunity duration in seconds after taking damage. 0 = disabled">0</parameter>
 	<parameter name="persistOnDeath" type="toggle" tooltip="If true, the node is NOT auto-deleted on death — owner reacts via eventDied (used by the player so respawn can revive it)">0</parameter>
 	<parameter name="deleteTimer" type="float">0</parameter>
@@ -30,12 +31,8 @@
 	<parameter name="flankDistance" type="float" tooltip="Radius the green skull holds while orbiting around the player toward their back" group="Flank">3</parameter>
 	<parameter name="flankCommitAngle" type="float" tooltip="Once the skull is within this angle (degrees) of the player&apos;s back, it commits to a straight ram" group="Flank">30</parameter>
 	<parameter name="flankRadialCorrection" type="float" tooltip="How aggressively (m/s) the skull corrects toward `flankDistance` while orbiting" group="Flank">2</parameter>
-	<parameter name="attackDamage" type="float" group="Attack">10</parameter>
-	<parameter name="attackCooldown" type="float" tooltip="Minimum time between hits (only meaningful when dieOnHit is off)" group="Attack">1</parameter>
+	<parameter name="hitboxNode" type="node" group="Child node carrying the Hitbox component that damages the player on contact. Damage / team / shape are configured on the Hitbox itself.">0</parameter>
+	<parameter name="attackCooldown" type="float" tooltip="Minimum time between hits (only meaningful when dieOnHit is off). Hitbox is deactivated for this duration after each successful hit, then re-armed." group="Attack">1</parameter>
 	<parameter name="dieOnHit" type="toggle" tooltip="Skull is destroyed immediately after dealing damage (kamikaze)" group="Attack">1</parameter>
-	<parameter name="stompMaxAngle" type="float" tooltip="Maximum angle (degrees) between the contact normal and world up for a contact to count as a top-down stomp. Smaller = stricter (only near-vertical landings count)" group="Stomp">45</parameter>
-	<parameter name="stompBouncePower" type="float" tooltip="Upward velocity (m/s) given to the player after a successful stomp. 0 = no bounce" group="Stomp">5</parameter>
-	<parameter name="stompShake" type="float" tooltip="Camera trauma added on a successful stomp kill. 0.3 = subtle, 0.6 = noticeable, 1.0 = screen-rocking. 0 = none" group="Stomp">0.5</parameter>
-	<parameter name="damageShake" type="float" tooltip="Camera trauma added when this skull damages the player. 0 = none" group="Stomp">0.7</parameter>
 	<parameter name="debugDraw" type="toggle" tooltip="Draw a line from the skull to its current target. Color encodes behavior" group="Debug">0</parameter>
 </property>

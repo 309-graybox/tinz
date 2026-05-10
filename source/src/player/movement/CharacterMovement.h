@@ -86,6 +86,10 @@ public:
 	void applyVerticalBounce(float speed);
 	void applyDamageKnockback(const Unigine::Math::Vec3 &source_position);
 
+	// Signed vertical speed in m/s along the local up axis. Positive = up.
+	// Read by PlayerStomp to gate its hitbox by "currently falling fast enough".
+	float getVerticalSpeed() const noexcept { return _vertical_speed; }
+
 private:
 	MovementContext _ctx;
 	IdleState _idle_state;

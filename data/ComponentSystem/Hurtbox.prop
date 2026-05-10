@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="Hurtbox" manual="1" parent_name="node_base">
+	<parameter name="shapeType" type="switch" tooltip="Volume shape. Capsule axis is the node&apos;s local Z." items="Sphere,Capsule">0</parameter>
+	<parameter name="radius" type="float" tooltip="Sphere/capsule radius (m).">0.5</parameter>
+	<parameter name="capsuleHeight" type="float" tooltip="Length of the capsule&apos;s cylindrical mid-section (m). Total length is capsuleHeight + 2*radius." shapeType="1">1</parameter>
+	<parameter name="debugDraw" type="toggle" tooltip="Render the volume each frame (cyan). For positioning the volume in the editor.">0</parameter>
+</property>
