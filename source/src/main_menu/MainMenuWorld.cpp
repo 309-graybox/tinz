@@ -36,6 +36,9 @@ void MainMenuWorld::init()
 
 	ComponentSystem::get()->getComponentsInWorld<MenuInteractive>(_interactives);
 
+	_initial_mouse_pos = Input::getMousePosition();
+	_armed = false;
+
 	const char *music = backgroundMusic.get();
 	if (music && *music)
 		audio::SoundManager::playMusic(music);
@@ -64,6 +67,16 @@ void MainMenuWorld::shutdown()
 
 void MainMenuWorld::tick_idle()
 {
+	if (!_armed)
+	{
+		_input_delay_timer += Game::getIFps();
+		if (_input_delay_timer < (float)inputDelay)
+			return;
+		if (Input::getMousePosition() == _initial_mouse_pos)
+			return;
+		_armed = true;
+	}
+
 	MenuInteractive *hit = raycast_interactive();
 	if (hit != _hovered)
 	{

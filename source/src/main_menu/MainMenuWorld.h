@@ -25,6 +25,7 @@ public:
 	PROP_PARAM(String, backgroundMusic)
 	PROP_PARAM(Mask, intersectionMask, ~0)
 	PROP_PARAM(Float, fadeBrightness, -1.0f, "Fade Brightness", "Target color-correction brightness during click fade (-1 = black)")
+	PROP_PARAM(Float, inputDelay, 0.3f, "Input Delay", "Seconds to ignore input after world load")
 
 	const Unigine::Math::dvec3 &getCursorWorldPoint() const noexcept { return _cursor_point; }
 	MenuInteractive *getHovered() const noexcept { return _hovered; }
@@ -71,5 +72,11 @@ private:
 	Unigine::Math::dvec3 _cursor_point = Unigine::Math::dvec3_zero;
 
 	Unigine::Input::MOUSE_HANDLE _mouse_handle = Unigine::Input::MOUSE_HANDLE_USER;
+
+	// Idle input arms only after `inputDelay` seconds AND the user moves the
+	// cursor — avoids spurious hover/click on the first frames after world load.
+	Unigine::Math::ivec2 _initial_mouse_pos = Unigine::Math::ivec2_zero;
+	float _input_delay_timer = 0.0f;
+	bool _armed = false;
 };
 
