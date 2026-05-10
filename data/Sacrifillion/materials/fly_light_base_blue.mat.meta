@@ -2,9 +2,9 @@
 <asset version="2.21.0.0">
 	<guid>f98fc9a2ab0c0aa43863173ef14d551005f624c5</guid>
 	<type>material</type>
-	<hash>404cd4515710b9188365f85cc4fc7e0707c437de505966cd9d9b6f923023ebf7</hash>
+	<hash>04f245d25a49c17ab6a3ee8566db387817e58f7372c5cbf02e6b53e2631a9dea</hash>
 	<runtimes>
-		<runtime id="f98fc9a2ab0c0aa43863173ef14d551005f624c5" name="fly_ligh_base_blue" link="0" type="5"/>
+		<runtime id="f98fc9a2ab0c0aa43863173ef14d551005f624c5" name="fly_light_base_blue" link="0" type="5"/>
 	</runtimes>
 	<parameters>
 		<parameter type="bool" name="unchanged">1</parameter>
