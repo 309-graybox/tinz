@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="NodeDummy" id="1735383740" name="BerskerSacrificeSymbol">
+		<transform>0.999998390675 0 0 0.0 0 1.00000095367 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		<node type="ObjectMeshStatic" id="1788868331" immovable="1" name="BerserkSacrificeSymbol">
+			<mesh_name>guid://4eb237ddd6cb40062649dd66345d4059716bde21</mesh_name>
+			<surface name="Bottom" intersection="1" material="f9c356edf5525c69e0261b58fff7bbf60c53cd6b"/>
+			<transform>0.999999165536 0 5.55111512313e-17 0.0 -1.73472347598e-17 0.999997854237 0 0.0 0 0 0.999998211864 0.0 0 0 0 1.0</transform>
+		</node>
+	</node>
+</nodes>
