@@ -508,6 +508,49 @@ void CharacterMovement::resolve_collisions(float ifps)
 
 			Vec3 contact_point = contact->getPoint();
 
+			// Push dynamic rigid bodies (e.g. dead-skull corpses): the character
+			// is kinematic, so contacts don't naturally transfer momentum.
+			// Apply only on iter==0 — _shape->getCollision is a query, the
+			// rigid body doesn't move between iterations, so the same contact
+			// would otherwise compound the impulse N times per substep.
+			if (iter == 0 && pushStrength > 0.0f)
+			{
+				ShapePtr s0 = contact->getShape0();
+				ShapePtr s1 = contact->getShape1();
+				ShapePtr other_shape = (s0.get() == _shape.get()) ? s1 : s0;
+				if (other_shape)
+				{
+					BodyRigidPtr other_body = checked_ptr_cast<BodyRigid>(other_shape->getBody());
+					if (other_body && other_body->getMass() > 0.0f)
+					{
+						vec3 push_dir = -normal;
+						vec3 char_v = vec3(_horizontal_velocity) + _up * _vertical_speed;
+						vec3 r = vec3(contact_point - other_body->getWorldCenterOfMass());
+						vec3 body_v = other_body->getLinearVelocity() + cross(other_body->getAngularVelocity(), r);
+						float delta = dot(char_v - body_v, push_dir);
+						if (delta > 0.0f)
+						{
+							// Cap how fast we can drive the body through this contact —
+							// without it, light corpses with low damping shoot off at
+							// absurd speeds when sprinted into.
+							float cap = pushMaxSpeed;
+							if (cap > 0.0f)
+							{
+								float body_speed_along = dot(body_v, push_dir);
+								delta = min(delta, max(cap - body_speed_along, 0.0f));
+							}
+							if (delta > 0.0f)
+							{
+								if (other_body->isFrozen())
+									other_body->setFrozen(false);
+								vec3 impulse = push_dir * (other_body->getMass() * delta * pushStrength);
+								other_body->addWorldImpulse(contact_point, impulse);
+							}
+						}
+					}
+				}
+			}
+
 			float slope_dot = dot(normal, _up);
 			bool is_below = dot(contact_point - bottom_cap, Vec3(_up)) < 0.0f;
 			bool is_walkable = is_below && slope_dot > _slope_cos;

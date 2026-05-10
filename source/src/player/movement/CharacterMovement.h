@@ -58,6 +58,10 @@ public:
 	PROP_PARAM(Float, damageKnockbackSpeed, 3.5f, "", "Горизонтальная скорость отталкивания при получении урона");
 	PROP_PARAM(Float, damageKnockbackDuration, 0.25f, "", "Время затухания отталкивания от урона");
 
+	PROP_GROUP("Push");
+	PROP_PARAM(Float, pushStrength, 1.5f, "", "Множитель импульса, передаваемого динамическим физическим телам (BodyRigid) при контакте с персонажем. Импульс пропорционален массе тела и скорости сближения. 0 — не толкать тела");
+	PROP_PARAM(Float, pushMaxSpeed, 12.0f, "", "Верхняя граница скорости (м/с), до которой персонаж может разогнать тело своим контактом. Защищает от чрезмерных вылетов лёгких тел при высокой pushStrength. 0 — без ограничения");
+
 	PROP_GROUP("")
 	PROP_PARAM(Node, body);
 	PROP_PARAM(Float, fall_scale, 0.5f);
