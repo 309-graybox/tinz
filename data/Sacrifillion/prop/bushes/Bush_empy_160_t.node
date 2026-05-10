@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="1416228606" immovable="1" name="Bush_empy_160_t">
+		<mesh_name>guid://1b6e3ba56a83e6cc1128c3f40ea6c9474f07d69c</mesh_name>
+		<surface name="Leaf" intersection="1" material="0b5b9490a41aac719d767dae193d21cf61a0bc08"/>
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>

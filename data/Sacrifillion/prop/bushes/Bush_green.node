@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="299321925" immovable="1" name="Bush_green">
+		<mesh_name>guid://b1cc073361c9972a2c67d850a413bfda5493014b</mesh_name>
+		<surface name="LeafBase.001" intersection="1" material="2e0801a33bb0292d6e15ab80dcd24a1bb73fe9bb"/>
+		<surface name="Leaf.001" intersection="1" material="0b5b9490a41aac719d767dae193d21cf61a0bc08"/>
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>
