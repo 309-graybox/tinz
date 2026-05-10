@@ -34,4 +34,30 @@
 			</keys>
 		</curve2d>
 	</texture>
+	<texture name="emission_color">
+		<curve2d>
+			<keys>
+				<key point="0 0.600000024" left_tangent="0 0" right_tangent="0 0"/>
+				<key point="0.0500000007 0.600000024" left_tangent="0 0" right_tangent="0 0"/>
+				<key point="1 0.600000024" left_tangent="0 0" right_tangent="0 0"/>
+				<key point="1 0.600000024" left_tangent="0 0" right_tangent="0 0"/>
+			</keys>
+		</curve2d>
+		<curve2d>
+			<keys>
+				<key point="0 0.870000005" left_tangent="0 0" right_tangent="0 0"/>
+				<key point="0.0500000007 0.870000005" left_tangent="0 0" right_tangent="0 0"/>
+				<key point="1 0.870000005" left_tangent="0 0" right_tangent="0 0"/>
+				<key point="1 0.870000005" left_tangent="0 0" right_tangent="0 0"/>
+			</keys>
+		</curve2d>
+		<curve2d>
+			<keys>
+				<key point="0 1" left_tangent="0 0" right_tangent="0 0"/>
+				<key point="0.0616853833 1" left_tangent="0 0" right_tangent="0 0"/>
+				<key point="1 1" left_tangent="0 0" right_tangent="0 0"/>
+				<key point="1 1" left_tangent="0 0" right_tangent="0 0"/>
+			</keys>
+		</curve2d>
+	</texture>
 </material>

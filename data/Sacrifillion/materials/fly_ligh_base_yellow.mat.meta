@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>d082bb0e9ec4716bec7aa2ea914468904fe34a01</guid>
+	<type>material</type>
+	<hash>b3558094e26b4cf92ad3bd4870c0a2314842147dad79fb4afca10d6d5a2c8fcc</hash>
+	<runtimes>
+		<runtime id="d082bb0e9ec4716bec7aa2ea914468904fe34a01" name="fly_ligh_base_yellow" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>

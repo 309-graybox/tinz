@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material version="2.21.0.0" guid="f98fc9a2ab0c0aa43863173ef14d551005f624c5" parent="0cf2be1d0269b3945df5c63107eda67f7d8b7928" base_material="b7c07dfd4ce80edac55fcbfdd0befa02ccd20b88">
+	<parameter name="emission_color" expression="0">0.352941185 0.913725495 1 1</parameter>
+</material>

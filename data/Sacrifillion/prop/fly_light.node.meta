@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>4a2799764ec8d3457e9128d22e24123274aee9c9</guid>
+	<type>node</type>
+	<hash>4eb4efdcc86e3a4b5f44d59ff9b51b3d34f91b978a448a2d9a80b6959b203e1f</hash>
+	<runtimes>
+		<runtime id="4a2799764ec8d3457e9128d22e24123274aee9c9" name="fly_light.node" link="0" type="3"/>
+	</runtimes>
+</asset>

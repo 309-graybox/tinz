@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material version="2.21.0.0" guid="0cf2be1d0269b3945df5c63107eda67f7d8b7928" base_material="b7c07dfd4ce80edac55fcbfdd0befa02ccd20b88">
+	<state name="albedo_color_type">1</state>
+	<state name="ambient">0</state>
+	<state name="environment_probe">0</state>
+	<state name="light_world">0</state>
+	<state name="emission">1</state>
+	<texture name="albedo_color">
+		<curve2d>
+			<keys>
+				<key point="0 0" left_tangent="0 0" right_tangent="0 0"/>
+				<key point="0.449999988 1" left_tangent="0 0" right_tangent="0 0"/>
+				<key point="0.699999988 1" left_tangent="0 0" right_tangent="0 0"/>
+				<key point="1 0.600000024" left_tangent="0 0" right_tangent="0 0"/>
+			</keys>
+		</curve2d>
+		<curve2d>
+			<keys>
+				<key point="0 0" left_tangent="0 0" right_tangent="0 0"/>
+				<key point="0.449999988 1" left_tangent="0 0" right_tangent="0 0"/>
+				<key point="0.699999988 1" left_tangent="0 0" right_tangent="0 0"/>
+				<key point="1 0.600000024" left_tangent="0 0" right_tangent="0 0"/>
+			</keys>
+		</curve2d>
+		<curve2d>
+			<keys>
+				<key point="0 0" left_tangent="0 0" right_tangent="0 0"/>
+				<key point="0.449999988 1" left_tangent="0 0" right_tangent="0 0"/>
+				<key point="0.699999988 1" left_tangent="0 0" right_tangent="0 0"/>
+				<key point="1 0.600000024" left_tangent="0 0" right_tangent="0 0"/>
+			</keys>
+		</curve2d>
+		<curve2d>
+			<keys>
+				<key point="0 0" left_tangent="0 0" right_tangent="0 0"/>
+				<key point="0.192809999 0.600000024" left_tangent="-0.0100000054 0" right_tangent="0.0100000054 0"/>
+				<key point="0.449999988 1" left_tangent="0 0" right_tangent="0 0"/>
+				<key point="0.699999988 1" left_tangent="0 0" right_tangent="0 0"/>
+				<key point="1 0.600000024" left_tangent="0 0" right_tangent="0 0"/>
+			</keys>
+		</curve2d>
+	</texture>
+	<parameter name="emission_scale" expression="0">0.5</parameter>
+</material>

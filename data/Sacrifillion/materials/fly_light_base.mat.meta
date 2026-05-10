@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>0cf2be1d0269b3945df5c63107eda67f7d8b7928</guid>
+	<type>material</type>
+	<hash>8340a3ab060d132052b59943c170304363aa52f029e0544ce6d8cc6d53ebdf73</hash>
+	<runtimes>
+		<runtime id="0cf2be1d0269b3945df5c63107eda67f7d8b7928" name="fly_light_base" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>
