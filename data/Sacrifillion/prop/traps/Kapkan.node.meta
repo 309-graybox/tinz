@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>4d2b4ab8fdd7b2361cde11954c6a6a1f5e2cb07b</guid>
+	<type>node</type>
+	<hash>ac4282bdac0411d61641f8cab6bd6d0c61b93d0e8338c34ce226377ae4dcd3d2</hash>
+	<runtimes>
+		<runtime id="4d2b4ab8fdd7b2361cde11954c6a6a1f5e2cb07b" name="Kapkan.node" link="0" type="3"/>
+	</runtimes>
+</asset>

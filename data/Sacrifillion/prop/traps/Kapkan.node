@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="NodeDummy" id="937883449" name="Kapkan">
+		<transform>0.660588622093 1.15500967013e-07 0 0.0 -1.15500967013e-07 0.660588622093 0 0.0 0 0 0.660588502884 0.0 0 0 0 1.0</transform>
+		<node type="ObjectMeshStatic" id="1044068164" immovable="1" name="Kapkan_bot">
+			<mesh_name>guid://aa7ee69cd29d7121e89e00094cd943479056e1cf</mesh_name>
+			<surface name="MetalSpikes" intersection="1" material="211b3ea402522afccf88fe4ec86c53810b25a583"/>
+			<surface name="Teeth" intersection="1" material="f9c356edf5525c69e0261b58fff7bbf60c53cd6b"/>
+			<transform>1 1.07562060906e-14 0 0.0 -5.73617067275e-15 1.00000009023 0 0.0 0 0 1.00000036092 0.0 -0.0411090360353 0.774774211562 0.250323014005 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1662638547" immovable="1" name="Kapkan_top">
+			<mesh_name>guid://ee6ef9e47727dd166ce976bb8d7f939d3c07e4e2</mesh_name>
+			<surface name="MetalSpikes" intersection="1" material="211b3ea402522afccf88fe4ec86c53810b25a583"/>
+			<surface name="Teeth" intersection="1" material="f9c356edf5525c69e0261b58fff7bbf60c53cd6b"/>
+			<transform>1 1.07562060906e-14 0 0.0 -5.73617067275e-15 1.00000009023 0 0.0 0 0 1.00000036092 0.0 -0.0411090360353 0.774774211562 0.252767959269 1.0</transform>
+		</node>
+	</node>
+</nodes>

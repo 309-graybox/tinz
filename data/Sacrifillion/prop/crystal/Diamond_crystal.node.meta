@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>d5210e3ea8a532520b52bf4db03d18c27da99eac</guid>
+	<type>node</type>
+	<hash>e1ff6fa4dc8f080abee1be0ab712ca973068f7b86dd9f912465ccc26dad52929</hash>
+	<runtimes>
+		<runtime id="d5210e3ea8a532520b52bf4db03d18c27da99eac" name="Diamond_crystal.node" link="0" type="3"/>
+	</runtimes>
+</asset>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material version="2.21.0.0" guid="c6aa8860c2cd94733c8133071cfabccef1da517e" parent="f9c356edf5525c69e0261b58fff7bbf60c53cd6b" base_material="602532cbe66269ae7787a5357c527510d5d3452f">
+	<parameter name="Outer Color" expression="0">0.125490203 0.458823532 0.552941203 1</parameter>
+	<parameter name="Emission Color" expression="0">0.309803933 0.749019623 0.674509823 1</parameter>
+	<parameter name="Anim Multiplier" expression="0">0.00400000019</parameter>
+</material>

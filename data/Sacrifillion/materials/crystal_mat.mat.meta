@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>c6aa8860c2cd94733c8133071cfabccef1da517e</guid>
+	<type>material</type>
+	<hash>41c63707ab6ae3a8ff997c36e7d74e5afbb4a5127c456403a42b1824552e22f1</hash>
+	<runtimes>
+		<runtime id="c6aa8860c2cd94733c8133071cfabccef1da517e" name="crystal_mat" link="0" type="5"/>
+	</runtimes>
+</asset>

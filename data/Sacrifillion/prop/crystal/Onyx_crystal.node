@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="NodeDummy" id="1117899526" name="Onyx_crystal">
+		<transform>0.999999940395 1.74845524725e-07 0 0.0 -1.74845524725e-07 0.999999940395 0 0.0 0 0 0.999999940395 0.0 0 0 0 1.0</transform>
+		<node type="ObjectMeshStatic" id="1763747501" immovable="1" name="Crystal">
+			<mesh_name>guid://33d4aeaad044e5a3504964c93a96c0489c1706b8</mesh_name>
+			<surface name="Crystal.002" intersection="1" material="1c6a2ba9bf2f171f1181aa4764cbe88fd9825d57"/>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		</node>
+	</node>
+</nodes>

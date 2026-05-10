@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>5b636f64a15024df89436e3bb8d0a3c5e3048e62</guid>
+	<type>material</type>
+	<hash>4f1686decdc6313730d21707c26d586b3c867d179a0abf803e4f84e251d40cca</hash>
+	<runtimes>
+		<runtime id="5b636f64a15024df89436e3bb8d0a3c5e3048e62" name="crystal_mat_green" link="0" type="5"/>
+	</runtimes>
+</asset>

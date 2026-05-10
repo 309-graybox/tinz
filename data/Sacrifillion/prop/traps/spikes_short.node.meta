@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>67ded618d9bd7fd272a392750ae00c5c4d573e5b</guid>
+	<type>node</type>
+	<hash>89e1d3ba69bdceaca7c9860960d581a63df756e3698f102f7e8bedd7450adecb</hash>
+	<runtimes>
+		<runtime id="67ded618d9bd7fd272a392750ae00c5c4d573e5b" name="spikes_short.node" link="0" type="3"/>
+	</runtimes>
+</asset>

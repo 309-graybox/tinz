@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>32704bf8f25ae11b503321bffd44c145073e8e56</guid>
+	<type>node</type>
+	<hash>63a973d7483b5597bbdcbe7a0b180323a127aead93715393e27f24a99a3d7a04</hash>
+	<runtimes>
+		<runtime id="32704bf8f25ae11b503321bffd44c145073e8e56" name="Onyx_crystal.node" link="0" type="3"/>
+	</runtimes>
+</asset>

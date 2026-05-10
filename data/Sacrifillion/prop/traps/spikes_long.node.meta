@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>69be626c0ea96075d4bec5a3c5551139290c9f2a</guid>
+	<type>node</type>
+	<hash>48e9d138d0e310ac4b90536083c5f841d1b0fe58b899d244ece6d6d95da647f9</hash>
+	<runtimes>
+		<runtime id="69be626c0ea96075d4bec5a3c5551139290c9f2a" name="spikes_long.node" link="0" type="3"/>
+	</runtimes>
+</asset>

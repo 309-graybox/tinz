@@ -1,23 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <asset version="2.21.0.0">
-	<guid>120de4af86e7d7b4b55ebf10ee0e57b3959ce484</guid>
+	<guid>cf81d1524e5fdf40c5725217638442ea8b7a246d</guid>
 	<type>fbx</type>
-	<hash>0ab500fbde72c86ba5289a1a2e51aa1ba17b5d7829c589e907192dc0a969bacf</hash>
+	<hash>20a3fd3df38e86c9a266690052133664abf34d4f7f9a0dbce757c1198e1699c4</hash>
 	<runtimes>
-		<runtime id="120de4af86e7d7b4b55ebf10ee0e57b3959ce484" name="Kapkan.fbx" link="0"/>
-		<runtime id="bbc411d313031674035223b69e1e2df171b6d707" name="Kapkan.node" link="1" type="3">
+		<runtime id="cf81d1524e5fdf40c5725217638442ea8b7a246d" name="Spikes.fbx" link="0"/>
+		<runtime id="9d01a91c494d1264fca75c935ac28c94ab656c5a" name="Spikes.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">9967e38e</parameter>
+				<parameter type="string" name="id">1ebe137e</parameter>
 			</parameters>
 		</runtime>
-		<runtime id="1d7d124dde712fe941855866b99b738adc13a8ba" name="icosphere.mesh" link="2" type="1">
+		<runtime id="ed4ebc2657d999a120e31f3b1632eb2aee8b4ff1" name="cylinder.041.mesh" link="2" type="1">
 			<parameters>
-				<parameter type="string" name="id">9967e38e</parameter>
+				<parameter type="string" name="id">1ebe137e</parameter>
 			</parameters>
 		</runtime>
-		<runtime id="5e10ad3dc08e3bf6b548ebd812e973ddb8d2a0d1" name="icosphere.002.mesh" link="2" type="1">
+		<runtime id="1d2943ae0a47030d87b375fd4e60faeca9e5089c" name="cylinder.042.mesh" link="2" type="1">
 			<parameters>
-				<parameter type="string" name="id">9967e38e</parameter>
+				<parameter type="string" name="id">1ebe137e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="a1bcc9c86d8f72389c81b8e5771f7cf6f5ba8b4b" name="cube.069.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">1ebe137e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="6e379c90f5092922df193977bfab4e80a4bae82e" name="cube.070.mesh" link="2" type="1">
+			<parameters>
+				<parameter type="string" name="id">1ebe137e</parameter>
 			</parameters>
 		</runtime>
 	</runtimes>
@@ -32,23 +42,22 @@
 		<parameter type="string" name="front_axis">default</parameter>
 		<parameter type="bool" name="import_animations">1</parameter>
 		<parameter type="bool" name="import_bones_without_skin">1</parameter>
-		<parameter type="bool" name="import_cameras">1</parameter>
-		<parameter type="bool" name="import_lights">1</parameter>
-		<parameter type="bool" name="import_materials">1</parameter>
+		<parameter type="bool" name="import_cameras">0</parameter>
+		<parameter type="bool" name="import_lights">0</parameter>
+		<parameter type="bool" name="import_materials">0</parameter>
 		<parameter type="string" name="import_materials_mode">take_by_name_or_create</parameter>
 		<parameter type="bool" name="import_meshes">1</parameter>
 		<parameter type="bool" name="import_morph_targets">0</parameter>
 		<parameter type="string" name="import_skeleton_mode">create</parameter>
-		<parameter type="bool" name="import_skeletons">1</parameter>
+		<parameter type="bool" name="import_skeletons">0</parameter>
 		<parameter type="bool" name="import_tangent_space">0</parameter>
-		<parameter type="bool" name="import_textures">1</parameter>
+		<parameter type="bool" name="import_textures">0</parameter>
 		<parameter type="bool" name="invert_gchannel_for_normal_maps">0</parameter>
 		<parameter type="bool" name="joints_reorientation">0</parameter>
-		<parameter type="string" name="lightmaps">{&quot;guid://5e10ad3dc08e3bf6b548ebd812e973ddb8d2a0d1&quot;:{&quot;Metal&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Teeth&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://1d7d124dde712fe941855866b99b738adc13a8ba&quot;:{&quot;Metal&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3},&quot;Teeth&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}}}</parameter>
+		<parameter type="string" name="lightmaps">{&quot;guid://a1bcc9c86d8f72389c81b8e5771f7cf6f5ba8b4b&quot;:{&quot;MetalBottom&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://6e379c90f5092922df193977bfab4e80a4bae82e&quot;:{&quot;MetalSpikes.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://ed4ebc2657d999a120e31f3b1632eb2aee8b4ff1&quot;:{&quot;MetalBottom&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}},&quot;guid://1d2943ae0a47030d87b375fd4e60faeca9e5089c&quot;:{&quot;MetalSpikes.001&quot;:{&quot;use_custom_settings&quot;:0,&quot;uv_ch&quot;:1,&quot;unwrap_uv_ch_0&quot;:0,&quot;unwrap_uv_ch_1&quot;:0,&quot;resolution&quot;:3}}}</parameter>
 		<parameter type="float" name="linear_deflection">0.200000003</parameter>
 		<parameter type="string" name="lods">_lod_0,-1e+09,3,0,0,100,0,0,60;_lod_1,3,9,0,0,60,0,1,60;_lod_2,9,1e+09,0,0,30,0,1,60</parameter>
 		<parameter type="string" name="lods_mode">off</parameter>
-		<parameter type="string" name="material_guids">metal,12adbdb02d039459012e135cc96e50d2523c073e,teeth,f3fb2c31bc75049b0a7cf1bc86f2324e64917705</parameter>
 		<parameter type="bool" name="merge_similar_materials">0</parameter>
 		<parameter type="bool" name="merge_static_meshes">0</parameter>
 		<parameter type="bool" name="merge_surfaces_by_materials">0</parameter>
@@ -63,7 +72,7 @@
 		<parameter type="int" name="root_motion_forward_axis">0</parameter>
 		<parameter type="int" name="root_motion_position_component">0</parameter>
 		<parameter type="int" name="root_motion_rotation_component">0</parameter>
-		<parameter type="float" name="scale">0.349999994</parameter>
+		<parameter type="float" name="scale">1</parameter>
 		<parameter type="string" name="shared_skeleton_path"/>
 		<parameter type="bool" name="skip_empty_nodes">0</parameter>
 		<parameter type="int" name="smooth_animation_size">0</parameter>

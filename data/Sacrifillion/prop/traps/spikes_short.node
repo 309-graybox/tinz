@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="NodeDummy" id="348295858" name="spikes_short">
+		<transform>0.999999940395 0 0 0.0 0 0.999999940395 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		<node type="ObjectMeshStatic" id="159413717" immovable="1" name="spikes_short_bot">
+			<mesh_name>guid://a1bcc9c86d8f72389c81b8e5771f7cf6f5ba8b4b</mesh_name>
+			<surface name="MetalBottom" intersection="1" material="6e3c24ba5f8374fa5b056d9420887134e85d2fa1"/>
+			<transform>1.0000000596 0 0 0.0 0 1.0000000596 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		</node>
+		<node type="ObjectMeshStatic" id="1756679472" immovable="1" name="spikes_short_top">
+			<mesh_name>guid://6e379c90f5092922df193977bfab4e80a4bae82e</mesh_name>
+			<surface name="MetalSpikes.001" intersection="1" material="211b3ea402522afccf88fe4ec86c53810b25a583"/>
+			<transform>1.0000000596 0 0 0.0 0 1.0000000596 0 0.0 0 0 1 0.0 -0.0014546204477 1.27169386133e-10 0.0619723057747 1.0</transform>
+		</node>
+	</node>
+</nodes>
