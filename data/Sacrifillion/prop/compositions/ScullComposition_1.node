@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="NodeDummy" id="1624170118" name="ScullComposition_1">
+		<transform>1.00000011921 0 0 0.0 0 1.00000011921 0 0.0 0 0 1.00000005961 0.0 0 0 0 1.0</transform>
+		<node type="NodeReference" id="433196004" name="prop_skull_0">
+			<reference>guid://9f33494f867523ac3db2171900252f479b61adc1</reference>
+			<transform>-0.014290092513 0.999897778034 0 0.0 -0.999897778034 -0.014290092513 0 0.0 0 0 0.999999940395 0.0 0.0166832397536 -0.0514165691468 -0.139350869573 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1300810397" name="prop_skull_1">
+			<reference>guid://061b8406a682040dfdcfb9b46cb0bbe78d79a23e</reference>
+			<transform>-0.151122674346 0.988514959812 0 0.0 -0.988514959812 -0.151122674346 0 0.0 0 0 0.99999988079 0.0 0.439257449079 0.054424137436 -0.100508319559 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1679427146" name="prop_skull_3">
+			<reference>guid://34f738dc5874866263ac541a96674c0671f39154</reference>
+			<transform>0.0744932815432 0.997221469879 0 0.0 -0.997221410275 0.0744932815432 0 0.0 0 0 0.999999821186 0.0 -0.432653962381 0.0338514504885 -0.119833204687 1.0</transform>
+		</node>
+		<node type="NodeReference" id="2051769339" name="prop_skull_0">
+			<reference>guid://9f33494f867523ac3db2171900252f479b61adc1</reference>
+			<transform>0.143559023737 0.989641666413 0 0.0 -0.989641606808 0.143559023737 0 0.0 0 0 0.999999821186 0.0 -0.0201399218567 0.0605078412108 0.177649210872 1.0</transform>
+		</node>
+		<node type="NodeReference" id="712742400" name="candle_0_no_billboard">
+			<reference>guid://22d053ada44fff4a6f134ca71fe551ee83f598cf</reference>
+			<transform>0.999999880791 0 0 0.0 0 0.999999880791 0 0.0 0 0 0.999999940395 0.0 -0.780351682233 -0.0239107528258 -0.24543953375 1.0</transform>
+		</node>
+		<node type="NodeReference" id="630670569" name="candle_3">
+			<reference>guid://ebeaa6da8015eee945e25d68b0797620c01e6f12</reference>
+			<transform>0.999999880791 0 0 0.0 0 0.999999880791 0 0.0 0 0 0.999999940395 0.0 0.767987763491 0.050774843671 -0.252101630383 1.0</transform>
+		</node>
+		<node type="NodeReference" id="1674032552" name="candle_6">
+			<reference>guid://6c26411f547a1438818b3369ea9a465cb6a08c11</reference>
+			<transform>0.999999880791 0 0 0.0 0 0.999999880791 0 0.0 0 0 0.999999940395 0.0 0.433092195414 0.0505879460933 -0.0040734803665 1.0</transform>
+		</node>
+		<node type="NodeReference" id="845751051" name="candle_7_no_billboard">
+			<reference>guid://93df01cebc0416100208c43cbc8cc58d4457fa06</reference>
+			<transform>0.999999880791 0 0 0.0 0 0.999999880791 0 0.0 0 0 0.999999940395 0.0 -0.467135005671 0.0380456718885 0.0268153561324 1.0</transform>
+		</node>
+	</node>
+</nodes>

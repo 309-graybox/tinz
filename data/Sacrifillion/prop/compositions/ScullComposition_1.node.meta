@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>c41e0e04752d4ef5cb79845bf42d74182eee9b23</guid>
+	<type>node</type>
+	<hash>fbbda0dea73e9d298ed4e864f0e9b8793bb273b53cbac409fb8f94754c9e9f18</hash>
+	<runtimes>
+		<runtime id="c41e0e04752d4ef5cb79845bf42d74182eee9b23" name="ScullComposition_1.node" link="0" type="3"/>
+	</runtimes>
+</asset>
