@@ -456,10 +456,19 @@
 		</properties>
 		<transform>0.99999988079 0 0 0.0 0 1.00000011921 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 	</node>
-	<node type="NodeDummy" id="804353378" name="debug_tuning">
-		<properties>
-			<property parent="63d63f3da5792173f8d0d70411c422aa8b5e483f" guid="90744d99f6e9a1fa471769ea268d5919f4e3d8eb"/>
-		</properties>
-		<transform>0.999788701534 -0.000458396214526 -0.0205507129431 0.0 -0.000458393828012 0.999005615711 -0.0445842146873 0.0 0.0205507129431 0.0445842109621 0.998794198036 0.0 0 0 0 1.0</transform>
+	<node type="NodeDummy" id="1904963976" name="tunings">
+		<transform>0.99999988079 0 0 0.0 0 1.00000011921 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		<node type="NodeDummy" id="804353378" name="debug_tuning">
+			<properties>
+				<property parent="63d63f3da5792173f8d0d70411c422aa8b5e483f" guid="90744d99f6e9a1fa471769ea268d5919f4e3d8eb"/>
+			</properties>
+			<transform>0.999788820719 -0.000458396159881 -0.0205507129431 0.0 -0.000458393882657 0.999005496621 -0.0445842146873 0.0 0.020550715393 0.0445842056473 0.998794198036 0.0 0 0 0 1.0</transform>
+		</node>
+		<node type="NodeDummy" id="1009462669" name="player_tuning">
+			<properties>
+				<property parent="f2fbca10e2dcd800695c43cf5681f6af60b23a51" guid="6a498c09151627eb0c6401b252bef714601918c6"/>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		</node>
 	</node>
 </nodes>

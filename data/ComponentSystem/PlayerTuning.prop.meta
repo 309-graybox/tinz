@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>f2fbca10e2dcd800695c43cf5681f6af60b23a51</guid>
+	<type>property</type>
+	<hash>ad49ccfb27ed8eaa50c8c0ee8af3802761ea7edd9fa5c2813faac4d1668d6c21</hash>
+	<runtimes>
+		<runtime id="f2fbca10e2dcd800695c43cf5681f6af60b23a51" name="PlayerTuning" link="0" type="4"/>
+	</runtimes>
+</asset>

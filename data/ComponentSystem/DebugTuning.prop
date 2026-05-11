@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <property version="2.21.0.0" name="DebugTuning" manual="1" parent_name="node_base">
-	<parameter name="show_camera_lock_on_direction" type="toggle" group="Camera">0</parameter>
-	<parameter name="show_movement_base" type="toggle" group="Movement">0</parameter>
-	<parameter name="show_movement_rays" type="toggle" group="Movement">0</parameter>
-	<parameter name="show_movement_hit" type="toggle" group="Movement">0</parameter>
-	<parameter name="show_movement_contact_points" type="toggle" group="Movement">0</parameter>
-	<parameter name="show_interaction_trigger" type="toggle" group="Interaction">0</parameter>
-	<parameter name="log_interaction" type="toggle" group="Interaction">0</parameter>
-	<parameter name="show_hitboxes" type="toggle" group="Combat">0</parameter>
-	<parameter name="show_hurtboxes" type="toggle" group="Combat">0</parameter>
-	<parameter name="show_skulls_direction" type="toggle" group="Combat">0</parameter>
-	<parameter name="log_anim_param_on_change" type="toggle" group="Anim">0</parameter>
+	<parameter name="show_camera_lock_on_direction" type="toggle" tooltip="Draw a red marker at the camera&apos;s current lock-on target world position." group="Camera">0</parameter>
+	<parameter name="show_movement_base" type="toggle" tooltip="Draw character base vectors (horizontal velocity, move direction, up, gravity, input) and grounded/vertical-speed labels." group="Movement">0</parameter>
+	<parameter name="show_movement_rays" type="toggle" tooltip="Draw the downward probe rays used for ground-normal detection." group="Movement">0</parameter>
+	<parameter name="show_movement_hit" type="toggle" tooltip="Draw points where ground-probe rays hit a surface." group="Movement">0</parameter>
+	<parameter name="show_movement_contact_points" type="toggle" tooltip="Draw collision contact points and their surface normals during movement resolution." group="Movement">0</parameter>
+	<parameter name="show_interaction_trigger" type="toggle" tooltip="Render the player&apos;s interaction trigger volume." group="Interaction">0</parameter>
+	<parameter name="log_interaction" type="toggle" tooltip="Log every Interactable::startInteract call (interactor, target, current state, can-interact)." group="Interaction">0</parameter>
+	<parameter name="show_hitboxes" type="toggle" tooltip="Visualize active hitbox shapes." group="Combat">0</parameter>
+	<parameter name="show_hurtboxes" type="toggle" tooltip="Visualize hurtbox shapes." group="Combat">0</parameter>
+	<parameter name="show_skulls_direction" type="toggle" tooltip="Draw a line from each Skull enemy to its target, color-coded by behavior (Direct=red, Orbit=blue, Flank=green)." group="Combat">0</parameter>
+	<parameter name="log_anim_param_on_change" type="toggle" tooltip="Log every change to a character animation parameter as old -&gt; new." group="Anim">0</parameter>
 </property>
