@@ -35,10 +35,18 @@ set(target "tinz")
 
 if (WIN32)
 	set(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:wmainCRTStartup")
+	# Explicit entry point for Debug too — protects against accidental `main` symbols
+	# (e.g. from generated CMake CompilerId test files) silently taking over the entry.
+	set(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} /ENTRY:wmainCRTStartup")
 endif()
 
 file(GLOB_RECURSE SOURCES "${CMAKE_CURRENT_LIST_DIR}/src/*.h" "${CMAKE_CURRENT_LIST_DIR}/src/*.cpp")
 file(GLOB_RECURSE TOOLKIT_SOURCES "${CMAKE_CURRENT_LIST_DIR}/UnigineToolkit/*.h" "${CMAKE_CURRENT_LIST_DIR}/UnigineToolkit/*.cpp")
+# Exclude anything inside accidentally-generated CMake build folders (e.g. an IDE
+# that ran cmake from a nested directory). CMake's CompilerId test program ships
+# its own `int main()`, which would otherwise hijack the exe's entry point.
+list(FILTER SOURCES EXCLUDE REGEX "/build/|/CMakeFiles/")
+list(FILTER TOOLKIT_SOURCES EXCLUDE REGEX "/build/|/CMakeFiles/")
 
 add_executable(${target} ${SOURCES} ${TOOLKIT_SOURCES})
 
