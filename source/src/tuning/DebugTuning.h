@@ -23,4 +23,7 @@ public:
 	PROP_PARAM(Toggle, show_hitboxes, false)
 	PROP_PARAM(Toggle, show_hurtboxes, false)
 	PROP_PARAM(Toggle, show_skulls_direction, false)
+
+	PROP_GROUP("Anim")
+	PROP_PARAM(Toggle, log_anim_param_on_change, false)
 };

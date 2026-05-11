@@ -10,4 +10,5 @@
 	<parameter name="show_hitboxes" type="toggle" group="Combat">0</parameter>
 	<parameter name="show_hurtboxes" type="toggle" group="Combat">0</parameter>
 	<parameter name="show_skulls_direction" type="toggle" group="Combat">0</parameter>
+	<parameter name="log_anim_param_on_change" type="toggle" group="Anim">0</parameter>
 </property>

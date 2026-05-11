@@ -14,6 +14,21 @@
 #include <UnigineVisualizer.h>
 #include <UnigineWorld.h>
 
+#define SET_ANIM_BOOL_PARAM(Script, Param, Val)                                    \
+	{                                                                              \
+		const char *param_name = Param;                                            \
+		bool v = Script->getParamBool(param_name);                                 \
+		bool nv = Val;                                                             \
+		if (v != nv)                                                               \
+		{                                                                          \
+			Script->setParamBool(Param, nv);                                       \
+			if (DebugTuning::get()->log_anim_param_on_change)                      \
+			{                                                                      \
+				Log::message("Anim param '%s' changed: %i -> %i\n", Param, v, nv); \
+			}                                                                      \
+		}                                                                          \
+	}
+
 using namespace Unigine;
 using namespace Math;
 
@@ -99,7 +114,7 @@ void CharacterMovement::update()
 	if (_ctx.is_grounded)
 		_grounded_flag.stamp();
 
-	if (_states[_current_state]->canJump() && !_mantling && (_ctx.is_grounded || _grounded_flag.isFresh(coyoteTime)) && _ctx.input.consumeJump(jumpBufferTime))
+	if (_states[_current_state]->canJump() && (_ctx.is_grounded || _grounded_flag.isFresh(coyoteTime)) && _ctx.input.consumeJump(jumpBufferTime))
 	{
 		_grounded_flag.clear();
 		_ctx.vertical_impulse = jumpPower / ifps;
@@ -170,16 +185,13 @@ void CharacterMovement::update()
 
 		// Apply gradual vertical lift before motion. Capsule rises in place
 		// until it clears the obstacle; horizontal motion follows naturally.
-		// Mantle uses a slower climb speed than auto-step so the lift is
-		// readable to the player and matches the mantle animation length.
 		if (_climbing)
 		{
 			Scalar current_h = dot(_world_transform.getTranslate(), Vec3(_up));
 			Scalar remaining = Scalar(_climb_target_height) - current_h;
 			if (remaining > Scalar(0.0))
 			{
-				Scalar climb_speed = Scalar(_mantling ? mantleClimbSpeed : stepClimbSpeed);
-				Scalar lift_amt = climb_speed * Scalar(adaptive_time_step);
+				Scalar lift_amt = Scalar(stepClimbSpeed) * Scalar(adaptive_time_step);
 				Scalar lift = remaining < lift_amt ? remaining : lift_amt;
 				_world_transform.setColumn3(3, _world_transform.getTranslate() + Vec3(_up) * lift);
 			}
@@ -227,13 +239,10 @@ void CharacterMovement::update()
 			_climb_time += adaptive_time_step;
 			Scalar current_h = dot(_world_transform.getTranslate(), Vec3(_up));
 			bool target_reached = current_h >= Scalar(_climb_target_height) - Scalar(0.005);
-			// Mantle is slower than auto-step (visible animation), so it needs
-			// a wider failsafe window before tripping the timeout.
-			bool timeout = _climb_time > (_mantling ? 1.5f : 1.0f);
+			bool timeout = _climb_time > 1.0f;
 			if (_walkable_grounded || target_reached || timeout)
 			{
 				_climbing = false;
-				_mantling = false;
 				// Suppress ground snap briefly: when we lifted to target_h
 				// the capsule is above the step but not yet over it
 				// horizontally — snap would yank it back down to the
@@ -270,24 +279,8 @@ void CharacterMovement::update()
 			}
 		}
 
-		// Auto-step on ground (small obstacles) and "mantle assist" in the air
-		// (almost made the jump) share the same probe and lift mechanism, but
-		// have different height budgets, climb speeds, and gating. In the air
-		// the assist only engages once vertical speed has dropped to
-		// mantleVerticalSpeedLimit so it doesn't yank the player off an
-		// ascending wall-jump.
-		float effective_step_height = 0.0f;
-		bool is_mantle = false;
-		if (_is_grounded && stepHeight > 0.0f)
-			effective_step_height = stepHeight;
-		else if (!_is_grounded && mantleHeight > 0.0f && _vertical_speed <= mantleVerticalSpeedLimit)
-		{
-			effective_step_height = mantleHeight;
-			is_mantle = true;
-		}
-
-		if (!_climbing && _hit_wall && effective_step_height > 0.0f && length2(horiz_step) > Consts::EPS)
-			try_auto_step(pre_motion_transform, horiz_step, adaptive_time_step, effective_step_height, is_mantle);
+		if (!_climbing && _hit_wall && _is_grounded && stepHeight > 0.0f && length2(horiz_step) > Consts::EPS)
+			try_auto_step(pre_motion_transform, horiz_step, adaptive_time_step);
 
 		rotate(_ctx.rotate_target, _ctx.turn_speed, adaptive_time_step);
 	}
@@ -372,12 +365,12 @@ void CharacterMovement::update()
 		// is reset there), so falling/jumping still shows airborne anim.
 		bool is_grounded = _is_grounded || (_vertical_speed <= 0.0f && _grounded_flag.isFresh(groundedAnimCoyote));
 		bool is_idle = !is_moving && !is_spinting && !is_sliding && is_grounded;
-		_anim->setParamBool("is_moving", is_moving);
-		_anim->setParamBool("is_sprinting", is_spinting);
-		_anim->setParamBool("is_grounded", is_grounded);
-		_anim->setParamBool("is_idle", is_idle);
-		_anim->setParamBool("is_sliding", is_sliding);
-		_anim->setParamBool("is_mantling", _mantling);
+
+		SET_ANIM_BOOL_PARAM(_anim, "is_moving", is_moving);
+		SET_ANIM_BOOL_PARAM(_anim, "is_sprinting", is_spinting);
+		SET_ANIM_BOOL_PARAM(_anim, "is_grounded", is_grounded);
+		SET_ANIM_BOOL_PARAM(_anim, "is_idle", is_idle);
+		SET_ANIM_BOOL_PARAM(_anim, "is_sliding", is_sliding);
 		_anim->setParamFloat("rand_float", Game::getRandomFloat(0.0f, 1.0f));
 	}
 
@@ -390,6 +383,11 @@ void CharacterMovement::update()
 		// loop. Coyote-grace prevents that.
 		bool stable_grounded = _is_grounded || (_vertical_speed <= 0.0f && _grounded_flag.isFresh(groundedAnimCoyote));
 		_shape->setHeight(_shape_height * (stable_grounded ? 1.0f : fall_scale));
+	}
+
+	//%%%%%%%%%%%%%%%%%%% Debug %%%%%%%%%%%%%%%
+	{
+		// Log::message("CharacterMovement State: %s\n", _states[_current_state]->name());
 	}
 }
 
@@ -653,7 +651,7 @@ void CharacterMovement::resolve_collisions(float ifps)
 	}
 }
 
-void CharacterMovement::try_auto_step(const Mat4 &pre_motion, const Vec3 &horiz_motion, float ifps, float max_height, bool is_mantle)
+void CharacterMovement::try_auto_step(const Mat4 &pre_motion, const Vec3 &horiz_motion, float ifps)
 {
 	Mat4 post_resolved = _world_transform;
 
@@ -693,10 +691,10 @@ void CharacterMovement::try_auto_step(const Mat4 &pre_motion, const Vec3 &horiz_
 	Scalar min_forward = Scalar(_shape->getRadius() + 0.02);
 	Scalar forward_dist = motion_dist > min_forward ? motion_dist : min_forward;
 
-	// Probe position: pre-motion lifted by max_height, then translated past
+	// Probe position: pre-motion lifted by stepHeight, then translated past
 	// the wall edge along step_dir.
 	Mat4 elevated = pre_motion;
-	elevated.setColumn3(3, pre_motion.getTranslate() + Vec3(_up) * Scalar(max_height) + step_dir * forward_dist);
+	elevated.setColumn3(3, pre_motion.getTranslate() + Vec3(_up) * Scalar(stepHeight) + step_dir * forward_dist);
 
 	_body->setTransform(elevated);
 	_shape->getCollision(_contacts, ifps);
@@ -728,7 +726,7 @@ void CharacterMovement::try_auto_step(const Mat4 &pre_motion, const Vec3 &horiz_
 	// Drop down from the elevated probe to find the surface to land on.
 	Scalar radius = Scalar(_shape->getRadius());
 	Vec3 ray_origin = elevated_bottom_cap;
-	Vec3 ray_end = ray_origin + Vec3(_gravity_direction) * (radius + Scalar(max_height) + Scalar(0.05));
+	Vec3 ray_end = ray_origin + Vec3(_gravity_direction) * (radius + Scalar(stepHeight) + Scalar(0.05));
 
 	WorldIntersectionNormalPtr hit = WorldIntersectionNormal::create();
 	auto obj = World::getIntersection(ray_origin, ray_end, groundCheckIntersectionMask, {body}, hit);
@@ -748,17 +746,14 @@ void CharacterMovement::try_auto_step(const Mat4 &pre_motion, const Vec3 &horiz_
 	// configured max). A non-positive height gain means the probe found the
 	// same surface or below — let regular physics handle that.
 	Scalar height_gain = dot(final_pos - post_resolved.getTranslate(), Vec3(_up));
-	if (height_gain <= Scalar(0.0) || height_gain > Scalar(max_height))
+	if (height_gain <= Scalar(0.0) || height_gain > Scalar(stepHeight))
 		return;
 
 	// Don't teleport. Queue a vertical climb: the substep loop lifts the
 	// capsule gradually toward this absolute target height while suppressing
 	// gravity and forcing grounded state. The player walks forward naturally
-	// once the lift carries them above the obstacle. `is_mantle` selects the
-	// slower mantle climb speed and the longer timeout, and gates jumping +
-	// the mantle animation flag.
+	// once the lift carries them above the obstacle.
 	_climbing = true;
-	_mantling = is_mantle;
 	_climb_target_height = toFloat(dot(final_pos, Vec3(_up)));
 	_climb_time = 0.0f;
 }
