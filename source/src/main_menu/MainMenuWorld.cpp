@@ -48,9 +48,9 @@ void MainMenuWorld::update()
 {
 	switch (_state)
 	{
-		case State::Idle:          tick_idle();          break;
-		case State::PendingClick:  tick_pending_click(); break;
-		case State::Dragging:      tick_dragging();      break;
+		case State::Idle: tick_idle(); break;
+		case State::PendingClick: tick_pending_click(); break;
+		case State::Dragging: tick_dragging(); break;
 	}
 }
 
@@ -137,8 +137,7 @@ void MainMenuWorld::tick_dragging()
 	{
 		const ivec2 mp = Input::getMousePosition();
 		_active_dragger->updateDrag(mp.y);
-	}
-	else
+	} else
 	{
 		_active_dragger->endDrag();
 		_active_dragger = nullptr;
@@ -214,6 +213,6 @@ void MainMenuWorld::start_drag(MenuDragger *drg)
 
 void MainMenuWorld::apply_fade(float t01)
 {
-	const float v = lerp(_baseline_brightness, (float)fadeBrightness, saturate(t01));
+	const float v = Math::lerp(_baseline_brightness, (float)fadeBrightness, saturate(t01));
 	Render::setColorCorrectionBrightness(v);
 }

@@ -3,7 +3,6 @@
 	<parameter name="stage" type="switch" items="Intent,Rig,Constraints,Presentation,Finalize,">1</parameter>
 	<parameter name="priority" type="int">0</parameter>
 	<parameter name="used_in_pipeline" type="toggle">1</parameter>
-	<parameter name="debug" type="toggle">0</parameter>
 	<parameter name="pivot_offset" type="dvec3">0.000000 0.000000 1.600000</parameter>
 	<parameter name="angle_mul" type="vec2">0.500000 0.500000</parameter>
 	<parameter name="zoom_speed" type="double">0.25</parameter>

@@ -54,17 +54,14 @@ void Slider::init()
 			ivec2 p = canvas->getMouseScreenPosition();
 			if (direction.get() < 2 /*horizontal*/)
 			{
-				if (p.x >= h_sprite_w->getScreenPositionX()
-					&& p.x < (h_sprite_w->getScreenPositionX() + h_sprite_w->getWidth()))
+				if (p.x >= h_sprite_w->getScreenPositionX() && p.x < (h_sprite_w->getScreenPositionX() + h_sprite_w->getWidth()))
 					click_offset =
 						p.x - h_sprite_w->getScreenPositionX() - h_sprite_w->getWidth() / 2;
 				else
 					click_offset = 0;
-			}
-			else	// vertical
+			} else // vertical
 			{
-				if (p.y >= h_sprite_w->getScreenPositionY()
-					&& p.y < (h_sprite_w->getScreenPositionY() + h_sprite_w->getHeight()))
+				if (p.y >= h_sprite_w->getScreenPositionY() && p.y < (h_sprite_w->getScreenPositionY() + h_sprite_w->getHeight()))
 					click_offset =
 						p.y - h_sprite_w->getScreenPositionY() - h_sprite_w->getHeight() / 2;
 				else
@@ -153,8 +150,7 @@ void Slider::setBackgroundMaterial(const Unigine::MaterialPtr &in_material)
 		bg_mat_vars.setTextureSize(bg_sprite_size);
 		bg_mat_vars.setSpritePosAndSize(bg_sprite_w, canvas->getScreenSize());
 		bg_sprite_w->setMaterial(bg_mat);
-	}
-	else
+	} else
 	{
 		bg_mat_vars.setMaterial(nullptr);
 		bg_sprite_w->setMaterial(nullptr);
@@ -179,7 +175,7 @@ void Slider::setBackgroundTexture(const char *texture_path)
 	bg_sprite_w->setTexture(texture_path);
 	bg_sprite_w->arrange();
 	bg_sprite_size = vec3(itof(bg_sprite_w->getWidth()), itof(bg_sprite_w->getHeight()), 0);
-	arrange();	  // apply rotation and fixed_ratio
+	arrange(); // apply rotation and fixed_ratio
 
 	bg_mat_vars.setTextureSize(bg_sprite_size);
 }
@@ -188,7 +184,7 @@ void Slider::setBackgroundTexture(const TexturePtr &texture)
 {
 	bg_sprite_w->setRender(texture);
 	bg_sprite_size = vec3(itof(texture->getWidth()), itof(texture->getHeight()), 0);
-	arrange();	  // apply rotation and fixed_ratio
+	arrange(); // apply rotation and fixed_ratio
 
 	bg_mat_vars.setTextureSize(bg_sprite_size);
 }
@@ -216,8 +212,7 @@ void Slider::setForegroundMaterial(const Unigine::MaterialPtr &in_material)
 		fg_mat_vars.setTextureSize(fg_sprite_size);
 		fg_mat_vars.setSpritePosAndSize(fg_sprite_w, canvas->getScreenSize());
 		fg_sprite_w->setMaterial(fg_mat);
-	}
-	else
+	} else
 	{
 		fg_mat_vars.setMaterial(nullptr);
 		fg_sprite_w->setMaterial(nullptr);
@@ -242,7 +237,7 @@ void Slider::setForegroundTexture(const char *texture_path)
 	fg_sprite_w->setTexture(texture_path);
 	fg_sprite_w->arrange();
 	fg_sprite_size = vec3(itof(fg_sprite_w->getWidth()), itof(fg_sprite_w->getHeight()), 0);
-	arrange();	  // apply rotation and fixed_ratio
+	arrange(); // apply rotation and fixed_ratio
 
 	fg_mat_vars.setTextureSize(fg_sprite_size);
 }
@@ -251,7 +246,7 @@ void Slider::setForegroundTexture(const TexturePtr &texture)
 {
 	fg_sprite_w->setRender(texture);
 	fg_sprite_size = vec3(itof(texture->getWidth()), itof(texture->getHeight()), 0);
-	arrange();	  // apply rotation and fixed_ratio
+	arrange(); // apply rotation and fixed_ratio
 
 	fg_mat_vars.setTextureSize(fg_sprite_size);
 }
@@ -285,8 +280,7 @@ void Slider::setHandleMaterial(const Unigine::MaterialPtr &in_material)
 		h_mat_vars.setTextureSize(h_sprite_size);
 		h_mat_vars.setSpritePosAndSize(h_sprite_w, canvas->getScreenSize());
 		h_sprite_w->setMaterial(h_mat);
-	}
-	else
+	} else
 	{
 		h_mat_vars.setMaterial(nullptr);
 		h_sprite_w->setMaterial(nullptr);
@@ -311,7 +305,7 @@ void Slider::setHandleTexture(const char *texture_path)
 	h_sprite_w->setTexture(texture_path);
 	h_sprite_w->arrange();
 	h_sprite_size = vec3(itof(h_sprite_w->getWidth()), itof(h_sprite_w->getHeight()), 0);
-	arrange();	  // apply rotation and fixed_ratio
+	arrange(); // apply rotation and fixed_ratio
 
 	h_mat_vars.setTextureSize(h_sprite_size);
 }
@@ -320,7 +314,7 @@ void Slider::setHandleTexture(const TexturePtr &texture)
 {
 	h_sprite_w->setRender(texture);
 	h_sprite_size = vec3(itof(texture->getWidth()), itof(texture->getHeight()), 0);
-	arrange();	  // apply rotation and fixed_ratio
+	arrange(); // apply rotation and fixed_ratio
 
 	h_mat_vars.setTextureSize(h_sprite_size);
 }
@@ -449,14 +443,13 @@ void Slider::update(float ifps)
 			int x = bg_sprite_w->getScreenPositionX() + h_sprite_w->getWidth() / 2;
 			int w = bg_sprite_w->getWidth() - h_sprite_w->getWidth();
 			v = itof(p.x - click_offset - x) / w;
-		}
-		else	// vertical
+		} else // vertical
 		{
 			int y = bg_sprite_w->getScreenPositionY() + h_sprite_w->getHeight() / 2;
 			int h = bg_sprite_w->getHeight() - h_sprite_w->getHeight();
 			v = itof(p.y - click_offset - y) / h;
 		}
-		if (direction.get() == 1 || direction.get() == 3)	 // reverse
+		if (direction.get() == 1 || direction.get() == 3) // reverse
 			v = 1.0f - saturate(v);
 		v = v * (max_value - min_value) + min_value;
 		setValue(whole_numbers.get() != 0 ? Math::round(v) : v);
@@ -468,26 +461,25 @@ void Slider::update(float ifps)
 		int dir = 0;
 		switch (getDirection())
 		{
-		case DIRECTION::LEFT_TO_RIGHT:
-			dir = canvas->getNavigationDir().x;
-			break;
-		case DIRECTION::RIGHT_TO_LEFT:
-			dir = -canvas->getNavigationDir().x;
-			break;
-		case DIRECTION::TOP_TO_BOTTOM:
-			dir = -canvas->getNavigationDir().y;
-			break;
-		case DIRECTION::BOTTOM_TO_TOP:
-			dir = canvas->getNavigationDir().y;
-			break;
+			case DIRECTION::LEFT_TO_RIGHT:
+				dir = canvas->getNavigationDir().x;
+				break;
+			case DIRECTION::RIGHT_TO_LEFT:
+				dir = -canvas->getNavigationDir().x;
+				break;
+			case DIRECTION::TOP_TO_BOTTOM:
+				dir = -canvas->getNavigationDir().y;
+				break;
+			case DIRECTION::BOTTOM_TO_TOP:
+				dir = canvas->getNavigationDir().y;
+				break;
 		}
 		if (dir != 0)
 		{
 			if (whole_numbers.get() != 0)
 			{
 				setValue(getValue() + dir);
-			}
-			else
+			} else
 			{
 				const int num_steps = 10;
 				float step = (max_value - min_value) / num_steps;
@@ -529,15 +521,14 @@ void Slider::arrange()
 		bg_sprite_w->arrange();
 		bg_mat_vars.setSpritePosAndSize(bg_sprite_w, canvas->getScreenSize());
 
-		int h_w = ftoi(s_h * handle_width_percent);	   // handle width
+		int h_w = ftoi(s_h * handle_width_percent); // handle width
 
-		int fg_w = Math::max(1, ftoi(lerp(0.0f, itof(s_w - s_h / 2), v)));
+		int fg_w = Math::max(1, ftoi(Math::lerp(0.0f, itof(s_w - s_h / 2), v)));
 		if (reversed)
 		{
 			fg_sprite_w->setPosition(s_x + fg_w + h_w / 2, s_y + h / 2);
 			fg_sprite_w->setWidth(s_w - fg_w - h_w / 2);
-		}
-		else
+		} else
 		{
 			fg_sprite_w->setPosition(s_x, s_y + h / 2);
 			fg_sprite_w->setWidth(fg_w + h_w / 2);
@@ -552,8 +543,7 @@ void Slider::arrange()
 		h_sprite_w->setHeight(s_h);
 		h_sprite_w->arrange();
 		h_mat_vars.setSpritePosAndSize(h_sprite_w, canvas->getScreenSize());
-	}
-	else	// vertical
+	} else // vertical
 	{
 		// arrange background/foreground
 		int w = ftoi(s_w * bg_height_percent);
@@ -563,15 +553,14 @@ void Slider::arrange()
 		bg_sprite_w->arrange();
 		bg_mat_vars.setSpritePosAndSize(bg_sprite_w, canvas->getScreenSize());
 
-		int h_h = ftoi(s_w * handle_width_percent);	   // handle height
+		int h_h = ftoi(s_w * handle_width_percent); // handle height
 
-		int fg_h = Math::max(1, ftoi(lerp(0.0f, itof(s_h - s_w / 2), v)));
+		int fg_h = Math::max(1, ftoi(Math::lerp(0.0f, itof(s_h - s_w / 2), v)));
 		if (reversed)
 		{
 			fg_sprite_w->setPosition(s_x + w / 2, s_y + fg_h + h_h / 2);
 			fg_sprite_w->setHeight(s_h - fg_h - h_h / 2);
-		}
-		else
+		} else
 		{
 			fg_sprite_w->setPosition(s_x + w / 2, s_y);
 			fg_sprite_w->setHeight(fg_h + h_h / 2);
@@ -648,8 +637,7 @@ void Slider::apply_state_animation()
 			h_sprite_w->setPosition(x + ftoi(v * (w - h_w)) - o / 2, y - o / 2);
 			h_sprite_w->setWidth(Math::max(1, h_w + o));
 			h_sprite_w->setHeight(Math::max(1, h + o));
-		}
-		else	// vertical
+		} else // vertical
 		{
 			int o = ftoi(w * scale - w);
 			int h_h = ftoi(w * handle_width_percent);

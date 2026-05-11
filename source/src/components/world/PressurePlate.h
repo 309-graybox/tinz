@@ -23,7 +23,7 @@ private:
 	void init();
 	void update();
 
-public: 
+public:
 	void onEnter(const Unigine::NodePtr &n);
 	void onLeave(const Unigine::NodePtr &n);
 	bool isPlayerNode(const Unigine::NodePtr &n) const;
@@ -33,19 +33,21 @@ public:
 	Unigine::Event<> &getEventPressed() { return pressed_event; };
 	Unigine::Event<> &getEventUnpressed() { return unpressed_event; };
 
+private:
 	bool _need_update = false;
 	bool _player_inside = false;
 	bool _press = false;
 	bool _locked = false;
 	float _current = 0.0f;
-	
+
 	Unigine::WorldTriggerPtr _trigger;
 	Unigine::Math::dvec3 _default_pos;
 
 	Unigine::EventInvoker<> pressed_event;
 	Unigine::EventInvoker<> unpressed_event;
 	Unigine::ObjectMeshStaticPtr _node;
-	Unigine::MaterialPtr _mat;;
+	Unigine::MaterialPtr _mat;
+	;
 	int _emission_idx = 0;
 	int _surface = 0;
 };

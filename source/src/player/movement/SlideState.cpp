@@ -70,16 +70,16 @@ MovementStateIndex SlideState::update(MovementContext &ctx, float ifps)
 	// Speed multiplier from input: forward accelerates, back slows.
 	float input_mult = 1.0f;
 	if (forward_input >= 0.0f)
-		input_mult = lerp(1.0f, o.slideForwardMultiplier, saturate(forward_input));
+		input_mult = Math::lerp(1.0f, o.slideForwardMultiplier, saturate(forward_input));
 	else
-		input_mult = lerp(1.0f, o.slideBackMultiplier, saturate(-forward_input));
+		input_mult = Math::lerp(1.0f, o.slideBackMultiplier, saturate(-forward_input));
 
 	// Slope multiplier interpolated by current angle from slopeLimit (min) to
 	// slideMaxAngle (max).
 	float slope_dot = saturate(dot(slope_normal, o._up));
 	float angle_deg = Math::acos(slope_dot) * Consts::RAD2DEG;
 	float t_slope = saturate((angle_deg - o.slopeLimit) / max(o.slideMaxAngle - o.slopeLimit, Consts::EPS));
-	float slope_mult = lerp(o.slideMinSlopeMultiplier, o.slideMaxSlopeMultiplier, t_slope);
+	float slope_mult = Math::lerp(o.slideMinSlopeMultiplier, o.slideMaxSlopeMultiplier, t_slope);
 
 	float target_speed = o.baseSlideSpeed * input_mult * slope_mult;
 

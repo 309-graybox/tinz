@@ -42,6 +42,9 @@ public:
 	PROP_PARAM(Float, stepClimbSpeed, 5.0f, "Step Climb Speed (m/s)", "Скорость вертикального подъёма при автостеппинге. Гравитация в это время выключена, персонаж считается на земле");
 	PROP_PARAM(Float, groundSnapMinGap, 0.02f, "Ground Snap Min Gap (m)", "Минимальный разрыв между низом капсулы и грунтом, при котором срабатывает прибивание к земле при спуске со ступенек. Меньшие разрывы считаются физическим шумом на стыках поверхностей и игнорируются");
 	PROP_PARAM(Float, slopeLimit, 43.0f, "Slope Limit(degr ees)", "Максимальный угол наклона поверхности, по которой персонаж может двигаться");
+	PROP_PARAM(Float, mantleHeight, 0.8f, "Mantle Height (m)", "Максимальная высота уступа над низом капсулы, на который персонаж автоматически подтягивается в воздухе если немного не допрыгнул. 0 — отключить подтяжку");
+	PROP_PARAM(Float, mantleVerticalSpeedLimit, 1.0f, "Mantle Vertical Speed Limit (m/s)", "Подтяжка в воздухе срабатывает только если текущая вертикальная скорость <= этого значения. Гасит срабатывание на восходящей фазе прыжка — подтяжка работает только на апексе и при падении");
+	PROP_PARAM(Float, mantleClimbSpeed, 1.5f, "Mantle Climb Speed (m/s)", "Скорость вертикального подъёма во время подтяжки. Существенно ниже stepClimbSpeed чтобы движение было читаемо игроком и совпадало с длительностью анимации подтяжки");
 
 	PROP_GROUP("Slide");
 	PROP_PARAM(Float, slideMaxAngle, 70.0f, "Slide Max Angle (degrees)", "Верхняя граница диапазона углов, при которых работает скольжение. Круче — поверхность считается стеной");
@@ -102,7 +105,7 @@ private:
 	Unigine::Math::vec3 compute_desired_input_direction() const;
 	Unigine::Math::vec3 project_forward_on_ground(const Unigine::Math::vec3 &ground_normal);
 	void resolve_collisions(float ifps);
-	void try_auto_step(const Unigine::Math::Mat4 &pre_motion, const Unigine::Math::Vec3 &horiz_motion, float ifps);
+	void try_auto_step(const Unigine::Math::Mat4 &pre_motion, const Unigine::Math::Vec3 &horiz_motion, float ifps, float max_height, bool is_mantle);
 	void rotate(const Unigine::Math::vec3 &direction, float turn_speed, float ifps);
 
 	float _slope_cos = 0.0f;
@@ -131,6 +134,7 @@ private:
 	bool _hit_wall = false;
 	Unigine::Math::vec3 _hit_wall_normal = Unigine::Math::vec3_zero;
 	bool _climbing = false;
+	bool _mantling = false;
 	float _climb_target_height = 0.0f;
 	float _climb_time = 0.0f;
 	bool _descending = false;

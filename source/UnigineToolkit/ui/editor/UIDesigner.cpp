@@ -11,13 +11,13 @@
 #include <UnigineWindowManager.h>
 
 #ifdef EDITOR_PLUGIN
-	#include <editor/UnigineActions.h>
-	#include <editor/UnigineAssetDialogs.h>
-	#include <editor/UnigineConstants.h>
-	#include <editor/UnigineEngineGuiWindow.h>
-	#include <editor/UnigineSelection.h>
-	#include <editor/UnigineSelector.h>
-	#include <editor/UnigineWindowManager.h>
+#include <editor/UnigineActions.h>
+#include <editor/UnigineAssetDialogs.h>
+#include <editor/UnigineConstants.h>
+#include <editor/UnigineEngineGuiWindow.h>
+#include <editor/UnigineSelection.h>
+#include <editor/UnigineSelector.h>
+#include <editor/UnigineWindowManager.h>
 #endif
 
 #include "UndoCommands.h"
@@ -25,106 +25,107 @@
 using namespace Unigine;
 using namespace Math;
 
-namespace {
-#define show_label_macro(name, getter, value_type, format)                                         \
-	{                                                                                              \
-		bool _mixed = false;                                                                       \
-		value_type value = elements[0]->getter();                                                  \
-		for (int i = 1; i < elements.size(); i++)                                                  \
-		{                                                                                          \
-			if (elements[i]->getter() != value)                                                    \
-			{                                                                                      \
-				_mixed = true;                                                                     \
-				break;                                                                             \
-			}                                                                                      \
-		}                                                                                          \
-                                                                                                   \
-		if (_mixed)                                                                                \
-			ImGui::Text("%s: -", name);                                                            \
-		else                                                                                       \
-			ImGui::Text(format, name, value);                                                      \
+namespace
+{
+#define show_label_macro(name, getter, value_type, format) \
+	{                                                      \
+		bool _mixed = false;                               \
+		value_type value = elements[0]->getter();          \
+		for (int i = 1; i < elements.size(); i++)          \
+		{                                                  \
+			if (elements[i]->getter() != value)            \
+			{                                              \
+				_mixed = true;                             \
+				break;                                     \
+			}                                              \
+		}                                                  \
+                                                           \
+		if (_mixed)                                        \
+			ImGui::Text("%s: -", name);                    \
+		else                                               \
+			ImGui::Text(format, name, value);              \
 	}
 
-#define show_label_string_macro(name, getter)                                                      \
-	{                                                                                              \
-		StringStack<> value = elements[0]->getter();                                               \
-		for (int i = 1; i < elements.size(); i++)                                                  \
-		{                                                                                          \
-			if (elements[i]->getter() != value)                                                    \
-			{                                                                                      \
-				value = "-";                                                                       \
-				break;                                                                             \
-			}                                                                                      \
-		}                                                                                          \
-                                                                                                   \
-		ImGui::Text("%s: %s", name, value.get());                                                  \
+#define show_label_string_macro(name, getter)        \
+	{                                                \
+		StringStack<> value = elements[0]->getter(); \
+		for (int i = 1; i < elements.size(); i++)    \
+		{                                            \
+			if (elements[i]->getter() != value)      \
+			{                                        \
+				value = "-";                         \
+				break;                               \
+			}                                        \
+		}                                            \
+                                                     \
+		ImGui::Text("%s: %s", name, value.get());    \
 	}
 
-#define show_field_macro(name, getter, setter, value_type, func, out_type)                         \
-	{                                                                                              \
-		bool _mixed = false;                                                                       \
-		value_type value = elements[0]->getter();                                                  \
-		for (int i = 1; i < elements.size(); i++)                                                  \
-		{                                                                                          \
-			if (elements[i]->getter() != value)                                                    \
-			{                                                                                      \
-				_mixed = true;                                                                     \
-				break;                                                                             \
-			}                                                                                      \
-		}                                                                                          \
-                                                                                                   \
-		if (_mixed)                                                                                \
-			ImGui::PushItemFlag(ImGuiItemFlags_MixedValue, true);                                  \
-		if (func(name, value, c, r))                                                               \
-		{                                                                                          \
-			for (int i = 0; i < elements.size(); i++)                                              \
-				elements[i]->setter(out_type);                                                     \
-		}                                                                                          \
-		if (_mixed)                                                                                \
-			ImGui::PopItemFlag();                                                                  \
+#define show_field_macro(name, getter, setter, value_type, func, out_type) \
+	{                                                                      \
+		bool _mixed = false;                                               \
+		value_type value = elements[0]->getter();                          \
+		for (int i = 1; i < elements.size(); i++)                          \
+		{                                                                  \
+			if (elements[i]->getter() != value)                            \
+			{                                                              \
+				_mixed = true;                                             \
+				break;                                                     \
+			}                                                              \
+		}                                                                  \
+                                                                           \
+		if (_mixed)                                                        \
+			ImGui::PushItemFlag(ImGuiItemFlags_MixedValue, true);          \
+		if (func(name, value, c, r))                                       \
+		{                                                                  \
+			for (int i = 0; i < elements.size(); i++)                      \
+				elements[i]->setter(out_type);                             \
+		}                                                                  \
+		if (_mixed)                                                        \
+			ImGui::PopItemFlag();                                          \
 	}
 
-#define show_field_iter_macro(name, getter, setter, iter, value_type, func, out_type)              \
-	{                                                                                              \
-		bool _mixed = false;                                                                       \
-		value_type value = elements[0]->getter(iter);                                              \
-		for (int _i = 1; _i < elements.size(); _i++)                                               \
-		{                                                                                          \
-			if (elements[_i]->getter(iter) != value)                                               \
-			{                                                                                      \
-				_mixed = true;                                                                     \
-				break;                                                                             \
-			}                                                                                      \
-		}                                                                                          \
-                                                                                                   \
-		if (_mixed)                                                                                \
-			ImGui::PushItemFlag(ImGuiItemFlags_MixedValue, true);                                  \
-		if (func(name, value, c, r))                                                               \
-		{                                                                                          \
-			for (int _i = 0; _i < elements.size(); _i++)                                           \
-				elements[_i]->setter(iter, out_type);                                              \
-		}                                                                                          \
-		if (_mixed)                                                                                \
-			ImGui::PopItemFlag();                                                                  \
+#define show_field_iter_macro(name, getter, setter, iter, value_type, func, out_type) \
+	{                                                                                 \
+		bool _mixed = false;                                                          \
+		value_type value = elements[0]->getter(iter);                                 \
+		for (int _i = 1; _i < elements.size(); _i++)                                  \
+		{                                                                             \
+			if (elements[_i]->getter(iter) != value)                                  \
+			{                                                                         \
+				_mixed = true;                                                        \
+				break;                                                                \
+			}                                                                         \
+		}                                                                             \
+                                                                                      \
+		if (_mixed)                                                                   \
+			ImGui::PushItemFlag(ImGuiItemFlags_MixedValue, true);                     \
+		if (func(name, value, c, r))                                                  \
+		{                                                                             \
+			for (int _i = 0; _i < elements.size(); _i++)                              \
+				elements[_i]->setter(iter, out_type);                                 \
+		}                                                                             \
+		if (_mixed)                                                                   \
+			ImGui::PopItemFlag();                                                     \
 	}
 
-#define show_field_string_macro(name, getter, setter)                                              \
-	{                                                                                              \
-		Unigine::StringStack<> value = elements[0]->getter();                                      \
-		for (int i = 1; i < elements.size(); i++)                                                  \
-		{                                                                                          \
-			if (elements[i]->getter() != value)                                                    \
-			{                                                                                      \
-				value = "-";                                                                       \
-				break;                                                                             \
-			}                                                                                      \
-		}                                                                                          \
-                                                                                                   \
-		if (parameter_string(name, value, c, r))                                                   \
-		{                                                                                          \
-			for (int i = 0; i < elements.size(); i++)                                              \
-				elements[i]->setter(out_str);                                                      \
-		}                                                                                          \
+#define show_field_string_macro(name, getter, setter)         \
+	{                                                         \
+		Unigine::StringStack<> value = elements[0]->getter(); \
+		for (int i = 1; i < elements.size(); i++)             \
+		{                                                     \
+			if (elements[i]->getter() != value)               \
+			{                                                 \
+				value = "-";                                  \
+				break;                                        \
+			}                                                 \
+		}                                                     \
+                                                              \
+		if (parameter_string(name, value, c, r))              \
+		{                                                     \
+			for (int i = 0; i < elements.size(); i++)         \
+				elements[i]->setter(out_str);                 \
+		}                                                     \
 	}
 
 #define show_field_string_image_macro(name, getter, setter)                                        \
@@ -140,10 +141,10 @@ namespace {
 		}                                                                                          \
                                                                                                    \
 		if (parameter_string_image(name, value, MakeCallback([elements, &c, &r](const String &s) { \
-				for (int i = 0; i < elements.size(); i++)                                          \
-					elements[i]->setter(s);                                                        \
-				c = r = true;                                                                      \
-			}),                                                                                    \
+			for (int i = 0; i < elements.size(); i++)                                              \
+				elements[i]->setter(s);                                                            \
+			c = r = true;                                                                          \
+		}),                                                                                        \
 				c, r))                                                                             \
 		{                                                                                          \
 			for (int i = 0; i < elements.size(); i++)                                              \
@@ -151,206 +152,205 @@ namespace {
 		}                                                                                          \
 	}
 
-#define show_field_material_macro(name, getter, setter)                                            \
-	{                                                                                              \
-		bool _mixed = false;                                                                       \
-		Unigine::MaterialPtr _value = elements[0]->getter();                                       \
-		for (int _i = 1; _i < elements.size(); _i++)                                               \
-		{                                                                                          \
-			if (elements[_i]->getter() != _value)                                                  \
-			{                                                                                      \
-				_mixed = true;                                                                     \
-				break;                                                                             \
-			}                                                                                      \
-		}                                                                                          \
-		if (_mixed)                                                                                \
-		{                                                                                          \
-			ImGuiContext &g = *GImGui;                                                             \
-			g.NextItemData.ItemFlags |= ImGuiItemFlags_MixedValue;                                 \
-		}                                                                                          \
-		if (parameter_material(name, _value,                                                       \
-				MakeCallback([elements, &c, &r](const MaterialPtr &m) {                            \
-					for (int _i = 0; _i < elements.size(); _i++)                                   \
-						elements[_i]->setter(m);                                                   \
-					c = r = true;                                                                  \
-				}),                                                                                \
-				c, r))                                                                             \
-		{                                                                                          \
-			for (int _i = 0; _i < elements.size(); _i++)                                           \
-				elements[_i]->setter(out_mat);                                                     \
-		}                                                                                          \
+#define show_field_material_macro(name, getter, setter)                 \
+	{                                                                   \
+		bool _mixed = false;                                            \
+		Unigine::MaterialPtr _value = elements[0]->getter();            \
+		for (int _i = 1; _i < elements.size(); _i++)                    \
+		{                                                               \
+			if (elements[_i]->getter() != _value)                       \
+			{                                                           \
+				_mixed = true;                                          \
+				break;                                                  \
+			}                                                           \
+		}                                                               \
+		if (_mixed)                                                     \
+		{                                                               \
+			ImGuiContext &g = *GImGui;                                  \
+			g.NextItemData.ItemFlags |= ImGuiItemFlags_MixedValue;      \
+		}                                                               \
+		if (parameter_material(name, _value,                            \
+				MakeCallback([elements, &c, &r](const MaterialPtr &m) { \
+			for (int _i = 0; _i < elements.size(); _i++)                \
+				elements[_i]->setter(m);                                \
+			c = r = true;                                               \
+		}),                                                             \
+				c, r))                                                  \
+		{                                                               \
+			for (int _i = 0; _i < elements.size(); _i++)                \
+				elements[_i]->setter(out_mat);                          \
+		}                                                               \
 	}
 
-#define show_field_string_iter_macro(name, getter, setter, iter)                                   \
-	{                                                                                              \
-		Unigine::StringStack<> value = elements[0]->getter(iter);                                  \
-		for (int _i = 1; _i < elements.size(); _i++)                                               \
-		{                                                                                          \
-			if (elements[_i]->getter(iter) != value)                                               \
-			{                                                                                      \
-				value = "-";                                                                       \
-				break;                                                                             \
-			}                                                                                      \
-		}                                                                                          \
-                                                                                                   \
-		if (parameter_string(name, value, c, r))                                                   \
-		{                                                                                          \
-			for (int _i = 0; _i < elements.size(); _i++)                                           \
-				elements[_i]->setter(iter, out_str);                                               \
-		}                                                                                          \
+#define show_field_string_iter_macro(name, getter, setter, iter)  \
+	{                                                             \
+		Unigine::StringStack<> value = elements[0]->getter(iter); \
+		for (int _i = 1; _i < elements.size(); _i++)              \
+		{                                                         \
+			if (elements[_i]->getter(iter) != value)              \
+			{                                                     \
+				value = "-";                                      \
+				break;                                            \
+			}                                                     \
+		}                                                         \
+                                                                  \
+		if (parameter_string(name, value, c, r))                  \
+		{                                                         \
+			for (int _i = 0; _i < elements.size(); _i++)          \
+				elements[_i]->setter(iter, out_str);              \
+		}                                                         \
 	}
 
-#define show_field_string_image_iter_macro(name, getter, setter, iter)                             \
-	{                                                                                              \
-		Unigine::StringStack<> _value = elements[0]->getter(iter);                                 \
-		for (int _i = 1; _i < elements.size(); _i++)                                               \
-		{                                                                                          \
-			if (elements[_i]->getter(iter) != _value)                                              \
-			{                                                                                      \
-				_value = "-";                                                                      \
-				break;                                                                             \
-			}                                                                                      \
-		}                                                                                          \
-                                                                                                   \
-		if (parameter_string_image(name, _value,                                                   \
-				MakeCallback([elements, iter, &c, &r](const String &s) {                           \
-					for (int _i = 0; _i < elements.size(); _i++)                                   \
-						elements[_i]->setter(iter, s);                                             \
-					c = r = true;                                                                  \
-				}),                                                                                \
-				c, r))                                                                             \
-		{                                                                                          \
-			for (int _i = 0; _i < elements.size(); _i++)                                           \
-				elements[_i]->setter(iter, out_str);                                               \
-		}                                                                                          \
+#define show_field_string_image_iter_macro(name, getter, setter, iter)   \
+	{                                                                    \
+		Unigine::StringStack<> _value = elements[0]->getter(iter);       \
+		for (int _i = 1; _i < elements.size(); _i++)                     \
+		{                                                                \
+			if (elements[_i]->getter(iter) != _value)                    \
+			{                                                            \
+				_value = "-";                                            \
+				break;                                                   \
+			}                                                            \
+		}                                                                \
+                                                                         \
+		if (parameter_string_image(name, _value,                         \
+				MakeCallback([elements, iter, &c, &r](const String &s) { \
+			for (int _i = 0; _i < elements.size(); _i++)                 \
+				elements[_i]->setter(iter, s);                           \
+			c = r = true;                                                \
+		}),                                                              \
+				c, r))                                                   \
+		{                                                                \
+			for (int _i = 0; _i < elements.size(); _i++)                 \
+				elements[_i]->setter(iter, out_str);                     \
+		}                                                                \
 	}
 
-#define show_field_bool_macro(name, getter, setter)                                                \
-	{                                                                                              \
-		bool _mixed = false;                                                                       \
-		bool value = elements[0]->getter();                                                        \
-		for (int i = 1; i < elements.size(); i++)                                                  \
-		{                                                                                          \
-			if (elements[i]->getter() != value)                                                    \
-			{                                                                                      \
-				_mixed = true;                                                                     \
-				break;                                                                             \
-			}                                                                                      \
-		}                                                                                          \
-                                                                                                   \
-		if (_mixed)                                                                                \
-		{                                                                                          \
-			ImGuiContext &g = *GImGui;                                                             \
-			g.NextItemData.ItemFlags |= ImGuiItemFlags_MixedValue;                                 \
-		}                                                                                          \
-		if (parameter_bool(name, value, c, r))                                                     \
-		{                                                                                          \
-			for (int i = 0; i < elements.size(); i++)                                              \
-				elements[i]->setter(out_bool);                                                     \
-		}                                                                                          \
+#define show_field_bool_macro(name, getter, setter)                \
+	{                                                              \
+		bool _mixed = false;                                       \
+		bool value = elements[0]->getter();                        \
+		for (int i = 1; i < elements.size(); i++)                  \
+		{                                                          \
+			if (elements[i]->getter() != value)                    \
+			{                                                      \
+				_mixed = true;                                     \
+				break;                                             \
+			}                                                      \
+		}                                                          \
+                                                                   \
+		if (_mixed)                                                \
+		{                                                          \
+			ImGuiContext &g = *GImGui;                             \
+			g.NextItemData.ItemFlags |= ImGuiItemFlags_MixedValue; \
+		}                                                          \
+		if (parameter_bool(name, value, c, r))                     \
+		{                                                          \
+			for (int i = 0; i < elements.size(); i++)              \
+				elements[i]->setter(out_bool);                     \
+		}                                                          \
 	}
 
-#define show_field_combo_macro(name, getter, setter, type, items)                                  \
-	{                                                                                              \
-		bool _mixed = false;                                                                       \
-		int value = (int)elements[0]->getter();                                                    \
-		for (int i = 1; i < elements.size(); i++)                                                  \
-		{                                                                                          \
-			if (elements[i]->getter() != (type)value)                                              \
-			{                                                                                      \
-				_mixed = true;                                                                     \
-				break;                                                                             \
-			}                                                                                      \
-		}                                                                                          \
-                                                                                                   \
-		if (_mixed)                                                                                \
-		{                                                                                          \
-			ImGui::TextUnformatted(name);                                                          \
-			ImGui::SameLine();                                                                     \
-			if (ImGui::Button("(mixed)"))                                                          \
-			{                                                                                      \
-				for (int i = 0; i < elements.size(); i++)                                          \
-					elements[i]->setter((type)0);                                                  \
-				c = r = true;                                                                      \
-			}                                                                                      \
-		}                                                                                          \
-		else if (ImGui::Combo(name, &value, items, IM_ARRAYSIZE(items)))                           \
-		{                                                                                          \
-			for (int i = 0; i < elements.size(); i++)                                              \
-				elements[i]->setter((type)value);                                                  \
-			c = r = true;                                                                          \
-		}                                                                                          \
+#define show_field_combo_macro(name, getter, setter, type, items)          \
+	{                                                                      \
+		bool _mixed = false;                                               \
+		int value = (int)elements[0]->getter();                            \
+		for (int i = 1; i < elements.size(); i++)                          \
+		{                                                                  \
+			if (elements[i]->getter() != (type)value)                      \
+			{                                                              \
+				_mixed = true;                                             \
+				break;                                                     \
+			}                                                              \
+		}                                                                  \
+                                                                           \
+		if (_mixed)                                                        \
+		{                                                                  \
+			ImGui::TextUnformatted(name);                                  \
+			ImGui::SameLine();                                             \
+			if (ImGui::Button("(mixed)"))                                  \
+			{                                                              \
+				for (int i = 0; i < elements.size(); i++)                  \
+					elements[i]->setter((type)0);                          \
+				c = r = true;                                              \
+			}                                                              \
+		} else if (ImGui::Combo(name, &value, items, IM_ARRAYSIZE(items))) \
+		{                                                                  \
+			for (int i = 0; i < elements.size(); i++)                      \
+				elements[i]->setter((type)value);                          \
+			c = r = true;                                                  \
+		}                                                                  \
 	}
 
-#define show_label_bool(name, get_method)	show_label_macro(name, get_method, bool, "%s: %d")
+#define show_label_bool(name, get_method) show_label_macro(name, get_method, bool, "%s: %d")
 #define show_label_string(name, get_method) show_label_string_macro(name, get_method)
-#define show_label_int(name, get_method)	show_label_macro(name, get_method, int, "%s: %d")
-#define show_label_float(name, get_method)	show_label_macro(name, get_method, float, "%s: %f")
+#define show_label_int(name, get_method) show_label_macro(name, get_method, int, "%s: %d")
+#define show_label_float(name, get_method) show_label_macro(name, get_method, float, "%s: %f")
 
-#define show_field_bool(name, get_method, set_method)                                              \
+#define show_field_bool(name, get_method, set_method) \
 	show_field_bool_macro(name, get_method, set_method)
-#define show_field_string(name, get_method, set_method)                                            \
+#define show_field_string(name, get_method, set_method) \
 	show_field_string_macro(name, get_method, set_method)
-#define show_field_string_image(name, get_method, set_method)                                      \
+#define show_field_string_image(name, get_method, set_method) \
 	show_field_string_image_macro(name, get_method, set_method)
-#define show_field_material(name, get_method, set_method)                                          \
+#define show_field_material(name, get_method, set_method) \
 	show_field_material_macro(name, get_method, set_method)
-#define show_field_int(name, get_method, set_method)                                               \
+#define show_field_int(name, get_method, set_method) \
 	show_field_macro(name, get_method, set_method, int, parameter_int, out_int)
-#define show_field_float(name, get_method, set_method)                                             \
+#define show_field_float(name, get_method, set_method) \
 	show_field_macro(name, get_method, set_method, float, parameter_float, out_float)
-#define show_field_float_angle(name, get_method, set_method)                                       \
+#define show_field_float_angle(name, get_method, set_method) \
 	show_field_macro(name, get_method, set_method, float, parameter_float_angle, out_float)
-#define show_field_double(name, get_method, set_method)                                            \
+#define show_field_double(name, get_method, set_method) \
 	show_field_macro(name, get_method, set_method, double, parameter_double, out_double)
-#define show_field_vec2(name, get_method, set_method)                                              \
+#define show_field_vec2(name, get_method, set_method) \
 	show_field_macro(name, get_method, set_method, vec2, parameter_vec2, out_vec2)
-#define show_field_vec3(name, get_method, set_method)                                              \
+#define show_field_vec3(name, get_method, set_method) \
 	show_field_macro(name, get_method, set_method, vec3, parameter_vec3, out_vec3)
-#define show_field_vec4(name, get_method, set_method)                                              \
+#define show_field_vec4(name, get_method, set_method) \
 	show_field_macro(name, get_method, set_method, vec4, parameter_vec4, out_vec4)
-#define show_field_dvec2(name, get_method, set_method)                                             \
+#define show_field_dvec2(name, get_method, set_method) \
 	show_field_macro(name, get_method, set_method, dvec2, parameter_dvec2, out_dvec2)
-#define show_field_dvec3(name, get_method, set_method)                                             \
+#define show_field_dvec3(name, get_method, set_method) \
 	show_field_macro(name, get_method, set_method, dvec3, parameter_dvec3, out_dvec3)
-#define show_field_dvec4(name, get_method, set_method)                                             \
+#define show_field_dvec4(name, get_method, set_method) \
 	show_field_macro(name, get_method, set_method, dvec4, parameter_dvec4, out_dvec4)
-#define show_field_ivec2(name, get_method, set_method)                                             \
+#define show_field_ivec2(name, get_method, set_method) \
 	show_field_macro(name, get_method, set_method, ivec2, parameter_ivec2, out_ivec2)
-#define show_field_ivec3(name, get_method, set_method)                                             \
+#define show_field_ivec3(name, get_method, set_method) \
 	show_field_macro(name, get_method, set_method, ivec3, parameter_ivec3, out_ivec3)
-#define show_field_ivec4(name, get_method, set_method)                                             \
+#define show_field_ivec4(name, get_method, set_method) \
 	show_field_macro(name, get_method, set_method, ivec4, parameter_ivec4, out_ivec4)
-#define show_field_color(name, get_method, set_method)                                             \
+#define show_field_color(name, get_method, set_method) \
 	show_field_macro(name, get_method, set_method, vec4, parameter_color, out_color)
-#define show_field_combo(name, get_method, set_method, type, items)                                \
+#define show_field_combo(name, get_method, set_method, type, items) \
 	show_field_combo_macro(name, get_method, set_method, type, items)
 
-#define show_field_string_i(name, get_method, set_method, iter)                                    \
+#define show_field_string_i(name, get_method, set_method, iter) \
 	show_field_string_iter_macro(name, get_method, set_method, iter)
-#define show_field_string_image_i(name, get_method, set_method, iter)                              \
+#define show_field_string_image_i(name, get_method, set_method, iter) \
 	show_field_string_image_iter_macro(name, get_method, set_method, iter)
-#define show_field_int_i(name, get_method, set_method, iter)                                       \
+#define show_field_int_i(name, get_method, set_method, iter) \
 	show_field_iter_macro(name, get_method, set_method, iter, int, parameter_int, out_int)
-#define show_field_ivec2_i(name, get_method, set_method, iter)                                     \
+#define show_field_ivec2_i(name, get_method, set_method, iter) \
 	show_field_iter_macro(name, get_method, set_method, iter, ivec2, parameter_ivec2, out_ivec2)
-#define show_field_ivec3_i(name, get_method, set_method, iter)                                     \
+#define show_field_ivec3_i(name, get_method, set_method, iter) \
 	show_field_iter_macro(name, get_method, set_method, iter, ivec3, parameter_ivec3, out_ivec3)
-#define show_field_ivec4_i(name, get_method, set_method, iter)                                     \
+#define show_field_ivec4_i(name, get_method, set_method, iter) \
 	show_field_iter_macro(name, get_method, set_method, iter, ivec4, parameter_ivec4, out_ivec4)
-#define show_field_float_i(name, get_method, set_method, iter)                                     \
+#define show_field_float_i(name, get_method, set_method, iter) \
 	show_field_iter_macro(name, get_method, set_method, iter, float, parameter_float, out_float)
-#define show_field_vec2_i(name, get_method, set_method, iter)                                      \
+#define show_field_vec2_i(name, get_method, set_method, iter) \
 	show_field_iter_macro(name, get_method, set_method, iter, vec2, parameter_vec2, out_vec2)
-#define show_field_vec3_i(name, get_method, set_method, iter)                                      \
+#define show_field_vec3_i(name, get_method, set_method, iter) \
 	show_field_iter_macro(name, get_method, set_method, iter, vec3, parameter_vec3, out_vec3)
-#define show_field_vec4_i(name, get_method, set_method, iter)                                      \
+#define show_field_vec4_i(name, get_method, set_method, iter) \
 	show_field_iter_macro(name, get_method, set_method, iter, vec4, parameter_vec4, out_vec4)
-#define show_field_color_i(name, get_method, set_method, iter)                                     \
+#define show_field_color_i(name, get_method, set_method, iter) \
 	show_field_iter_macro(name, get_method, set_method, iter, vec4, parameter_color, out_color)
 
 bool out_bool;
-char out_str[0xFFF] = "";	 // tmp variable (parameter string)
+char out_str[0xFFF] = ""; // tmp variable (parameter string)
 int out_int;
 float out_float;
 double out_double;
@@ -418,13 +418,13 @@ bool parameter_string_image(const char *label, const char *value,
 #ifdef EDITOR_PLUGIN
 			UnigineEditor::AssetDialogs::browseAsset(
 				MakeCallback([func](const UnigineEditor::AssetDialogs::SelectedAsset &asset) {
-					if (func)
-					{
-						String path =
-							String::format("guid://%s", asset.runtime_guid.makeString().get());
-						func->run(path);
-					}
-				}),
+				if (func)
+				{
+					String path =
+						String::format("guid://%s", asset.runtime_guid.makeString().get());
+					func->run(path);
+				}
+			}),
 				"Select Image", ".png.jpg.tga.tif.texture");
 #endif
 		}
@@ -457,12 +457,12 @@ bool parameter_material(const char *label, const Unigine::MaterialPtr &value,
 #ifdef EDITOR_PLUGIN
 			UnigineEditor::AssetDialogs::browseAsset(
 				MakeCallback([func](const UnigineEditor::AssetDialogs::SelectedAsset &asset) {
-					if (func)
-					{
-						MaterialPtr mat = Materials::findMaterialByFileGUID(asset.asset_guid);
-						func->run(mat);
-					}
-				}),
+				if (func)
+				{
+					MaterialPtr mat = Materials::findMaterialByFileGUID(asset.asset_guid);
+					func->run(mat);
+				}
+			}),
 				"Select Material", ".mat.basemat");
 #endif
 		}
@@ -595,7 +595,7 @@ bool parameter_color(const char *label, const vec4 &value, bool &changed, bool &
 }
 
 Input::KEY enable_hotkey = Input::KEY::KEY_F3;
-}	 // namespace
+} // namespace
 
 UIDesigner *UIDesigner::get()
 {
@@ -639,22 +639,22 @@ void UIDesigner::init(const Unigine::GuiPtr &gui, bool use_custom_render)
 	}
 
 	canvas_widget = WidgetCanvas::create();
-	canvas_widget->addLine();	 // manipulator: edges
-	canvas_widget->addLine();	 // manipulator: vertices (4 circle corners)
+	canvas_widget->addLine(); // manipulator: edges
+	canvas_widget->addLine(); // manipulator: vertices (4 circle corners)
 	canvas_widget->addLine();
 	canvas_widget->addLine();
 	canvas_widget->addLine();
-	canvas_widget->addPolygon();	// selection: background
-	canvas_widget->addLine();		// selection: edges
-	canvas_widget->addLine();		// selected element: pivot
-	canvas_widget->addLine();		// selected element: parent's anchor rectangle
-	canvas_widget->addLine();		// selected element: anchor rectangle
-	canvas_widget->addLine();		// selected element: anchor LT
-	canvas_widget->addLine();		// selected element: anchor LB
-	canvas_widget->addLine();		// selected element: anchor RB
-	canvas_widget->addLine();		// selected element: anchor RT
-	canvas_widget->addLine();		// align line: horizontal
-	canvas_widget->addLine();		// align line: vertical
+	canvas_widget->addPolygon(); // selection: background
+	canvas_widget->addLine();	 // selection: edges
+	canvas_widget->addLine();	 // selected element: pivot
+	canvas_widget->addLine();	 // selected element: parent's anchor rectangle
+	canvas_widget->addLine();	 // selected element: anchor rectangle
+	canvas_widget->addLine();	 // selected element: anchor LT
+	canvas_widget->addLine();	 // selected element: anchor LB
+	canvas_widget->addLine();	 // selected element: anchor RB
+	canvas_widget->addLine();	 // selected element: anchor RT
+	canvas_widget->addLine();	 // align line: horizontal
+	canvas_widget->addLine();	 // align line: vertical
 	gui->addChild(canvas_widget, Gui::ALIGN_OVERLAP);
 
 	if (WindowManager::getMainWindow())
@@ -715,7 +715,7 @@ void UIDesigner::update()
 
 	if (canvas)
 	{
-		canvas->needToRearrange();	  // fix positions after buttons like "Expand All"
+		canvas->needToRearrange(); // fix positions after buttons like "Expand All"
 		canvas->updateManual(Engine::get()->getIFps());
 	}
 
@@ -735,10 +735,8 @@ void UIDesigner::update()
 		gui_sprite->setHeight(ftoi(render_height * gui_sprite_pos_scale.z));
 		gui_sprite->setWidth(ftoi(render_width * gui_sprite_pos_scale.z));
 		gui_sprite->arrange();
-		gui_sprite->setPosition(ftoi(gui_width / 2 - gui_sprite->getWidth() * 0.5f
-									 + gui_sprite_pos_scale.x * gui_sprite->getHeight()),
-			ftoi(gui_height / 2 - gui_sprite->getHeight() * 0.5f
-				 + gui_sprite_pos_scale.y * gui_sprite->getHeight()));
+		gui_sprite->setPosition(ftoi(gui_width / 2 - gui_sprite->getWidth() * 0.5f + gui_sprite_pos_scale.x * gui_sprite->getHeight()),
+			ftoi(gui_height / 2 - gui_sprite->getHeight() * 0.5f + gui_sprite_pos_scale.y * gui_sprite->getHeight()));
 
 		if (!ImGui::GetIO().WantCaptureMouse)
 		{
@@ -760,8 +758,7 @@ void UIDesigner::update()
 				gui_sprite_pos_scale.y += itof(gui->getMouseDY()) / gui_sprite->getHeight();
 			}
 		}
-	}
-	else if (gui_sprite && gui_sprite->getRender() && !canvas)
+	} else if (gui_sprite && gui_sprite->getRender() && !canvas)
 		gui_sprite->setHidden(true);
 
 	// bring to front, sort UI
@@ -869,8 +866,7 @@ void UIDesigner::update_show_state()
 		}
 		ImGuiImpl::getWidget()->setHidden(false);
 		ImGuiImpl::bringToFront();
-	}
-	else
+	} else
 	{
 #ifndef EDITOR_PLUGIN
 		Input::setMouseHandle(saved_mouse_handle);
@@ -888,22 +884,22 @@ void UIDesigner::update_show_state()
 
 void UIDesigner::clear_canvas()
 {
-	canvas_widget->clearLinePoints(0);	  // manipulator: edges
-	canvas_widget->clearLinePoints(1);	  // manipulator: vertices (4 circle corners)
+	canvas_widget->clearLinePoints(0); // manipulator: edges
+	canvas_widget->clearLinePoints(1); // manipulator: vertices (4 circle corners)
 	canvas_widget->clearLinePoints(2);
 	canvas_widget->clearLinePoints(3);
 	canvas_widget->clearLinePoints(4);
-	canvas_widget->clearPolygonPoints(5);	 // selection: background
-	canvas_widget->clearLinePoints(6);		 // selection: edges
-	canvas_widget->clearLinePoints(7);		 // selected element: pivot
-	canvas_widget->clearLinePoints(8);		 // selected element: parent's anchor rectangle
-	canvas_widget->clearLinePoints(9);		 // selected element: anchor rectangle
-	canvas_widget->clearLinePoints(10);		 // selected element: anchor LT
-	canvas_widget->clearLinePoints(11);		 // selected element: anchor LB
-	canvas_widget->clearLinePoints(12);		 // selected element: anchor RB
-	canvas_widget->clearLinePoints(13);		 // selected element: anchor RT
-	canvas_widget->clearLinePoints(14);		 // align line: horizontal
-	canvas_widget->clearLinePoints(15);		 // align line: vertical
+	canvas_widget->clearPolygonPoints(5); // selection: background
+	canvas_widget->clearLinePoints(6);	  // selection: edges
+	canvas_widget->clearLinePoints(7);	  // selected element: pivot
+	canvas_widget->clearLinePoints(8);	  // selected element: parent's anchor rectangle
+	canvas_widget->clearLinePoints(9);	  // selected element: anchor rectangle
+	canvas_widget->clearLinePoints(10);	  // selected element: anchor LT
+	canvas_widget->clearLinePoints(11);	  // selected element: anchor LB
+	canvas_widget->clearLinePoints(12);	  // selected element: anchor RB
+	canvas_widget->clearLinePoints(13);	  // selected element: anchor RT
+	canvas_widget->clearLinePoints(14);	  // align line: horizontal
+	canvas_widget->clearLinePoints(15);	  // align line: vertical
 }
 
 void UIDesigner::render_main_menu()
@@ -992,8 +988,7 @@ void UIDesigner::render_main_menu()
 				"##background_fade_color##", bg_render_fade, ImGuiColorEditFlags_NoInputs);
 			if (ImGui::IsItemHovered())
 				ImGui::SetTooltip("Background Fade Color");
-		}
-		else
+		} else
 		{
 			ImGui::ColorEdit3(
 				"##background_color##", gui_sprite_bg_color, ImGuiColorEditFlags_NoInputs);
@@ -1042,8 +1037,8 @@ void UIDesigner::render_main_menu()
 			ImGui::SameLine();
 		ImGui::SetNextItemWidth(150.0f);
 		if (ImGui::Combo(
-				"##canvases##", &selected_canvas_index, canvases_list, IM_ARRAYSIZE(canvases_list))
-			|| (!canvas && canvases.size()))
+				"##canvases##", &selected_canvas_index, canvases_list, IM_ARRAYSIZE(canvases_list)) ||
+			(!canvas && canvases.size()))
 		{
 			canvas = canvases[selected_canvas_index]->getPtr();
 			clear_selection();
@@ -1062,8 +1057,7 @@ void UIDesigner::render_main_menu()
 		{
 			ImGui::TextUnformatted(String::format(
 				"Canvas: %dx%d", canvas->getScreenWidth(), canvas->getScreenHeight()));
-		}
-		else
+		} else
 			ImGui::TextUnformatted(String::format("Canvas: %dx%d",
 				ftoi(canvas->getCanvasReferenceWidth()), ftoi(canvas->getCanvasReferenceHeight())));
 	}
@@ -1093,57 +1087,57 @@ void UIDesigner::render_main_menu()
 		{
 			switch (render_mode)
 			{
-			case 0:	   // Custom
-				render_width = custom_render_size[0];
-				render_height = custom_render_size[1];
-				align_canvas_scale();
-				break;
-			case 1:	   // "1024x768 (4:3 XGA)"
-				render_width = 1024;
-				render_height = 768;
-				align_canvas_scale();
-				break;
-			case 2:	   // "1280x720 (16:9 HD)"
-				render_width = 1280;
-				render_height = 720;
-				align_canvas_scale();
-				break;
-			case 3:	   // "1920x1080 (16:9 FullHD)"
-				render_width = 1920;
-				render_height = 1080;
-				align_canvas_scale();
-				break;
-			case 4:	   // "1920x1200 (16:10)"
-				render_width = 1920;
-				render_height = 1200;
-				align_canvas_scale();
-				break;
-			case 5:	   // "2560x1080 (21:9)"
-				render_width = 2560;
-				render_height = 1080;
-				align_canvas_scale();
-				break;
-			case 6:	   // "2560x1440 (16:9 2K)"
-				render_width = 2560;
-				render_height = 1440;
-				align_canvas_scale();
-				break;
-			case 7:	   // "3840x2160 (16:9 4K)"
-				render_width = 3840;
-				render_height = 2160;
-				align_canvas_scale();
-				break;
-			case 8:	   // "7680x2160 (32:9)"
-				render_width = 7680;
-				render_height = 2160;
-				align_canvas_scale();
-				break;
-			case 9:	   // "Window Size"
-				gui_sprite_pos_scale = vec3(0, 0, 1);
-				break;
+				case 0: // Custom
+					render_width = custom_render_size[0];
+					render_height = custom_render_size[1];
+					align_canvas_scale();
+					break;
+				case 1: // "1024x768 (4:3 XGA)"
+					render_width = 1024;
+					render_height = 768;
+					align_canvas_scale();
+					break;
+				case 2: // "1280x720 (16:9 HD)"
+					render_width = 1280;
+					render_height = 720;
+					align_canvas_scale();
+					break;
+				case 3: // "1920x1080 (16:9 FullHD)"
+					render_width = 1920;
+					render_height = 1080;
+					align_canvas_scale();
+					break;
+				case 4: // "1920x1200 (16:10)"
+					render_width = 1920;
+					render_height = 1200;
+					align_canvas_scale();
+					break;
+				case 5: // "2560x1080 (21:9)"
+					render_width = 2560;
+					render_height = 1080;
+					align_canvas_scale();
+					break;
+				case 6: // "2560x1440 (16:9 2K)"
+					render_width = 2560;
+					render_height = 1440;
+					align_canvas_scale();
+					break;
+				case 7: // "3840x2160 (16:9 4K)"
+					render_width = 3840;
+					render_height = 2160;
+					align_canvas_scale();
+					break;
+				case 8: // "7680x2160 (32:9)"
+					render_width = 7680;
+					render_height = 2160;
+					align_canvas_scale();
+					break;
+				case 9: // "Window Size"
+					gui_sprite_pos_scale = vec3(0, 0, 1);
+					break;
 			}
 		}
-		if (render_mode == 0)	 // "Custom"
+		if (render_mode == 0) // "Custom"
 		{
 			ImGui::SameLine();
 			ImGui::SetNextItemWidth(100.0f);
@@ -1156,7 +1150,7 @@ void UIDesigner::render_main_menu()
 				align_canvas_scale();
 			}
 		}
-		if (render_mode == 9)	 // "Window Size"
+		if (render_mode == 9) // "Window Size"
 		{
 			render_width = canvas_widget->getGui()->getWidth();
 			render_height = canvas_widget->getGui()->getHeight();
@@ -1179,11 +1173,9 @@ void UIDesigner::render_main_menu()
 				float scaled_height = render_height * canvas_scale;
 				gui_sprite_pos_scale.x = 0;
 				gui_sprite_pos_scale.y =
-					((visible_height - scaled_height) * 0.5f + window_header * 0.5f)
-					/ window_size.y;
+					((visible_height - scaled_height) * 0.5f + window_header * 0.5f) / window_size.y;
 				gui_sprite_pos_scale.z = canvas_scale;
-			}
-			else
+			} else
 				gui_sprite_pos_scale = vec3(0, 0, 1);
 		}
 		ImGui::SameLine();
@@ -1262,8 +1254,7 @@ void UIDesigner::render_main_menu()
 		{
 			ImGui::Checkbox("Use DPI Scale", &use_dpi_scale);
 			ImGui::InputFloat("Pixel Scale", &pixel_scale);
-		}
-		else if (item_current == 1)
+		} else if (item_current == 1)
 		{
 			ImGui::InputFloat("Reference Width", &reference_width);
 			ImGui::InputFloat("Reference Height", &reference_height);
@@ -1321,8 +1312,7 @@ void UIDesigner::render_main_menu()
 		{
 			ImGui::Checkbox("Use DPI Scale", &use_dpi_scale);
 			ImGui::InputFloat("Pixel Scale", &pixel_scale);
-		}
-		else if (item_current == 1)
+		} else if (item_current == 1)
 		{
 			ImGui::InputFloat("Reference Width", &reference_width);
 			ImGui::InputFloat("Reference Height", &reference_height);
@@ -1359,7 +1349,7 @@ void UIDesigner::render_main_menu()
 			canvas->pixel_scale = pixel_scale;
 			canvas->reference_width = reference_width;
 			canvas->reference_height = reference_height;
-			canvas->updateManual(0);	// refresh values
+			canvas->updateManual(0); // refresh values
 
 			// 3. recalculate and apply positions
 			int s_index = 0;
@@ -1412,8 +1402,7 @@ void UIDesigner::render_toolset()
 	{
 		if (ImGui::Button("Create Canvas", button_size))
 			create_canvas_node();
-	}
-	else
+	} else
 	{
 		for (int i = 0; i < all_creator_elements.size(); i++)
 		{
@@ -1429,9 +1418,9 @@ void UIDesigner::render_toolset()
 			if (ImGui::Button(all_creator_elements[i].get() + 3, button_size))
 			{
 				if (!selected)
-					selected_creator = all_creator_elements[i];	   // select
+					selected_creator = all_creator_elements[i]; // select
 				else
-					selected_creator.clear();	 // deselect
+					selected_creator.clear(); // deselect
 			}
 			if (selected)
 				ImGui::PopStyleColor(3);
@@ -1466,7 +1455,7 @@ void UIDesigner::render_hierarchy_element(const UI::ElementPtr &element)
 	if (!element)
 		return;
 #ifndef EDITOR_PLUGIN
-	if (element == trash_root)	  // hidden element for deleted widgets
+	if (element == trash_root) // hidden element for deleted widgets
 		return;
 #endif
 
@@ -1480,9 +1469,7 @@ void UIDesigner::render_hierarchy_element(const UI::ElementPtr &element)
 	if (name.empty())
 		name = String::format("[%s]", element->getPropertyName());
 
-	static ImGuiTreeNodeFlags base_flags = ImGuiTreeNodeFlags_OpenOnArrow
-										   | ImGuiTreeNodeFlags_OpenOnDoubleClick
-										   | ImGuiTreeNodeFlags_SpanAvailWidth;
+	static ImGuiTreeNodeFlags base_flags = ImGuiTreeNodeFlags_OpenOnArrow | ImGuiTreeNodeFlags_OpenOnDoubleClick | ImGuiTreeNodeFlags_SpanAvailWidth;
 	ImGuiTreeNodeFlags node_flags = base_flags;
 	if (selected_elements.contains(element))
 		node_flags |= ImGuiTreeNodeFlags_Selected;
@@ -1498,15 +1485,13 @@ void UIDesigner::render_hierarchy_element(const UI::ElementPtr &element)
 		// start dragging...
 		if (drag_select.waiting_for_drag && drag_select.pending_element == element)
 		{
-			float dist = length2(vec2(ImGui::GetIO().MousePos.x, ImGui::GetIO().MousePos.y)
-								 - drag_select.mouse_down_pos);
+			float dist = length2(vec2(ImGui::GetIO().MousePos.x, ImGui::GetIO().MousePos.y) - drag_select.mouse_down_pos);
 			if (dist >= drag_threshold * drag_threshold)
 				drag_select.waiting_for_drag = false;
 		}
 
 		// start selecting...
-		if (drag_select.waiting_for_drag && drag_select.pending_element == element
-			&& ImGui::IsMouseReleased(ImGuiMouseButton_Left))
+		if (drag_select.waiting_for_drag && drag_select.pending_element == element && ImGui::IsMouseReleased(ImGuiMouseButton_Left))
 		{
 			select_element_by_user(drag_select.pending_element, false);
 			drag_select.waiting_for_drag = false;
@@ -1517,21 +1502,20 @@ void UIDesigner::render_hierarchy_element(const UI::ElementPtr &element)
 	// helper func to check if the first element is a child of the parent (recursively)
 	std::function<bool(UI::Element *, const UI::Element *)> is_child_of =
 		[&](UI::Element *e, const UI::Element *parent) {
-			if (e == nullptr || parent == nullptr)
-				return false;
-			if (e == parent)
-				return true;
-			if (is_child_of(e->getParent(), parent))
-				return true;
+		if (e == nullptr || parent == nullptr)
 			return false;
-		};
+		if (e == parent)
+			return true;
+		if (is_child_of(e->getParent(), parent))
+			return true;
+		return false;
+	};
 
 	auto drag_drop_reparent = [this, is_child_of](const UI::ElementPtr &element) {
 		if (drag_select.waiting_for_drag)
 			return;
 
-		if (drag_select.pending_element == element
-			&& ImGui::BeginDragDropSource(ImGuiDragDropFlags_SourceAllowNullID))
+		if (drag_select.pending_element == element && ImGui::BeginDragDropSource(ImGuiDragDropFlags_SourceAllowNullID))
 		{
 			static Vector<UI::ElementPtr> payload;
 
@@ -1613,7 +1597,7 @@ void UIDesigner::render_hierarchy_element(const UI::ElementPtr &element)
 			ImGui::GetWindowDrawList()->AddLine(ImVec2(start.x, start.y - 1),
 				ImVec2(start.x + size.x, start.y - 1), IM_COL32(128, 200, 255, 255), 1.0f);
 
-		ImGui::SetCursorScreenPos(start);	 // to prevent moving new elements after
+		ImGui::SetCursorScreenPos(start); // to prevent moving new elements after
 
 		// reordering
 		if (ImGui::BeginDragDropTarget())
@@ -1664,14 +1648,11 @@ void UIDesigner::render_hierarchy_element(const UI::ElementPtr &element)
 				render_hierarchy_element(element->getChild(i)->getPtr());
 			}
 			ImGui::TreePop();
-		}
-		else
+		} else
 			draw_drop_reorder(element, false);
-	}
-	else
+	} else
 	{
-		node_flags |= ImGuiTreeNodeFlags_Leaf
-					  | ImGuiTreeNodeFlags_NoTreePushOnOpen;	// ImGuiTreeNodeFlags_Bullet
+		node_flags |= ImGuiTreeNodeFlags_Leaf | ImGuiTreeNodeFlags_NoTreePushOnOpen; // ImGuiTreeNodeFlags_Bullet
 		ImGui::PushStyleColor(ImGuiCol_Text,
 			element->getNode()->isEnabled() ? ImVec4(1, 1, 1, 1) : ImVec4(0.6f, 0.6f, 0.6f, 1.0f));
 		ImGui::TreeNodeEx((void *)element.get(), node_flags, "%s", name.get());
@@ -1773,18 +1754,18 @@ void UIDesigner::render_base_parameters(
 		ImGui::Checkbox("Change Pivot too", &change_pivot_too);
 	}
 
-#define change_anchor(func, pivot)                                                                 \
-	for (int i = 0; i < elements.size(); i++)                                                      \
-	{                                                                                              \
-		if (recalc_position)                                                                       \
-			stored_pos = elements[i]->getWorldPosition();                                          \
-		if (Input::isKeyPressed(Input::KEY_ANY_CTRL))                                              \
-			elements[i]->setPivot(pivot);                                                          \
-		else                                                                                       \
-			elements[i]->func(change_pivot_too);                                                   \
-		if (recalc_position)                                                                       \
-			elements[i]->setWorldPosition(stored_pos);                                             \
-	}                                                                                              \
+#define change_anchor(func, pivot)                        \
+	for (int i = 0; i < elements.size(); i++)             \
+	{                                                     \
+		if (recalc_position)                              \
+			stored_pos = elements[i]->getWorldPosition(); \
+		if (Input::isKeyPressed(Input::KEY_ANY_CTRL))     \
+			elements[i]->setPivot(pivot);                 \
+		else                                              \
+			elements[i]->func(change_pivot_too);          \
+		if (recalc_position)                              \
+			elements[i]->setWorldPosition(stored_pos);    \
+	}                                                     \
 	c = r = true;
 
 	button_size = ImVec2(80.0f, 0.0f);
@@ -1841,7 +1822,7 @@ void UIDesigner::render_base_parameters(
 			vec4 p = e->pos;
 			vec4 a = e->anchor;
 			e->pos = vec4(0, p.y, 0, p.w);
-			e->setAnchor(vec4(0, a.y, 1, a.w));	   // calls arrange inside
+			e->setAnchor(vec4(0, a.y, 1, a.w)); // calls arrange inside
 		}
 		c = r = true;
 	}
@@ -1854,7 +1835,7 @@ void UIDesigner::render_base_parameters(
 			vec4 p = e->pos;
 			vec4 a = e->anchor;
 			e->pos = vec4(p.x, 0, p.z, 0);
-			e->setAnchor(vec4(a.x, 0, a.z, 1));	   // calls arrange inside
+			e->setAnchor(vec4(a.x, 0, a.z, 1)); // calls arrange inside
 		}
 		c = r = true;
 	}
@@ -1865,7 +1846,7 @@ void UIDesigner::render_base_parameters(
 		{
 			auto &e = selected_elements[i];
 			e->pos = vec4(0, 0, 0, 0);
-			e->setAnchor(vec4(0, 0, 1, 1));	   // calls arrange inside
+			e->setAnchor(vec4(0, 0, 1, 1)); // calls arrange inside
 		}
 		c = r = true;
 	}
@@ -1916,102 +1897,102 @@ void UIDesigner::render_derived_parameters(
 		int type = elements[0]->getType();
 		switch (type)
 		{
-		case Property::PARAMETER_INT:
-			show_field_int(name, getValueInt, setValueInt);
-			break;
-		case Property::PARAMETER_FLOAT:
-			if (name.contains("angle", false) || name.contains("rotation", false))
+			case Property::PARAMETER_INT:
+				show_field_int(name, getValueInt, setValueInt);
+				break;
+			case Property::PARAMETER_FLOAT:
+				if (name.contains("angle", false) || name.contains("rotation", false))
+				{
+					show_field_float_angle(name, getValueFloat, setValueFloat);
+				} else
+				{
+					show_field_float(name, getValueFloat, setValueFloat);
+				}
+				break;
+			case Property::PARAMETER_DOUBLE:
+				show_field_double(name, getValueDouble, setValueDouble);
+				break;
+			case Property::PARAMETER_TOGGLE:
+				show_field_bool(name, getValueToggle, setValueToggle);
+				break;
+			case Property::PARAMETER_SWITCH:
 			{
-				show_field_float_angle(name, getValueFloat, setValueFloat);
-			}
-			else
-			{
-				show_field_float(name, getValueFloat, setValueFloat);
-			}
-			break;
-		case Property::PARAMETER_DOUBLE:
-			show_field_double(name, getValueDouble, setValueDouble);
-			break;
-		case Property::PARAMETER_TOGGLE:
-			show_field_bool(name, getValueToggle, setValueToggle);
-			break;
-		case Property::PARAMETER_SWITCH: {
-			size_t num_chars = 0;
-			for (int k = 0; k < elements[0]->getSwitchNumItems(); k++)
-				num_chars += strlen(elements[0]->getSwitchItemName(k)) + 1;
+				size_t num_chars = 0;
+				for (int k = 0; k < elements[0]->getSwitchNumItems(); k++)
+					num_chars += strlen(elements[0]->getSwitchItemName(k)) + 1;
 
-			String items;
-			items.resize(static_cast<int>(num_chars));
+				String items;
+				items.resize(static_cast<int>(num_chars));
 
-			int index = 0;
-			for (int k = 0; k < elements[0]->getSwitchNumItems(); k++)
-			{
-				const char *item_name = elements[0]->getSwitchItemName(k);
+				int index = 0;
+				for (int k = 0; k < elements[0]->getSwitchNumItems(); k++)
+				{
+					const char *item_name = elements[0]->getSwitchItemName(k);
 #ifdef _LINUX
-				strcpy(&(items[index]), item_name);
+					strcpy(&(items[index]), item_name);
 #else
-				strcpy_s(&(items[index]), items.size(), item_name);
+					strcpy_s(&(items[index]), items.size(), item_name);
 #endif
-				index += static_cast<int>(strlen(item_name));
-				items[index] = '\0';
-				index++;
-			}
+					index += static_cast<int>(strlen(item_name));
+					items[index] = '\0';
+					index++;
+				}
 
-			show_field_combo(name, getValueSwitch, setValueSwitch, int, items);
-			break;
-		}
-		case Property::PARAMETER_STRING:
-			show_field_string(name, getValueString, setValueString);
-			break;
-		case Property::PARAMETER_COLOR:
-			show_field_color(name, getValueColor, setValueColor);
-			break;
-		case Property::PARAMETER_VEC2:
-			show_field_vec2(name, getValueVec2, setValueVec2);
-			break;
-		case Property::PARAMETER_VEC3:
-			show_field_vec3(name, getValueVec3, setValueVec3);
-			break;
-		case Property::PARAMETER_VEC4:
-			show_field_vec4(name, getValueVec4, setValueVec4);
-			break;
-		case Property::PARAMETER_DVEC2:
-			// show_field_dvec2(name, getValueDVec2, setValueDVec2);
-			break;
-		case Property::PARAMETER_DVEC3:
-			// show_field_dvec3(name, getValueDVec3, setValueDVec3);
-			break;
-		case Property::PARAMETER_DVEC4:
-			// show_field_dvec4(name, getValueDVec4, setValueDVec4);
-			break;
-		case Property::PARAMETER_IVEC2:
-			show_field_ivec2(name, getValueIVec2, setValueIVec2);
-			break;
-		case Property::PARAMETER_IVEC3:
-			show_field_ivec3(name, getValueIVec3, setValueIVec3);
-			break;
-		case Property::PARAMETER_IVEC4:
-			show_field_ivec4(name, getValueIVec4, setValueIVec4);
-			break;
-		case Property::PARAMETER_MASK:
-			show_field_int(name, getValueMask, setValueMask);
-			break;
-		case Property::PARAMETER_FILE:
-			show_field_string_image(name, getValueFile, setValueFile);
-			break;
-		case Property::PARAMETER_PROPERTY:
-			break;
-		case Property::PARAMETER_MATERIAL:
-			show_field_material(name, getValueMaterial, setValueMaterial);
-			break;
-		case Property::PARAMETER_NODE:
-			break;
-		case Property::PARAMETER_CURVE2D:
-			break;
-		case Property::PARAMETER_ARRAY:
-			break;
-		case Property::PARAMETER_STRUCT:
-			break;
+				show_field_combo(name, getValueSwitch, setValueSwitch, int, items);
+				break;
+			}
+			case Property::PARAMETER_STRING:
+				show_field_string(name, getValueString, setValueString);
+				break;
+			case Property::PARAMETER_COLOR:
+				show_field_color(name, getValueColor, setValueColor);
+				break;
+			case Property::PARAMETER_VEC2:
+				show_field_vec2(name, getValueVec2, setValueVec2);
+				break;
+			case Property::PARAMETER_VEC3:
+				show_field_vec3(name, getValueVec3, setValueVec3);
+				break;
+			case Property::PARAMETER_VEC4:
+				show_field_vec4(name, getValueVec4, setValueVec4);
+				break;
+			case Property::PARAMETER_DVEC2:
+				// show_field_dvec2(name, getValueDVec2, setValueDVec2);
+				break;
+			case Property::PARAMETER_DVEC3:
+				// show_field_dvec3(name, getValueDVec3, setValueDVec3);
+				break;
+			case Property::PARAMETER_DVEC4:
+				// show_field_dvec4(name, getValueDVec4, setValueDVec4);
+				break;
+			case Property::PARAMETER_IVEC2:
+				show_field_ivec2(name, getValueIVec2, setValueIVec2);
+				break;
+			case Property::PARAMETER_IVEC3:
+				show_field_ivec3(name, getValueIVec3, setValueIVec3);
+				break;
+			case Property::PARAMETER_IVEC4:
+				show_field_ivec4(name, getValueIVec4, setValueIVec4);
+				break;
+			case Property::PARAMETER_MASK:
+				show_field_int(name, getValueMask, setValueMask);
+				break;
+			case Property::PARAMETER_FILE:
+				show_field_string_image(name, getValueFile, setValueFile);
+				break;
+			case Property::PARAMETER_PROPERTY:
+				break;
+			case Property::PARAMETER_MATERIAL:
+				show_field_material(name, getValueMaterial, setValueMaterial);
+				break;
+			case Property::PARAMETER_NODE:
+				break;
+			case Property::PARAMETER_CURVE2D:
+				break;
+			case Property::PARAMETER_ARRAY:
+				break;
+			case Property::PARAMETER_STRUCT:
+				break;
 		}
 	}
 
@@ -2042,32 +2023,32 @@ void UIDesigner::render_sprite_shader_parameters(
 		int type = ref->getParameterType(i);
 		switch (type)
 		{
-		case Material::PARAMETER_FLOAT:
-			show_field_float_i(name, getParameterFloat, setParameterFloat, i);
-			break;
-		case Material::PARAMETER_FLOAT2:
-			show_field_vec2_i(name, getParameterFloat2, setParameterFloat2, i);
-			break;
-		case Material::PARAMETER_FLOAT3:
-			show_field_vec3_i(name, getParameterFloat3, setParameterFloat3, i);
-			break;
-		case Material::PARAMETER_FLOAT4:
-			show_field_vec4_i(name, getParameterFloat4, setParameterFloat4, i);
-			break;
-		case Material::PARAMETER_INT:
-			show_field_int_i(name, getParameterInt, setParameterInt, i);
-			break;
-		case Material::PARAMETER_INT2:
-			show_field_ivec2_i(name, getParameterInt2, setParameterInt2, i);
-			break;
-		case Material::PARAMETER_INT3:
-			show_field_ivec3_i(name, getParameterInt3, setParameterInt3, i);
-			break;
-		case Material::PARAMETER_INT4:
-			show_field_ivec4_i(name, getParameterInt4, setParameterInt4, i);
-			break;
-		default:
-			break;
+			case Material::PARAMETER_FLOAT:
+				show_field_float_i(name, getParameterFloat, setParameterFloat, i);
+				break;
+			case Material::PARAMETER_FLOAT2:
+				show_field_vec2_i(name, getParameterFloat2, setParameterFloat2, i);
+				break;
+			case Material::PARAMETER_FLOAT3:
+				show_field_vec3_i(name, getParameterFloat3, setParameterFloat3, i);
+				break;
+			case Material::PARAMETER_FLOAT4:
+				show_field_vec4_i(name, getParameterFloat4, setParameterFloat4, i);
+				break;
+			case Material::PARAMETER_INT:
+				show_field_int_i(name, getParameterInt, setParameterInt, i);
+				break;
+			case Material::PARAMETER_INT2:
+				show_field_ivec2_i(name, getParameterInt2, setParameterInt2, i);
+				break;
+			case Material::PARAMETER_INT3:
+				show_field_ivec3_i(name, getParameterInt3, setParameterInt3, i);
+				break;
+			case Material::PARAMETER_INT4:
+				show_field_ivec4_i(name, getParameterInt4, setParameterInt4, i);
+				break;
+			default:
+				break;
 		}
 	}
 }
@@ -2084,8 +2065,7 @@ void UIDesigner::select_element_by_user(const UI::ElementPtr &element, bool upda
 			new_selection.append(element);
 		undo_manager->push(new SelectWidgetCommand(selected_elements, new_selection));
 		select_elements(new_selection, update_hierarchy_window);
-	}
-	else if (Input::isKeyPressed(Input::KEY_ANY_SHIFT))
+	} else if (Input::isKeyPressed(Input::KEY_ANY_SHIFT))
 	{
 		// add selection
 		if (!selected_elements.contains(element))
@@ -2095,8 +2075,7 @@ void UIDesigner::select_element_by_user(const UI::ElementPtr &element, bool upda
 			undo_manager->push(new SelectWidgetCommand(selected_elements, new_selection));
 			select_elements(new_selection, update_hierarchy_window);
 		}
-	}
-	else
+	} else
 	{
 		// select this only
 		undo_manager->push(new SelectWidgetCommand(selected_elements, element));
@@ -2135,8 +2114,7 @@ void UIDesigner::select_element(const UI::ElementPtr &element, bool update_hiera
 		{
 			UnigineEditor::SelectionAction::applySelection(
 				UnigineEditor::SelectorNodes::createObjectsSelector(editor_selected_nodes));
-		}
-		else
+		} else
 		{
 			UnigineEditor::Selection::setSelector(
 				UnigineEditor::SelectorNodes::createObjectsSelector({}));
@@ -2176,8 +2154,7 @@ void UIDesigner::select_elements(
 		{
 			UnigineEditor::SelectionAction::applySelection(
 				UnigineEditor::SelectorNodes::createObjectsSelector(editor_selected_nodes));
-		}
-		else
+		} else
 		{
 			UnigineEditor::Selection::setSelector(
 				UnigineEditor::SelectorNodes::createObjectsSelector({}));
@@ -2272,8 +2249,7 @@ Unigine::Math::vec2 UIDesigner::norm_to_window(const Unigine::Math::vec2 &norm_p
 	{
 		return vec2(gui_sprite->getPositionX() + norm_pos.x * gui_sprite->getWidth(),
 			gui_sprite->getPositionY() + norm_pos.y * gui_sprite->getHeight());
-	}
-	else
+	} else
 		return vec2(norm_pos.x * window_size.x, norm_pos.y * window_size.y);
 }
 
@@ -2334,8 +2310,7 @@ Unigine::Math::vec2 UIDesigner::window_to_canvas(const Unigine::Math::vec2 &pos)
 		float norm_x = (pos.x - gui_sprite->getPositionX()) / gui_sprite->getWidth();
 		float norm_y = (pos.y - gui_sprite->getPositionY()) / gui_sprite->getHeight();
 		return vec2(norm_x * render_width * px, norm_y * render_height * px);
-	}
-	else
+	} else
 		return pos * dpi_scale * px;
 }
 
@@ -2487,8 +2462,7 @@ void UIDesigner::mouse_update()
 		int y = gui->getMouseY();
 		mouse = gui->getMouseButtons() == 1;
 		mouse_position = ivec2(x, y);
-	}
-	else
+	} else
 	{
 		auto get_mouse_position = []() -> ivec2 {
 			auto window = Unigine::WindowManager::getMainWindow();
@@ -2516,14 +2490,12 @@ void UIDesigner::mouse_update()
 		{
 			mouse_down = true;
 			mouse_down_pos = mouse_position;
-		}
-		else
+		} else
 		{
 			mouse_down = false;
 			mouse_hold = true;
 		}
-	}
-	else
+	} else
 	{
 		if (!mouse_up && mouse_hold)
 			mouse_up = true;
@@ -2562,9 +2534,7 @@ void UIDesigner::mouse_context_menu_update()
 	static ivec2 mouse_rmb_pos;
 
 	// don't show context menu if mouse position is outside the window
-	if (!show_popup
-		&& (mouse_position.x < 0 || mouse_position.y < 0 || mouse_position.x > window_size.x
-			|| mouse_position.y > window_size.y))
+	if (!show_popup && (mouse_position.x < 0 || mouse_position.y < 0 || mouse_position.x > window_size.x || mouse_position.y > window_size.y))
 		return;
 
 	if (ImGui::BeginPopupContextVoid("ui_context"))
@@ -2575,7 +2545,7 @@ void UIDesigner::mouse_context_menu_update()
 			{
 				create_canvas_node();
 			}
-			ImGui::EndPopup();	  // BeginPopupContextVoid
+			ImGui::EndPopup(); // BeginPopupContextVoid
 			return;
 		}
 
@@ -2610,13 +2580,11 @@ void UIDesigner::mouse_context_menu_update()
 					new_element->initializeElement();
 					vec4 pos = new_element->pos;
 					pos.xy = window_to_canvas(mouse_start_pos);
-					if (dynamic_cast<UI::ElementFocusable *>(new_element.get())
-						|| dynamic_cast<UI::ProgressBar *>(new_element.get()))
+					if (dynamic_cast<UI::ElementFocusable *>(new_element.get()) || dynamic_cast<UI::ProgressBar *>(new_element.get()))
 					{
 						pos.z = 512;
 						pos.w = 40;
-					}
-					else
+					} else
 					{
 						pos.z = 256;
 						pos.w = 256;
@@ -2630,8 +2598,7 @@ void UIDesigner::mouse_context_menu_update()
 
 					last_manipulator_p0 = mouse_start_pos;
 					last_manipulator_p2 =
-						mouse_start_pos
-						+ vec2(convert_canvas_to_window(pos.z), convert_canvas_to_window(pos.w));
+						mouse_start_pos + vec2(convert_canvas_to_window(pos.z), convert_canvas_to_window(pos.w));
 					last_manipulator_aspect =
 						new_element->getHeight() != 0
 							? new_element->getWidth() / new_element->getHeight()
@@ -2813,7 +2780,7 @@ void UIDesigner::mouse_context_menu_update()
 						vec4 p = e->pos;
 						vec4 a = e->anchor;
 						e->pos = vec4(0, p.y, 0, p.w);
-						e->setAnchor(vec4(0, a.y, 1, a.w));	   // calls arrange inside
+						e->setAnchor(vec4(0, a.y, 1, a.w)); // calls arrange inside
 					}
 					save_changes_to_undo_redo();
 					ImGui::CloseCurrentPopup();
@@ -2827,7 +2794,7 @@ void UIDesigner::mouse_context_menu_update()
 						vec4 p = e->pos;
 						vec4 a = e->anchor;
 						e->pos = vec4(p.x, 0, p.z, 0);
-						e->setAnchor(vec4(a.x, 0, a.z, 1));	   // calls arrange inside
+						e->setAnchor(vec4(a.x, 0, a.z, 1)); // calls arrange inside
 					}
 					save_changes_to_undo_redo();
 					ImGui::CloseCurrentPopup();
@@ -2839,7 +2806,7 @@ void UIDesigner::mouse_context_menu_update()
 					{
 						auto &e = selected_elements[i];
 						e->pos = vec4(0, 0, 0, 0);
-						e->setAnchor(vec4(0, 0, 1, 1));	   // calls arrange inside
+						e->setAnchor(vec4(0, 0, 1, 1)); // calls arrange inside
 					}
 					save_changes_to_undo_redo();
 					ImGui::CloseCurrentPopup();
@@ -2860,9 +2827,8 @@ void UIDesigner::mouse_context_menu_update()
 		if (ImGui::MenuItem("Delete", "Del", false, selected_elements.size() > 0))
 			destroy_selected();
 
-		ImGui::EndPopup();	  // BeginPopupContextVoid
-	}
-	else
+		ImGui::EndPopup(); // BeginPopupContextVoid
+	} else
 		show_popup = false;
 }
 
@@ -2929,8 +2895,7 @@ void UIDesigner::selection_mode_update()
 				// user click on another widget or empty space!
 				if (!want_add_or_remove)
 					clear_selection();
-			}
-			else if (selected_elements.size() == 1 && selected_elements[0] == canvas)
+			} else if (selected_elements.size() == 1 && selected_elements[0] == canvas)
 			{
 				// special case for canvases
 				mouse_grab_type = GRAB_TYPE::NONE;
@@ -2947,7 +2912,7 @@ void UIDesigner::selection_mode_update()
 			mouse_grab_type = GRAB_TYPE::NONE;
 			vec2 ms = window_to_screen(vec2(mouse_x, mouse_y));
 			UI::ElementPtr hover_element = find_element(ms.x, ms.y);
-			if (hover_element)	  // found!
+			if (hover_element) // found!
 			{
 				select_element_by_user(hover_element, true);
 
@@ -2996,8 +2961,7 @@ void UIDesigner::selection_mode_update()
 
 				// calc local boundaries (manipulators) relative to full manipulator
 				vec4 lb = vec4(min_s.x, min_s.y, max_s.x, max_s.y);
-				lb.x = (lb.x - manipulator.p0.x)
-					   / manipulator_width;	   // normalize relative to "manipulator"
+				lb.x = (lb.x - manipulator.p0.x) / manipulator_width; // normalize relative to "manipulator"
 				lb.y = (lb.y - manipulator.p0.y) / manipulator_height;
 				lb.z = (lb.z - manipulator.p0.x) / manipulator_width;
 				lb.w = (lb.w - manipulator.p0.y) / manipulator_height;
@@ -3068,8 +3032,7 @@ void UIDesigner::selection_mode_update()
 					// move
 					if (mouse_grab_type == GRAB_TYPE::PLANE)
 					{
-						if (shift && selected_axis == AXIS::NONE
-							&& length(mouse_offset) > select_axis_threshold)
+						if (shift && selected_axis == AXIS::NONE && length(mouse_offset) > select_axis_threshold)
 						{
 							if (Math::abs(imouse_offset.x) > Math::abs(imouse_offset.y))
 								selected_axis = AXIS::HORIZONTAL;
@@ -3091,8 +3054,7 @@ void UIDesigner::selection_mode_update()
 							// convert screen to canvas
 							dx = screen_dx * c->getCanvasPixelSize();
 							dy = screen_dy * c->getCanvasPixelSize();
-						}
-						else
+						} else
 						{
 							dx = c->convertScreenToCanvas(imouse_offset.x);
 							dy = c->convertScreenToCanvas(imouse_offset.y);
@@ -3113,14 +3075,12 @@ void UIDesigner::selection_mode_update()
 						// special case: stretched anchors (need to change right/bottom sides
 						// also)
 						vec4 anc = selected_widget->getAnchor();
-						if (anc.x != anc.z
-							&& (selected_axis == AXIS::HORIZONTAL || selected_axis == AXIS::NONE))
+						if (anc.x != anc.z && (selected_axis == AXIS::HORIZONTAL || selected_axis == AXIS::NONE))
 						{
 							selected_widget->setRightOffset(
 								widget_canvas_start_pos[i].z - (xy.x - px));
 						}
-						if (anc.y != anc.w
-							&& (selected_axis == AXIS::VERTICAL || selected_axis == AXIS::NONE))
+						if (anc.y != anc.w && (selected_axis == AXIS::VERTICAL || selected_axis == AXIS::NONE))
 						{
 							selected_widget->setBottomOffset(
 								widget_canvas_start_pos[i].w - (xy.y - py));
@@ -3136,8 +3096,7 @@ void UIDesigner::selection_mode_update()
 						{
 							mo_x = render_height * itof(imouse_offset.x) / gui_sprite->getHeight();
 							mo_y = render_height * itof(imouse_offset.y) / gui_sprite->getHeight();
-						}
-						else
+						} else
 						{
 							mo_x = itof(imouse_offset.x);
 							mo_y = itof(imouse_offset.y);
@@ -3148,18 +3107,15 @@ void UIDesigner::selection_mode_update()
 						{
 							p0.x += mo_x;
 							p2.y += shift ? (-mo_x / aspect) : 0;
-						}
-						else if (mouse_grab_type == GRAB_TYPE::EDGE_RIGHT)
+						} else if (mouse_grab_type == GRAB_TYPE::EDGE_RIGHT)
 						{
 							p2.x += mo_x;
 							p2.y += shift ? (mo_x / aspect) : 0;
-						}
-						else if (mouse_grab_type == GRAB_TYPE::EDGE_TOP)
+						} else if (mouse_grab_type == GRAB_TYPE::EDGE_TOP)
 						{
 							p0.y += mo_y;
 							p2.x += shift ? (-mo_y * aspect) : 0;
-						}
-						else if (mouse_grab_type == GRAB_TYPE::EDGE_BOTTOM)
+						} else if (mouse_grab_type == GRAB_TYPE::EDGE_BOTTOM)
 						{
 							p2 += vec2(shift ? (mo_y * aspect) : 0, mo_y);
 						}
@@ -3167,17 +3123,14 @@ void UIDesigner::selection_mode_update()
 						else if (mouse_grab_type == GRAB_TYPE::VERTEX_LT)
 						{
 							p0 += vec2(mo_x, shift ? (mo_x / aspect) : mo_y);
-						}
-						else if (mouse_grab_type == GRAB_TYPE::VERTEX_RT)
+						} else if (mouse_grab_type == GRAB_TYPE::VERTEX_RT)
 						{
 							p2.x += mo_x;
 							p0.y += shift ? (-mo_x / aspect) : mo_y;
-						}
-						else if (mouse_grab_type == GRAB_TYPE::VERTEX_RB)
+						} else if (mouse_grab_type == GRAB_TYPE::VERTEX_RB)
 						{
 							p2 += vec2(mo_x, shift ? (mo_x / aspect) : mo_y);
-						}
-						else if (mouse_grab_type == GRAB_TYPE::VERTEX_LB)
+						} else if (mouse_grab_type == GRAB_TYPE::VERTEX_LB)
 						{
 							p0.x += mo_x;
 							p2.y += shift ? (-mo_x / aspect) : mo_y;
@@ -3185,17 +3138,17 @@ void UIDesigner::selection_mode_update()
 
 						// calculate local boundaries
 						vec2 pl0, pl2;
-						pl0.x = lerp(p0.x, p2.x, widget_local_bounds[i].x);
-						pl0.y = lerp(p0.y, p2.y, widget_local_bounds[i].y);
-						pl2.x = lerp(p0.x, p2.x, widget_local_bounds[i].z);
-						pl2.y = lerp(p0.y, p2.y, widget_local_bounds[i].w);
+						pl0.x = Math::lerp(p0.x, p2.x, widget_local_bounds[i].x);
+						pl0.y = Math::lerp(p0.y, p2.y, widget_local_bounds[i].y);
+						pl2.x = Math::lerp(p0.x, p2.x, widget_local_bounds[i].z);
+						pl2.y = Math::lerp(p0.y, p2.y, widget_local_bounds[i].w);
 
 						// snap
 						pl0 = canvas_to_screen(snap(screen_to_canvas(pl0)));
 						pl2 = canvas_to_screen(snap(screen_to_canvas(pl2)));
 
 						// set new position and scale
-						float px_size = c->getCanvasPixelSize();	// screen to canvas converter
+						float px_size = c->getCanvasPixelSize(); // screen to canvas converter
 						vec4 anc = selected_widget->getAnchor();
 
 						UI::ElementPtr pe = selected_widget->getParent()->getPtr();
@@ -3205,8 +3158,8 @@ void UIDesigner::selection_mode_update()
 							   : ivec4(0, 0, c->getScreenWidth(), c->getScreenHeight());
 
 						vec4 &norm = widget_norm_pos[i];
-						float x = (pl0.x - lerp(itof(parent.x), itof(parent.z), anc.x)) * px_size;
-						float y = (pl0.y - lerp(itof(parent.y), itof(parent.w), anc.y)) * px_size;
+						float x = (pl0.x - Math::lerp(itof(parent.x), itof(parent.z), anc.x)) * px_size;
+						float y = (pl0.y - Math::lerp(itof(parent.y), itof(parent.w), anc.y)) * px_size;
 						float w = (norm.z - norm.x) * (pl2.x - pl0.x) * px_size;
 						float h = (norm.w - norm.y) * (pl2.y - pl0.y) * px_size;
 
@@ -3224,15 +3177,15 @@ void UIDesigner::selection_mode_update()
 						bool stretched_y = anc.y != anc.w;
 						if (stretched_x)
 						{
-							x = (pl0.x - lerp(itof(parent.x), itof(parent.z), anc.x)) * px_size;
-							w = (lerp(itof(parent.x), itof(parent.z), anc.z) - pl2.x) * px_size;
+							x = (pl0.x - Math::lerp(itof(parent.x), itof(parent.z), anc.x)) * px_size;
+							w = (Math::lerp(itof(parent.x), itof(parent.z), anc.z) - pl2.x) * px_size;
 							selected_widget->setLeftOffset(Math::round(x));
 							selected_widget->setRightOffset(Math::round(w));
 						}
 						if (stretched_y)
 						{
-							y = (pl0.y - lerp(itof(parent.y), itof(parent.w), anc.y)) * px_size;
-							h = (lerp(itof(parent.y), itof(parent.w), anc.w) - pl2.y) * px_size;
+							y = (pl0.y - Math::lerp(itof(parent.y), itof(parent.w), anc.y)) * px_size;
+							h = (Math::lerp(itof(parent.y), itof(parent.w), anc.w) - pl2.y) * px_size;
 							selected_widget->setTopOffset(Math::round(y));
 							selected_widget->setBottomOffset(Math::round(h));
 						}
@@ -3262,9 +3215,7 @@ void UIDesigner::selection_mode_update()
 		}
 
 		// 2. select one next
-		else if (selected_elements.size() == 1 && prev_selected_elements.size() == 1
-				 && prev_selected_elements[0] == selected_elements[0]
-				 && mouse_down_pos == mouse_hold_pos)
+		else if (selected_elements.size() == 1 && prev_selected_elements.size() == 1 && prev_selected_elements[0] == selected_elements[0] && mouse_down_pos == mouse_hold_pos)
 		{
 			float mouse_x = itof(mouse_down_pos.x);
 			float mouse_y = itof(mouse_down_pos.y);
@@ -3275,8 +3226,7 @@ void UIDesigner::selection_mode_update()
 				// found! user will moving this widget at the "mouse_hold" stage
 				undo_manager->apply(new SelectWidgetCommand(selected_elements, hover_element));
 				mouse_grab_type = GRAB_TYPE::PLANE;
-			}
-			else
+			} else
 			{
 				// deselect
 				undo_manager->apply(new SelectWidgetCommand(selected_elements, UI::ElementPtr()));
@@ -3357,8 +3307,7 @@ void UIDesigner::creation_mode_update()
 			{
 				mo_x = render_height * itof(imouse_offset.x) / gui_sprite->getHeight();
 				mo_y = render_height * itof(imouse_offset.y) / gui_sprite->getHeight();
-			}
-			else
+			} else
 			{
 				mo_x = itof(imouse_offset.x);
 				mo_y = itof(imouse_offset.y);
@@ -3457,18 +3406,15 @@ bool UIDesigner::update_manipulator_select(
 		{
 			mouse_grab_type = GRAB_TYPE::VERTEX_LT;
 			return 1;
-		}
-		else if (d1 <= d0 && d1 <= d2 && d1 <= d3)
+		} else if (d1 <= d0 && d1 <= d2 && d1 <= d3)
 		{
 			mouse_grab_type = GRAB_TYPE::VERTEX_LB;
 			return 1;
-		}
-		else if (d2 <= d0 && d2 <= d1 && d2 <= d3)
+		} else if (d2 <= d0 && d2 <= d1 && d2 <= d3)
 		{
 			mouse_grab_type = GRAB_TYPE::VERTEX_RB;
 			return 1;
-		}
-		else
+		} else
 		{
 			mouse_grab_type = GRAB_TYPE::VERTEX_RT;
 			return 1;
@@ -3485,33 +3431,28 @@ bool UIDesigner::update_manipulator_select(
 			e0 = e1 = Consts::INF;
 		if (mouse_pos.x < p0.x || mouse_pos.x > p2.x)
 			e2 = e3 = Consts::INF;
-		if (e0 < edge_thickness || e1 < edge_thickness || e2 < edge_thickness
-			|| e3 < edge_thickness)
+		if (e0 < edge_thickness || e1 < edge_thickness || e2 < edge_thickness || e3 < edge_thickness)
 		{
 			if (e0 <= e1 && e0 <= e2 && e0 <= e3)
 			{
 				mouse_grab_type = GRAB_TYPE::EDGE_LEFT;
 				return 1;
-			}
-			else if (e1 <= e0 && e1 <= e2 && e1 <= e3)
+			} else if (e1 <= e0 && e1 <= e2 && e1 <= e3)
 			{
 				mouse_grab_type = GRAB_TYPE::EDGE_RIGHT;
 				return 1;
-			}
-			else if (e2 <= e0 && e2 <= e1 && e2 <= e3)
+			} else if (e2 <= e0 && e2 <= e1 && e2 <= e3)
 			{
 				mouse_grab_type = GRAB_TYPE::EDGE_TOP;
 				return 1;
-			}
-			else
+			} else
 			{
 				mouse_grab_type = GRAB_TYPE::EDGE_BOTTOM;
 				return 1;
 			}
 		}
 		// plane
-		else if (mouse_pos.x >= p0.x && mouse_pos.x <= p2.x && mouse_pos.y >= p0.y
-				 && mouse_pos.y <= p2.y)
+		else if (mouse_pos.x >= p0.x && mouse_pos.x <= p2.x && mouse_pos.y >= p0.y && mouse_pos.y <= p2.y)
 		{
 			mouse_grab_type = GRAB_TYPE::PLANE;
 			return 1;
@@ -3644,8 +3585,7 @@ void UIDesigner::select_all()
 	{
 		// select all
 		undo_manager->apply(new SelectWidgetCommand(selected_elements, new_selection));
-	}
-	else
+	} else
 	{
 		// deselect all
 		undo_manager->apply(new SelectWidgetCommand(selected_elements, UI::ElementPtr()));
@@ -3709,8 +3649,8 @@ void UIDesigner::update_canvas()
 
 void UIDesigner::draw_manipulator()
 {
-	canvas_widget->clearLinePoints(0);	  // edges
-	canvas_widget->clearLinePoints(1);	  // vertices
+	canvas_widget->clearLinePoints(0); // edges
+	canvas_widget->clearLinePoints(1); // vertices
 	canvas_widget->clearLinePoints(2);
 	canvas_widget->clearLinePoints(3);
 	canvas_widget->clearLinePoints(4);
@@ -3772,7 +3712,7 @@ void UIDesigner::draw_rect_selection()
 
 void UIDesigner::draw_selected_element_pivot()
 {
-	canvas_widget->clearLinePoints(7);	  // pivot
+	canvas_widget->clearLinePoints(7); // pivot
 
 	if (selected_elements.size() != 1 || !view_pivot)
 		return;
@@ -3782,8 +3722,8 @@ void UIDesigner::draw_selected_element_pivot()
 
 	vec2 min_s = norm_to_window(selected_elements[0]->getNormalizedBoundMin());
 	vec2 max_s = norm_to_window(selected_elements[0]->getNormalizedBoundMax());
-	float screen_pivot_x = lerp(min_s.x, max_s.x, pivot_x);
-	float screen_pivot_y = lerp(min_s.y, max_s.y, pivot_y);
+	float screen_pivot_x = Math::lerp(min_s.x, max_s.x, pivot_x);
+	float screen_pivot_y = Math::lerp(min_s.y, max_s.y, pivot_y);
 
 	draw_circle(7, vec3(screen_pivot_x, screen_pivot_y, 0), vertex_radius * 0.5f,
 		vec4(1.0f, 0.3f, 0.3f, 1));
@@ -3791,12 +3731,12 @@ void UIDesigner::draw_selected_element_pivot()
 
 void UIDesigner::draw_selected_element_anchor()
 {
-	canvas_widget->clearLinePoints(8);	   // selected element: parent's anchor rectangle
-	canvas_widget->clearLinePoints(9);	   // selected element: anchor rectangle
-	canvas_widget->clearLinePoints(10);	   // anchor LT
-	canvas_widget->clearLinePoints(11);	   // anchor LB
-	canvas_widget->clearLinePoints(12);	   // anchor RB
-	canvas_widget->clearLinePoints(13);	   // anchor RT
+	canvas_widget->clearLinePoints(8);	// selected element: parent's anchor rectangle
+	canvas_widget->clearLinePoints(9);	// selected element: anchor rectangle
+	canvas_widget->clearLinePoints(10); // anchor LT
+	canvas_widget->clearLinePoints(11); // anchor LB
+	canvas_widget->clearLinePoints(12); // anchor RB
+	canvas_widget->clearLinePoints(13); // anchor RT
 
 	if (selected_elements.size() != 1 || !view_anchor)
 		return;
@@ -3816,8 +3756,7 @@ void UIDesigner::draw_selected_element_anchor()
 		min_n.y = parent->getNormalizedBoundMin().y + anchor.y * parent_height_n;
 		max_n.x = parent->getNormalizedBoundMin().x + anchor.z * parent_width_n;
 		max_n.y = parent->getNormalizedBoundMin().y + anchor.w * parent_height_n;
-	}
-	else
+	} else
 	{
 		min_n.x = anchor.x;
 		min_n.y = anchor.y;
@@ -3847,8 +3786,7 @@ void UIDesigner::draw_selected_element_anchor()
 			p_max_n.x = parent_parent->getNormalizedBoundMin().x + parent_anchor.z * parent_width_n;
 			p_max_n.y =
 				parent_parent->getNormalizedBoundMin().y + parent_anchor.w * parent_height_n;
-		}
-		else
+		} else
 		{
 			p_min_n.x = parent_anchor.x;
 			p_min_n.y = parent_anchor.y;
@@ -3925,8 +3863,8 @@ void UIDesigner::draw_align_line_vertical(float x)
 void UIDesigner::clear_selection()
 {
 	selected_elements.clear();
-	canvas_widget->clearLinePoints(0);	  // edges
-	canvas_widget->clearLinePoints(1);	  // vertices
+	canvas_widget->clearLinePoints(0); // edges
+	canvas_widget->clearLinePoints(1); // vertices
 	canvas_widget->clearLinePoints(2);
 	canvas_widget->clearLinePoints(3);
 	canvas_widget->clearLinePoints(4);
@@ -3975,32 +3913,32 @@ UI::ElementPtr UIDesigner::find_element(const UI::ElementPtr &parent, float px_x
 
 	quickSort(
 		all_elements.begin(), all_elements.end(), [](const ElementDepth &a, const ElementDepth &b) {
-			int order_a = a.element->getOrder();
-			int order_b = b.element->getOrder();
-			if (order_a == order_b)
-			{
-				// prefer to select first more smaller elements
-				vec4 ap = a.element->getWorldPosition();
-				vec4 bp = b.element->getWorldPosition();
-				float a_area = (ap.z - ap.x) * (ap.w - ap.y);
-				float b_area = (bp.z - bp.x) * (bp.w - bp.y);
-				return a_area < b_area;
-			}
-			return order_a > order_b;
+		int order_a = a.element->getOrder();
+		int order_b = b.element->getOrder();
+		if (order_a == order_b)
+		{
+			// prefer to select first more smaller elements
+			vec4 ap = a.element->getWorldPosition();
+			vec4 bp = b.element->getWorldPosition();
+			float a_area = (ap.z - ap.x) * (ap.w - ap.y);
+			float b_area = (bp.z - bp.x) * (bp.w - bp.y);
+			return a_area < b_area;
+		}
+		return order_a > order_b;
 
-			/*
-			if (a.depth == b.depth)
-			{
-				// prefer to select first more smaller elements
-				vec4 ap = a.element->getWorldPosition();
-				vec4 bp = b.element->getWorldPosition();
-				float a_area = (ap.z - ap.x) * (ap.w - ap.y);
-				float b_area = (bp.z - bp.x) * (bp.w - bp.y);
-				return a_area < b_area;
-			}
-			return a.depth > b.depth;
-			*/
-		});
+		/*
+		if (a.depth == b.depth)
+		{
+			// prefer to select first more smaller elements
+			vec4 ap = a.element->getWorldPosition();
+			vec4 bp = b.element->getWorldPosition();
+			float a_area = (ap.z - ap.x) * (ap.w - ap.y);
+			float b_area = (bp.z - bp.x) * (bp.w - bp.y);
+			return a_area < b_area;
+		}
+		return a.depth > b.depth;
+		*/
+	});
 
 	return all_elements[0].element;
 }
@@ -4024,32 +3962,32 @@ UI::ElementPtr UIDesigner::find_next_element(
 
 	quickSort(
 		all_elements.begin(), all_elements.end(), [](const ElementDepth &a, const ElementDepth &b) {
-			int order_a = a.element->getOrder();
-			int order_b = b.element->getOrder();
-			if (order_a == order_b)
-			{
-				// prefer to select first more smaller elements
-				vec4 ap = a.element->getWorldPosition();
-				vec4 bp = b.element->getWorldPosition();
-				float a_area = (ap.z - ap.x) * (ap.w - ap.y);
-				float b_area = (bp.z - bp.x) * (bp.w - bp.y);
-				return a_area < b_area;
-			}
-			return order_a > order_b;
+		int order_a = a.element->getOrder();
+		int order_b = b.element->getOrder();
+		if (order_a == order_b)
+		{
+			// prefer to select first more smaller elements
+			vec4 ap = a.element->getWorldPosition();
+			vec4 bp = b.element->getWorldPosition();
+			float a_area = (ap.z - ap.x) * (ap.w - ap.y);
+			float b_area = (bp.z - bp.x) * (bp.w - bp.y);
+			return a_area < b_area;
+		}
+		return order_a > order_b;
 
-			/*
-			if (a.depth == b.depth)
-			{
-				// prefer to select first more smaller elements
-				vec4 ap = a.element->getWorldPosition();
-				vec4 bp = b.element->getWorldPosition();
-				float a_area = (ap.z - ap.x) * (ap.w - ap.y);
-				float b_area = (bp.z - bp.x) * (bp.w - bp.y);
-				return a_area < b_area;
-			}
-			return a.depth > b.depth;
-			*/
-		});
+		/*
+		if (a.depth == b.depth)
+		{
+			// prefer to select first more smaller elements
+			vec4 ap = a.element->getWorldPosition();
+			vec4 bp = b.element->getWorldPosition();
+			float a_area = (ap.z - ap.x) * (ap.w - ap.y);
+			float b_area = (bp.z - bp.x) * (bp.w - bp.y);
+			return a_area < b_area;
+		}
+		return a.depth > b.depth;
+		*/
+	});
 
 	for (int i = 0; i < all_elements.size(); i++)
 		if (all_elements[i].element == prev_element)
@@ -4141,14 +4079,14 @@ float UIDesigner::snap_x(float value)
 
 			if (Math::abs(value - pos.x) < 5)
 			{
-				value = pos.x;	  // align left border to left border
+				value = pos.x; // align left border to left border
 				draw_align_line_vertical(pos.x);
 				break;
 			}
 
 			if (Math::abs(value - pos.z) < 5)
 			{
-				value = pos.z;	  // align left border to right border
+				value = pos.z; // align left border to right border
 				draw_align_line_vertical(pos.z);
 				break;
 			}
@@ -4172,14 +4110,14 @@ float UIDesigner::snap_y(float value)
 
 			if (Math::abs(value - pos.y) < 5)
 			{
-				value = pos.y;	  // align top border to top border
+				value = pos.y; // align top border to top border
 				draw_align_line_horizontal(pos.y);
 				break;
 			}
 
 			if (Math::abs(value - pos.w) < 5)
 			{
-				value = pos.w;	  // align top border to bottom border
+				value = pos.w; // align top border to bottom border
 				draw_align_line_horizontal(pos.w);
 				break;
 			}
@@ -4214,28 +4152,28 @@ vec2 UIDesigner::snap(float x, float y, float w, float h)
 
 		if (Math::abs(x - pos.x) < 5)
 		{
-			x = pos.x;	  // align left border to left border
+			x = pos.x; // align left border to left border
 			draw_align_line_vertical(pos.x);
 			break;
 		}
 
 		if (Math::abs(x - pos.z) < 5)
 		{
-			x = pos.z;	  // align left border to right border
+			x = pos.z; // align left border to right border
 			draw_align_line_vertical(pos.z);
 			break;
 		}
 
 		if (Math::abs(x + w - pos.x) < 5)
 		{
-			x = pos.x - w;	  // align right border to left border
+			x = pos.x - w; // align right border to left border
 			draw_align_line_vertical(pos.x);
 			break;
 		}
 
 		if (Math::abs(x + w - pos.z) < 5)
 		{
-			x = pos.z - w;	  // align right border to right border
+			x = pos.z - w; // align right border to right border
 			draw_align_line_vertical(pos.z);
 			break;
 		}
@@ -4248,28 +4186,28 @@ vec2 UIDesigner::snap(float x, float y, float w, float h)
 
 		if (Math::abs(y - pos.y) < 5)
 		{
-			y = pos.y;	  // align top border to top border
+			y = pos.y; // align top border to top border
 			draw_align_line_horizontal(pos.y);
 			break;
 		}
 
 		if (Math::abs(y - pos.w) < 5)
 		{
-			y = pos.w;	  // align top border to bottom border
+			y = pos.w; // align top border to bottom border
 			draw_align_line_horizontal(pos.w);
 			break;
 		}
 
 		if (Math::abs(y + h - pos.y) < 5)
 		{
-			y = pos.y - h;	  // align bottom border to top border
+			y = pos.y - h; // align bottom border to top border
 			draw_align_line_horizontal(pos.y);
 			break;
 		}
 
 		if (Math::abs(y + h - pos.w) < 5)
 		{
-			y = pos.w - h;	  // align bottom border to bottom border
+			y = pos.w - h; // align bottom border to bottom border
 			draw_align_line_horizontal(pos.w);
 			break;
 		}
@@ -4308,14 +4246,12 @@ int UIDesigner::get_position_y(const UI::ElementPtr &element) const
 
 int UIDesigner::get_width(const UI::ElementPtr &element) const
 {
-	return ftoi((element->getNormalizedBoundMax().x - element->getNormalizedBoundMin().x)
-				* element->getCanvas()->getScreenWidth());
+	return ftoi((element->getNormalizedBoundMax().x - element->getNormalizedBoundMin().x) * element->getCanvas()->getScreenWidth());
 }
 
 int UIDesigner::get_height(const UI::ElementPtr &element) const
 {
-	return ftoi((element->getNormalizedBoundMax().y - element->getNormalizedBoundMin().y)
-				* element->getCanvas()->getScreenHeight());
+	return ftoi((element->getNormalizedBoundMax().y - element->getNormalizedBoundMin().y) * element->getCanvas()->getScreenHeight());
 }
 
 int UIDesigner::get_screen_position_x(const UI::ElementPtr &element) const

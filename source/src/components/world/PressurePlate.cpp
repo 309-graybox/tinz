@@ -37,7 +37,7 @@ void PressurePlate::init()
 
 	for (int i = 0; i < _node->getNumSurfaces(); ++i)
 	{
-		if (strcmp(_node->getSurfaceName(i), "LightMineral_v2") == 0)
+		if (String::compare(_node->getSurfaceName(i), "LightMineral_v2") == 0)
 		{
 			_mat = _node->getMaterialInherit(i);
 			_emission_idx = _mat->findParameter("emission_color");
@@ -56,7 +56,7 @@ void PressurePlate::update()
 	bool press = _player_inside || _locked;
 	const float aim = press ? 1.0f : 0.0f;
 	const float rate = press ? speed : damping;
-	_current = lerp(_current, aim, saturate(rate * ifps));
+	_current = Math::lerp(_current, aim, saturate(rate * ifps));
 
 	const dvec3 current_offset = dvec3(0.0f, 0.0f, -depth) * _current;
 	const dvec3 new_pos = _default_pos + current_offset;
@@ -83,7 +83,7 @@ void PressurePlate::onLeave(const NodePtr &n)
 {
 	if (!isPlayerNode(n))
 		return;
-	
+
 	_player_inside = false;
 
 	if (_locked)

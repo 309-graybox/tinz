@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>63d63f3da5792173f8d0d70411c422aa8b5e483f</guid>
+	<type>property</type>
+	<hash>f25e343b3f04d31135351c3814d58101ff2a94fbacaa52abae779798065a0c76</hash>
+	<runtimes>
+		<runtime id="63d63f3da5792173f8d0d70411c422aa8b5e483f" name="DebugTuning" link="0" type="4"/>
+	</runtimes>
+</asset>

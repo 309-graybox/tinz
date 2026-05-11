@@ -1,12 +1,12 @@
 #pragma once
 #include <UnigineComponentSystem.h>
 
-#define FLOGERR(COND, MSG, ...)                                          \
-	if (!(COND))                                                         \
-	{                                                                    \
-		Unigine::Log::error("%s: " MSG, __FUNCTION__, ##__VA_ARGS__);    \
-		removeComponent<__this_class>(node);                             \
-		return;                                                          \
+#define FLOGERR(COND, MSG, ...)                                       \
+	if (!(COND))                                                      \
+	{                                                                 \
+		Unigine::Log::error("%s: " MSG, __FUNCTION__, ##__VA_ARGS__); \
+		removeComponent<__this_class>(node);                          \
+		return;                                                       \
 	}
 
 template <class C, class T>
@@ -40,3 +40,6 @@ UNIGINE_INLINE Unigine::Math::vec3 horizontal(const Unigine::Math::vec3 &v)
 {
 	return {v.x, v.y, 0.0f};
 }
+
+void addConsoleCommand(const Unigine::String &name, const Unigine::PropertyParameterPtr &param);
+void removeConsoleCommand(const Unigine::String &name);

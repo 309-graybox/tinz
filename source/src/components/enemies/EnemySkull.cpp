@@ -2,6 +2,8 @@
 #include "components/combat/Hitbox.h"
 #include "game/GameState.h"
 #include "utils/Utils.h"
+#include "tuning/DebugTuning.h"
+
 #include <UnigineGame.h>
 #include <UnigineVisualizer.h>
 #include <UnigineWorld.h>
@@ -46,8 +48,7 @@ void EnemySkull::configureHitbox()
 	{
 		_hitbox->eventHit().connect(_hitboxHitConn, this, &EnemySkull::onHitboxHit);
 		_hitbox->setActive(true);
-	}
-	else
+	} else
 	{
 		Log::warning("EnemySkull \"%s\": no Hitbox found (set hitboxNode or add a Hitbox to a child) — skull will not damage the player\n", node->getName());
 	}
@@ -124,7 +125,7 @@ void EnemySkull::updateSkull()
 	desired.z *= verticalSpeedFactor;
 	applySteering(desired, ifps);
 
-	if (debugDraw)
+	if (DebugTuning::get()->show_skulls_direction)
 	{
 		vec4 color(1.0f, 1.0f, 1.0f, 1.0f);
 		switch (getBehavior())

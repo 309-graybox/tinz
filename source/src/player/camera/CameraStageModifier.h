@@ -14,7 +14,6 @@ public:
 	PROP_PARAM(Switch, stage, CameraStage::Rig, Enum<CameraStage>::StringSwitch)
 	PROP_PARAM(Int, priority, 0)
 	PROP_PARAM(Toggle, used_in_pipeline, true)
-	PROP_PARAM(Toggle, debug, false)
 
 	bool isActive() const noexcept { return isEnabled() && used_in_pipeline; }
 

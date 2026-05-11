@@ -28,7 +28,7 @@ class Entity;
 class Hurtbox: public Unigine::ComponentBase
 {
 public:
-	enum class Shape: int
+	enum class Shape : int
 	{
 		Sphere = 0,
 		Capsule = 1,
@@ -43,7 +43,6 @@ public:
 	PROP_PARAM(Float, radius, 0.5f, "", "Sphere/capsule radius (m).")
 	PROP_PARAM(Float, capsuleHeight, 1.0f, "", "Length of the capsule's cylindrical mid-section (m). Total length is capsuleHeight + 2*radius.", "", "shapeType=1")
 	PROP_PARAM(Switch, capsuleAxis, 2, "X,Y,Z", "", "Local axis the capsule extends along. Default Z matches UNIGINE's ShapeCapsule convention; set Y for character meshes whose body axis runs along local Y.", "", "shapeType=1")
-	PROP_PARAM(Toggle, debugDraw, false, "", "Render the volume each frame (cyan). For positioning the volume in the editor.")
 
 	Shape getShape() const noexcept { return static_cast<Shape>(static_cast<int>(shapeType)); }
 	float getRadius() const noexcept { return radius; }

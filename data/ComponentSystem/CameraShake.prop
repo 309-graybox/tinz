@@ -3,7 +3,6 @@
 	<parameter name="stage" type="switch" items="Intent,Rig,Constraints,Presentation,Finalize,">1</parameter>
 	<parameter name="priority" type="int">0</parameter>
 	<parameter name="used_in_pipeline" type="toggle">1</parameter>
-	<parameter name="debug" type="toggle">0</parameter>
 	<parameter name="maxOffset" type="float" title="Max Offset" tooltip="Maximum positional shake (m) at trauma=1.0">0.15</parameter>
 	<parameter name="maxRotDeg" type="float" title="Max Rotation" tooltip="Maximum angular roll (degrees) at trauma=1.0">2</parameter>
 	<parameter name="recoveryPerSecond" type="float" title="Recovery" tooltip="Trauma decay rate. 1.0 = full→empty in 1 second; bigger = snappier">1.6</parameter>

@@ -62,9 +62,6 @@ public:
 	PROP_PARAM(Float, attackCooldown, 1.0f, "", "Minimum time between hits (only meaningful when dieOnHit is off). Hitbox is deactivated for this duration after each successful hit, then re-armed.")
 	PROP_PARAM(Toggle, dieOnHit, true, "", "Skull is destroyed immediately after dealing damage (kamikaze)")
 
-	PROP_GROUP("Debug")
-	PROP_PARAM(Toggle, debugDraw, false, "", "Draw a line from the skull to its current target. Color encodes behavior")
-
 	Behavior getBehavior() const noexcept { return static_cast<Behavior>(static_cast<int>(behavior)); }
 	bool isAlerted() const noexcept { return _alerted; }
 
@@ -97,8 +94,8 @@ private:
 	bool _hitboxConfigured = false;
 
 	bool _alerted = false;
-	bool _wasAlerted = false; // Used to detect the alerted→idle transition for the spawn teleport.
-	bool _ramming = false; // Flank: sticky once we commit to the ram dash.
+	bool _wasAlerted = false;  // Used to detect the alerted→idle transition for the spawn teleport.
+	bool _ramming = false;	   // Flank: sticky once we commit to the ram dash.
 	float _memoryTimer = 0.0f; // Counts down after LOS is lost; while > 0 we still know where the player is.
 	Unigine::Math::Vec3 _spawnPos = Unigine::Math::Vec3_zero;
 };

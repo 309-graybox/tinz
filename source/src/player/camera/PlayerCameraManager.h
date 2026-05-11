@@ -23,8 +23,6 @@ public:
 	PROP_PARAM(Node, camera_node)
 	PROP_PARAM(Mask, collision_mask, (int)0xffffffff)
 
-	PROP_PARAM(Toggle, debug, true)
-
 	void rebuildPipeline();
 
 	// Gameplay-side request: add `amount` to the shake-trauma accumulator

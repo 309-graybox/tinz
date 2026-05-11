@@ -54,7 +54,7 @@ void AffineModifier::update()
 
 		const float aim = _open ? 1.0f : 0.0f;
 		const float rate = _open ? (float)cfg->speed : (float)cfg->damping;
-		st.t = lerp(st.t, aim, saturate(rate * dt));
+		st.t = Math::lerp(st.t, aim, saturate(rate * dt));
 
 		NodePtr pivot = cfg->pivot ? cfg->pivot : target;
 		Vec3 pivot_pos;
@@ -63,8 +63,7 @@ void AffineModifier::update()
 		{
 			pivot_pos = st.rest_pos;
 			pivot_rot = st.rest_rot;
-		}
-		else
+		} else
 		{
 			pivot_pos = pivot->getWorldPosition();
 			pivot_rot = pivot->getWorldRotation();
@@ -103,7 +102,7 @@ void AffineModifier::update()
 }
 
 void AffineModifier::setOpen(bool open)
-{ 
+{
 	_need_update = true;
 	_open = open;
 

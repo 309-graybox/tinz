@@ -1,6 +1,7 @@
 #include "player/interaction/PlayerInteraction.h"
 #include "components/interaction/Interactable.h"
 #include "components/interaction/Pickup.h"
+#include "tuning/DebugTuning.h"
 
 #include <UnigineGame.h>
 #include <UnigineGui.h>
@@ -87,9 +88,10 @@ void PlayerInteraction::shutdown()
 
 void PlayerInteraction::update()
 {
-#ifdef DEBUG
-	_trigger->renderVisualizer();
-#endif
+	if (DebugTuning::get()->show_interaction_trigger)
+	{
+		_trigger->renderVisualizer();
+	}
 
 	const Vec3 player_pos = node->getWorldPosition();
 

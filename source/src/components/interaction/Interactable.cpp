@@ -1,4 +1,5 @@
 #include "components/interaction/Interactable.h"
+#include "tuning/DebugTuning.h"
 
 #include <UnigineGame.h>
 #include <UnigineLog.h>
@@ -107,9 +108,10 @@ void Interactable::startInteract(const NodePtr &interactor)
 {
 	bool can = canInteract(interactor);
 
-#ifdef DEBUG
-	Log::error("[%s] start interract with %s (state: %i; can: %i)\n", interactor->getName(), node->getName(), _state, can);
-#endif
+	if (DebugTuning::get()->log_interaction)
+	{
+		Log::error("[%s] start interract with %s (state: %i; can: %i)\n", interactor->getName(), node->getName(), (int)_state, (int)can);
+	}
 
 	if (_state != State::Idle || !interactor || !can)
 		return;

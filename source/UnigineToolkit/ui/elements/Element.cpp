@@ -84,8 +84,7 @@ void Element::applyNodeHierarchyChanges(bool save_screen_position)
 
 		if (has_canvas_before && save_screen_position)
 			setWorldPosition(pos);
-	}
-	else if (parent)
+	} else if (parent)
 		parent->removeChild(this);
 }
 
@@ -108,7 +107,7 @@ void Element::addChild(Element *element)
 	UNIGINE_ASSERT(element && this != element);
 
 	if (children.findIndex(element) != -1)
-		return;	   // added already
+		return; // added already
 
 	// detach from previous parent
 	if (element->parent)
@@ -130,7 +129,7 @@ void Element::addChild(Element *element)
 void Element::removeChild(Element *element)
 {
 	if (children.findIndex(element) == -1)
-		return;	   // removed already
+		return; // removed already
 
 	children.removeOne(element);
 	element->parent = nullptr;
@@ -154,8 +153,7 @@ void Element::setChildIndex(Element *element, int index)
 	{
 		for (int i = prev_index; i > index; --i)
 			children[i] = children[i - 1];
-	}
-	else
+	} else
 	{
 		for (int i = prev_index; i < index; i++)
 			children[i] = children[i + 1];
@@ -209,8 +207,8 @@ void Element::setWorldPosition(float left, float top, float right, float bottom)
 							 : vec4(0, 0, cw, ch);
 
 	vec4 a = anchor;
-	float x = (left - lerp(parent_pos.x, parent_pos.z, a.x));
-	float y = (top - lerp(parent_pos.y, parent_pos.w, a.y));
+	float x = (left - Math::lerp(parent_pos.x, parent_pos.z, a.x));
+	float y = (top - Math::lerp(parent_pos.y, parent_pos.w, a.y));
 	float w = (right - left);
 	float h = (bottom - top);
 
@@ -226,13 +224,13 @@ void Element::setWorldPosition(float left, float top, float right, float bottom)
 	bool stretched_y = a.y != a.w;
 	if (stretched_x)
 	{
-		p.x = (left - lerp(parent_pos.x, parent_pos.z, a.x));
-		p.z = (lerp(parent_pos.x, parent_pos.z, a.z) - right);
+		p.x = (left - Math::lerp(parent_pos.x, parent_pos.z, a.x));
+		p.z = (Math::lerp(parent_pos.x, parent_pos.z, a.z) - right);
 	}
 	if (stretched_y)
 	{
-		p.y = (top - lerp(parent_pos.y, parent_pos.w, a.y));
-		p.w = (lerp(parent_pos.y, parent_pos.w, a.w) - bottom);
+		p.y = (top - Math::lerp(parent_pos.y, parent_pos.w, a.y));
+		p.w = (Math::lerp(parent_pos.y, parent_pos.w, a.w) - bottom);
 	}
 
 	pos = p;
@@ -651,7 +649,8 @@ void Element::on_enable()
 }
 
 void Element::on_disable()
-{}
+{
+}
 
 void Element::update_hierarchy(float ifps)
 {
@@ -659,7 +658,7 @@ void Element::update_hierarchy(float ifps)
 		return;
 
 	// update itself
-	if (isEnabled())	// if enabled property
+	if (isEnabled()) // if enabled property
 		update(ifps);
 
 	// update children
@@ -702,7 +701,7 @@ void Element::arrange_hierarchy()
 		return;
 
 	update_bound();
-	arrange();	  // call derived logic
+	arrange(); // call derived logic
 
 	// update children
 	for (auto child : children)
@@ -726,8 +725,7 @@ void Element::update_bound()
 		min_n.y = parent->min_n.y + a.y * parent_height_n;
 		max_n.x = parent->min_n.x + a.z * parent_width_n;
 		max_n.y = parent->min_n.y + a.w * parent_height_n;
-	}
-	else
+	} else
 	{
 		min_n.x = a.x;
 		min_n.y = a.y;
@@ -744,8 +742,7 @@ void Element::update_bound()
 		pos_n.y = p.y / canvas->getCanvasHeight();
 		pos_n.z = p.z / canvas->getCanvasWidth();
 		pos_n.w = p.w / canvas->getCanvasHeight();
-	}
-	else
+	} else
 	{
 		GuiPtr gui = Gui::getCurrent();
 		pos_n.x = p.x / gui->getWidth();
@@ -755,26 +752,24 @@ void Element::update_bound()
 	}
 
 	// apply pos
-	if (!Math::compare(a.x, a.z))	 // stretched
+	if (!Math::compare(a.x, a.z)) // stretched
 	{
-		min_n.x += pos_n.x;	   // offset
-		max_n.x -= pos_n.z;	   // offset
-	}
-	else
+		min_n.x += pos_n.x; // offset
+		max_n.x -= pos_n.z; // offset
+	} else
 	{
-		min_n.x += pos_n.x - pos_n.z * pivot.get().x;	 // pos x
-		max_n.x = min_n.x + pos_n.z;					 // width
+		min_n.x += pos_n.x - pos_n.z * pivot.get().x; // pos x
+		max_n.x = min_n.x + pos_n.z;				  // width
 	}
 
-	if (!Math::compare(a.y, a.w))	 // stretched
+	if (!Math::compare(a.y, a.w)) // stretched
 	{
-		min_n.y += pos_n.y;	   // offset
-		max_n.y -= pos_n.w;	   // offset
-	}
-	else
+		min_n.y += pos_n.y; // offset
+		max_n.y -= pos_n.w; // offset
+	} else
 	{
-		min_n.y += pos_n.y - pos_n.w * pivot.get().y;	 // pos y
-		max_n.y = min_n.y + pos_n.w;					 // height
+		min_n.y += pos_n.y - pos_n.w * pivot.get().y; // pos y
+		max_n.y = min_n.y + pos_n.w;				  // height
 	}
 }
 
@@ -877,8 +872,7 @@ int Element::get_screen_width() const
 		if (canvas)
 			return canvas->convertCanvasToScreen(getWidth());
 		return ftoi(getWidth());
-	}
-	else
+	} else
 	{
 		if (canvas)
 			return ftoi(Math::round((max_n.x - min_n.x) * canvas->getScreenWidth()));
@@ -893,8 +887,7 @@ int Element::get_screen_height() const
 		if (canvas)
 			return canvas->convertCanvasToScreen(getHeight());
 		return ftoi(getHeight());
-	}
-	else
+	} else
 	{
 		if (canvas)
 			return ftoi(Math::round((max_n.y - min_n.y) * canvas->getScreenHeight()));
@@ -963,11 +956,9 @@ void ElementFocusable::set_state(bool active, bool hovering, bool clicking)
 		{
 			next_state = State::Press;
 			instant = true;
-		}
-		else if (focus)
+		} else if (focus)
 			next_state = State::Focus;
-	}
-	else if (focus)
+	} else if (focus)
 		next_state = State::Focus;
 	else if (hovering)
 		next_state = State::Hover;
@@ -1003,20 +994,20 @@ Unigine::Math::vec4 ElementFocusable::get_color(const Unigine::Math::vec4 &norma
 	vec4 target_color = normal_color;
 	switch (state)
 	{
-	case State::Hover:
-		target_color = hover_color;
-		break;
-	case State::Press:
-		target_color = press_color;
-		break;
-	case State::Focus:
-		target_color = focus_color;
-		break;
-	case State::Inactive:
-		target_color = inactive_color;
-		break;
-	default:
-		break;
+		case State::Hover:
+			target_color = hover_color;
+			break;
+		case State::Press:
+			target_color = press_color;
+			break;
+		case State::Focus:
+			target_color = focus_color;
+			break;
+		case State::Inactive:
+			target_color = inactive_color;
+			break;
+		default:
+			break;
 	}
 
 	return lerp(prev_color, target_color, transition_percent);
@@ -1027,20 +1018,20 @@ const char *ElementFocusable::get_texture(const char *normal_texture) const
 	const char *target_texture = nullptr;
 	switch (state)
 	{
-	case State::Hover:
-		target_texture = hover_texture.get();
-		break;
-	case State::Press:
-		target_texture = press_texture.get();
-		break;
-	case State::Focus:
-		target_texture = focus_texture.get();
-		break;
-	case State::Inactive:
-		target_texture = inactive_texture.get();
-		break;
-	default:
-		break;
+		case State::Hover:
+			target_texture = hover_texture.get();
+			break;
+		case State::Press:
+			target_texture = press_texture.get();
+			break;
+		case State::Focus:
+			target_texture = focus_texture.get();
+			break;
+		case State::Inactive:
+			target_texture = inactive_texture.get();
+			break;
+		default:
+			break;
 	}
 	if (!target_texture || target_texture[0] == '\0')
 		target_texture = normal_texture;
@@ -1056,60 +1047,60 @@ float ElementFocusable::get_scale(float normal_scale) const
 	float target_scale = normal_scale;
 	switch (state)
 	{
-	case State::Hover:
-		target_scale = hover_scale;
-		break;
-	case State::Press:
-		target_scale = press_scale;
-		break;
-	case State::Focus:
-		target_scale = focus_scale;
-		break;
-	case State::Inactive:
-		target_scale = inactive_scale;
-		break;
-	default:
-		break;
+		case State::Hover:
+			target_scale = hover_scale;
+			break;
+		case State::Press:
+			target_scale = press_scale;
+			break;
+		case State::Focus:
+			target_scale = focus_scale;
+			break;
+		case State::Inactive:
+			target_scale = inactive_scale;
+			break;
+		default:
+			break;
 	}
 
 	float k = transition_percent;
 	switch (scale_animation.get())
 	{
-	case 1:	   // Quad
-		k = easeOutQuad(transition_percent);
-		break;
-	case 2:	   // Cubic
-		k = easeOutCubic(transition_percent);
-		break;
-	case 3:	   // Quart
-		k = easeOutQuart(transition_percent);
-		break;
-	case 4:	   // Quint
-		k = easeOutQuint(transition_percent);
-		break;
-	case 5:	   // Expo
-		k = easeOutExpo(transition_percent);
-		break;
-	case 6:	   // Sine
-		k = easeOutSine(transition_percent);
-		break;
-	case 7:	   // Circ
-		k = easeOutCirc(transition_percent);
-		break;
-	case 8:	   // Back
-		k = easeOutBack(transition_percent);
-		break;
-	case 9:	   // Elastic
-		k = easeOutElastic(transition_percent);
-		break;
-	case 10:	// Bounce
-		k = easeOutBounce(transition_percent);
-		break;
-	default:
-		break;
+		case 1: // Quad
+			k = easeOutQuad(transition_percent);
+			break;
+		case 2: // Cubic
+			k = easeOutCubic(transition_percent);
+			break;
+		case 3: // Quart
+			k = easeOutQuart(transition_percent);
+			break;
+		case 4: // Quint
+			k = easeOutQuint(transition_percent);
+			break;
+		case 5: // Expo
+			k = easeOutExpo(transition_percent);
+			break;
+		case 6: // Sine
+			k = easeOutSine(transition_percent);
+			break;
+		case 7: // Circ
+			k = easeOutCirc(transition_percent);
+			break;
+		case 8: // Back
+			k = easeOutBack(transition_percent);
+			break;
+		case 9: // Elastic
+			k = easeOutElastic(transition_percent);
+			break;
+		case 10: // Bounce
+			k = easeOutBounce(transition_percent);
+			break;
+		default:
+			break;
 	}
 
-	return lerp(prev_scale, target_scale, k);
+	return Math::lerp(prev_scale, target_scale, k);
 }
 
 void MaterialDefaultVariablesSetter::setMaterial(const MaterialPtr &in_mat)
@@ -1139,8 +1130,7 @@ void MaterialDefaultVariablesSetter::setMaterial(const MaterialPtr &in_mat)
 					connection.disconnect();
 			});
 		}
-	}
-	else
+	} else
 	{
 		p_texture_size = -1;
 		p_sprite_pos = -1;

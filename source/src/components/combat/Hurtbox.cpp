@@ -1,5 +1,6 @@
 #include "components/combat/Hurtbox.h"
 #include "components/Entity.h"
+#include "tuning/DebugTuning.h"
 
 #include <UnigineVisualizer.h>
 
@@ -61,7 +62,7 @@ void Hurtbox::shutdown()
 
 void Hurtbox::update()
 {
-	if (!debugDraw)
+	if (!DebugTuning::get()->show_hurtboxes)
 		return;
 
 	const Mat4 t = node->getWorldTransform();
@@ -81,9 +82,9 @@ void Hurtbox::update()
 			Mat4 viz = t;
 			switch ((int)capsuleAxis)
 			{
-				case 0: viz = t * rotateY(Scalar(90.0)); break;   // local X
-				case 1: viz = t * rotateX(Scalar(-90.0)); break;  // local Y
-				default: break;                                    // local Z
+				case 0: viz = t * rotateY(Scalar(90.0)); break;	 // local X
+				case 1: viz = t * rotateX(Scalar(-90.0)); break; // local Y
+				default: break;									 // local Z
 			}
 			Visualizer::renderCapsule(max(radius.get(), 0.0f), max(capsuleHeight.get(), 0.0f), viz, color);
 			break;
@@ -116,8 +117,8 @@ void Hurtbox::getCapsuleSegment(Vec3 &a, Vec3 &b) const
 	Vec3 axis;
 	switch ((int)capsuleAxis)
 	{
-		case 0:  axis = t.getAxisX(); break;
-		case 1:  axis = t.getAxisY(); break;
+		case 0: axis = t.getAxisX(); break;
+		case 1: axis = t.getAxisY(); break;
 		default: axis = t.getAxisZ(); break;
 	}
 	const float al = (float)length(axis);

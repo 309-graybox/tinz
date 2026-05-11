@@ -34,5 +34,4 @@
 	<parameter name="hitboxNode" type="node" group="Child node carrying the Hitbox component that damages the player on contact. Damage / team / shape are configured on the Hitbox itself.">0</parameter>
 	<parameter name="attackCooldown" type="float" tooltip="Minimum time between hits (only meaningful when dieOnHit is off). Hitbox is deactivated for this duration after each successful hit, then re-armed." group="Attack">1</parameter>
 	<parameter name="dieOnHit" type="toggle" tooltip="Skull is destroyed immediately after dealing damage (kamikaze)" group="Attack">1</parameter>
-	<parameter name="debugDraw" type="toggle" tooltip="Draw a line from the skull to its current target. Color encodes behavior" group="Debug">0</parameter>
 </property>

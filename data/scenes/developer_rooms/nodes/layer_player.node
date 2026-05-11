@@ -456,4 +456,10 @@
 		</properties>
 		<transform>0.99999988079 0 0 0.0 0 1.00000011921 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 	</node>
+	<node type="NodeDummy" id="804353378" name="debug_tuning">
+		<properties>
+			<property parent="63d63f3da5792173f8d0d70411c422aa8b5e483f" guid="90744d99f6e9a1fa471769ea268d5919f4e3d8eb"/>
+		</properties>
+		<transform>0.999788701534 -0.000458396214526 -0.0205507129431 0.0 -0.000458393828012 0.999005615711 -0.0445842146873 0.0 0.0205507129431 0.0445842109621 0.998794198036 0.0 0 0 0 1.0</transform>
+	</node>
 </nodes>

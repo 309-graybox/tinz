@@ -11,5 +11,4 @@
 	<parameter name="activeOnInit" type="toggle" tooltip="Start active. Otherwise the hitbox sleeps until setActive(true) is called." group="Activation">0</parameter>
 	<parameter name="deactivateOnHit" type="toggle" tooltip="Disable after the first valid hit. Useful for projectiles / single-target attacks." group="Activation">0</parameter>
 	<parameter name="applyDamageOnHit" type="toggle" tooltip="If true, the hitbox calls Entity::takeDamage itself (standalone mode — traps, projectiles). Set false when an external orchestrator (e.g. Weapon) listens to eventHit and applies damage with its own profile. The overlap check, dedupe and event still run." group="Activation">1</parameter>
-	<parameter name="debugDraw" type="toggle" tooltip="Render the sphere volume each frame (yellow when idle, red when active)" group="Debug">0</parameter>
 </property>

@@ -72,14 +72,14 @@ void Sprite::setTexture(const char *texture_path)
 	sprite_w->setTexture(texture_path);
 	sprite_w->arrange();
 	sprite_size = vec3(itof(sprite_w->getWidth()), itof(sprite_w->getHeight()), 0);
-	arrange();	  // apply rotation and fixed_ratio
+	arrange(); // apply rotation and fixed_ratio
 }
 
 void Sprite::setTexture(const TexturePtr &texture)
 {
 	sprite_w->setRender(texture);
 	sprite_size = vec3(itof(texture->getWidth()), itof(texture->getHeight()), 0);
-	arrange();	  // apply rotation and fixed_ratio
+	arrange(); // apply rotation and fixed_ratio
 }
 
 void Sprite::setUV(const vec4 &in_uv)
@@ -127,9 +127,9 @@ bool Sprite::isHover(int x, int y) const
 	// check point selection
 	int w = canvas->getScreenWidth();
 	int h = canvas->getScreenHeight();
-	vec2 s = vec2((max_n.x - min_n.x) * w, (max_n.y - min_n.y) * h);	// size in screen pixels
+	vec2 s = vec2((max_n.x - min_n.x) * w, (max_n.y - min_n.y) * h); // size in screen pixels
 	vec2 p = pivot;
-	vec2 rel_pos = vec2(x - lerp(min_n.x, max_n.x, p.x) * w, y - lerp(min_n.y, max_n.y, p.y) * h);
+	vec2 rel_pos = vec2(x - Math::lerp(min_n.x, max_n.x, p.x) * w, y - Math::lerp(min_n.y, max_n.y, p.y) * h);
 	vec2 rot_pos = rotateZ(-angle) * rel_pos + p * s;
 	return rot_pos.x >= 0 && rot_pos.x < s.x && rot_pos.y >= 0 && rot_pos.y < s.y;
 }
@@ -151,7 +151,7 @@ bool Sprite::isHover(int x0, int y0, int x1, int y1) const
 	Math::sincos(angle * Consts::DEG2RAD, sinv, cosv);
 	mat2 r1_rot = mat2(cosv, sinv, -sinv, cosv);
 	vec2 r1_size = vec2((max_n.x - min_n.x) * w, (max_n.y - min_n.y) * h);
-	vec2 r1_pivot_pos = vec2(lerp(min_n.x, max_n.x, p.x) * w, lerp(min_n.y, max_n.y, p.y) * h);
+	vec2 r1_pivot_pos = vec2(Math::lerp(min_n.x, max_n.x, p.x) * w, Math::lerp(min_n.y, max_n.y, p.y) * h);
 	vec2 r1_pos = r1_pivot_pos + r1_rot * lerp(r1_size, -r1_size, p) * 0.5f;
 	return is_rect_rect_intersection(x0, y0, x1, y1, r1_pos, r1_rot, r1_size);
 }
@@ -176,7 +176,7 @@ void Sprite::on_disable()
 			StringStack<> file_name = texture_file.get();
 			if (!file_name.empty())
 				sprite_w->setTexture(
-					"core/textures/common/white.texture");	  // memory optimization
+					"core/textures/common/white.texture"); // memory optimization
 		}
 		sprite_w->setHidden(true);
 	}
@@ -205,8 +205,7 @@ void Sprite::arrange()
 			float new_w = s_h * sprite_ratio;
 			s_x += ftoi((s_w - new_w) * p.x);
 			s_w = ftoi(new_w);
-		}
-		else
+		} else
 		{
 			float new_h = s_w / sprite_ratio;
 			s_y += ftoi((s_h - new_h) * p.y);
@@ -220,8 +219,7 @@ void Sprite::arrange()
 		sprite_w->setWidth(s_w);
 		sprite_w->setHeight(s_h);
 		sprite_w->setTransform(mat4_identity);
-	}
-	else
+	} else
 	{
 		sprite_w->setPosition(
 			s_x + ftoi((s_w - sprite_size.x) * p.x), s_y + ftoi((s_h - sprite_size.y) * p.y));
@@ -229,9 +227,7 @@ void Sprite::arrange()
 		sprite_w->setHeight(0);
 
 		vec3 t = vec3(sprite_size.x * p.x, sprite_size.y * p.y, 0);
-		sprite_w->setTransform(translate(t) * rotateZ(angle)
-							   * scale(s_w / sprite_size.x, s_h / sprite_size.y, 1)
-							   * translate(-t));
+		sprite_w->setTransform(translate(t) * rotateZ(angle) * scale(s_w / sprite_size.x, s_h / sprite_size.y, 1) * translate(-t));
 	}
 	sprite_w->arrange();
 }

@@ -3,6 +3,7 @@
 #include "components/Entity.h"
 #include "player/movement/CharacterMovement.h"
 #include "utils/Utils.h"
+#include "tuning/DebugTuning.h"
 
 #include <UnigineGame.h>
 #include <UnigineVisualizer.h>
@@ -31,7 +32,7 @@ void Hitbox::setActive(bool v)
 
 void Hitbox::update()
 {
-	if (debugDraw)
+	if (DebugTuning::get()->show_hitboxes)
 		drawDebug();
 
 	if (!_active)
@@ -98,9 +99,9 @@ float Hitbox::enclosingRadius() const
 	const float r = max(radius.get(), 0.0f);
 	switch (getShape())
 	{
-		case Shape::Sphere:  return r;
+		case Shape::Sphere: return r;
 		case Shape::Capsule: return r + max(capsuleHeight.get(), 0.0f) * 0.5f;
-		case Shape::Box:     return length(boxHalfExtents.get());
+		case Shape::Box: return length(boxHalfExtents.get());
 	}
 	return 0.0f;
 }
@@ -128,8 +129,8 @@ bool Hitbox::overlapsHurtbox(const Hurtbox *hurtbox) const
 	// Number of samples: at least 2 (endpoints), spaced no further than `hr`
 	// so the spheres tile. ceil(len/hr) gives the number of intervals; +1 = points.
 	int samples = (seg_len > 1e-4f && hr > 0.0f)
-		? (int)ceil(seg_len / hr) + 1
-		: 1;
+					  ? (int)ceil(seg_len / hr) + 1
+					  : 1;
 	if (samples < 2)
 		samples = 1;
 
@@ -169,8 +170,8 @@ bool Hitbox::sphereOverlaps(const Vec3 &c, float r) const
 			Vec3 axis;
 			switch ((int)capsuleAxis)
 			{
-				case 0:  axis = t.getAxisX(); break;
-				case 1:  axis = t.getAxisY(); break;
+				case 0: axis = t.getAxisX(); break;
+				case 1: axis = t.getAxisY(); break;
 				default: axis = t.getAxisZ(); break;
 			}
 			const float al = (float)length(axis);
@@ -187,8 +188,8 @@ bool Hitbox::sphereOverlaps(const Vec3 &c, float r) const
 			const vec3 ab = vec3(b - a);
 			const float ab_len2 = length2(ab);
 			const float u = (ab_len2 > 1e-6f)
-				? saturate(dot(vec3(c - a), ab) / ab_len2)
-				: 0.0f;
+								? saturate(dot(vec3(c - a), ab) / ab_len2)
+								: 0.0f;
 			const Vec3 closest = a + Vec3(ab) * Scalar(u);
 			const float r_sum = my_r + r;
 			return length2(vec3(c - closest)) <= r_sum * r_sum;
@@ -270,8 +271,8 @@ void Hitbox::drawDebug() const
 {
 	const Mat4 t = node->getWorldTransform();
 	const vec4 color = _active
-		? vec4(1.0f, 0.2f, 0.2f, 1.0f)
-		: vec4(1.0f, 0.9f, 0.2f, 1.0f);
+						   ? vec4(1.0f, 0.2f, 0.2f, 1.0f)
+						   : vec4(1.0f, 0.9f, 0.2f, 1.0f);
 
 	switch (getShape())
 	{
@@ -287,9 +288,9 @@ void Hitbox::drawDebug() const
 			Mat4 viz = t;
 			switch ((int)capsuleAxis)
 			{
-				case 0: viz = t * rotateY(Scalar(90.0)); break;   // local X
-				case 1: viz = t * rotateX(Scalar(-90.0)); break;  // local Y
-				default: break;                                    // local Z
+				case 0: viz = t * rotateY(Scalar(90.0)); break;	 // local X
+				case 1: viz = t * rotateX(Scalar(-90.0)); break; // local Y
+				default: break;									 // local Z
 			}
 			Visualizer::renderCapsule(max(radius.get(), 0.0f), max(capsuleHeight.get(), 0.0f), viz, color);
 			break;

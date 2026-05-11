@@ -1,4 +1,5 @@
 #include "CameraLockOnTarget.h"
+#include "tuning/DebugTuning.h"
 #include "components/enemies/Targetable.h"
 #include <UniginePlayers.h>
 #include <UnigineWindowManager.h>
@@ -63,7 +64,7 @@ void CameraLockOnTarget::apply(CameraState &state, const CameraInput &input, con
 
 void CameraLockOnTarget::drawDebug()
 {
-	if (debug && lockedTarget)
+	if (DebugTuning::get()->show_camera_lock_on_direction && lockedTarget)
 		Visualizer::renderPoint3D(lockedTarget->getWorldPosition(), 0.1f, vec4_red, true, 0.0f, false);
 }
 
@@ -177,11 +178,11 @@ void CameraLockOnTarget::updateLock(const CameraState &state, const CameraContex
 
 void CameraLockOnTarget::applyToRig(CameraState &state)
 {
-	state.rig.pivot = lerp(state.rig.pivot, cachedPivot, blendWeight);
-	state.rig.arm_len = lerp(state.rig.arm_len, cachedArm, (double)blendWeight);
+	state.rig.pivot = Math::lerp(state.rig.pivot, cachedPivot, blendWeight);
+	state.rig.arm_len = Math::lerp(state.rig.arm_len, cachedArm, (double)blendWeight);
 
 	float clampedPitch = clamp(state.rig.angle.y, pitch_limit_deg.get().x, pitch_limit_deg.get().y);
-	state.rig.angle.y = lerp(state.rig.angle.y, clampedPitch, blendWeight);
+	state.rig.angle.y = Math::lerp(state.rig.angle.y, clampedPitch, blendWeight);
 }
 
 NodePtr CameraLockOnTarget::findClosestTargetable(const Vec3 &from, float radius) const

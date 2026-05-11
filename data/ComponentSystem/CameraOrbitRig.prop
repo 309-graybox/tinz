@@ -3,5 +3,4 @@
 	<parameter name="stage" type="switch" items="Intent,Rig,Constraints,Presentation,Finalize,">1</parameter>
 	<parameter name="priority" type="int">0</parameter>
 	<parameter name="used_in_pipeline" type="toggle">1</parameter>
-	<parameter name="debug" type="toggle">0</parameter>
 </property>

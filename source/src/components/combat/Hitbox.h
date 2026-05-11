@@ -45,7 +45,7 @@ struct HitInfo
 class Hitbox: public Unigine::ComponentBase
 {
 public:
-	enum class Shape: int
+	enum class Shape : int
 	{
 		Sphere = 0,
 		Capsule = 1,
@@ -74,9 +74,6 @@ public:
 	PROP_PARAM(Toggle, activeOnInit, false, "", "Start active. Otherwise the hitbox sleeps until setActive(true) is called.")
 	PROP_PARAM(Toggle, deactivateOnHit, false, "", "Disable after the first valid hit. Useful for projectiles / single-target attacks.")
 	PROP_PARAM(Toggle, applyDamageOnHit, true, "", "If true, the hitbox calls Entity::takeDamage itself (standalone mode — traps, projectiles). Set false when an external orchestrator (e.g. Weapon) listens to eventHit and applies damage with its own profile. The overlap check, dedupe and event still run.")
-
-	PROP_GROUP("Debug")
-	PROP_PARAM(Toggle, debugDraw, false, "", "Render the sphere volume each frame (yellow when idle, red when active)")
 
 	Shape getShape() const noexcept { return static_cast<Shape>(static_cast<int>(shapeType)); }
 
