@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <asset version="2.21.0.0">
-	<guid>28e7bf6ec7564bbec35b75b4713ae695c62451d3</guid>
+	<guid>572a4eff671d1bc4f233f66eea958619b965a332</guid>
 	<type>texture</type>
-	<hash>7d0e857feeb3025baa4f5b99574e5a29cfa727fc1167f52c6e3e664a10194b81</hash>
+	<hash>7b632f78bd7ea8f55a2e5c3d876e21d6492550c25805facc19f039d6f93b71b4</hash>
 	<runtimes>
-		<runtime id="28e7bf6ec7564bbec35b75b4713ae695c62451d3" name="skull_moon.png" link="0" type="6"/>
-		<runtime id="9fa37df380256b8d3321c1a5ea969c24c27c2d16" name="skull_moon.texture" link="1" type="6"/>
+		<runtime id="572a4eff671d1bc4f233f66eea958619b965a332" name="skull_moon.png" link="0" type="6"/>
+		<runtime id="67d06ca51fa7dbd3f572e522647afe26158028e9" name="skull_moon.texture" link="1" type="6"/>
 	</runtimes>
 	<parameters>
 		<parameter type="int" name="blur_radius">1</parameter>
-		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="height">Original</parameter>
 		<parameter type="string" name="image_format">DXT5</parameter>
 		<parameter type="string" name="image_type">2d</parameter>
 		<parameter type="bool" name="invert_g">0</parameter>
@@ -20,6 +20,6 @@
 		<parameter type="float" name="sharpness_radius">1</parameter>
 		<parameter type="bool" name="srgb_correction">1</parameter>
 		<parameter type="bool" name="unchanged">0</parameter>
-		<parameter type="string" name="width">auto</parameter>
+		<parameter type="string" name="width">Original</parameter>
 	</parameters>
 </asset>
