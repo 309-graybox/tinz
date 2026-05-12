@@ -81,8 +81,8 @@ void PlayerInteraction::shutdown()
 	auto player = ComponentSystem::get()->getComponent<EILocalPlayer>(playerNode);
 	if (!player)
 		return;
-	if (_binding_interact)
-		player->unbind(_binding_interact);
+
+	player->unbind(_binding_interact);
 	_binding_interact = nullptr;
 }
 
