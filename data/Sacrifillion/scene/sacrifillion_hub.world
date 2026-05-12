@@ -229,17 +229,17 @@
 		<render_clouds_distortion_texture>0</render_clouds_distortion_texture>
 		<render_clouds_downsampling_rendering>1</render_clouds_downsampling_rendering>
 		<render_clouds_dynamic_coverage_area>10000</render_clouds_dynamic_coverage_area>
-		<render_clouds_dynamic_coverage_resolution>128</render_clouds_dynamic_coverage_resolution>
+		<render_clouds_dynamic_coverage_resolution>256</render_clouds_dynamic_coverage_resolution>
 		<render_clouds_enabled>1</render_clouds_enabled>
 		<render_clouds_environment_color>1 1 1 1</render_clouds_environment_color>
 		<render_clouds_environment_sky>0</render_clouds_environment_sky>
 		<render_clouds_environment_sky_color>1 1 1 1</render_clouds_environment_sky_color>
-		<render_clouds_far_clipping>0</render_clouds_far_clipping>
+		<render_clouds_far_clipping>1</render_clouds_far_clipping>
 		<render_clouds_ground_shadows>0</render_clouds_ground_shadows>
 		<render_clouds_interleaved_rendering>0</render_clouds_interleaved_rendering>
 		<render_clouds_interleaved_rendering_temporal>1</render_clouds_interleaved_rendering_temporal>
 		<render_clouds_lighting_cone_radius>0.300000012</render_clouds_lighting_cone_radius>
-		<render_clouds_lighting_quality>0</render_clouds_lighting_quality>
+		<render_clouds_lighting_quality>1</render_clouds_lighting_quality>
 		<render_clouds_lighting_samples_distribution>1.5</render_clouds_lighting_samples_distribution>
 		<render_clouds_lighting_tracelength>100</render_clouds_lighting_tracelength>
 		<render_clouds_mode>1</render_clouds_mode>
@@ -247,16 +247,16 @@
 		<render_clouds_noise_lighting>0.300000012</render_clouds_noise_lighting>
 		<render_clouds_noise_step>0.300000012</render_clouds_noise_step>
 		<render_clouds_noise_step_skip>0.300000012</render_clouds_noise_step_skip>
-		<render_clouds_panorama_resolution>0</render_clouds_panorama_resolution>
+		<render_clouds_panorama_resolution>4</render_clouds_panorama_resolution>
 		<render_clouds_panorama_reuse>1</render_clouds_panorama_reuse>
 		<render_clouds_quality_preset>custom</render_clouds_quality_preset>
 		<render_clouds_rounded>0</render_clouds_rounded>
 		<render_clouds_rounded_planet_radius>200000</render_clouds_rounded_planet_radius>
-		<render_clouds_samples_count>0</render_clouds_samples_count>
-		<render_clouds_sampling_quality>0</render_clouds_sampling_quality>
+		<render_clouds_samples_count>2</render_clouds_samples_count>
+		<render_clouds_sampling_quality>1</render_clouds_sampling_quality>
 		<render_clouds_shaders_compile_mode>0</render_clouds_shaders_compile_mode>
 		<render_clouds_soft_intersection>100</render_clouds_soft_intersection>
-		<render_clouds_step_accuracy>0.200000003</render_clouds_step_accuracy>
+		<render_clouds_step_accuracy>0.5</render_clouds_step_accuracy>
 		<render_clouds_transparent_order>0</render_clouds_transparent_order>
 		<render_cross>0</render_cross>
 		<render_cross_angle>45</render_cross_angle>
@@ -314,7 +314,7 @@
 		<render_environment_cubemap_blend>3</render_environment_cubemap_blend>
 		<render_environment_dither_scale>0</render_environment_dither_scale>
 		<render_environment_ggx_mipmaps_quality>0</render_environment_ggx_mipmaps_quality>
-		<render_environment_haze>0</render_environment_haze>
+		<render_environment_haze>2</render_environment_haze>
 		<render_environment_haze_colorization_intensity>0.949999988</render_environment_haze_colorization_intensity>
 		<render_environment_haze_colorization_threshold>0.5</render_environment_haze_colorization_threshold>
 		<render_environment_haze_dither_scale>0</render_environment_haze_dither_scale>
@@ -334,7 +334,7 @@
 		<render_fade_color>0 0 0 0</render_fade_color>
 		<render_ffp_antialiasing_lines>1</render_ffp_antialiasing_lines>
 		<render_field_distance>1e+09</render_field_distance>
-		<render_field_height_resolution>0</render_field_height_resolution>
+		<render_field_height_resolution>2</render_field_height_resolution>
 		<render_field_precision>0</render_field_precision>
 		<render_field_shoreline_resolution>0</render_field_shoreline_resolution>
 		<render_filmic_linear_angle>0.100000001</render_filmic_linear_angle>
@@ -382,7 +382,7 @@
 		<render_landscape_cache_cpu_size>10</render_landscape_cache_cpu_size>
 		<render_landscape_cache_gpu_life_time>6</render_landscape_cache_gpu_life_time>
 		<render_landscape_cache_gpu_size>4</render_landscape_cache_gpu_size>
-		<render_landscape_operations_per_frame>5</render_landscape_operations_per_frame>
+		<render_landscape_operations_per_frame>10</render_landscape_operations_per_frame>
 		<render_landscape_terrain_culling_by_depth>1</render_landscape_terrain_culling_by_depth>
 		<render_landscape_terrain_culling_depth_resolution>64</render_landscape_terrain_culling_depth_resolution>
 		<render_landscape_terrain_culling_frustum_aggressive>1</render_landscape_terrain_culling_frustum_aggressive>
@@ -399,17 +399,17 @@
 		<render_landscape_terrain_detail_resolution_albedo>4</render_landscape_terrain_detail_resolution_albedo>
 		<render_landscape_terrain_detail_resolution_height>4</render_landscape_terrain_detail_resolution_height>
 		<render_landscape_terrain_geometry_detail_max_height>0.705200016</render_landscape_terrain_geometry_detail_max_height>
-		<render_landscape_terrain_geometry_holes>0</render_landscape_terrain_geometry_holes>
+		<render_landscape_terrain_geometry_holes>1</render_landscape_terrain_geometry_holes>
 		<render_landscape_terrain_geometry_polygon_size>0.00999999978</render_landscape_terrain_geometry_polygon_size>
-		<render_landscape_terrain_geometry_preset>medium</render_landscape_terrain_geometry_preset>
+		<render_landscape_terrain_geometry_preset>high</render_landscape_terrain_geometry_preset>
 		<render_landscape_terrain_geometry_progression>1.5</render_landscape_terrain_geometry_progression>
 		<render_landscape_terrain_geometry_subpixel_reduction>6</render_landscape_terrain_geometry_subpixel_reduction>
 		<render_landscape_terrain_mask_dithering>1</render_landscape_terrain_mask_dithering>
 		<render_landscape_terrain_streaming_per_lods>1</render_landscape_terrain_streaming_per_lods>
-		<render_landscape_terrain_streaming_preset>medium</render_landscape_terrain_streaming_preset>
+		<render_landscape_terrain_streaming_preset>low</render_landscape_terrain_streaming_preset>
 		<render_landscape_terrain_streaming_threads>1</render_landscape_terrain_streaming_threads>
 		<render_landscape_terrain_texel_size>0.00100000005</render_landscape_terrain_texel_size>
-		<render_landscape_terrain_visible_distance>1000</render_landscape_terrain_visible_distance>
+		<render_landscape_terrain_visible_distance>30000</render_landscape_terrain_visible_distance>
 		<render_landscape_terrain_vt_detail_level_by_angle>0.949999988</render_landscape_terrain_vt_detail_level_by_angle>
 		<render_landscape_terrain_vt_filtering>1</render_landscape_terrain_vt_filtering>
 		<render_landscape_terrain_vt_hash_number_mistakes>2</render_landscape_terrain_vt_hash_number_mistakes>
@@ -498,10 +498,10 @@
 		<render_screen_space_effects>1</render_screen_space_effects>
 		<render_screen_space_shadow_shafts_length>1.5</render_screen_space_shadow_shafts_length>
 		<render_screen_space_shadow_shafts_mode>0</render_screen_space_shadow_shafts_mode>
-		<render_screen_space_shadow_shafts_quality>0</render_screen_space_shadow_shafts_quality>
+		<render_screen_space_shadow_shafts_quality>1</render_screen_space_shadow_shafts_quality>
 		<render_screen_space_shadow_shafts_resolution>1</render_screen_space_shadow_shafts_resolution>
 		<render_shaders_compile_mode>0</render_shaders_compile_mode>
-		<render_shading_quality>0</render_shading_quality>
+		<render_shading_quality>2</render_shading_quality>
 		<render_shadow_distance>500</render_shadow_distance>
 		<render_shadow_distance_scale>1</render_shadow_distance_scale>
 		<render_shadows>1</render_shadows>
@@ -509,7 +509,7 @@
 		<render_shadows_filter_mode>1</render_shadows_filter_mode>
 		<render_shadows_filter_noise>0</render_shadows_filter_noise>
 		<render_shadows_penumbra_mode>0</render_shadows_penumbra_mode>
-		<render_shadows_penumbra_noise>0</render_shadows_penumbra_noise>
+		<render_shadows_penumbra_noise>1</render_shadows_penumbra_noise>
 		<render_shadows_reuse>0</render_shadows_reuse>
 		<render_shadows_screen_space>0</render_shadows_screen_space>
 		<render_shadows_simplified>0</render_shadows_simplified>
@@ -549,7 +549,7 @@
 		<render_sraa>0</render_sraa>
 		<render_sraa_debug>0</render_sraa_debug>
 		<render_sraa_depth_threshold>0.100000001</render_sraa_depth_threshold>
-		<render_sraa_samples>2</render_sraa_samples>
+		<render_sraa_samples>1</render_sraa_samples>
 		<render_sraa_temporal>1</render_sraa_temporal>
 		<render_ssao>0</render_ssao>
 		<render_ssao_cavity>1</render_ssao_cavity>
@@ -676,7 +676,7 @@
 		<render_streaming_vram_budget>1</render_streaming_vram_budget>
 		<render_streaming_vram_overcommit>0</render_streaming_vram_overcommit>
 		<render_supersampling>1</render_supersampling>
-		<render_taa>0</render_taa>
+		<render_taa>1</render_taa>
 		<render_taa_antialiasing_in_motion>0</render_taa_antialiasing_in_motion>
 		<render_taa_catmull_resampling>1</render_taa_catmull_resampling>
 		<render_taa_catmull_resampling_sharpness>0.699999988</render_taa_catmull_resampling_sharpness>
@@ -690,7 +690,7 @@
 		<render_taa_information_lost_depth_threshold>0.100000001</render_taa_information_lost_depth_threshold>
 		<render_taa_pixel_offset>1</render_taa_pixel_offset>
 		<render_taa_preserve_details>0.5</render_taa_preserve_details>
-		<render_taa_preset>custom</render_taa_preset>
+		<render_taa_preset>taa_sharpest</render_taa_preset>
 		<render_taa_samples>1</render_taa_samples>
 		<render_terrain_global_anisotropy>2</render_terrain_global_anisotropy>
 		<render_terrain_global_displacement>1</render_terrain_global_displacement>
@@ -700,17 +700,17 @@
 		<render_tessellation_density_multiplier>1</render_tessellation_density_multiplier>
 		<render_tessellation_distance_multiplier>1</render_tessellation_distance_multiplier>
 		<render_tessellation_shadow_density_multiplier>1</render_tessellation_shadow_density_multiplier>
-		<render_textures_anisotropy>1</render_textures_anisotropy>
-		<render_textures_filter>0</render_textures_filter>
+		<render_textures_anisotropy>2</render_textures_anisotropy>
+		<render_textures_filter>1</render_textures_filter>
 		<render_textures_max_resolution>7</render_textures_max_resolution>
 		<render_textures_min_resolution>0</render_textures_min_resolution>
-		<render_textures_quality>1</render_textures_quality>
+		<render_textures_quality>2</render_textures_quality>
 		<render_tonemapper>1</render_tonemapper>
 		<render_tonemapper_mode>1</render_tonemapper_mode>
 		<render_translucent_color>1 1 1 1</render_translucent_color>
 		<render_transparent_blur>0</render_transparent_blur>
 		<render_transparent_deferred>0</render_transparent_deferred>
-		<render_transparent_enabled>0</render_transparent_enabled>
+		<render_transparent_enabled>1</render_transparent_enabled>
 		<render_transparent_multiple_env_probes>0</render_transparent_multiple_env_probes>
 		<render_upscale_dlss_mode>3</render_upscale_dlss_mode>
 		<render_upscale_dlss_preset>0</render_upscale_dlss_preset>
@@ -732,12 +732,12 @@
 		<render_virtual_resolution>-1 -1</render_virtual_resolution>
 		<render_vr_emulation>0</render_vr_emulation>
 		<render_vsync>0</render_vsync>
-		<render_water_anisotropy>0</render_water_anisotropy>
+		<render_water_anisotropy>1</render_water_anisotropy>
 		<render_water_culling_aggressive>1</render_water_culling_aggressive>
 		<render_water_culling_frustum_padding>0.100000001</render_water_culling_frustum_padding>
 		<render_water_culling_oblique_frustum>0.899999976</render_water_culling_oblique_frustum>
 		<render_water_enabled>1</render_water_enabled>
-		<render_water_environment_probes>0</render_water_environment_probes>
+		<render_water_environment_probes>1</render_water_environment_probes>
 		<render_water_geometry_fade_lods>0.5</render_water_geometry_fade_lods>
 		<render_water_geometry_polygon_size>0.100000001</render_water_geometry_polygon_size>
 		<render_water_geometry_preset>low</render_water_geometry_preset>
@@ -746,14 +746,14 @@
 		<render_water_lights>1</render_water_lights>
 		<render_water_opacity_depth>1</render_water_opacity_depth>
 		<render_water_planar_probes>1</render_water_planar_probes>
-		<render_water_refraction_quality>0</render_water_refraction_quality>
+		<render_water_refraction_quality>2</render_water_refraction_quality>
 		<render_water_shafts>1</render_water_shafts>
-		<render_water_shoreline_wetness>0</render_water_shoreline_wetness>
-		<render_water_ssr>0</render_water_ssr>
+		<render_water_shoreline_wetness>1</render_water_shoreline_wetness>
+		<render_water_ssr>1</render_water_ssr>
 		<render_water_ssr_increased_accuracy>0</render_water_ssr_increased_accuracy>
-		<render_water_ssr_quality>0</render_water_ssr_quality>
+		<render_water_ssr_quality>1</render_water_ssr_quality>
 		<render_water_visible_distance>30000</render_water_visible_distance>
-		<render_water_voxel_probes>0</render_water_voxel_probes>
+		<render_water_voxel_probes>1</render_water_voxel_probes>
 		<render_water_waterline_accuracy>0</render_water_waterline_accuracy>
 		<render_white_balance>0</render_white_balance>
 		<render_white_balance_adaptation_time>1</render_white_balance_adaptation_time>
@@ -854,7 +854,7 @@
 				<transform>-0.43301237 0.43559623 -0.78914917 0.0 -0.75000048 -0.6597392 0.047366858 0.0 -0.49999967 0.61237252 0.6123724 0.0 0.0106657477479 1.72244270532 -0.757865759039 1.0</transform>
 			</node>
 			<node type="ObjectWaterGlobal" id="1191127466" name="ObjectWaterGlobal">
-				<animation_old_time>112.57251</animation_old_time>
+				<animation_old_time>17.9384041</animation_old_time>
 				<animation_time>0</animation_time>
 				<wave_layers num="0"/>
 				<distant_waves_texture_path>core/textures/water_global/distant_waves_n.texture</distant_waves_texture_path>
