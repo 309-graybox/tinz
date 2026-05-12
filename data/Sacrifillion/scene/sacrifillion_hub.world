@@ -854,7 +854,7 @@
 				<transform>-0.43301237 0.43559623 -0.78914917 0.0 -0.75000048 -0.6597392 0.047366858 0.0 -0.49999967 0.61237252 0.6123724 0.0 0.0106657477479 1.72244270532 -0.757865759039 1.0</transform>
 			</node>
 			<node type="ObjectWaterGlobal" id="1191127466" name="ObjectWaterGlobal">
-				<animation_old_time>17.9384041</animation_old_time>
+				<animation_old_time>284.296783</animation_old_time>
 				<animation_time>0</animation_time>
 				<wave_layers num="0"/>
 				<distant_waves_texture_path>core/textures/water_global/distant_waves_n.texture</distant_waves_texture_path>
@@ -1285,6 +1285,15 @@
 							<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
 							<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
 							<transform>-0.442358278317 0.896796762943 0.00885789068482 0.0 -0.896711575593 -0.442105710506 -0.0212972910042 0.0 -0.0151831851746 -0.0173639636487 0.999735116912 0.0 -36.0642724929 -32.5204064724 -5.91981887273 1.0</transform>
+						</node>
+						<node type="ObjectMeshCluster" id="176622" name="TombCluster_5">
+							<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
+							<visible_distance>80</visible_distance>
+							<fade_distance>80</fade_distance>
+							<cluster_file_id>176622</cluster_file_id>
+							<surface name="TombMainMat" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+							<surface name="TombFace" intersection="1" material="9b19e8d01c24539af3f42adaeb131e77846fb53f"/>
+							<transform>-0.307826276033 0.951370713197 0.0118489414764 0.0 -0.951323262094 -0.307564396117 -0.0197898997611 0.0 -0.0151831832856 -0.0173639777222 0.999735116896 0.0 -40.8535916075 -12.1526008532 -6.46435301379 1.0</transform>
 						</node>
 						<node type="ObjectMeshCluster" id="1118012268" name="TombCluster_egg_right">
 							<mesh_name>guid://a7398cd5d91bf6238b5a977b7cbb9840a005e535</mesh_name>
