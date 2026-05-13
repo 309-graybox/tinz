@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>a576e56886fa943105c0538ec130bb6c9f472682</guid>
+	<type>texture</type>
+	<hash>e7c1aae26bb18b265ac454b9e774fe6652e0475b68326f7d019127bffc859408</hash>
+	<runtimes>
+		<runtime id="a576e56886fa943105c0538ec130bb6c9f472682" name="out.png" link="0" type="6"/>
+		<runtime id="2d4fab45ee85ddeb6ea46c97da1036e56f15b3f9" name="out.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">RGB8</parameter>
+		<parameter type="string" name="image_type">3d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">3dlut</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">1</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>

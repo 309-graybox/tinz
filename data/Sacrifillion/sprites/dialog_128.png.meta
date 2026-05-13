@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>2233d4ee9dcf5157060b4ae4b7e897e4712c0d38</guid>
+	<type>texture</type>
+	<hash>283c8a59fc0c6e0052c554747e53d3a95eb88dcd362a79b5208a71438fa3c608</hash>
+	<runtimes>
+		<runtime id="2233d4ee9dcf5157060b4ae4b7e897e4712c0d38" name="dialog_128.png" link="0" type="6"/>
+		<runtime id="e83ecf63c847065547ac01257a0c92ffd367ef37" name="dialog_128.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">Original</parameter>
+		<parameter type="string" name="image_format">RGBA8</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">custom</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">1</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">Original</parameter>
+	</parameters>
+</asset>

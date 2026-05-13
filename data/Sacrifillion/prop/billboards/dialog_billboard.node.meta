@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>f141bc8e6c999a5bc091b5843064bea01beba5d8</guid>
+	<type>node</type>
+	<hash>e5ad2d463a0d4e25da44b26ad113eb0771cf81b59b0aac066cfb3a04d160d572</hash>
+	<runtimes>
+		<runtime id="f141bc8e6c999a5bc091b5843064bea01beba5d8" name="dialog_billboard.node" link="0" type="3"/>
+	</runtimes>
+</asset>
