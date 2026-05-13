@@ -5,4 +5,6 @@
 	<parameter name="material_mask" expression="0">-2</parameter>
 	<parameter name="emission_intensity" expression="0">0.177399993</parameter>
 	<parameter name="emission_color" expression="0">1 1 1 1</parameter>
+	<parameter name="roughness" expression="0">1</parameter>
+	<parameter name="specular" expression="0">0.75812</parameter>
 </material>

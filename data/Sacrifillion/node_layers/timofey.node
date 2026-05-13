@@ -23,32 +23,32 @@
 			</node>
 			<node type="ObjectMeshStatic" id="432097814" immovable="1" name="Skull">
 				<mesh_name>guid://f199cf2b9a805f9daea25c9da899fc0fad5a6eee</mesh_name>
-				<surface name="Head" intersection="1" material="3f36314b7991321578bacfbd56882c82f9d7f28e"/>
+				<surface name="Head" intersection="1" material="54228cd0a7f170364fb9d0900593106e5d1836bf"/>
 				<transform>15.5720043182 -23.9732246399 -4.62834644318 0.0 24.4037380219 15.1090164185 3.84656953812 0.0 -0.769533574581 -5.96870946884 28.3267536163 0.0 -4.94444468045 -7.15052480026 55.9423074904 1.0</transform>
 			</node>
 			<node type="ObjectMeshStatic" id="1834613176" immovable="1" name="Skull_1">
 				<mesh_name>guid://f199cf2b9a805f9daea25c9da899fc0fad5a6eee</mesh_name>
-				<surface name="Head" intersection="1" material="3f36314b7991321578bacfbd56882c82f9d7f28e"/>
+				<surface name="Head" intersection="1" material="54228cd0a7f170364fb9d0900593106e5d1836bf"/>
 				<transform>12.2885150909 -23.0371646881 12.5262336731 0.0 24.4037361145 15.1090116501 3.84657216072 0.0 -9.59540081024 8.92359256744 25.8248023987 0.0 5.89132479221 -16.2146083884 22.8000808238 1.0</transform>
 			</node>
 			<node type="ObjectMeshStatic" id="108523959" immovable="1" name="Skull_2">
 				<mesh_name>guid://f199cf2b9a805f9daea25c9da899fc0fad5a6eee</mesh_name>
-				<surface name="Head" intersection="1" material="3f36314b7991321578bacfbd56882c82f9d7f28e"/>
+				<surface name="Head" intersection="1" material="54228cd0a7f170364fb9d0900593106e5d1836bf"/>
 				<transform>15.0954208374 -24.6847667694 1.19004487991 0.0 24.4037361145 15.109003067 3.84656691551 0.0 -3.89972138405 -1.00224506855 28.6776981354 0.0 -10.9204864932 12.9438156043 26.3368898252 1.0</transform>
 			</node>
 			<node type="ObjectMeshStatic" id="1974739882" immovable="1" name="Skull_3">
 				<mesh_name>guid://f199cf2b9a805f9daea25c9da899fc0fad5a6eee</mesh_name>
-				<surface name="Head" intersection="1" material="3f36314b7991321578bacfbd56882c82f9d7f28e"/>
+				<surface name="Head" intersection="1" material="54228cd0a7f170364fb9d0900593106e5d1836bf"/>
 				<transform>10.4488115311 -27.004076004 0.477126717567 0.0 26.8732757568 10.4460296631 2.70696640015 0.0 -2.69633722305 -0.533949017525 28.8282375336 0.0 0.474600498643 3.7102884064 -18.8079632757 1.0</transform>
 			</node>
 			<node type="ObjectMeshStatic" id="2019852033" immovable="1" name="Skull_4">
 				<mesh_name>guid://f199cf2b9a805f9daea25c9da899fc0fad5a6eee</mesh_name>
-				<surface name="Head" intersection="1" material="3f36314b7991321578bacfbd56882c82f9d7f28e"/>
+				<surface name="Head" intersection="1" material="54228cd0a7f170364fb9d0900593106e5d1836bf"/>
 				<transform>9.6150560379 -19.8811340332 -18.7327747345 0.0 26.8732624054 10.4460229874 2.70697450638 0.0 4.89883613586 -18.2823619843 21.9175567627 0.0 15.9717923316 -13.3111584795 -44.9748145612 1.0</transform>
 			</node>
 			<node type="ObjectMeshStatic" id="1262275692" immovable="1" name="Skull_5">
 				<mesh_name>guid://f199cf2b9a805f9daea25c9da899fc0fad5a6eee</mesh_name>
-				<surface name="Head" intersection="1" material="3f36314b7991321578bacfbd56882c82f9d7f28e"/>
+				<surface name="Head" intersection="1" material="54228cd0a7f170364fb9d0900593106e5d1836bf"/>
 				<transform>8.75275421143 -25.3492145538 10.9285058975 0.0 26.8732528687 10.4460325241 2.70702648163 0.0 -6.31170701981 9.32321071625 26.6807632446 0.0 5.41386143628 16.3839161388 -54.7530445443 1.0</transform>
 			</node>
 		</node>

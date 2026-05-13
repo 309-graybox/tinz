@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>54228cd0a7f170364fb9d0900593106e5d1836bf</guid>
+	<type>material</type>
+	<hash>24f0b53ab88444ad1370e55b12b258549c205b187adc4cd12c54ce8bfc143d41</hash>
+	<runtimes>
+		<runtime id="54228cd0a7f170364fb9d0900593106e5d1836bf" name="skull_head_no_aux" link="0" type="5"/>
+	</runtimes>
+</asset>
