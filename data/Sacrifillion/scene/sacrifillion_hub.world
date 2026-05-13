@@ -67,7 +67,7 @@
 				</keys>
 			</curve>
 		</color_correction>
-		<color_correction_lut/>
+		<color_correction_lut>guid://2d4fab45ee85ddeb6ea46c97da1036e56f15b3f9</color_correction_lut>
 		<vignette_mask_texture_path>core/textures/vignette_default.texture</vignette_mask_texture_path>
 		<clouds_environment_texture_path/>
 		<sky_rotation>0 0 0 1</sky_rotation>
@@ -171,15 +171,15 @@
 		<environment_preset_2_ambient_intensity>1</environment_preset_2_ambient_intensity>
 		<environment_preset_2_reflection_intensity>1</environment_preset_2_reflection_intensity>
 		<environment_preset_2_sky_intensity>1</environment_preset_2_sky_intensity>
-		<color_correction_brightness>0</color_correction_brightness>
+		<color_correction_brightness>-0.0103200004</color_correction_brightness>
 		<color_correction_by_curves>1</color_correction_by_curves>
 		<color_correction_contrast>0</color_correction_contrast>
 		<color_correction_gamma>1</color_correction_gamma>
 		<color_correction_hue_per_color>0</color_correction_hue_per_color>
 		<color_correction_hue_shift>0 0 0 0 0 0 0 0 0 0 0 0</color_correction_hue_shift>
 		<color_correction_preserve_saturation>0</color_correction_preserve_saturation>
-		<color_correction_saturation>1 1 1 1 1 1 1 1 1 1 1 1</color_correction_saturation>
-		<color_correction_saturation_per_color>0</color_correction_saturation_per_color>
+		<color_correction_saturation>1 1 1 1 1 1 1 1 1 1.06283998 1 1</color_correction_saturation>
+		<color_correction_saturation_per_color>1</color_correction_saturation_per_color>
 		<color_correction_white>1 1 1 1</color_correction_white>
 		<gpu_thread_priority>7</gpu_thread_priority>
 		<render_aa_preset>custom</render_aa_preset>
@@ -451,12 +451,12 @@
 		<render_local_tonemapper_debug>0</render_local_tonemapper_debug>
 		<render_local_tonemapper_depth_difference_enabled>0</render_local_tonemapper_depth_difference_enabled>
 		<render_local_tonemapper_depth_threshold>0.899999976</render_local_tonemapper_depth_threshold>
-		<render_local_tonemapper_effect_on_dark_areas>0.592779994</render_local_tonemapper_effect_on_dark_areas>
+		<render_local_tonemapper_effect_on_dark_areas>0.50515002</render_local_tonemapper_effect_on_dark_areas>
 		<render_local_tonemapper_effect_on_dark_areas_gamma>3.09200001</render_local_tonemapper_effect_on_dark_areas_gamma>
 		<render_local_tonemapper_luma_blurred_intensity>1</render_local_tonemapper_luma_blurred_intensity>
 		<render_local_tonemapper_num_blur_iterations>3</render_local_tonemapper_num_blur_iterations>
 		<render_local_tonemapper_target_middle_gray>0.600000024</render_local_tonemapper_target_middle_gray>
-		<render_local_tonemapper_tonemapping_intensity>0.5</render_local_tonemapper_tonemapping_intensity>
+		<render_local_tonemapper_tonemapping_intensity>0.644320011</render_local_tonemapper_tonemapping_intensity>
 		<render_materials_quality>0</render_materials_quality>
 		<render_max_fps>150</render_max_fps>
 		<render_metering_mask_enabled>0</render_metering_mask_enabled>
@@ -727,7 +727,7 @@
 		<render_upscale_order>0</render_upscale_order>
 		<render_viewport_mode>0</render_viewport_mode>
 		<render_vignette_mask>1</render_vignette_mask>
-		<render_vignette_mask_intensity>0.0728100017</render_vignette_mask_intensity>
+		<render_vignette_mask_intensity>0.485430002</render_vignette_mask_intensity>
 		<render_vignette_mask_power>0</render_vignette_mask_power>
 		<render_virtual_resolution>-1 -1</render_virtual_resolution>
 		<render_vr_emulation>0</render_vr_emulation>
@@ -854,7 +854,7 @@
 				<transform>-0.43301237 0.43559623 -0.78914917 0.0 -0.75000048 -0.6597392 0.047366858 0.0 -0.49999967 0.61237252 0.6123724 0.0 0.0106657477479 1.72244270532 -0.757865759039 1.0</transform>
 			</node>
 			<node type="ObjectWaterGlobal" id="1191127466" name="ObjectWaterGlobal">
-				<animation_old_time>1835.65405</animation_old_time>
+				<animation_old_time>2913.20776</animation_old_time>
 				<animation_time>0</animation_time>
 				<wave_layers num="0"/>
 				<distant_waves_texture_path>core/textures/water_global/distant_waves_n.texture</distant_waves_texture_path>
@@ -2127,6 +2127,10 @@
 				</property>
 			</properties>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -38.2021464318 39.1506249106 10.2749444433 1.0</transform>
+		</node>
+		<node type="NodeReference" id="54195185" name="dialog_billboard">
+			<reference>guid://f141bc8e6c999a5bc091b5843064bea01beba5d8</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -32.2043704542 29.6828168026 2.08420035925 1.0</transform>
 		</node>
 	</editor>
 	<console>

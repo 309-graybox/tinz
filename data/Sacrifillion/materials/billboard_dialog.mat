@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material version="2.21.0.0" guid="faffae954d5668d226ba1e676828db259e6a4849" base_material="ee4cbd68892b61a53e7ded930b825d0f53ac250e">
+	<options transparent="1" blend_src="0" blend_dest="0" two_sided="0"/>
+	<state name="emission">1</state>
+	<texture name="diffuse">guid://e83ecf63c847065547ac01257a0c92ffd367ef37</texture>
+	<texture name="emission">guid://e83ecf63c847065547ac01257a0c92ffd367ef37</texture>
+	<parameter name="normal_scale" expression="0">0</parameter>
+	<parameter name="emission_scale" expression="0">0.411760002</parameter>
+	<parameter name="emission_visibility_distance" expression="0">50</parameter>
+</material>
