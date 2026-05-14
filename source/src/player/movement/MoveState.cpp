@@ -55,50 +55,31 @@ MovementStateIndex MoveState::update(MovementContext &ctx, float ifps)
 	vec3 fallback_forward = o.project_forward_on_ground(ctx.ground_normal);
 	ctx.move_direction = (input_on_ground != vec3_zero) ? input_on_ground : fallback_forward;
 
-	// Starting from a standstill: snap rotation toward the input direction so
-	// the character doesn't visibly spin up to facing before accelerating.
-	// Once moving, fall back to the gradual damped rotation.
-	//
-	// "Standstill" = current velocity is ~zero AND we haven't been running in
-	// the last ~recent_move_window seconds. The second clause prevents the
-	// snap from firing on a 180° turn, where the player briefly passes
-	// through IDLE between releasing one key and pressing the opposite one
-	// — without it, that gap zeroes the velocity and the snap would hijack
-	// what should be a gradual damped rotation.
-	constexpr float recent_move_window = 0.2f;
-	bool from_standstill = length2(o._horizontal_velocity) < Consts::EPS
-						   && !_moving_flag.isFresh(recent_move_window);
-	if (from_standstill && length2(ctx.desired_input_direction) > Consts::EPS)
-	{
-		// Huge rate so exp-damped rotate() consumes any angle in one substep —
-		// effectively instant snap to input direction from idle.
-		ctx.turn_responsiveness = 1.0e6f;
-	} else
-	{
-		ctx.turn_responsiveness = ctx.input.isSprinting() ? o.sprintTurnResponsiveness
-														  : o.turnResponsiveness;
+	ctx.turn_responsiveness = ctx.input.isSprinting() ? o.sprintTurnResponsiveness
+													  : o.turnResponsiveness;
 
-		// Continuous facing-vs-input speed multiplier. The bigger the angle
-		// between current facing and input, the slower we move — full speed
-		// below fullSpeedAngle, zero at plantAngle, linear blend between.
-		// Combined with damped rotation this produces:
-		//   - small course corrections: barely any slowdown, smooth arc
-		//   - sharp turns: visible decel into the turn, accel back out
-		//   - ~180° flips: speed planted at 0 while character pivots, then accel
-		// Gated on ground: airborne already preserves momentum and steers via
-		// airControl — applying this here would silently kill air control.
-		if (ctx.is_grounded)
-		{
-			float align_cos = dot(ctx.character_forward, ctx.desired_input_direction);
-			float full_cos  = Math::cos(o.fullSpeedAngle * Consts::DEG2RAD);
-			float plant_cos = Math::cos(o.plantAngle    * Consts::DEG2RAD);
-			float denom = Math::max(full_cos - plant_cos, Consts::EPS);
-			float k = saturate((align_cos - plant_cos) / denom);
-			ctx.speed *= k;
-		}
+	// Continuous facing-vs-input speed multiplier. The bigger the angle
+	// between current facing and input, the slower we move — full speed
+	// below fullSpeedAngle, zero at plantAngle, linear blend between.
+	// This single rule covers three scenarios uniformly:
+	//   - Turn-in-place from idle: facing was wherever idle left it; if input
+	//     points sharply away, k=0 holds speed at 0 while body rotates, then
+	//     speed ramps up as alignment improves (Souls-like start).
+	//   - Small course corrections mid-run: barely any slowdown, smooth arc.
+	//   - Sharp turns / ~180° flips: speed plants while character pivots,
+	//     then accelerates back out.
+	// Gated on ground: airborne already preserves momentum and steers via
+	// airControl — applying this here would silently kill air control.
+	if (ctx.is_grounded)
+	{
+		float align_cos = dot(ctx.character_forward, ctx.desired_input_direction);
+		float full_cos  = Math::cos(o.fullSpeedAngle * Consts::DEG2RAD);
+		float plant_cos = Math::cos(o.plantAngle    * Consts::DEG2RAD);
+		float denom = Math::max(full_cos - plant_cos, Consts::EPS);
+		float k = saturate((align_cos - plant_cos) / denom);
+		ctx.speed *= k;
 	}
 
 	ctx.rotate_target = ctx.desired_input_direction;
-	_moving_flag.stamp();
 	return MovementStateIndex::NONE;
 }

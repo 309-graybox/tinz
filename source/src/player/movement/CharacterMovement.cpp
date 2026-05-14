@@ -130,7 +130,17 @@ void CharacterMovement::update()
 	Vec3 desired_horizontal = Vec3(_ctx.move_direction * _ctx.speed);
 	if (_is_grounded)
 	{
-		_horizontal_velocity = desired_horizontal;
+		// Exp-damped lerp toward desired with separate accel/decel rates.
+		// Speeding up (|desired| >= |current|) uses groundAcceleration — gives
+		// weighty starts. Slowing down uses groundDeceleration — quicker brake
+		// when releasing input or planting on a sharp turn (plantAngle gates
+		// speed to 0, decel pulls velocity down). Direction changes naturally
+		// fall into one of the two by the length comparison.
+		float rate = (length2(desired_horizontal) >= length2(_horizontal_velocity))
+						 ? groundAcceleration
+						 : groundDeceleration;
+		float t = saturate(rate * ifps);
+		_horizontal_velocity += (desired_horizontal - _horizontal_velocity) * Scalar(t);
 	} else if (length2(desired_horizontal) > Consts::EPS)
 	{
 		// Airborne with input — gradually steer toward the desired direction
