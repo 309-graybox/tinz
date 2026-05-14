@@ -11,6 +11,7 @@ void CameraAutoAlignYawRig::runtimeReset(CameraState &, const CameraContext &)
 	_latchedTargetYaw = 0.0f;
 	_latched = false;
 	_velDirSmoothed = Vec3_forward;
+	_currentMaxRate = 0.0f;
 }
 
 void CameraAutoAlignYawRig::apply(CameraState &state, const CameraInput &input, const CameraContext &ctx)
@@ -25,17 +26,22 @@ void CameraAutoAlignYawRig::apply(CameraState &state, const CameraInput &input, 
 	if (hasInput)
 	{
 		_noInputTime = 0.0f;
+		_currentMaxRate = 0.0f;
 		return;
 	}
 
 	_noInputTime += dt;
 	if (_noInputTime < delay.get())
+	{
+		_currentMaxRate = 0.0f;
 		return;
+	}
 
 	if (ctx.targetHorizontalSpeed < min_target_velocity)
 	{
 		if (reset_timer_on_stop)
 			_noInputTime = 0.0f;
+		_currentMaxRate = 0.0f;
 		return;
 	}
 
@@ -52,6 +58,17 @@ void CameraAutoAlignYawRig::apply(CameraState &state, const CameraInput &input, 
 		_latchedTargetYaw += lerpZero(normalizeAngle(targetYaw - _latchedTargetYaw), exp(-target_yaw_smooth.get() * dt));
 	}
 
+	const float maxRate = max_deg_per_sec.get();
+	if (rate_acceleration_exponential)
+	{
+		const float k = maxRate > Consts::EPS ? rate_acceleration.get() / maxRate : 0.0f;
+		_currentMaxRate += (maxRate - _currentMaxRate) * (1.0f - exp(-k * dt));
+	} else
+	{
+		_currentMaxRate = min(_currentMaxRate + rate_acceleration.get() * dt, maxRate);
+	}
+
 	float delta = lerpZero(normalizeAngle(_latchedTargetYaw - state.rig.angle.x), exp(-speed.get() * dt));
-	state.rig.angle.x += clamp(delta, -max_deg_per_sec.get() * dt, max_deg_per_sec.get() * dt);
+	const float allowed = _currentMaxRate * dt;
+	state.rig.angle.x += clamp(delta, -allowed, allowed);
 }

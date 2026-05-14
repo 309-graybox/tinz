@@ -7,6 +7,8 @@
 	<parameter name="delay" type="float">3</parameter>
 	<parameter name="speed" type="float">10</parameter>
 	<parameter name="max_deg_per_sec" type="float">180</parameter>
+	<parameter name="rate_acceleration" type="float" tooltip="Скорость нарастания углового лимита авто-поворота (deg/s^2). 360 — выход на max_deg_per_sec за ~0.5с при max=180. Меньше — мягче старт, меньше дёргает направление движения, завязанное на камеру">360</parameter>
+	<parameter name="rate_acceleration_exponential" type="toggle" tooltip="Если включено, лимит нарастает экспоненциально: r += (max - r) * (1 - exp(-k*dt)), где k = rate_acceleration / max. Иначе — линейно (r += rate_acceleration * dt)">0</parameter>
 	<parameter name="yaw_offset_deg" type="float">0</parameter>
 	<parameter name="vel_dir_smooth" type="float">12</parameter>
 	<parameter name="target_yaw_smooth" type="float">10</parameter>
