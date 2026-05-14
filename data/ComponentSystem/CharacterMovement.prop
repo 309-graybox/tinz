@@ -3,6 +3,7 @@
 	<parameter name="walkSpeed" type="float" tooltip="Скорость персонажа в режиме ходьбы, без влияния модификаторов">2</parameter>
 	<parameter name="runSpeed" type="float" tooltip="Cкорость персонажа в режиме бега, без влияния модификаторов">5</parameter>
 	<parameter name="turnSpeed" type="float" tooltip="Скорость поворота персонажа в сторону целевого направления во время ходьбы и бега">600</parameter>
+	<parameter name="stopAndTurnAngle" type="float" tooltip="Порог угла (в градусах) между текущим направлением движения и направлением ввода, выше которого персонаж в этом кадре останавливается и продолжает только поворачиваться. Угол проверяется заново каждый кадр: как только он опускается ниже порога, движение возобновляется">15</parameter>
 	<parameter name="jumpPower" type="float">6</parameter>
 	<parameter name="jumpBufferTime" type="float" tooltip="Окно (в секундах), в течение которого нажатый прыжок остаётся валидным для срабатывания при первой возможности">0.15</parameter>
 	<parameter name="coyoteTime" type="float" tooltip="Окно (в секундах) после схода с земли, в течение которого прыжок ещё считается возможным">0.2</parameter>

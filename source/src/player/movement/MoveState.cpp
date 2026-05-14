@@ -67,6 +67,23 @@ MovementStateIndex MoveState::update(MovementContext &ctx, float ifps)
 		ctx.move_direction = o.project_forward_on_ground(ctx.ground_normal);
 		ctx.turn_speed = ctx.input.isSprinting() ? o.sprintTurnSpeed
 												 : o.turnSpeed;
+
+		// Per-frame stop-and-turn gate: if the angle between current facing
+		// (which equals the velocity direction on ground — velocity is set
+		// to move_direction * speed each grounded frame) and the input
+		// direction exceeds the threshold, zero the speed for this frame.
+		// Rotation still proceeds via rotate_target at turnSpeed, so next
+		// frame facing has rotated closer to input, the angle shrinks, and
+		// once it drops below the threshold movement resumes naturally.
+		// Gated on ground: airborne already preserves momentum and gradually
+		// steers via airControl — forcing speed=0 there would silently kill
+		// air control input.
+		if (ctx.is_grounded)
+		{
+			float cos_threshold = Math::cos(o.stopAndTurnAngle * Consts::DEG2RAD);
+			if (dot(ctx.character_forward, ctx.desired_input_direction) < cos_threshold)
+				ctx.speed = 0.0f;
+		}
 	}
 
 	ctx.rotate_target = ctx.desired_input_direction;
