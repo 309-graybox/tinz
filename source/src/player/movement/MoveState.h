@@ -14,6 +14,6 @@ private:
 	// Stamped each frame this state is active with non-zero speed. Used to
 	// distinguish a genuine standstill (stale flag → rotation snap on entry)
 	// from a brief release+press while running like a 180° turn (fresh flag
-	// → keep gradual turnSpeed).
+	// → keep gradual damped rotation).
 	TimedFlag _moving_flag;
 };

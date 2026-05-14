@@ -23,6 +23,6 @@ struct MovementContext
 	Unigine::Math::vec3 move_direction;
 	Unigine::Math::vec3 rotate_target;
 	float speed;
-	float turn_speed;
+	float turn_responsiveness;
 	float vertical_impulse;
 };

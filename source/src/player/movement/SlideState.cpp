@@ -96,7 +96,7 @@ MovementStateIndex SlideState::update(MovementContext &ctx, float ifps)
 	ctx.move_direction = move_dir;
 	ctx.speed = _slide_speed;
 	ctx.rotate_target = move_dir;
-	ctx.turn_speed = o.turnSpeed;
+	ctx.turn_responsiveness = o.turnResponsiveness;
 
 	return MovementStateIndex::NONE;
 }

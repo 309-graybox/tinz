@@ -99,7 +99,7 @@ void CharacterMovement::update()
 
 	// set default context output values
 	_ctx.speed = 0.0f;
-	_ctx.turn_speed = 0.0f;
+	_ctx.turn_responsiveness = 0.0f;
 	_ctx.vertical_impulse = 0.0f;
 	_ctx.move_direction = _ctx.character_forward;
 	_ctx.rotate_target = _ctx.character_forward;
@@ -282,7 +282,7 @@ void CharacterMovement::update()
 		if (!_climbing && _hit_wall && _is_grounded && stepHeight > 0.0f && length2(horiz_step) > Consts::EPS)
 			try_auto_step(pre_motion_transform, horiz_step, adaptive_time_step);
 
-		rotate(_ctx.rotate_target, _ctx.turn_speed, adaptive_time_step);
+		rotate(_ctx.rotate_target, _ctx.turn_responsiveness, adaptive_time_step);
 	}
 
 	// Walkable wins over slidable: if we touch a walkable surface anywhere,
@@ -758,7 +758,7 @@ void CharacterMovement::try_auto_step(const Mat4 &pre_motion, const Vec3 &horiz_
 	_climb_time = 0.0f;
 }
 
-void CharacterMovement::rotate(const vec3 &direction, float turn_speed, float ifps)
+void CharacterMovement::rotate(const vec3 &direction, float turn_responsiveness, float ifps)
 {
 	// if character's up and _up are parallel, then it should be ok to skip normalize().
 	// we assume they are parallel
@@ -770,9 +770,13 @@ void CharacterMovement::rotate(const vec3 &direction, float turn_speed, float if
 					  dot(forward, direction)) *
 				  Consts::RAD2DEG;
 
-	float max_step = turn_speed * ifps;
+	// Exponential damping toward target: fast initial rotation that eases into
+	// the cel. turn_responsiveness is a rate (1/s) — at rate R, ~63% of the
+	// remaining angle is covered in 1/R seconds, ~95% in 3/R. Huge values
+	// approach an instant snap (used for from-standstill alignment in MoveState).
+	float smooth = 1.0f - Math::exp(-turn_responsiveness * ifps);
+	float step = angle * smooth;
 
-	float step = clamp(angle, -max_step, max_step);
 	quat delta_rot = quat(_up, step);
 	quat current_rot = _world_transform.getRotate();
 

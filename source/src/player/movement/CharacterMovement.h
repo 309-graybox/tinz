@@ -22,8 +22,9 @@ public:
 
 	PROP_PARAM(Float, walkSpeed, 2.0f, "", "Скорость персонажа в режиме ходьбы, без влияния модификаторов");
 	PROP_PARAM(Float, runSpeed, 5.0f, "", "Cкорость персонажа в режиме бега, без влияния модификаторов");
-	PROP_PARAM(Float, turnSpeed, 600.0f, "", "Скорость поворота персонажа в сторону целевого направления во время ходьбы и бега");
-	PROP_PARAM(Float, stopAndTurnAngle, 15.0f, "", "Порог угла (в градусах) между текущим направлением движения и направлением ввода, выше которого персонаж в этом кадре останавливается и продолжает только поворачиваться. Угол проверяется заново каждый кадр: как только он опускается ниже порога, движение возобновляется");
+	PROP_PARAM(Float, turnResponsiveness, 18.0f, "", "Скорость экспоненциального демпфирования поворота к целевому направлению (1/с) во время ходьбы и бега. Чем больше — тем резче поворот. ~18 — snappy старт + плавный выход на цель (~170мс на 95% угла). Меньше = больше инерции");
+	PROP_PARAM(Float, fullSpeedAngle, 20.0f, "", "Угол (в градусах) между текущим направлением фейсинга и направлением ввода, при котором персонаж сохраняет полную скорость. На углах меньше этого скорость не уменьшается");
+	PROP_PARAM(Float, plantAngle, 70.0f, "", "Угол (в градусах), при котором скорость падает в 0 — персонаж «упирается ногой» и только доворачивается. Между fullSpeedAngle и plantAngle скорость убывает линейно, давая плавное замедление в дугу поворота и плант на ~180°. Сужение до ~60° убирает «скольжение» (тело отстаёт от вектора движения) ценой более частого планта");
 	PROP_PARAM(Float, jumpPower, 6.0f, "", "");
 	PROP_PARAM(Float, jumpBufferTime, 0.15f, "", "Окно (в секундах), в течение которого нажатый прыжок остаётся валидным для срабатывания при первой возможности");
 	PROP_PARAM(Float, coyoteTime, 0.2f, "", "Окно (в секундах) после схода с земли, в течение которого прыжок ещё считается возможным");
@@ -36,7 +37,7 @@ public:
 
 	PROP_GROUP("Sprint");
 	PROP_PARAM(Float, sprintSpeed, 8.0f, "", "Максимальная скорость персонажа в режиме спринта");
-	PROP_PARAM(Float, sprintTurnSpeed, 400.0f, "", "Скорость изменения направления движения во время спринта");
+	PROP_PARAM(Float, sprintTurnResponsiveness, 10.0f, "", "Скорость экспоненциального демпфирования поворота во время спринта (1/с). Ниже, чем turnResponsiveness — даёт более широкий радиус разворота на скорости");
 
 	PROP_GROUP("");
 	PROP_PARAM(Float, stepHeight, 0.3f, "", "Максимальная выс та препятст вия, на которое персонаж может автоматически подняться");
@@ -104,7 +105,7 @@ private:
 	Unigine::Math::vec3 project_forward_on_ground(const Unigine::Math::vec3 &ground_normal);
 	void resolve_collisions(float ifps);
 	void try_auto_step(const Unigine::Math::Mat4 &pre_motion, const Unigine::Math::Vec3 &horiz_motion, float ifps);
-	void rotate(const Unigine::Math::vec3 &direction, float turn_speed, float ifps);
+	void rotate(const Unigine::Math::vec3 &direction, float turn_responsiveness, float ifps);
 
 	float _slope_cos = 0.0f;
 	float _slide_max_cos = 0.0f;

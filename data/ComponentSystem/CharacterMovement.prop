@@ -2,8 +2,9 @@
 <property version="2.21.0.0" name="CharacterMovement" manual="1" parent_name="node_base">
 	<parameter name="walkSpeed" type="float" tooltip="Скорость персонажа в режиме ходьбы, без влияния модификаторов">2</parameter>
 	<parameter name="runSpeed" type="float" tooltip="Cкорость персонажа в режиме бега, без влияния модификаторов">5</parameter>
-	<parameter name="turnSpeed" type="float" tooltip="Скорость поворота персонажа в сторону целевого направления во время ходьбы и бега">600</parameter>
-	<parameter name="stopAndTurnAngle" type="float" tooltip="Порог угла (в градусах) между текущим направлением движения и направлением ввода, выше которого персонаж в этом кадре останавливается и продолжает только поворачиваться. Угол проверяется заново каждый кадр: как только он опускается ниже порога, движение возобновляется">15</parameter>
+	<parameter name="turnResponsiveness" type="float" tooltip="Скорость экспоненциального демпфирования поворота к целевому направлению (1/с) во время ходьбы и бега. Чем больше — тем резче поворот. ~18 — snappy старт + плавный выход на цель (~170мс на 95% угла). Меньше = больше инерции">18</parameter>
+	<parameter name="fullSpeedAngle" type="float" tooltip="Угол (в градусах) между текущим направлением фейсинга и направлением ввода, при котором персонаж сохраняет полную скорость. На углах меньше этого скорость не уменьшается">20</parameter>
+	<parameter name="plantAngle" type="float" tooltip="Угол (в градусах), при котором скорость падает в 0 — персонаж «упирается ногой» и только доворачивается. Между fullSpeedAngle и plantAngle скорость убывает линейно, давая плавное замедление в дугу поворота и плант на ~180°. Сужение до ~60° убирает «скольжение» (тело отстаёт от вектора движения) ценой более частого планта">70</parameter>
 	<parameter name="jumpPower" type="float">6</parameter>
 	<parameter name="jumpBufferTime" type="float" tooltip="Окно (в секундах), в течение которого нажатый прыжок остаётся валидным для срабатывания при первой возможности">0.15</parameter>
 	<parameter name="coyoteTime" type="float" tooltip="Окно (в секундах) после схода с земли, в течение которого прыжок ещё считается возможным">0.2</parameter>
@@ -13,7 +14,7 @@
 	<parameter name="groundedAnimCoyote" type="float" tooltip="Окно (сек) после потери walkable-контакта, в течение которого анимация всё ещё считает персонажа на земле. Гасит микро-разрывы grounded на стыках поверхностей. На прыжке игнорируется">0.1</parameter>
 	<parameter name="slideEntryDelay" type="float" tooltip="Окно (сек) после walkable-контакта, в течение которого вход в скольжение подавляется. Гасит дребезг на стыках плоской и наклонной поверхностей">0.05</parameter>
 	<parameter name="sprintSpeed" type="float" tooltip="Максимальная скорость персонажа в режиме спринта" group="Sprint">8</parameter>
-	<parameter name="sprintTurnSpeed" type="float" tooltip="Скорость изменения направления движения во время спринта" group="Sprint">400</parameter>
+	<parameter name="sprintTurnResponsiveness" type="float" tooltip="Скорость экспоненциального демпфирования поворота во время спринта (1/с). Ниже, чем turnResponsiveness — даёт более широкий радиус разворота на скорости" group="Sprint">10</parameter>
 	<parameter name="stepHeight" type="float" tooltip="Максимальная выс та препятст вия, на которое персонаж может автоматически подняться">0.3</parameter>
 	<parameter name="stepClimbSpeed" type="float" title="Step Climb Speed (m/s)" tooltip="Скорость вертикального подъёма при автостеппинге. Гравитация в это время выключена, персонаж считается на земле">5</parameter>
 	<parameter name="groundSnapMinGap" type="float" title="Ground Snap Min Gap (m)" tooltip="Минимальный разрыв между низом капсулы и грунтом, при котором срабатывает прибивание к земле при спуске со ступенек. Меньшие разрывы считаются физическим шумом на стыках поверхностей и игнорируются">0.02</parameter>
