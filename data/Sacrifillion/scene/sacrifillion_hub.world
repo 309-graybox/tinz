@@ -80,13 +80,13 @@
 		<environment_preset_0_scattering_mie_lut_texture_name>core/textures/scattering_lut/preset_0/mie.tif</environment_preset_0_scattering_mie_lut_texture_name>
 		<environment_preset_0_scattering_light_color_lut_texture_name>core/textures/scattering_lut/preset_0/light_color.tif</environment_preset_0_scattering_light_color_lut_texture_name>
 		<environment_preset_0_sun_texture_name>core/textures/world_light/celestial_body_sun.png</environment_preset_0_sun_texture_name>
-		<environment_preset_0_sun_angular_size>48.103199</environment_preset_0_sun_angular_size>
+		<environment_preset_0_sun_angular_size>49.3541985</environment_preset_0_sun_angular_size>
 		<environment_preset_0_sun_texture_color>1 1 1 1</environment_preset_0_sun_texture_color>
 		<environment_preset_0_sun_texture_intensity>1000</environment_preset_0_sun_texture_intensity>
 		<environment_preset_0_moon_texture_name>guid://67d06ca51fa7dbd3f572e522647afe26158028e9</environment_preset_0_moon_texture_name>
-		<environment_preset_0_moon_angular_size>14.9994001</environment_preset_0_moon_angular_size>
+		<environment_preset_0_moon_angular_size>15</environment_preset_0_moon_angular_size>
 		<environment_preset_0_moon_texture_color>1 1 0.376470596 1</environment_preset_0_moon_texture_color>
-		<environment_preset_0_moon_texture_intensity>200</environment_preset_0_moon_texture_intensity>
+		<environment_preset_0_moon_texture_intensity>400</environment_preset_0_moon_texture_intensity>
 		<environment_preset_0_texture_name>core/textures/common/environment_default.texture</environment_preset_0_texture_name>
 		<environment_preset_0_texture_color>1 1 1 1</environment_preset_0_texture_color>
 		<environment_preset_0_texture_rotation>10 10 0</environment_preset_0_texture_rotation>
@@ -139,7 +139,7 @@
 		<environment_preset_1_ambient_intensity>1</environment_preset_1_ambient_intensity>
 		<environment_preset_1_reflection_intensity>1</environment_preset_1_reflection_intensity>
 		<environment_preset_1_sky_intensity>1</environment_preset_1_sky_intensity>
-		<environment_preset_2_intensity>0</environment_preset_2_intensity>
+		<environment_preset_2_intensity>0.300000012</environment_preset_2_intensity>
 		<environment_preset_2_scattering_base_lut_texture_name>core/textures/scattering_lut/preset_2/base.tif</environment_preset_2_scattering_base_lut_texture_name>
 		<environment_preset_2_scattering_mie_lut_texture_name>core/textures/scattering_lut/preset_2/mie.tif</environment_preset_2_scattering_mie_lut_texture_name>
 		<environment_preset_2_scattering_light_color_lut_texture_name>core/textures/scattering_lut/preset_2/light_color.tif</environment_preset_2_scattering_light_color_lut_texture_name>
@@ -147,8 +147,8 @@
 		<environment_preset_2_sun_angular_size>50</environment_preset_2_sun_angular_size>
 		<environment_preset_2_sun_texture_color>1 1 1 1</environment_preset_2_sun_texture_color>
 		<environment_preset_2_sun_texture_intensity>1</environment_preset_2_sun_texture_intensity>
-		<environment_preset_2_moon_texture_name>core/textures/world_light/celestial_body_moon.png</environment_preset_2_moon_texture_name>
-		<environment_preset_2_moon_angular_size>0.5</environment_preset_2_moon_angular_size>
+		<environment_preset_2_moon_texture_name>guid://67d06ca51fa7dbd3f572e522647afe26158028e9</environment_preset_2_moon_texture_name>
+		<environment_preset_2_moon_angular_size>15</environment_preset_2_moon_angular_size>
 		<environment_preset_2_moon_texture_color>1 1 1 1</environment_preset_2_moon_texture_color>
 		<environment_preset_2_moon_texture_intensity>1</environment_preset_2_moon_texture_intensity>
 		<environment_preset_2_texture_name>core/textures/common/environment_default.texture</environment_preset_2_texture_name>
@@ -496,7 +496,7 @@
 		<render_reinhard_luma_based_contribution>1</render_reinhard_luma_based_contribution>
 		<render_screen_precision>1</render_screen_precision>
 		<render_screen_space_effects>1</render_screen_space_effects>
-		<render_screen_space_shadow_shafts_length>1.5</render_screen_space_shadow_shafts_length>
+		<render_screen_space_shadow_shafts_length>1.52160001</render_screen_space_shadow_shafts_length>
 		<render_screen_space_shadow_shafts_mode>0</render_screen_space_shadow_shafts_mode>
 		<render_screen_space_shadow_shafts_quality>1</render_screen_space_shadow_shafts_quality>
 		<render_screen_space_shadow_shafts_resolution>1</render_screen_space_shadow_shafts_resolution>
@@ -782,17 +782,17 @@
 				<shadow_width>10</shadow_width>
 				<shadow_zfar>100</shadow_zfar>
 				<shadow_cascade_mode>0</shadow_cascade_mode>
-				<num_shadow_cascades>2</num_shadow_cascades>
+				<num_shadow_cascades>3</num_shadow_cascades>
 				<is_shadow_partial_update>0</is_shadow_partial_update>
-				<shadow_cascade_borders>0.0075000003 0.0500000007 0.200000003</shadow_cascade_borders>
+				<shadow_cascade_borders>0.0504440032 0.0789300054 0.200000003</shadow_cascade_borders>
 				<color_mode>1</color_mode>
-				<shadow_resolution>5</shadow_resolution>
+				<shadow_resolution>4</shadow_resolution>
 				<shadow_bias>1</shadow_bias>
 				<mode>1</mode>
-				<shadow_filter_mode>-1</shadow_filter_mode>
-				<shadow_filter>1</shadow_filter>
-				<shadow_penumbra_mode>-1</shadow_penumbra_mode>
-				<shadow_penumbra>0.150000006</shadow_penumbra>
+				<shadow_filter_mode>2</shadow_filter_mode>
+				<shadow_filter>0.51631999</shadow_filter>
+				<shadow_penumbra_mode>1</shadow_penumbra_mode>
+				<shadow_penumbra>0</shadow_penumbra>
 				<shadow_screen_space>1</shadow_screen_space>
 				<shadow_screen_space_num_rays>3</shadow_screen_space_num_rays>
 				<shadow_screen_space_num_steps>6</shadow_screen_space_num_steps>
@@ -854,7 +854,7 @@
 				<transform>-0.43301237 0.43559623 -0.78914917 0.0 -0.75000048 -0.6597392 0.047366858 0.0 -0.49999967 0.61237252 0.6123724 0.0 0.0106657477479 1.72244270532 -0.757865759039 1.0</transform>
 			</node>
 			<node type="ObjectWaterGlobal" id="1191127466" name="ObjectWaterGlobal">
-				<animation_old_time>2913.20776</animation_old_time>
+				<animation_old_time>1418.1991</animation_old_time>
 				<animation_time>0</animation_time>
 				<wave_layers num="0"/>
 				<distant_waves_texture_path>core/textures/water_global/distant_waves_n.texture</distant_waves_texture_path>

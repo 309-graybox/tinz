@@ -54,13 +54,13 @@
 		<environment_preset_0_scattering_mie_lut_texture_name>core/textures/scattering_lut/preset_0/mie.tif</environment_preset_0_scattering_mie_lut_texture_name>
 		<environment_preset_0_scattering_light_color_lut_texture_name>core/textures/scattering_lut/preset_0/light_color.tif</environment_preset_0_scattering_light_color_lut_texture_name>
 		<environment_preset_0_sun_texture_name>core/textures/world_light/celestial_body_sun.png</environment_preset_0_sun_texture_name>
-		<environment_preset_0_sun_angular_size>48.103199</environment_preset_0_sun_angular_size>
+		<environment_preset_0_sun_angular_size>49.3541985</environment_preset_0_sun_angular_size>
 		<environment_preset_0_sun_texture_color>1 1 1 1</environment_preset_0_sun_texture_color>
 		<environment_preset_0_sun_texture_intensity>1000</environment_preset_0_sun_texture_intensity>
 		<environment_preset_0_moon_texture_name>guid://67d06ca51fa7dbd3f572e522647afe26158028e9</environment_preset_0_moon_texture_name>
-		<environment_preset_0_moon_angular_size>14.9994001</environment_preset_0_moon_angular_size>
+		<environment_preset_0_moon_angular_size>15</environment_preset_0_moon_angular_size>
 		<environment_preset_0_moon_texture_color>1 1 0.376470596 1</environment_preset_0_moon_texture_color>
-		<environment_preset_0_moon_texture_intensity>200</environment_preset_0_moon_texture_intensity>
+		<environment_preset_0_moon_texture_intensity>400</environment_preset_0_moon_texture_intensity>
 		<environment_preset_0_texture_name>core/textures/common/environment_default.texture</environment_preset_0_texture_name>
 		<environment_preset_0_texture_color>1 1 1 1</environment_preset_0_texture_color>
 		<environment_preset_0_texture_rotation>10 10 0</environment_preset_0_texture_rotation>
@@ -113,7 +113,7 @@
 		<environment_preset_1_ambient_intensity>1</environment_preset_1_ambient_intensity>
 		<environment_preset_1_reflection_intensity>1</environment_preset_1_reflection_intensity>
 		<environment_preset_1_sky_intensity>1</environment_preset_1_sky_intensity>
-		<environment_preset_2_intensity>0</environment_preset_2_intensity>
+		<environment_preset_2_intensity>0.300000012</environment_preset_2_intensity>
 		<environment_preset_2_scattering_base_lut_texture_name>core/textures/scattering_lut/preset_2/base.tif</environment_preset_2_scattering_base_lut_texture_name>
 		<environment_preset_2_scattering_mie_lut_texture_name>core/textures/scattering_lut/preset_2/mie.tif</environment_preset_2_scattering_mie_lut_texture_name>
 		<environment_preset_2_scattering_light_color_lut_texture_name>core/textures/scattering_lut/preset_2/light_color.tif</environment_preset_2_scattering_light_color_lut_texture_name>
@@ -121,8 +121,8 @@
 		<environment_preset_2_sun_angular_size>50</environment_preset_2_sun_angular_size>
 		<environment_preset_2_sun_texture_color>1 1 1 1</environment_preset_2_sun_texture_color>
 		<environment_preset_2_sun_texture_intensity>1</environment_preset_2_sun_texture_intensity>
-		<environment_preset_2_moon_texture_name>core/textures/world_light/celestial_body_moon.png</environment_preset_2_moon_texture_name>
-		<environment_preset_2_moon_angular_size>0.5</environment_preset_2_moon_angular_size>
+		<environment_preset_2_moon_texture_name>guid://67d06ca51fa7dbd3f572e522647afe26158028e9</environment_preset_2_moon_texture_name>
+		<environment_preset_2_moon_angular_size>15</environment_preset_2_moon_angular_size>
 		<environment_preset_2_moon_texture_color>1 1 1 1</environment_preset_2_moon_texture_color>
 		<environment_preset_2_moon_texture_intensity>1</environment_preset_2_moon_texture_intensity>
 		<environment_preset_2_texture_name>core/textures/common/environment_default.texture</environment_preset_2_texture_name>
@@ -470,7 +470,7 @@
 		<render_reinhard_luma_based_contribution>1</render_reinhard_luma_based_contribution>
 		<render_screen_precision>1</render_screen_precision>
 		<render_screen_space_effects>1</render_screen_space_effects>
-		<render_screen_space_shadow_shafts_length>1.5</render_screen_space_shadow_shafts_length>
+		<render_screen_space_shadow_shafts_length>1.52160001</render_screen_space_shadow_shafts_length>
 		<render_screen_space_shadow_shafts_mode>0</render_screen_space_shadow_shafts_mode>
 		<render_screen_space_shadow_shafts_quality>1</render_screen_space_shadow_shafts_quality>
 		<render_screen_space_shadow_shafts_resolution>1</render_screen_space_shadow_shafts_resolution>
