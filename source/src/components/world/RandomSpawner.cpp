@@ -3,7 +3,6 @@
 #include "components/Entity.h"
 
 #include <UnigineGame.h>
-#include <UnigineLog.h>
 
 REGISTER_COMPONENT(RandomSpawner)
 
@@ -14,21 +13,7 @@ namespace
 {
 Entity *findEntityInHierarchy(const NodePtr &root)
 {
-	if (!root)
-		return nullptr;
-
-	if (Entity *entity = ComponentSystem::get()->getComponent<Entity>(root))
-		return entity;
-
-	const int children_count = root->getNumChildren();
-	for (int i = 0; i < children_count; ++i)
-	{
-		Entity *entity = findEntityInHierarchy(root->getChild(i));
-		if (entity)
-			return entity;
-	}
-
-	return nullptr;
+	return ComponentSystem::get()->getComponentInChildren<Entity>(root);
 }
 } // namespace
 
@@ -87,15 +72,10 @@ bool RandomSpawner::spawnOne()
 
 	if (cooldownAfterDeathOnly)
 	{
-		Entity *entity = findEntityInHierarchy(spawned);
-		if (entity && entity->isAlive())
-		{
-			_active_spawn = spawned;
-		} else
-		{
-			// No Entity on spawned root: treat as instant-finished and run cooldown.
-			_cooldown_timer = max((float)cooldown, 0.0f);
-		}
+		// Always track the spawned node. Entity lookup may transiently miss
+		// (init order, FLOGERR, registration timing) — isActiveSpawnAlive falls
+		// back to node-existence so a failed lookup never causes a double spawn.
+		_active_spawn = spawned;
 	}
 
 	return true;
@@ -122,11 +102,16 @@ int RandomSpawner::pickTemplateIndex()
 
 bool RandomSpawner::isActiveSpawnAlive() const
 {
-	if (!_active_spawn)
+	if (!_active_spawn || _active_spawn.isDeleted())
 		return false;
 
-	Entity *entity = findEntityInHierarchy(_active_spawn);
-	return entity && entity->isAlive();
+	// Lazy entity lookup — registration / init order can make it transiently
+	// nullptr right after loadNode. If we ever do find an Entity, trust its HP;
+	// otherwise consider the spawn alive as long as the node still exists
+	// (Entity self-deletes via deleteTimer when persistOnDeath is false).
+	if (Entity *entity = findEntityInHierarchy(_active_spawn))
+		return entity->isAlive();
+	return true;
 }
 
 Mat4 RandomSpawner::getSpawnTransform() const

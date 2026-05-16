@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <nodes version="2.21.0.0">
-	<node type="ObjectMeshStatic" id="1874921653" name="Skull">
+	<node type="ObjectMeshStatic" id="1874921653" name="SkullBlue">
 		<mesh_name>guid://f199cf2b9a805f9daea25c9da899fc0fad5a6eee</mesh_name>
 		<surface name="Head" intersection="1" material="b08c10d080ef6cdbb1656086c53a6e066f8e2dfd"/>
 		<body type="BodyRigid" id="1090052909" frozen="0">

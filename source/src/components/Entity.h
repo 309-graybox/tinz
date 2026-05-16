@@ -76,8 +76,8 @@ private:
 	void applyMatParams(const Unigine::Vector<MaterialFloat4ParamInfo> &params, bool dead);
 
 private:
-	float _hp;
-	float _invulnerable_until;
+	float _hp = 0.0f;
+	float _invulnerable_until = 0.0f;
 	bool _init_gravity = false;
 	float _init_damping = 0.0f;
 	float _init_mass = 0.0f;
