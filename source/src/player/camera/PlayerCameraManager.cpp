@@ -122,6 +122,8 @@ void PlayerCameraManager::init()
 void PlayerCameraManager::update()
 {
 	update_camera_state();
+	if (_state.dt <= 0.0f)
+		return;
 	update_camera_context();
 
 	for (auto &m : mods)
