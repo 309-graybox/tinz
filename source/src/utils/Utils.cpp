@@ -6,7 +6,7 @@ using namespace Unigine;
 void addConsoleCommand(const Unigine::String &name, const Unigine::PropertyParameterPtr &param)
 {
 	if (Console::isCommand(name))
-		return;
+		Console::removeCommand(name);
 
 	Console::addCommand(name, param->getTooltip(), MakeCallback([param](int argc, char **argv) {
 		if (argc == 1)
