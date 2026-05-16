@@ -67,6 +67,7 @@ struct State
 	HashMap<String, MusicLayer> music_layers;
 	Vector<PausedAmbient> paused_ambient;
 	Vector<Paused3D> paused_3d;
+	HashMap<String, float> last_play_time;
 	float master_volume = 1;
 };
 
@@ -99,6 +100,30 @@ float resolvePitch(const SoundEvent &e)
 	if (e.pitch_max <= e.pitch_min)
 		return e.pitch_min;
 	return Game::getRandomFloat(e.pitch_min, e.pitch_max);
+}
+
+// Returns true if the event is allowed to play and stamps the time.
+// Returns false if still within min_interval since the last play.
+bool consumeCooldown(const char *id_or_path, float min_interval)
+{
+	if (min_interval <= 0.0f || !id_or_path || !*id_or_path)
+		return true;
+
+	State &s = state();
+	const String key(id_or_path);
+	const float now = Game::getTime();
+	if (s.last_play_time.contains(key))
+	{
+		const float last = s.last_play_time.get(key);
+		if (now - last < min_interval)
+			return false;
+		s.last_play_time.get(key) = now;
+	}
+	else
+	{
+		s.last_play_time.append(key, now);
+	}
+	return true;
 }
 
 // Returns nullptr if id_or_path is empty. Otherwise: registered event if it
@@ -305,6 +330,7 @@ void SoundManager::init()
 	s.paused = false;
 	s.paused_ambient.clear();
 	s.paused_3d.clear();
+	s.last_play_time.clear();
 	Unigine::Sound::setVolume(s.master_volume);
 }
 
@@ -338,6 +364,7 @@ void SoundManager::shutdown()
 	s.paused = false;
 	s.paused_ambient.clear();
 	s.paused_3d.clear();
+	s.last_play_time.clear();
 
 	s.events.clear();
 	s.initialized = false;
@@ -482,6 +509,9 @@ void SoundManager::play2D(const char *id_or_path)
 	if (gain <= 0.0f)
 		return;
 
+	if (!consumeCooldown(id_or_path, e->min_interval))
+		return;
+
 	AmbientSourcePtr as = AmbientSource::create(e->sample.get(), e->stream ? 1 : 0);
 	if (!as)
 	{
@@ -512,6 +542,9 @@ void SoundManager::play3DAt(const char *id_or_path, const Math::Vec3 &world_pos)
 
 	const float gain = resolveGain(*e);
 	if (gain <= 0.0f)
+		return;
+
+	if (!consumeCooldown(id_or_path, e->min_interval))
 		return;
 
 	Log::message("Play \"%s\"\n", e->sample.get());

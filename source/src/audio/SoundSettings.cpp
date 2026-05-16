@@ -11,6 +11,7 @@ void SoundSettings::applyTo(SoundEvent &e)
 	e.pitch_min = pitchMin;
 	e.pitch_max = pitchMax;
 	e.stream = ((int)stream) != 0;
+	e.min_interval = minInterval;
 
 	e.min_distance = minDistance;
 	e.max_distance = maxDistance;

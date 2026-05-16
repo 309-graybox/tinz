@@ -21,6 +21,7 @@ public:
 	PROP_PARAM(Float, pitchMin, 1.0f, "Pitch Min")
 	PROP_PARAM(Float, pitchMax, 1.0f, "Pitch Max", "Random pitch is sampled from [Pitch Min, Pitch Max]")
 	PROP_PARAM(Toggle, stream, 0, "Stream", "Stream from disk instead of fully decoding (long files / music)")
+	PROP_PARAM(Float, minInterval, 0.0f, "Min Interval (s)", "Min seconds between successive plays of this event. 0 = off. Prevents cacophony from bursts (e.g. multi-pickup pickups).")
 
 	PROP_GROUP("Spatial (3D)")
 	PROP_PARAM(Float, minDistance, 1.0f, "Min Distance")

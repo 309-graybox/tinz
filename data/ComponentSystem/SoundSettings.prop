@@ -4,6 +4,7 @@
 	<parameter name="pitchMin" type="float" title="Pitch Min" group="Mix">1</parameter>
 	<parameter name="pitchMax" type="float" title="Pitch Max" tooltip="Random pitch is sampled from [Pitch Min, Pitch Max]" group="Mix">1</parameter>
 	<parameter name="stream" type="toggle" title="Stream" tooltip="Stream from disk instead of fully decoding (long files / music)" group="Mix">0</parameter>
+	<parameter name="minInterval" type="float" title="Min Interval (s)" tooltip="Min seconds between successive plays of this event. 0 = off. Prevents cacophony from bursts (e.g. multi-pickup pickups)." group="Mix">0</parameter>
 	<parameter name="minDistance" type="float" title="Min Distance" group="Spatial (3D)">1</parameter>
 	<parameter name="maxDistance" type="float" title="Max Distance" group="Spatial (3D)">100</parameter>
 	<parameter name="airAbsorption" type="float" title="Air Absorption" group="Spatial (3D)">0</parameter>

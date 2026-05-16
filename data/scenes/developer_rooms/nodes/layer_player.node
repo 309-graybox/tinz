@@ -22,6 +22,8 @@
 				<parameter name="useGamepad">1</parameter>
 			</property>
 			<property parent="c1ecde01068d0406f5dacfe348dfc1e5466c55ec" guid="719da7015d9fc96a4f30e37f727f8796370ba23e">
+				<parameter name="walkSpeed">2</parameter>
+				<parameter name="runSpeed">5</parameter>
 				<parameter name="turnResponsiveness">18</parameter>
 				<parameter name="fullSpeedAngle">30</parameter>
 				<parameter name="plantAngle">120</parameter>
@@ -31,6 +33,7 @@
 				<parameter name="adaptiveJumpDamping">0.349999994</parameter>
 				<parameter name="airControl">4.5</parameter>
 				<parameter name="sprintTurnResponsiveness">10</parameter>
+				<parameter name="alwaysSprint">1</parameter>
 				<parameter name="stepHeight">0.409999996</parameter>
 				<parameter name="groundSnapMinGap">0.0500000007</parameter>
 				<parameter name="slopeLimit">44</parameter>
@@ -443,27 +446,6 @@
 			</node>
 		</node>
 	</node>
-	<node type="NodeDummy" id="1435318381" name="sound_bank">
-		<properties>
-			<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="16aa2e0ad1588e51a1faeb6eafb107ea6ab8674b">
-				<parameter name="eventId">pickup</parameter>
-				<parameter name="sample">guid://bd9afc99d73ed1f23a39b1c52ebd2630edf3b3f2</parameter>
-			</property>
-			<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="6b45015f5698f384bb5cd8abf43d4792dc8d0390">
-				<parameter name="eventId">heal</parameter>
-				<parameter name="sample">guid://ec9a840e003bb526561e06b28f874b7797fab91f</parameter>
-			</property>
-			<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="e0bdcffb2681cfe09b61c9df6d3a8a18c6fe8661">
-				<parameter name="eventId">hurt</parameter>
-				<parameter name="sample">guid://1c2619a84615539f8622c6f6091286aa59a606ab</parameter>
-			</property>
-			<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="ba45467818bac8762aa86dd93b3e9f890ea671e7">
-				<parameter name="eventId">damage/skull</parameter>
-				<parameter name="sample">guid://4b10915ef414c5c9e3625929b95ebfe14f9da234</parameter>
-			</property>
-		</properties>
-		<transform>0.99999988079 0 0 0.0 0 1.00000011921 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
-	</node>
 	<node type="NodeDummy" id="1904963976" name="tunings">
 		<transform>0.99999988079 0 0 0.0 0 1.00000011921 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 		<node type="NodeDummy" id="804353378" name="debug_tuning">
@@ -475,6 +457,42 @@
 		<node type="NodeDummy" id="1009462669" name="player_tuning">
 			<properties>
 				<property parent="f2fbca10e2dcd800695c43cf5681f6af60b23a51" guid="6a498c09151627eb0c6401b252bef714601918c6"/>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		</node>
+	</node>
+	<node type="NodeDummy" id="1406903995" name="sounds">
+		<transform>0.99999988079 0 0 0.0 0 1.00000011921 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		<node type="NodeDummy" id="1435318381" name="sound_bank">
+			<properties>
+				<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="16aa2e0ad1588e51a1faeb6eafb107ea6ab8674b">
+					<parameter name="eventId">pickup</parameter>
+					<parameter name="sample">guid://bd9afc99d73ed1f23a39b1c52ebd2630edf3b3f2</parameter>
+					<parameter name="settings">1263004894</parameter>
+				</property>
+				<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="6b45015f5698f384bb5cd8abf43d4792dc8d0390">
+					<parameter name="eventId">heal</parameter>
+					<parameter name="sample">guid://ec9a840e003bb526561e06b28f874b7797fab91f</parameter>
+					<parameter name="settings">1263004894</parameter>
+				</property>
+				<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="e0bdcffb2681cfe09b61c9df6d3a8a18c6fe8661">
+					<parameter name="eventId">hurt</parameter>
+					<parameter name="sample">guid://1c2619a84615539f8622c6f6091286aa59a606ab</parameter>
+					<parameter name="settings">1263004894</parameter>
+				</property>
+				<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="ba45467818bac8762aa86dd93b3e9f890ea671e7">
+					<parameter name="eventId">damage/skull</parameter>
+					<parameter name="sample">guid://4b10915ef414c5c9e3625929b95ebfe14f9da234</parameter>
+					<parameter name="settings">1263004894</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		</node>
+		<node type="NodeDummy" id="1263004894" name="anticacophony_settings">
+			<properties>
+				<property parent="c4e32ea13bd15dc02328a8ea98d4059522ce3b75" guid="a66d675bdeba0a0ec43b70958f20ee766bedabcf">
+					<parameter name="minInterval">0.300000012</parameter>
+				</property>
 			</properties>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 		</node>

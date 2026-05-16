@@ -44,6 +44,10 @@ struct SoundEvent
 	int reverb_mask = (int)0xffffffff; // matched against SoundReverb zones
 	int occlusion_mask = 0;			   // physics intersection mask
 	bool occlusion = false;			   // enable occlusion test
+
+	// Minimum seconds between successive plays of the same id_or_path. 0 = off.
+	// Suppresses cacophony when many emitters (e.g. pickups) fire in one frame.
+	float min_interval = 0.0f;
 };
 
 // Lightweight, static, fire-and-forget audio facade. Designed for game jams:
