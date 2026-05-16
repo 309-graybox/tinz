@@ -98,19 +98,6 @@
 				</Binding>
 			</Mapping>
 		</Action>
-		<Action guid="7e5e96c492031354aa9b6cc728467b6329d432ea">
-			<Mapping consume_input="0">
-				<Binding>
-					<Key>LeftShift</Key>
-					<Triggers>
-						<Trigger type="Down">
-							<parameter name="treshold">0.5</parameter>
-						</Trigger>
-					</Triggers>
-					<Modifiers/>
-				</Binding>
-			</Mapping>
-		</Action>
 		<Action guid="bbf76e4ad81fc477c9b381ddc94fcd3a70a1c774">
 			<Mapping consume_input="0">
 				<Binding>
@@ -127,7 +114,18 @@
 				<Binding>
 					<Key>GamepadA</Key>
 					<Triggers>
-						<Trigger type="Down">
+						<Trigger type="Pressed">
+							<parameter name="treshold">0.5</parameter>
+						</Trigger>
+					</Triggers>
+					<Modifiers/>
+				</Binding>
+			</Mapping>
+			<Mapping consume_input="0">
+				<Binding>
+					<Key>GamepadX</Key>
+					<Triggers>
+						<Trigger type="Pressed">
 							<parameter name="treshold">0.5</parameter>
 						</Trigger>
 					</Triggers>
@@ -235,9 +233,9 @@
 							<parameter name="type">2</parameter>
 						</Modifier>
 						<Modifier type="Scale">
-							<parameter name="x">12</parameter>
-							<parameter name="y">12</parameter>
-							<parameter name="z">12</parameter>
+							<parameter name="x">-12</parameter>
+							<parameter name="y">-12</parameter>
+							<parameter name="z">-12</parameter>
 						</Modifier>
 					</Modifiers>
 				</Binding>
@@ -256,6 +254,28 @@
 			<Mapping consume_input="0">
 				<Binding>
 					<Key>E</Key>
+					<Triggers>
+						<Trigger type="Pressed">
+							<parameter name="treshold">0.5</parameter>
+						</Trigger>
+					</Triggers>
+					<Modifiers/>
+				</Binding>
+			</Mapping>
+			<Mapping consume_input="0">
+				<Binding>
+					<Key>GamepadB</Key>
+					<Triggers>
+						<Trigger type="Pressed">
+							<parameter name="treshold">0.5</parameter>
+						</Trigger>
+					</Triggers>
+					<Modifiers/>
+				</Binding>
+			</Mapping>
+			<Mapping consume_input="0">
+				<Binding>
+					<Key>GamepadY</Key>
 					<Triggers>
 						<Trigger type="Pressed">
 							<parameter name="treshold">0.5</parameter>
