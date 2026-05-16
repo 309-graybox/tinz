@@ -85,6 +85,7 @@ void CharacterMovement::update()
 {
 	float ifps = Game::getIFps() * Physics::getScale();
 	_ctx.input.update();
+	_ctx.input.setForceSprint(alwaysSprint);
 
 	// set context input values for states
 	_ctx.ground_normal = get_ground_normal();
@@ -368,7 +369,7 @@ void CharacterMovement::update()
 	{
 		bool is_sliding = _current_state == MovementStateIndex::SLIDE;
 		bool is_moving = !is_sliding && !compare(_ctx.speed, 0.0f);
-		bool is_spinting = !is_sliding && abs(_ctx.speed) > runSpeed;
+		bool is_spinting = is_moving && _ctx.input.isSprinting();
 		// Smooth out micro losses of ground contact at surface seams: while
 		// the player is descending/standing and was on ground a moment ago,
 		// keep the animation in "grounded" state. Cleared on jump (the flag

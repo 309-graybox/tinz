@@ -13,8 +13,10 @@ public:
 	Unigine::Math::vec2 getMoveInput() const noexcept { return _raw_move; }
 	bool isInputMoving() const noexcept { return _is_input_moving; }
 	bool isWalking() const noexcept { return _walk; }
-	bool isSprinting() const noexcept { return _sprint; }
+	bool isSprinting() const noexcept { return _sprint || _force_sprint; }
 	bool isCrouching() const noexcept { return _crouch; }
+
+	void setForceSprint(bool v) noexcept { _force_sprint = v; }
 
 	bool consumeJump(float buffer_window = 0.0f);
 	bool consumeJumpRelease();
@@ -30,6 +32,7 @@ private:
 	Unigine::Math::vec2 _raw_move;
 	bool _walk = false;
 	bool _sprint = false;
+	bool _force_sprint = false;
 	bool _crouch = false;
 	TimedFlag _jump_press;
 	bool _jump_released = false;
