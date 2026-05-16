@@ -24,7 +24,8 @@
 			<property parent="c1ecde01068d0406f5dacfe348dfc1e5466c55ec" guid="719da7015d9fc96a4f30e37f727f8796370ba23e">
 				<parameter name="turnResponsiveness">18</parameter>
 				<parameter name="fullSpeedAngle">30</parameter>
-				<parameter name="plantAngle">90</parameter>
+				<parameter name="plantAngle">120</parameter>
+				<parameter name="groundAcceleration">60</parameter>
 				<parameter name="jumpPower">12</parameter>
 				<parameter name="jumpBufferTime">0.180000007</parameter>
 				<parameter name="adaptiveJumpDamping">0.349999994</parameter>
@@ -36,7 +37,6 @@
 				<parameter name="body">1330148965</parameter>
 				<parameter name="target">1330148965</parameter>
 				<parameter name="groundCheckIntersectionMask">0xffffffff</parameter>
-				<parameter name="groundAcceleration">60</parameter>
 				<parameter name="sprintTurnSpeed">300</parameter>
 			</property>
 			<property parent="07697f4bb1fd619bbec1215b0e6764c8b290da27" guid="5b89c5b5e7950d9ba1597f82d8756479071fe501">
@@ -83,7 +83,10 @@
 						<parameter name="priority">-100</parameter>
 						<parameter name="delay">1</parameter>
 						<parameter name="speed">2</parameter>
+						<parameter name="rate_acceleration">200</parameter>
+						<parameter name="rate_acceleration_exponential">1</parameter>
 						<parameter name="reset_timer_on_stop">0</parameter>
+						<parameter name="min_target_velocity">1</parameter>
 					</property>
 					<property parent="b587ac7619c52565fc92e30cd342ebb025601d55" guid="357324d994183a2a6373148de37dd52b80eed42d">
 						<parameter name="priority">-10</parameter>
