@@ -17,6 +17,7 @@
 	<parameter name="slideEntryDelay" type="float" tooltip="Окно (сек) после walkable-контакта, в течение которого вход в скольжение подавляется. Гасит дребезг на стыках плоской и наклонной поверхностей">0.05</parameter>
 	<parameter name="sprintSpeed" type="float" tooltip="Максимальная скорость персонажа в режиме спринта" group="Sprint">8</parameter>
 	<parameter name="sprintTurnResponsiveness" type="float" tooltip="Скорость экспоненциального демпфирования поворота во время спринта (1/с). Ниже, чем turnResponsiveness — даёт более широкий радиус разворота на скорости" group="Sprint">10</parameter>
+	<parameter name="alwaysSprint" type="toggle" tooltip="Если включено — простое движение идёт сразу на скорости спринта (и с анимацией спринта), без зажатого инпута спринта. Отдельный инпут спринта при этом остаётся рабочим (просто становится no-op)" group="Sprint">0</parameter>
 	<parameter name="stepHeight" type="float" tooltip="Максимальная выс та препятст вия, на которое персонаж может автоматически подняться">0.3</parameter>
 	<parameter name="stepClimbSpeed" type="float" title="Step Climb Speed (m/s)" tooltip="Скорость вертикального подъёма при автостеппинге. Гравитация в это время выключена, персонаж считается на земле">5</parameter>
 	<parameter name="groundSnapMinGap" type="float" title="Ground Snap Min Gap (m)" tooltip="Минимальный разрыв между низом капсулы и грунтом, при котором срабатывает прибивание к земле при спуске со ступенек. Меньшие разрывы считаются физическим шумом на стыках поверхностей и игнорируются">0.02</parameter>
