@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
-	<guid>9436cb2bf12fc6e8d4420a9b2e82f74941b03de6</guid>
-	<type>node</type>
-	<hash>c76cbb079e07b76a5df93764fb758c410c615c99a992ddd33b7c0ea1faf8e350</hash>
-	<runtimes>
-		<runtime id="9436cb2bf12fc6e8d4420a9b2e82f74941b03de6" name="skull_green.node" link="0" type="3"/>
-	</runtimes>
-</asset>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
-	<guid>ec88fa0a4e63ff7bf9b12a5a245b9303a5f05a59</guid>
-	<type>node</type>
-	<hash>1817d80218aa587171155b2b90a7de188a7d364bd8246c3ef8ea884aadb3c06d</hash>
-	<runtimes>
-		<runtime id="ec88fa0a4e63ff7bf9b12a5a245b9303a5f05a59" name="skull_red.node" link="0" type="3"/>
-	</runtimes>
-</asset>
