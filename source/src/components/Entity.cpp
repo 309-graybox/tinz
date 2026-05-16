@@ -149,6 +149,9 @@ void Entity::init()
 		if (!mat || mat->findParameter(param->param) == -1)
 			continue;
 
+		mat = mat->inherit();
+		obj->setMaterial(mat, param->surface);
+
 		auto el = param;
 
 		param->material = mat;
