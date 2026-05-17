@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<material version="2.21.0.0" guid="2e0801a33bb0292d6e15ab80dcd24a1bb73fe9bb" parent="0b5b9490a41aac719d767dae193d21cf61a0bc08" base_material="baa6d30981423686857ffb30770cdbc660c4d1b3">
+<material version="2.21.0.0" guid="2e0801a33bb0292d6e15ab80dcd24a1bb73fe9bb" parent="0b5b9490a41aac719d767dae193d21cf61a0bc08" base_material="c662f396c68056b89879ba7f96df5f3537639b48">
 	<parameter name="albedo_color" expression="0">0.36470589 0.36470589 0.36470589 1</parameter>
 </material>

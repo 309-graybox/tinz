@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<material version="2.21.0.0" guid="43be8119b2de685628e674dbf48ed7bf05309569" base_material="4dfec30f491f753f6e89094db6d3d695e89f9d6f">
-	<state name="emission">1</state>
+<material version="2.21.0.0" guid="43be8119b2de685628e674dbf48ed7bf05309569" base_material="c662f396c68056b89879ba7f96df5f3537639b48">
 	<texture name="albedo">guid://1b1469fe1079eae036e5399ac4c1b6735a5b8913</texture>
 	<parameter name="albedo_color" expression="0">0.400000006 0.400000006 0.400000006 1</parameter>
-	<parameter name="uv_transform" expression="0">5 5 0 0</parameter>
+	<parameter name="emission_intensity" expression="0">0.0140000004</parameter>
 	<parameter name="emission_color" expression="0">0.188235298 0.188235298 0 1</parameter>
-	<parameter name="emission_scale" expression="0">0.162479997</parameter>
+	<parameter name="roughness" expression="0">1</parameter>
+	<parameter name="auxiliary_tint" expression="0">0 0 0 1</parameter>
+	<parameter name="branches_offset_time" expression="0">0.100000001</parameter>
+	<parameter name="branches_offset_wind" expression="0">0.100000001</parameter>
+	<parameter name="branches_speed" expression="0">0.100000001</parameter>
+	<parameter name="stem_speed" expression="0">0.0599999987</parameter>
+	<parameter name="stem_offset_wind" expression="0">0.0500000007</parameter>
+	<parameter name="stem_offset_time" expression="0">0.0500000007</parameter>
+	<parameter name="leaves_tiling" expression="0">0</parameter>
+	<parameter name="leaves_speed" expression="0">0</parameter>
+	<parameter name="leaves_offset_wind" expression="0">0</parameter>
 </material>

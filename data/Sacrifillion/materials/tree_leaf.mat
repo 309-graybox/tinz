@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<material version="2.21.0.0" guid="0b5b9490a41aac719d767dae193d21cf61a0bc08" base_material="baa6d30981423686857ffb30770cdbc660c4d1b3">
+<material version="2.21.0.0" guid="0b5b9490a41aac719d767dae193d21cf61a0bc08" base_material="c662f396c68056b89879ba7f96df5f3537639b48">
 	<texture name="albedo">guid://713d3afc9c7d9654daa72b3868a9c2895721a8c9</texture>
 	<parameter name="albedo_color" expression="0">0.78039217 0.78039217 0.78039217 1</parameter>
 	<parameter name="roughness" expression="0">0</parameter>
@@ -7,4 +7,13 @@
 	<parameter name="microfiber" expression="0">1</parameter>
 	<parameter name="auxiliary_tint" expression="0">0 0 0 1</parameter>
 	<parameter name="uv_scale_offset" expression="0">0.300000012 0.100000001 1 1</parameter>
+	<parameter name="branches_offset_time" expression="0">0</parameter>
+	<parameter name="branches_offset_wind" expression="0">0</parameter>
+	<parameter name="branches_speed" expression="0">0</parameter>
+	<parameter name="stem_speed" expression="0">0.5</parameter>
+	<parameter name="stem_offset_wind" expression="0">0.0299999993</parameter>
+	<parameter name="stem_offset_time" expression="0">0.0299999993</parameter>
+	<parameter name="leaves_tiling" expression="0">0</parameter>
+	<parameter name="leaves_speed" expression="0">0</parameter>
+	<parameter name="leaves_offset_wind" expression="0">0</parameter>
 </material>
