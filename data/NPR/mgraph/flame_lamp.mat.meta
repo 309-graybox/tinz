@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>f0c71824fca7b7f1d485b4a5eaac547712e48b86</guid>
+	<type>material</type>
+	<hash>d75a4e42c9328e70c07b138441c7baba0c66a110778deff220c343ef27d2ea07</hash>
+	<runtimes>
+		<runtime id="f0c71824fca7b7f1d485b4a5eaac547712e48b86" name="flame_lamp" link="0" type="5"/>
+	</runtimes>
+	<parameters>
+		<parameter type="bool" name="unchanged">1</parameter>
+	</parameters>
+</asset>
