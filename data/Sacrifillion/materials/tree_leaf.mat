@@ -2,8 +2,9 @@
 <material version="2.21.0.0" guid="0b5b9490a41aac719d767dae193d21cf61a0bc08" base_material="baa6d30981423686857ffb30770cdbc660c4d1b3">
 	<texture name="albedo">guid://713d3afc9c7d9654daa72b3868a9c2895721a8c9</texture>
 	<parameter name="albedo_color" expression="0">0.78039217 0.78039217 0.78039217 1</parameter>
-	<parameter name="roughness" expression="0">0.0485000014</parameter>
+	<parameter name="roughness" expression="0">0</parameter>
 	<parameter name="specular" expression="0">0</parameter>
+	<parameter name="microfiber" expression="0">1</parameter>
 	<parameter name="auxiliary_tint" expression="0">0 0 0 1</parameter>
 	<parameter name="uv_scale_offset" expression="0">0.300000012 0.100000001 1 1</parameter>
 </material>
