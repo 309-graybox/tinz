@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <EIContext description="Just move" auto_registration="1">
 	<Actions>
-		<Action guid="f6a2220b3ab70641a5c21f3f62d25bea409f3868">
+		<Action guid="f6a2220b3ab70641a5c21f3f62d25bea409f3868" description="">
 			<Mapping consume_input="0">
 				<Binding>
 					<Key>W</Key>
 					<Triggers>
 						<Trigger type="Down">
-							<parameter name="treshold">0.5</parameter>
+							<parameter name="threshold">0.5</parameter>
 						</Trigger>
 					</Triggers>
 					<Modifiers>
 						<Modifier type="Swizzle Axis">
-							<parameter name="type">2</parameter>
+							<parameter name="type">YXZ</parameter>
 						</Modifier>
 					</Modifiers>
 				</Binding>
@@ -22,12 +22,12 @@
 					<Key>S</Key>
 					<Triggers>
 						<Trigger type="Down">
-							<parameter name="treshold">0.5</parameter>
+							<parameter name="threshold">0.5</parameter>
 						</Trigger>
 					</Triggers>
 					<Modifiers>
 						<Modifier type="Swizzle Axis">
-							<parameter name="type">2</parameter>
+							<parameter name="type">YXZ</parameter>
 						</Modifier>
 						<Modifier type="Negate">
 							<parameter name="x">1</parameter>
@@ -42,7 +42,7 @@
 					<Key>D</Key>
 					<Triggers>
 						<Trigger type="Down">
-							<parameter name="treshold">0.5</parameter>
+							<parameter name="threshold">0.5</parameter>
 						</Trigger>
 					</Triggers>
 					<Modifiers/>
@@ -53,7 +53,7 @@
 					<Key>A</Key>
 					<Triggers>
 						<Trigger type="Down">
-							<parameter name="treshold">0.5</parameter>
+							<parameter name="threshold">0.5</parameter>
 						</Trigger>
 					</Triggers>
 					<Modifiers>
@@ -70,7 +70,7 @@
 					<Key>GamepadLeftX</Key>
 					<Triggers>
 						<Trigger type="Down">
-							<parameter name="treshold">0.5</parameter>
+							<parameter name="threshold">0.5</parameter>
 						</Trigger>
 					</Triggers>
 					<Modifiers>
@@ -87,24 +87,24 @@
 					<Key>GamepadLeftY</Key>
 					<Triggers>
 						<Trigger type="Down">
-							<parameter name="treshold">0.5</parameter>
+							<parameter name="threshold">0.5</parameter>
 						</Trigger>
 					</Triggers>
 					<Modifiers>
 						<Modifier type="Swizzle Axis">
-							<parameter name="type">2</parameter>
+							<parameter name="type">YXZ</parameter>
 						</Modifier>
 					</Modifiers>
 				</Binding>
 			</Mapping>
 		</Action>
-		<Action guid="bbf76e4ad81fc477c9b381ddc94fcd3a70a1c774">
+		<Action guid="bbf76e4ad81fc477c9b381ddc94fcd3a70a1c774" description="">
 			<Mapping consume_input="0">
 				<Binding>
 					<Key>Space</Key>
 					<Triggers>
 						<Trigger type="Pressed">
-							<parameter name="treshold">0.5</parameter>
+							<parameter name="threshold">0.5</parameter>
 						</Trigger>
 					</Triggers>
 					<Modifiers/>
@@ -115,7 +115,7 @@
 					<Key>GamepadA</Key>
 					<Triggers>
 						<Trigger type="Pressed">
-							<parameter name="treshold">0.5</parameter>
+							<parameter name="threshold">0.5</parameter>
 						</Trigger>
 					</Triggers>
 					<Modifiers/>
@@ -126,20 +126,20 @@
 					<Key>GamepadX</Key>
 					<Triggers>
 						<Trigger type="Pressed">
-							<parameter name="treshold">0.5</parameter>
+							<parameter name="threshold">0.5</parameter>
 						</Trigger>
 					</Triggers>
 					<Modifiers/>
 				</Binding>
 			</Mapping>
 		</Action>
-		<Action guid="2605673950df7ff25848f990a7cef99c45d1250a">
+		<Action guid="2605673950df7ff25848f990a7cef99c45d1250a" description="">
 			<Mapping consume_input="0">
 				<Binding>
 					<Key>MouseMiddle</Key>
 					<Triggers>
 						<Trigger type="Pressed">
-							<parameter name="treshold">0.5</parameter>
+							<parameter name="threshold">0.5</parameter>
 						</Trigger>
 					</Triggers>
 					<Modifiers/>
@@ -149,34 +149,21 @@
 				<Binding>
 					<Key>GamepadThumbRight</Key>
 					<Triggers>
-						<Trigger type="Down">
-							<parameter name="treshold">0.5</parameter>
-						</Trigger>
-					</Triggers>
-					<Modifiers/>
-				</Binding>
-			</Mapping>
-		</Action>
-		<Action guid="17991fae950b86a77fa991cdb05cab48d17b83d8">
-			<Mapping consume_input="0">
-				<Binding>
-					<Key>LeftCtrl</Key>
-					<Triggers>
 						<Trigger type="Pressed">
-							<parameter name="treshold">0.5</parameter>
+							<parameter name="threshold">0.5</parameter>
 						</Trigger>
 					</Triggers>
 					<Modifiers/>
 				</Binding>
 			</Mapping>
 		</Action>
-		<Action guid="2e5b555222aebf467d3a9a6f16087e1c2a50bd16">
+		<Action guid="2e5b555222aebf467d3a9a6f16087e1c2a50bd16" description="">
 			<Mapping consume_input="0">
 				<Binding>
 					<Key>MouseX</Key>
 					<Triggers>
 						<Trigger type="Down">
-							<parameter name="treshold">0.5</parameter>
+							<parameter name="threshold">0.5</parameter>
 						</Trigger>
 					</Triggers>
 					<Modifiers>
@@ -193,12 +180,12 @@
 					<Key>MouseY</Key>
 					<Triggers>
 						<Trigger type="Down">
-							<parameter name="treshold">0.5</parameter>
+							<parameter name="threshold">0.5</parameter>
 						</Trigger>
 					</Triggers>
 					<Modifiers>
 						<Modifier type="Swizzle Axis">
-							<parameter name="type">2</parameter>
+							<parameter name="type">YXZ</parameter>
 						</Modifier>
 					</Modifiers>
 				</Binding>
@@ -208,7 +195,7 @@
 					<Key>GamepadRightX</Key>
 					<Triggers>
 						<Trigger type="Down">
-							<parameter name="treshold">0.5</parameter>
+							<parameter name="threshold">0.5</parameter>
 						</Trigger>
 					</Triggers>
 					<Modifiers>
@@ -225,12 +212,12 @@
 					<Key>GamepadRightY</Key>
 					<Triggers>
 						<Trigger type="Down">
-							<parameter name="treshold">0.5</parameter>
+							<parameter name="threshold">0.5</parameter>
 						</Trigger>
 					</Triggers>
 					<Modifiers>
 						<Modifier type="Swizzle Axis">
-							<parameter name="type">2</parameter>
+							<parameter name="type">YXZ</parameter>
 						</Modifier>
 						<Modifier type="Scale">
 							<parameter name="x">-12</parameter>
@@ -241,22 +228,13 @@
 				</Binding>
 			</Mapping>
 		</Action>
-		<Action guid="49b009daf119a078c85c695c54720aba8ab44da1">
-			<Mapping consume_input="0">
-				<Binding>
-					<Key>LeftAlt</Key>
-					<Triggers/>
-					<Modifiers/>
-				</Binding>
-			</Mapping>
-		</Action>
-		<Action guid="5dc5bf9d869ebc7b2288a10f75b797661d2061a1">
+		<Action guid="5dc5bf9d869ebc7b2288a10f75b797661d2061a1" description="">
 			<Mapping consume_input="0">
 				<Binding>
 					<Key>E</Key>
 					<Triggers>
 						<Trigger type="Pressed">
-							<parameter name="treshold">0.5</parameter>
+							<parameter name="threshold">0.5</parameter>
 						</Trigger>
 					</Triggers>
 					<Modifiers/>
@@ -267,7 +245,7 @@
 					<Key>GamepadB</Key>
 					<Triggers>
 						<Trigger type="Pressed">
-							<parameter name="treshold">0.5</parameter>
+							<parameter name="threshold">0.5</parameter>
 						</Trigger>
 					</Triggers>
 					<Modifiers/>
@@ -278,7 +256,7 @@
 					<Key>GamepadY</Key>
 					<Triggers>
 						<Trigger type="Pressed">
-							<parameter name="treshold">0.5</parameter>
+							<parameter name="threshold">0.5</parameter>
 						</Trigger>
 					</Triggers>
 					<Modifiers/>
