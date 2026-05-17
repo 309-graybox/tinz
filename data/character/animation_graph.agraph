@@ -1,8 +1,8 @@
 {
 	"version": "2.21.0.0",
 	"file_guid": "eab12692ed290879e3b4fce93a3ca649d5738e08",
-	"camera_offset_x": 375.661865234375,
-	"camera_offset_y": 739.89483642578125,
+	"camera_offset_x": 176.661865234375,
+	"camera_offset_y": 280.89483642578125,
 	"nodes": {
 		"Output Pose": {
 			"guid": "00000000000000000000000000000000b00002b2",
@@ -38,8 +38,8 @@
 			"sm_name": "base",
 			"state_graph": {
 				"file_guid": "7e10a158a2c14433d20e0037d64646168066ba1e",
-				"camera_offset_x": 375.661865234375,
-				"camera_offset_y": 739.89483642578125,
+				"camera_offset_x": 97.661865234375,
+				"camera_offset_y": 494.89483642578125,
 				"nodes": {
 					"State": {
 						"guid": "49fbdbfa68db5f78689685c7dbc59022dcbc5ae5",
@@ -662,8 +662,8 @@
 														},
 														"Not": {
 															"guid": "d557171e774e1d2b6f15395969f56fd9e7f3ab20",
-															"x": -234,
-															"y": 54,
+															"x": -236,
+															"y": 53,
 															"collapsed": true,
 															"inputs": {
 																"input": {
@@ -707,8 +707,8 @@
 														},
 														"Bool": {
 															"guid": "99cb42a60c080eeeecec9bafe321250b369d7e69",
-															"x": -352,
-															"y": 54,
+															"x": -356,
+															"y": 53,
 															"collapsed": true,
 															"outputs": {
 																"output": {
@@ -746,8 +746,8 @@
 														},
 														"Float": {
 															"guid": "d7d0605e35db731c31721d99724f5f14788dde60",
-															"x": -809,
-															"y": -158,
+															"x": -810,
+															"y": -160,
 															"collapsed": true,
 															"outputs": {
 																"output": {
@@ -810,7 +810,7 @@
 														},
 														"State Time": {
 															"guid": "1a56e908b0d0635b90dd699bc881290761f89f1a",
-															"x": -714,
+															"x": -716,
 															"y": -52,
 															"collapsed": true,
 															"outputs": {
@@ -1320,7 +1320,7 @@
 														},
 														"Bool": {
 															"guid": "2b7aa0722c051ad5d1847e0438c6f8dc71fccbc0",
-															"x": -288,
+															"x": -289,
 															"y": 70,
 															"collapsed": true,
 															"outputs": {
@@ -1725,8 +1725,8 @@
 						"is_entry": 0,
 						"state_graph": {
 							"file_guid": "e32087549466ab572ee32e83336f896e26b26fba",
-							"camera_offset_x": 700,
-							"camera_offset_y": 528,
+							"camera_offset_x": 582,
+							"camera_offset_y": 609,
 							"nodes": {
 								"Output Pose": {
 									"guid": "dfa8b356aa92720fbb25f71389eee77e352cbbd1",
@@ -1813,7 +1813,7 @@
 									"anchor_id": 2,
 									"show_label": true,
 									"show_inline_widget": true,
-									"float_value": 1
+									"float_value": 1.2999999523162842
 								}
 							},
 							"anchors": {
@@ -1845,8 +1845,8 @@
 						"is_entry": 0,
 						"state_graph": {
 							"file_guid": "457a3478f7ee61a998dd247d46369714520f422b",
-							"camera_offset_x": 700,
-							"camera_offset_y": 528,
+							"camera_offset_x": 583,
+							"camera_offset_y": 554,
 							"nodes": {
 								"Output Pose": {
 									"guid": "e421ee48b6236f77f7c24a678bfb5063f1c5718e",
@@ -1995,7 +1995,7 @@
 								"Bool": {
 									"guid": "da3b5028213e4bae083d58ed10711ee43d5f5b1b",
 									"x": -139,
-									"y": 26,
+									"y": 25,
 									"collapsed": true,
 									"outputs": {
 										"output": {
@@ -3433,13 +3433,13 @@
 		"override": {
 			"guid": "a6253386b4664bdb605d9203eda03447183a3341",
 			"type": "Bool",
-			"active": false,
+			"active": true,
 			"bool_value": 0
 		},
 		"override": {
 			"guid": "f73eb5f849ed916e47e07857c88ebeb83e3655be",
 			"type": "Bool",
-			"active": false,
+			"active": true,
 			"bool_value": 0
 		},
 		"override": {
