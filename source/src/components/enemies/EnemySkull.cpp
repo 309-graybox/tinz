@@ -90,7 +90,21 @@ void EnemySkull::updateSkull()
 	const Vec3 targetPos = target->getWorldPosition();
 	const float dist = (float)length(targetPos - myPos);
 
-	const bool sees = dist <= sightRange && hasLineOfSight(myPos, targetPos, target);
+	// LOS rays come from / aim at bbox-derived points, not node pivots. Pivots
+	// often sit at the feet, which makes the ray graze the floor and report the
+	// terrain as the blocker. Two sample points on the target (center + top)
+	// also handle waist-high cover.
+	bool sees = false;
+	if (dist <= sightRange)
+	{
+		const WorldBoundBox myBB = node->getWorldBoundBox();
+		const WorldBoundBox tgtBB = target->getWorldBoundBox();
+		const Vec3 from = myBB.getCenter();
+		const Vec3 tgtCenter = tgtBB.getCenter();
+		const Vec3 tgtTop = Vec3(tgtCenter.x, tgtCenter.y, tgtBB.maximum.z);
+		sees = hasLineOfSight(from, tgtCenter, target)
+			|| hasLineOfSight(from, tgtTop, target);
+	}
 	if (sees)
 		_memoryTimer = memoryDuration;
 	else
