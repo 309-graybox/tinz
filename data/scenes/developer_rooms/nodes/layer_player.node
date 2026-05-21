@@ -196,8 +196,8 @@
 		<properties>
 			<property parent="79d4c6ad2ecaa9e0fe6d6b78f1cd8281e7abc9b6" guid="af835e81f74a00c2deb35096b83256fabc10bcf7">
 				<parameter name="font">guid://a70bf07d6f9351f4ddcf32a8893d0d83c04ca59f</parameter>
-				<parameter name="hpIcon">guid://441bd21d5070f71af46890620842055f7acb2833</parameter>
-				<parameter name="soulIcon">guid://7636b297d988af5baa361064c093278eba0806dd</parameter>
+				<parameter name="hpIcon">guid://8dd9c6790bd86a3ef55451c509b6a348a44c56e1</parameter>
+				<parameter name="soulIcon">guid://c491ddde6683fee7526186e23bcbebd455e9e1da</parameter>
 			</property>
 		</properties>
 		<transform>0.99999988079 0 0 0.0 0 1.00000011921 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
@@ -229,22 +229,30 @@
 			<node type="NodeDummy" id="1381457461" name="Table">
 				<properties>
 					<property parent="6fb6e20332106eebd34a3ae7a23b685e049f60d1" guid="f4d054163954eeb22358a13af8195d147f09f2c7">
-						<parameter name="pos">-256 -121 0 0</parameter>
+						<parameter name="pos">5 34 564 776</parameter>
 						<parameter name="pivot">0.5 0.5</parameter>
 						<parameter name="anchor">0.5 0.5 0.5 0.5</parameter>
-						<parameter name="min_cell_size">512 60</parameter>
-						<parameter name="max_cell_size">512 60</parameter>
-						<parameter name="spacing">1</parameter>
+						<parameter name="min_cell_size">564 194</parameter>
+						<parameter name="max_cell_size">564 194</parameter>
+						<parameter name="spacing">0</parameter>
 					</property>
 				</properties>
 				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 				<node type="NodeDummy" id="1838471696" name="ButtonStart">
 					<properties>
 						<property parent="d007a1033e4bf5d44e6ec54f2ae558534547be19" guid="34b99e8110785737d28b3b2d1aeeae5c5c1a917a">
-							<parameter name="pos">0 0 512 60</parameter>
+							<parameter name="pos">0 0 564 194</parameter>
+							<parameter name="animate_color">0</parameter>
+							<parameter name="animate_texture">1</parameter>
+							<parameter name="animate_size">1</parameter>
+							<parameter name="hover_texture">guid://ff739bf02b84570160927394d106feae7ae602cc</parameter>
 							<parameter name="text">Start</parameter>
-							<parameter name="font_color">0 0 0 1</parameter>
-							<parameter name="font_offset">0 0</parameter>
+							<parameter name="font_percent">0.600000024</parameter>
+							<parameter name="font_color">0.517038047 0.483924448 0.671568632 1</parameter>
+							<parameter name="font_offset">0 10</parameter>
+							<parameter name="font_outline">0</parameter>
+							<parameter name="bg_material">98b8c63b3971f339a0e402507a3e73cc8385f0cb</parameter>
+							<parameter name="bg_texture_file">guid://3a8fe646a1f1c0393f4563ca16206384d8a97cc2</parameter>
 							<parameter name="bg_uv">0 0 1 1</parameter>
 							<parameter name="bg_color">1 1 1 1</parameter>
 						</property>
@@ -254,10 +262,17 @@
 				<node type="NodeDummy" id="1735419439" name="ButtonRestart">
 					<properties>
 						<property parent="d007a1033e4bf5d44e6ec54f2ae558534547be19" guid="d96d4338291fb9a6debf5cfc81becf1fb4a8f291">
-							<parameter name="pos">0 61 512 60</parameter>
+							<parameter name="pos">0 194 564 194</parameter>
+							<parameter name="animate_color">0</parameter>
+							<parameter name="animate_texture">1</parameter>
+							<parameter name="animate_size">1</parameter>
+							<parameter name="hover_texture">guid://ff739bf02b84570160927394d106feae7ae602cc</parameter>
 							<parameter name="text">Restart</parameter>
-							<parameter name="font_color">0 0 0 1</parameter>
-							<parameter name="font_offset">0 0</parameter>
+							<parameter name="font_percent">0.600000024</parameter>
+							<parameter name="font_color">0.517038047 0.483924448 0.671568632 1</parameter>
+							<parameter name="font_offset">0 10</parameter>
+							<parameter name="font_outline">0</parameter>
+							<parameter name="bg_texture_file">guid://3a8fe646a1f1c0393f4563ca16206384d8a97cc2</parameter>
 							<parameter name="bg_uv">0 0 1 1</parameter>
 							<parameter name="bg_color">1 1 1 1</parameter>
 						</property>
@@ -267,10 +282,17 @@
 				<node type="NodeDummy" id="1081204162" name="ButtonSettings">
 					<properties>
 						<property parent="d007a1033e4bf5d44e6ec54f2ae558534547be19" guid="fcd7dd9b26fdb0e1238d2227815a70f569d20abc">
-							<parameter name="pos">0 122 512 60</parameter>
+							<parameter name="pos">0 388 564 194</parameter>
+							<parameter name="animate_color">0</parameter>
+							<parameter name="animate_texture">1</parameter>
+							<parameter name="animate_size">1</parameter>
+							<parameter name="hover_texture">guid://ff739bf02b84570160927394d106feae7ae602cc</parameter>
 							<parameter name="text">Settings</parameter>
-							<parameter name="font_color">0 0 0 1</parameter>
-							<parameter name="font_offset">0 0</parameter>
+							<parameter name="font_percent">0.600000024</parameter>
+							<parameter name="font_color">0.517038047 0.483924448 0.671568632 1</parameter>
+							<parameter name="font_offset">0 10</parameter>
+							<parameter name="font_outline">0</parameter>
+							<parameter name="bg_texture_file">guid://3a8fe646a1f1c0393f4563ca16206384d8a97cc2</parameter>
 							<parameter name="bg_uv">0 0 1 1</parameter>
 							<parameter name="bg_color">1 1 1 1</parameter>
 						</property>
@@ -280,10 +302,17 @@
 				<node type="NodeDummy" id="142901817" name="ButtonQuit">
 					<properties>
 						<property parent="d007a1033e4bf5d44e6ec54f2ae558534547be19" guid="afdae32a2ce4173c7f805a8e6b2a9f5458bc66eb">
-							<parameter name="pos">0 183 512 60</parameter>
+							<parameter name="pos">0 582 564 194</parameter>
+							<parameter name="animate_color">0</parameter>
+							<parameter name="animate_texture">1</parameter>
+							<parameter name="animate_size">1</parameter>
+							<parameter name="hover_texture">guid://ff739bf02b84570160927394d106feae7ae602cc</parameter>
 							<parameter name="text">Quit</parameter>
-							<parameter name="font_color">0 0 0 1</parameter>
-							<parameter name="font_offset">0 0</parameter>
+							<parameter name="font_percent">0.600000024</parameter>
+							<parameter name="font_color">0.517038047 0.483924448 0.671568632 1</parameter>
+							<parameter name="font_offset">0 10</parameter>
+							<parameter name="font_outline">0</parameter>
+							<parameter name="bg_texture_file">guid://3a8fe646a1f1c0393f4563ca16206384d8a97cc2</parameter>
 							<parameter name="bg_uv">0 0 1 1</parameter>
 							<parameter name="bg_color">1 1 1 1</parameter>
 						</property>

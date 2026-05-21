@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>b1966faffd75087e6e85051b250381aa69ef1697</guid>
+	<type>texture</type>
+	<hash>720eabe78053e7e316abed9beaecdf5321105f02a536c91dbe20e1e42b191aaf</hash>
+	<runtimes>
+		<runtime id="b1966faffd75087e6e85051b250381aa69ef1697" name="Ico_heart1.png" link="0" type="6"/>
+		<runtime id="8dd9c6790bd86a3ef55451c509b6a348a44c56e1" name="Ico_heart1.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">auto</parameter>
+		<parameter type="string" name="image_format">DXT5</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">custom</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">1</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">auto</parameter>
+	</parameters>
+</asset>
