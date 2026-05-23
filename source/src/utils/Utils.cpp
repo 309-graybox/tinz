@@ -69,3 +69,16 @@ void removeConsoleCommand(const Unigine::String &name)
 {
 	Console::removeCommand(name);
 }
+
+void setMouseGrab(bool grab)
+{
+	Input::MOUSE_HANDLE mode = grab ? Input::MOUSE_HANDLE_GRAB : Input::MOUSE_HANDLE_USER;
+
+	Input::setMouseHandle(mode);
+	Input::setMouseGrab(grab);
+	Input::setMouseCursorHide(grab);
+
+	ControlsApp::setMouseHandle(mode);
+	ControlsApp::setMouseEnabled(grab);
+	ControlsApp::setEnabled(grab);
+}

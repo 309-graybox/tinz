@@ -53,8 +53,6 @@ void PlayerCameraManager::rebuildPipeline()
 
 void PlayerCameraManager::init()
 {
-	Input::setMouseHandle(Input::MOUSE_HANDLE_GRAB);
-
 	FLOGERR(target_node, "target_node should be Player\n");
 
 	// Something is broken

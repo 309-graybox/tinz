@@ -9,6 +9,7 @@
 #include <UnigineGame.h>
 #include <UnigineMaterials.h>
 #include <UnigineRender.h>
+#include <UnigineWindowManager.h>
 #include <UnigineWorld.h>
 #include <cstring>
 
@@ -27,16 +28,19 @@ void MainMenuWorld::init()
 
 	_player->addScriptableMaterial(_outline_material);
 
-	_mouse_handle = Input::getMouseHandle();
-	Input::setMouseHandle(Input::MOUSE_HANDLE_SOFT);
-	Input::setMouseGrab(false);
-	Input::setMouseCursorHide(false);
+	setMouseGrab(false);
 
 	_baseline_brightness = Render::getColorCorrectionBrightness();
 
 	ComponentSystem::get()->getComponentsInWorld<MenuInteractive>(_interactives);
 
-	_initial_mouse_pos = Input::getMousePosition();
+	if (auto window = WindowManager::getMainWindow())
+	{
+		_initial_mouse_pos = window->getClientPosition() + window->getClientSize() / 2;
+		Input::setMousePosition(_initial_mouse_pos);
+	}
+	else
+		_initial_mouse_pos = Input::getMousePosition();
 	_armed = false;
 
 	const char *music = backgroundMusic.get();
@@ -62,7 +66,6 @@ void MainMenuWorld::shutdown()
 		Render::setColorCorrectionBrightness(_baseline_brightness);
 
 	Input::clearMouseCursorCustom();
-	Input::setMouseHandle(_mouse_handle);
 }
 
 void MainMenuWorld::tick_idle()

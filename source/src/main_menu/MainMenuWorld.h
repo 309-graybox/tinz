@@ -71,8 +71,6 @@ private:
 
 	Unigine::Math::dvec3 _cursor_point = Unigine::Math::dvec3_zero;
 
-	Unigine::Input::MOUSE_HANDLE _mouse_handle = Unigine::Input::MOUSE_HANDLE_USER;
-
 	// Idle input arms only after `inputDelay` seconds AND the user moves the
 	// cursor — avoids spurious hover/click on the first frames after world load.
 	Unigine::Math::ivec2 _initial_mouse_pos = Unigine::Math::ivec2_zero;

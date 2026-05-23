@@ -43,3 +43,5 @@ UNIGINE_INLINE Unigine::Math::vec3 horizontal(const Unigine::Math::vec3 &v)
 
 void addConsoleCommand(const Unigine::String &name, const Unigine::PropertyParameterPtr &param);
 void removeConsoleCommand(const Unigine::String &name);
+
+void setMouseGrab(bool grab);

@@ -1,6 +1,7 @@
 #include "AppWorldLogic.h"
 #include "audio/SoundManager.h"
 #include "game/GameState.h"
+#include "utils/Utils.h"
 #include <UnigineConsole.h>
 #include <UnigineVisualizer.h>
 
@@ -24,6 +25,9 @@ int AppWorldLogic::init()
 	Visualizer::setEnabled(true);
 	audio::SoundManager::init();
 	game::GameState::init();
+
+	setMouseGrab(true);
+
 	return 1;
 }
 

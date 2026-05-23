@@ -253,7 +253,7 @@ void Canvas::post_update()
 					saved_mouse_handle = Input::getMouseHandle();
 				Input::setMouseHandle(Input::MOUSE_HANDLE_USER);
 			}
-			else
+			else if (Input::isMouseCursorHide())
 				Input::setMouseHandle(saved_mouse_handle);
 		}
 #endif

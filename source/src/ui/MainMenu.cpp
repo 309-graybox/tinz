@@ -1,10 +1,12 @@
 #include "MainMenu.h"
+#include "utils/Utils.h"
 #include "UnigineToolkit/ui/elements/Button.h"
 #include "UnigineToolkit/ui/elements/Slider.h"
 #include "audio/SoundManager.h"
 #include <UnigineConsole.h>
 #include <UnigineGame.h>
 #include <UnigineSounds.h>
+#include <UnigineWindowManager.h>
 
 #define GET_CANVAS(TO, FROM)             \
 	TO = getComponent<UI::Canvas>(FROM); \
@@ -54,16 +56,6 @@ void MainMenu::update()
 			toggle_main_menu();
 		}
 	}
-
-	if (!_mainMenuCanvas->isEnabled() && !_settingsMenuCanvas->isEnabled() && !Console::isActive())
-	{
-		Input::setMouseHandle(Input::MOUSE_HANDLE_GRAB);
-		Input::setMouseGrab(true);
-	} else
-	{
-		Input::setMouseHandle(Input::MOUSE_HANDLE_SOFT);
-		Input::setMouseGrab(false);
-	}
 }
 
 void MainMenu::init_main_menu()
@@ -96,8 +88,8 @@ void MainMenu::toggle_main_menu()
 		audio::SoundManager::setPaused(_prevSoundPaused);
 
 		_mainMenuCanvas->setEnabled(false);
-		Input::setMouseHandle(Input::MOUSE_HANDLE_GRAB);
-		Input::setMouseGrab(true);
+
+		setMouseGrab(true);
 
 		_mainMenuCanvas->setEnabled(false);
 	} else
@@ -108,8 +100,10 @@ void MainMenu::toggle_main_menu()
 		audio::SoundManager::setPaused(true);
 
 		_mainMenuCanvas->setEnabled(true);
-		Input::setMouseHandle(Input::MOUSE_HANDLE_SOFT);
-		Input::setMouseGrab(false);
+
+		setMouseGrab(false);
+		if (auto window = WindowManager::getMainWindow())
+			Input::setMousePosition(window->getClientPosition() + window->getClientSize() / 2);
 
 		_mainMenuCanvas->setEnabled(true);
 	}
