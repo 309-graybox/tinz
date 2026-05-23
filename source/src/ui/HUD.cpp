@@ -1,10 +1,14 @@
 #include "ui/HUD.h"
 #include "utils/Utils.h"
+#include "utils/ToolkitUtils.h"
 #include "components/Entity.h"
 #include "components/interaction/Inventory.h"
 #include "game/GameState.h"
 
-#include <cstring>
+#include "UnigineToolkit/ui/elements/Canvas.h"
+#include "UnigineToolkit/ui/elements/Table.h"
+#include "UnigineToolkit/ui/elements/Label.h"
+#include "UnigineToolkit/ui/elements/Sprite.h"
 
 REGISTER_COMPONENT(HUD)
 
@@ -19,38 +23,22 @@ void HUD::init()
 	auto ent = getComponent<Entity>(player);
 	FLOGERR(ent, "HUD can only work with entity\n");
 
-	auto gui = Gui::getCurrent();
-	FLOGERR(gui, "HUD can only work with gui\n");
+	GET_CANVAS(_canvas, node);
+	FLOGERR(_canvas, "Expeced canvas\n");
 
-	_hpBar = WidgetHBox::create(gui);
-	gui->addChild(_hpBar, Gui::ALIGN_OVERLAP | Gui::ALIGN_LEFT | Gui::ALIGN_TOP);
+	_labelSouls = GET_LABEL(_canvas, LabelSouls);
+	FLOGERR(_labelSouls, "Expected souls counter\n");
 
-	_hpImage = Image::create(hpIcon);
-	FLOGERR(_hpImage, "can't load hp image\n");
+	_spriteBowlSouls = GET_SPRITE(_canvas, SpriteBowlSouls);
+	FLOGERR(_spriteBowlSouls, "Expected bowl souls sprite\n");
+	_spriteBowlSouls->setEnabled(false);
 
-	bool r = _hpImage->resize(hpIconSize.get().x, hpIconSize.get().y);
-	FLOGERR(r, "can't resize hp image\n");
+	_labelBowlSouls = GET_LABEL(_canvas, LabelBowlSouls);
+	FLOGERR(_labelSouls, "Expected bowl souls counter\n");
+	_labelBowlSouls->setEnabled(false);
 
-	_soulsBar = WidgetHBox::create(gui);
-	gui->addChild(_soulsBar, Gui::ALIGN_OVERLAP | Gui::ALIGN_RIGHT | Gui::ALIGN_BOTTOM);
-
-	_soulsCount = WidgetLabel::create(gui, "0");
-	_soulsCount->setFont(font);
-	_soulsCount->setFontSize(soulIconFontSize);
-	_soulsBar->addChild(_soulsCount);
-
-	_soulImage = Image::create(soulIcon);
-	FLOGERR(_soulImage, "can't load souls image\n");
-
-	const auto soul_size = soulIconSize.get();
-	r = _soulImage->resize(soul_size.x, soul_size.y);
-	FLOGERR(r, "can't resize souls image\n");
-
-	auto soulsIcon = WidgetSprite::create(gui);
-	soulsIcon->setImage(_soulImage);
-	soulsIcon->setWidth(soul_size.x);
-	soulsIcon->setHeight(soul_size.y);
-	_soulsBar->addChild(soulsIcon);
+	_tableHp = GET_TABLE(_canvas, TableHP);
+	FLOGERR(_tableHp, "Expected table hp\n");
 
 	ent->eventDied().connect(this, &HUD::onPlayerDied);
 	ent->hpChanged().connect(this, &HUD::onHpChanged);
@@ -65,10 +53,6 @@ void HUD::init()
 
 void HUD::shutdown()
 {
-	_hpBar.deleteLater();
-	_soulsBar.deleteLater();
-	_hpImage.clear();
-	_soulImage.clear();
 }
 
 void HUD::onHpChanged(Entity *ent)
@@ -100,38 +84,57 @@ void HUD::onInventoryItemChanged(const char *type_id, int count)
 
 void HUD::onSoulsChanged(int n)
 {
-	_soulsCount->setText(String::itoa(max(n, 0)));
+	_labelSouls->setText(String::itoa(max(n, 0)));
+}
+
+void HUD::setBowlSouls(int deposited, int required)
+{
+	if (!_labelBowlSouls)
+		return;
+
+	const int shown = clamp(deposited, 0, max(required, 0));
+	_labelBowlSouls->setText(String::format("%d/%d", shown, max(required, 0)).get());
+	_spriteBowlSouls->setEnabled(true);
+	_labelBowlSouls->setEnabled(true);
+}
+
+void HUD::hideBowlSouls()
+{
+	_spriteBowlSouls->setEnabled(false);
+	_labelBowlSouls->setEnabled(false);
 }
 
 void HUD::show(bool show)
 {
-	_hpBar->setHidden(!show);
-	_soulsBar->setHidden(!show);
+	_canvas->setEnabled(show);
 }
 
 void HUD::updateHearts(int hearts)
 {
-	if (!_hpBar)
+	if (!_tableHp)
 		return;
 
-	const auto size = hpIconSize.get();
-	int current = _hpBar->getNumChildren();
+	int current = _tableHp->getNumChildren();
 
 	while (current < hearts)
 	{
-		auto heart = WidgetSprite::create(Gui::getCurrent());
-		heart->setImage(_hpImage);
-		heart->setWidth(size.x);
-		heart->setHeight(size.y);
-		_hpBar->addChild(heart);
+		NodeDummyPtr sprite_node = NodeDummy::create();
+		sprite_node->setParent(node);
+		sprite_node->setShowInEditorEnabled(false);
+		sprite_node->setSaveToWorldEnabled(false);
+
+		auto sprite = addComponent<UI::Sprite>(sprite_node);
+		sprite->initializeElement();
+		sprite->setTexture(hpSprite);
+		_tableHp->addChild(sprite);
 		++current;
 	}
 
 	while (current > hearts)
 	{
-		auto heart = _hpBar->getChild(current - 1);
-		_hpBar->removeChild(heart);
-		heart.deleteLater();
+		auto sprite = _tableHp->getChild(current - 1);
+		_tableHp->removeChild(sprite);
+		sprite->getNode().deleteLater();
 		--current;
 	}
 }

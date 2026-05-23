@@ -28,5 +28,4 @@
 	<parameter name="eye_time" type="float">5</parameter>
 	<parameter name="sound_final" type="file"/>
 	<parameter name="font" type="file"/>
-	<parameter name="fontSize" type="int">24</parameter>
 </property>

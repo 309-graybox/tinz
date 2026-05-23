@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <property version="2.21.0.0" name="HUD" manual="1" parent_name="node_base">
-	<parameter name="font" type="file"/>
-	<parameter name="hpIcon" type="file"/>
-	<parameter name="hpIconSize" type="ivec2">50 50</parameter>
+	<parameter name="hpSprite" type="file"/>
 	<parameter name="hpDivider" type="int">25</parameter>
-	<parameter name="soulIcon" type="file"/>
-	<parameter name="soulIconSize" type="ivec2">50 50</parameter>
-	<parameter name="soulIconFontSize" type="int">32</parameter>
 	<parameter name="soulsTypeId" type="string">soul</parameter>
 </property>

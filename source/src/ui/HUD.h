@@ -1,6 +1,14 @@
 #pragma once
 #include <UnigineComponentSystem.h>
 
+namespace UI
+{
+class Canvas;
+class Table;
+class Sprite;
+class Label;
+} // namespace UI
+
 class Entity;
 
 class HUD: public Unigine::ComponentBase
@@ -10,16 +18,14 @@ public:
 	COMPONENT_INIT(init)
 	COMPONENT_SHUTDOWN(shutdown)
 
-	PROP_PARAM(File, font)
-
-	PROP_PARAM(File, hpIcon)
-	PROP_PARAM(IVec2, hpIconSize, {50, 50})
+	PROP_PARAM(File, hpSprite)
 	PROP_PARAM(Int, hpDivider, 25)
 
-	PROP_PARAM(File, soulIcon)
-	PROP_PARAM(IVec2, soulIconSize, {50, 50})
-	PROP_PARAM(Int, soulIconFontSize, 32)
 	PROP_PARAM(String, soulsTypeId, "soul")
+
+public:
+	void setBowlSouls(int deposited, int required);
+	void hideBowlSouls();
 
 private:
 	void init();
@@ -35,10 +41,9 @@ private:
 	void show(bool show);
 
 private:
-	Unigine::WidgetHBoxPtr _hpBar;
-	Unigine::WidgetHBoxPtr _soulsBar;
-	Unigine::WidgetLabelPtr _soulsCount;
-
-	Unigine::ImagePtr _hpImage;
-	Unigine::ImagePtr _soulImage;
+	UI::Canvas *_canvas{nullptr};
+	UI::Table *_tableHp{nullptr};
+	UI::Label *_labelSouls{nullptr};
+	UI::Sprite *_spriteBowlSouls{nullptr};
+	UI::Label *_labelBowlSouls{nullptr};
 };

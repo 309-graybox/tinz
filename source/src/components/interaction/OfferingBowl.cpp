@@ -5,6 +5,7 @@
 #include "game/GameState.h"
 #include "utils/Utils.h"
 #include "components/Entity.h"
+#include "ui/HUD.h"
 
 #include <UnigineGame.h>
 #include <UnigineLog.h>
@@ -57,10 +58,6 @@ void OfferingBowl::init()
 	_drain_timer = 0.0f;
 	_draining = false;
 	_was_filled = isFilled();
-	_has_soul_requirement = getRequiredByType("soul") > 0;
-
-	ensureSoulProgressUi();
-	updateSoulProgressUi();
 
 	FLOGERR(playerEnd, "NO PLAYER_END\n");
 	FLOGERR(head, "no head");
@@ -86,7 +83,7 @@ void OfferingBowl::update()
 
 
 	updateFlights(dt);
-	updateSoulProgressUi();
+	updateBowlHud();
 
 	if (!_draining)
 		return;
@@ -131,8 +128,6 @@ void OfferingBowl::update()
 void OfferingBowl::shutdown()
 {
 	_label.deleteLater();
-
-	shutdownSoulProgressUi();
 }
 
 bool OfferingBowl::canInteract(const NodePtr &interactor) const
@@ -392,63 +387,19 @@ int OfferingBowl::getDepositedByType(const char *type_id) const
 	return total;
 }
 
-void OfferingBowl::ensureSoulProgressUi()
+void OfferingBowl::updateBowlHud()
 {
-	if (!_has_soul_requirement || _soul_progress_label)
-		return;
-
-	_gui = Gui::getCurrent();
-	if (!_gui)
-		return;
-
-	_soul_progress_label = WidgetLabel::create(_gui, "");
-	if (!_soul_progress_label)
-		return;
-
-	_soul_progress_label->setFont(font);
-	_soul_progress_label->setFontSize(fontSize);
-	_soul_progress_label->setHidden(true);
-	_gui->addChild(_soul_progress_label, Gui::ALIGN_CENTER | Gui::ALIGN_RIGHT);
-}
-
-void OfferingBowl::updateSoulProgressUi()
-{
-	if (!_has_soul_requirement)
-		return;
-
-	ensureSoulProgressUi();
-	if (!_soul_progress_label)
+	HUD *hud = getComponentInWorld<HUD>();
+	if (!hud)
 		return;
 
 	const int required = getRequiredByType("soul");
-	if (required <= 0)
-	{
-		_soul_progress_label->setHidden(true);
-		return;
-	}
+	const bool visible = required > 0 && (_draining || isInRange());
 
-	const bool visible = _draining || isInRange();
-	if (!visible)
-	{
-		_soul_progress_label->setHidden(true);
-		return;
-	}
-
-	const int deposited = clamp(getDepositedByType("soul"), 0, required);
-	String text = String::format("SOUL %d/%d", deposited, required);
-
-	_soul_progress_label->setText(text.get());
-	_soul_progress_label->setHidden(false);
-}
-
-void OfferingBowl::shutdownSoulProgressUi()
-{
-	if (_soul_progress_label)
-	{
-		_soul_progress_label.deleteLater();
-		_soul_progress_label.clear();
-	}
-	_gui.clear();
+	if (visible)
+		hud->setBowlSouls(getDepositedByType("soul"), required);
+	else
+		hud->hideBowlSouls();
 }
 
 void OfferingBowl::end(float dt)

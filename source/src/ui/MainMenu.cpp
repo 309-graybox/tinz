@@ -1,5 +1,6 @@
 #include "MainMenu.h"
 #include "utils/Utils.h"
+#include "utils/ToolkitUtils.h"
 #include "UnigineToolkit/ui/elements/Button.h"
 #include "UnigineToolkit/ui/elements/Slider.h"
 #include "audio/SoundManager.h"
@@ -7,30 +8,6 @@
 #include <UnigineGame.h>
 #include <UnigineSounds.h>
 #include <UnigineWindowManager.h>
-
-#define GET_CANVAS(TO, FROM)             \
-	TO = getComponent<UI::Canvas>(FROM); \
-	if (!TO)                             \
-		return;                          \
-	TO->setEnabled(false);
-
-#define GET_BUTTON(FROM, NAME, METHOD)                                 \
-	{                                                                  \
-		auto btn = dynamic_cast<UI::Button *>(FROM->findChild(#NAME)); \
-		if (btn)                                                       \
-		{                                                              \
-			btn->getEventButtonClicked().connect(*this, METHOD);       \
-		}                                                              \
-	}
-
-#define GET_SLIDER(FROM, NAME, METHOD)                                    \
-	{                                                                     \
-		auto slider = dynamic_cast<UI::Slider *>(FROM->findChild(#NAME)); \
-		if (slider)                                                       \
-		{                                                                 \
-			slider->getEventSliderChanged().connect(*this, METHOD);       \
-		}                                                                 \
-	}
 
 REGISTER_COMPONENT(MainMenu)
 
@@ -62,7 +39,7 @@ void MainMenu::init_main_menu()
 {
 	GET_CANVAS(_mainMenuCanvas, main_menu);
 	GET_BUTTON(_mainMenuCanvas, ButtonStart, [this] { toggle_main_menu(); });
-	GET_BUTTON(_mainMenuCanvas, ButtonRestart, [this] { World::reloadWorld(); });
+	GET_BUTTON(_mainMenuCanvas, ButtonRestart, [] { World::reloadWorld(); });
 	GET_BUTTON(_mainMenuCanvas, ButtonSettings, [this] {
 		_mainMenuCanvas->setEnabled(false);
 		_settingsMenuCanvas->setEnabled(true);

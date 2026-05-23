@@ -3,8 +3,6 @@
 #include "components/interaction/Interactable.h"
 #include <UnigineMaterial.h>
 #include <UnigineWidgets.h>
-#include <UnigineGui.h>
-#include <UnigineWidgets.h>
 
 class Inventory;
 
@@ -49,7 +47,6 @@ public:
 	PROP_PARAM(Float, eye_time, 5.0f);
 	PROP_PARAM(File, sound_final);
 	PROP_PARAM(File, font);
-	PROP_PARAM(Int, fontSize, 24)
 
 	bool canInteract(const Unigine::NodePtr &interactor) const override;
 	bool isFilled() const noexcept;
@@ -100,9 +97,8 @@ private:
 	int getTotalDeposited() const;
 	int getRequiredByType(const char *type_id) const;
 	int getDepositedByType(const char *type_id) const;
-	void ensureSoulProgressUi();
-	void updateSoulProgressUi();
-	void shutdownSoulProgressUi();
+
+	void updateBowlHud();
 
 	void end(float ifps);
 	void triggerEnd();
@@ -125,8 +121,4 @@ private:
 	int _emission = -1;
 	float _eye_timer = 0;
 	Unigine::Math::vec4 _color;
-	bool _has_soul_requirement = false;
-
-	Unigine::GuiPtr _gui;
-	Unigine::WidgetLabelPtr _soul_progress_label;
 };
