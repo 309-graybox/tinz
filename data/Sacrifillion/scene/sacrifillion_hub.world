@@ -854,7 +854,7 @@
 				<transform>-0.43301237 0.43559623 -0.78914917 0.0 -0.75000048 -0.6597392 0.047366858 0.0 -0.49999967 0.61237252 0.6123724 0.0 0.0106657477479 1.72244270532 -0.757865759039 1.0</transform>
 			</node>
 			<node type="ObjectWaterGlobal" id="1191127466" name="ObjectWaterGlobal">
-				<animation_old_time>1418.1991</animation_old_time>
+				<animation_old_time>58.9081192</animation_old_time>
 				<animation_time>0</animation_time>
 				<wave_layers num="0"/>
 				<distant_waves_texture_path>core/textures/water_global/distant_waves_n.texture</distant_waves_texture_path>
@@ -2127,10 +2127,6 @@
 				</property>
 			</properties>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -38.2021464318 39.1506249106 10.2749444433 1.0</transform>
-		</node>
-		<node type="NodeReference" id="54195185" name="dialog_billboard">
-			<reference>guid://f141bc8e6c999a5bc091b5843064bea01beba5d8</reference>
-			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -32.2043704542 29.6828168026 2.08420035925 1.0</transform>
 		</node>
 	</editor>
 	<console>

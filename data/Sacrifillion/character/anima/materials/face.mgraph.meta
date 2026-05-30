@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>1a95436155d0741c0e106cb4a79bdd21e8167d38</guid>
+	<type>material_graph</type>
+	<hash>bc6c4c912fb84b87a503a72acf2427899a5c3085575b989f1c81a16baf8678a4</hash>
+	<runtimes>
+		<runtime id="1a95436155d0741c0e106cb4a79bdd21e8167d38" name="face.mgraph" link="0"/>
+		<runtime id="994c4d7be67c43a283a871067037e1ceff68f32a" name="face" link="1" type="5"/>
+	</runtimes>
+</asset>

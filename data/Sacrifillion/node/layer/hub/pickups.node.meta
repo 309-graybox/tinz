@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>edd05cc6b31be4974e89b0f14f65cf09dee4e35c</guid>
+	<type>node</type>
+	<hash>484308852a38976d4161ff537911fa14f1f4e75ff9b7b26e644951da5b3571fe</hash>
+	<runtimes>
+		<runtime id="edd05cc6b31be4974e89b0f14f65cf09dee4e35c" name="pickups.node" link="0" type="3"/>
+	</runtimes>
+</asset>

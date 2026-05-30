@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
-	<guid>3696730c27aac5316657f5315776fb2936c926bc</guid>
-	<type>package</type>
-	<hash>d1d913655241b5fed21d9af812372cfa7457ddd10b36f3ed16e5017499e5e6e4</hash>
-	<runtimes>
-		<runtime id="3696730c27aac5316657f5315776fb2936c926bc" name="ice.upackage" link="0"/>
-	</runtimes>
-</asset>

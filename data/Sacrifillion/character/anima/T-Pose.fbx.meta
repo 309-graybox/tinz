@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>d6b953e3ea4671816d8b230cac0850ec41550527</guid>
+	<type>fbx</type>
+	<hash>71d8c1c1246fed3cc864292ec07d8d22a389792b1fa1cbebef76d1d6f50d1170</hash>
+	<runtimes>
+		<runtime id="d6b953e3ea4671816d8b230cac0850ec41550527" name="T-Pose.fbx" link="0"/>
+		<runtime id="799a15b99a17659cfbe7f72c698f0cbbef2eb030" name="T-Pose.node" link="1" type="3">
+			<parameters>
+				<parameter type="string" name="id">6aae9cd4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="3f68d00b83f7388258f119d4120aa2fa30b105cf" name="T-Pose.skeleton" link="2" type="8">
+			<parameters>
+				<parameter type="string" name="id">6aae9cd4</parameter>
+			</parameters>
+			<custom_parameters>
+				<parameter type="string" name="blend_masks">{&quot;bottom&quot;:{&quot;mixamorig:Hips&quot;:0.75,&quot;mixamorig:LeftUpLeg&quot;:1,&quot;mixamorig:LeftLeg&quot;:1,&quot;mixamorig:LeftFoot&quot;:1,&quot;mixamorig:LeftToeBase&quot;:1,&quot;mixamorig:LeftToe_End&quot;:1,&quot;mixamorig:RightUpLeg&quot;:1,&quot;mixamorig:RightLeg&quot;:1,&quot;mixamorig:RightFoot&quot;:1,&quot;mixamorig:RightToeBase&quot;:1,&quot;mixamorig:RightToe_End&quot;:1,&quot;mixamorig:Spine&quot;:0.5,&quot;mixamorig:Spine1&quot;:0.25,&quot;mixamorig:Spine2&quot;:0,&quot;mixamorig:LeftShoulder&quot;:0,&quot;mixamorig:LeftArm&quot;:0,&quot;mixamorig:LeftForeArm&quot;:0,&quot;mixamorig:LeftHand&quot;:0,&quot;mixamorig:Neck&quot;:0,&quot;mixamorig:Head&quot;:0,&quot;mixamorig:HeadTop_End&quot;:0,&quot;mixamorig:RightShoulder&quot;:0,&quot;mixamorig:RightArm&quot;:0,&quot;mixamorig:RightForeArm&quot;:0,&quot;mixamorig:RightHand&quot;:0},&quot;hands&quot;:{&quot;mixamorig:Hips&quot;:0,&quot;mixamorig:LeftUpLeg&quot;:0,&quot;mixamorig:LeftLeg&quot;:0,&quot;mixamorig:LeftFoot&quot;:0,&quot;mixamorig:LeftToeBase&quot;:0,&quot;mixamorig:LeftToe_End&quot;:0,&quot;mixamorig:RightUpLeg&quot;:0,&quot;mixamorig:RightLeg&quot;:0,&quot;mixamorig:RightFoot&quot;:0,&quot;mixamorig:RightToeBase&quot;:0,&quot;mixamorig:RightToe_End&quot;:0,&quot;mixamorig:Spine&quot;:0,&quot;mixamorig:Spine1&quot;:0,&quot;mixamorig:Spine2&quot;:0,&quot;mixamorig:LeftShoulder&quot;:0.5,&quot;mixamorig:LeftArm&quot;:1,&quot;mixamorig:LeftForeArm&quot;:1,&quot;mixamorig:LeftHand&quot;:1,&quot;mixamorig:Neck&quot;:0,&quot;mixamorig:Head&quot;:0,&quot;mixamorig:HeadTop_End&quot;:0,&quot;mixamorig:RightShoulder&quot;:0.5,&quot;mixamorig:RightArm&quot;:1,&quot;mixamorig:RightForeArm&quot;:1,&quot;mixamorig:RightHand&quot;:1},&quot;top&quot;:{&quot;mixamorig:Hips&quot;:0.25,&quot;mixamorig:LeftUpLeg&quot;:0,&quot;mixamorig:LeftLeg&quot;:0,&quot;mixamorig:LeftFoot&quot;:0,&quot;mixamorig:LeftToeBase&quot;:0,&quot;mixamorig:LeftToe_End&quot;:0,&quot;mixamorig:RightUpLeg&quot;:0,&quot;mixamorig:RightLeg&quot;:0,&quot;mixamorig:RightFoot&quot;:0,&quot;mixamorig:RightToeBase&quot;:0,&quot;mixamorig:RightToe_End&quot;:0,&quot;mixamorig:Spine&quot;:0.5,&quot;mixamorig:Spine1&quot;:0.75,&quot;mixamorig:Spine2&quot;:1,&quot;mixamorig:LeftShoulder&quot;:1,&quot;mixamorig:LeftArm&quot;:1,&quot;mixamorig:LeftForeArm&quot;:1,&quot;mixamorig:LeftHand&quot;:1,&quot;mixamorig:Neck&quot;:1,&quot;mixamorig:Head&quot;:1,&quot;mixamorig:HeadTop_End&quot;:1,&quot;mixamorig:RightShoulder&quot;:1,&quot;mixamorig:RightArm&quot;:1,&quot;mixamorig:RightForeArm&quot;:1,&quot;mixamorig:RightHand&quot;:1}}</parameter>
+				<parameter type="bool" name="retarget_enabled">0</parameter>
+				<parameter type="string" name="retarget_joints">{&quot;mixamorig:Hips&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftUpLeg&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftLeg&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftFoot&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftToeBase&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftToe_End&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightUpLeg&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightLeg&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightFoot&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightToeBase&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightToe_End&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:Spine&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:Spine1&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:Spine2&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftShoulder&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftArm&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftForeArm&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftHand&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:Neck&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:Head&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:HeadTop_End&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightShoulder&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightArm&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightForeArm&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightHand&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1}}</parameter>
+			</custom_parameters>
+		</runtime>
+		<runtime id="2dfd37932fef45e37670903e1f577b6ccef3b8e2" name="plane.mesh_skinned" link="2" type="9">
+			<parameters>
+				<parameter type="string" name="id">6aae9cd4</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="fcd5a63512ce296da80b3326df9f49f6e88b62d9" name="plane_mixamo.com.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">6aae9cd4</parameter>
+			</parameters>
+			<custom_parameters>
+				<parameter type="float" name="cur_time">1.83735693</parameter>
+			</custom_parameters>
+		</runtime>
+	</runtimes>
+	<parameters>
+		<parameter type="float" name="angular_deflection">0.699999988</parameter>
+		<parameter type="bool" name="asset_name_as_prefix">0</parameter>
+		<parameter type="string" name="base_material_mode">unique_material_graph</parameter>
+		<parameter type="float" name="bound_size">10000</parameter>
+		<parameter type="bool" name="create_root_motion_joint">0</parameter>
+		<parameter type="bool" name="create_transform_bones_for_joints">0</parameter>
+		<parameter type="float" name="fps">30</parameter>
+		<parameter type="string" name="front_axis">default</parameter>
+		<parameter type="bool" name="import_animations">1</parameter>
+		<parameter type="bool" name="import_bones_without_skin">1</parameter>
+		<parameter type="bool" name="import_cameras">1</parameter>
+		<parameter type="bool" name="import_lights">1</parameter>
+		<parameter type="bool" name="import_materials">1</parameter>
+		<parameter type="string" name="import_materials_mode">take_by_name_or_create</parameter>
+		<parameter type="bool" name="import_meshes">1</parameter>
+		<parameter type="bool" name="import_morph_targets">0</parameter>
+		<parameter type="string" name="import_skeleton_mode">create</parameter>
+		<parameter type="bool" name="import_skeletons">1</parameter>
+		<parameter type="bool" name="import_tangent_space">0</parameter>
+		<parameter type="bool" name="import_textures">1</parameter>
+		<parameter type="bool" name="invert_gchannel_for_normal_maps">0</parameter>
+		<parameter type="bool" name="joints_reorientation">0</parameter>
+		<parameter type="string" name="lightmaps">{}</parameter>
+		<parameter type="float" name="linear_deflection">0.200000003</parameter>
+		<parameter type="string" name="lods">_lod_0,-1e+09,3,0,0,100,0,0,60;_lod_1,3,9,0,0,60,0,1,60;_lod_2,9,1e+09,0,0,30,0,1,60</parameter>
+		<parameter type="string" name="lods_mode">off</parameter>
+		<parameter type="string" name="material_guids">body,c0dcae6725d9032f0f2d2b02fcfc73d40a75d366,face,994c4d7be67c43a283a871067037e1ceff68f32a</parameter>
+		<parameter type="bool" name="merge_similar_materials">0</parameter>
+		<parameter type="bool" name="merge_static_meshes">0</parameter>
+		<parameter type="bool" name="merge_surfaces_by_materials">0</parameter>
+		<parameter type="float" name="morph_targets_normals_angle">180</parameter>
+		<parameter type="string" name="morph_targets_normals_mode">import</parameter>
+		<parameter type="bool" name="need_repivot">0</parameter>
+		<parameter type="bool" name="need_split">0</parameter>
+		<parameter type="bool" name="need_triangulate">1</parameter>
+		<parameter type="int" name="num_lods">3</parameter>
+		<parameter type="string" name="prefix_materials"/>
+		<parameter type="string" name="resolution">256</parameter>
+		<parameter type="int" name="root_motion_forward_axis">0</parameter>
+		<parameter type="int" name="root_motion_position_component">0</parameter>
+		<parameter type="int" name="root_motion_rotation_component">0</parameter>
+		<parameter type="float" name="scale">1</parameter>
+		<parameter type="string" name="shared_skeleton_path"/>
+		<parameter type="bool" name="skip_empty_nodes">0</parameter>
+		<parameter type="int" name="smooth_animation_size">0</parameter>
+		<parameter type="string" name="target_root_motion_joint">mixamorig:Hips</parameter>
+		<parameter type="bool" name="unwrap_uv_ch_0">0</parameter>
+		<parameter type="bool" name="unwrap_uv_ch_1">0</parameter>
+		<parameter type="string" name="up_axis">default</parameter>
+		<parameter type="bool" name="use_instances">1</parameter>
+		<parameter type="int" name="uv_ch">1</parameter>
+		<parameter type="string" name="uv_unwrap_version">xatlas_v1</parameter>
+		<parameter type="bool" name="vertex_cache">1</parameter>
+		<parameter type="string" name="workflow">metalness</parameter>
+	</parameters>
+</asset>

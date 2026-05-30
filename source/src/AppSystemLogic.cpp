@@ -31,7 +31,7 @@ int AppSystemLogic::init()
 	// initialization for c++ component system
 	ComponentSystem::get()->initialize();
 
-	World::loadWorld("scenes/main_menu/main_menu");
+    World::loadWorld("Sacrifillion/scene/main_menu");
 
 	// Write here code to be called on engine initialization.
 	return 1;

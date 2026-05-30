@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <nodes version="2.21.0.0">
 	<node type="NodeDummy" id="632236973" name="group">
-		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+		<transform>1 4.33680868994e-19 -5.49247926735e-22 0.0 -7.96168965154e-20 1 -1.69406589451e-21 0.0 4.89690922631e-22 0 1 0.0 0 0 0 1.0</transform>
 		<node type="NodeReference" id="899684648" name="spike_trap_spike">
 			<reference>guid://be9bc7346b1aadc9b7f49c290a2cb75405122ba9</reference>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 -0.23 0 1.0</transform>

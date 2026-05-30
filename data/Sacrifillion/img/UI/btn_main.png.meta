@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>da0b09473cef4eb72741ab331e599473c8e5c12f</guid>
+	<type>texture</type>
+	<hash>3546c022e478201d818d1157b2ab3c4e9d24228bfcc9d14faaff96f0514714d5</hash>
+	<runtimes>
+		<runtime id="da0b09473cef4eb72741ab331e599473c8e5c12f" name="btn_main.png" link="0" type="6"/>
+		<runtime id="3a8fe646a1f1c0393f4563ca16206384d8a97cc2" name="btn_main.texture" link="1" type="6"/>
+	</runtimes>
+	<parameters>
+		<parameter type="int" name="blur_radius">1</parameter>
+		<parameter type="string" name="height">Original</parameter>
+		<parameter type="string" name="image_format">DXT5</parameter>
+		<parameter type="string" name="image_type">2d</parameter>
+		<parameter type="bool" name="invert_g">0</parameter>
+		<parameter type="bool" name="mipmap_sharp_only_lightness">1</parameter>
+		<parameter type="string" name="mipmap_type">box</parameter>
+		<parameter type="string" name="preset_name">custom</parameter>
+		<parameter type="float" name="sharpness_intensity">0.25</parameter>
+		<parameter type="float" name="sharpness_radius">1</parameter>
+		<parameter type="bool" name="srgb_correction">1</parameter>
+		<parameter type="bool" name="unchanged">0</parameter>
+		<parameter type="string" name="width">Original</parameter>
+	</parameters>
+</asset>

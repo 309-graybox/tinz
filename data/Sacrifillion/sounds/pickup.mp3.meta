@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>bd9afc99d73ed1f23a39b1c52ebd2630edf3b3f2</guid>
+	<type>sound</type>
+	<hash>a9b07a9d7b0b6e93351856ef9658aafa7f71d761ec985b1f1d71046a4449627a</hash>
+	<runtimes>
+		<runtime id="bd9afc99d73ed1f23a39b1c52ebd2630edf3b3f2" name="pickup.mp3" link="0" type="7"/>
+	</runtimes>
+</asset>

@@ -7,7 +7,7 @@
 				<parameter name="damage">25</parameter>
 			</property>
 		</properties>
-		<transform>1 1.27054942088e-21 0 0.0 6.77626357803e-21 1 -1.73472347598e-18 0.0 3.7154471574e-19 0 1 0.0 0 0 -4.4408920985e-16 1.0</transform>
+		<transform>1 4.33680868994e-19 -4.6983858793e-22 0.0 -7.96125408924e-20 1 -1.73641754187e-18 0.0 3.72337154767e-19 0 1 0.0 -7.1054273576e-15 0 -4.4408920985e-16 1.0</transform>
 		<node type="WorldTrigger" id="40120766" name="WorldTrigger_2">
 			<touch>1</touch>
 			<size>0.5 0.5 0.125</size>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
-	<guid>0beedbaeed8c0496f1cafd47ecc7f7ddcb6d0ca5</guid>
-	<type>node</type>
-	<hash>f9c895be0e09641e6ce402502a5574897bbaca69c7fbb21249f21b99648b2b0b</hash>
-	<runtimes>
-		<runtime id="0beedbaeed8c0496f1cafd47ecc7f7ddcb6d0ca5" name="spawner_skull_rg_15.node" link="0" type="3"/>
-	</runtimes>
-</asset>

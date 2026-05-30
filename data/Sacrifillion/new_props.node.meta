@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
-	<guid>d18c4d777fd1a4a284b416689f01f2af6c82b0be</guid>
-	<type>node</type>
-	<hash>56b842654e519aa81d745819bbce76f5ef29d4a0f3bb08468310598ca2cb41e6</hash>
-	<runtimes>
-		<runtime id="d18c4d777fd1a4a284b416689f01f2af6c82b0be" name="new_props.node" link="0" type="3"/>
-	</runtimes>
-</asset>
