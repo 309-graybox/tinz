@@ -104,7 +104,8 @@
 	<node type="NodeDummy" id="1242004859" name="dialogs">
 		<transform>1.00000011921 0 0 0.0 0 1 0 0.0 0 0 1.00000011921 0.0 3.60175751345 -41.8713166547 2.76540710525 1.0</transform>
 		<node type="ObjectMeshStatic" id="1305938039" immovable="1" trigger_interaction_enabled="1" name="Box">
-			<mesh_name>guid://2193d656cb7b844ef94d2b7741a4997cbf89e733</mesh_name>
+			<mesh_name>guid://93d0ed16a5dbd254f0898b94b035606b8e0a667a</mesh_name>
+			<surface name="sphere" cast_shadow="0" cast_world_shadow="0" cast_env_probe_shadow="0" shadow_mask="0x0" viewport_mask="0x0" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
 			<properties>
 				<property parent="b03fcb358b76833a3f94e3a23ab734e56026a016" guid="8d8b6c9ab5487404fd2c178beff9d3f8c5e3fa07">
 					<parameter name="range">10</parameter>
@@ -165,7 +166,7 @@
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 		</node>
 		<node type="NodeReference" id="1307924899" name="box">
-			<reference>guid://be7e7109443e45b74abafa84452ce2e0bdcd980d</reference>
+			<reference>guid://915485be8908566c46367a04ef37e082c60715f0</reference>
 			<properties>
 				<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="60e580ef1760ac456354788092d501593a99a0e4">
 					<parameter name="eventId">dialog_auf</parameter>
@@ -230,10 +231,10 @@
 					<parameter name="musicEvent">dialog_auf</parameter>
 				</property>
 			</properties>
-			<transform>-0.436664134264 -0.0013550769072 -0.89962404368 0.0 -0.000592029071412 0.999999344349 -0.00121890725848 0.0 0.899624824523 3.50526647708e-07 -0.436664577523 0.0 34.1354781431 54.8322685837 0.595494960618 1.0</transform>
+			<transform>-0.436664372682 -0.00135510100517 -0.899623984075 0.0 -0.000592133379541 0.999999344349 -0.00121888339334 0.0 0.899624705314 4.54601945421e-07 -0.436664756337 0.0 34.1354781431 54.8322685837 -0.700000052154 1.0</transform>
 		</node>
 		<node type="NodeReference" id="709459247" name="box_1">
-			<reference>guid://be7e7109443e45b74abafa84452ce2e0bdcd980d</reference>
+			<reference>guid://915485be8908566c46367a04ef37e082c60715f0</reference>
 			<properties>
 				<property parent="b03fcb358b76833a3f94e3a23ab734e56026a016" guid="ff151b55a84221e953c1845b1b51e36894044e1b">
 					<parameter name="range">10</parameter>
@@ -251,10 +252,10 @@
 					</parameter>
 				</property>
 			</properties>
-			<transform>0.999999463557 -0.00135451951064 -2.39083036075e-07 0.0 0.00135451939423 0.999999344349 -3.01580584051e-10 0.0 2.39083192355e-07 -2.22622007634e-11 1.00000041723 0.0 -42.806648018 22.696301672 0.519873301451 1.0</transform>
+			<transform>0.999999463557 -0.00135451951064 -2.39083036075e-07 0.0 0.00135451939423 0.999999344349 -3.01580584051e-10 0.0 2.39083192355e-07 -2.22622007634e-11 1.00000041723 0.0 -42.806648018 22.696301672 -0.600000044703 1.0</transform>
 		</node>
 		<node type="NodeReference" id="551397700" name="box_2">
-			<reference>guid://be7e7109443e45b74abafa84452ce2e0bdcd980d</reference>
+			<reference>guid://915485be8908566c46367a04ef37e082c60715f0</reference>
 			<properties>
 				<property parent="b03fcb358b76833a3f94e3a23ab734e56026a016" guid="be0bea4e29c7694e6b2582407c0c74631868acbe">
 					<parameter name="range">10</parameter>
@@ -275,10 +276,10 @@
 					</parameter>
 				</property>
 			</properties>
-			<transform>0.999998927115 -0.000169266902958 0.00169376817849 0.0 -5.90648123761e-05 0.990994155407 0.133906923765 0.0 -0.00170117954258 -0.133906826377 0.990992783963 0.0 -21.7289180831 -7.68637202528 -1.04649965803 1.0</transform>
+			<transform>0.999998927115 -0.000169266902958 0.00169376817849 0.0 -5.90648123761e-05 0.990994155407 0.133906923765 0.0 -0.00170117954258 -0.133906826377 0.990992783963 0.0 -17.4000002593 -4.70000007004 -1.04649965803 1.0</transform>
 		</node>
 		<node type="NodeReference" id="828804792" name="box_3">
-			<reference>guid://be7e7109443e45b74abafa84452ce2e0bdcd980d</reference>
+			<reference>guid://915485be8908566c46367a04ef37e082c60715f0</reference>
 			<properties>
 				<property parent="b03fcb358b76833a3f94e3a23ab734e56026a016" guid="37dd2e8f1b9d07c0d0226305baa9bcd20d216d05">
 					<parameter name="range">10</parameter>
@@ -292,10 +293,10 @@
 					</parameter>
 				</property>
 			</properties>
-			<transform>0.849561631679 -0.345113456249 0.398927026923 0.0 -0.369580954313 0.150175094604 0.916982884227 0.0 -0.376371771097 -0.926468670368 3.56286785381e-05 0.0 -10.8251388731 80.7762800269 1.06675654959 1.0</transform>
+			<transform>0.849561810493 -0.345113188028 0.398926877911 0.0 -0.369580417871 0.150175511837 0.916982586203 0.0 -0.376371651888 -0.926468551159 3.62992235558e-05 0.0 -9.70000014453 83.3000012413 -1.70000012666 1.0</transform>
 		</node>
 		<node type="NodeReference" id="243873793" name="box_4">
-			<reference>guid://be7e7109443e45b74abafa84452ce2e0bdcd980d</reference>
+			<reference>guid://915485be8908566c46367a04ef37e082c60715f0</reference>
 			<properties>
 				<property parent="b03fcb358b76833a3f94e3a23ab734e56026a016" guid="ba7b6430fe06c718109ca972ec6f3c91de0e7aa0">
 					<parameter name="range">10</parameter>
@@ -309,7 +310,7 @@
 					</parameter>
 				</property>
 			</properties>
-			<transform>0.895526766776 -0.199097692966 0.397985958933 0.0 -0.385575383901 0.099366158247 0.917310352165 0.0 -0.222180515528 -0.974928796291 0.0122178856115 0.0 20.4047687648 73.5962648552 0.605429948079 1.0</transform>
+			<transform>0.895526766776 -0.199097692966 0.397985958933 0.0 -0.385575383901 0.099366158247 0.917310352165 0.0 -0.222180485725 -0.974928677082 0.0122178846802 0.0 20.4047687648 75.4000011235 -2.20000016391 1.0</transform>
 		</node>
 	</node>
 	<node type="NodeDummy" id="1399529390" name="traps">

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>915485be8908566c46367a04ef37e082c60715f0</guid>
+	<type>node</type>
+	<hash>daa9029e2972222b91c50b1544a4c99112a7bee4838d71ad7a9ac8e14a35f6b0</hash>
+	<runtimes>
+		<runtime id="915485be8908566c46367a04ef37e082c60715f0" name="dialog_shape.node" link="0" type="3"/>
+	</runtimes>
+</asset>

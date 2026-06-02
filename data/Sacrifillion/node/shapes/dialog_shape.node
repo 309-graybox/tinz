@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node type="ObjectMeshStatic" id="575304872" immovable="1" trigger_interaction_enabled="1" name="dialog_shape">
+		<mesh_name>guid://93d0ed16a5dbd254f0898b94b035606b8e0a667a</mesh_name>
+		<surface name="sphere" cast_shadow="0" cast_world_shadow="0" cast_env_probe_shadow="0" shadow_mask="0x0" viewport_mask="0x0" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+		<transform>1 2.77111187328e-08 -3.57627432094e-05 0.0 2.77111151799e-08 0.999998807907 0.00154971890152 0.0 3.57627432095e-05 -0.00154971890152 0.999998807907 0.0 3.5527136788e-15 0 2.6645352591e-15 1.0</transform>
+	</node>
+</nodes>
