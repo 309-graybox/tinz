@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>a51df497ba8c7cf93d9254bffa45cfd96068c8c9</guid>
+	<type>property</type>
+	<hash>010103bdf60aac76d32ea80d758a0b4cc0c1f9b959cfa1c8324f74e82400c31a</hash>
+	<runtimes>
+		<runtime id="a51df497ba8c7cf93d9254bffa45cfd96068c8c9" name="SliderStateColors" link="0" type="4"/>
+	</runtimes>
+</asset>

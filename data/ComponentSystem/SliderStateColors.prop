@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="SliderStateColors" manual="1" parent_name="node_base">
+	<parameter name="animate_bg" type="toggle" title="Animate Background" group="Background">1</parameter>
+	<parameter name="bg_hover" type="color" title="BG Hover" group="Background" animate_bg="1">1.000000 0.960000 0.880000 1.000000</parameter>
+	<parameter name="bg_press" type="color" title="BG Press" group="Background" animate_bg="1">0.500000 0.500000 0.500000 1.000000</parameter>
+	<parameter name="bg_focus" type="color" title="BG Focus" group="Background" animate_bg="1">1.000000 0.960000 0.880000 1.000000</parameter>
+	<parameter name="bg_inactive" type="color" title="BG Inactive" group="Background" animate_bg="1">0.800000 0.800000 0.800000 0.800000</parameter>
+	<parameter name="animate_fg" type="toggle" title="Animate Foreground" group="Foreground">0</parameter>
+	<parameter name="fg_hover" type="color" title="FG Hover" group="Foreground" animate_fg="1">1.000000 0.960000 0.880000 1.000000</parameter>
+	<parameter name="fg_press" type="color" title="FG Press" group="Foreground" animate_fg="1">0.500000 0.500000 0.500000 1.000000</parameter>
+	<parameter name="fg_focus" type="color" title="FG Focus" group="Foreground" animate_fg="1">1.000000 0.960000 0.880000 1.000000</parameter>
+	<parameter name="fg_inactive" type="color" title="FG Inactive" group="Foreground" animate_fg="1">0.800000 0.800000 0.800000 0.800000</parameter>
+</property>
