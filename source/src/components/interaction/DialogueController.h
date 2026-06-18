@@ -60,4 +60,5 @@ private:
 	Unigine::String _music_layer;
 	bool _restore_music_on_end = false;
 	bool _music_started = false;
+	bool _hidden_by_pause = false;
 };

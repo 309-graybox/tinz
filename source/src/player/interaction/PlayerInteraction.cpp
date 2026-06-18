@@ -88,6 +88,15 @@ void PlayerInteraction::shutdown()
 
 void PlayerInteraction::update()
 {
+	// Paused (e.g. pause menu open): hide the prompt and don't run interactions.
+	// Drop any queued interact so it doesn't fire on resume.
+	if (Game::getScale() <= 0.0f)
+	{
+		hideInteractPrompt();
+		_interact_requested = false;
+		return;
+	}
+
 	if (DebugTuning::get()->show_interaction_trigger)
 	{
 		_trigger->renderVisualizer();

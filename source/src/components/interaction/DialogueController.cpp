@@ -37,6 +37,21 @@ void DialogueController::update()
 	if (!_active_source)
 		return;
 
+	// While the game is paused (e.g. the pause menu is open) hide the line and
+	// freeze the timer. Pause == game time stopped (Game::setScale(0)); the menu
+	// also pauses dialogue audio globally via SoundManager::setPaused.
+	const bool paused = Game::getScale() <= 0.0f;
+	if (paused != _hidden_by_pause)
+	{
+		_hidden_by_pause = paused;
+		if (paused)
+			hide();
+		else
+			showCurrentLine();
+	}
+	if (paused)
+		return;
+
 	ensureLayout();
 
 	const float duration = _lines[_line_index].duration;
@@ -141,6 +156,7 @@ void DialogueController::finish()
 	_music_layer.clear();
 	_restore_music_on_end = false;
 	_music_started = false;
+	_hidden_by_pause = false;
 	hide();
 }
 
