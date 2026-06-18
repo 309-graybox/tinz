@@ -2,7 +2,7 @@
 <asset version="2.21.0.0">
 	<guid>84eb28aadff027bed07355214eab559bbc7de260</guid>
 	<type>animation_graph</type>
-	<hash>cf7a26295db53cf300f7510ebd1bf7b7c3761755e3b8a2c5bd2ac8316cd08fe0</hash>
+	<hash>5a1f97c86929942cdad322a3f0ce2e894318e60ce2aebf4ea3a1f047f3b6c18e</hash>
 	<runtimes>
 		<runtime id="84eb28aadff027bed07355214eab559bbc7de260" name="animation_graph.agraph" link="0"/>
 		<runtime id="2cdb9290a9943d1da578c7f541b52ade513121e3" name="animation_graph" link="1" type="10"/>

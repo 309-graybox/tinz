@@ -1,8 +1,8 @@
 {
 	"version": "2.21.0.0",
 	"file_guid": "eab12692ed290879e3b4fce93a3ca649d5738e08",
-	"camera_offset_x": 176.661865234375,
-	"camera_offset_y": 280.89483642578125,
+	"camera_offset_x": 864.65032958984375,
+	"camera_offset_y": 169.1097412109375,
 	"nodes": {
 		"Output Pose": {
 			"guid": "00000000000000000000000000000000b00002b2",
@@ -19,9 +19,9 @@
 		},
 		"State Machine": {
 			"guid": "a30ee3882e0244f8bf910dcd058401c7e31d98fb",
-			"x": 270,
-			"y": 217,
-			"collapsed": true,
+			"x": -116,
+			"y": 35,
+			"collapsed": false,
 			"props": {
 				"prop": {
 					"widget": "String",
@@ -38,8 +38,8 @@
 			"sm_name": "base",
 			"state_graph": {
 				"file_guid": "7e10a158a2c14433d20e0037d64646168066ba1e",
-				"camera_offset_x": 97.661865234375,
-				"camera_offset_y": 494.89483642578125,
+				"camera_offset_x": 293.661865234375,
+				"camera_offset_y": 449.89483642578125,
 				"nodes": {
 					"State": {
 						"guid": "49fbdbfa68db5f78689685c7dbc59022dcbc5ae5",
@@ -707,7 +707,7 @@
 														},
 														"Bool": {
 															"guid": "99cb42a60c080eeeecec9bafe321250b369d7e69",
-															"x": -356,
+															"x": -357,
 															"y": 53,
 															"collapsed": true,
 															"outputs": {
@@ -746,7 +746,7 @@
 														},
 														"Float": {
 															"guid": "d7d0605e35db731c31721d99724f5f14788dde60",
-															"x": -810,
+															"x": -811,
 															"y": -160,
 															"collapsed": true,
 															"outputs": {
@@ -1952,8 +1952,8 @@
 					},
 					"Condition": {
 						"guid": "cb8913e244ec025b1555104f9e60d53e0eae172d",
-						"x": 229,
-						"y": -103,
+						"x": 264,
+						"y": -85,
 						"collapsed": false,
 						"props": {
 							"prop": {
@@ -2039,8 +2039,8 @@
 					},
 					"Condition": {
 						"guid": "2db0490630acccc87a672e4d3faa1fcb4c7a385c",
-						"x": 359,
-						"y": -301,
+						"x": 394,
+						"y": -283,
 						"collapsed": false,
 						"props": {
 							"prop": {
@@ -2126,8 +2126,8 @@
 					},
 					"Condition": {
 						"guid": "0fb5270c3434bc1b46cf06e18c0f3aacc1163e6f",
-						"x": 326,
-						"y": -325,
+						"x": 361,
+						"y": -307,
 						"collapsed": false,
 						"props": {
 							"prop": {
@@ -2250,8 +2250,8 @@
 					},
 					"Condition": {
 						"guid": "3ca19550c3164e46b6d264cfdc2a25c558a58b56",
-						"x": 267,
-						"y": -93,
+						"x": 302,
+						"y": -75,
 						"collapsed": false,
 						"props": {
 							"prop": {
@@ -2618,8 +2618,8 @@
 					},
 					"Condition": {
 						"guid": "a62269a693708ba8ee7d9ca36e2f5280e280c0e1",
-						"x": 606,
-						"y": -259,
+						"x": 641,
+						"y": -241,
 						"collapsed": false,
 						"props": {
 							"prop": {
@@ -2777,8 +2777,8 @@
 					},
 					"Condition": {
 						"guid": "89d95fe807e435566bd2db87ea0b3a36e3ef222e",
-						"x": 568,
-						"y": -124,
+						"x": 603,
+						"y": -106,
 						"collapsed": false,
 						"props": {
 							"prop": {
@@ -3084,8 +3084,8 @@
 					},
 					"Condition": {
 						"guid": "f45f31760a756f96f56b69b3a026aa0a688d3171",
-						"x": 663,
-						"y": -339,
+						"x": 698,
+						"y": -321,
 						"collapsed": false,
 						"props": {
 							"prop": {
@@ -3363,6 +3363,169 @@
 					"name": "Transition"
 				}
 			]
+		},
+		"Blend Poses": {
+			"guid": "cee7bc156f3c6238c0d5271a27f343f1e5ab9c63",
+			"x": 176,
+			"y": 157,
+			"collapsed": false,
+			"props": {
+				"prop": {
+					"widget": "Combobox",
+					"x": 3
+				}
+			},
+			"inputs": {
+				"input": {
+					"label": "A",
+					"type": "AnimPose",
+					"id": 0
+				},
+				"input": {
+					"label": "B",
+					"type": "AnimPose",
+					"id": 1
+				},
+				"input": {
+					"label": "Weight",
+					"type": "Float",
+					"id": 2
+				}
+			},
+			"outputs": {
+				"output": {
+					"label": "Pose",
+					"type": "AnimPose",
+					"id": 0
+				}
+			},
+			"blend_mask": "top"
+		},
+		"Animation Player": {
+			"guid": "156746e1776886e500ab0400957f9a688c205666",
+			"x": -314,
+			"y": 191,
+			"collapsed": false,
+			"props": {
+				"prop": {
+					"widget": "String",
+					"value": ""
+				},
+				"prop": {
+					"widget": "Combobox",
+					"x": 0
+				},
+				"prop": {
+					"widget": "Combobox",
+					"x": 0
+				}
+			},
+			"inputs": {
+				"input": {
+					"label": "Anim",
+					"type": "Animation",
+					"id": 0
+				},
+				"input": {
+					"label": "Loop",
+					"type": "Bool",
+					"id": 1
+				},
+				"input": {
+					"label": "Speed",
+					"type": "Float",
+					"id": 2
+				}
+			},
+			"outputs": {
+				"output": {
+					"label": "Pose",
+					"type": "AnimPose",
+					"id": 0
+				}
+			}
+		},
+		"Bool": {
+			"guid": "2109b1b9499816bce78d357804970c805a3be51e",
+			"x": -97,
+			"y": 359,
+			"collapsed": true,
+			"outputs": {
+				"output": {
+					"label": "",
+					"type": "Bool",
+					"id": 0
+				}
+			},
+			"param_guid": "9ae3a933133d11f18144368aeb851e5e5c19b420"
+		},
+		"Branch": {
+			"guid": "b2c97077f82ba0c09ecd3c24f0a7ce9dcc99f675",
+			"x": 30,
+			"y": 334,
+			"collapsed": false,
+			"inputs": {
+				"input": {
+					"label": "Condition",
+					"type": "Bool",
+					"id": 0
+				},
+				"input": {
+					"label": "True",
+					"type": "Float",
+					"id": 1
+				},
+				"input": {
+					"label": "False",
+					"type": "Float",
+					"id": 2
+				}
+			},
+			"outputs": {
+				"output": {
+					"label": "",
+					"type": "Float",
+					"id": 0
+				}
+			}
+		},
+		"Float": {
+			"guid": "bb115bb2f3493eca6118604d8f88badd0392fa7e",
+			"x": -118,
+			"y": 409,
+			"collapsed": true,
+			"props": {
+				"prop": {
+					"widget": "Float",
+					"x": 0
+				}
+			},
+			"outputs": {
+				"output": {
+					"label": "",
+					"type": "Float",
+					"id": 0
+				}
+			}
+		},
+		"Float": {
+			"guid": "6cec2c34eb975bb220fa8c47029d5e8992ecce60",
+			"x": -118,
+			"y": 384,
+			"collapsed": true,
+			"props": {
+				"prop": {
+					"widget": "Float",
+					"x": 1
+				}
+			},
+			"outputs": {
+				"output": {
+					"label": "",
+					"type": "Float",
+					"id": 0
+				}
+			}
 		}
 	},
 	"inputs": {
@@ -3371,6 +3534,68 @@
 			"anchor_id": 0,
 			"show_label": true,
 			"show_inline_widget": false
+		},
+		"input": {
+			"node_guid": "cee7bc156f3c6238c0d5271a27f343f1e5ab9c63",
+			"anchor_id": 0,
+			"show_label": true,
+			"show_inline_widget": false
+		},
+		"input": {
+			"node_guid": "cee7bc156f3c6238c0d5271a27f343f1e5ab9c63",
+			"anchor_id": 1,
+			"show_label": true,
+			"show_inline_widget": false
+		},
+		"input": {
+			"node_guid": "cee7bc156f3c6238c0d5271a27f343f1e5ab9c63",
+			"anchor_id": 2,
+			"show_label": true,
+			"show_inline_widget": true,
+			"float_value": 1
+		},
+		"input": {
+			"node_guid": "156746e1776886e500ab0400957f9a688c205666",
+			"anchor_id": 0,
+			"show_label": false,
+			"show_inline_widget": true,
+			"anim_guid": "d537b42935e5c51321287abe801a5fc97509c2d7",
+			"string_value": "Carrying"
+		},
+		"input": {
+			"node_guid": "156746e1776886e500ab0400957f9a688c205666",
+			"anchor_id": 1,
+			"show_label": true,
+			"show_inline_widget": true,
+			"bool_value": 1
+		},
+		"input": {
+			"node_guid": "156746e1776886e500ab0400957f9a688c205666",
+			"anchor_id": 2,
+			"show_label": true,
+			"show_inline_widget": true,
+			"float_value": 1
+		},
+		"input": {
+			"node_guid": "b2c97077f82ba0c09ecd3c24f0a7ce9dcc99f675",
+			"anchor_id": 0,
+			"show_label": true,
+			"show_inline_widget": false,
+			"bool_value": 0
+		},
+		"input": {
+			"node_guid": "b2c97077f82ba0c09ecd3c24f0a7ce9dcc99f675",
+			"anchor_id": 1,
+			"show_label": true,
+			"show_inline_widget": false,
+			"float_value": 0
+		},
+		"input": {
+			"node_guid": "b2c97077f82ba0c09ecd3c24f0a7ce9dcc99f675",
+			"anchor_id": 2,
+			"show_label": true,
+			"show_inline_widget": false,
+			"float_value": 0
 		}
 	},
 	"anchors": {
@@ -3382,7 +3607,67 @@
 			"output_index": 0,
 			"output_id": 0,
 			"output_label": "Pose",
+			"output_node": "cee7bc156f3c6238c0d5271a27f343f1e5ab9c63"
+		},
+		"anchor": {
+			"input_index": 0,
+			"input_id": 0,
+			"input_label": "A",
+			"input_node": "cee7bc156f3c6238c0d5271a27f343f1e5ab9c63",
+			"output_index": 0,
+			"output_id": 0,
+			"output_label": "Pose",
 			"output_node": "a30ee3882e0244f8bf910dcd058401c7e31d98fb"
+		},
+		"anchor": {
+			"input_index": 1,
+			"input_id": 1,
+			"input_label": "B",
+			"input_node": "cee7bc156f3c6238c0d5271a27f343f1e5ab9c63",
+			"output_index": 0,
+			"output_id": 0,
+			"output_label": "Pose",
+			"output_node": "156746e1776886e500ab0400957f9a688c205666"
+		},
+		"anchor": {
+			"input_index": 2,
+			"input_id": 2,
+			"input_label": "Weight",
+			"input_node": "cee7bc156f3c6238c0d5271a27f343f1e5ab9c63",
+			"output_index": 0,
+			"output_id": 0,
+			"output_label": "",
+			"output_node": "b2c97077f82ba0c09ecd3c24f0a7ce9dcc99f675"
+		},
+		"anchor": {
+			"input_index": 0,
+			"input_id": 0,
+			"input_label": "Condition",
+			"input_node": "b2c97077f82ba0c09ecd3c24f0a7ce9dcc99f675",
+			"output_index": 0,
+			"output_id": 0,
+			"output_label": "",
+			"output_node": "2109b1b9499816bce78d357804970c805a3be51e"
+		},
+		"anchor": {
+			"input_index": 1,
+			"input_id": 1,
+			"input_label": "True",
+			"input_node": "b2c97077f82ba0c09ecd3c24f0a7ce9dcc99f675",
+			"output_index": 0,
+			"output_id": 0,
+			"output_label": "",
+			"output_node": "6cec2c34eb975bb220fa8c47029d5e8992ecce60"
+		},
+		"anchor": {
+			"input_index": 2,
+			"input_id": 2,
+			"input_label": "False",
+			"input_node": "b2c97077f82ba0c09ecd3c24f0a7ce9dcc99f675",
+			"output_index": 0,
+			"output_id": 0,
+			"output_label": "",
+			"output_node": "bb115bb2f3493eca6118604d8f88badd0392fa7e"
 		}
 	},
 	"graph_type": "final",
@@ -3427,19 +3712,25 @@
 			"type": "Bool",
 			"guid": "e3418d54b721028be9fb3b753e464c33acc46edf",
 			"bool_value": 0
+		},
+		"param": {
+			"name": "carrying",
+			"type": "Bool",
+			"guid": "9ae3a933133d11f18144368aeb851e5e5c19b420",
+			"bool_value": 0
 		}
 	},
 	"preview_overrides": {
 		"override": {
 			"guid": "a6253386b4664bdb605d9203eda03447183a3341",
 			"type": "Bool",
-			"active": true,
+			"active": false,
 			"bool_value": 0
 		},
 		"override": {
 			"guid": "f73eb5f849ed916e47e07857c88ebeb83e3655be",
 			"type": "Bool",
-			"active": true,
+			"active": false,
 			"bool_value": 0
 		},
 		"override": {
@@ -3456,6 +3747,12 @@
 		},
 		"override": {
 			"guid": "e3418d54b721028be9fb3b753e464c33acc46edf",
+			"type": "Bool",
+			"active": false,
+			"bool_value": 0
+		},
+		"override": {
+			"guid": "9ae3a933133d11f18144368aeb851e5e5c19b420",
 			"type": "Bool",
 			"active": false,
 			"bool_value": 0
