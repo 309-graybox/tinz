@@ -3,4 +3,6 @@
 	<parameter name="main_menu" type="node">0</parameter>
 	<parameter name="settings_menu" type="node">0</parameter>
 	<parameter name="sound_music_volume_channel" type="mask">1</parameter>
+	<parameter name="cursor_texture" type="file" title="Cursor"/>
+	<parameter name="cursor_hotspot" type="vec2" title="Cursor Hotspot (px)">0.000000 0.000000</parameter>
 </property>

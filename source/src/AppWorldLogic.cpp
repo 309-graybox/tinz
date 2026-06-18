@@ -21,8 +21,7 @@ AppWorldLogic::~AppWorldLogic()
 int AppWorldLogic::init()
 {
 	// Write here code to be called on world initialization: initialize resources for your world scene during the world start.
-	Console::setOnscreen(true);
-	Visualizer::setEnabled(true);
+	
 	audio::SoundManager::init();
 	game::GameState::init();
 
@@ -66,7 +65,6 @@ int AppWorldLogic::shutdown()
 	// Write here code to be called on world shutdown: delete resources that were created during world script execution to avoid memory leaks.
 	game::GameState::shutdown();
 	audio::SoundManager::shutdown();
-	Visualizer::setEnabled(false);
-	Console::setOnscreen(false);
+
 	return 1;
 }

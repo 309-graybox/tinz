@@ -239,6 +239,47 @@ void Canvas::post_update()
 				nav_dir.x = 1;
 			bool nav_enter = Input::isKeyDown(Input::KEY_ENTER);
 
+			// gamepad navigation (first connected pad): D-pad and left stick drive
+			// the selection, button A confirms. Edge-triggered like the arrows so a
+			// single push steps the focus once instead of scrolling every frame.
+			if (Input::getNumGamePads() > 0)
+			{
+				if (InputGamePadPtr gamepad = Input::getGamePad(0))
+				{
+					if (gamepad->isButtonDown(Input::GAMEPAD_BUTTON_DPAD_UP))
+						nav_dir.y = 1;
+					else if (gamepad->isButtonDown(Input::GAMEPAD_BUTTON_DPAD_DOWN))
+						nav_dir.y = -1;
+					if (gamepad->isButtonDown(Input::GAMEPAD_BUTTON_DPAD_LEFT))
+						nav_dir.x = -1;
+					else if (gamepad->isButtonDown(Input::GAMEPAD_BUTTON_DPAD_RIGHT))
+						nav_dir.x = 1;
+
+					// left stick treated as digital, with a deadzone; only emit on
+					// the transition into a direction (push from center)
+					const float dead_zone = 0.5f;
+					vec2 stick = gamepad->getAxesLeft();
+					ivec2 stick_dir;
+					if (stick.y > dead_zone)
+						stick_dir.y = 1;
+					else if (stick.y < -dead_zone)
+						stick_dir.y = -1;
+					if (stick.x < -dead_zone)
+						stick_dir.x = -1;
+					else if (stick.x > dead_zone)
+						stick_dir.x = 1;
+
+					if (nav_dir.x == 0 && stick_dir.x != 0 && stick_dir.x != prev_gamepad_stick_dir.x)
+						nav_dir.x = stick_dir.x;
+					if (nav_dir.y == 0 && stick_dir.y != 0 && stick_dir.y != prev_gamepad_stick_dir.y)
+						nav_dir.y = stick_dir.y;
+					prev_gamepad_stick_dir = stick_dir;
+
+					if (gamepad->isButtonDown(Input::GAMEPAD_BUTTON_A))
+						nav_enter = true;
+				}
+			}
+
 			updateManual(mouse_pos, mouse_button, mouse_scroll, nav_dir, nav_enter,
 				Engine::get()->getIFps());
 		}

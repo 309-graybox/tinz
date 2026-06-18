@@ -236,6 +236,10 @@ private:
 	bool nav_enter = false;
 	Unigine::Math::ivec2 nav_dir;
 
+	// gamepad navigation: previous digital direction of the left stick, so the
+	// stick steps the selection once per push (edge-triggered, like the arrows)
+	Unigine::Math::ivec2 prev_gamepad_stick_dir;
+
 	// interaction and navigation
 	UIPtr<Element> hovered_element;
 	UIPtr<ElementFocusable> focused_element;
