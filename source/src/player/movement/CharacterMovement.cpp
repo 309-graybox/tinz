@@ -112,10 +112,12 @@ void CharacterMovement::update()
 		_states[_current_state]->onEnter(_ctx);
 	}
 
+	_ctx.speed *= _action_speed_scale;
+
 	if (_ctx.is_grounded)
 		_grounded_flag.stamp();
 
-	if (_states[_current_state]->canJump() && (_ctx.is_grounded || _grounded_flag.isFresh(coyoteTime)) && _ctx.input.consumeJump(jumpBufferTime))
+	if (!_jump_blocked && _states[_current_state]->canJump() && (_ctx.is_grounded || _grounded_flag.isFresh(coyoteTime)) && _ctx.input.consumeJump(jumpBufferTime))
 	{
 		_grounded_flag.clear();
 		_ctx.vertical_impulse = jumpPower / ifps;

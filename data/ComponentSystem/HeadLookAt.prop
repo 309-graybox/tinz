@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="HeadLookAt" manual="1" parent_name="node_base">
+	<parameter name="target" type="node" tooltip="Target the character turns its head toward">0</parameter>
+	<parameter name="skeletonPose" type="node" tooltip="NodeSkeletonPose node (defaults to this node if empty)">0</parameter>
+	<parameter name="headJoint" type="string" tooltip="Head joint name in the skeleton">head</parameter>
+	<parameter name="lookAxis" type="switch" tooltip="Head-LOCAL axis that points out of the face (the gaze). Enable debugDraw and pick the colored arrow that points forward out of the head: X=red, Y=green, Z=blue" items="-Z,Z,-Y,Y,-X,X">3</parameter>
+	<parameter name="weight" type="float" tooltip="Head look-at strength [0..1]">1</parameter>
+	<parameter name="maxYaw" type="float" tooltip="Max horizontal turn (left/right) from the rest gaze, degrees">70</parameter>
+	<parameter name="maxPitch" type="float" tooltip="Max vertical turn (up/down) from the rest gaze, degrees">45</parameter>
+	<parameter name="turnSpeed" type="float" tooltip="Exponential smoothing speed of the turn (1/s)">12</parameter>
+</property>

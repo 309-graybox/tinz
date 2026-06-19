@@ -4,13 +4,6 @@
 #include <UnigineNodes.h>
 #include <UnigineObjects.h>
 
-// Turns the character's head toward a target by post-processing the head joint of
-// a NodeSkeletonPose (the new anim system has no Look-At node).
-//
-// IMPORTANT: NodeSkeletonPose::get/setJointTransform are in BONE-LOCAL space
-// (relative to the parent joint), NOT object/world space. So we walk the parent
-// chain to get the head in object space, aim it in world space (clamped, roll-
-// free), then convert the result back to bone-local before writing it.
 class HeadLookAt: public Unigine::ComponentBase
 {
 public:
@@ -21,7 +14,7 @@ public:
 	PROPERTY_ND(Node, target, Tooltip("Target the character turns its head toward"))
 	PROPERTY_ND(Node, skeletonPose, Tooltip("NodeSkeletonPose node (defaults to this node if empty)"))
 	PROPERTY(String, headJoint, "head", Tooltip("Head joint name in the skeleton"))
-	PROPERTY_SWITCH(lookAxis, 1, "-Z,Z,-Y,Y,-X,X", Tooltip("Head-LOCAL axis that points out of the face (the gaze). Enable debugDraw and pick the colored arrow that points forward out of the head: X=red, Y=green, Z=blue"))
+	PROPERTY_SWITCH(lookAxis, 3, "-Z,Z,-Y,Y,-X,X", Tooltip("Head-LOCAL axis that points out of the face (the gaze). Enable debugDraw and pick the colored arrow that points forward out of the head: X=red, Y=green, Z=blue"))
 	PROPERTY(Float, weight, 1.0f, Tooltip("Head look-at strength [0..1]"))
 	PROPERTY(Float, maxYaw, 70.0f, Tooltip("Max horizontal turn (left/right) from the rest gaze, degrees"))
 	PROPERTY(Float, maxPitch, 45.0f, Tooltip("Max vertical turn (up/down) from the rest gaze, degrees"))
@@ -31,9 +24,6 @@ private:
 	void init();
 	void postUpdate();
 	void resolve();
-
-private:
-	Unigine::Math::mat4 jointObjectTransform(int joint) const;
 
 private:
 	Unigine::NodeSkeletonPosePtr _pose;

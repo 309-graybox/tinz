@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>02ffc4cc8aedb82ef33dc324e06e608510fd2db3</guid>
+	<type>property</type>
+	<hash>e9f421d47813dabbaa39f21d6824c69d6d7eb52343a204c5840f7ae350437e94</hash>
+	<runtimes>
+		<runtime id="02ffc4cc8aedb82ef33dc324e06e608510fd2db3" name="HeadLookAt" link="0" type="4"/>
+	</runtimes>
+</asset>

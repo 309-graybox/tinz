@@ -95,6 +95,15 @@ public:
 	// Read by PlayerStomp to gate its hitbox by "currently falling fast enough".
 	float getVerticalSpeed() const noexcept { return _vertical_speed; }
 
+	const Unigine::AnimScriptPtr &getAnimScript() const noexcept { return _anim; }
+
+	bool isGrounded() const noexcept { return _is_grounded; }
+	MovementStateIndex getMovementState() const noexcept { return _current_state; }
+	Unigine::NodePtr getBodyNode() const { return body.get(); }
+
+	void setActionSpeedScale(float scale) noexcept { _action_speed_scale = scale; }
+	void setJumpBlocked(bool blocked) noexcept { _jump_blocked = blocked; }
+
 private:
 	MovementContext _ctx;
 	IdleState _idle_state;
@@ -126,6 +135,8 @@ private:
 	float _gravity_amount = 0.0f;
 
 	float _vertical_speed = 0.0f;
+	float _action_speed_scale = 1.0f;
+	bool _jump_blocked = false;
 	Unigine::Math::Vec3 _damage_knockback_velocity = Unigine::Math::Vec3_zero;
 	float _damage_knockback_timer = 0.0f;
 	float _damage_knockback_duration = 0.0f;

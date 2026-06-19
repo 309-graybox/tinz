@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="FootIK" manual="1" parent_name="node_base">
+	<parameter name="jointPrefix" type="string" tooltip="Prefix prepended to the joint names below (Mixamo rigs use &quot;mixamorig:&quot;)">mixamorig:</parameter>
+	<parameter name="hipsJoint" type="string" tooltip="Pelvis/root joint name (without prefix) — dropped to let the legs reach uneven ground">Hips</parameter>
+	<parameter name="leftUpLeg" type="string" tooltip="Left thigh joint name (without prefix)">LeftUpLeg</parameter>
+	<parameter name="leftKnee" type="string" tooltip="Left knee joint name">LeftLeg</parameter>
+	<parameter name="leftFoot" type="string" tooltip="Left ankle joint name">LeftFoot</parameter>
+	<parameter name="rightUpLeg" type="string" tooltip="Right thigh joint name">RightUpLeg</parameter>
+	<parameter name="rightKnee" type="string" tooltip="Right knee joint name">RightLeg</parameter>
+	<parameter name="rightFoot" type="string" tooltip="Right ankle joint name">RightFoot</parameter>
+	<parameter name="forwardAxis" type="switch" tooltip="Skinned-mesh axis the character faces. The knees bend toward it; if the knees bend backward, flip this" items="-Z,Z,-Y,Y,-X,X">3</parameter>
+	<parameter name="movement" type="node" tooltip="Node with CharacterMovement (defaults to a search on this node / its parents)">0</parameter>
+	<parameter name="groundMask" type="mask" tooltip="Intersection mask for the ground rays">-1</parameter>
+	<parameter name="traceUp" type="float" tooltip="How far above the ankle the ground ray starts, m">0.5</parameter>
+	<parameter name="traceDown" type="float" tooltip="How far below the ankle the ground ray reaches, m">0.6</parameter>
+	<parameter name="footHeight" type="float" tooltip="Ankle height above the sole; foot target = ground hit + this, m">0.12</parameter>
+	<parameter name="maxPelvisDrop" type="float" tooltip="Max the pelvis may drop so a low foot can reach the ground, m">0.5</parameter>
+	<parameter name="activeInIdle" type="toggle" tooltip="Run foot IK while the character is idle">1</parameter>
+	<parameter name="activeInMove" type="toggle" tooltip="Run foot IK while the character is moving">0</parameter>
+	<parameter name="activeInSlide" type="toggle" tooltip="Run foot IK while the character is sliding">0</parameter>
+	<parameter name="weight" type="float" tooltip="Foot IK strength [0..1]">1</parameter>
+	<parameter name="turnSpeed" type="float" tooltip="Exponential smoothing speed of the IK (1/s). Also how fast the IK fades in/out on state changes">15</parameter>
+</property>

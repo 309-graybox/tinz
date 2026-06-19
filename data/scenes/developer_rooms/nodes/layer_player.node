@@ -130,6 +130,10 @@
 				<parameter name="headJoint">mixamorig:Head</parameter>
 				<parameter name="lookAxis">1</parameter>
 			</property>
+			<property parent="44e7ad88c0195c1c84ff7225139fea89fe2b2051" guid="f89048478d0db617599a64ab1daf2979cb0844be">
+				<parameter name="forwardAxis">3</parameter>
+				<parameter name="movement">1892598520</parameter>
+			</property>
 		</properties>
 		<transform>0.99999988079 0 0 0.0 0 1.00000011921 0 0.0 0 0 1 0.0 2.20537159379e-05 1.26659885247e-06 0.115399816922 1.0</transform>
 		<skeleton>3f68d00b83f7388258f119d4120aa2fa30b105cf</skeleton>

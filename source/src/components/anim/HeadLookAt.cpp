@@ -1,31 +1,14 @@
 #include "components/anim/HeadLookAt.h"
 
+#include "utils/SkeletonIK.h"
+
 #include <UnigineGame.h>
 #include <UnigineSkeleton.h>
-#include <UnigineVisualizer.h>
 
 REGISTER_COMPONENT(HeadLookAt)
 
 using namespace Unigine;
 using namespace Unigine::Math;
-
-namespace
-{
-
-vec3 axisVec(int s)
-{
-	switch (s)
-	{
-		case 0: return vec3_down;
-		case 1: return vec3_up;
-		case 2: return vec3_back;
-		case 3: return vec3_forward;
-		case 4: return vec3_left;
-		default: return vec3_right;
-	}
-}
-
-} // namespace
 
 void HeadLookAt::init()
 {
@@ -47,20 +30,9 @@ void HeadLookAt::resolve()
 	_skinned = _pose->getControlledObject(0);
 	COMPONENT_REQUIRE(_skinned, "HeadLookAt: NodeSkeletonPose has no controlled skinned mesh\n", return);
 
-	quat head_obj_rot = jointObjectTransform(_joint).getRotate();
+	quat head_obj_rot = SkeletonIK::jointObjectTransform(_pose, _joint).getRotate();
 	_rest_obj_rot = head_obj_rot;
 	_smoothed = head_obj_rot;
-}
-
-mat4 HeadLookAt::jointObjectTransform(int joint) const
-{
-	mat4 m = _pose->getJointTransform(joint);
-	auto skeleton = _pose->getSkeleton();
-	for (int p = skeleton->getJointParent(joint); p != -1; p = skeleton->getJointParent(p))
-	{
-		m = _pose->getJointTransform(p) * m;
-	}
-	return m;
 }
 
 void HeadLookAt::postUpdate()
@@ -73,7 +45,7 @@ void HeadLookAt::postUpdate()
 		return;
 
 	mat4 head_local = _pose->getJointTransform(_joint);
-	mat4 head_obj = jointObjectTransform(_joint);
+	mat4 head_obj = SkeletonIK::jointObjectTransform(_pose, _joint);
 	quat head_obj_rot = head_obj.getRotate();
 	quat parent_obj_rot = head_obj_rot * inverse(head_local.getRotate());
 
@@ -82,7 +54,7 @@ void HeadLookAt::postUpdate()
 	Mat4 head_world = sw * Mat4(head_obj);
 	Vec3 head_pos = head_world.getColumn3(3);
 
-	vec3 gaze_local = axisVec(lookAxis);
+	vec3 gaze_local = SkeletonIK::axisVec(lookAxis);
 	vec3 rest_gaze_w = normalize((sw_rot * _rest_obj_rot) * gaze_local);
 
 	vec3 to_tgt = vec3(target->getWorldPosition() - head_pos);
