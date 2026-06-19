@@ -45,10 +45,7 @@ void PlayerCameraManager::rebuildPipeline()
 	for (auto &mod : mods)
 	{
 		mod->runtimeReset(_state, _ctx);
-		names.append(mod->getClassName());
 	}
-
-	Log::error("PlayerCameraManager pipeline: %s\n", String::join(names, " -> ").get());
 }
 
 void PlayerCameraManager::init()

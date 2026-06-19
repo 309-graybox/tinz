@@ -125,6 +125,12 @@
 		</node>
 	</node>
 	<node type="NodeSkeletonPose" id="1234864251" name="NodeSkeletonPose">
+		<properties>
+			<property parent="02ffc4cc8aedb82ef33dc324e06e608510fd2db3" guid="c75d121e9236a3abcb98b6094804af1ac4bc87aa">
+				<parameter name="headJoint">mixamorig:Head</parameter>
+				<parameter name="lookAxis">1</parameter>
+			</property>
+		</properties>
 		<transform>0.99999988079 0 0 0.0 0 1.00000011921 0 0.0 0 0 1 0.0 2.20537159379e-05 1.26659885247e-06 0.115399816922 1.0</transform>
 		<skeleton>3f68d00b83f7388258f119d4120aa2fa30b105cf</skeleton>
 		<mode>0</mode>
