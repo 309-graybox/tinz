@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="Lifetime" manual="1" parent_name="node_base">
+	<parameter name="use_time" type="toggle">1</parameter>
+	<parameter name="time" type="float" use_time="1">1</parameter>
+	<parameter name="frames" type="int" use_time="0">1</parameter>
+</property>

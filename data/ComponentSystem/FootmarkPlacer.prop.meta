@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>718c081c4e3610b0ba56996c9c1a91eea1b1e4c5</guid>
+	<type>property</type>
+	<hash>5b4e9a75c543ff8b1d3019476d90267c4cf5d3fd54db14d8f16e2b703437d3f8</hash>
+	<runtimes>
+		<runtime id="718c081c4e3610b0ba56996c9c1a91eea1b1e4c5" name="FootmarkPlacer" link="0" type="4"/>
+	</runtimes>
+</asset>

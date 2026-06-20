@@ -176,6 +176,11 @@ inline ParamOpts makeOpts(Tags... tags)
 		::makeOpts(__VA_ARGS__).group,   \
 		_TAKE_PROPERTY_ARGS(__VA_ARGS__)
 
+// NOTE: a DEFAULT containing commas must be wrapped in parentheses, i.e. a
+// constructor call — brace-init lists do NOT shield commas from the
+// preprocessor (only `()` does), so `{0,0,0.1}` gets split into separate args.
+//   WRONG: PROPERTY(Vec3, offset, {0.0f, 0.0f, 0.1f})
+//   RIGHT: PROPERTY(Vec3, offset, Unigine::Math::vec3(0.0f, 0.0f, 0.1f))
 #define PROPERTY(TYPE, NAME, DEFAULT, ...) Unigine::ComponentVariable##TYPE NAME{this, #NAME, DEFAULT, UNWRAP_PROPERTY_OPTIONS(__VA_ARGS__)};
 #define PROPERTY_ND(TYPE, NAME, ...) Unigine::ComponentVariable##TYPE NAME{this, #NAME, UNWRAP_PROPERTY_OPTIONS(__VA_ARGS__)};
 #define PROPERTY_SWITCH(NAME, DEFAULT, ITEMS, ...) Unigine::ComponentVariableSwitch NAME{this, #NAME, DEFAULT, ITEMS, UNWRAP_PROPERTY_OPTIONS(__VA_ARGS__)};

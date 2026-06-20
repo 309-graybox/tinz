@@ -200,6 +200,26 @@
 				</properties>
 				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 1 1.0</transform>
 			</node>
+			<node type="WorldTransformJoint" id="1023938049" name="left_foot">
+				<joint>mixamorig:LeftFoot</joint>
+				<properties>
+					<property parent="718c081c4e3610b0ba56996c9c1a91eea1b1e4c5" guid="fa9b2d74f73d8f2e6aa3570dcc9f239b6e8fc9eb">
+						<parameter name="node_to_place">guid://906f205ada80615aa3a135abdc5a5557dc1693d9</parameter>
+						<parameter name="ground_mask">0x1</parameter>
+					</property>
+				</properties>
+				<transform>0.994584560394 0.102425515652 0.0175828393549 0.0 -0.0665384978056 0.757579982281 -0.649341344833 0.0 -0.0798295661807 0.644655942917 0.760292887688 0.0 -0.200131714344 0.176771730185 0.175897091627 1.0</transform>
+			</node>
+			<node type="WorldTransformJoint" id="1770327916" name="right_foot">
+				<joint>mixamorig:RightFoot</joint>
+				<properties>
+					<property parent="718c081c4e3610b0ba56996c9c1a91eea1b1e4c5" guid="44de41984c9217eae4bf12b390ebd027dc22d64e">
+						<parameter name="node_to_place">guid://906f205ada80615aa3a135abdc5a5557dc1693d9</parameter>
+						<parameter name="ground_mask">0x1</parameter>
+					</property>
+				</properties>
+				<transform>0.951036512852 -0.308540761471 -0.01819094643 0.0 0.210395589471 0.689384877682 -0.693167567253 0.0 0.226411163807 0.655401110649 0.720546126366 0.0 0.00597018748522 -0.0723916739225 0.173470169306 1.0</transform>
+			</node>
 		</node>
 	</node>
 	<node type="NodeDummy" id="1815370636" name="ui">

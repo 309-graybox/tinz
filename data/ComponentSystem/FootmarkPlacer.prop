@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="FootmarkPlacer" manual="1" parent_name="node_base">
+	<parameter name="node_to_place" type="file"/>
+	<parameter name="ground_mask" type="mask">-1</parameter>
+	<parameter name="height" type="float">0.2</parameter>
+	<parameter name="offset" type="vec3">0.000000 0.000000 0.100000</parameter>
+	<parameter name="max_count" type="int">10</parameter>
+</property>

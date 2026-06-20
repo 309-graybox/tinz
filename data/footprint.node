@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodes version="2.21.0.0">
+	<node material="fa8190d55333a12b84ebf7a323b1ffe5816b94a9" type="DecalMesh" id="407015344" name="footprint">
+		<mesh_name>guid://21352b285bdf1fb596d9f0036130060caa945d5e</mesh_name>
+		<radius>1</radius>
+		<cast_baked_global_illumination>1</cast_baked_global_illumination>
+		<min_visible_distance>0</min_visible_distance>
+		<max_visible_distance>100</max_visible_distance>
+		<properties>
+			<property enabled="0" parent="8d33f31baff91c27917dcfcd7222cc394cee13fd" guid="cca978f29c9f0435f86a48e5b5c850311b26e2d8">
+				<parameter name="use_time">1</parameter>
+				<parameter name="time">10</parameter>
+			</property>
+		</properties>
+		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+	</node>
+</nodes>
