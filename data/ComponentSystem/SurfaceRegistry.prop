@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="SurfaceRegistry" manual="1" parent_name="node_base">
+	<struct name="SurfaceConfig">
+		<parameter name="id" type="string">default</parameter>
+		<parameter name="footmark_node" type="file"/>
+		<parameter name="offset" type="vec3">0.000000 0.000000 0.010000</parameter>
+		<parameter name="step_sound" type="string"/>
+	</struct>
+	<parameter name="surfaces" type="array" array_type="SurfaceConfig"/>
+</property>

@@ -184,6 +184,9 @@ inline ParamOpts makeOpts(Tags... tags)
 #define PROPERTY(TYPE, NAME, DEFAULT, ...) Unigine::ComponentVariable##TYPE NAME{this, #NAME, DEFAULT, UNWRAP_PROPERTY_OPTIONS(__VA_ARGS__)};
 #define PROPERTY_ND(TYPE, NAME, ...) Unigine::ComponentVariable##TYPE NAME{this, #NAME, UNWRAP_PROPERTY_OPTIONS(__VA_ARGS__)};
 #define PROPERTY_SWITCH(NAME, DEFAULT, ITEMS, ...) Unigine::ComponentVariableSwitch NAME{this, #NAME, DEFAULT, ITEMS, UNWRAP_PROPERTY_OPTIONS(__VA_ARGS__)};
-#define PROPERTY_STRUCT(TYPE, NAME, DEFAULT, ...) Unigine::ComponentVariableStruct<TYPE> NAME{this, #NAME, DEFAULT, UNWRAP_PROPERTY_OPTIONS(__VA_ARGS__)};
-#define PROPERTY_ARRAY(TYPE, NAME, ...) Unigine::ComponentVariableArray<Unigine::ComponentVariable##TYPE> NAME{this, #NAME, DEFAULT, UNWRAP_PROPERTY_OPTIONS(__VA_ARGS__)};
-#define PROPERTY_ARRAY_STRUCT(TYPE, NAME, ...) Unigine::ComponentVariableArray<Unigine::ComponentVariableStruct<TYPE>> NAME{this, #NAME, DEFAULT, UNWRAP_PROPERTY_OPTIONS(__VA_ARGS__)};
+// Structs/arrays take no default value; their ctor takes the struct/element
+// type name. Arg order mirrors the built-in PROP_STRUCT / PROP_ARRAY macros:
+//   struct: (component, type_name, name, ...)   array: (component, name, type_name, ...)
+#define PROPERTY_STRUCT(TYPE, NAME, ...) Unigine::ComponentVariableStruct<TYPE> NAME{this, #TYPE, #NAME, UNWRAP_PROPERTY_OPTIONS(__VA_ARGS__)};
+#define PROPERTY_ARRAY(TYPE, NAME, ...) Unigine::ComponentVariableArray<Unigine::ComponentVariable##TYPE> NAME{this, #NAME, #TYPE, UNWRAP_PROPERTY_OPTIONS(__VA_ARGS__)};
+#define PROPERTY_ARRAY_STRUCT(TYPE, NAME, ...) Unigine::ComponentVariableArray<Unigine::ComponentVariableStruct<TYPE>> NAME{this, #NAME, #TYPE, UNWRAP_PROPERTY_OPTIONS(__VA_ARGS__)};

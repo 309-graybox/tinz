@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>21fd383c5bbb1545f933c7f7447606521269bc80</guid>
+	<type>property</type>
+	<hash>cce87d87b0cdc2d195cfa2570dd6a2bfad0986c071ebccde35445bbd42a25236</hash>
+	<runtimes>
+		<runtime id="21fd383c5bbb1545f933c7f7447606521269bc80" name="SurfaceRegistry" link="0" type="4"/>
+	</runtimes>
+</asset>

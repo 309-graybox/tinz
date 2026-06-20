@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.21.0.0" name="FootstepFX" manual="1" parent_name="node_base">
+	<parameter name="ground_mask" type="mask">-1</parameter>
+	<parameter name="height" type="float" tooltip="Длина луча вниз для поиска земли (м)">0.2</parameter>
+	<parameter name="max_count" type="int" tooltip="Сколько следов держать живыми (кольцевой буфер); 0 = без следов">10</parameter>
+	<parameter name="default_surface" type="string" tooltip="Ключ поверхности, если под ногой нет компонента Surface">default</parameter>
+</property>

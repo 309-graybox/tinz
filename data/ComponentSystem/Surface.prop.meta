@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>cda05ca6d84a03a6a21fb0309b7a2d8bab187f63</guid>
+	<type>property</type>
+	<hash>542d07d5a87011c1be4b147a46bf55d445cbd786ce822b4ec6ae1ac54e388e7a</hash>
+	<runtimes>
+		<runtime id="cda05ca6d84a03a6a21fb0309b7a2d8bab187f63" name="Surface" link="0" type="4"/>
+	</runtimes>
+</asset>

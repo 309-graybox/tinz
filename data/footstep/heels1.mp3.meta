@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>05b4c26fa761c299922ab8c242c5198560dfb3f3</guid>
+	<type>sound</type>
+	<hash>626b079e4fd6c6bdaa786baca3f91442a898907d355bab83d6da92225f15d8f1</hash>
+	<runtimes>
+		<runtime id="05b4c26fa761c299922ab8c242c5198560dfb3f3" name="heels1.mp3" link="0" type="7"/>
+	</runtimes>
+</asset>

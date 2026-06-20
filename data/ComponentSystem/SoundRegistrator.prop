@@ -2,6 +2,7 @@
 <property version="2.21.0.0" name="SoundRegistrator" manual="1" parent_name="node_base">
 	<parameter name="eventId" type="string" title="Event ID" tooltip="Identifier used by SoundManager::play*" group="Event"/>
 	<parameter name="sample" type="file" title="Sample" tooltip="Audio file" group="Event" filter=".wav|.oga|.mp3"/>
+	<parameter name="samples" type="array" title="Samples" tooltip="Опциональные варианты one-shot; при проигрывании выбирается случайный (перекрывает Sample)" group="Event" filter=".wav|.oga|.mp3" array_type="file"/>
 	<parameter name="loopEventId" type="string" title="Loop Event ID" tooltip="Optional SoundManager event id looped after Sample intro" group="Event"/>
 	<parameter name="settings" type="node" title="Settings" tooltip="SoundSettings node; falls back to self, then defaults" group="Event">0</parameter>
 	<parameter name="music" type="toggle" title="music is looped and starts to play on init" group="Event">0</parameter>

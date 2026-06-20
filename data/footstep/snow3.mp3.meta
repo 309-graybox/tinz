@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>28fda9f7dadbda169b5071aab8abcedb8bba91fb</guid>
+	<type>sound</type>
+	<hash>cde6eea3655ce4aefeaa435622b7efbdf54ff6bbcea6d5eb7f9096e2314019d0</hash>
+	<runtimes>
+		<runtime id="28fda9f7dadbda169b5071aab8abcedb8bba91fb" name="snow3.mp3" link="0" type="7"/>
+	</runtimes>
+</asset>

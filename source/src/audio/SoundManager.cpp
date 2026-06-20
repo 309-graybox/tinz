@@ -102,6 +102,19 @@ float resolvePitch(const SoundEvent &e)
 	return Game::getRandomFloat(e.pitch_min, e.pitch_max);
 }
 
+// One-shot sample selection: random variant from samples[] if present,
+// otherwise the single sample. Returns "" when nothing is set.
+const char *pickSample(const SoundEvent &e)
+{
+	const int n = e.samples.size();
+	if (n <= 0)
+		return e.sample.get();
+	int i = (int)Game::getRandomFloat(0.0f, (float)n);
+	if (i >= n)
+		i = n - 1; // guard inclusive-max RNG
+	return e.samples[i].get();
+}
+
 // Returns true if the event is allowed to play and stamps the time.
 // Returns false if still within min_interval since the last play.
 bool consumeCooldown(const char *id_or_path, float min_interval)
@@ -502,7 +515,8 @@ void SoundManager::play2D(const char *id_or_path)
 
 	SoundEvent fallback;
 	const SoundEvent *e = resolveEvent(id_or_path, fallback);
-	if (!e || e->sample.empty())
+	const char *sample = e ? pickSample(*e) : nullptr;
+	if (!sample || !*sample)
 		return;
 
 	const float gain = resolveGain(*e);
@@ -512,11 +526,11 @@ void SoundManager::play2D(const char *id_or_path)
 	if (!consumeCooldown(id_or_path, e->min_interval))
 		return;
 
-	AmbientSourcePtr as = AmbientSource::create(e->sample.get(), e->stream ? 1 : 0);
+	AmbientSourcePtr as = AmbientSource::create(sample, e->stream ? 1 : 0);
 	if (!as)
 	{
 		Log::warning("SoundManager::play2D: failed to create AmbientSource for \"%s\"\n",
-			e->sample.get());
+			sample);
 		return;
 	}
 	as->setGain(gain);
@@ -534,7 +548,8 @@ void SoundManager::play3DAt(const char *id_or_path, const Math::Vec3 &world_pos)
 
 	SoundEvent fallback;
 	const SoundEvent *e = resolveEvent(id_or_path, fallback);
-	if (!e || e->sample.empty())
+	const char *sample = e ? pickSample(*e) : nullptr;
+	if (!sample || !*sample)
 	{
 		Log::error("Can not resolve sound event '%s'\n", id_or_path);
 		return;
@@ -547,13 +562,13 @@ void SoundManager::play3DAt(const char *id_or_path, const Math::Vec3 &world_pos)
 	if (!consumeCooldown(id_or_path, e->min_interval))
 		return;
 
-	Log::message("Play \"%s\"\n", e->sample.get());
+	Log::message("Play \"%s\"\n", sample);
 
-	SoundSourcePtr src = SoundSource::create(e->sample.get(), e->stream ? 1 : 0);
+	SoundSourcePtr src = SoundSource::create(sample, e->stream ? 1 : 0);
 	if (!src)
 	{
 		Log::warning("SoundManager::play3DAt: failed to create SoundSource for \"%s\"\n",
-			e->sample.get());
+			sample);
 		return;
 	}
 	src->setWorldPosition(world_pos);

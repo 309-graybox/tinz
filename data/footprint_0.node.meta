@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>6a131f599684e07b4a51f56448124151fde7b2bd</guid>
+	<type>node</type>
+	<hash>713def9809226a86013423349d873f9bfe4b9d1a7cee1d5c49eeb1e5000e4311</hash>
+	<runtimes>
+		<runtime id="6a131f599684e07b4a51f56448124151fde7b2bd" name="footprint_0.node" link="0" type="3"/>
+	</runtimes>
+</asset>

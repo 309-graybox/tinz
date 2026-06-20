@@ -4,6 +4,7 @@
 #include <UnigineNode.h>
 #include <UnigineSounds.h>
 #include <UnigineString.h>
+#include <UnigineVector.h>
 
 namespace audio
 {
@@ -18,6 +19,9 @@ namespace audio
 struct SoundEvent
 {
 	Unigine::String sample; // .wav / .oga / .mp3
+	// Optional one-shot variants: if non-empty, a random entry is chosen on each
+	// play2D/play3DAt (sample is the fallback when empty). Ignored by music.
+	Unigine::Vector<Unigine::String> samples;
 	Unigine::String loop_event_id; // optional music event id after sample intro
 
 	// Mix.

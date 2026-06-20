@@ -203,22 +203,16 @@
 			<node type="WorldTransformJoint" id="1023938049" name="left_foot">
 				<joint>mixamorig:LeftFoot</joint>
 				<properties>
-					<property parent="718c081c4e3610b0ba56996c9c1a91eea1b1e4c5" guid="fa9b2d74f73d8f2e6aa3570dcc9f239b6e8fc9eb">
-						<parameter name="node_to_place">guid://906f205ada80615aa3a135abdc5a5557dc1693d9</parameter>
-						<parameter name="ground_mask">0x1</parameter>
-					</property>
+					<property parent="744ae6c73c39817f84f43f390b47c36be9fe7cfe" guid="5d657365436e5271db68663ea44bac52e32df062"/>
 				</properties>
-				<transform>0.994584560394 0.102425515652 0.0175828393549 0.0 -0.0665384978056 0.757579982281 -0.649341344833 0.0 -0.0798295661807 0.644655942917 0.760292887688 0.0 -0.200131714344 0.176771730185 0.175897091627 1.0</transform>
+				<transform>0.99471783638 0.10108499974 0.0178500059992 0.0 -0.0649713277817 0.754639029503 -0.652915596962 0.0 -0.0794703066349 0.648306906223 0.75722026825 0.0 -0.200558483601 0.177498474717 0.175499200821 1.0</transform>
 			</node>
 			<node type="WorldTransformJoint" id="1770327916" name="right_foot">
 				<joint>mixamorig:RightFoot</joint>
 				<properties>
-					<property parent="718c081c4e3610b0ba56996c9c1a91eea1b1e4c5" guid="44de41984c9217eae4bf12b390ebd027dc22d64e">
-						<parameter name="node_to_place">guid://906f205ada80615aa3a135abdc5a5557dc1693d9</parameter>
-						<parameter name="ground_mask">0x1</parameter>
-					</property>
+					<property parent="744ae6c73c39817f84f43f390b47c36be9fe7cfe" guid="2095be0b64654f8a2014782e1a9629c95491bb4f"/>
 				</properties>
-				<transform>0.951036512852 -0.308540761471 -0.01819094643 0.0 0.210395589471 0.689384877682 -0.693167567253 0.0 0.226411163807 0.655401110649 0.720546126366 0.0 0.00597018748522 -0.0723916739225 0.173470169306 1.0</transform>
+				<transform>0.95026832819 -0.310901284218 -0.0181911420077 0.0 0.212106496096 0.688860535622 -0.693168282509 0.0 0.228038042784 0.6548371315 0.720546424389 0.0 0.0057462528348 -0.0722736418247 0.173469811678 1.0</transform>
 			</node>
 		</node>
 	</node>
@@ -642,6 +636,22 @@
 					<parameter name="eventId">damage/skull</parameter>
 					<parameter name="sample">guid://4b10915ef414c5c9e3625929b95ebfe14f9da234</parameter>
 					<parameter name="settings">1263004894</parameter>
+				</property>
+				<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="dd40a40737e8799ff484b27ad49e6c7857d3b10b">
+					<parameter name="eventId">footstep_ground</parameter>
+					<parameter name="samples">
+						<value index="0">guid://05b4c26fa761c299922ab8c242c5198560dfb3f3</value>
+						<value index="1">guid://949ed739aead0fd062d5afc4159557c4d1d1489d</value>
+						<value index="2">guid://3e8e4513c26bb9a0d37ada96bbad2baefde984d7</value>
+					</parameter>
+				</property>
+				<property parent="c65fbf333ec176532e07c2d348ccdfd39f998804" guid="e04766c1f4b5ebb97936d78a48df03c854cc52ee">
+					<parameter name="eventId">footstep_building</parameter>
+					<parameter name="samples">
+						<value index="0">guid://cce0d231be0914984412f2bac8aaa61eec955f1e</value>
+						<value index="1">guid://ed7b927d45026d98b50cbdb8d9d7d480323e1f21</value>
+						<value index="2">guid://28fda9f7dadbda169b5071aab8abcedb8bba91fb</value>
+					</parameter>
 				</property>
 			</properties>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>

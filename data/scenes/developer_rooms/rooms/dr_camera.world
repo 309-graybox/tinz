@@ -765,7 +765,7 @@
 			<layer>guid://934db22ea9a461aaacfb8a5ee931d10c9ab2f1b8</layer>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 		</node>
-		<node type="NodeLayer" id="1467041313" name="targets_layer">
+		<node type="NodeLayer" id="1467041313" enabled="0" name="targets_layer">
 			<layer>guid://b0e69d0a2a640c22259ecd9343a2ab7054c98cb6</layer>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 		</node>
@@ -898,7 +898,7 @@
 						<parameter name="musicEvent">strange_dialogue</parameter>
 					</property>
 				</properties>
-				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -7.70023512688 2.64688719116 -0.0918008623493 1.0</transform>
+				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 3.43110585369 -8.67277299562 4.28987865134 1.0</transform>
 			</node>
 			<node type="NodeReference" id="2117273565" name="Egg">
 				<reference>guid://beee5dac3fc5287c9fad406a897430824d90e624</reference>
@@ -928,6 +928,33 @@
 				<reference>guid://aae51217b7811fd877847eba16a39a448b5ddd85</reference>
 				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 2.38979268226 17.8349937281 -0.632947686364 1.0</transform>
 			</node>
+		</node>
+		<node type="NodeReference" id="1252216744" name="footprint">
+			<reference>guid://906f205ada80615aa3a135abdc5a5557dc1693d9</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -3.33414268494 0.825599193573 0.600000023842 1.0</transform>
+		</node>
+		<node type="NodeDummy" id="1894163097" name="surface_registry">
+			<properties>
+				<property parent="21fd383c5bbb1545f933c7f7447606521269bc80" guid="74fd7367235ae6bb9dc52e5a76c6c56553b82e6b">
+					<parameter name="surfaces">
+						<value index="0">
+							<parameter name="id">ground</parameter>
+							<parameter name="footmark_node">guid://906f205ada80615aa3a135abdc5a5557dc1693d9</parameter>
+							<parameter name="step_sound">footstep_ground</parameter>
+						</value>
+						<value index="1">
+							<parameter name="id">building</parameter>
+							<parameter name="footmark_node">guid://6a131f599684e07b4a51f56448124151fde7b2bd</parameter>
+							<parameter name="step_sound">footstep_building</parameter>
+						</value>
+					</parameter>
+				</property>
+			</properties>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 1.10707080367 -5.92022656155 5.19488279145 1.0</transform>
+		</node>
+		<node type="NodeReference" id="179069499" name="footprint_0">
+			<reference>guid://6a131f599684e07b4a51f56448124151fde7b2bd</reference>
+			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 -4.12369298935 3.17105340958 0.599999785423 1.0</transform>
 		</node>
 	</editor>
 	<console>

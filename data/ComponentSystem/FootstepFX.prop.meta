@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.21.0.0">
+	<guid>744ae6c73c39817f84f43f390b47c36be9fe7cfe</guid>
+	<type>property</type>
+	<hash>d08672d1c24ef01770b923ce5689b5b5092c1fa79b66d426fa6b0497e51c388c</hash>
+	<runtimes>
+		<runtime id="744ae6c73c39817f84f43f390b47c36be9fe7cfe" name="FootstepFX" link="0" type="4"/>
+	</runtimes>
+</asset>

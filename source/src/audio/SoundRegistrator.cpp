@@ -26,6 +26,8 @@ void SoundRegistrator::init()
 
 	SoundEvent e;
 	e.sample = sample.get();
+	for (int i = 0; i < samples.size(); ++i)
+		e.samples.append(String(samples[i].get()));
 	e.loop_event_id = loopEventId.get();
 
 	NodePtr settingsNode = settings.get();
