@@ -243,3 +243,12 @@ source/junk
 
 # test launchers in root
 main_*.py
+
+# Agent workspace files
+/AGENTS.md
+/CLAUDE.md
+/copilot-instructions.md
+/PROJECTCONTEXT.md
+/ai_docs/
+/.agents/
+/.codex/
