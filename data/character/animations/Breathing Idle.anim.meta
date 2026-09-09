@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
-	<guid>1982d3d6f73a186e446c89446a4937cdf36e26c9</guid>
-	<type>animation</type>
-	<hash>9ce5ba39e6578205fa3a7e2f298a6e483b41b0b6e3f8d1e29957f91148feac30</hash>
-	<runtimes>
-		<runtime id="1982d3d6f73a186e446c89446a4937cdf36e26c9" name="Breathing Idle.anim" link="0" type="2"/>
-	</runtimes>
-</asset>

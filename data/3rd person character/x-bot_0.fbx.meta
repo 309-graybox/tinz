@@ -1,71 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <asset version="2.21.0.0">
-	<guid>bb400a633a218eca9e0f990d95a9ac63aad57e34</guid>
+	<guid>d38a89f1be430f97bf862eeb8792aba489dc13de</guid>
 	<type>fbx</type>
-	<hash>586eca2debfc3f3a394c91967bc51d3440785bd5a2460390d00f7cf9adcdfe75</hash>
+	<hash>befd68754c3164524e9dd48596c129381be5febb8e08c203ee309b31078a47cb</hash>
 	<runtimes>
-		<runtime id="bb400a633a218eca9e0f990d95a9ac63aad57e34" name="character.fbx" link="0"/>
-		<runtime id="93641ce4bcc04df36bc531228f3c6c8779e76a9f" name="character.node" link="1" type="3">
+		<runtime id="d38a89f1be430f97bf862eeb8792aba489dc13de" name="x-bot_0.fbx" link="0"/>
+		<runtime id="c8642c1a76cdeff55b4016c85f675cc180860171" name="x-bot_0.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">5de62b3a</parameter>
+				<parameter type="string" name="id">38fc04bf</parameter>
 			</parameters>
 		</runtime>
-		<runtime id="c070d9034d91cbb6ae27521ae2faf1588b16bd2b" name="character.skeleton" link="2" type="8">
+		<runtime id="6f60ba77991879f946062fe157addff44bd90c1c" name="beta_joints.mesh_skinned" link="2" type="9">
 			<parameters>
-				<parameter type="string" name="id">5de62b3a</parameter>
+				<parameter type="string" name="id">38fc04bf</parameter>
 			</parameters>
 		</runtime>
-		<runtime id="6d3b0249ba8c0d190b09b9632d4c4b3b0b31b772" name="ch36.mesh_skinned" link="2" type="9">
+		<runtime id="023392dc4e90de6a632c513ada75682bc003b8cb" name="beta_surface.mesh_skinned" link="2" type="9">
 			<parameters>
-				<parameter type="string" name="id">5de62b3a</parameter>
+				<parameter type="string" name="id">38fc04bf</parameter>
 			</parameters>
-		</runtime>
-		<runtime id="05b43cb61820a15371661f24c8037902872eb029" name="ch36_Take 001.anim" link="2" type="2">
-			<parameters>
-				<parameter type="string" name="id">5de62b3a</parameter>
-			</parameters>
-			<custom_parameters>
-				<parameter type="float" name="cur_time">18.0750618</parameter>
-			</custom_parameters>
-		</runtime>
-		<runtime id="5fc1d6a39cc61231c0227f4d9af05eb6e7ff3b74" name="ch36_mixamo.com.anim" link="2" type="2">
-			<parameters>
-				<parameter type="string" name="id">5de62b3a</parameter>
-			</parameters>
-			<custom_parameters>
-				<parameter type="float" name="cur_time">0.185121536</parameter>
-			</custom_parameters>
 		</runtime>
 	</runtimes>
 	<parameters>
 		<parameter type="float" name="angular_deflection">0.699999988</parameter>
 		<parameter type="bool" name="asset_name_as_prefix">0</parameter>
-		<parameter type="string" name="base_material_mode">unique_material_graph</parameter>
+		<parameter type="string" name="base_material_mode">inherit_mesh_base</parameter>
 		<parameter type="float" name="bound_size">10000</parameter>
 		<parameter type="bool" name="create_root_motion_joint">0</parameter>
 		<parameter type="bool" name="create_transform_bones_for_joints">0</parameter>
 		<parameter type="float" name="fps">30</parameter>
 		<parameter type="string" name="front_axis">default</parameter>
-		<parameter type="bool" name="import_animations">1</parameter>
+		<parameter type="bool" name="import_animations">0</parameter>
 		<parameter type="bool" name="import_bones_without_skin">1</parameter>
-		<parameter type="bool" name="import_cameras">1</parameter>
-		<parameter type="bool" name="import_lights">1</parameter>
+		<parameter type="bool" name="import_cameras">0</parameter>
+		<parameter type="bool" name="import_lights">0</parameter>
 		<parameter type="bool" name="import_materials">1</parameter>
-		<parameter type="string" name="import_materials_mode">take_by_name_or_create</parameter>
+		<parameter type="string" name="import_materials_mode">overwrite</parameter>
 		<parameter type="bool" name="import_meshes">1</parameter>
 		<parameter type="bool" name="import_morph_targets">0</parameter>
-		<parameter type="string" name="import_skeleton_mode">create</parameter>
+		<parameter type="string" name="import_skeleton_mode">take_shared</parameter>
 		<parameter type="bool" name="import_skeletons">1</parameter>
 		<parameter type="bool" name="import_tangent_space">0</parameter>
-		<parameter type="bool" name="import_textures">1</parameter>
+		<parameter type="bool" name="import_textures">0</parameter>
 		<parameter type="bool" name="invert_gchannel_for_normal_maps">0</parameter>
 		<parameter type="bool" name="joints_reorientation">0</parameter>
 		<parameter type="string" name="lightmaps">{}</parameter>
 		<parameter type="float" name="linear_deflection">0.200000003</parameter>
 		<parameter type="string" name="lods">_lod_0,-1e+09,3,0,0,100,0,0,60;_lod_1,3,9,0,0,60,0,1,60;_lod_2,9,1e+09,0,0,30,0,1,60</parameter>
 		<parameter type="string" name="lods_mode">off</parameter>
-		<parameter type="string" name="material_guids">ch36_body,2d269de0223b03c09c46acbe377e108bd6d2be2b</parameter>
-		<parameter type="bool" name="merge_similar_materials">0</parameter>
+		<parameter type="string" name="material_guids">m_beta_joints,8891d80081707c5c096b2cbec9b214ff13f9331f,m_beta_surface,b46975329edaf68840a48c2021b331d5fcfa0ca9</parameter>
+		<parameter type="bool" name="merge_similar_materials">1</parameter>
 		<parameter type="bool" name="merge_static_meshes">0</parameter>
 		<parameter type="bool" name="merge_surfaces_by_materials">0</parameter>
 		<parameter type="float" name="morph_targets_normals_angle">180</parameter>
@@ -74,16 +58,16 @@
 		<parameter type="bool" name="need_split">0</parameter>
 		<parameter type="bool" name="need_triangulate">1</parameter>
 		<parameter type="int" name="num_lods">3</parameter>
-		<parameter type="string" name="prefix_materials"/>
+		<parameter type="string" name="prefix_materials">m_</parameter>
 		<parameter type="string" name="resolution">256</parameter>
-		<parameter type="int" name="root_motion_forward_axis">0</parameter>
+		<parameter type="int" name="root_motion_forward_axis">4</parameter>
 		<parameter type="int" name="root_motion_position_component">0</parameter>
 		<parameter type="int" name="root_motion_rotation_component">0</parameter>
 		<parameter type="float" name="scale">1</parameter>
-		<parameter type="string" name="shared_skeleton_path"/>
+		<parameter type="string" name="shared_skeleton_path">guid://01cc92750e98216f81b4e90f60405f0692568ab2</parameter>
 		<parameter type="bool" name="skip_empty_nodes">0</parameter>
 		<parameter type="int" name="smooth_animation_size">0</parameter>
-		<parameter type="string" name="target_root_motion_joint"/>
+		<parameter type="string" name="target_root_motion_joint">mixamorig:Hips</parameter>
 		<parameter type="bool" name="unwrap_uv_ch_0">0</parameter>
 		<parameter type="bool" name="unwrap_uv_ch_1">0</parameter>
 		<parameter type="string" name="up_axis">default</parameter>

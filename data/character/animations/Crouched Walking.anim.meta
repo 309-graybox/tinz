@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
-	<guid>df56dff0b10d2f42040752c1a29a1b45496800bb</guid>
-	<type>animation</type>
-	<hash>dc946c187ffa80b05faf06e429742532ac2d193c96a73b3900a8dbeb523ed85c</hash>
-	<runtimes>
-		<runtime id="df56dff0b10d2f42040752c1a29a1b45496800bb" name="Crouched Walking.anim" link="0" type="2"/>
-	</runtimes>
-</asset>

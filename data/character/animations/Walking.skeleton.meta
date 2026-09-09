@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
-	<guid>31a9bb19124c49babc1758581ac00b5b74e20a41</guid>
-	<type>file</type>
-	<hash>85e8325ba89a8f61a2054986c4debbc92bb10794f7a2bd0a43f1399585f56b65</hash>
-	<runtimes>
-		<runtime id="31a9bb19124c49babc1758581ac00b5b74e20a41" name="Walking.skeleton" link="0"/>
-	</runtimes>
-</asset>

@@ -1048,6 +1048,35 @@
 			<layer>guid://d7345f9f7a4e82c5e5b434a1dd365cd6cea5f683</layer>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 10.9148292542 27.3388557434 0.530339855431 1.0</transform>
 		</node>
+		<node type="NodeDummy" id="685959827" name="x-bot_1">
+			<transform>1 1.67037371309e-22 -3.82137050681e-15 0.0 1.67037421796e-22 1 8.7422769468e-08 0.0 3.82137050681e-15 -8.7422769468e-08 1 0.0 8.1000001207 3.30000004917 0 1.0</transform>
+			<node type="NodeDummy" id="1542732920" name="beta-armature">
+				<transform>1 8.74227908165e-08 -8.74227765735e-08 0.0 8.74227908165e-08 -1.6292067191e-07 1 0.0 8.74227765735e-08 -1 -1.62920679553e-07 0.0 0 0 0 1.0</transform>
+			</node>
+			<node type="NodeSkeletonPose" id="663279809" name="Beta_Surface">
+				<transform>1 2.52435489671e-29 3.8548538787e-31 0.0 -2.52435490141e-29 1 0 0.0 -4.03373289914e-31 0 1 0.0 0 0 0 1.0</transform>
+				<skeleton>01cc92750e98216f81b4e90f60405f0692568ab2</skeleton>
+				<mode>0</mode>
+				<control_type>0</control_type>
+				<anim_script guid=""/>
+				<node type="ObjectMeshSkinned" id="1872223020" name="Beta_Surface_mesh">
+					<mesh_name>guid://023392dc4e90de6a632c513ada75682bc003b8cb</mesh_name>
+					<fps_visible_camera>-1</fps_visible_camera>
+					<fps_visible_shadow>30</fps_visible_shadow>
+					<fps_invisible>0</fps_invisible>
+					<surface name="beta_surface" material="b46975329edaf68840a48c2021b331d5fcfa0ca9"/>
+					<transform>1 -1.26217744835e-29 3.85486491301e-31 0.0 1.26217744365e-29 1 0 0.0 -4.03375496775e-31 0 1 0.0 0 0 0 1.0</transform>
+				</node>
+				<node type="ObjectMeshSkinned" id="1132934250" name="Beta_Joints_mesh">
+					<mesh_name>guid://6f60ba77991879f946062fe157addff44bd90c1c</mesh_name>
+					<fps_visible_camera>-1</fps_visible_camera>
+					<fps_visible_shadow>30</fps_visible_shadow>
+					<fps_invisible>0</fps_invisible>
+					<surface name="beta_joints" material="8891d80081707c5c096b2cbec9b214ff13f9331f"/>
+					<transform>1 -1.2621774507e-29 3.85486491301e-31 0.0 1.26217743895e-29 1 0 0.0 -1.98109730722e-30 0 1 0.0 0 0 0 1.0</transform>
+				</node>
+			</node>
+		</node>
 	</editor>
 	<console>
 		<bake_lighting_bounces>4</bake_lighting_bounces>
