@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>123a4396bd824163ab2292edb122736473126cfd</guid>
 	<type>property</type>
-	<hash>9350917a2bab26c158808cd3198d3df861ea1744d0b94f67e75165b0c0504dd8</hash>
+	<hash>baded5939f83780187c15b6c30fde77fa6da5a87584bb2d8c3c8ca9bfb0c7b5a</hash>
 	<runtimes>
 		<runtime id="123a4396bd824163ab2292edb122736473126cfd" name="GlobalShortcutsHandler" link="0" type="4"/>
 	</runtimes>

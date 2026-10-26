@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>d86e8afcf10de871c0c2cfccaaa04559a0088aa2</guid>
 	<type>texture</type>
-	<hash>cff99366655faa19d890cf1ce94bd455c56b62933780a6b8c284cf77f42fa07a</hash>
+	<hash>5058ef65cc69c5168667c007e8b535471c1de2cdb5966005d7a5d7f8ae5533a1</hash>
 	<runtimes>
 		<runtime id="d86e8afcf10de871c0c2cfccaaa04559a0088aa2" name="grass_inst.png" link="0" type="6"/>
 		<runtime id="0078442b04e990b68e74f39b71ee39c64dec8999" name="grass_inst.texture" link="1" type="6"/>

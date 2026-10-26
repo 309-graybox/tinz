@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>b1e7095fc042547424c1c9510d31eaa8433f4d87</guid>
 	<type>world</type>
-	<hash>d4202384bd9a34523c6404e19cfd6720afc80b334bc1027d96f65e39e7204c76</hash>
+	<hash>6ebf5790ce040622bca63ab4417711c44b7a9779e09a7eb617bd097f05505fc1</hash>
 	<runtimes>
 		<runtime id="b1e7095fc042547424c1c9510d31eaa8433f4d87" name="dr_camera.world" link="0"/>
 	</runtimes>
 	<parameters>
+		<parameter type="string" name="navigation_settings_path"/>
 		<parameter type="string" name="physics_settings_path"/>
 		<parameter type="string" name="render_settings_path">guid://92a0ee7917704584f2b913132a497d56e78094bd</parameter>
 		<parameter type="string" name="script_name"/>

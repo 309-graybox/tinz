@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>a42cbd6ea34bd1f3d4ffd253f7d9a8bcff39e62c</guid>
 	<type>node</type>
-	<hash>9379b761debab17d5419780b12e56ac0d22d13c1719286cffd2eedad57e83851</hash>
+	<hash>a00d870dd9d0cc8e39aa7633560c291c7709e2edfb2866f5bca8df80a72deb39</hash>
 	<runtimes>
 		<runtime id="a42cbd6ea34bd1f3d4ffd253f7d9a8bcff39e62c" name="nr_template_buildings.node" link="0" type="3"/>
 	</runtimes>

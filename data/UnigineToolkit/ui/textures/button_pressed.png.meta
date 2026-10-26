@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>dcd1a74e1668009a2b2c2391258d33ac4c647d6f</guid>
 	<type>texture</type>
-	<hash>c9dd1446c560c52002506b79fa858849b1b4a715bdf530c7957eb75c987782d7</hash>
+	<hash>3b9c4a5f0f2a3dc68faedd2619309049c9759dcb06d4c3e1067e8c04f79fb71b</hash>
 	<runtimes>
 		<runtime id="5e64fc4612883289507a87a90418832b63733ac7" name="button_pressed.png" link="0" type="6"/>
 	</runtimes>

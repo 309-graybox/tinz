@@ -1,6 +1,7 @@
 #pragma once
 #include "EIKey.h"
 #include "Defines.h"
+#include "EISerializer.h"
 #include <UnigineComponentSystem.h>
 #include <UnigineGUID.h>
 #include <memory>
@@ -99,6 +100,11 @@ public:
 	virtual T *create(const Unigine::UGUID &guid) = 0;
 	virtual void destroy(T *v) = 0;
 
+	// Reload the cached instance from disk in place. The pointer stays valid
+	// (so external holders like EIContextImpl keeping `const EIAction *`
+	// references survive). Returns false if v isn't registered.
+	virtual bool reload(T *v) = 0;
+
 	virtual bool save(int i) = 0;
 	virtual bool save(T *v) = 0;
 
@@ -155,23 +161,40 @@ private:
 };
 
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-class EIModifier: public Unigine::ComponentStruct
+class EIModifier
 {
 public:
+	virtual ~EIModifier() = default;
+
 	virtual const char *getClassName() const noexcept = 0;
 
 	virtual EIActionValue modify(EIActionValue v) = 0;
+
+	virtual void serialize(EISerializer &) {}
 };
 
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-class EITrigger: public Unigine::ComponentStruct
+class EITrigger
 {
 public:
-	PROP_PARAM(Float, treshold, 0.5f);
+	virtual ~EITrigger() = default;
+
+	float threshold = 0.5f;
 
 	virtual const char *getClassName() const noexcept = 0;
 
-	virtual eTriggerState update(EIActionValue v) = 0;
+	// `events` summarizes physical press / release events for the underlying
+	// key during this frame. Bindings-level triggers receive populated
+	// events; action-level triggers receive an empty struct (the action
+	// value has no single key) and fall back to threshold-crossing on v.
+	virtual eTriggerState update(EIActionValue v, const EIKeyFrameEvents &events) = 0;
+
+	// Convenience overload for callers that don't have per-frame events
+	// (self-tests, ad-hoc usage). Equivalent to update(v, {}), so triggers
+	// fall back to threshold-crossing detection.
+	eTriggerState update(EIActionValue v) { return update(v, EIKeyFrameEvents{}); }
+
+	virtual void serialize(EISerializer &s) { s.io("threshold", threshold); }
 };
 
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -184,14 +207,22 @@ struct EIKeyBinding final
 
 struct EIMapping final
 {
-	EIKeyBinding binding;                    // primary key (provides value)
-	Unigine::Vector<EIKeyBinding> andKeys;   // additional AND keys (usually empty)
+	// bindings[0] is the value source ("primary"); bindings[1..] act as AND gates
+	// (their value is ignored — only their trigger-state activity is checked).
+	Unigine::Vector<EIKeyBinding> bindings;
+	// Human-readable label for this specific alternative, for rebinding UI.
+	// EIActionMappings::description names the action as a whole ("Move"); this
+	// names one row of it ("Move Forward"), which is what a settings screen
+	// lists. Empty means "no dedicated label" — fall back to the action
+	// description plus the key names.
+	Unigine::String description = "";
 	bool consumeInput = false;
 };
 
 struct EIActionMappings final
 {
 	const EIAction *action = nullptr;
+	Unigine::String description = "";
 	Unigine::Vector<EIMapping> mappings;     // OR alternatives
 };
 
@@ -203,7 +234,7 @@ public:
 	Unigine::UGUID guid;
 	Unigine::String name = "";
 	Unigine::String description = "";
-	bool autoRegistration = false;
+	bool enabled = true;
 
 	virtual EIMapping *map(const EIAction *action, EIKey key) = 0;
 	virtual void unmap(const EIAction *action) = 0;
@@ -232,6 +263,7 @@ public:
 
 	virtual void addContext(EIContext *context, int priority = 0) = 0;
 	virtual void removeContext(EIContext *context) = 0;
+	virtual EIContext *findContext(const char *name) = 0;
 
 	virtual EIBinding *bind(const EIAction *action, eTriggerState state, std::function<void(EIActionValueInstance)> callback) = 0;
 	virtual void unbind(EIBinding *binding) = 0;
@@ -275,4 +307,9 @@ public:
 
 	virtual EIFileSystemRegistry<EIAction> *getActionRegistry() = 0;
 	virtual EIFileSystemRegistry<EIContext> *getContextRegistry() = 0;
+
+	// Runs every shipped modifier and trigger through known inputs and asserts
+	// the outputs. Returns the number of failed assertions; 0 means clean run.
+	// Logs PASS/FAIL details to Unigine's console + log.
+	virtual int runSelfTest() = 0;
 };

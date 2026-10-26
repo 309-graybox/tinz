@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>12a4f9e233e7f289a80694550a8a1ae6cd8a8813</guid>
 	<type>texture</type>
-	<hash>06ccd4c5a04bbf9f33fb29cebefb9de373717adb94b69b728dcf818c26fc78e9</hash>
+	<hash>8188027a0c7d370ceae4fe85ab82957923b8b7ae03d7a0ec439758c9d33471cb</hash>
 	<runtimes>
 		<runtime id="6b0f59ccdec2f0431d382cd77a1f14bef17e9cc5" name="rectangle.png" link="0" type="6"/>
 	</runtimes>

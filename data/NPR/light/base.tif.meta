@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>b2c2f96662d7c53c3db1cae274fd218567449a64</guid>
 	<type>texture</type>
-	<hash>495b98b962119d14fe2296009ec44f7760f17e370be7a7a919b13fbb22dc8174</hash>
+	<hash>2f9fcf6b256bb0ab56ea3abf49a783f66489ab7c7426530c8ee68ba3c3c5f25d</hash>
 	<runtimes>
 		<runtime id="b2c2f96662d7c53c3db1cae274fd218567449a64" name="base.tif" link="0" type="6"/>
 	</runtimes>

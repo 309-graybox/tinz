@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.22.0.0" name="TestRunJumpController" manual="1" parent_name="node_base" editable="0">
+	<parameter name="run_speed" type="float" title="Run Speed" tooltip="Maximum running speed" group="Run">5</parameter>
+	<parameter name="acceleration" type="float" title="Acceleration" tooltip="Rate at which velocity approaches the requested run velocity" group="Run">15</parameter>
+	<parameter name="damping" type="float" title="Damping" tooltip="Rate at which velocity approaches zero without movement input" group="Run">23</parameter>
+	<parameter name="turn_speed" type="float" title="Turn Speed" tooltip="Character turn speed in degrees per second" group="Run">600</parameter>
+	<parameter name="jump_speed" type="float" title="Jump Speed" tooltip="Initial upward speed" group="Jump">5.5</parameter>
+	<parameter name="adaptive_jump_damping" type="float" title="Adaptive Jump Damping" tooltip="Fraction of upward speed removed when jump is released" group="Jump">0.6</parameter>
+	<parameter name="adaptive_jump_threshold" type="float" title="Adaptive Jump Threshold" tooltip="Minimum upward speed as a fraction of Jump Speed" group="Jump">0.05</parameter>
+	<parameter name="jump_surface_intersection_mask" type="mask" title="Jump Surface Intersection Mask" tooltip="Surfaces that can be used as jump support" group="Jump">-2</parameter>
+	<parameter name="movement_collision_mask" type="mask" title="Movement Collision Mask" tooltip="Shape collision mask used by the controller" group="Collision Foundation">1</parameter>
+	<parameter name="max_ground_angle" type="float" title="Max Ground Angle" tooltip="Maximum walkable ground angle in degrees" group="Collision Foundation">43</parameter>
+	<parameter name="collision_iterations" type="int" title="Collision Iterations" tooltip="Number of penetration resolution iterations" group="Collision Foundation">4</parameter>
+</property>

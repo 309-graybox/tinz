@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>8bb45eb152c2fd8ab86e01f7c9a97934acfed3ed</guid>
 	<type>world</type>
-	<hash>b662f902e7f828422e51ba1dc377f294cc5bfc52cdfe30092bc54c89babf1ccb</hash>
+	<hash>f000699c5883ded3784b195bbbed13d74e87c037b87025099702473cc0d6cac9</hash>
 	<runtimes>
 		<runtime id="8bb45eb152c2fd8ab86e01f7c9a97934acfed3ed" name="cel.world" link="0"/>
 	</runtimes>
 	<parameters>
+		<parameter type="string" name="navigation_settings_path"/>
 		<parameter type="string" name="physics_settings_path"/>
 		<parameter type="string" name="render_settings_path">guid://d83442641c14ba69ab99c13428c77de2d68cf1ca</parameter>
 		<parameter type="string" name="script_name"/>

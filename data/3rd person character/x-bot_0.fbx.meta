@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>d38a89f1be430f97bf862eeb8792aba489dc13de</guid>
 	<type>fbx</type>
-	<hash>befd68754c3164524e9dd48596c129381be5febb8e08c203ee309b31078a47cb</hash>
+	<hash>4537adc1d7499273bf9cb10f30b8eff65c020337c6028b00a70365505049e369</hash>
 	<runtimes>
 		<runtime id="d38a89f1be430f97bf862eeb8792aba489dc13de" name="x-bot_0.fbx" link="0"/>
 		<runtime id="c8642c1a76cdeff55b4016c85f675cc180860171" name="x-bot_0.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">38fc04bf</parameter>
+				<parameter type="string" name="id">127e8352</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="6f60ba77991879f946062fe157addff44bd90c1c" name="beta_joints.mesh_skinned" link="2" type="9">
 			<parameters>
-				<parameter type="string" name="id">38fc04bf</parameter>
+				<parameter type="string" name="id">1142d04a</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="023392dc4e90de6a632c513ada75682bc003b8cb" name="beta_surface.mesh_skinned" link="2" type="9">
 			<parameters>
-				<parameter type="string" name="id">38fc04bf</parameter>
+				<parameter type="string" name="id">9abf5f2b</parameter>
 			</parameters>
 		</runtime>
 	</runtimes>

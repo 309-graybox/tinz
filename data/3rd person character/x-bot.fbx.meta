@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>66aa9fb143993b9b969d5aab2d60176f3f2d8c9e</guid>
 	<type>fbx</type>
-	<hash>7348aeb4bc397966276c05077d96c456f389dda3714ba9813acaac5edc43740b</hash>
+	<hash>16b1e4a70d7772b5994214e565d27adbc7fd68ac9a232ea8ddd75935f29cdcab</hash>
 	<runtimes>
 		<runtime id="66aa9fb143993b9b969d5aab2d60176f3f2d8c9e" name="x-bot.fbx" link="0"/>
 		<runtime id="d354b6c030253f4c7f45fd7e2a59221a79dbfadf" name="x-bot.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">38fc04bf</parameter>
+				<parameter type="string" name="id">97494eb5</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="01cc92750e98216f81b4e90f60405f0692568ab2" name="x-bot.skeleton" link="2" type="8">
 			<parameters>
-				<parameter type="string" name="id">38fc04bf</parameter>
+				<parameter type="string" name="id">908e38d4</parameter>
 			</parameters>
 			<custom_parameters>
 				<parameter type="string" name="blend_masks">{&quot;landing_layer&quot;:{&quot;Root&quot;:0,&quot;mixamorig:Hips&quot;:0,&quot;mixamorig:LeftUpLeg&quot;:0,&quot;mixamorig:LeftLeg&quot;:0,&quot;mixamorig:LeftFoot&quot;:0,&quot;mixamorig:LeftToeBase&quot;:0,&quot;mixamorig:RightUpLeg&quot;:0,&quot;mixamorig:RightLeg&quot;:0,&quot;mixamorig:RightFoot&quot;:0,&quot;mixamorig:RightToeBase&quot;:0,&quot;mixamorig:Spine&quot;:1,&quot;mixamorig:Spine1&quot;:1,&quot;mixamorig:Spine2&quot;:1,&quot;mixamorig:LeftShoulder&quot;:1,&quot;mixamorig:LeftArm&quot;:0.69999998807907104,&quot;mixamorig:LeftForeArm&quot;:0.69999998807907104,&quot;mixamorig:LeftHand&quot;:0.69999998807907104,&quot;mixamorig:LeftHandIndex1&quot;:0.69999998807907104,&quot;mixamorig:LeftHandIndex2&quot;:0.69999998807907104,&quot;mixamorig:LeftHandIndex3&quot;:0.69999998807907104,&quot;mixamorig:LeftHandMiddle1&quot;:0.69999998807907104,&quot;mixamorig:LeftHandMiddle2&quot;:0.69999998807907104,&quot;mixamorig:LeftHandMiddle3&quot;:0.69999998807907104,&quot;mixamorig:LeftHandPinky1&quot;:0.69999998807907104,&quot;mixamorig:LeftHandPinky2&quot;:0.69999998807907104,&quot;mixamorig:LeftHandPinky3&quot;:0.69999998807907104,&quot;mixamorig:LeftHandRing1&quot;:0.69999998807907104,&quot;mixamorig:LeftHandRing2&quot;:0.69999998807907104,&quot;mixamorig:LeftHandRing3&quot;:0.69999998807907104,&quot;mixamorig:LeftHandThumb1&quot;:0.69999998807907104,&quot;mixamorig:LeftHandThumb2&quot;:0.69999998807907104,&quot;mixamorig:LeftHandThumb3&quot;:0.69999998807907104,&quot;mixamorig:Neck&quot;:1,&quot;mixamorig:Head&quot;:1,&quot;mixamorig:RightShoulder&quot;:1,&quot;mixamorig:RightArm&quot;:0.69999998807907104,&quot;mixamorig:RightForeArm&quot;:0.69999998807907104,&quot;mixamorig:RightHand&quot;:0.69999998807907104,&quot;mixamorig:RightHandIndex1&quot;:0.69999998807907104,&quot;mixamorig:RightHandIndex2&quot;:0.69999998807907104,&quot;mixamorig:RightHandIndex3&quot;:0.69999998807907104,&quot;mixamorig:RightHandMiddle1&quot;:0.69999998807907104,&quot;mixamorig:RightHandMiddle2&quot;:0.69999998807907104,&quot;mixamorig:RightHandMiddle3&quot;:0.69999998807907104,&quot;mixamorig:RightHandPinky1&quot;:0.69999998807907104,&quot;mixamorig:RightHandPinky2&quot;:0.69999998807907104,&quot;mixamorig:RightHandPinky3&quot;:0.69999998807907104,&quot;mixamorig:RightHandRing1&quot;:0.69999998807907104,&quot;mixamorig:RightHandRing2&quot;:0.69999998807907104,&quot;mixamorig:RightHandRing3&quot;:0.69999998807907104,&quot;mixamorig:RightHandThumb1&quot;:0.69999998807907104,&quot;mixamorig:RightHandThumb2&quot;:0.69999998807907104,&quot;mixamorig:RightHandThumb3&quot;:0.69999998807907104}}</parameter>
@@ -20,9 +20,9 @@
 				<parameter type="string" name="retarget_joints">{&quot;Root&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:Hips&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftUpLeg&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftLeg&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftFoot&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftToeBase&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightUpLeg&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightLeg&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightFoot&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightToeBase&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:Spine&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:Spine1&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:Spine2&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftShoulder&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftArm&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftForeArm&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftHand&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftHandIndex1&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftHandIndex2&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftHandIndex3&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftHandMiddle1&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftHandMiddle2&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftHandMiddle3&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftHandPinky1&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftHandPinky2&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftHandPinky3&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftHandRing1&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftHandRing2&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftHandRing3&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftHandThumb1&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftHandThumb2&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:LeftHandThumb3&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:Neck&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:Head&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightShoulder&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightArm&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightForeArm&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightHand&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightHandIndex1&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightHandIndex2&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightHandIndex3&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightHandMiddle1&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightHandMiddle2&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightHandMiddle3&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightHandPinky1&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightHandPinky2&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightHandPinky3&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightHandRing1&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightHandRing2&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightHandRing3&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightHandThumb1&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightHandThumb2&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1},&quot;mixamorig:RightHandThumb3&quot;:{&quot;mode&quot;:0,&quot;custom_length&quot;:-1}}</parameter>
 			</custom_parameters>
 		</runtime>
-		<runtime id="9d8df1f24a7440fbbf1e4ae063107803b178ea69" name="beta-armature|fall_loop.anim" link="2" type="2">
+		<runtime id="9d8df1f24a7440fbbf1e4ae063107803b178ea69" name="beta-armaturefall_loop.anim" link="2" type="2">
 			<parameters>
-				<parameter type="string" name="id">38fc04bf</parameter>
+				<parameter type="string" name="id">c4fc4ea3</parameter>
 			</parameters>
 			<custom_parameters>
 				<parameter type="string" name="anim_mesh">guid://023392dc4e90de6a632c513ada75682bc003b8cb</parameter>
@@ -30,19 +30,19 @@
 				<parameter type="bool" name="root_motion_present">1</parameter>
 			</custom_parameters>
 		</runtime>
-		<runtime id="ab3fcaafc8f05433be3c1ed9140b21be5139b0b4" name="beta-armature|idle.anim" link="2" type="2">
+		<runtime id="ab3fcaafc8f05433be3c1ed9140b21be5139b0b4" name="beta-armatureidle.anim" link="2" type="2">
 			<parameters>
-				<parameter type="string" name="id">38fc04bf</parameter>
+				<parameter type="string" name="id">b4a56737</parameter>
 			</parameters>
 			<custom_parameters>
 				<parameter type="string" name="anim_mesh">guid://023392dc4e90de6a632c513ada75682bc003b8cb</parameter>
-				<parameter type="float" name="cur_time">246.225403</parameter>
+				<parameter type="float" name="cur_time">21.0362492</parameter>
 				<parameter type="bool" name="root_motion_present">1</parameter>
 			</custom_parameters>
 		</runtime>
-		<runtime id="9b939c747ad83c91a305f31229b7f3989a58a483" name="beta-armature|jump_up.anim" link="2" type="2">
+		<runtime id="9b939c747ad83c91a305f31229b7f3989a58a483" name="beta-armaturejump_up.anim" link="2" type="2">
 			<parameters>
-				<parameter type="string" name="id">38fc04bf</parameter>
+				<parameter type="string" name="id">30c3b3b7</parameter>
 			</parameters>
 			<custom_parameters>
 				<parameter type="string" name="anim_mesh">guid://023392dc4e90de6a632c513ada75682bc003b8cb</parameter>
@@ -50,9 +50,9 @@
 				<parameter type="bool" name="root_motion_present">1</parameter>
 			</custom_parameters>
 		</runtime>
-		<runtime id="648329792fdb8efd0a7b95b3d5c92ce675468006" name="beta-armature|landing.anim" link="2" type="2">
+		<runtime id="648329792fdb8efd0a7b95b3d5c92ce675468006" name="beta-armaturelanding.anim" link="2" type="2">
 			<parameters>
-				<parameter type="string" name="id">38fc04bf</parameter>
+				<parameter type="string" name="id">2a4d3073</parameter>
 			</parameters>
 			<custom_parameters>
 				<parameter type="string" name="anim_mesh">guid://023392dc4e90de6a632c513ada75682bc003b8cb</parameter>
@@ -60,20 +60,20 @@
 				<parameter type="bool" name="root_motion_present">1</parameter>
 			</custom_parameters>
 		</runtime>
-		<runtime id="6393a6c668b495d8c375d29442be61d2c89bd7ad" name="beta-armature|run.anim" link="2" type="2">
+		<runtime id="6393a6c668b495d8c375d29442be61d2c89bd7ad" name="beta-armaturerun.anim" link="2" type="2">
 			<parameters>
-				<parameter type="string" name="id">38fc04bf</parameter>
+				<parameter type="string" name="id">110ca268</parameter>
 			</parameters>
 			<custom_parameters>
 				<parameter type="string" name="anim_mesh">guid://023392dc4e90de6a632c513ada75682bc003b8cb</parameter>
-				<parameter type="float" name="cur_time">6.56963825</parameter>
+				<parameter type="float" name="cur_time">5.26005793</parameter>
 				<parameter type="bool" name="root_motion_present">1</parameter>
 				<parameter type="string" name="sync_markers">left:0.215804;right:0.485377</parameter>
 			</custom_parameters>
 		</runtime>
-		<runtime id="46b8f153ecf60e9e9156141d952b5f0f942cd528" name="beta-armature|t-pose.anim" link="2" type="2">
+		<runtime id="46b8f153ecf60e9e9156141d952b5f0f942cd528" name="beta-armaturet-pose.anim" link="2" type="2">
 			<parameters>
-				<parameter type="string" name="id">38fc04bf</parameter>
+				<parameter type="string" name="id">d16ee753</parameter>
 			</parameters>
 			<custom_parameters>
 				<parameter type="string" name="anim_mesh">guid://023392dc4e90de6a632c513ada75682bc003b8cb</parameter>
@@ -81,9 +81,9 @@
 				<parameter type="bool" name="root_motion_present">1</parameter>
 			</custom_parameters>
 		</runtime>
-		<runtime id="88647568ae7d9c603ef119e6e36d2b47708bb667" name="beta-armature|walk.anim" link="2" type="2">
+		<runtime id="88647568ae7d9c603ef119e6e36d2b47708bb667" name="beta-armaturewalk.anim" link="2" type="2">
 			<parameters>
-				<parameter type="string" name="id">38fc04bf</parameter>
+				<parameter type="string" name="id">1d8f2649</parameter>
 			</parameters>
 			<custom_parameters>
 				<parameter type="string" name="anim_mesh">guid://023392dc4e90de6a632c513ada75682bc003b8cb</parameter>

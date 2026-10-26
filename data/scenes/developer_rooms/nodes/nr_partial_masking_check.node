@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<nodes version="2.21.0.0">
+<nodes version="2.22.0.0">
 	<node type="NodeDummy" id="821946851" name="partial_masking_check">
 		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 		<node type="ObjectMeshStatic" id="1114793830" name="pillar">
 			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
 			<surface name="cylinder" intersection="1" material="9ce875824cc0b6f9c970740499c26f93691e2fd6"/>
 			<body type="BodyDummy" id="848392012" frozen="0">
-				<shape type="ShapeCylinder" id="2048411903">
+				<shape type="ShapeCylinder" id="2048411903" continuous="0">
 					<radius>1</radius>
 					<height>5</height>
 				</shape>
@@ -17,7 +17,7 @@
 			<mesh_name>guid://22add82df58a419d7b851029492f746d5d140f67</mesh_name>
 			<surface name="box" intersection="1" material="b50d447466b5a543f70c09c68846566d9f15c4e8"/>
 			<body type="BodyDummy" id="527939109" frozen="0">
-				<shape type="ShapeBox" id="139127866">
+				<shape type="ShapeBox" id="139127866" continuous="0">
 					<size>10 1 4</size>
 				</shape>
 			</body>
@@ -27,7 +27,7 @@
 			<mesh_name>guid://22add82df58a419d7b851029492f746d5d140f67</mesh_name>
 			<surface name="box" intersection="1" material="b50d447466b5a543f70c09c68846566d9f15c4e8"/>
 			<body type="BodyDummy" id="435286622" frozen="0">
-				<shape type="ShapeBox" id="124897415">
+				<shape type="ShapeBox" id="124897415" continuous="0">
 					<size>10 1 4</size>
 				</shape>
 			</body>
@@ -37,7 +37,7 @@
 			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
 			<surface name="cylinder" intersection="1" material="9ce875824cc0b6f9c970740499c26f93691e2fd6"/>
 			<body type="BodyDummy" id="1484969313" frozen="0">
-				<shape type="ShapeCylinder" id="1421730848">
+				<shape type="ShapeCylinder" id="1421730848" continuous="0">
 					<radius>1</radius>
 					<height>5</height>
 				</shape>
@@ -48,7 +48,7 @@
 			<mesh_name>guid://22add82df58a419d7b851029492f746d5d140f67</mesh_name>
 			<surface name="box" intersection="1" material="b50d447466b5a543f70c09c68846566d9f15c4e8"/>
 			<body type="BodyDummy" id="513139259" frozen="0">
-				<shape type="ShapeBox" id="1702086600">
+				<shape type="ShapeBox" id="1702086600" continuous="0">
 					<size>10 1 4</size>
 				</shape>
 			</body>
@@ -58,7 +58,7 @@
 			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
 			<surface name="cylinder" intersection="1" material="9ce875824cc0b6f9c970740499c26f93691e2fd6"/>
 			<body type="BodyDummy" id="784178058" frozen="0">
-				<shape type="ShapeCylinder" id="2120326277">
+				<shape type="ShapeCylinder" id="2120326277" continuous="0">
 					<radius>1</radius>
 					<height>5</height>
 				</shape>
@@ -69,7 +69,7 @@
 			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
 			<surface name="cylinder" intersection="1" material="9ce875824cc0b6f9c970740499c26f93691e2fd6"/>
 			<body type="BodyDummy" id="1341534487" frozen="0">
-				<shape type="ShapeCylinder" id="1596013118">
+				<shape type="ShapeCylinder" id="1596013118" continuous="0">
 					<radius>1</radius>
 					<height>5</height>
 				</shape>
@@ -80,7 +80,7 @@
 			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
 			<surface name="cylinder" intersection="1" material="9ce875824cc0b6f9c970740499c26f93691e2fd6"/>
 			<body type="BodyDummy" id="357154456" frozen="0">
-				<shape type="ShapeCylinder" id="1085092251">
+				<shape type="ShapeCylinder" id="1085092251" continuous="0">
 					<radius>1</radius>
 					<height>5</height>
 				</shape>
@@ -91,7 +91,7 @@
 			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
 			<surface name="cylinder" intersection="1" material="9ce875824cc0b6f9c970740499c26f93691e2fd6"/>
 			<body type="BodyDummy" id="1981414109" frozen="0">
-				<shape type="ShapeCylinder" id="634029100">
+				<shape type="ShapeCylinder" id="634029100" continuous="0">
 					<radius>1</radius>
 					<height>5</height>
 				</shape>
@@ -102,7 +102,7 @@
 			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
 			<surface name="cylinder" intersection="1" material="9ce875824cc0b6f9c970740499c26f93691e2fd6"/>
 			<body type="BodyDummy" id="1030755318" frozen="0">
-				<shape type="ShapeCylinder" id="647816641">
+				<shape type="ShapeCylinder" id="647816641" continuous="0">
 					<radius>1</radius>
 					<height>5</height>
 				</shape>

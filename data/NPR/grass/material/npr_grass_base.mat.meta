@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>b17ce1802887264ae4cf3750f93b83b617616186</guid>
 	<type>material</type>
-	<hash>4d10d17510af6cd054bd76171aeb356d2eb7f3177b1e62472386516ef29f9a4c</hash>
+	<hash>8367bc16340b4a7d16d042a49901b364265784bfeb4672e71d32c09f6adc7f2b</hash>
 	<runtimes>
 		<runtime id="b17ce1802887264ae4cf3750f93b83b617616186" name="npr_grass_base" link="0" type="5"/>
 	</runtimes>

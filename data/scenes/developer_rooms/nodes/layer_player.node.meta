@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>414010aa6ac6cf193bc290851500f656096989d1</guid>
 	<type>node</type>
-	<hash>888ba4baeadc1d9a2bfc026bcffab270ff7042ef221077f99c768a597e716f90</hash>
+	<hash>ff16cc4280dedfb595a5346a36e322d6df8533b06dff80c5dc49fff504b315bb</hash>
 	<runtimes>
 		<runtime id="414010aa6ac6cf193bc290851500f656096989d1" name="layer_player.node" link="0" type="3"/>
 	</runtimes>

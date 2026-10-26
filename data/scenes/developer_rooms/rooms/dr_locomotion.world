@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<world version="2.21.0.0">
+<world version="2.22.0.0">
 	<data>
 		<unigine_editor>
 			<body>
@@ -782,7 +782,7 @@
 			<shadow_cascade_mode>0</shadow_cascade_mode>
 			<num_shadow_cascades>2</num_shadow_cascades>
 			<is_shadow_partial_update>0</is_shadow_partial_update>
-			<shadow_cascade_borders>0.0075000003 0.0500000007 0.200000003</shadow_cascade_borders>
+			<shadow_cascade_borders>0.150000006 1 1 1 1 1 1 1 1 1 1 1 1 1 1</shadow_cascade_borders>
 			<color_mode>1</color_mode>
 			<shadow_resolution>5</shadow_resolution>
 			<shadow_bias>1</shadow_bias>
@@ -919,7 +919,7 @@
 				<mesh_name>guid://94083bb259df87e3a877405365a95fb99833db71</mesh_name>
 				<surface name="box" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
 				<body type="BodyDummy" id="1173364200" frozen="0">
-					<shape type="ShapeBox" id="673432264" name="ShapeBox">
+					<shape type="ShapeBox" id="673432264" continuous="0" name="ShapeBox">
 						<size>14 10 0.300000012</size>
 					</shape>
 				</body>
@@ -941,7 +941,7 @@
 				<mesh_name>guid://94083bb259df87e3a877405365a95fb99833db71</mesh_name>
 				<surface name="box" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
 				<body type="BodyDummy" id="1033804700" frozen="0">
-					<shape type="ShapeBox" id="860861389" name="ShapeBox">
+					<shape type="ShapeBox" id="860861389" continuous="0" name="ShapeBox">
 						<size>14 10 0.300000012</size>
 					</shape>
 				</body>
@@ -963,7 +963,7 @@
 				<mesh_name>guid://94083bb259df87e3a877405365a95fb99833db71</mesh_name>
 				<surface name="box" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
 				<body type="BodyDummy" id="115437297" frozen="0">
-					<shape type="ShapeBox" id="1096410278" name="ShapeBox">
+					<shape type="ShapeBox" id="1096410278" continuous="0" name="ShapeBox">
 						<size>14 10 0.300000012</size>
 					</shape>
 				</body>
@@ -985,7 +985,7 @@
 				<mesh_name>guid://94083bb259df87e3a877405365a95fb99833db71</mesh_name>
 				<surface name="box" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
 				<body type="BodyDummy" id="542328666" frozen="0">
-					<shape type="ShapeBox" id="467407779" name="ShapeBox">
+					<shape type="ShapeBox" id="467407779" continuous="0" name="ShapeBox">
 						<size>14 10 0.300000012</size>
 					</shape>
 				</body>
@@ -1007,7 +1007,7 @@
 				<mesh_name>guid://94083bb259df87e3a877405365a95fb99833db71</mesh_name>
 				<surface name="box" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
 				<body type="BodyDummy" id="1630726183" frozen="0">
-					<shape type="ShapeBox" id="630273108" name="ShapeBox">
+					<shape type="ShapeBox" id="630273108" continuous="0" name="ShapeBox">
 						<size>14 10 0.300000012</size>
 					</shape>
 				</body>

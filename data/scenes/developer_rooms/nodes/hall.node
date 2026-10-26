@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<nodes version="2.21.0.0">
+<nodes version="2.22.0.0">
 	<node type="NodeDummy" id="1472989591" name="hall">
 		<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
 		<node type="ObjectMeshStatic" id="767817727" name="cylinder">
 			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
 			<surface name="cylinder" intersection="1" material="b50d447466b5a543f70c09c68846566d9f15c4e8"/>
 			<body type="BodyDummy" id="672722328" frozen="0">
-				<shape type="ShapeCapsule" id="1679692376">
+				<shape type="ShapeCapsule" id="1679692376" continuous="1">
 					<radius>1</radius>
 					<height>3</height>
 				</shape>
@@ -17,7 +17,7 @@
 			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
 			<surface name="cylinder" intersection="1" material="b50d447466b5a543f70c09c68846566d9f15c4e8"/>
 			<body type="BodyDummy" id="1202791901" frozen="0">
-				<shape type="ShapeCapsule" id="1682468253">
+				<shape type="ShapeCapsule" id="1682468253" continuous="1">
 					<radius>1</radius>
 					<height>3</height>
 				</shape>
@@ -28,7 +28,7 @@
 			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
 			<surface name="cylinder" intersection="1" material="b50d447466b5a543f70c09c68846566d9f15c4e8"/>
 			<body type="BodyDummy" id="495725302" frozen="0">
-				<shape type="ShapeCapsule" id="1721786806">
+				<shape type="ShapeCapsule" id="1721786806" continuous="1">
 					<radius>1</radius>
 					<height>3</height>
 				</shape>
@@ -39,7 +39,7 @@
 			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
 			<surface name="cylinder" intersection="1" material="b50d447466b5a543f70c09c68846566d9f15c4e8"/>
 			<body type="BodyDummy" id="1018670899" frozen="0">
-				<shape type="ShapeCapsule" id="1410846963">
+				<shape type="ShapeCapsule" id="1410846963" continuous="1">
 					<radius>1</radius>
 					<height>3</height>
 				</shape>
@@ -50,7 +50,7 @@
 			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
 			<surface name="cylinder" intersection="1" material="b50d447466b5a543f70c09c68846566d9f15c4e8"/>
 			<body type="BodyDummy" id="1779001892" frozen="0">
-				<shape type="ShapeCapsule" id="2057134820">
+				<shape type="ShapeCapsule" id="2057134820" continuous="1">
 					<radius>1</radius>
 					<height>3</height>
 				</shape>
@@ -61,7 +61,7 @@
 			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
 			<surface name="cylinder" intersection="1" material="b50d447466b5a543f70c09c68846566d9f15c4e8"/>
 			<body type="BodyDummy" id="319888793" frozen="0">
-				<shape type="ShapeCapsule" id="1517390169">
+				<shape type="ShapeCapsule" id="1517390169" continuous="1">
 					<radius>1</radius>
 					<height>3</height>
 				</shape>
@@ -72,7 +72,7 @@
 			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
 			<surface name="cylinder" intersection="1" material="b50d447466b5a543f70c09c68846566d9f15c4e8"/>
 			<body type="BodyDummy" id="1745776290" frozen="0">
-				<shape type="ShapeCapsule" id="1112234338">
+				<shape type="ShapeCapsule" id="1112234338" continuous="1">
 					<radius>1</radius>
 					<height>3</height>
 				</shape>
@@ -83,7 +83,7 @@
 			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
 			<surface name="cylinder" intersection="1" material="b50d447466b5a543f70c09c68846566d9f15c4e8"/>
 			<body type="BodyDummy" id="951640719" frozen="0">
-				<shape type="ShapeCapsule" id="38504527">
+				<shape type="ShapeCapsule" id="38504527" continuous="1">
 					<radius>1</radius>
 					<height>3</height>
 				</shape>
@@ -94,7 +94,7 @@
 			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
 			<surface name="cylinder" intersection="1" material="b50d447466b5a543f70c09c68846566d9f15c4e8"/>
 			<body type="BodyDummy" id="2031980528" frozen="0">
-				<shape type="ShapeCapsule" id="133242032">
+				<shape type="ShapeCapsule" id="133242032" continuous="1">
 					<radius>1</radius>
 					<height>3</height>
 				</shape>
@@ -105,7 +105,7 @@
 			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
 			<surface name="cylinder" intersection="1" material="b50d447466b5a543f70c09c68846566d9f15c4e8"/>
 			<body type="BodyDummy" id="353391509" frozen="0">
-				<shape type="ShapeCapsule" id="1581097813">
+				<shape type="ShapeCapsule" id="1581097813" continuous="1">
 					<radius>1</radius>
 					<height>3</height>
 				</shape>
@@ -116,7 +116,7 @@
 			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
 			<surface name="cylinder" intersection="1" material="b50d447466b5a543f70c09c68846566d9f15c4e8"/>
 			<body type="BodyDummy" id="1887541646" frozen="0">
-				<shape type="ShapeCapsule" id="466221134">
+				<shape type="ShapeCapsule" id="466221134" continuous="1">
 					<radius>1</radius>
 					<height>3</height>
 				</shape>
@@ -127,7 +127,7 @@
 			<mesh_name>guid://ae76d41d556e4b48469d0d1928b921f679c408d7</mesh_name>
 			<surface name="cylinder" intersection="1" material="b50d447466b5a543f70c09c68846566d9f15c4e8"/>
 			<body type="BodyDummy" id="110758443" frozen="0">
-				<shape type="ShapeCapsule" id="501019627">
+				<shape type="ShapeCapsule" id="501019627" continuous="1">
 					<radius>1</radius>
 					<height>3</height>
 				</shape>

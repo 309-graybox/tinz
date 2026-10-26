@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>9abcf6730e51781ebdb54c914a366780a3b63905</guid>
 	<type>material</type>
-	<hash>6c12dc7610e822dcd96a79be60439e56e962a720e08c27c1809811bd9e5f38bc</hash>
+	<hash>ed748f940e6802a92e0fb8352eba4a3aa8ff5933c3bfc38b3f6e316c264714eb</hash>
 	<runtimes>
 		<runtime id="9abcf6730e51781ebdb54c914a366780a3b63905" name="ui_glass" link="0" type="5"/>
 	</runtimes>

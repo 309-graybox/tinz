@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<nodes version="2.21.0.0">
+<nodes version="2.22.0.0">
 	<node type="LightWorld" id="824505625" name="sun">
 		<scattering>1</scattering>
 		<disable_angle>100</disable_angle>
 		<shadow_height>10</shadow_height>
 		<shadow_width>10</shadow_width>
 		<shadow_zfar>100</shadow_zfar>
+		<shadow_filter_far>1</shadow_filter_far>
 		<shadow_cascade_mode>0</shadow_cascade_mode>
+		<shadow_cascade_placement_mode>0</shadow_cascade_placement_mode>
+		<shadow_cascade_origin_mode>0</shadow_cascade_origin_mode>
+		<shadow_cascade_origin_position>0 0 0</shadow_cascade_origin_position>
 		<num_shadow_cascades>2</num_shadow_cascades>
 		<is_shadow_partial_update>0</is_shadow_partial_update>
-		<shadow_cascade_borders>0.0075000003 0.0500000007 0.200000003</shadow_cascade_borders>
+		<shadow_cascade_borders>0.150000006 1 1 1 1 1 1 1 1 1 1 1 1 1 1</shadow_cascade_borders>
 		<color_mode>1</color_mode>
 		<shadow_resolution>5</shadow_resolution>
 		<shadow_bias>1</shadow_bias>
@@ -18,6 +22,7 @@
 		<shadow_filter>1</shadow_filter>
 		<shadow_penumbra_mode>-1</shadow_penumbra_mode>
 		<shadow_penumbra>0.150000006</shadow_penumbra>
+		<specular_roughness_offset>0</specular_roughness_offset>
 		<shadow_screen_space>1</shadow_screen_space>
 		<shadow_screen_space_num_rays>3</shadow_screen_space_num_rays>
 		<shadow_screen_space_num_steps>6</shadow_screen_space_num_steps>

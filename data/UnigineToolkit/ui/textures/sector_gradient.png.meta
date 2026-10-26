@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>58375a8aa695776279b3f66e290524775e9afcbf</guid>
 	<type>texture</type>
-	<hash>804a47439f577aad49230e97bbf2977fc7abcd1d31b0797d30ef226e054fd2e8</hash>
+	<hash>9e8f312c61bace98d8a458f208e7203d14f0f3de31be0d7af6197cd968d74f7f</hash>
 	<runtimes>
 		<runtime id="b95064a53d00961c995ee99188a3dac679a8e312" name="sector_gradient.png" link="0" type="6"/>
 	</runtimes>

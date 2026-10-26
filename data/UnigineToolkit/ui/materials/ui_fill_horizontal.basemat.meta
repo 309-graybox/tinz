@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>1446e743b840cd744e95c52c06c21021765084b0</guid>
 	<type>material</type>
-	<hash>bf4ff7146812debb40a02d1330516ae33351ec8e1a52a8552cf43c0261d30c62</hash>
+	<hash>17ffd22bca47b998a844f06ee5529d74e6ac8e14b8070d279f630dec94fc32d3</hash>
 	<runtimes>
 		<runtime id="1446e743b840cd744e95c52c06c21021765084b0" name="ui_fill_horizontal" link="0" type="5"/>
 	</runtimes>

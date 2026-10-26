@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>6c3a68954326ad72c48529500faaed3687c67a0c</guid>
 	<type>world</type>
-	<hash>51e003cc22747ca1c81b2a1be149f485bfa14627bf10576c8ac340e75fc76aa0</hash>
+	<hash>c156e05838fa051551276f5305decb721c4e2fc506388bee3d07462085af908f</hash>
 	<runtimes>
 		<runtime id="6c3a68954326ad72c48529500faaed3687c67a0c" name="dr_locomotion.world" link="0"/>
 	</runtimes>
 	<parameters>
+		<parameter type="string" name="navigation_settings_path"/>
 		<parameter type="string" name="physics_settings_path"/>
 		<parameter type="string" name="render_settings_path"/>
 		<parameter type="string" name="script_name"/>

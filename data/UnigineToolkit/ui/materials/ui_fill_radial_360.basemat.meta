@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>97245dc2a024606306ca434821235035bd536579</guid>
 	<type>material</type>
-	<hash>f89a633c0c6827bfc9a9e1aa9d8becc105ec0226eafea9c5228a015dab8da847</hash>
+	<hash>add603a593f5d708d15e44e3095823b0340c3c4acb009993fb70c0fa9f7e57c5</hash>
 	<runtimes>
 		<runtime id="97245dc2a024606306ca434821235035bd536579" name="ui_fill_radial_360" link="0" type="5"/>
 	</runtimes>

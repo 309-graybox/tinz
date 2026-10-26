@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>642384fe0d98b7186bdcca85e1b67dac8ad8d98d</guid>
+	<type>property</type>
+	<hash>f3cc0fcdaf4c278bb66e14a8cdd47658fdfac0898c0be99645a7ac3c95301bb5</hash>
+	<runtimes>
+		<runtime id="642384fe0d98b7186bdcca85e1b67dac8ad8d98d" name="TestSpringArmCamera" link="0" type="4"/>
+	</runtimes>
+</asset>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>2d0492a94e1297cfc24e877a827a62c0a5d1a067</guid>
 	<type>material</type>
-	<hash>d40edb84477559e51cd6a083148fa99997566700382127301ac52f4c2f8d897b</hash>
+	<hash>0d88b1b714be8e58a7f9f636c6c1bb98d85c2730838173ca3dcf0f1b944f7553</hash>
 	<runtimes>
 		<runtime id="2d0492a94e1297cfc24e877a827a62c0a5d1a067" name="ui_sharpen" link="0" type="5"/>
 	</runtimes>

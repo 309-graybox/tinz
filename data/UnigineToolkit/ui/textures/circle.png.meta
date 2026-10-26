@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>9b3432de9e10a77c58ea86bf0fdaecd2dad74e84</guid>
 	<type>texture</type>
-	<hash>036359ff085af504d96ec5331fc3976315dd2982a1ba1a56a43577f2a7ec38b7</hash>
+	<hash>159ad77236b1b1929364ec77235dd1644c65e848d124cdafa9181fc739d87672</hash>
 	<runtimes>
 		<runtime id="965955f45b4041d3ce0a695f8ca0dfe1bc98950d" name="circle.png" link="0" type="6"/>
 	</runtimes>

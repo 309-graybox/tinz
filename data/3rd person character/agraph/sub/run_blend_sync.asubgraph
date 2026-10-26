@@ -1,0 +1,242 @@
+{
+	"file_guid": "3e3bbedbc156127d778b8e6edb509a74827f4b20",
+	"camera_offset_x": 992,
+	"camera_offset_y": 449,
+	"nodes": {
+		"SubGraph Inputs": {
+			"guid": "00000000000000000000000000000000a00001a1",
+			"x": -704,
+			"y": 113,
+			"collapsed": true,
+			"props": {
+				"prop": {
+					"widget": "String",
+					"value": "horizontal_speed"
+				}
+			},
+			"inputs": {
+				"input": {
+					"label": "horizontal_speed",
+					"type": "Float",
+					"id": -1841760861
+				}
+			},
+			"outputs": {
+				"output": {
+					"label": "horizontal_speed",
+					"type": "Float",
+					"id": 1841760861
+				}
+			},
+			"vars": {
+				"var": {
+					"type": "Float",
+					"id": -1841760861,
+					"label": "horizontal_speed"
+				}
+			}
+		},
+		"SubGraph Outputs": {
+			"guid": "00000000000000000000000000000000b00002b2",
+			"x": -126,
+			"y": -16,
+			"collapsed": false,
+			"props": {
+				"prop": {
+					"widget": "String",
+					"value": "pose"
+				}
+			},
+			"inputs": {
+				"input": {
+					"label": "pose",
+					"type": "AnimPose",
+					"id": -669163866
+				}
+			},
+			"vars": {
+				"var": {
+					"type": "AnimPose",
+					"id": -669163866,
+					"label": "pose"
+				}
+			}
+		},
+		"BlendSpace 2D Sync": {
+			"guid": "dc44d03fa180ed0f7ec71302bc83c8cb13fcc054",
+			"x": -437,
+			"y": -10,
+			"collapsed": false,
+			"props": {
+				"prop": {
+					"widget": "String",
+					"value": "X"
+				},
+				"prop": {
+					"widget": "String",
+					"value": "Y"
+				},
+				"prop": {
+					"widget": "Int",
+					"x": 4
+				},
+				"prop": {
+					"widget": "Int",
+					"x": 4
+				},
+				"prop": {
+					"widget": "Float",
+					"x": -1
+				},
+				"prop": {
+					"widget": "Float",
+					"x": 1
+				},
+				"prop": {
+					"widget": "Combobox",
+					"x": 0
+				},
+				"prop": {
+					"widget": "Bool",
+					"x": 0
+				},
+				"prop": {
+					"widget": "Float",
+					"x": 3
+				},
+				"prop": {
+					"widget": "String",
+					"value": "run_blend"
+				},
+				"prop": {
+					"widget": "String",
+					"value": "run"
+				},
+				"prop": {
+					"widget": "Combobox",
+					"x": 0
+				},
+				"prop": {
+					"widget": "Combobox",
+					"x": 1
+				}
+			},
+			"inputs": {
+				"input": {
+					"label": "X",
+					"type": "Float",
+					"id": 0
+				},
+				"input": {
+					"label": "Y",
+					"type": "Float",
+					"id": 1
+				}
+			},
+			"outputs": {
+				"output": {
+					"label": "Pose",
+					"type": "AnimPose",
+					"id": 0
+				}
+			},
+			"bs_name": "run_blend",
+			"axis_x": "X",
+			"axis_y": "Y",
+			"grid_cells_x": 4,
+			"grid_cells_y": 4,
+			"axis_min": -1,
+			"axis_max": 1,
+			"interpolation_mode": 0,
+			"points": [
+				{
+					"x": 0,
+					"y": 0,
+					"guid": "f7849b10b541d3feebf3854eb33e52c9f65424ef",
+					"name": "slow_walk",
+					"anim_guid": "88647568ae7d9c603ef119e6e36d2b47708bb667",
+					"speed": 0.5
+				},
+				{
+					"x": 0.40000000596046448,
+					"y": 0,
+					"guid": "febda20535299c1042f3bb1f21cf8c02e0c30d82",
+					"name": "walk",
+					"anim_guid": "88647568ae7d9c603ef119e6e36d2b47708bb667",
+					"speed": 1
+				},
+				{
+					"x": 1,
+					"y": 0,
+					"guid": "c31ecec213285ad79b067730739e2835af6a6ef9",
+					"name": "run",
+					"anim_guid": "6393a6c668b495d8c375d29442be61d2c89bd7ad",
+					"speed": 1
+				}
+			]
+		}
+	},
+	"inputs": {
+		"input": {
+			"node_guid": "00000000000000000000000000000000a00001a1",
+			"anchor_id": -1841760861,
+			"show_label": true,
+			"show_inline_widget": false,
+			"float_value": 0
+		},
+		"input": {
+			"node_guid": "00000000000000000000000000000000b00002b2",
+			"anchor_id": -669163866,
+			"show_label": true,
+			"show_inline_widget": false
+		},
+		"input": {
+			"node_guid": "dc44d03fa180ed0f7ec71302bc83c8cb13fcc054",
+			"anchor_id": 0,
+			"show_label": true,
+			"show_inline_widget": true,
+			"float_value": 0
+		},
+		"input": {
+			"node_guid": "dc44d03fa180ed0f7ec71302bc83c8cb13fcc054",
+			"anchor_id": 1,
+			"show_label": true,
+			"show_inline_widget": true,
+			"float_value": 0
+		}
+	},
+	"anchors": {
+		"anchor": {
+			"input_index": 0,
+			"input_id": -669163866,
+			"input_label": "pose",
+			"input_node": "00000000000000000000000000000000b00002b2",
+			"output_index": 0,
+			"output_id": 0,
+			"output_label": "Pose",
+			"output_node": "dc44d03fa180ed0f7ec71302bc83c8cb13fcc054"
+		},
+		"anchor": {
+			"input_index": 0,
+			"input_id": 0,
+			"input_label": "X",
+			"input_node": "dc44d03fa180ed0f7ec71302bc83c8cb13fcc054",
+			"output_index": 0,
+			"output_id": 1841760861,
+			"output_label": "horizontal_speed",
+			"output_node": "00000000000000000000000000000000a00001a1"
+		}
+	},
+	"editor_layout": {
+		"main_weights": {
+			"w": 0.80000001192092896,
+			"w": 0.20000000298023224
+		},
+		"panel_weights": {
+			"w": 0.5,
+			"w": 0.5
+		},
+		"hierarchy_on_left": 0,
+		"hierarchy_weight": 0
+	}
+}

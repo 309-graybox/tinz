@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>6f79997c1e45461a3591eedad37694386e30e2eb</guid>
 	<type>animation_graph</type>
-	<hash>3962311e60493876b4f4e6e215be380d57c8204e50970bfa0364e932116c773c</hash>
+	<hash>17b678ce0db6146dff95453aa3d8b6e7c25eb3a9abc9f489827eda583e6b46ac</hash>
 	<runtimes>
 		<runtime id="6f79997c1e45461a3591eedad37694386e30e2eb" name="animation_graph.agraph" link="0"/>
 		<runtime id="179cf5650cfb289433738d7f0da90d779ac12c62" name="animation_graph" link="1" type="10"/>

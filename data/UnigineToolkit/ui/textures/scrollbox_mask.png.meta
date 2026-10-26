@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>4c760e4d3846e64e74bedf069db6f4c82fee36f9</guid>
 	<type>texture</type>
-	<hash>89c6d494f4a22072d8dfac7bd46548a57fcb4f20355665326078a391655d9bea</hash>
+	<hash>35cfe4357668de447ae0c45c664f07e3c50994527eca5ffb6a0603b8c8883d44</hash>
 	<runtimes>
 		<runtime id="c59cd81f1b627dca033769726ba9b083ce325cfe" name="scrollbox_mask.png" link="0" type="6"/>
 	</runtimes>

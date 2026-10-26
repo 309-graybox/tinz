@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>16a7bdd156e9389f4a1f2985e088e9d61beb507b</guid>
 	<type>texture</type>
-	<hash>0629bc31330c1ede3433b5cd0949d9d8f484fafba40fa7e98a50a29a57dbd5aa</hash>
+	<hash>eb2bca9bd11984fbc0edf455305a565febb574a05a7fd051d4bdb4eeea4cc54e</hash>
 	<runtimes>
 		<runtime id="16a7bdd156e9389f4a1f2985e088e9d61beb507b" name="light_color.tif" link="0" type="6"/>
 	</runtimes>

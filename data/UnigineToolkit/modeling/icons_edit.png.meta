@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>d083c1341dc62beead0cc3223b64d0b1a01e5077</guid>
 	<type>texture</type>
-	<hash>7b5f694517665ab906f7e2a03bfbcbe8bfc2619050f1cdcf486ef4f6479925d7</hash>
+	<hash>71ee139ac6693ec9c44383e0ea3aee5a02bc101b7af5ede0c6b7e451a0abac3c</hash>
 	<runtimes>
 		<runtime id="d083c1341dc62beead0cc3223b64d0b1a01e5077" name="icons_edit.png" link="0" type="6"/>
 		<runtime id="0b2643bbabafc41100f1e6b55d385b0297975aa4" name="icons_edit.texture" link="1" type="6"/>

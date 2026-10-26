@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<property version="2.22.0.0" name="TestSpringArmCamera" manual="1" parent_name="node_base" editable="0">
+	<parameter name="target" type="node" group="Spring Arm">0</parameter>
+	<parameter name="target_offset" type="vec3" title="Target Offset" tooltip="Target-local pivot offset" group="Spring Arm">0.000000 0.000000 0.000000</parameter>
+	<parameter name="arm_length" type="float" title="Arm Length" tooltip="Distance from the pivot to the camera" group="Spring Arm">4</parameter>
+	<parameter name="mouse_sensitivity" type="float" title="Mouse Sensitivity" tooltip="Degrees per raw mouse count" group="Rotation">0.1</parameter>
+	<parameter name="min_pitch" type="float" title="Min Pitch" tooltip="Minimum arm pitch in degrees" group="Rotation">-60</parameter>
+	<parameter name="max_pitch" type="float" title="Max Pitch" tooltip="Maximum arm pitch in degrees" group="Rotation">75</parameter>
+	<parameter name="invert_pitch" type="toggle" title="Invert Pitch" tooltip="Invert vertical mouse input" group="Rotation">0</parameter>
+	<parameter name="enable_camera_collision" type="toggle" title="Enable Camera Collision" tooltip="Prevent the camera from passing through scene geometry" group="Collision">1</parameter>
+	<parameter name="collision_sphere_radius" type="float" title="Collision Sphere Radius" tooltip="Camera collision clearance radius" group="Collision">0.3</parameter>
+	<parameter name="camera_collision_mask" type="mask" title="Camera Collision Mask" tooltip="Surface collision and intersection mask used by the camera" group="Collision">1</parameter>
+</property>

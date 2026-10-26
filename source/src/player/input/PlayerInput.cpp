@@ -1,4 +1,5 @@
 #include "PlayerInput.h"
+#include <UnigineFileSystem.h>
 #include <UnigineGame.h>
 #include <UnigineLog.h>
 
@@ -19,14 +20,21 @@ void PlayerInput::init(const Unigine::NodePtr &node)
 
 	auto action_reg = ei->getActionRegistry();
 
-	auto _action_walk = action_reg->create("walk");
-	auto _action_move = action_reg->create("move");
-	auto _action_sprint = action_reg->create("sprint");
-	auto _action_jump = action_reg->create("jump");
-	auto _action_dash = action_reg->create("dash");
-	auto _action_crouch = action_reg->create("crouch");
-	auto _action_interact = action_reg->create("interact");
-	auto _context_base = ei->getContextRegistry()->create("base");
+	auto _action_walk = action_reg->create(FileSystem::getGUID("input/actions/walk.input_action"));
+	auto _action_move = action_reg->create(FileSystem::getGUID("input/actions/move.input_action"));
+	auto _action_sprint = action_reg->create(FileSystem::getGUID("input/actions/sprint.input_action"));
+	auto _action_jump = action_reg->create(FileSystem::getGUID("input/actions/jump.input_action"));
+	auto _action_dash = action_reg->create(FileSystem::getGUID("input/actions/dash.input_action"));
+	auto _action_crouch = action_reg->create(FileSystem::getGUID("input/actions/crouch.input_action"));
+	auto _action_interact = action_reg->create(FileSystem::getGUID("interact.input_action"));
+	auto _context_base = ei->getContextRegistry()->create(FileSystem::getGUID("input/base.input_context"));
+
+	if (!_context_base || !_action_walk || !_action_move || !_action_sprint || !_action_jump ||
+		!_action_dash || !_action_crouch || !_action_interact)
+	{
+		Log::error("PlayerInput::init: failed to load one or more Enhanced Input assets by GUID\n");
+		return;
+	}
 
 	player->addContext(_context_base);
 

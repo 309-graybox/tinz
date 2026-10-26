@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>6fb6e20332106eebd34a3ae7a23b685e049f60d1</guid>
 	<type>property</type>
-	<hash>0a95db99d0eacc0f196091f7e89d87ebc492868d962d7b1d3f4932f587d213a8</hash>
+	<hash>acd52ccc68bb30ee5a7e19a3cebc483c670c0fb2197cd3adb9138ede8a5cec1f</hash>
 	<runtimes>
 		<runtime id="6fb6e20332106eebd34a3ae7a23b685e049f60d1" name="UI_Table" link="0" type="4"/>
 	</runtimes>

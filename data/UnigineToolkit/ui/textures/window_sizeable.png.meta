@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>ba5f4960c4d3c6944721b669252b44a8e9d48d94</guid>
 	<type>texture</type>
-	<hash>801d2d1d71172b5c3ca09750a8bbeac91aff0fa03590cd413cb0a30cc5d66fa9</hash>
+	<hash>f171d661a67922bf9cd2a418d98a581a51e5f4f2a5cafe0157c0af1001e2dcbf</hash>
 	<runtimes>
 		<runtime id="d5171cc87bf363f8c68cd6f161d46c2f523d447c" name="window_sizeable.png" link="0" type="6"/>
 	</runtimes>

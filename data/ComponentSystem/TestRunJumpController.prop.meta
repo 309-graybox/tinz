@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>8b20e15a6dcae1fa735acc9f8aab1d05619751c3</guid>
+	<type>property</type>
+	<hash>c5cfbffc2ce4bb1837bc00570754903384d945c9314c49135803e741cb2af106</hash>
+	<runtimes>
+		<runtime id="8b20e15a6dcae1fa735acc9f8aab1d05619751c3" name="TestRunJumpController" link="0" type="4"/>
+	</runtimes>
+</asset>

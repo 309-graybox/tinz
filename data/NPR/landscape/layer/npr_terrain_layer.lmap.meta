@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>98d9f7e31c1eed10c4a3d22023c8c4aeb99278d1</guid>
 	<type>lmap</type>
-	<hash>c94caa5f1140f48c4e89e3f7dcbf5b566a345fc196ebeff295069fa044712c73</hash>
+	<hash>1ed5f9a83f74f2bacd13e9933c8790e1ca6ec08922d870c47ca24a6a1bdbf91b</hash>
 	<runtimes>
 		<runtime id="98d9f7e31c1eed10c4a3d22023c8c4aeb99278d1" name="npr_terrain_layer.lmap" link="0"/>
 	</runtimes>

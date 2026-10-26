@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>1d8060d8a6df7ca8d1eb89dbe6a7f52b0381f184</guid>
 	<type>property</type>
-	<hash>92108b018946111be6d032f7507d3d42ba418ac23d05fd709ab9e91d53090f5d</hash>
+	<hash>2f5cdabbe9caf5673266cdaaada29d4fe7b29e5381d197ae5ce852d592177d00</hash>
 	<runtimes>
 		<runtime id="1d8060d8a6df7ca8d1eb89dbe6a7f52b0381f184" name="UI_Scroll" link="0" type="4"/>
 	</runtimes>

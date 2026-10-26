@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>ab68952a933dd4e440e670ee6fb205167650dd1d</guid>
 	<type>file</type>
-	<hash>868bf358018be1f2f5cdff4f7e66ad8cdfdb5dacc1d99d0e117c0436afa4086d</hash>
+	<hash>a57d983f7f4297d6002c4346c1c5e11dd9be2984cb971b7d268405f9cfe2b0ad</hash>
 	<runtimes>
 		<runtime id="ab68952a933dd4e440e670ee6fb205167650dd1d" name="pause.input_action" link="0"/>
 	</runtimes>

@@ -15,7 +15,6 @@
 		"force_velocity": true,
 		"tessellation": false,
 		"two_sided": false,
-		"overlap": false,
 		"depth_test": true,
 		"scene_depth_write": false,
 		"depth_mode": 0,
@@ -29,7 +28,7 @@
 		"blend_dest": 6,
 		"opacity_depth_write": true,
 		"velocity_write": true,
-		"material_mask_write": true
+		"surface_id_write": true
 	},
 	"parameters": {
 		"parameter": {
@@ -44,7 +43,7 @@
 			}
 		}
 	},
-	"version": "2.21.0.0",
+	"version": "2.22.0.0",
 	"nodes": {
 		"Material": {
 			"label": "Material",
@@ -323,7 +322,7 @@
 				"prop": {
 					"label": "",
 					"widget": "Float",
-					"x": 0.050000000745058268
+					"x": 0.050000000745058289
 				}
 			},
 			"inputs": {

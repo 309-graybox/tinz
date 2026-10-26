@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>a5015333c1837fe2f48c9fb0ff55daa9a01b11a1</guid>
 	<type>mesh</type>
-	<hash>a81cf7d805d2948429cc5d105f2950e38dfd586ca6bb86803f72baedc10fdd70</hash>
+	<hash>71b87f48cfdc8c69fed0a1a3df10254be48c86f640128ef356f20632c1c5fa9e</hash>
 	<runtimes>
 		<runtime id="a5015333c1837fe2f48c9fb0ff55daa9a01b11a1" name="plane.mesh" link="0" type="1"/>
 	</runtimes>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>c0cfb0e0963a493275c287d048ba0deb269dd0f0</guid>
+	<type>material</type>
+	<hash>d5d756bdeb308273c02a7940946a684113696bb5998c739d14e413bb6d0c3079</hash>
+	<runtimes>
+		<runtime id="c0cfb0e0963a493275c287d048ba0deb269dd0f0" name="m_beta_joints_mat1" link="0" type="5"/>
+	</runtimes>
+</asset>

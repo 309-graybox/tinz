@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>b46975329edaf68840a48c2021b331d5fcfa0ca9</guid>
 	<type>material</type>
-	<hash>838a546706baa0ba498695aa1e1e6b6a2369aa6f64d72fea53cf6effffccb9c9</hash>
+	<hash>b91412a5e4916d5ed3cbd2cf052156926ed74a40eb69451ec4be7ebb8ae1990e</hash>
 	<runtimes>
 		<runtime id="b46975329edaf68840a48c2021b331d5fcfa0ca9" name="m_beta_surface" link="0" type="5"/>
 	</runtimes>

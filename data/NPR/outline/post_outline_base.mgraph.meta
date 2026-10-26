@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>1f053f3515144aedb27f0848c8c08f43f56dc35c</guid>
 	<type>material_graph</type>
-	<hash>bf8be537bf64adbcc2d24df0af26357ac7bfdd32e57880e38559fd052c59aa39</hash>
+	<hash>93dce1eae4bd3936176a7a3955584abbd4a4411c265fb8082019096f767710c7</hash>
 	<runtimes>
 		<runtime id="1f053f3515144aedb27f0848c8c08f43f56dc35c" name="post_outline_base.mgraph" link="0"/>
 		<runtime id="cfd2c56f833b2e9067230ebaa1480881bf1b30ee" name="post_outline_base" link="1" type="5"/>

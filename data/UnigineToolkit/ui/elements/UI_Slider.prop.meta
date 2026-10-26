@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>db7098052827b16790dd0086559222e73aa8d85b</guid>
 	<type>property</type>
-	<hash>5a632da8d4622f1d331cbb7b8457963c33a550148c47c40d21ef0f94241a3eab</hash>
+	<hash>95e306641e5e224419f9795144551656492fc0c87a82ea00801c690fe7fc8ebf</hash>
 	<runtimes>
 		<runtime id="db7098052827b16790dd0086559222e73aa8d85b" name="UI_Slider" link="0" type="4"/>
 	</runtimes>

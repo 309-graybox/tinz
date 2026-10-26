@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>e8b97d7b52fd2e4923f3704bb239a4c864ba072b</guid>
+	<type>fbx</type>
+	<hash>d04dadb79b65eccf4699f3afa7f2087ebeea960dc5640449180baae8f59f1dca</hash>
+	<runtimes>
+		<runtime id="e8b97d7b52fd2e4923f3704bb239a4c864ba072b" name="GG.fbx" link="0"/>
+		<runtime id="a5a49bfad81f92d75e4d5a6ac98d2f53814bab8a" name="GG.node" link="1" type="3">
+			<parameters>
+				<parameter type="string" name="id">1ed5e391</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="028d03f12f264f4ebf39f24184cf40a2b419a561" name="GG.skeleton" link="2" type="8">
+			<parameters>
+				<parameter type="string" name="id">957f3384</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="9f9a55bc03a99f0a366ac9aca00f3df5c019ff4c" name="beta_joints.mesh_skinned" link="2" type="9">
+			<parameters>
+				<parameter type="string" name="id">06207ee</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="f355508be8ba28ba4c7cd75b7fa1adde47e5323b" name="beta_surface.mesh_skinned" link="2" type="9">
+			<parameters>
+				<parameter type="string" name="id">8a237a8a</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="b426814ec4c97f1b3542a6bee4bf5bf31cd9025e" name="beta_joints_armaturefall a loop.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">58466057</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="d96d1ab5e466dd3c26b7ee05edcbed3f65938625" name="beta_joints_armaturefalling to landing.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">a139bc06</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="09b9d33005974266972e0620f5ba152d45fc8140" name="beta_joints_armaturefast run.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">3981631a</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="70287cefd1b56d9d07c670bf2ef7798c0501039f" name="beta_joints_armatureidle.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">70a0d33d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="1a6313e241689e836f9b1052780a495a3f747c72" name="beta_joints_armaturejumping down.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">fd98c20c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="5a7c15b994bfa2256c391e09b5100eed0610b129" name="beta_joints_armaturejumping up.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">e473bccb</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="7a953fe41b14b1a9feab21d463cd8a037edf4874" name="beta_joints_armaturelanding.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">947c46c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="41a8a7938cf423536e09d8633719fd03b7f7d943" name="beta_joints_armaturesprinting forward roll.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">caca5713</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="871aa7b62912060f59bdeb26154a38548c20adc6" name="beta_joints_armaturewalking.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">f0257c7e</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="1a8fb8fdb748c5bf9538464d2876bf8b57aaaa6d" name="beta_surface_armaturefall a loop.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">58466057</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="e3fd0fd89ab8b437b6b190c85fa9352e54a608e8" name="beta_surface_armaturefalling to landing.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">a139bc06</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="cfd93477911080b3ee777247ee095f628f11d727" name="beta_surface_armaturefast run.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">3981631a</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="bb6ad0cac9bf581d1edfcb3a1cf8c9019edf6a5a" name="beta_surface_armatureidle.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">70a0d33d</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="eb520881e0ae28aa64546ad1d501bf5cb4f135f1" name="beta_surface_armaturejumping down.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">fd98c20c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="b2e0f70cee996417462006fcf67e901accb5b69c" name="beta_surface_armaturejumping up.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">e473bccb</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="0f2bc79b8be3f5ca5d7de26b905898cadda7614b" name="beta_surface_armaturelanding.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">947c46c</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="6622631e3fb84dbe8b56848ea01ff366af05c62e" name="beta_surface_armaturesprinting forward roll.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">caca5713</parameter>
+			</parameters>
+		</runtime>
+		<runtime id="b0054845e2eaf1309314cf95e3224658c72e57b5" name="beta_surface_armaturewalking.anim" link="2" type="2">
+			<parameters>
+				<parameter type="string" name="id">f0257c7e</parameter>
+			</parameters>
+		</runtime>
+	</runtimes>
+	<parameters>
+		<parameter type="float" name="angular_deflection">0.699999988</parameter>
+		<parameter type="bool" name="asset_name_as_prefix">0</parameter>
+		<parameter type="string" name="base_material_mode">inherit_mesh_base</parameter>
+		<parameter type="float" name="bound_size">10000</parameter>
+		<parameter type="bool" name="create_root_motion_joint">0</parameter>
+		<parameter type="bool" name="create_transform_bones_for_joints">0</parameter>
+		<parameter type="float" name="fps">30</parameter>
+		<parameter type="string" name="front_axis">default</parameter>
+		<parameter type="bool" name="import_animations">1</parameter>
+		<parameter type="bool" name="import_bones_without_skin">1</parameter>
+		<parameter type="bool" name="import_cameras">0</parameter>
+		<parameter type="bool" name="import_lights">0</parameter>
+		<parameter type="bool" name="import_materials">1</parameter>
+		<parameter type="string" name="import_materials_mode">overwrite</parameter>
+		<parameter type="bool" name="import_meshes">1</parameter>
+		<parameter type="bool" name="import_morph_targets">0</parameter>
+		<parameter type="string" name="import_skeleton_mode">create</parameter>
+		<parameter type="bool" name="import_skeletons">1</parameter>
+		<parameter type="bool" name="import_tangent_space">0</parameter>
+		<parameter type="bool" name="import_textures">0</parameter>
+		<parameter type="bool" name="invert_gchannel_for_normal_maps">0</parameter>
+		<parameter type="bool" name="joints_reorientation">0</parameter>
+		<parameter type="string" name="lightmaps">{}</parameter>
+		<parameter type="float" name="linear_deflection">0.200000003</parameter>
+		<parameter type="string" name="lods">_lod_0,-1e+09,3,0,0,100,0,0,60;_lod_1,3,9,0,0,60,0,1,60;_lod_2,9,1e+09,0,0,30,0,1,60</parameter>
+		<parameter type="string" name="lods_mode">off</parameter>
+		<parameter type="string" name="material_guids">m_beta_highlimbsgeosg3,0969c912463a4b0481b909825554786ac11557a2,m_beta_joints_mat1,c0cfb0e0963a493275c287d048ba0deb269dd0f0</parameter>
+		<parameter type="bool" name="merge_similar_materials">1</parameter>
+		<parameter type="bool" name="merge_static_meshes">0</parameter>
+		<parameter type="bool" name="merge_surfaces_by_materials">0</parameter>
+		<parameter type="float" name="morph_targets_normals_angle">180</parameter>
+		<parameter type="string" name="morph_targets_normals_mode">import</parameter>
+		<parameter type="bool" name="need_repivot">0</parameter>
+		<parameter type="bool" name="need_split">0</parameter>
+		<parameter type="bool" name="need_triangulate">1</parameter>
+		<parameter type="int" name="num_lods">3</parameter>
+		<parameter type="string" name="prefix_materials">m_</parameter>
+		<parameter type="string" name="resolution">256</parameter>
+		<parameter type="int" name="root_motion_forward_axis">4</parameter>
+		<parameter type="int" name="root_motion_position_component">0</parameter>
+		<parameter type="int" name="root_motion_rotation_component">0</parameter>
+		<parameter type="float" name="scale">1</parameter>
+		<parameter type="string" name="shared_skeleton_path"/>
+		<parameter type="bool" name="skip_empty_nodes">0</parameter>
+		<parameter type="int" name="smooth_animation_size">0</parameter>
+		<parameter type="string" name="target_root_motion_joint"/>
+		<parameter type="bool" name="unwrap_uv_ch_0">0</parameter>
+		<parameter type="bool" name="unwrap_uv_ch_1">0</parameter>
+		<parameter type="string" name="up_axis">default</parameter>
+		<parameter type="bool" name="use_instances">1</parameter>
+		<parameter type="int" name="uv_ch">1</parameter>
+		<parameter type="string" name="uv_unwrap_version">xatlas_v1</parameter>
+		<parameter type="bool" name="vertex_cache">1</parameter>
+		<parameter type="string" name="workflow">metalness</parameter>
+	</parameters>
+</asset>

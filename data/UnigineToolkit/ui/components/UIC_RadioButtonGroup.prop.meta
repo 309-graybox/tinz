@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>cf77121a7e2f7918f1ec1a9a0077737e2d6e2eb3</guid>
 	<type>property</type>
-	<hash>34762481c4ea0157a1e0642442abadc6a2dca32bace382794991bea44acce88b</hash>
+	<hash>7ebde6e0bc5fd8d8758e92cfc33a2ba12f8be47ebcd702be79e2edcfed12fd7d</hash>
 	<runtimes>
 		<runtime id="cf77121a7e2f7918f1ec1a9a0077737e2d6e2eb3" name="UIC_RadioButtonGroup" link="0" type="4"/>
 	</runtimes>

@@ -16,12 +16,11 @@
 		"force_velocity": true,
 		"tessellation": false,
 		"two_sided": false,
-		"overlap": false,
 		"depth_test": true,
 		"scene_depth_write": true,
 		"opacity_depth_write": true,
 		"velocity_write": true,
-		"material_mask_write": true,
+		"surface_id_write": true,
 		"depth_pre_pass": false,
 		"depth_mode": 0,
 		"decal_tbn_mode": 0,
@@ -550,7 +549,7 @@
 			}
 		}
 	},
-	"version": "2.21.0.0",
+	"version": "2.22.0.0",
 	"nodes": {
 		"Material": {
 			"label": "Material",
@@ -1990,8 +1989,8 @@
 					"label": "Color",
 					"widget": "Color",
 					"w": 1,
-					"z": 0.10980392247438431,
-					"y": 0.52941179275512695,
+					"z": 0.10980392247438434,
+					"y": 0.52941179275512684,
 					"x": 0.78823530673980713
 				}
 			},

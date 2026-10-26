@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>b585e8fa6555e59e9003b75c3a8db54d37752459</guid>
 	<type>material</type>
-	<hash>d988af4b15f4b7669a0544d4894c88b3c4bbb9a17599e68890b0f26728ba687b</hash>
+	<hash>fdde2d879edc781695b4a55957a9f5a7e34dabe6463ed9279c97d5d949177d68</hash>
 	<runtimes>
 		<runtime id="b585e8fa6555e59e9003b75c3a8db54d37752459" name="ui_rounded_rectangle" link="0" type="5"/>
 	</runtimes>

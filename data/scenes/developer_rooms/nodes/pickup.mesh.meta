@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>de30d32f038232eb6687c8f478a58e15beb72e3f</guid>
 	<type>mesh</type>
-	<hash>d82207f4e1e3914102be732925e8329c51242d00d89d80e04dbc35429268faec</hash>
+	<hash>37a5066ff7695fbd856421aa1bb86ad0b4be388612e749a35ac2ce7855ad041f</hash>
 	<runtimes>
 		<runtime id="de30d32f038232eb6687c8f478a58e15beb72e3f" name="pickup.mesh" link="0" type="1"/>
 	</runtimes>

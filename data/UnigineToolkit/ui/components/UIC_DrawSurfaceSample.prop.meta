@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>f0777e4919cceeb00d571c573d2904de327bd30b</guid>
 	<type>property</type>
-	<hash>cd4e2c8f46d0fe363a274172e4843cfd69e6e0616ef81dd39675ad28ea5bb0d3</hash>
+	<hash>be07624576f3677b83bac52a9b0ce00b2bbb270df0c7d3fa497af5d8a2ce6cbc</hash>
 	<runtimes>
 		<runtime id="f0777e4919cceeb00d571c573d2904de327bd30b" name="UIC_DrawSurfaceSample" link="0" type="4"/>
 	</runtimes>

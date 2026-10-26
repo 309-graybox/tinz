@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>185efac7ae315173e61bde328a4b9405a6b8f4e6</guid>
 	<type>material</type>
-	<hash>dcbfcc53b62b4d5673941d73ac90bacc3d656cab752644a042fade9151c21de2</hash>
+	<hash>90ec0d670a6a5823d4b0ebc22c580c87a331ef937cdf21066e1405f66babfab1</hash>
 	<runtimes>
 		<runtime id="185efac7ae315173e61bde328a4b9405a6b8f4e6" name="post_outline" link="0" type="5"/>
 	</runtimes>

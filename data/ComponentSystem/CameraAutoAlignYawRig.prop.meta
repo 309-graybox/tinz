@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>9394cfe3b438df9214c16dd6ee132ccdd974168d</guid>
 	<type>property</type>
-	<hash>e2ee13a41118a04f116ac88f50eedd225b569e5eb938f5b47dbb5f90162d802b</hash>
+	<hash>ced0e942b23a5c7015506d0f978f53e994d3364eb81e462056e9fc8b958f77a3</hash>
 	<runtimes>
 		<runtime id="9394cfe3b438df9214c16dd6ee132ccdd974168d" name="CameraAutoAlignYawRig" link="0" type="4"/>
 	</runtimes>

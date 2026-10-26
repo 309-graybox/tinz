@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>572c3ee1954800575a95357a8528f3978b863c9b</guid>
+	<type>animation_subgraph</type>
+	<hash>7ca9a4ddb433dbfabb7dd76a570baf1f29c4142ea8eedcbd3c3ec8736cb04f3b</hash>
+	<runtimes>
+		<runtime id="572c3ee1954800575a95357a8528f3978b863c9b" name="run_blend_sync.asubgraph" link="0"/>
+	</runtimes>
+</asset>

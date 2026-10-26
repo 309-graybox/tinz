@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>0000000d000000ae000000da0000000e00000eca</guid>
 	<type>world</type>
-	<hash>a3e2dcf39fecfe92270e4094dcd983b070ba446f0e01155bc017dc47cec28dfb</hash>
+	<hash>fd19bd576c6c551923249d79506ead89a29725931491ab41ea9c493263eb0626</hash>
 	<runtimes>
 		<runtime id="0000000d000000ae000000da0000000e00000eca" name="tinz.world" link="0"/>
 	</runtimes>
 	<parameters>
+		<parameter type="string" name="navigation_settings_path"/>
 		<parameter type="string" name="physics_settings_path"/>
 		<parameter type="string" name="render_settings_path">guid://92a0ee7917704584f2b913132a497d56e78094bd</parameter>
 		<parameter type="string" name="script_name"/>

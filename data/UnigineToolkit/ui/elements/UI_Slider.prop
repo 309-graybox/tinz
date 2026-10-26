@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<property version="2.21.0.0" name="UI_Slider" manual="1" parent_name="node_base">
+<property version="2.22.0.0" name="UI_Slider" manual="1" parent_name="node_base" editable="0">
 	<parameter name="pos" type="vec4" title="Position" group="Element">0.000000 0.000000 0.000000 0.000000</parameter>
 	<parameter name="pivot" type="vec2" title="Pivot" group="Element">0.000000 0.000000</parameter>
 	<parameter name="anchor" type="vec4" title="Anchor" group="Element">0.000000 0.000000 0.000000 0.000000</parameter>

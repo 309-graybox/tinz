@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>3333b0ccac09a9ea52a7a405524a4e8b675a8c02</guid>
 	<type>texture</type>
-	<hash>f00754f5aa6e47331f3ffc9320b5fca291a47c3cefd85d889121eabc0e78186f</hash>
+	<hash>d935e052b949541095ccb35935e7fe2412a4b9405c10d729740717dfa98b6686</hash>
 	<runtimes>
 		<runtime id="9422b58a33bd14ce03d9c25d393d79f73a0417db" name="checkmark.png" link="0" type="6"/>
 	</runtimes>

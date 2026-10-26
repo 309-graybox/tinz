@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<nodes version="2.21.0.0">
+<nodes version="2.22.0.0">
 	<node type="PlayerDummy" id="1892598520" name="PlayerDummy">
 		<znear>0.300000012</znear>
 		<zfar>100000</zfar>
@@ -51,6 +51,8 @@
 					</property>
 					<property parent="a197f5f8bbb9d292adf674e7c144519c3c3b4f24" guid="3753b94898203a23dde124f93605f3ee33735e6f">
 						<parameter name="priority">-10000</parameter>
+						<parameter name="enable_min_angle_bias">0</parameter>
+						<parameter name="enable_max_angle_bias">1</parameter>
 					</property>
 					<property parent="725def5a82138de00a22a9e3d1878c8141ff2032" guid="5be51118951987535a39aa74e6979e68a97ea7a8">
 						<parameter name="priority">-1000</parameter>
@@ -82,9 +84,9 @@
 	</node>
 	<node type="ObjectMeshStatic" id="510937540" immovable="1" name="Capsule">
 		<mesh_name>guid://30a2c3df4360c3a29b876de716cc573fdc7af63e</mesh_name>
-		<surface name="capsule" intersection="1" intersection_mask="0x80000000" material="fa22583eadc45f89ebe8ae56d96c24e8fdd54989"/>
+		<surface name="capsule" intersection="1" viewport_mask="0x0" intersection_mask="0x80000000" material="fa22583eadc45f89ebe8ae56d96c24e8fdd54989"/>
 		<body type="BodyDummy" id="1533853500" frozen="0">
-			<shape type="ShapeCapsule" id="1644335467" name="ShapeCapsule">
+			<shape type="ShapeCapsule" id="1644335467" continuous="1" name="ShapeCapsule">
 				<radius>0.492403865</radius>
 				<height>1.01519227</height>
 			</shape>
@@ -99,8 +101,31 @@
 		<transform>0.999999940395 0 0 0.0 0 0.999999940395 0 0.0 0 0 0.999999940395 0.0 0 0 0 1.0</transform>
 		<node type="ObjectMeshStatic" id="1691979073" immovable="1" name="capsule">
 			<mesh_name>guid://30a2c3df4360c3a29b876de716cc573fdc7af63e</mesh_name>
-			<surface name="capsule" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
+			<surface name="capsule" enabled="0" intersection="1" material="4dfec30f491f753f6e89094db6d3d695e89f9d6f"/>
 			<transform>0.200000053644 0 0 0.0 0 0.199999949336 0 0.0 0 0 0.400000309944 0.0 0 0.257959098627 0.828486378964 1.0</transform>
+		</node>
+		<node type="NodeDummy" id="1811873138" name="mixamo_2">
+			<transform>0.999999940395 1.67037401177e-22 -3.82137073459e-15 0.0 1.6703741184e-22 1.00000017881 8.74227746789e-08 0.0 3.82137027904e-15 -8.74227851005e-08 1.00000005961 0.0 4.19196505098e-31 1.32348921674e-23 -1.0000000149 1.0</transform>
+			<node type="NodeSkeletonPose" id="800539112" name="Beta_Surface">
+				<transform>1 -8.36340720723e-34 1.46028758052e-29 0.0 1.63675833408e-34 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+				<mode>0</mode>
+				<control_type>0</control_type>
+				<anim_script guid="4e48c12e9ee358f0d71f1b86a2c6d6d6c29ceb8d"/>
+				<node type="ObjectMeshSkinned" id="480754727" name="Beta_Surface_mesh">
+					<mesh_name>guid://4540741131f5de2b5e3e211956c441c82f35a02c</mesh_name>
+					<fps_visible_camera>-1</fps_visible_camera>
+					<fps_visible_shadow>30</fps_visible_shadow>
+					<fps_invisible>0</fps_invisible>
+					<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+				</node>
+				<node type="ObjectMeshSkinned" id="931366765" name="Beta_Joints_mesh">
+					<mesh_name>guid://f2b3653274e17d9dca7ec70ab16012d5b7a971c1</mesh_name>
+					<fps_visible_camera>-1</fps_visible_camera>
+					<fps_visible_shadow>30</fps_visible_shadow>
+					<fps_invisible>0</fps_invisible>
+					<transform>1 -2.35098870164e-38 -4.03373310416e-31 0.0 0 1 0 0.0 -4.033732899e-31 0 1 0.0 0 0 0 1.0</transform>
+				</node>
+			</node>
 		</node>
 	</node>
 </nodes>

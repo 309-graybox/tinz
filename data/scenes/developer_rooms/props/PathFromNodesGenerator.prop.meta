@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>f8f5eb4c40e02c8b4d5047745667e4ffe285f45e</guid>
 	<type>property</type>
-	<hash>e690a2a9717969c2f9460add9d4f251168314c1a09b944cb20207719526ffec2</hash>
+	<hash>baa85eb448c320d28480aa6e41d68069b6aed993eb648d799c982a9cc99f3eaf</hash>
 	<runtimes>
 		<runtime id="f8f5eb4c40e02c8b4d5047745667e4ffe285f45e" name="PathFromNodesGenerator" link="0" type="4"/>
 	</runtimes>

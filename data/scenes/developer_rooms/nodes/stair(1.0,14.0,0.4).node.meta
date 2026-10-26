@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>cfe81a64436e76b5d302a15f6520301c20ce722a</guid>
 	<type>node</type>
-	<hash>f1f096411f46bf1119d6ff3da540668a5add64a218bcef14f3ecd33c0253f332</hash>
+	<hash>1ffd01a97d60ac336f79ac4181d01e15f61b31ac4406cf4aa1e84a873d4550f1</hash>
 	<runtimes>
 		<runtime id="cfe81a64436e76b5d302a15f6520301c20ce722a" name="stair(1.0,14.0,0.4).node" link="0" type="3"/>
 	</runtimes>

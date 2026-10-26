@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>338232982d1ffa35625e37494f55eed0f3031e90</guid>
 	<type>property</type>
-	<hash>65854b6729455a6ad42d1cf2775d21b8068bfef5309a3d0cd9f068851c931a03</hash>
+	<hash>8cc4f85158d5d076619d2ef66bb53bdd3515ecb9a60a36ee376a613c97ebba3b</hash>
 	<runtimes>
 		<runtime id="338232982d1ffa35625e37494f55eed0f3031e90" name="CameraOrbitIntent" link="0" type="4"/>
 	</runtimes>

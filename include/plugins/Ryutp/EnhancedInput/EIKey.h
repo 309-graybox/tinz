@@ -6,6 +6,21 @@
 
 class EIKey;
 
+// Per-frame summary of device events for a single key. Press / release counts
+// catch sub-frame taps that polling getValue() would miss; timestamps allow
+// triggers like Tap to compute precise durations (microseconds, matches
+// InputEvent::getTimestamp() convention) instead of rounding to frame edges.
+// Only valid for digital keys (keyboard / mouse-button / gamepad-button) —
+// analog axes leave everything at zero, and triggers fall back to
+// threshold-crossing detection on the value itself.
+struct EIKeyFrameEvents
+{
+	int pressCount = 0;
+	int releaseCount = 0;
+	unsigned long long firstPressTime = 0;
+	unsigned long long lastReleaseTime = 0;
+};
+
 class EIKey
 {
 public:
@@ -134,6 +149,87 @@ public:
 				// UNIGINE_ASSERT(false && "Imposible TYPE");
 				return 0.0f;
 		}
+	}
+
+	// Collect press / release events fired for this key during the current
+	// frame. Mouse / gamepad axes are continuous and produce no discrete
+	// events, so they return a zero struct — triggers fall back to
+	// threshold-crossing detection on the value itself. Keyboard auto-repeat
+	// (ACTION_REPEAT) is ignored — it isn't a physical press.
+	EIKeyFrameEvents getFrameEvents(int device = 0) const noexcept
+	{
+		using namespace Unigine;
+
+		EIKeyFrameEvents r;
+		const int value = getNativeValue();
+
+		auto recordPress = [&r](unsigned long long t) {
+			if (r.pressCount == 0)
+				r.firstPressTime = t;
+			++r.pressCount;
+		};
+		auto recordRelease = [&r](unsigned long long t) {
+			r.lastReleaseTime = t;
+			++r.releaseCount;
+		};
+
+		switch (getType())
+		{
+			case TYPE::KEYBOARD_KEY:
+			{
+				Vector<Ptr<InputEventKeyboard>> events;
+				Input::getKeyEvents((Input::KEY)value, events);
+				for (const auto &e : events)
+				{
+					switch (e->getAction())
+					{
+						case InputEventKeyboard::ACTION_DOWN:
+							recordPress(e->getTimestamp());
+							break;
+						case InputEventKeyboard::ACTION_UP:
+							recordRelease(e->getTimestamp());
+							break;
+						default:
+							break;
+					}
+				}
+				break;
+			}
+			case TYPE::MOUSE_BUTTON:
+			{
+				Vector<Ptr<InputEventMouseButton>> events;
+				Input::getMouseButtonEvents((Input::MOUSE_BUTTON)value, events);
+				for (const auto &e : events)
+				{
+					if (e->getAction() == InputEventMouseButton::ACTION_DOWN)
+						recordPress(e->getTimestamp());
+					else
+						recordRelease(e->getTimestamp());
+				}
+				break;
+			}
+			case TYPE::GAMEPAD_BUTTON:
+			{
+				auto gamepad = Input::getGamePad(device);
+				if (!gamepad)
+					break;
+				Vector<Ptr<InputEventPadButton>> events;
+				gamepad->getButtonEvents((Input::GAMEPAD_BUTTON)value, events);
+				for (const auto &e : events)
+				{
+					if (e->getAction() == InputEventPadButton::ACTION_DOWN)
+						recordPress(e->getTimestamp());
+					else
+						recordRelease(e->getTimestamp());
+				}
+				break;
+			}
+			default:
+				// Analog axes — no discrete events. Leave struct zero.
+				break;
+		}
+
+		return r;
 	}
 
 	friend bool operator==(const EIKey &a, const EIKey &b) { return a._k == b._k; }

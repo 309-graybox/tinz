@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>4680d6e66c47eebf479070208e7da585253c1754</guid>
 	<type>property</type>
-	<hash>698b99f2a7671067bf0cbbe3f65c4f05fee798c92902aca861aab1f55e517560</hash>
+	<hash>2b8e1a9c4fd4b6b07f0c4bc796fa80b51f13d78af67f2ed44db06eb27b5292c9</hash>
 	<runtimes>
 		<runtime id="4680d6e66c47eebf479070208e7da585253c1754" name="Ability" link="0" type="4"/>
 	</runtimes>

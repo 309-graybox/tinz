@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>f0fa31eb0160efbff8d61cc8f19e745f4193f299</guid>
 	<type>material</type>
-	<hash>79f504cd476de66bf763e39c3402d07e35e1ae3509c773ef661d031d616e98bb</hash>
+	<hash>320c2d1e075a32c220f5b0d26c2bf5a04d80a7f216db5d956f6e2a7c67779e32</hash>
 	<runtimes>
 		<runtime id="f0fa31eb0160efbff8d61cc8f19e745f4193f299" name="terrain_soil_detail_base" link="0" type="5"/>
 	</runtimes>

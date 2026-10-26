@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>649fe66441b285e3fa46dbca626dcb2e1226dbd5</guid>
 	<type>property</type>
-	<hash>d767c7f7634180ca66fc804201baa98aae08c26aef83298d5305d4057625d853</hash>
+	<hash>3bf3d9fedcffc4c0cfca5848437d77358f57fc18b9f7a993808d5321573e0e6f</hash>
 	<runtimes>
 		<runtime id="649fe66441b285e3fa46dbca626dcb2e1226dbd5" name="StairGenerator" link="0" type="4"/>
 	</runtimes>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>ce2e41bb3bbc44a0d3a277082025ef3e751f7613</guid>
 	<type>material</type>
-	<hash>62afb292ab9188445cef06b9792961f2650b174e92b2bacd787a83f5d4bb8de5</hash>
+	<hash>f65432abf758d3a5b933e7d63e30cb754e0616667e0b59f9872c02f0e77e7a25</hash>
 	<runtimes>
 		<runtime id="ce2e41bb3bbc44a0d3a277082025ef3e751f7613" name="ui_glass_nine_sliced" link="0" type="5"/>
 	</runtimes>

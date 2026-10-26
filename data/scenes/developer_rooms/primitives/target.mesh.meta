@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>59557d7820b4aa168e8a1a214466b5e9a179756e</guid>
 	<type>mesh</type>
-	<hash>9943700e01e88dbb9fa0af6739da97453c9a99b26b10ee858b4a7565fefd322e</hash>
+	<hash>d0781eb6025ca6ecf2ba18ff4310f906862906ef774b7608abd6b352b26e38ff</hash>
 	<runtimes>
 		<runtime id="59557d7820b4aa168e8a1a214466b5e9a179756e" name="target.mesh" link="0" type="1"/>
 	</runtimes>

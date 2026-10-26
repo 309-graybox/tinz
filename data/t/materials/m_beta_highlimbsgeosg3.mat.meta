@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>0969c912463a4b0481b909825554786ac11557a2</guid>
+	<type>material</type>
+	<hash>2c7feb3b984b79085c6de9e80df042bebc61a0961d1f6de4ef0b4866a0ef9050</hash>
+	<runtimes>
+		<runtime id="0969c912463a4b0481b909825554786ac11557a2" name="m_beta_highlimbsgeosg3" link="0" type="5"/>
+	</runtimes>
+</asset>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>04e5fef3e0ae58aec7e767b6aa980a6d12ebf582</guid>
 	<type>texture</type>
-	<hash>3fc41e09d9a0759df769327f14fc140c6115ce79d203654fb88e3f4354b99e22</hash>
+	<hash>d4e904cfc90acc8824f2df738580109aea3eb4069c0e68e58e71997de531693f</hash>
 	<runtimes>
 		<runtime id="4bd59e652b548ef1227242405842c3a934fb88ec" name="scrollbox_bg.png" link="0" type="6"/>
 	</runtimes>

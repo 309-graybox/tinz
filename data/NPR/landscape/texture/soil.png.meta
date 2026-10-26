@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>154bf17bde7e7b0df0f00292c1d1494a429255f8</guid>
 	<type>texture</type>
-	<hash>7f487e4d1f57a098eee7ec212e71f74575724fbc1bc6668efa4552b7befe9ff0</hash>
+	<hash>3d3875b393cbc84ce1dbfcdb9ff1ef71125837a58ac21ec64e9acd994d2cbb51</hash>
 	<runtimes>
 		<runtime id="154bf17bde7e7b0df0f00292c1d1494a429255f8" name="soil.png" link="0" type="6"/>
 		<runtime id="97be552503c7cd91ae70de141a12e335e71009ea" name="soil.texture" link="1" type="6"/>

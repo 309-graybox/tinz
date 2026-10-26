@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>4114309837dbf8d2c967f99a369f25382969f291</guid>
 	<type>material</type>
-	<hash>20917ad308d6c244b306410c9e90dc3534d835ec40b113f452085fcda3c6367c</hash>
+	<hash>2c598a5f36829c098fef39720f3e14b7d461436027a7ace3dbff8db41f2e65de</hash>
 	<runtimes>
 		<runtime id="4114309837dbf8d2c967f99a369f25382969f291" name="landscape_terrain_base_0" link="0" type="5"/>
 	</runtimes>

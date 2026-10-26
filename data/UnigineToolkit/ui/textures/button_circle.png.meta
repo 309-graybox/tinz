@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>8f1e9bbc2cd4e24e99222d0776560239eedc0375</guid>
 	<type>texture</type>
-	<hash>471ba9ba3bfed4a205ca9fba93a28459f593c0d84c8c88d8bc7c25c097b79ce4</hash>
+	<hash>d9865966e421d23f27255ef5efd2e8ce865f0a23afc002251d9bd4a6e931ecda</hash>
 	<runtimes>
 		<runtime id="59f26f72f65aa20b50859da53408fba2109372e3" name="button_circle.png" link="0" type="6"/>
 	</runtimes>

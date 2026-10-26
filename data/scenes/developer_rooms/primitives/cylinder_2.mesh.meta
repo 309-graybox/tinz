@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>15b2b92e7fb5d32666ebd48701f19aa741ac2f1a</guid>
 	<type>mesh</type>
-	<hash>3c19932d86a89423c538e0cc38f5cc81e08c61f748d48b46a60b69d8531b61d6</hash>
+	<hash>1e4a0b7ad42d4bfd58e1f8ccefaaf7f36fbcb12fab2ab3963029af2cc8a286fd</hash>
 	<runtimes>
 		<runtime id="15b2b92e7fb5d32666ebd48701f19aa741ac2f1a" name="cylinder_2.mesh" link="0" type="1"/>
 	</runtimes>

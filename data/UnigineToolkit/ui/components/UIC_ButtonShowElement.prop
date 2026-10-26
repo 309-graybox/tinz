@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<property version="2.21.0.0" name="UIC_ButtonShowElement" manual="1" parent_name="node_base">
+<property version="2.22.0.0" name="UIC_ButtonShowElement" manual="1" parent_name="node_base" editable="0">
 	<parameter name="show_param" type="toggle" title="Show">0</parameter>
 	<parameter name="element_node" type="node" title="Element">0</parameter>
 	<parameter name="duration" type="float">0.2</parameter>

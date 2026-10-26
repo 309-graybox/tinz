@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<asset version="2.21.0.0">
+<asset version="2.22.0.0">
 	<guid>3eaf348f5c3c98a2f8253f99e39b2424233a2133</guid>
 	<type>render_settings</type>
-	<hash>1fd1d425f4efb41fbd853b479611bee1e2e68835661fb0ed1fbe7015fc84572a</hash>
+	<hash>40c654c91b7b1e9a2d1ef614031cb5460e521ad4c9e2eb3456e0f013260ab650</hash>
 	<runtimes>
 		<runtime id="3eaf348f5c3c98a2f8253f99e39b2424233a2133" name="template_medium.render" link="0"/>
 	</runtimes>

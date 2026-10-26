@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<asset version="2.22.0.0">
+	<guid>26e30957cfffd9e914c7951e325fc2db83d4817a</guid>
+	<type>property</type>
+	<hash>5e64a1713631bb5ecdbaff20ef52845f236a56c993be3aabe4a2748d0f8597d1</hash>
+	<runtimes>
+		<runtime id="26e30957cfffd9e914c7951e325fc2db83d4817a" name="AnimGraphTriggerOnL" link="0" type="4"/>
+	</runtimes>
+</asset>
