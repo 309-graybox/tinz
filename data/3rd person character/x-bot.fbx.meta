@@ -2,12 +2,12 @@
 <asset version="2.22.0.0">
 	<guid>66aa9fb143993b9b969d5aab2d60176f3f2d8c9e</guid>
 	<type>fbx</type>
-	<hash>16b1e4a70d7772b5994214e565d27adbc7fd68ac9a232ea8ddd75935f29cdcab</hash>
+	<hash>fbf26f09d0afa65bc1cb63112f6bd2093e298e91beb16c4dbb3c8aecd2c5901e</hash>
 	<runtimes>
 		<runtime id="66aa9fb143993b9b969d5aab2d60176f3f2d8c9e" name="x-bot.fbx" link="0"/>
 		<runtime id="d354b6c030253f4c7f45fd7e2a59221a79dbfadf" name="x-bot.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">97494eb5</parameter>
+				<parameter type="string" name="id">3bc8a759</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="01cc92750e98216f81b4e90f60405f0692568ab2" name="x-bot.skeleton" link="2" type="8">

@@ -31,6 +31,7 @@ void TestRunJumpController::init()
 	shape->setCollisionMask(movement_collision_mask);
 	world_transform = object->getWorldTransform();
 	ground_normal_cos = cos(static_cast<float>(max_ground_angle) * Consts::DEG2RAD);
+	collect_animation_poses(node);
 	controller_ready = true;
 }
 
@@ -42,6 +43,7 @@ void TestRunJumpController::update()
 	const float ifps = Game::getIFps();
 	if (ifps <= 0.0f)
 		return;
+	const bool was_grounded = grounded;
 
 	const vec3 gravity = Physics::getGravity();
 	gravity_amount = gravity.length();
@@ -83,6 +85,10 @@ void TestRunJumpController::update()
 
 	object->setWorldTransform(world_transform);
 	body->setTransform(world_transform);
+
+	const bool landed = ground_state_initialized && !was_grounded && grounded;
+	ground_state_initialized = true;
+	update_animation_graphs(landed);
 }
 
 vec3 TestRunJumpController::read_move_direction() const
@@ -159,6 +165,7 @@ void TestRunJumpController::resolve_collisions(float ifps)
 		const float inverse_contact_count = 1.0f / static_cast<float>(contacts.size());
 		vec3 position_offset = vec3_zero;
 		const Vec3 bottom_cap = shape->getBottomCap();
+		const Vec3 top_cap = shape->getTopCap();
 
 		for (int i = 0; i < contacts.size(); ++i)
 		{
@@ -188,7 +195,9 @@ void TestRunJumpController::resolve_collisions(float ifps)
 					can_jump = true;
 				}
 			}
-			else if (dot(normal, up) < 0.0f && vertical_speed > 0.0f)
+			const bool above_capsule = dot(contact->getPoint() - top_cap, -Vec3(up)) < 0.0;
+			const bool ceiling = above_capsule && dot(normal, -up) >= ground_normal_cos;
+			if (ceiling && vertical_speed > 0.0f)
 			{
 				vertical_speed = 0.0f;
 				adaptive_jump_pending = false;
@@ -201,6 +210,42 @@ void TestRunJumpController::resolve_collisions(float ifps)
 
 	if (grounded)
 		adaptive_jump_pending = false;
+}
+
+void TestRunJumpController::collect_animation_poses(const NodePtr &root)
+{
+	if (!root)
+		return;
+
+	if (const NodeSkeletonPosePtr pose = checked_ptr_cast<NodeSkeletonPose>(root))
+		animation_poses.append(pose);
+
+	for (int i = 0; i < root->getNumChildren(); ++i)
+		collect_animation_poses(root->getChild(i));
+}
+
+void TestRunJumpController::update_animation_graphs(bool landed)
+{
+	const float max_run_speed = max(0.0f, static_cast<float>(run_speed));
+	const float horizontal_movement = max_run_speed > Consts::EPS
+		? clamp(horizontal_velocity.length() / max_run_speed, 0.0f, 1.0f)
+		: 0.0f;
+	const float max_jump_speed = max(0.0f, static_cast<float>(jump_speed));
+	const float vertical_movement = max_jump_speed > Consts::EPS
+		? clamp(vertical_speed / max_jump_speed, -1.0f, 1.0f)
+		: 0.0f;
+
+	for (int i = 0; i < animation_poses.size(); ++i)
+	{
+		const AnimScriptPtr anim_script = animation_poses[i]->getAnimScript();
+		if (!anim_script || !anim_script->isInit())
+			continue;
+
+		anim_script->setParamFloat("horizontal_movement", horizontal_movement);
+		anim_script->setParamFloat("vertical_movement", vertical_movement);
+		if (landed)
+			anim_script->setParamTrigger("on_landing", true);
+	}
 }
 
 void TestRunJumpController::move_towards(vec3 &current, const vec3 &target, float max_delta)

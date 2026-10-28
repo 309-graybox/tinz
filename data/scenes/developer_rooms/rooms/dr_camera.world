@@ -1118,32 +1118,46 @@
 			</body>
 			<properties>
 				<property parent="8b20e15a6dcae1fa735acc9f8aab1d05619751c3" guid="37c38b4db5a33ff44bbcebc99a2b0368b07f848f">
+					<parameter name="run_speed">8</parameter>
+					<parameter name="acceleration">100</parameter>
+					<parameter name="damping">100</parameter>
+					<parameter name="turn_speed">700</parameter>
 					<parameter name="jump_surface_intersection_mask">0xffffffff</parameter>
 					<parameter name="movement_collision_mask">0xffffffff</parameter>
 				</property>
 			</properties>
 			<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0.1 1.0</transform>
-			<node type="NodeDummy" id="2137626016" name="x-bot_0">
-				<transform>1 1.67037371309e-22 -3.82137050681e-15 0.0 1.67037421796e-22 1 8.7422769468e-08 0.0 3.82137050681e-15 -8.7422769468e-08 1 0.0 0 0 0 1.0</transform>
-				<node type="ObjectMeshSkinnedLegacy" id="73287921" name="Beta_Joints">
-					<mesh_name>guid://6f60ba77991879f946062fe157addff44bd90c1c</mesh_name>
-					<fps_visible_camera>-1</fps_visible_camera>
-					<fps_visible_shadow>30</fps_visible_shadow>
-					<fps_invisible>0</fps_invisible>
-					<anim_name>guid://ab3fcaafc8f05433be3c1ed9140b21be5139b0b4</anim_name>
-					<speed>30</speed>
-					<surface name="beta_joints" intersection="1" material="8891d80081707c5c096b2cbec9b214ff13f9331f"/>
-					<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+			<node type="NodeDummy" id="630516500" name="x-bot_1">
+				<transform>-1 -8.74227765735e-08 -9.77869383232e-14 0.0 8.74227765735e-08 -1 8.7422769468e-08 0.0 -1.05429682725e-13 8.7422769468e-08 1 0.0 0 0 0 1.0</transform>
+				<node type="NodeSkeletonPose" id="619021704" name="Beta_Joints">
+					<transform>1 -8.36340720723e-34 1.46028758052e-29 0.0 1.63675833408e-34 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+					<skeleton>01cc92750e98216f81b4e90f60405f0692568ab2</skeleton>
+					<mode>0</mode>
+					<control_type>0</control_type>
+					<anim_script guid="179cf5650cfb289433738d7f0da90d779ac12c62"/>
+					<node type="ObjectMeshSkinned" id="429058887" name="Beta_Joints_mesh">
+						<mesh_name>guid://6f60ba77991879f946062fe157addff44bd90c1c</mesh_name>
+						<fps_visible_camera>-1</fps_visible_camera>
+						<fps_visible_shadow>30</fps_visible_shadow>
+						<fps_invisible>0</fps_invisible>
+						<surface name="beta_joints" material="8891d80081707c5c096b2cbec9b214ff13f9331f"/>
+						<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+					</node>
 				</node>
-				<node type="ObjectMeshSkinnedLegacy" id="634498460" name="Beta_Surface">
-					<mesh_name>guid://023392dc4e90de6a632c513ada75682bc003b8cb</mesh_name>
-					<fps_visible_camera>-1</fps_visible_camera>
-					<fps_visible_shadow>30</fps_visible_shadow>
-					<fps_invisible>0</fps_invisible>
-					<anim_name>guid://ab3fcaafc8f05433be3c1ed9140b21be5139b0b4</anim_name>
-					<speed>30</speed>
-					<surface name="beta_surface" intersection="1" material="b46975329edaf68840a48c2021b331d5fcfa0ca9"/>
-					<transform>1 1.67037428661e-22 3.82137093191e-15 0.0 3.34074857185e-22 1 -8.74227765735e-08 0.0 -3.82137093191e-15 8.74227765735e-08 1 0.0 0 0 0 1.0</transform>
+				<node type="NodeSkeletonPose" id="210907130" name="Beta_Surface">
+					<transform>1 -8.36340720723e-34 1.46028758052e-29 0.0 1.63675833408e-34 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+					<skeleton>01cc92750e98216f81b4e90f60405f0692568ab2</skeleton>
+					<mode>0</mode>
+					<control_type>0</control_type>
+					<anim_script guid="179cf5650cfb289433738d7f0da90d779ac12c62"/>
+					<node type="ObjectMeshSkinned" id="1315110673" name="Beta_Surface_mesh">
+						<mesh_name>guid://023392dc4e90de6a632c513ada75682bc003b8cb</mesh_name>
+						<fps_visible_camera>-1</fps_visible_camera>
+						<fps_visible_shadow>30</fps_visible_shadow>
+						<fps_invisible>0</fps_invisible>
+						<surface name="beta_surface" material="b46975329edaf68840a48c2021b331d5fcfa0ca9"/>
+						<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 0 1.0</transform>
+					</node>
 				</node>
 			</node>
 			<node type="NodeDummy" id="128871310" name="spring_arm">
@@ -1160,7 +1174,24 @@
 						<property parent="642384fe0d98b7186bdcca85e1b67dac8ad8d98d" guid="0a30920e6e1b7a092c5cf4e25f67a390ac8db4fc">
 							<parameter name="target">128871310</parameter>
 							<parameter name="arm_length">6</parameter>
+							<parameter name="min_pitch">-70</parameter>
+							<parameter name="max_pitch">70</parameter>
+							<parameter name="enable_min_angle_bias">1</parameter>
+							<parameter name="min_angle_bias_offset">15</parameter>
+							<parameter name="enable_position_lag">1</parameter>
+							<parameter name="position_lag_time_95">0.625389993</parameter>
+							<parameter name="position_lag_vertical_time_95">0.625389993</parameter>
+							<parameter name="enable_rotation_lag">0</parameter>
+							<parameter name="rotation_lag_time_95">0.2965</parameter>
+							<parameter name="enable_auto_rotation">1</parameter>
+							<parameter name="auto_rotation_time_95">3</parameter>
+							<parameter name="enable_camera_recovery">1</parameter>
+							<parameter name="camera_recovery_time_95">5.164</parameter>
+							<parameter name="camera_recovery_activation_delay">1</parameter>
+							<parameter name="camera_recovery_target_pitch_min">0</parameter>
+							<parameter name="camera_recovery_target_pitch_max">15</parameter>
 							<parameter name="collision_sphere_radius">0.100000001</parameter>
+							<parameter name="collision_return_delay">0.100000001</parameter>
 						</property>
 					</properties>
 					<transform>1 0 0 0.0 0 5.96046447754e-08 0.999999940395 0.0 0 -0.999999940395 5.96046447754e-08 0.0 0 -6 1.61732781301e-06 1.0</transform>

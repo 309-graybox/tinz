@@ -1,6 +1,7 @@
 #pragma once
 
 #include <UnigineComponentSystem.h>
+#include <UnigineNodes.h>
 #include <UnigineObjects.h>
 #include <UniginePhysics.h>
 
@@ -51,6 +52,8 @@ private:
 	void update_horizontal_velocity(const Unigine::Math::vec3 &move_direction, float ifps);
 	void rotate_towards(const Unigine::Math::vec3 &direction, float ifps);
 	void resolve_collisions(float ifps);
+	void collect_animation_poses(const Unigine::NodePtr &root);
+	void update_animation_graphs(bool landed);
 	static void move_towards(Unigine::Math::vec3 &current,
 		const Unigine::Math::vec3 &target, float max_delta);
 
@@ -58,6 +61,7 @@ private:
 	Unigine::BodyDummyPtr body;
 	Unigine::ShapeCapsulePtr shape;
 	Unigine::Vector<Unigine::ShapeContactPtr> contacts;
+	Unigine::Vector<Unigine::NodeSkeletonPosePtr> animation_poses;
 
 	Unigine::Math::Mat4 world_transform = Unigine::Math::Mat4_identity;
 	Unigine::Math::vec3 horizontal_velocity = Unigine::Math::vec3_zero;
@@ -70,4 +74,5 @@ private:
 	bool grounded = false;
 	bool can_jump = false;
 	bool adaptive_jump_pending = false;
+	bool ground_state_initialized = false;
 };

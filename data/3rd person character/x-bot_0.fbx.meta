@@ -2,12 +2,12 @@
 <asset version="2.22.0.0">
 	<guid>d38a89f1be430f97bf862eeb8792aba489dc13de</guid>
 	<type>fbx</type>
-	<hash>4537adc1d7499273bf9cb10f30b8eff65c020337c6028b00a70365505049e369</hash>
+	<hash>e26e619c44c716180d5950e8443ef44c0a1d27e0b9be45b972e26bec48fb797c</hash>
 	<runtimes>
 		<runtime id="d38a89f1be430f97bf862eeb8792aba489dc13de" name="x-bot_0.fbx" link="0"/>
 		<runtime id="c8642c1a76cdeff55b4016c85f675cc180860171" name="x-bot_0.node" link="1" type="3">
 			<parameters>
-				<parameter type="string" name="id">127e8352</parameter>
+				<parameter type="string" name="id">78eee6ab</parameter>
 			</parameters>
 		</runtime>
 		<runtime id="6f60ba77991879f946062fe157addff44bd90c1c" name="beta_joints.mesh_skinned" link="2" type="9">
@@ -60,7 +60,7 @@
 		<parameter type="int" name="num_lods">3</parameter>
 		<parameter type="string" name="prefix_materials">m_</parameter>
 		<parameter type="string" name="resolution">256</parameter>
-		<parameter type="int" name="root_motion_forward_axis">4</parameter>
+		<parameter type="int" name="root_motion_forward_axis">1</parameter>
 		<parameter type="int" name="root_motion_position_component">0</parameter>
 		<parameter type="int" name="root_motion_rotation_component">0</parameter>
 		<parameter type="float" name="scale">1</parameter>

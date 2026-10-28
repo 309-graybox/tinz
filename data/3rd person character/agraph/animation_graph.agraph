@@ -1,8 +1,16 @@
 {
-	"version": "2.21.0.0",
+	"version": "2.22.0.0",
 	"file_guid": "24e87ba40aaa6dd13f9a22c290f8c4c415e99ff3",
-	"camera_offset_x": 583,
-	"camera_offset_y": 148.5,
+	"camera_offset_x": 747,
+	"camera_offset_y": 293.5,
+	"preview_mesh_guid": "023392dc4e90de6a632c513ada75682bc003b8cb",
+	"filter_by_skeleton": 1,
+	"fix_root_in_origin": 1,
+	"is_playing": 1,
+	"show_bones": 0,
+	"show_bone_axes": 0,
+	"show_bone_names": 0,
+	"show_ground": 1,
 	"nodes": {
 		"Output Pose": {
 			"guid": "00000000000000000000000000000000b00002b2",
@@ -38,8 +46,15 @@
 			"sm_name": "State_Machine",
 			"state_graph": {
 				"file_guid": "8a62701c59a6e821b3f9dc7a35f1b22441a61d0b",
-				"camera_offset_x": 561.57330322265625,
-				"camera_offset_y": 488.63717651367188,
+				"camera_offset_x": 453.57330322265625,
+				"camera_offset_y": 384.63717651367188,
+				"filter_by_skeleton": 1,
+				"fix_root_in_origin": 1,
+				"is_playing": 1,
+				"show_bones": 1,
+				"show_bone_axes": 0,
+				"show_bone_names": 0,
+				"show_ground": 1,
 				"nodes": {
 					"State": {
 						"guid": "19b5c8c18756f88fb09f223bf124766a9783ceee",
@@ -66,6 +81,13 @@
 							"file_guid": "a8a791db910d9125d5a0e3e566168c8851c14c50",
 							"camera_offset_x": 700,
 							"camera_offset_y": 528,
+							"filter_by_skeleton": 1,
+							"fix_root_in_origin": 1,
+							"is_playing": 1,
+							"show_bones": 1,
+							"show_bone_axes": 0,
+							"show_bone_names": 0,
+							"show_ground": 1,
 							"nodes": {
 								"Output Pose": {
 									"guid": "f607339058b7def4a6aec9cec22af61cdb77b36f",
@@ -186,6 +208,13 @@
 							"file_guid": "0df49fedcfa185d4e6297747b399d3c25b378b8a",
 							"camera_offset_x": 869,
 							"camera_offset_y": 571,
+							"filter_by_skeleton": 1,
+							"fix_root_in_origin": 1,
+							"is_playing": 1,
+							"show_bones": 1,
+							"show_bone_axes": 0,
+							"show_bone_names": 0,
+							"show_ground": 1,
 							"nodes": {
 								"Output Pose": {
 									"guid": "7f30b9ca3152add637af30f83bc9f436a0540561",
@@ -296,6 +325,13 @@
 							"file_guid": "a4a2bda9096449218d902d633252cf8dedb303f6",
 							"camera_offset_x": 1040,
 							"camera_offset_y": 596,
+							"filter_by_skeleton": 1,
+							"fix_root_in_origin": 1,
+							"is_playing": 1,
+							"show_bones": 1,
+							"show_bone_axes": 0,
+							"show_bone_names": 0,
+							"show_ground": 1,
 							"nodes": {
 								"Transition Result": {
 									"guid": "2ee2a0b684e319463376af04303c94d105202add",
@@ -323,7 +359,7 @@
 								},
 								"Float": {
 									"guid": "5c9b1e71df959ba57cb6976b5af7c0a24292e25e",
-									"x": -691,
+									"x": -692,
 									"y": 27,
 									"collapsed": true,
 									"outputs": {
@@ -362,7 +398,7 @@
 								},
 								"Float": {
 									"guid": "42b9da80b325fe8a43fd4b3e69a7aa241cf0639f",
-									"x": -693,
+									"x": -694,
 									"y": 51,
 									"collapsed": true,
 									"outputs": {
@@ -455,6 +491,13 @@
 							"file_guid": "c603b5524674abc70f86e7403b958c2b468d3a49",
 							"camera_offset_x": 1005,
 							"camera_offset_y": 480,
+							"filter_by_skeleton": 1,
+							"fix_root_in_origin": 1,
+							"is_playing": 1,
+							"show_bones": 1,
+							"show_bone_axes": 0,
+							"show_bone_names": 0,
+							"show_ground": 1,
 							"nodes": {
 								"Transition Result": {
 									"guid": "3716e78f95e438307dbc16b9863a8a1fc7f4ff14",
@@ -600,8 +643,8 @@
 					},
 					"State Portal": {
 						"guid": "d7dd5d7f11d1c7dd4ea586295143da3f6bf233c4",
-						"x": -183,
-						"y": 145,
+						"x": -182,
+						"y": 130,
 						"collapsed": false,
 						"props": {
 							"prop": {
@@ -622,11 +665,11 @@
 							},
 							"prop": {
 								"widget": "Bool",
-								"x": 0
+								"x": 1
 							},
 							"prop": {
 								"widget": "Bool",
-								"x": 0
+								"x": 1
 							},
 							"prop": {
 								"widget": "Bool",
@@ -635,7 +678,9 @@
 						},
 						"linked_states": [
 							"65b2d2aef9f9e4e6cf488a3ccfe756bba7d14975",
-							"dec12f5f1f506c96ead6bb096b4fdd1729301b24"
+							"dec12f5f1f506c96ead6bb096b4fdd1729301b24",
+							"f785ff63bce1e56b9429c8adf30750a82d620c78",
+							"b131b370366a9dc676932eaeb63a256f49193dcf"
 						]
 					},
 					"State": {
@@ -655,6 +700,13 @@
 							"file_guid": "5495b707a8ff2b6050e436f1a4e7bbdf69f60bec",
 							"camera_offset_x": 1104,
 							"camera_offset_y": 456,
+							"filter_by_skeleton": 1,
+							"fix_root_in_origin": 1,
+							"is_playing": 1,
+							"show_bones": 1,
+							"show_bone_axes": 0,
+							"show_bone_names": 0,
+							"show_ground": 1,
 							"nodes": {
 								"Output Pose": {
 									"guid": "ed0bc0aca0afdc41b698268a198d6b18d0b9965b",
@@ -760,8 +812,8 @@
 					},
 					"Condition": {
 						"guid": "9f280656e91f3138ed43d3a43f730e16daaebffd",
-						"x": -77,
-						"y": 153,
+						"x": -71,
+						"y": 152,
 						"collapsed": false,
 						"props": {
 							"prop": {
@@ -775,6 +827,13 @@
 							"file_guid": "30c61123028d145e04a3506dac6a3293b7828138",
 							"camera_offset_x": 936,
 							"camera_offset_y": 512,
+							"filter_by_skeleton": 1,
+							"fix_root_in_origin": 1,
+							"is_playing": 1,
+							"show_bones": 1,
+							"show_bone_axes": 0,
+							"show_bone_names": 0,
+							"show_ground": 1,
 							"nodes": {
 								"Transition Result": {
 									"guid": "f873bf788893e49a2a17e176247359c52c03d337",
@@ -911,6 +970,13 @@
 							"file_guid": "2db4dc5281e52eaaf620f640b5ef0c47ea3dd549",
 							"camera_offset_x": 700,
 							"camera_offset_y": 528,
+							"filter_by_skeleton": 1,
+							"fix_root_in_origin": 1,
+							"is_playing": 1,
+							"show_bones": 1,
+							"show_bone_axes": 0,
+							"show_bone_names": 0,
+							"show_ground": 1,
 							"nodes": {
 								"Output Pose": {
 									"guid": "e89c8a8fc1d6aac94d38f1b998ceaa0c98aede14",
@@ -1031,6 +1097,13 @@
 							"file_guid": "4263b2bee67b74e4cec777cc1f7d9edf19bb9845",
 							"camera_offset_x": 1273,
 							"camera_offset_y": 532,
+							"filter_by_skeleton": 1,
+							"fix_root_in_origin": 1,
+							"is_playing": 1,
+							"show_bones": 1,
+							"show_bone_axes": 0,
+							"show_bone_names": 0,
+							"show_ground": 1,
 							"nodes": {
 								"Transition Result": {
 									"guid": "8ea1c42b575c80f0893036b5314864eb285e2ce0",
@@ -1167,6 +1240,13 @@
 							"file_guid": "0398d9d17dd57df476c711cb16d8664ed06ef93e",
 							"camera_offset_x": 427,
 							"camera_offset_y": 353,
+							"filter_by_skeleton": 1,
+							"fix_root_in_origin": 1,
+							"is_playing": 1,
+							"show_bones": 1,
+							"show_bone_axes": 0,
+							"show_bone_names": 0,
+							"show_ground": 1,
 							"nodes": {
 								"Output Pose": {
 									"guid": "39605efe4eed9beb3ff97a0cf0baa38a606e4f85",
@@ -1287,6 +1367,13 @@
 							"file_guid": "6692c54d6f1ee21a0cfb6ba7f65faadffbc5846a",
 							"camera_offset_x": 1200,
 							"camera_offset_y": 433,
+							"filter_by_skeleton": 1,
+							"fix_root_in_origin": 1,
+							"is_playing": 1,
+							"show_bones": 1,
+							"show_bone_axes": 0,
+							"show_bone_names": 0,
+							"show_ground": 1,
 							"nodes": {
 								"Transition Result": {
 									"guid": "36344eaae4ecd6ab80e662d82fa6ab8ea692e8c1",
@@ -1520,6 +1607,13 @@
 							"file_guid": "c9c20d1bb7481f4b896e31252f11071b211ba890",
 							"camera_offset_x": 1122,
 							"camera_offset_y": 419,
+							"filter_by_skeleton": 1,
+							"fix_root_in_origin": 1,
+							"is_playing": 1,
+							"show_bones": 1,
+							"show_bone_axes": 0,
+							"show_bone_names": 0,
+							"show_ground": 1,
 							"nodes": {
 								"Output Pose": {
 									"guid": "60b087d08e495f9e57bb340ea360a87d660fe2af",
@@ -1583,6 +1677,17 @@
 										"prop": {
 											"widget": "Combobox",
 											"x": 1
+										},
+										"prop": {
+											"widget": "Combobox",
+											"x": 1
+										},
+										"prop": {
+											"widget": "JointCombobox",
+											"value": ""
+										},
+										"prop": {
+											"widget": "StringList"
 										}
 									},
 									"inputs": {
@@ -1609,7 +1714,7 @@
 											"id": 0
 										}
 									},
-									"blend_mask": "landing_layer"
+									"mask_blend_mask": "landing_layer"
 								},
 								"Animation Player": {
 									"guid": "67c1f58af053ce2acc46d6b8cab89e2ad508f621",
@@ -1773,6 +1878,13 @@
 							"file_guid": "b8c2de220190cba2a86d7f900867fd27b9785ad9",
 							"camera_offset_x": 1200,
 							"camera_offset_y": 381,
+							"filter_by_skeleton": 1,
+							"fix_root_in_origin": 1,
+							"is_playing": 1,
+							"show_bones": 1,
+							"show_bone_axes": 0,
+							"show_bone_names": 0,
+							"show_ground": 1,
 							"nodes": {
 								"Transition Result": {
 									"guid": "e3bf5d9f185dddef7fa5734930ca37f97aef0664",
@@ -2044,6 +2156,13 @@
 							"file_guid": "5cf65e8429c23a346d6d72a218087bd01b3ba153",
 							"camera_offset_x": 1038,
 							"camera_offset_y": 534,
+							"filter_by_skeleton": 1,
+							"fix_root_in_origin": 1,
+							"is_playing": 1,
+							"show_bones": 1,
+							"show_bone_axes": 0,
+							"show_bone_names": 0,
+							"show_ground": 1,
 							"nodes": {
 								"Transition Result": {
 									"guid": "4fcd05c9f67d62a1ba6da283a145bd5921d83696",
@@ -2168,6 +2287,13 @@
 							"file_guid": "c0ab5a6ab8f032c0fe4b5898d9934c7aa0dc6981",
 							"camera_offset_x": 1078,
 							"camera_offset_y": 483,
+							"filter_by_skeleton": 1,
+							"fix_root_in_origin": 1,
+							"is_playing": 1,
+							"show_bones": 1,
+							"show_bone_axes": 0,
+							"show_bone_names": 0,
+							"show_ground": 1,
 							"nodes": {
 								"Transition Result": {
 									"guid": "bc117c0738b6c424ef1303f1bca5560a8742b4ec",
@@ -2254,6 +2380,13 @@
 							"file_guid": "e588f53902c5b3838ab46773fc0d41a6f839a6c6",
 							"camera_offset_x": 1018,
 							"camera_offset_y": 533,
+							"filter_by_skeleton": 1,
+							"fix_root_in_origin": 1,
+							"is_playing": 1,
+							"show_bones": 1,
+							"show_bone_axes": 0,
+							"show_bone_names": 0,
+							"show_ground": 1,
 							"nodes": {
 								"Output Pose": {
 									"guid": "325ec58632bb1962e84ee3545a94291519254f6d",
@@ -2374,6 +2507,13 @@
 							"file_guid": "0f1ce2359a6fe64443b9decf5cb703ae836b6572",
 							"camera_offset_x": 1023,
 							"camera_offset_y": 566,
+							"filter_by_skeleton": 1,
+							"fix_root_in_origin": 1,
+							"is_playing": 1,
+							"show_bones": 1,
+							"show_bone_axes": 0,
+							"show_bone_names": 0,
+							"show_ground": 1,
 							"nodes": {
 								"Transition Result": {
 									"guid": "371764b2c1160451588c8fa0f1795f3d9b708629",
@@ -2498,6 +2638,13 @@
 							"file_guid": "32cac1245b6b44bd423f0c423916b6320e275773",
 							"camera_offset_x": 933,
 							"camera_offset_y": 555,
+							"filter_by_skeleton": 1,
+							"fix_root_in_origin": 1,
+							"is_playing": 1,
+							"show_bones": 1,
+							"show_bone_axes": 0,
+							"show_bone_names": 0,
+							"show_ground": 1,
 							"nodes": {
 								"Transition Result": {
 									"guid": "9dfb66e9a5f7c72194d058a3324bd1802b813636",
@@ -2967,14 +3114,6 @@
 		}
 	},
 	"graph_type": "final",
-	"preview_mesh_guid": "023392dc4e90de6a632c513ada75682bc003b8cb",
-	"filter_by_skeleton": 1,
-	"fix_root_in_origin": 1,
-	"is_playing": 1,
-	"show_bones": 0,
-	"show_bone_axes": 0,
-	"show_bone_names": 0,
-	"show_ground": 1,
 	"root_motion_enabled": 1,
 	"parameters": {
 		"param": {
@@ -3012,14 +3151,14 @@
 		"override": {
 			"guid": "7370780cecd19da9e9cd96eacd59de0834ee923b",
 			"type": "Float",
-			"active": true,
-			"float_value": 0.5020747184753418
+			"active": false,
+			"float_value": 0
 		},
 		"override": {
 			"guid": "29eb7584f85b33e4d99df1a2a4768280467fac53",
 			"type": "Float",
 			"active": true,
-			"float_value": -0.54356849193572998
+			"float_value": -0.37391304969787598
 		},
 		"override": {
 			"guid": "139a7f0b3249086e16fbfc953ec08f2dfa316140",
