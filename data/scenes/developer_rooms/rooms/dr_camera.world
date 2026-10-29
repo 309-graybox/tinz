@@ -1160,7 +1160,7 @@
 					</node>
 				</node>
 			</node>
-			<node type="NodeDummy" id="128871310" name="spring_arm">
+			<node type="NodeDummy" id="128871310" name="spring_arm_target">
 				<transform>1 0 0 0.0 0 1 0 0.0 0 0 1 0.0 0 0 1.35243838267 1.0</transform>
 				<node type="PlayerDummy" id="537066901" name="camera_follower">
 					<znear>0.300000012</znear>
@@ -1181,12 +1181,12 @@
 							<parameter name="enable_position_lag">1</parameter>
 							<parameter name="position_lag_time_95">0.625389993</parameter>
 							<parameter name="position_lag_vertical_time_95">0.625389993</parameter>
-							<parameter name="enable_rotation_lag">0</parameter>
-							<parameter name="rotation_lag_time_95">0.2965</parameter>
+							<parameter name="enable_rotation_lag">1</parameter>
+							<parameter name="rotation_lag_time_95">0.296499997</parameter>
 							<parameter name="enable_auto_rotation">1</parameter>
 							<parameter name="auto_rotation_time_95">3</parameter>
 							<parameter name="enable_camera_recovery">1</parameter>
-							<parameter name="camera_recovery_time_95">5.164</parameter>
+							<parameter name="camera_recovery_time_95">5.16400003</parameter>
 							<parameter name="camera_recovery_activation_delay">1</parameter>
 							<parameter name="camera_recovery_target_pitch_min">0</parameter>
 							<parameter name="camera_recovery_target_pitch_max">15</parameter>

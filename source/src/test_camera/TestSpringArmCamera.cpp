@@ -10,6 +10,35 @@
 using namespace Unigine;
 using namespace Unigine::Math;
 
+namespace
+{
+// Response calibration: exp(-3) ~= .05; (1 + 4.744) * exp(-4.744) ~= .05.
+float exponential_alpha(float time95, float dt)
+{
+	return time95 > Consts::EPS ? 1.0f - std::exp(-3.0f * dt / time95) : 1.0f;
+}
+
+float wrap_angle(float angle)
+{
+	while (angle > 180.0f) angle -= 360.0f;
+	while (angle < -180.0f) angle += 360.0f;
+	return angle;
+}
+
+// Exact critical spring for a stationary target during this step.
+// Restrictions (speed caps, collision safety) belong to the caller.
+template <typename T>
+T spring_step(const T &current, const T &target, T &velocity, float time95, float dt)
+{
+	const float omega = 4.744f / time95;
+	const float decay = std::exp(-omega * dt);
+	const T change = current - target;
+	const T temp = (velocity + omega * change) * dt;
+	velocity = (velocity - omega * temp) * decay;
+	return target + (change + temp) * decay;
+}
+}
+
 REGISTER_COMPONENT(TestSpringArmCamera)
 
 void TestSpringArmCamera::init()
@@ -34,8 +63,7 @@ void TestSpringArmCamera::update()
 		angles_initialized = false;
 		position_lag_initialized = false;
 		rotation_lag_initialized = false;
-		auto_rotation_velocity_initialized = false;
-		camera_recovery_velocity_initialized = false;
+		reset_automation();
 		collision_return_initialized = false;
 		return;
 	}
@@ -62,27 +90,18 @@ void TestSpringArmCamera::update()
 		pitch += pitch_delta;
 
 		pitch = clamp(pitch, static_cast<float>(min_pitch), static_cast<float>(max_pitch));
-		while (yaw > 180.0f)
-			yaw -= 360.0f;
-		while (yaw < -180.0f)
-			yaw += 360.0f;
+		yaw = wrap_angle(yaw);
 	}
 
 	if (accepts_camera_input)
 	{
+		update_target_motion(ifps);
 		update_auto_rotation(manual_camera_input, ifps);
 		update_camera_recovery(manual_pitch_input, ifps);
 	}
 	else
 	{
-		auto_rotation_time_since_input = 0.0f;
-		auto_rotation_velocity = 0.0f;
-		auto_rotation_velocity_initialized = false;
-		auto_rotation_resume_delay_active = false;
-		auto_rotation_active = false;
-		camera_recovery_velocity_initialized = false;
-		camera_recovery_active = false;
-		camera_recovery_velocity = 0.0f;
+		reset_automation();
 	}
 
 	apply_camera_transform();
@@ -173,13 +192,36 @@ void TestSpringArmCamera::reset_lag_state(const Vec3 &target_position)
 	rotation_lag_velocity = vec2_zero;
 	position_lag_initialized = true;
 	rotation_lag_initialized = true;
-	auto_rotation_velocity = 0.0f;
-	camera_recovery_velocity = 0.0f;
-	auto_rotation_velocity_initialized = false;
-	camera_recovery_velocity_initialized = false;
-	auto_rotation_active = false;
-	camera_recovery_active = false;
+	reset_automation();
 	collision_return_initialized = false;
+}
+
+void TestSpringArmCamera::reset_automation()
+{
+	target_motion_initialized = false;
+	auto_rotation_time_since_input = 0.0f;
+	auto_rotation_velocity = 0.0f;
+	auto_rotation_velocity_initialized = false;
+	auto_rotation_resume_delay_active = false;
+	auto_rotation_active = false;
+	camera_recovery_velocity_initialized = false;
+	camera_recovery_active = false;
+	camera_recovery_velocity = 0.0f;
+	camera_recovery_delay_remaining = 0.0f;
+	camera_recovery_delay_active = false;
+}
+
+void TestSpringArmCamera::update_target_motion(float ifps)
+{
+	if (ifps <= 0.0f)
+		return;
+	const Vec3 position = target->getWorldPosition();
+	target_motion_delta = target_motion_initialized
+		? position - previous_target_position : Vec3_zero;
+	target_motion_delta.z = 0.0;
+	target_motion_speed = static_cast<float>(target_motion_delta.length()) / ifps;
+	previous_target_position = position;
+	target_motion_initialized = true;
 }
 
 Vec3 TestSpringArmCamera::update_position_lag(const Vec3 &target_position, float ifps)
@@ -195,10 +237,8 @@ Vec3 TestSpringArmCamera::update_position_lag(const Vec3 &target_position, float
 
 	const float horizontal_time = max(0.0f, static_cast<float>(position_lag_time_95));
 	const float vertical_time = max(0.0f, static_cast<float>(position_lag_vertical_time_95));
-	const float horizontal_alpha = horizontal_time > Consts::EPS
-		? 1.0f - std::exp(-3.0f * ifps / horizontal_time) : 1.0f;
-	const float vertical_alpha = vertical_time > Consts::EPS
-		? 1.0f - std::exp(-3.0f * ifps / vertical_time) : 1.0f;
+	const float horizontal_alpha = exponential_alpha(horizontal_time, ifps);
+	const float vertical_alpha = exponential_alpha(vertical_time, ifps);
 	const Vec3 error = target_position - lagged_target_position;
 	lagged_target_position += Vec3(error.x * horizontal_alpha,
 		error.y * horizontal_alpha, error.z * vertical_alpha);
@@ -215,10 +255,8 @@ void TestSpringArmCamera::update_auto_rotation(bool manual_camera_input, float i
 	if (!target || ifps <= 0.0f)
 		return;
 
-	const Vec3 target_position = target->getWorldPosition();
 	if (!auto_rotation_velocity_initialized || !enable_auto_rotation)
 	{
-		previous_auto_rotation_target_position = target_position;
 		auto_rotation_time_since_input = 0.0f;
 		auto_rotation_velocity = 0.0f;
 		auto_rotation_velocity_initialized = true;
@@ -227,10 +265,8 @@ void TestSpringArmCamera::update_auto_rotation(bool manual_camera_input, float i
 		return;
 	}
 
-	Vec3 horizontal_delta = target_position - previous_auto_rotation_target_position;
-	previous_auto_rotation_target_position = target_position;
-	horizontal_delta.z = 0.0;
-	const float horizontal_speed = static_cast<float>(horizontal_delta.length()) / ifps;
+	const Vec3 &horizontal_delta = target_motion_delta;
+	const float horizontal_speed = target_motion_speed;
 	const float min_move_speed = max(0.0f, static_cast<float>(auto_rotation_min_move_speed));
 	const bool is_moving = horizontal_speed > Consts::EPS && horizontal_speed >= min_move_speed;
 
@@ -284,30 +320,20 @@ void TestSpringArmCamera::update_auto_rotation(bool manual_camera_input, float i
 	}
 	const float target_yaw = atan2(movement_direction.x, movement_direction.y) * Consts::RAD2DEG;
 	float yaw_error = target_yaw - yaw;
-	while (yaw_error > 180.0f)
-		yaw_error -= 360.0f;
-	while (yaw_error < -180.0f)
-		yaw_error += 360.0f;
+	yaw_error = wrap_angle(yaw_error);
 
 	const float response_time = max(0.0f, static_cast<float>(auto_rotation_time_95));
 	const float max_speed = max(0.0f, static_cast<float>(auto_rotation_max_speed));
 	float step = yaw_error;
 	if (response_time > Consts::EPS)
 	{
-		const float omega = 4.744f / response_time;
-		const float decay = std::exp(-omega * ifps);
-		const float temp = (auto_rotation_velocity - omega * yaw_error) * ifps;
-		step = yaw_error + (-yaw_error + temp) * decay;
-		auto_rotation_velocity = clamp((auto_rotation_velocity - omega * temp) * decay,
-			-max_speed, max_speed);
+		step = spring_step(0.0f, yaw_error, auto_rotation_velocity, response_time, ifps);
+		auto_rotation_velocity = clamp(auto_rotation_velocity, -max_speed, max_speed);
 	}
 	else
 		auto_rotation_velocity = 0.0f;
 	yaw += clamp(step, -max_speed * ifps, max_speed * ifps);
-	while (yaw > 180.0f)
-		yaw -= 360.0f;
-	while (yaw < -180.0f)
-		yaw += 360.0f;
+	yaw = wrap_angle(yaw);
 }
 
 void TestSpringArmCamera::update_camera_recovery(bool manual_pitch_input, float ifps)
@@ -315,10 +341,8 @@ void TestSpringArmCamera::update_camera_recovery(bool manual_pitch_input, float 
 	if (!target || ifps <= 0.0f)
 		return;
 
-	const Vec3 target_position = target->getWorldPosition();
 	if (!camera_recovery_velocity_initialized || !enable_camera_recovery)
 	{
-		previous_recovery_target_position = target_position;
 		camera_recovery_delay_remaining = 0.0f;
 		camera_recovery_velocity = 0.0f;
 		camera_recovery_velocity_initialized = true;
@@ -327,10 +351,7 @@ void TestSpringArmCamera::update_camera_recovery(bool manual_pitch_input, float 
 		return;
 	}
 
-	Vec3 horizontal_delta = target_position - previous_recovery_target_position;
-	previous_recovery_target_position = target_position;
-	horizontal_delta.z = 0.0;
-	const float horizontal_speed = static_cast<float>(horizontal_delta.length()) / ifps;
+	const float horizontal_speed = target_motion_speed;
 	const bool is_moving = horizontal_speed > Consts::EPS && horizontal_speed
 		>= max(0.0f, static_cast<float>(camera_recovery_min_move_speed));
 
@@ -389,12 +410,8 @@ void TestSpringArmCamera::update_camera_recovery(bool manual_pitch_input, float 
 	float step = pitch_error;
 	if (response_time > Consts::EPS)
 	{
-		const float omega = 4.744f / response_time;
-		const float decay = std::exp(-omega * ifps);
-		const float temp = (camera_recovery_velocity - omega * pitch_error) * ifps;
-		step = pitch_error + (-pitch_error + temp) * decay;
-		camera_recovery_velocity = clamp((camera_recovery_velocity - omega * temp) * decay,
-			-max_speed, max_speed);
+		step = spring_step(0.0f, pitch_error, camera_recovery_velocity, response_time, ifps);
+		camera_recovery_velocity = clamp(camera_recovery_velocity, -max_speed, max_speed);
 	}
 	else
 		camera_recovery_velocity = 0.0f;
@@ -424,18 +441,11 @@ vec2 TestSpringArmCamera::update_rotation_lag(const vec2 &target_angles, float i
 
 	vec2 unwrapped_target = target_angles;
 	float yaw_delta = unwrapped_target.x - lagged_angles.x;
-	while (yaw_delta > 180.0f)
-		yaw_delta -= 360.0f;
-	while (yaw_delta < -180.0f)
-		yaw_delta += 360.0f;
+	yaw_delta = wrap_angle(yaw_delta);
 	unwrapped_target.x = lagged_angles.x + yaw_delta;
 
-	const float omega = 4.744f / response_time;
-	const float decay = std::exp(-omega * ifps);
-	const vec2 change = lagged_angles - unwrapped_target;
-	const vec2 temp = (rotation_lag_velocity + omega * change) * ifps;
-	rotation_lag_velocity = (rotation_lag_velocity - omega * temp) * decay;
-	lagged_angles = unwrapped_target + (change + temp) * decay;
+	lagged_angles = spring_step(lagged_angles, unwrapped_target,
+		rotation_lag_velocity, response_time, ifps);
 	// Automatic axes already have their own spring. Do not filter them twice.
 	if (auto_rotation_active)
 	{
@@ -448,10 +458,7 @@ vec2 TestSpringArmCamera::update_rotation_lag(const vec2 &target_angles, float i
 		rotation_lag_velocity.y = 0.0f;
 	}
 
-	while (lagged_angles.x > 180.0f)
-		lagged_angles.x -= 360.0f;
-	while (lagged_angles.x < -180.0f)
-		lagged_angles.x += 360.0f;
+	lagged_angles.x = wrap_angle(lagged_angles.x);
 	lagged_angles.y = clamp(lagged_angles.y,
 		static_cast<float>(min_pitch), static_cast<float>(max_pitch));
 	return lagged_angles;
@@ -603,14 +610,8 @@ Vec3 TestSpringArmCamera::update_collision_smooth_return(const Vec3 &target_posi
 	const float response_time = max(0.0f, static_cast<float>(collision_return_time_95));
 	if (response_time > Consts::EPS)
 	{
-		// Exact critically damped spring for a fixed safe-distance target.
-		// (1 + omega*t) * exp(-omega*t) = .05 at omega*t ~= 4.744.
-		const float omega = 4.744f / response_time;
-		const float decay = std::exp(-omega * response_dt);
-		const float change = -remaining_distance;
-		const float temp = (collision_return_velocity + omega * change) * response_dt;
-		collision_return_velocity = (collision_return_velocity - omega * temp) * decay;
-		const float next_distance = collision_distance + (change + temp) * decay;
+		const float next_distance = spring_step(current_collision_distance, collision_distance,
+			collision_return_velocity, response_time, response_dt);
 		current_collision_distance = clamp(next_distance,
 			current_collision_distance, collision_distance);
 		if (current_collision_distance >= collision_distance)
